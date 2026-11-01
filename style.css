@@ -529,7 +529,12 @@ footer {
     .hero-content h1 {
         font-size: 2.2rem;
     }
+}
 
+/* --- Phone-style menu (the ☰ button) for phones and iPads ---
+   Phones and tablets up to 1024px wide, plus any touch screen up to 1366px
+   (iPads held sideways, including the 12.9" iPad Pro). Laptops keep the full row of links. */
+@media (max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
     /* Keep navbar horizontal and show hamburger */
     .navbar { 
         flex-direction: row; 
@@ -603,6 +608,7 @@ footer {
         visibility: visible;
     }
 }
+
 /* ===== Photos (added Nov 2026; images from Pexels, free licence) ===== */
 header.photo-banner {
     background-image:
