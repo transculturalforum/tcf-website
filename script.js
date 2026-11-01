@@ -84,4 +84,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Tablet sub-menus: the first tap on "What We Do" or "Religions" opens the list, ---
+    // --- a second tap follows the link. Phones keep the menu button above. ---
+    const tabletQuery = window.matchMedia('(min-width: 769px) and (max-width: 1366px), (hover: none) and (min-width: 769px)');
+    const dropdownTabs = document.querySelectorAll('.dropdown-tab');
+
+    dropdownTabs.forEach(tab => {
+        const trigger = tab.querySelector('.dropdown-trigger');
+        if (!trigger) return;
+        trigger.addEventListener('click', event => {
+            if (!tabletQuery.matches) return;
+            if (!tab.classList.contains('open') || trigger.getAttribute('href') === '#') {
+                event.preventDefault();
+                dropdownTabs.forEach(other => { if (other !== tab) other.classList.remove('open'); });
+                tab.classList.toggle('open');
+            }
+        });
+    });
+
+    // Tapping anywhere else closes an open sub-menu
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.dropdown-tab')) {
+            dropdownTabs.forEach(tab => tab.classList.remove('open'));
+        }
+    });
 });
