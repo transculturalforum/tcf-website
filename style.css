@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body, button, .navbar, h1, h2, h3, h4 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #2F3E2B;
+    line-height: 1.7;
+    background-color: #FFFDF9;
+}
+
+/* Navigation Structure */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2F3E2B;
+    padding: 0.7rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo-img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    margin-right: 14px;
+    border-radius: 50%;
+}
+
+.navbar .logo-text {
+    color: #FEFAE0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    color: #FEFAE0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+/* --- Active Page Highlighting --- */
+.nav-links li a.active-page {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+/* --- Fixed High-Stability Dropdown Architecture --- */
+.dropdown-tab {
+    position: relative;
+    /* Bridge spacing so user mouse path doesn't lose connection */
+    padding-bottom: 1rem;
+    margin-bottom: -1rem;
+}
+
+.dropdown-menu {
+    /* Uses clean visibility toggling with a transition delay to prevent rapid closing */
+    opacity: 0;
+    visibility: hidden;
+    display: block; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #F4F1EA;
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    list-style: none;
+    z-index: 150;
+    border: 1px solid #E4E1DA;
+    overflow: hidden;
+    margin-top: 0.2rem;
+    
+    /* Smooth delay effect when mouse leaves, preventing accidental collapse */
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition-delay: 0.25s; 
+}
+
+.dropdown-menu li a {
+    color: #2F3E2B;
+    padding: 12px 16px;
+    display: block;
+    font-size: 0.95rem;
+    border-radius: 0;
+    width: 100%;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+/* Activation rules apply instantaneously on hover */
+.dropdown-tab:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s; 
+}
+
+.dropdown-tab:hover .dropdown-trigger {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    /* Existing layout rules */
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+    
+    /* New Liquid Wave Setup */
+    position: relative;
+    background-color: #2F3E2B;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Wave Element Layers */
+.hero::before, .hero::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    min-width: 250vw;
+    min-height: 250vw;
+    animation: waveMotion linear infinite;
+}
+
+/* Copper Wave layer */
+.hero::before {
+    bottom: 12vh;
+    border-radius: 45%;
+    background: linear-gradient(90deg, #C29262 0%, #9C5A33 100%);
+    opacity: 0.5;
+    animation-duration: 12s;
+    z-index: -1;
+}
+
+/* Green Wave layer */
+.hero::after {
+    bottom: 8vh;
+    border-radius: 47%;
+    background: linear-gradient(90deg, #3C6B5F 0%, #2F3E2B 100%);
+    opacity: 0.7;
+    animation-duration: 18s;
+    z-index: -2;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative; 
+    z-index: 10; 
+}
+
+.hero-content h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.85rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #2D5148;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #3C6B5F;
+}
+
+.btn-secondary:hover {
+    background-color: #3C6B5F;
+    color: #fff;
+}
+
+.btn-gold {
+    background-color: #D4A373;
+    color: #111;
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-gold:hover {
+    background-color: #C29262;
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: 6rem 2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #3C6B5F;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.section h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2.25rem;
+    margin-bottom: 1.5rem;
+    color: #2F3E2B;
+}
+
+.lead-text {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lead-green {
+    color: #2F3E2B;
+    background-color: #F4F1EA;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.bg-light {
+    background-color: #F4F1EA;
+    max-width: 100%;
+}
+
+.bg-earth {
+    background-color: #3C6B5F;
+    color: #FEFAE0;
+    max-width: 100%;
+}
+
+.bg-earth h2 {
+    color: #FEFAE0;
+}
+
+.bg-earth p {
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.15rem;
+    color: #D6DBD2;
+}
+
+/* Grid Layouts */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+.p-card {
+    background-color: #F4F1EA;
+    padding: 1.5rem;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.verdigris-accent {
+    border-top: 4px solid #3C6B5F;
+}
+
+.p-card h4 {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    color: #2F3E2B;
+    margin-bottom: 0.5rem;
+}
+
+.p-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 3rem auto 0 auto;
+}
+
+.card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    z-index: 10; 
+}
+
+.green-border {
+    border-top: 4px solid #2F3E2B;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: 'Georgia', serif;
+    margin-bottom: 1rem;
+    color: #2F3E2B;
+}
+
+/* Articles */
+.article-notice {
+    font-size: 0.95rem;
+    color: #555;
+    max-width: 750px;
+    margin: 1rem auto 2.5rem auto;
+    background: #F4F1EA;
+    padding: 1.2rem;
+    border-radius: 4px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.verdigris-border {
+    border-left: 4px solid #3C6B5F;
+}
+
+.article-card {
+    text-align: left;
+    background: #FFFDF9;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.green-edge {
+    border-left: 3px solid #2F3E2B;
+}
+
+.article-card h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-card .date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3C6B5F;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Contact Elements */
+.contact-email {
+    font-size: 1.5rem;
+    color: #3C6B5F;
+    margin: 1rem 0 3rem 0;
+}
+
+.social-links {
+    border-top: 1px solid #E4E1DA;
+    padding-top: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-top: 1rem;
+}
+
+.social-tag {
+    color: #2F3E2B;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.2s;
+}
+
+.social-tag:hover {
+    color: #3C6B5F;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2F3E2B;
+    color: #A9B2A6;
+    text-align: center;
+    padding: 3rem 2.5rem;
+    font-size: 0.85rem;
+}
+
+.footer-logo-img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media(max-width: 990px) {
+    .nav-links { gap: 0.5rem; }
+    .nav-links li a { font-size: 0.85rem; padding: 0.4rem 0.6rem; }
+}
+
+/* Hero Section Liquid Wave Animation */
+@keyframes waveMotion {
+    0% { transform: translate(-50%, 0) rotate(0deg); }
+    50% { transform: translate(-50%, -2%) rotate(180deg); }
+    100% { transform: translate(-50%, 0) rotate(360deg); }
+}
+
+/* --- Hamburger Menu Base Styling --- */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: #FEFAE0;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* --- Responsive Mobile Layout --- */
+@media(max-width: 768px) {
+    /* 1. Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* 2. Fix the cut-off Contact section layout */
+    .contact-email {
+        word-wrap: break-word; 
+        font-size: 1.2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr !important; 
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    /* Keep navbar horizontal and show hamburger */
+    .navbar { 
+        flex-direction: row; 
+        justify-content: space-between;
+        padding: 1rem 1.5rem; 
+    }
+    
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide links off-screen by default */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        flex-direction: column;
+        background-color: #2F3E2B;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+        padding: 1.5rem 0;
+        gap: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+        width: 100%;
+        position: relative; /* Keeps the dropdown attached to the parent tab */
+    }
+
+    .dropdown-tab {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    /* 3. Restore the Desktop-style pop-out Dropdown for Mobile */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* Centers the dropdown box */
+        background-color: #F4F1EA;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        border-radius: 4px;
+        z-index: 1000;
+        
+        /* Hidden by default, appears on tap */
+        opacity: 0;
+        visibility: hidden;
+        display: block;
+    }
+
+    /* Make links readable inside the new dropdown box */
+    .dropdown-menu li a {
+        color: #2F3E2B !important;
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+    
+    /* Triggers the dropdown to appear when tapped on mobile */
+    .dropdown-tab:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/* ===== Photos (added Nov 2026; images from Pexels, free licence) ===== */
+header.photo-banner {
+    background-image:
+        linear-gradient(rgba(47, 62, 43, 0.65), rgba(47, 62, 43, 0.65)),
+        var(--banner);
+    background-size: cover;
+    background-position: var(--banner-pos, center);
+    background-repeat: no-repeat;
+    min-height: 62vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    header.photo-banner { min-height: 45vh; }
+}
+header.photo-banner h1,
+header.photo-banner p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Cultures gallery: show the photo fully, name over a soft gradient */
+.culture-gallery .gallery-item {
+    height: 180px;
+}
+.culture-gallery .gallery-img[src]:not([src=""]) {
+    opacity: 1;
+}
+.culture-gallery .gallery-img[src]:not([src=""]) ~ .gallery-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 60%);
+    align-items: flex-end;
+    padding-bottom: 2rem;
+}
+.culture-gallery .gallery-img[src]:not([src=""]) ~ .gallery-overlay i {
+    display: none;
+}
+.culture-gallery .gallery-img[src]:not([src=""]) ~ .gallery-overlay span {
+    color: #FFFDF9;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+.culture-gallery .gallery-item:hover .gallery-img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* Home/volunteer hero: lighten the animated waves so the photo shows */
+.hero.photo-banner::before { opacity: 0.22; }
+.hero.photo-banner::after { opacity: 0.4; }
+
+/* Footer links (Privacy Policy, Photo Credits) */
+footer .footer-links { margin-top: 0.75rem; }
+footer .footer-links a { color: #D8C3A5; text-decoration: none; }
+footer .footer-links a:hover { color: #FFFDF9; text-decoration: underline; }
+
+/* Privacy Policy and Photo Credits pages */
+.legal-header {
+    background-color: #3C6B5F;
+    color: #FFFDF9;
+    text-align: center;
+    padding: 4rem 1.5rem;
+}
+.legal-header h1 { font-family: 'Georgia', serif; font-size: 2.5rem; margin: 0 0 1rem 0; }
+.legal-header p { max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.9; line-height: 1.6; }
+.legal-page {
+    max-width: 900px;
+    margin: 3rem auto 5rem auto;
+    padding: 0 1.5rem;
+    color: #444;
+    line-height: 1.7;
+}
+.legal-page h2 { font-family: 'Georgia', serif; color: #2F3E2B; font-size: 1.5rem; margin: 2.5rem 0 0.75rem 0; }
+.legal-page a { color: #3C6B5F; }
+.legal-page ul { padding-left: 1.4rem; }
+.legal-page li { margin-bottom: 0.4rem; }
+.legal-updated { font-style: italic; color: #777; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.credits-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+.credits-table th, .credits-table td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid #E5DED3; vertical-align: top; }
+.credits-table th { background: #F4EFE6; color: #2F3E2B; }
+@media (max-width: 600px) {
+    .legal-header h1 { font-size: 2rem; }
+    .credits-table { font-size: 0.85rem; }
+}
+.legal-page p { margin: 0 0 1rem 0; }
+
+/* Photos at the top of the home page "Engaging with Culture" cards */
+.card-photo-link {
+    display: block;
+    margin: -2.5rem -2rem 1.5rem -2rem;
+    overflow: hidden;
+    border-radius: 2px 2px 0 0;
+    background: #E9E4DA;
+}
+.card-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}

@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christianity - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Christianity with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Christianity - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Christianity with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/35300982/pexels-photo-35300982.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Christianity - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Christianity with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/35300982/pexels-photo-35300982.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs used inside longer sections */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html" class="active-page">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Original Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/35300982/pexels-photo-35300982.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-cross religion-icon-bg"></i>
+        <h1>Christianity</h1>
+        <p>A monotheistic faith centered on the life, teachings, death, and resurrection of Jesus of Nazareth, profoundly shaping global history and culture.</p>
+    </header>
+
+    <main class="schematic-container">
+
+        <!-- Left: Tab Navigation Menu (follows the topics of "Christianity in general") -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Christianity at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Denominations and Schools</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Christianity is a monotheistic religion centered on the life, teachings, death, and resurrection of <strong>Jesus of Nazareth</strong>, whom Christians recognize as the <strong>Christ (Messiah), Son of God, and Lord</strong>.</p>
+                <p>Christianity emerged in the first century CE in the Jewish world of Roman-ruled Judea and Galilee. Its foundational scriptures are the <strong>Old Testament</strong> and <strong>New Testament</strong>, together forming the Christian Bible.</p>
+                <h3>The Heart of Historic Christian Faith</h3>
+                <p>At the heart of historic Christian faith is the belief that:</p>
+                <ul class="principles-list">
+                    <li>there is one God</li>
+                    <li>God is understood as Father, Son, and Holy Spirit</li>
+                    <li>Jesus Christ is the incarnate Son of God</li>
+                    <li>Jesus was crucified</li>
+                    <li>Jesus rose from the dead</li>
+                    <li>salvation is offered through Christ</li>
+                    <li>the Holy Spirit is active in the life of believers and the Church</li>
+                    <li>humanity will ultimately face resurrection and judgment</li>
+                </ul>
+                <p>The Nicene Creed, accepted across most historic Christian traditions, summarizes many of these central beliefs, including belief in one God, Jesus Christ, the Holy Spirit, the Church, baptism, resurrection, and eternal life.</p>
+                <p>Christianity is today the world's largest religious tradition by number of adherents. Pew Research Center estimates that there were approximately <strong>2.3 billion Christians worldwide in 2020</strong>, representing about <strong>28.8% of the world's population</strong>.</p>
+            </div>
+
+            <!-- 1. CHRISTIANITY AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Christianity at a Glance</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glance-name')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-adherents')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-where')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-branches')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-terms')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-basics')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-holidays')">Holidays</button>
+                </div>
+
+                <div id="glance-name" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p><strong>Christianity.</strong> A follower is called a <strong>Christian</strong>.</p>
+                    <p>The name derives from <strong>Christ</strong>, the Greek form of the Hebrew/Aramaic concept of <em>Messiah</em>, meaning "anointed one."</p>
+                    <p>The earliest followers of Jesus were initially known as disciples or followers of "the Way." The term "Christian" became associated with the movement in the first century.</p>
+                </div>
+
+                <div id="glance-adherents" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>Pew Research Center's most recent comprehensive global religious estimates place the Christian population at approximately <strong>2.3 billion people worldwide in 2020</strong>. Christians therefore represented approximately <strong>29% of the world's population</strong>.</p>
+                    <p>Christianity is geographically diverse. Historically concentrated in Europe and the Middle East, Christianity is now particularly large in:</p>
+                    <ul class="principles-list">
+                        <li>Africa</li>
+                        <li>Latin America</li>
+                        <li>North America</li>
+                        <li>Europe</li>
+                        <li>parts of Asia</li>
+                        <li>Oceania</li>
+                    </ul>
+                    <p>Sub-Saharan Africa had surpassed Europe as the region containing the largest number of Christians by 2020.</p>
+                </div>
+
+                <div id="glance-where" class="history-sub-section">
+                    <h3>Where Christianity Is Practiced</h3>
+                    <p>Christian communities exist throughout the world. Major Christian populations are found in:</p>
+                    <ul class="principles-list">
+                        <li>United States</li>
+                        <li>Brazil</li>
+                        <li>Mexico</li>
+                        <li>Philippines</li>
+                        <li>Nigeria</li>
+                        <li>Democratic Republic of Congo</li>
+                        <li>Ethiopia</li>
+                        <li>Russia</li>
+                        <li>Germany</li>
+                        <li>Italy</li>
+                        <li>United Kingdom</li>
+                        <li>Colombia</li>
+                        <li>Argentina</li>
+                        <li>Kenya</li>
+                        <li>South Africa</li>
+                        <li>India</li>
+                        <li>Australia</li>
+                    </ul>
+                    <p>Christianity is therefore a global religion rather than a European religion.</p>
+                </div>
+
+                <div id="glance-branches" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>The principal historical families are:</p>
+                    <h3>Catholic Christianity</h3>
+                    <p>Centered institutionally on the <strong>Catholic Church</strong>, whose bishop of Rome is the Pope.</p>
+                    <h3>Eastern Orthodox Christianity</h3>
+                    <p>A communion of autocephalous churches including:</p>
+                    <ul class="principles-list">
+                        <li>Greek Orthodox</li>
+                        <li>Russian Orthodox</li>
+                        <li>Serbian Orthodox</li>
+                        <li>Romanian Orthodox</li>
+                        <li>Antiochian Orthodox</li>
+                        <li>Georgian Orthodox</li>
+                        <li>Bulgarian Orthodox</li>
+                        <li>other Orthodox churches</li>
+                    </ul>
+                    <h3>Oriental Orthodox Christianity</h3>
+                    <p>Includes churches such as:</p>
+                    <ul class="principles-list">
+                        <li>Coptic Orthodox</li>
+                        <li>Armenian Apostolic</li>
+                        <li>Syriac Orthodox</li>
+                        <li>Ethiopian Orthodox Tewahedo</li>
+                        <li>Eritrean Orthodox Tewahedo</li>
+                        <li>Malankara Orthodox Syrian traditions</li>
+                    </ul>
+                    <p>These churches separated from the Byzantine imperial church following fifth-century Christological controversies.</p>
+                    <h3>Protestant Christianity</h3>
+                    <p>Emerging primarily from the sixteenth-century Reformation. Major Protestant traditions include:</p>
+                    <ul class="principles-list">
+                        <li>Lutheran</li>
+                        <li>Reformed/Calvinist</li>
+                        <li>Anglican</li>
+                        <li>Baptist</li>
+                        <li>Methodist</li>
+                        <li>Presbyterian</li>
+                        <li>Congregational</li>
+                        <li>Pentecostal</li>
+                        <li>Evangelical</li>
+                        <li>Adventist</li>
+                        <li>non-denominational churches</li>
+                    </ul>
+                    <p>There are thousands of Christian denominations and independent church bodies worldwide.</p>
+                </div>
+
+                <div id="glance-terms" class="history-sub-section">
+                    <h3>Important Christian Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>God:</strong> The one God worshiped by Christians</li>
+                        <li><strong>Trinity:</strong> Father, Son, and Holy Spirit</li>
+                        <li><strong>Jesus Christ:</strong> Central figure of Christianity</li>
+                        <li><strong>Christ:</strong> Messiah/Anointed One</li>
+                        <li><strong>Gospel:</strong> "Good news"; also the four canonical accounts of Jesus</li>
+                        <li><strong>Bible:</strong> Christian Scriptures</li>
+                        <li><strong>Old Testament:</strong> Scriptures largely shared with Judaism, with differences in canon</li>
+                        <li><strong>New Testament:</strong> Christian writings concerning Jesus and the early Church</li>
+                        <li><strong>Incarnation:</strong> God the Son taking human nature</li>
+                        <li><strong>Crucifixion:</strong> Jesus' execution on the cross</li>
+                        <li><strong>Resurrection:</strong> Jesus' rising from the dead</li>
+                        <li><strong>Salvation:</strong> Reconciliation with God and deliverance from sin and death</li>
+                        <li><strong>Sin:</strong> Human wrongdoing and alienation from God's will</li>
+                        <li><strong>Grace:</strong> God's unearned favor</li>
+                        <li><strong>Faith:</strong> Trust/belief in God and Christ</li>
+                        <li><strong>Repentance:</strong> Turning away from sin toward God</li>
+                        <li><strong>Baptism:</strong> Initiatory Christian rite</li>
+                        <li><strong>Eucharist/Communion:</strong> Central Christian sacramental/ritual meal</li>
+                        <li><strong>Church:</strong> Christian community and institution</li>
+                        <li><strong>Holy Spirit:</strong> The third person of the Trinity in mainstream Christian theology</li>
+                        <li><strong>Apostle:</strong> A person sent as a messenger; especially Jesus' chosen apostles</li>
+                        <li><strong>Disciple:</strong> Follower of Jesus</li>
+                        <li><strong>Amen:</strong> "Truly" or "so be it"</li>
+                        <li><strong>Hallelujah:</strong> "Praise the Lord"</li>
+                    </ul>
+                </div>
+
+                <div id="glance-basics" class="history-sub-section">
+                    <h3>Basic Christian Beliefs</h3>
+                    <p>Most historic Christian traditions affirm:</p>
+                    <ol>
+                        <li>One God</li>
+                        <li>The Trinity</li>
+                        <li>Jesus Christ as the Son of God</li>
+                        <li>The Incarnation</li>
+                        <li>Jesus' virgin birth</li>
+                        <li>Jesus' ministry and teachings</li>
+                        <li>Jesus' crucifixion</li>
+                        <li>Jesus' bodily resurrection</li>
+                        <li>Jesus' ascension</li>
+                        <li>The Holy Spirit</li>
+                        <li>Forgiveness of sins</li>
+                        <li>Resurrection of the dead</li>
+                        <li>Final judgment</li>
+                        <li>Eternal life</li>
+                    </ol>
+                    <p>The precise theological explanation of these doctrines differs among Christian traditions.</p>
+                </div>
+
+                <div id="glance-holidays" class="history-sub-section">
+                    <h3>Christmas</h3>
+                    <p>Celebrates the birth of Jesus.</p>
+                    <h3>Easter</h3>
+                    <p>Celebrates the resurrection of Jesus. For most Christians, Easter is the central annual celebration of the Christian faith.</p>
+                    <h3>Good Friday</h3>
+                    <p>Commemorates the crucifixion of Jesus.</p>
+                    <h3>Holy Week</h3>
+                    <p>The week surrounding the final events of Jesus' earthly ministry. It generally includes:</p>
+                    <ul class="principles-list">
+                        <li>Palm Sunday</li>
+                        <li>Maundy Thursday</li>
+                        <li>Good Friday</li>
+                        <li>Holy Saturday</li>
+                        <li>Easter Sunday</li>
+                    </ul>
+                    <h3>Pentecost</h3>
+                    <p>Celebrates the coming of the Holy Spirit upon the disciples, described in Acts 2.</p>
+                </div>
+            </div>
+
+            <!-- 2. CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-god')">God, Jesus &amp; the Holy Spirit</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-revelation')">Prophets, Revelation &amp; Scripture</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-angels')">Angels</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-human')">Human Nature, Sin &amp; Repentance</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-worship')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-life')">Life, Death &amp; Afterlife</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-freewill')">Free Will &amp; Predestination</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-morality')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-god" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>Christianity teaches that there is <strong>one God</strong>. Mainstream historic Christianity understands this one God as existing eternally as:</p>
+                    <ul class="principles-list">
+                        <li>Father</li>
+                        <li>Son</li>
+                        <li>Holy Spirit</li>
+                    </ul>
+                    <p>This is known as the <strong>Trinity</strong>. The Trinity does not mean three gods. The historic doctrine is one divine being or essence in three distinct persons. The Catholic Catechism summarizes the doctrine explicitly as one God in three persons.</p>
+                    <p>Eastern Orthodox, Oriental Orthodox, Catholic, Anglican, and most Protestant traditions affirm Trinitarian Christianity. Some groups historically identified as Christian reject or reinterpret the Trinity; these are generally classified separately from Nicene Christianity.</p>
+                    <h3>Jesus Christ</h3>
+                    <p>Jesus is the central figure of Christianity. Historic Christianity teaches that Jesus is:</p>
+                    <ul class="principles-list">
+                        <li>Messiah</li>
+                        <li>Son of God</li>
+                        <li>Lord</li>
+                        <li>Savior</li>
+                        <li>Word of God</li>
+                        <li>fully divine</li>
+                        <li>fully human</li>
+                    </ul>
+                    <p>The doctrine of the <strong>Incarnation</strong> teaches that the eternal Son of God took human nature. The Gospel of John expresses the doctrine through the statement that "the Word became flesh."</p>
+                    <p>The Catholic Catechism describes the Incarnation as the Son of God assuming human nature while remaining truly God. Eastern and Oriental Orthodox churches and mainstream Protestant traditions likewise affirm the Incarnation, although theological terminology and emphasis vary.</p>
+                    <h3>The Holy Spirit</h3>
+                    <p>The Holy Spirit is the third person of the Trinity in historic Christian theology. Christian traditions understand the Holy Spirit as:</p>
+                    <ul class="principles-list">
+                        <li>God's presence</li>
+                        <li>giver of life</li>
+                        <li>source of spiritual gifts</li>
+                        <li>guide of believers</li>
+                        <li>sanctifier</li>
+                        <li>active in the Church</li>
+                        <li>active in Christian conversion and spiritual transformation</li>
+                    </ul>
+                    <p>The Nicene Creed calls the Holy Spirit "the Lord, the giver of life."</p>
+                </div>
+
+                <div id="bel-revelation" class="history-sub-section">
+                    <h3>Prophets and Biblical Figures</h3>
+                    <p>Christianity recognizes the prophets and major figures of the Hebrew Bible, including:</p>
+                    <ul class="principles-list">
+                        <li>Adam</li>
+                        <li>Noah</li>
+                        <li>Abraham</li>
+                        <li>Isaac</li>
+                        <li>Jacob</li>
+                        <li>Joseph</li>
+                        <li>Moses</li>
+                        <li>Aaron</li>
+                        <li>Joshua</li>
+                        <li>David</li>
+                        <li>Solomon</li>
+                        <li>Elijah</li>
+                        <li>Isaiah</li>
+                        <li>Jeremiah</li>
+                        <li>Ezekiel</li>
+                        <li>Daniel</li>
+                        <li>John the Baptist</li>
+                    </ul>
+                    <p>Jesus is understood not merely as another prophet but as the Messiah and Son of God.</p>
+                    <h3>Revelation</h3>
+                    <p>Christianity teaches that God reveals himself through creation, history, prophecy, Scripture, and supremely through Jesus Christ. The New Testament presents Jesus as the fullest revelation of God. Hebrews 1:1–2 describes God as having spoken in various ways through the prophets and ultimately through his Son.</p>
+                    <p>Christian traditions differ regarding the relationship between:</p>
+                    <ul class="principles-list">
+                        <li>Scripture</li>
+                        <li>Church tradition</li>
+                        <li>reason</li>
+                        <li>theological authority</li>
+                    </ul>
+                    <p>This difference becomes especially important when comparing Catholic, Orthodox, and Protestant Christianity.</p>
+                    <h3>Holy Scriptures</h3>
+                    <p>The Christian Bible has two major sections.</p>
+                    <p><strong>Old Testament:</strong> Contains writings corresponding substantially to the Hebrew Bible, although Christian traditions differ concerning which books are included, their order, and their classification.</p>
+                    <p><strong>New Testament:</strong> Contains 27 books accepted across Catholic, Orthodox, and Protestant Christianity, including:</p>
+                    <ul class="principles-list">
+                        <li>Matthew</li>
+                        <li>Mark</li>
+                        <li>Luke</li>
+                        <li>John</li>
+                        <li>Acts</li>
+                        <li>Paul's letters</li>
+                        <li>other apostolic letters</li>
+                        <li>Revelation</li>
+                    </ul>
+                    <p>The four Gospels are the central narrative accounts of Jesus' life and ministry.</p>
+                </div>
+
+                <div id="bel-angels" class="history-sub-section">
+                    <h3>Angels and Spiritual Beings</h3>
+                    <p>Christianity teaches the existence of angels and other spiritual beings. Important biblical figures include:</p>
+                    <ul class="principles-list">
+                        <li>Michael</li>
+                        <li>Gabriel</li>
+                    </ul>
+                    <p>Christian scripture also describes Satan and other evil spiritual beings. Christian traditions differ in the amount of theological emphasis placed on angels and demons.</p>
+                </div>
+
+                <div id="bel-human" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Christianity teaches that human beings are created by God and possess inherent dignity. Genesis describes humanity as created in the <strong>image of God</strong>. This concept has historically provided an important foundation for Christian understandings of human dignity.</p>
+                    <p>Christian theology also teaches that humanity has become affected by sin.</p>
+                    <h3>Sin</h3>
+                    <p>Sin refers broadly to rebellion against or separation from God's will. Christian traditions explain sin in somewhat different ways.</p>
+                    <p><strong>Catholic and Orthodox traditions</strong> emphasize both original sin and humanity's continuing need for grace, repentance, and transformation.</p>
+                    <p><strong>Many Protestant traditions</strong> emphasize humanity's fallen condition and the necessity of God's grace through Christ.</p>
+                    <p>Christian theology distinguishes between:</p>
+                    <ul class="principles-list">
+                        <li>original sin</li>
+                        <li>personal sin</li>
+                        <li>deliberate wrongdoing</li>
+                        <li>sins of omission</li>
+                        <li>sins against God</li>
+                        <li>sins against other people</li>
+                    </ul>
+                    <h3>Repentance</h3>
+                    <p>Repentance means turning away from sin and turning toward God. The Greek New Testament term <strong><em>metanoia</em></strong> conveys a change of mind or direction.</p>
+                    <p>Repentance is closely connected to:</p>
+                    <ul class="principles-list">
+                        <li>forgiveness</li>
+                        <li>faith</li>
+                        <li>baptism</li>
+                        <li>reconciliation</li>
+                        <li>spiritual transformation</li>
+                    </ul>
+                </div>
+
+                <div id="bel-worship" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>Christian worship varies enormously. Common elements include:</p>
+                    <ul class="principles-list">
+                        <li>prayer</li>
+                        <li>Scripture reading</li>
+                        <li>preaching</li>
+                        <li>singing</li>
+                        <li>hymns</li>
+                        <li>confession</li>
+                        <li>Communion/Eucharist</li>
+                        <li>baptism</li>
+                        <li>thanksgiving</li>
+                    </ul>
+                    <p>Different traditions emphasize different forms. Catholic and Orthodox Christianity have highly developed liturgical traditions. Many Protestant churches emphasize preaching, congregational singing, Bible study, and spontaneous prayer.</p>
+                    <p>Pentecostal churches may emphasize:</p>
+                    <ul class="principles-list">
+                        <li>spiritual gifts</li>
+                        <li>healing</li>
+                        <li>tongues</li>
+                        <li>prophetic prayer</li>
+                        <li>highly expressive worship</li>
+                    </ul>
+                    <h3>Charity</h3>
+                    <p>Christianity places strong emphasis on caring for people in need. Jesus' teachings repeatedly emphasize:</p>
+                    <ul class="principles-list">
+                        <li>feeding the hungry</li>
+                        <li>helping the poor</li>
+                        <li>caring for strangers</li>
+                        <li>visiting prisoners</li>
+                        <li>caring for the sick</li>
+                        <li>serving vulnerable people</li>
+                    </ul>
+                    <p>Matthew 25:31–46 is particularly important to Christian teachings about service to others.</p>
+                    <h3>Fasting</h3>
+                    <p>Fasting exists across Christianity, although its importance and form differ. Examples include:</p>
+                    <ul class="principles-list">
+                        <li>Lent</li>
+                        <li>Good Friday fasting</li>
+                        <li>Orthodox fasting seasons</li>
+                        <li>Catholic fasting</li>
+                        <li>Protestant voluntary fasting</li>
+                        <li>Pentecostal fasting</li>
+                    </ul>
+                    <p>Eastern Orthodox Christians traditionally observe extensive fasting calendars. Many Protestant communities emphasize fasting as an individual spiritual discipline rather than a universally prescribed calendar.</p>
+                </div>
+
+                <div id="bel-life" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Christianity teaches that life is a gift from God. Human beings are called to:</p>
+                    <ul class="principles-list">
+                        <li>love God</li>
+                        <li>love others</li>
+                        <li>seek righteousness</li>
+                        <li>serve others</li>
+                        <li>care for creation</li>
+                        <li>develop Christian character</li>
+                    </ul>
+                    <p>Jesus summarizes the two greatest commandments as love of God and love of neighbor.</p>
+                    <h3>Death</h3>
+                    <p>Christianity views death as a consequence of humanity's fallen condition but not the final destiny of humanity. Christian hope centers on resurrection.</p>
+                    <h3>Afterlife</h3>
+                    <p>Historic Christianity teaches:</p>
+                    <ul class="principles-list">
+                        <li>death</li>
+                        <li>resurrection</li>
+                        <li>judgment</li>
+                        <li>eternal life</li>
+                    </ul>
+                    <p>The New Testament repeatedly emphasizes resurrection as fundamental to Christian faith. The Apostle Paul writes that if Christ has not been raised, Christian faith is futile; he then declares Christ's resurrection as the foundation of Christian hope. The resurrection of the dead is explicitly included in the Apostles' and Nicene Creeds.</p>
+                    <h3>Heaven and Eternal Life</h3>
+                    <p>Christians traditionally believe that those reconciled to God will experience eternal life with God. The New Testament uses imagery including:</p>
+                    <ul class="principles-list">
+                        <li>God's kingdom</li>
+                        <li>eternal life</li>
+                        <li>resurrection</li>
+                        <li>new creation</li>
+                        <li>the presence of God</li>
+                    </ul>
+                    <p>Christian traditions differ in how they explain:</p>
+                    <ul class="principles-list">
+                        <li>intermediate states after death</li>
+                        <li>heaven</li>
+                        <li>purgatory</li>
+                        <li>the millennium</li>
+                        <li>the final state of creation</li>
+                    </ul>
+                    <h3>Hell and Punishment</h3>
+                    <p>Christianity traditionally teaches that final judgment may result in punishment or exclusion from God's kingdom. Christian traditions differ considerably concerning the nature of Hell. Views include:</p>
+                    <ul class="principles-list">
+                        <li>eternal conscious punishment</li>
+                        <li>separation from God</li>
+                        <li>destruction/annihilation</li>
+                        <li>various understandings of final judgment</li>
+                    </ul>
+                    <p>Universalist Christians believe that ultimately all people will be reconciled to God, although this remains a minority position within historic Christianity.</p>
+                    <h3>Judgment</h3>
+                    <p>Christianity teaches that God will judge humanity. The New Testament describes a final judgment associated with the return of Christ. Judgment involves:</p>
+                    <ul class="principles-list">
+                        <li>moral accountability</li>
+                        <li>resurrection</li>
+                        <li>justice</li>
+                        <li>eternal consequences</li>
+                    </ul>
+                    <p>Christian traditions differ over precisely how salvation, faith, works, grace, and judgment relate.</p>
+                </div>
+
+                <div id="bel-freewill" class="history-sub-section">
+                    <h3>Free Will and Predestination</h3>
+                    <p>Christianity contains several major approaches.</p>
+                    <p><strong>Catholic:</strong> Generally emphasizes human freedom together with God's grace and sovereignty.</p>
+                    <p><strong>Eastern Orthodox:</strong> Strongly emphasizes human cooperation with divine grace, often described as <strong>synergy</strong>.</p>
+                    <p><strong>Reformed/Calvinist:</strong> Places greater emphasis on divine sovereignty and predestination.</p>
+                    <p><strong>Arminian/Wesleyan:</strong> Places greater emphasis on human response and free will while affirming God's grace.</p>
+                    <p><strong>Lutheran:</strong> Affirms salvation by grace through faith while maintaining distinctive teachings concerning human will and divine grace.</p>
+                    <p>These differences have generated centuries of Christian theological debate.</p>
+                </div>
+
+                <div id="bel-morality" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Christian ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>love</li>
+                        <li>forgiveness</li>
+                        <li>mercy</li>
+                        <li>justice</li>
+                        <li>humility</li>
+                        <li>honesty</li>
+                        <li>sexual morality</li>
+                        <li>care for the poor</li>
+                        <li>faithfulness</li>
+                        <li>protection of vulnerable people</li>
+                    </ul>
+                    <p>Jesus' command, <strong>"Love your neighbor as yourself,"</strong> is one of Christianity's most recognizable ethical principles. The Sermon on the Mount, particularly Matthew chapters 5–7, is central to Christian moral teaching.</p>
+                    <h3>Family</h3>
+                    <p>Christianity traditionally places great importance on family. Christian teaching emphasizes:</p>
+                    <ul class="principles-list">
+                        <li>honoring parents</li>
+                        <li>caring for children</li>
+                        <li>fidelity</li>
+                        <li>mutual responsibility</li>
+                        <li>love</li>
+                        <li>sacrifice</li>
+                        <li>forgiveness</li>
+                    </ul>
+                    <p>Different Christian traditions have different teachings concerning:</p>
+                    <ul class="principles-list">
+                        <li>divorce</li>
+                        <li>remarriage</li>
+                        <li>contraception</li>
+                        <li>gender roles</li>
+                        <li>same-sex relationships</li>
+                        <li>parenting</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Historic Christianity generally regards marriage as a covenantal relationship between a man and woman. However, contemporary Christian traditions differ significantly regarding same-sex marriage. Some churches maintain traditional definitions of marriage, while others recognize same-sex marriages.</p>
+                    <p>Christian views concerning divorce also vary. Catholicism distinguishes divorce from annulment, while many Protestant traditions permit divorce under certain circumstances.</p>
+                    <h3>Community</h3>
+                    <p>The Christian community is commonly called the <strong>Church</strong>. The Greek term <em>ekklesia</em> refers to an assembly or congregation. Christians understand the Church in different ways:</p>
+                    <ul>
+                        <li>Catholicism emphasizes a visible universal Church.</li>
+                        <li>Eastern Orthodoxy emphasizes the communion of local Orthodox churches.</li>
+                        <li>Protestant traditions vary from denominational structures to independent congregations.</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Jesus teaches love toward one's neighbor and even one's enemies. The Sermon on the Mount contains teachings about:</p>
+                    <ul class="principles-list">
+                        <li>forgiveness</li>
+                        <li>reconciliation</li>
+                        <li>generosity</li>
+                        <li>non-retaliation</li>
+                        <li>love of enemies</li>
+                        <li>prayer</li>
+                        <li>humility</li>
+                    </ul>
+                    <p>Christians have interpreted these teachings differently in relation to:</p>
+                    <ul class="principles-list">
+                        <li>self-defense</li>
+                        <li>military service</li>
+                        <li>criminal justice</li>
+                        <li>political authority</li>
+                        <li>war</li>
+                    </ul>
+                    <p>Christian history contains both traditions of pacifism and traditions that developed theories of justified warfare.</p>
+                </div>
+            </div>
+
+            <!-- 3. SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Bible</h3>
+                <p>The Bible is Christianity's foundational collection of sacred writings. It contains two major sections: the <strong>Old Testament</strong> and the <strong>New Testament</strong>.</p>
+                <p>The Bible contains multiple literary forms:</p>
+                <ul class="principles-list">
+                    <li>history</li>
+                    <li>poetry</li>
+                    <li>wisdom literature</li>
+                    <li>prophecy</li>
+                    <li>biography/Gospel</li>
+                    <li>letters</li>
+                    <li>apocalyptic literature</li>
+                </ul>
+                <h3>The Four Gospels</h3>
+                <p>The four canonical Gospels are:</p>
+                <p><strong>Matthew:</strong> Emphasizes Jesus as Messiah and presents extensive connections to Jewish Scripture.</p>
+                <p><strong>Mark:</strong> The shortest Gospel and traditionally associated with a fast-moving account of Jesus' ministry.</p>
+                <p><strong>Luke:</strong> Emphasizes themes including God's mercy, outsiders, the poor, women, prayer, and salvation.</p>
+                <p><strong>John:</strong> Provides a distinctive theological presentation of Jesus, emphasizing his divine identity, signs, and relationship with the Father.</p>
+                <h3>Acts of the Apostles</h3>
+                <p>Acts describes the development of the early Christian movement after Jesus' resurrection and ascension. It emphasizes:</p>
+                <ul class="principles-list">
+                    <li>the apostles</li>
+                    <li>Pentecost</li>
+                    <li>the Holy Spirit</li>
+                    <li>Peter</li>
+                    <li>Paul</li>
+                    <li>missionary expansion</li>
+                    <li>early Christian communities</li>
+                </ul>
+                <h3>Paul's Letters</h3>
+                <p>Paul's letters became foundational for Christian theology. Major themes include:</p>
+                <ul class="principles-list">
+                    <li>grace</li>
+                    <li>faith</li>
+                    <li>salvation</li>
+                    <li>resurrection</li>
+                    <li>Christian ethics</li>
+                    <li>the Church</li>
+                    <li>relationship between Jewish and Gentile believers</li>
+                </ul>
+                <p>Important letters include:</p>
+                <ul class="principles-list">
+                    <li>Romans</li>
+                    <li>1 Corinthians</li>
+                    <li>2 Corinthians</li>
+                    <li>Galatians</li>
+                    <li>Ephesians</li>
+                    <li>Philippians</li>
+                    <li>Colossians</li>
+                    <li>1 Thessalonians</li>
+                </ul>
+                <h3>Oral and Written Tradition</h3>
+                <p>Christianity developed through both oral and written transmission. Early Christians transmitted:</p>
+                <ul class="principles-list">
+                    <li>Jesus' sayings</li>
+                    <li>stories of Jesus' actions</li>
+                    <li>apostolic teaching</li>
+                    <li>hymns</li>
+                    <li>prayers</li>
+                    <li>baptismal formulas</li>
+                    <li>Eucharistic traditions</li>
+                </ul>
+                <p>These traditions eventually became part of the New Testament and the wider tradition of the Church.</p>
+                <h3>Creeds</h3>
+                <p>The most important early Christian creeds include:</p>
+                <ul class="principles-list">
+                    <li>Apostles' Creed</li>
+                    <li>Nicene Creed</li>
+                    <li>Niceno-Constantinopolitan Creed</li>
+                    <li>Chalcedonian Definition</li>
+                </ul>
+                <p>The Nicene Creed is especially important for defining historic Christian beliefs about the Trinity and Christ.</p>
+            </div>
+
+            <!-- 4. HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-origins')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-cross')">Crucifixion and Resurrection</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-expansion')">Early Development and Expansion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-milestones')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-figures')">Historical Figures</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-divisions')">Major Divisions</button>
+                </div>
+
+                <div id="hist-origins" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Christianity emerged in the first century CE. Jesus was a Jewish teacher and preacher who lived in Roman-controlled Judea and Galilee. He gathered disciples and proclaimed the coming Kingdom of God.</p>
+                    <p>His ministry included:</p>
+                    <ul class="principles-list">
+                        <li>teaching</li>
+                        <li>healing</li>
+                        <li>parables</li>
+                        <li>debates</li>
+                        <li>prayer</li>
+                        <li>ethical instruction</li>
+                        <li>proclamation of God's kingdom</li>
+                    </ul>
+                </div>
+
+                <div id="hist-cross" class="history-sub-section">
+                    <h3>Jesus' Crucifixion</h3>
+                    <p>Jesus was crucified under the Roman governor Pontius Pilate. The crucifixion is central to Christian theology. Christians understand Jesus' death as having saving significance.</p>
+                    <p>Different Christian traditions have developed different theological models explaining that significance, including:</p>
+                    <ul class="principles-list">
+                        <li>atonement</li>
+                        <li>sacrifice</li>
+                        <li>victory over evil and death</li>
+                        <li>reconciliation</li>
+                        <li>substitution</li>
+                        <li>moral transformation</li>
+                    </ul>
+                    <h3>Resurrection</h3>
+                    <p>The resurrection of Jesus is the central event of Christian faith. The New Testament presents the disciples as witnesses to the risen Christ. Paul identifies the resurrection as fundamental to Christian faith.</p>
+                    <p>Historic Christianity therefore does not regard Jesus simply as a deceased teacher. Christians believe that Jesus conquered death and lives eternally. The resurrection is described as the foundation of Christian hope and faith.</p>
+                </div>
+
+                <div id="hist-expansion" class="history-sub-section">
+                    <h3>Early Development</h3>
+                    <p>Following Jesus' death and resurrection, his followers established communities throughout:</p>
+                    <ul class="principles-list">
+                        <li>Judea</li>
+                        <li>Galilee</li>
+                        <li>Samaria</li>
+                        <li>Syria</li>
+                        <li>Asia Minor</li>
+                        <li>Greece</li>
+                        <li>Rome</li>
+                        <li>Egypt</li>
+                        <li>North Africa</li>
+                    </ul>
+                    <p>Paul played a particularly important role in spreading Christianity among Gentiles.</p>
+                    <h3>Expansion and Geographic Spread</h3>
+                    <p>Christianity spread rapidly throughout the Roman Empire. Major early centers included:</p>
+                    <ul class="principles-list">
+                        <li>Jerusalem</li>
+                        <li>Antioch</li>
+                        <li>Alexandria</li>
+                        <li>Rome</li>
+                        <li>Constantinople</li>
+                    </ul>
+                    <p>Christianity subsequently spread throughout:</p>
+                    <ul class="principles-list">
+                        <li>Europe</li>
+                        <li>North Africa</li>
+                        <li>the Middle East</li>
+                        <li>Ethiopia</li>
+                        <li>Armenia</li>
+                        <li>Persia</li>
+                        <li>Central Asia</li>
+                        <li>India</li>
+                    </ul>
+                    <p>Much later, Christianity spread extensively throughout:</p>
+                    <ul class="principles-list">
+                        <li>the Americas</li>
+                        <li>sub-Saharan Africa</li>
+                        <li>East Asia</li>
+                        <li>Oceania</li>
+                    </ul>
+                </div>
+
+                <div id="hist-milestones" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>First century:</strong> Life of Jesus and formation of the earliest Christian communities.</li>
+                        <li><strong>c. 30–100 CE:</strong> Development of the apostolic Church and New Testament writings.</li>
+                        <li><strong>Second–third centuries:</strong> Expansion of Christianity throughout the Roman world.</li>
+                        <li><strong>313 CE:</strong> Constantine's Edict of Milan established legal toleration for Christianity in the Roman Empire.</li>
+                        <li><strong>325 CE:</strong> Council of Nicaea addressed major controversies concerning Christ's identity.</li>
+                        <li><strong>380 CE:</strong> Christianity associated with Nicene Christianity became the official religion of the Roman Empire under Theodosius I.</li>
+                        <li><strong>431 CE:</strong> Council of Ephesus.</li>
+                        <li><strong>451 CE:</strong> Council of Chalcedon.</li>
+                        <li><strong>1054:</strong> Traditional date associated with the division between Latin Western Christianity and Byzantine Eastern Christianity, although the separation developed gradually.</li>
+                        <li><strong>1517:</strong> Martin Luther's protest against aspects of Western Church practice became a major catalyst for the Protestant Reformation.</li>
+                        <li><strong>16th century:</strong> Protestant Reformation and Catholic Counter-Reformation.</li>
+                        <li><strong>18th–19th centuries:</strong> Missionary expansion, evangelical movements, revivalism, and global Christian missions.</li>
+                        <li><strong>20th century:</strong> Pentecostalism expanded dramatically.</li>
+                        <li><strong>20th–21st centuries:</strong> Christianity's demographic center increasingly shifted toward Africa and parts of the Global South.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-figures" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Christian history includes thousands of influential figures. Among the most important are:</p>
+                    <ul class="principles-list">
+                        <li>Jesus</li>
+                        <li>Peter</li>
+                        <li>Paul</li>
+                        <li>Mary</li>
+                        <li>James</li>
+                        <li>John</li>
+                        <li>Augustine</li>
+                        <li>Jerome</li>
+                        <li>Athanasius</li>
+                        <li>Basil the Great</li>
+                        <li>Gregory of Nazianzus</li>
+                        <li>John Chrysostom</li>
+                        <li>Cyril of Alexandria</li>
+                        <li>Thomas Aquinas</li>
+                        <li>Martin Luther</li>
+                        <li>John Calvin</li>
+                        <li>John Wesley</li>
+                        <li>Dietrich Bonhoeffer</li>
+                        <li>Mother Teresa</li>
+                        <li>C.S. Lewis</li>
+                        <li>Martin Luther King Jr.</li>
+                    </ul>
+                    <p>These figures came from very different traditions and historical periods.</p>
+                </div>
+
+                <div id="hist-divisions" class="history-sub-section">
+                    <h3>Major Divisions</h3>
+                    <p>Christianity's major historical divisions can be summarized as:</p>
+                    <ol>
+                        <li><strong>Early Christianity</strong></li>
+                        <li><strong>Oriental Orthodox / Chalcedonian divisions</strong></li>
+                        <li><strong>Eastern and Western Christianity</strong></li>
+                        <li><strong>Roman Catholic / Eastern Orthodox separation</strong></li>
+                        <li><strong>Protestant Reformation</strong></li>
+                        <li><strong>Thousands of modern denominations and movements</strong></li>
+                    </ol>
+                    <p>This history should not be presented as though one side simply "created" the others. The divisions resulted from combinations of:</p>
+                    <ul class="principles-list">
+                        <li>theology</li>
+                        <li>politics</li>
+                        <li>language</li>
+                        <li>culture</li>
+                        <li>geography</li>
+                        <li>church authority</li>
+                        <li>historical circumstances</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. MAJOR DENOMINATIONS AND SCHOOLS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Denominations and Schools</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'den-catholic')">Roman Catholic</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-eastern')">Eastern Orthodox</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-oriental')">Oriental Orthodox</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-protestant')">Protestant</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-regional')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-interpretations')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-culture')">Culture vs. Religion</button>
+                </div>
+
+                <div id="den-catholic" class="history-sub-section active">
+                    <h3>Roman Catholic Christianity</h3>
+                    <p>The Catholic Church is the world's largest single Christian communion. Distinctive features include:</p>
+                    <ul class="principles-list">
+                        <li>Pope</li>
+                        <li>bishops</li>
+                        <li>seven sacraments</li>
+                        <li>Eucharist</li>
+                        <li>apostolic succession</li>
+                        <li>Scripture and Sacred Tradition</li>
+                        <li>Marian devotion</li>
+                        <li>saints</li>
+                        <li>purgatory</li>
+                    </ul>
+                    <p>Catholic theology is extensively systematized in the <strong>Catechism of the Catholic Church</strong>.</p>
+                </div>
+
+                <div id="den-eastern" class="history-sub-section">
+                    <h3>Eastern Orthodox Christianity</h3>
+                    <p>Eastern Orthodoxy emphasizes:</p>
+                    <ul class="principles-list">
+                        <li>apostolic tradition</li>
+                        <li>liturgy</li>
+                        <li>sacraments/mysteries</li>
+                        <li>icons</li>
+                        <li>bishops</li>
+                        <li>ancient patriarchates</li>
+                        <li>spiritual transformation</li>
+                    </ul>
+                    <p>The Orthodox tradition does not accept papal universal jurisdiction in the Roman Catholic sense.</p>
+                </div>
+
+                <div id="den-oriental" class="history-sub-section">
+                    <h3>Oriental Orthodox Christianity</h3>
+                    <p>Includes:</p>
+                    <ul class="principles-list">
+                        <li>Coptic Orthodox Church</li>
+                        <li>Armenian Apostolic Church</li>
+                        <li>Syriac Orthodox Church</li>
+                        <li>Ethiopian Orthodox Tewahedo Church</li>
+                        <li>Eritrean Orthodox Tewahedo Church</li>
+                        <li>Malankara Orthodox Syrian traditions</li>
+                    </ul>
+                    <p>These churches accept the first three ecumenical councils but did not accept the Council of Chalcedon.</p>
+                </div>
+
+                <div id="den-protestant" class="history-sub-section">
+                    <h3>Protestant Christianity</h3>
+                    <p>Protestantism emerged from the sixteenth-century Reformation. Major traditions include:</p>
+                    <ul>
+                        <li><strong>Lutheran:</strong> Associated historically with Martin Luther.</li>
+                        <li><strong>Reformed:</strong> Associated with figures including John Calvin and Ulrich Zwingli.</li>
+                        <li><strong>Anglican:</strong> Developed in England during the Reformation.</li>
+                        <li><strong>Baptist:</strong> Emphasizes believer's baptism and congregational principles.</li>
+                        <li><strong>Methodist:</strong> Developed from the Wesleyan revival.</li>
+                        <li><strong>Presbyterian:</strong> Historically associated with Reformed theology and Presbyterian church government.</li>
+                        <li><strong>Pentecostal:</strong> Emphasizes the Holy Spirit and spiritual gifts.</li>
+                        <li><strong>Evangelical:</strong> Emphasizes conversion, biblical authority, evangelism, and personal faith in Christ.</li>
+                    </ul>
+                </div>
+
+                <div id="den-regional" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <p>Christianity looks very different around the world.</p>
+                    <p><strong>Africa:</strong> Christianity has experienced enormous growth, particularly in sub-Saharan Africa. African Christianity includes:</p>
+                    <ul class="principles-list">
+                        <li>Catholic</li>
+                        <li>Orthodox</li>
+                        <li>Anglican</li>
+                        <li>Protestant</li>
+                        <li>Pentecostal</li>
+                        <li>independent churches</li>
+                    </ul>
+                    <p><strong>Latin America:</strong> Historically dominated by Catholic Christianity, with major Protestant and Pentecostal growth.</p>
+                    <p><strong>Europe:</strong> Historically Christian but increasingly secular in many countries.</p>
+                    <p><strong>Middle East:</strong> Home to some of Christianity's oldest communities, including:</p>
+                    <ul class="principles-list">
+                        <li>Copts</li>
+                        <li>Maronites</li>
+                        <li>Syriac Christians</li>
+                        <li>Assyrians</li>
+                        <li>Armenians</li>
+                        <li>Greek Orthodox</li>
+                        <li>other ancient communities</li>
+                    </ul>
+                    <p><strong>United States:</strong> Contains virtually every major Christian tradition.</p>
+                </div>
+
+                <div id="den-interpretations" class="history-sub-section">
+                    <h3>Conservative and Progressive Interpretations</h3>
+                    <p>Christians disagree over numerous contemporary issues. These include:</p>
+                    <ul class="principles-list">
+                        <li>abortion</li>
+                        <li>contraception</li>
+                        <li>same-sex relationships</li>
+                        <li>gender roles</li>
+                        <li>women's ordination</li>
+                        <li>biblical interpretation</li>
+                        <li>evolution</li>
+                        <li>church-state relations</li>
+                        <li>immigration</li>
+                        <li>poverty</li>
+                        <li>capital punishment</li>
+                        <li>war</li>
+                        <li>environmental responsibility</li>
+                    </ul>
+                    <p>Different churches and denominations may reach very different conclusions while all identifying as Christian.</p>
+                </div>
+
+                <div id="den-culture" class="history-sub-section">
+                    <h3>Cultural Christianity vs. Religious Christianity</h3>
+                    <p>A person may identify culturally as Christian without regularly practicing Christianity. Examples include people who:</p>
+                    <ul class="principles-list">
+                        <li>celebrate Christmas</li>
+                        <li>celebrate Easter</li>
+                        <li>were baptized as children</li>
+                        <li>identify with a Christian cultural heritage</li>
+                        <li>rarely attend church</li>
+                    </ul>
+                    <p>This distinction is particularly important in highly secular societies.</p>
+                </div>
+            </div>
+
+            <!-- 6. MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: All Christians believe exactly the same thing.</strong><br>
+                Fact: Christianity contains enormous theological and institutional diversity. Catholic, Orthodox, Protestant, Oriental Orthodox, and independent Christian traditions differ on many doctrines and practices.</p>
+                <p><strong>Myth: Christians have one identical Bible.</strong><br>
+                Fact: Christian traditions have different biblical canons. The New Testament is shared across mainstream Christian traditions, but the Old Testament contains different numbers of books in Catholic, Orthodox, and Protestant traditions.</p>
+                <p><strong>Myth: Christianity teaches three gods.</strong><br>
+                Fact: Historic Christianity teaches <strong>one God in three persons</strong>. This is the doctrine of the Trinity.</p>
+                <p><strong>Myth: Jesus is only a prophet in Christianity.</strong><br>
+                Fact: Historic Christianity teaches that Jesus is the incarnate Son of God. This is one of the most important differences between Christianity and Islam.</p>
+                <p><strong>Myth: Christianity teaches that Jesus' death was the end.</strong><br>
+                Fact: The resurrection is central to Christianity. Christian faith teaches that Jesus rose from the dead.</p>
+                <p><strong>Myth: Christians all worship in the same way.</strong><br>
+                Fact: Christian worship varies tremendously. A Catholic Mass, an Eastern Orthodox Divine Liturgy, an Anglican Eucharist, a Baptist service, and a Pentecostal worship service may look very different.</p>
+                <p><strong>Myth: Christmas is explicitly commanded in the Bible.</strong><br>
+                Fact: The New Testament describes Jesus' birth but does not prescribe an annual Christmas festival. December 25 developed as a traditional Christian date for celebrating Jesus' birth.</p>
+                <p><strong>Myth: Easter is simply another name for Passover.</strong><br>
+                Fact: They are historically related but distinct religious observances. Jesus' death and resurrection are narrated in the context of Passover in the New Testament, while Easter became Christianity's celebration of the resurrection.</p>
+            </div>
+
+            <!-- 7. RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-family')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-education')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-food')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-gender')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-work')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-health')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-community')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-civic')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-america')">Christianity in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-humanity')">Christianity and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-values')">Dignity, Mercy &amp; Love</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-faith')">Faith, Practice &amp; Community</button>
+                </div>
+
+                <div id="life-family" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Christian teachings traditionally emphasize:</p>
+                    <ul class="principles-list">
+                        <li>love</li>
+                        <li>fidelity</li>
+                        <li>parental responsibility</li>
+                        <li>care for children</li>
+                        <li>honoring parents</li>
+                        <li>forgiveness</li>
+                    </ul>
+                    <p>Different churches have different teachings concerning family structure and gender roles.</p>
+                    <h3>Marriage</h3>
+                    <p>Most historic Christian traditions understand marriage as a covenant between a man and woman. Catholic and Orthodox Christianity generally treat marriage as sacramental or sacrament-like in distinctive ways.</p>
+                    <p>Protestant traditions differ concerning:</p>
+                    <ul class="principles-list">
+                        <li>remarriage</li>
+                        <li>divorce</li>
+                        <li>contraception</li>
+                        <li>same-sex marriage</li>
+                    </ul>
+                    <p>Some Protestant denominations now perform same-sex marriages while others explicitly reject the practice.</p>
+                    <h3>Children</h3>
+                    <p>Christian families commonly emphasize:</p>
+                    <ul class="principles-list">
+                        <li>religious education</li>
+                        <li>prayer</li>
+                        <li>church attendance</li>
+                        <li>moral formation</li>
+                        <li>compassion</li>
+                        <li>service</li>
+                    </ul>
+                    <p>Some churches baptize infants. Others practice baptism only after an individual makes a personal profession of faith.</p>
+                </div>
+
+                <div id="life-education" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Christianity has a long history of educational institutions. Christian communities established:</p>
+                    <ul class="principles-list">
+                        <li>monasteries</li>
+                        <li>schools</li>
+                        <li>universities</li>
+                        <li>seminaries</li>
+                        <li>hospitals</li>
+                    </ul>
+                    <p>Many of the world's oldest universities developed within Christian Europe.</p>
+                </div>
+
+                <div id="life-food" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Unlike Islam and Judaism, Christianity generally does not maintain a universal system of halal/kosher dietary restrictions. However:</p>
+                    <ul>
+                        <li>some Christians fast from certain foods</li>
+                        <li>Orthodox Christians follow extensive fasting rules</li>
+                        <li>Catholics have particular fasting and abstinence rules</li>
+                        <li>individual denominations may have dietary practices</li>
+                    </ul>
+                    <p>Alcohol is generally permitted in traditional Christianity, although some Christian movements advocate abstinence.</p>
+                    <h3>Clothing</h3>
+                    <p>Christianity does not generally prescribe one universal style of clothing. Some traditions encourage modesty. Certain Christian communities practice distinctive dress:</p>
+                    <ul class="principles-list">
+                        <li>Amish</li>
+                        <li>Mennonite</li>
+                        <li>Orthodox Christian clergy</li>
+                        <li>some conservative Protestant communities</li>
+                        <li>religious orders</li>
+                    </ul>
+                </div>
+
+                <div id="life-gender" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Christianity contains several approaches.</p>
+                    <p><strong>Complementarian traditions</strong> teach differentiated roles for men and women.</p>
+                    <p><strong>Egalitarian traditions</strong> emphasize equal leadership opportunities.</p>
+                    <p>Major Christian denominations differ over:</p>
+                    <ul class="principles-list">
+                        <li>women as clergy</li>
+                        <li>women as bishops</li>
+                        <li>family leadership</li>
+                        <li>political leadership</li>
+                        <li>interpretation of Pauline texts</li>
+                    </ul>
+                </div>
+
+                <div id="life-work" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Christian teaching generally views honest work positively. Important principles include:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>diligence</li>
+                        <li>fairness</li>
+                        <li>service</li>
+                        <li>care for workers</li>
+                        <li>avoiding exploitation</li>
+                    </ul>
+                    <p>The Christian tradition also contains extensive teachings concerning wealth and poverty.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Christian ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>fair dealing</li>
+                        <li>keeping promises</li>
+                        <li>avoiding greed</li>
+                        <li>paying workers fairly</li>
+                        <li>helping the poor</li>
+                    </ul>
+                    <p>Jesus' teachings frequently warn against allowing wealth to become more important than God.</p>
+                    <h3>Charity</h3>
+                    <p>Charity has been central to Christianity since its earliest centuries. Christian charitable institutions have historically included:</p>
+                    <ul class="principles-list">
+                        <li>hospitals</li>
+                        <li>orphanages</li>
+                        <li>schools</li>
+                        <li>homeless shelters</li>
+                        <li>food banks</li>
+                        <li>disaster relief organizations</li>
+                        <li>international development organizations</li>
+                    </ul>
+                    <p>The concept of <strong>Christian charity</strong> is closely connected to the command to love one's neighbor.</p>
+                </div>
+
+                <div id="life-health" class="history-sub-section">
+                    <h3>Medicine</h3>
+                    <p>Christian communities historically played major roles in establishing hospitals and charitable healthcare institutions. Christian medical ethics today address questions including:</p>
+                    <ul class="principles-list">
+                        <li>abortion</li>
+                        <li>euthanasia</li>
+                        <li>organ transplantation</li>
+                        <li>reproductive technology</li>
+                        <li>genetic engineering</li>
+                        <li>end-of-life care</li>
+                        <li>contraception</li>
+                    </ul>
+                    <p>Different Christian traditions reach different conclusions.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Christian funeral traditions vary. Common practices include:</p>
+                    <ul class="principles-list">
+                        <li>burial</li>
+                        <li>cremation</li>
+                        <li>funeral services</li>
+                        <li>Scripture readings</li>
+                        <li>prayers</li>
+                        <li>hymns</li>
+                        <li>remembrance of the deceased</li>
+                    </ul>
+                    <p>Catholic, Orthodox, Protestant, and independent churches have different funeral traditions.</p>
+                </div>
+
+                <div id="life-community" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>Major Christian observances include:</p>
+                    <ul class="principles-list">
+                        <li>Christmas</li>
+                        <li>Good Friday</li>
+                        <li>Easter</li>
+                        <li>Pentecost</li>
+                        <li>Advent</li>
+                        <li>Lent</li>
+                    </ul>
+                    <p>Some traditions also observe:</p>
+                    <ul class="principles-list">
+                        <li>Epiphany</li>
+                        <li>All Saints' Day</li>
+                        <li>Ascension</li>
+                        <li>various saints' feast days</li>
+                    </ul>
+                    <h3>Community</h3>
+                    <p>Christian communities commonly gather in:</p>
+                    <ul class="principles-list">
+                        <li>churches</li>
+                        <li>cathedrals</li>
+                        <li>chapels</li>
+                        <li>monasteries</li>
+                        <li>schools</li>
+                        <li>community centers</li>
+                    </ul>
+                    <p>Activities may include:</p>
+                    <ul class="principles-list">
+                        <li>worship</li>
+                        <li>Bible study</li>
+                        <li>youth groups</li>
+                        <li>charitable work</li>
+                        <li>counseling</li>
+                        <li>education</li>
+                        <li>community meals</li>
+                        <li>social programs</li>
+                    </ul>
+                </div>
+
+                <div id="life-civic" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Christianity has no single modern political system. Historically, Christians have supported and opposed many different political systems.</p>
+                    <p>Christian political thought has contributed to ideas concerning:</p>
+                    <ul class="principles-list">
+                        <li>human dignity</li>
+                        <li>social responsibility</li>
+                        <li>charity</li>
+                        <li>civil government</li>
+                        <li>justice</li>
+                        <li>rights</li>
+                        <li>democracy</li>
+                        <li>religious liberty</li>
+                    </ul>
+                    <p>Christians today participate in:</p>
+                    <ul class="principles-list">
+                        <li>conservative political movements</li>
+                        <li>progressive political movements</li>
+                        <li>centrist movements</li>
+                        <li>nonpartisan civic organizations</li>
+                    </ul>
+                    <p>There are major disagreements among Christians about how Christian ethics should influence public policy.</p>
+                    <h3>Relationships With Other Faiths</h3>
+                    <p>Christian attitudes toward other religions have changed considerably across history. Modern Christian traditions commonly emphasize some combination of:</p>
+                    <ul class="principles-list">
+                        <li>religious freedom</li>
+                        <li>peaceful coexistence</li>
+                        <li>evangelism</li>
+                        <li>interfaith dialogue</li>
+                        <li>service to others</li>
+                    </ul>
+                    <p>Catholic, Orthodox, Protestant, and evangelical traditions differ considerably in their theology of other religions.</p>
+                </div>
+
+                <div id="life-america" class="history-sub-section">
+                    <h3>Christianity in America</h3>
+                    <p>Christianity has been central to American history. The United States contains communities representing virtually every major Christian tradition. American Christianity includes:</p>
+                    <ul class="principles-list">
+                        <li>Catholics</li>
+                        <li>Orthodox Christians</li>
+                        <li>Baptists</li>
+                        <li>Methodists</li>
+                        <li>Presbyterians</li>
+                        <li>Episcopalians</li>
+                        <li>Lutherans</li>
+                        <li>Pentecostals</li>
+                        <li>Evangelicals</li>
+                        <li>Mormons/Latter-day Saints</li>
+                        <li>Seventh-day Adventists</li>
+                        <li>non-denominational Christians</li>
+                        <li>historically Black churches</li>
+                        <li>many other communities</li>
+                    </ul>
+                    <p>African American Christianity has played a particularly important role in American religious and civil-rights history.</p>
+                </div>
+
+                <div id="life-humanity" class="history-sub-section">
+                    <h3>Christianity and Humanity</h3>
+                    <p>Christianity has made enormous contributions to:</p>
+                    <ul class="principles-list">
+                        <li>education</li>
+                        <li>hospitals</li>
+                        <li>charitable organizations</li>
+                        <li>philosophy</li>
+                        <li>literature</li>
+                        <li>music</li>
+                        <li>visual arts</li>
+                        <li>architecture</li>
+                        <li>law</li>
+                        <li>social reform</li>
+                    </ul>
+                    <p>Christian institutions were particularly important historically in the development of European universities and hospitals. Christian charitable organizations today operate globally.</p>
+                </div>
+
+                <div id="life-values" class="history-sub-section">
+                    <h3>Christianity and Human Dignity</h3>
+                    <p>Christian teaching about humanity being created in God's image has influenced Christian understandings of human dignity. The New Testament further emphasizes the equal spiritual value of believers before God.</p>
+                    <p>Galatians 3:28 famously states that in Christ there is neither Jew nor Greek, slave nor free, male nor female, emphasizing unity in Christ. Christians have interpreted the implications of this principle differently in different historical contexts.</p>
+                    <h3>Christianity and Mercy</h3>
+                    <p>Mercy is a major Christian virtue. Jesus repeatedly teaches:</p>
+                    <ul class="principles-list">
+                        <li>forgiveness</li>
+                        <li>compassion</li>
+                        <li>generosity</li>
+                        <li>reconciliation</li>
+                        <li>care for the poor</li>
+                        <li>love of enemies</li>
+                    </ul>
+                    <p>The parable of the Good Samaritan is particularly influential in Christian understandings of compassion toward others.</p>
+                    <h3>Christianity and Love</h3>
+                    <p>The concept of <strong><em>agape</em></strong>, often translated as self-giving or sacrificial love, is central to Christian theology. The New Testament's First Letter to the Corinthians contains the famous description of love in 1 Corinthians 13.</p>
+                    <p>Jesus' command to love God and one's neighbor summarizes Christian ethics for many Christian traditions.</p>
+                </div>
+
+                <div id="life-faith" class="history-sub-section">
+                    <h3>Christianity as Faith, Practice, and Community</h3>
+                    <p>Christianity can be understood through three interconnected dimensions:</p>
+                    <p><strong>Faith:</strong> Trust in God and belief in Jesus Christ.</p>
+                    <p><strong>Practice:</strong> Prayer, worship, Scripture, sacraments, charity, fasting, and ethical living.</p>
+                    <p><strong>Community:</strong> Participation in the Church and service to others.</p>
+                    <p>Different traditions place different emphasis on these dimensions.</p>
+                    <h3>Christianity's Central Message</h3>
+                    <p>At its simplest, historic Christianity teaches:</p>
+                    <ul>
+                        <li><strong>God created humanity.</strong></li>
+                        <li><strong>Humanity became separated from God through sin.</strong></li>
+                        <li><strong>God acted in history to reconcile humanity to himself.</strong></li>
+                        <li><strong>Jesus Christ is central to that reconciliation.</strong></li>
+                        <li><strong>Jesus died and rose again.</strong></li>
+                        <li><strong>Those who respond to God's grace through faith and repentance are offered forgiveness and new life.</strong></li>
+                        <li><strong>Christians await the resurrection of the dead and the fulfillment of God's kingdom.</strong></li>
+                    </ul>
+                    <p>Different Christian traditions explain the mechanism and theology of salvation differently, but these themes form a common center of historic Christian belief.</p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Christianity is a global religious tradition centered on Jesus Christ.</p>
+                <h3>Foundational Claims</h3>
+                <ul class="principles-list">
+                    <li>one God</li>
+                    <li>the Trinity</li>
+                    <li>the divinity and humanity of Jesus</li>
+                    <li>the Incarnation</li>
+                    <li>Jesus' crucifixion</li>
+                    <li>Jesus' resurrection</li>
+                    <li>the Holy Spirit</li>
+                    <li>forgiveness of sins</li>
+                    <li>resurrection of the dead</li>
+                    <li>final judgment</li>
+                    <li>eternal life</li>
+                </ul>
+                <p>Its central scriptures are the Old and New Testaments. Its central annual celebration is Easter, commemorating the resurrection of Jesus.</p>
+                <h3>Ethical Teachings</h3>
+                <ul class="principles-list">
+                    <li>love</li>
+                    <li>mercy</li>
+                    <li>forgiveness</li>
+                    <li>justice</li>
+                    <li>compassion</li>
+                    <li>generosity</li>
+                    <li>service</li>
+                    <li>reconciliation</li>
+                </ul>
+                <p>Its history extends over approximately two millennia and encompasses enormous theological, cultural, linguistic, and geographical diversity.</p>
+                <p>Christianity today is not one uniform institution. It encompasses Catholic, Eastern Orthodox, Oriental Orthodox, Protestant, Anglican, evangelical, Pentecostal, independent, and numerous other traditions. The global Christian population was approximately <strong>2.3 billion in 2020</strong>, making Christianity the world's largest religious group by population at that time.</p>
+                <p>Understanding Christianity therefore requires distinguishing among <strong>Jesus' teachings, the Bible, early Christianity, Church tradition, theology, denominations, culture, and contemporary practice</strong>. That distinction matters because a practice found in one Christian denomination should not automatically be understood as a belief held by all Christians.</p>
+            </div>
+
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>This page draws primarily on the foundational Christian sources: the Bible, the early creeds and councils, and the authoritative texts of the major Christian traditions.</p>
+
+                <h3>1. The Bible</h3>
+                <p>The primary Christian scripture.</p>
+                <p><strong>Old Testament.</strong> Important books include:</p>
+                <ul class="principles-list">
+                    <li>Genesis</li>
+                    <li>Exodus</li>
+                    <li>Psalms</li>
+                    <li>Isaiah</li>
+                    <li>Jeremiah</li>
+                    <li>Daniel</li>
+                </ul>
+                <p><strong>New Testament.</strong> Particularly important:</p>
+                <ul class="principles-list">
+                    <li>Matthew</li>
+                    <li>Mark</li>
+                    <li>Luke</li>
+                    <li>John</li>
+                    <li>Acts</li>
+                    <li>Romans</li>
+                    <li>1 Corinthians</li>
+                    <li>Galatians</li>
+                    <li>Ephesians</li>
+                    <li>Hebrews</li>
+                    <li>James</li>
+                    <li>1 Peter</li>
+                    <li>Revelation</li>
+                </ul>
+                <p>Quotations on this page identify the book, chapter, and verse.</p>
+
+                <h3>2. The Four Gospels</h3>
+                <p>Matthew, Mark, Luke, and John receive special attention because they are the principal canonical accounts of Jesus' ministry.</p>
+
+                <h3>3. Acts of the Apostles</h3>
+                <p>Primary source for the early Christian movement and the first generations of the Church.</p>
+
+                <h3>4. Paul's Letters</h3>
+                <p>Especially:</p>
+                <ul class="principles-list">
+                    <li>Romans</li>
+                    <li>1 Corinthians</li>
+                    <li>Galatians</li>
+                    <li>Ephesians</li>
+                    <li>Philippians</li>
+                </ul>
+                <p>These are among the most important primary Christian texts for understanding early Christian theology.</p>
+
+                <h3>5. Apostles' Creed</h3>
+                <p>An early summary of Christian belief.</p>
+
+                <h3>6. Nicene Creed</h3>
+                <p>One of the most important historic statements of Christian faith, particularly concerning:</p>
+                <ul class="principles-list">
+                    <li>God</li>
+                    <li>Jesus</li>
+                    <li>Incarnation</li>
+                    <li>resurrection</li>
+                    <li>Holy Spirit</li>
+                    <li>Church</li>
+                    <li>baptism</li>
+                    <li>eternal life</li>
+                </ul>
+                <p>The text is preserved by the major historic Christian traditions.</p>
+
+                <h3>7. Early Church Councils</h3>
+                <p>For historical Christianity, the major councils are essential primary historical sources:</p>
+                <ul class="principles-list">
+                    <li>Council of Nicaea (325)</li>
+                    <li>Council of Constantinople (381)</li>
+                    <li>Council of Ephesus (431)</li>
+                    <li>Council of Chalcedon (451)</li>
+                </ul>
+                <p>They are particularly important for understanding the development of Christian doctrines concerning Jesus and the Trinity.</p>
+
+                <h3>8. Catholic Sources</h3>
+                <p>For Catholic Christianity: the <strong>Catechism of the Catholic Church</strong> (Vatican). The Catechism provides systematic Catholic teaching on:</p>
+                <ul class="principles-list">
+                    <li>Trinity</li>
+                    <li>Jesus</li>
+                    <li>salvation</li>
+                    <li>sacraments</li>
+                    <li>morality</li>
+                    <li>prayer</li>
+                    <li>Church</li>
+                    <li>resurrection</li>
+                </ul>
+                <p>For example, the Vatican's Catechism explicitly identifies the Trinity as the central mystery of Catholic faith and life.</p>
+
+                <h3>9. Eastern Orthodox Sources</h3>
+                <p>For Orthodox Christianity, separate sources are consulted:</p>
+                <ul class="principles-list">
+                    <li>writings of the Church Fathers</li>
+                    <li>Ecumenical Councils</li>
+                    <li>Divine Liturgy</li>
+                    <li>Orthodox catechetical texts</li>
+                    <li>writings of recognized Orthodox theologians</li>
+                </ul>
+                <p>This avoids presenting Catholic formulations as though they automatically represent Eastern Orthodoxy.</p>
+
+                <h3>10. Oriental Orthodox Sources</h3>
+                <p>For Coptic, Armenian, Syriac, Ethiopian, Eritrean, and other Oriental Orthodox traditions, their own sources are used:</p>
+                <ul class="principles-list">
+                    <li>liturgical texts</li>
+                    <li>theological writings</li>
+                    <li>Church councils</li>
+                    <li>catechisms</li>
+                    <li>official Church sources</li>
+                </ul>
+                <p>This is especially important because their Christological history differs from both Catholic/Orthodox and Protestant traditions.</p>
+
+                <h3>11. Protestant Sources</h3>
+                <p>Different Protestant traditions are represented by their own historical confessions. Examples include:</p>
+                <ul>
+                    <li><strong>Augsburg Confession:</strong> Lutheran</li>
+                    <li><strong>Westminster Confession:</strong> Reformed/Presbyterian</li>
+                    <li><strong>Thirty-Nine Articles:</strong> Anglican</li>
+                    <li><strong>Baptist Faith and Message:</strong> Baptist</li>
+                    <li><strong>Methodist Articles of Religion:</strong> Methodist</li>
+                </ul>
+                <p>These are <strong>denominational sources</strong>, not statements that every Christian accepts.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

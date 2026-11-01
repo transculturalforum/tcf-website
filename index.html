@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcultural Forum Inc. | Bridging Cultures, Building Community</title>
+    <meta name="description" content="Transcultural Forum Inc. is a non-profit organization dedicated to cross-cultural dialogue, shared stories, and building harmony among diverse communities.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Transcultural Forum Inc. | Bridging Cultures, Building Community">
+    <meta property="og:description" content="Transcultural Forum Inc. is a non-profit organization dedicated to cross-cultural dialogue, shared stories, and building harmony among diverse communities.">
+    <meta property="og:image" content="https://images.pexels.com/photos/36681981/pexels-photo-36681981.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Transcultural Forum Inc. | Bridging Cultures, Building Community">
+    <meta name="twitter:description" content="Transcultural Forum Inc. is a non-profit organization dedicated to cross-cultural dialogue, shared stories, and building harmony among diverse communities.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/36681981/pexels-photo-36681981.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Custom contact layout styles to support the form layout cleanly */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-form {
+            background: #F4F1EA;
+            padding: 2.5rem;
+            border-radius: 6px;
+            border-top: 4px solid #3C6B5F;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2F3E2B;
+            margin-bottom: 0.4rem;
+        }
+        .form-group input, .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #D6DBD2;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: #FFFDF9;
+            color: #2F3E2B;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #3C6B5F;
+        }
+        .form-submit-btn {
+            background-color: #3C6B5F;
+            color: #fff;
+            padding: 0.85rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+            font-size: 1rem;
+        }
+        .form-submit-btn:hover {
+            background-color: #2D5148;
+        }
+        @media(max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .contact-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Updated Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active-page">Home</a></li>
+            <li><a href="#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="home" class="hero photo-banner" style="--banner: url('https://images.pexels.com/photos/36681981/pexels-photo-36681981.jpeg?auto=compress&cs=tinysrgb&w=1600'); --banner-pos: center 35%;">
+        <div class="hero-content">
+            <h1>Transcultural Forum</h1>
+            <p>A non-for-profit space dedicated to cross-cultural dialogue, shared stories, and community growth.</p>
+            <div class="hero-buttons">
+                <a href="#programs" class="btn btn-gold">Our Initiatives</a>
+                <a href="donate.html" class="btn btn-gold">Make a Donation</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <span class="subtitle">Our Foundation</span>
+        <h2>Our Mission & Core Principles</h2>
+        <p class="lead-text lead-green">
+            Originally founded in the Tampa Bay area, Transcultural Forum Inc. is organized to promote mutual transcultural communications, education, and meaningful dialogues. Our aim is to build higher understanding and harmony among diverse cultural, religious, and intellectual groups across the United States and throughout the world.
+        </p>
+        
+        <div class="principles-grid">
+            <div class="p-card verdigris-accent">
+                <h4>Neutrality & Openness</h4>
+                <p>We provide a balanced, welcoming space where all backgrounds can engage together without bias.</p>
+            </div>
+            <div class="p-card verdigris-accent">
+                <h4>Respect & Free Speech</h4>
+                <p>We uphold absolute respect for individual heritage while fiercely protecting freedom of expression.</p>
+            </div>
+            <div class="p-card verdigris-accent">
+                <h4>Civic Engagement</h4>
+                <p>From local neighborhoods to communities nationwide, we inspire active public and intellectual participation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="section bg-light">
+        <span class="subtitle">Our Initiatives</span>
+        <h2>Engaging with Culture</h2>
+        
+        <div class="grid">
+            <div class="card green-border">
+                <a href="events.html" class="card-photo-link" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/1207513/pexels-photo-1207513.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Colourful festival lanterns" class="card-photo" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+                <h3><a href="events.html">Community Events</a></h3>
+                <p>Gatherings, interactive workshops, and open dialogues that bring people together to share traditions.</p>
+            </div>
+            <div class="card green-border">
+                <a href="podcast.html" class="card-photo-link" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/31236088/pexels-photo-31236088.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Studio microphone ready for a podcast recording" class="card-photo" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+                <h3><a href="podcast.html">The Podcast</a></h3>
+                <p>Deep-dive conversations with cultural experts, historians, and everyday individuals sharing their heritage journeys.</p>
+            </div>
+            <div class="card green-border">
+                <a href="social-media.html" class="card-photo-link" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/14896273/pexels-photo-14896273.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hands joined in a circle" class="card-photo" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+                <h3><a href="social-media.html">Social Platforms</a></h3>
+                <p>Expanding the conversation online. We leverage digital networks to amplify marginalized voices and cultural storytelling globally.</p>
+            </div>
+        </div>
+
+        <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center; max-width: 740px;">
+            <div class="card green-border" style="flex: 1; min-width: 280px; max-width: 420px; text-align: center;">
+                <a href="articles-archive.html" class="card-photo-link" tabindex="-1" aria-hidden="true"><img src="https://images.pexels.com/photos/13061431/pexels-photo-13061431.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Antique books on library shelves" class="card-photo" loading="lazy" onerror="this.parentElement.style.display='none'"></a>
+                <h3><a href="articles-archive.html">Articles & Research</a></h3>
+                <p>Peer review Articles and research based on expert opinions and guidance and community data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="section bg-earth" style="text-align: center;">
+        <h2>Support Transcultural Forum Inc.</h2>
+        <p style="max-width: 700px; margin: 0 auto 1.5rem auto;">As a Tax exempt 501 C3 non-for-profit organization, our work depends entirely on community generosity. Your contributions directly fund events, projects, social platforms, research, articles, and public engagement.</p>
+        
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="donate.html" class="btn btn-gold" style="background: #D4AF37; color: #2F3E2B; border: none; text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">Donate Securely Today</a>
+            <a href="volunteer.html" class="btn btn-gold" style="background: #D4AF37; color: #2F3E2B; border: none; text-decoration: none; display: inline-flex; align-items: center;">Become a Volunteer</a>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Contact Us</h2>
+                <p>Have questions, ideas for partnership, or want to contribute an article? Reach out directly via email or use our contact form:</p>
+                <p class="contact-email" style="margin-bottom: 2rem;"><strong>Transculturalforum@gmail.com</strong></p>
+                
+                <div class="social-links" style="margin: 0; padding-top: 1.5rem; text-align: left; max-width: 100%;">
+                    <p>Follow our digital platforms:</p>
+                    <div class="social-icons" style="line-height: 2;">
+                        <a href="https://www.instagram.com/transculturalforum/" class="social-tag" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+                        <a href="https://www.facebook.com/profile.php?id=61591551163190" class="social-tag" target="_blank" rel="noopener noreferrer">Facebook</a> | 
+                        <a href="https://x.com/theTCForum" class="social-tag" target="_blank" rel="noopener noreferrer">X</a> | 
+                        <a href="https://www.tiktok.com/@transculturalforum?lang=en" class="social-tag" target="_blank" rel="noopener noreferrer">TikTok</a> | 
+                        <a href="https://www.reddit.com/user/theTCForum/" class="social-tag" target="_blank" rel="noopener noreferrer">Reddit</a> | 
+                        <a href="https://www.linkedin.com/in/transcultural-forum-321211422/" class="social-tag" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <form id="tcf-contact-form" class="contact-form" action="https://formspree.io/f/xrenljvw" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" placeholder="Doe" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="form-email">Email Address</label>
+                    <input type="email" id="form-email" name="email" placeholder="johndoe@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="form-phone">Phone Number</label>
+                    <input type="tel" id="form-phone" name="phone" placeholder="(123) 456-7890">
+                </div>
+
+                <div class="form-group">
+                    <label for="form-message">Message</label>
+                    <textarea id="form-message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                </div>
+
+                <button type="submit" class="form-submit-btn">Send Message</button>
+                
+                <p id="form-status" style="display: none; color: #3C6B5F; font-weight: 600; margin-top: 1rem; text-align: center;"></p>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Newsletter Sign-Up Section -->
+    <section id="newsletter" class="section" style="background-color: #3C6B5F; color: #FFFDF9; text-align: center; padding: 4rem 1rem;">
+        <div style="max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #FFFDF9; margin-bottom: 1rem;">Join Our Mailing List</h2>
+            <p style="margin-bottom: 2rem;">Stay updated on our latest research, podcast episodes, and community events.</p>
+            
+            <form id="newsletter-form" action="https://formspree.io/f/mpqvjkpj" method="POST" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                <input type="email" name="email" placeholder="Enter your email address" required style="padding: 0.85rem; border: none; border-radius: 4px; flex-grow: 1; min-width: 250px; font-family: inherit; font-size: 1rem;">
+                <button type="submit" style="background-color: #D4AF37; color: #2F3E2B; padding: 0.85rem 1.5rem; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; transition: background-color 0.3s;">Subscribe</button>
+            </form>
+            
+            <p id="newsletter-status" style="display: none; color: #D4AF37; font-weight: 600; margin-top: 1rem;">You are subscribed!</p>
+        </div>
+    </section>
+
+    <!-- Script to handle the newsletter form submission on the same page -->
+    <script>
+        const newsletterForm = document.getElementById("newsletter-form");
+        const newsletterStatus = document.getElementById("newsletter-status");
+
+        newsletterForm.addEventListener("submit", async function(event) {
+            event.preventDefault(); 
+            
+            const data = new FormData(newsletterForm);
+            
+            try {
+                const response = await fetch(newsletterForm.action, {
+                    method: newsletterForm.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    newsletterStatus.style.display = "block";
+                    newsletterStatus.style.color = "#D4AF37";
+                    newsletterStatus.textContent = "You are subscribed!";
+                    newsletterForm.reset(); 
+                } else {
+                    newsletterStatus.style.display = "block";
+                    newsletterStatus.style.color = "#ffcccc";
+                    newsletterStatus.textContent = "Oops! There was a problem subscribing.";
+                }
+            } catch (error) {
+                newsletterStatus.style.display = "block";
+                newsletterStatus.style.color = "#ffcccc";
+                newsletterStatus.textContent = "Oops! There was a network error.";
+            }
+        });
+    </script>
+
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

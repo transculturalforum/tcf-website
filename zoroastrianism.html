@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoroastrianism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Zoroastrianism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zoroastrianism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Zoroastrianism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/37998608/pexels-photo-37998608.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zoroastrianism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Zoroastrianism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/37998608/pexels-photo-37998608.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html" class="active-page">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/37998608/pexels-photo-37998608.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-fire-flame-curved religion-icon-bg"></i>
+        <h1>Zoroastrianism</h1>
+        <p>One of the world's oldest continuously practiced monotheistic religions, originating in ancient Persia and grounded in the cosmic struggle between truth and falsehood.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Zoroastrianism, founded by the Prophet Zarathustra (Zoroaster) in ancient Iran, is one of the world's oldest organized faiths. It served as the state religion of the pre-Islamic Persian empires for over a millennium and profoundly influenced the theological development of Judaism, Christianity, and Islam.</p>
+                <p>The faith is fundamentally monotheistic, centered on the worship of <em>Ahura Mazda</em> (the "Wise Lord"), the supreme, omniscient, and entirely good creator of the universe. Zoroastrian cosmology is defined by a cosmic dualism: the ongoing moral and spiritual struggle between <em>Asha</em> (truth, order, and light) and <em>Druj</em> (falsehood, chaos, and darkness).</p>
+                <p>Human beings are viewed as crucial allies of Ahura Mazda in this struggle. The ultimate purpose of a Zoroastrian's life is to participate actively in the world to promote goodness through the core maxim: <em>Humata, Hukhta, Hvarshta</em> (Good Thoughts, Good Words, Good Deeds). The sacred texts of the faith are collectively known as the <em>Avesta</em>.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>The Zoroastrian worldview is guided by a profound sense of moral responsibility and purity. The core principles include:</p>
+                <ul class="principles-list">
+                    <li><strong>Ahura Mazda:</strong> Belief in one Supreme God, the uncreated, benevolent Wise Lord.</li>
+                    <li><strong>Asha:</strong> The cosmic principle of truth, righteousness, and divine order.</li>
+                    <li><strong>Druj:</strong> The opposing force of falsehood, deceit, and chaos.</li>
+                    <li><strong>Angra Mainyu:</strong> The destructive spirit responsible for evil, death, and suffering.</li>
+                    <li><strong>Free Will:</strong> Humans possess the ultimate freedom and responsibility to choose between good and evil.</li>
+                    <li><strong>Humata (Good Thoughts):</strong> The mental foundation of a righteous life.</li>
+                    <li><strong>Hukhta (Good Words):</strong> The verbal expression of truth and kindness.</li>
+                    <li><strong>Hvarshta (Good Deeds):</strong> The physical manifestation of charity and constructive action.</li>
+                    <li><strong>Amesha Spentas:</strong> The "Bounteous Immortals," divine sparks or emanations of Ahura Mazda.</li>
+                    <li><strong>Yazatas:</strong> Venerable spiritual beings or angels worthy of worship.</li>
+                    <li><strong>Sanctity of Elements:</strong> Fire, water, earth, and air are sacred creations and must not be polluted.</li>
+                    <li><strong>Sacred Fire:</strong> Revered not as a god, but as the ultimate symbol of Ahura Mazda's light, truth, and purity.</li>
+                    <li><strong>Chinvat Bridge:</strong> The Bridge of Judgment crossed by the soul after death.</li>
+                    <li><strong>Heaven and Hell:</strong> States of existence representing the culmination of the soul's choices, rather than eternal physical places.</li>
+                    <li><strong>Frashokereti:</strong> The final, ultimate renovation of the universe where evil is permanently destroyed.</li>
+                    <li><strong>Saoshyant:</strong> The belief in a future savior figure who will lead humanity in the final renovation.</li>
+                    <li><strong>Spiritual Equality:</strong> Men and women are entirely equal in their spiritual duties and access to salvation.</li>
+                    <li><strong>Charity and Philanthropy:</strong> A strict obligation to alleviate the suffering of others and build up the community.</li>
+                    <li><strong>Active Participation:</strong> Asceticism and withdrawal from the world are rejected; one must actively fight evil through a joyful, constructive life.</li>
+                    <li><strong>Sudreh and Kusti:</strong> The sacred white undergarment and woven cord worn daily as spiritual armor.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>Zoroastrianism has very few absolute dietary restrictions. Followers are generally encouraged to eat a balanced, healthy diet to maintain the strength needed to perform good deeds. While some fasting is practiced in other religions, Zoroastrianism discourages severe fasting or bodily deprivation, viewing it as weakening a warrior of Ahura Mazda. However, in the Indian Parsi community, many abstain from beef and pork out of respect for local Hindu and Muslim cultures.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>The faith views sickness, disease, and death as the work of the destructive spirit (Angra Mainyu). Therefore, practicing medicine, healing the sick, and pursuing scientific advancement are seen as direct, holy acts of combating evil. Physical and mental health are highly prized.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Modern Zoroastrianism generally supports blood transfusions and organ transplants. Because saving a life and alleviating suffering are paramount expressions of "Good Deeds," these medical interventions are seen as deeply aligning with the faith's core values.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Cleanliness is absolute and central to the faith. Zoroastrians view physical dirt, pollution, and decay as manifestations of Druj (chaos). Elaborate purification rituals (like the <em>Padyab</em>) are performed before prayers. The elements—especially water and fire—must be kept pristine, which historically led to unique funerary practices to avoid polluting the earth or fire with a corpse.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founder: Zarathustra</h3>
+                    <p>Prophet Zarathustra (known to the Greeks as Zoroaster) lived in ancient Eastern Iran or Central Asia. His exact dates are highly debated by scholars, ranging from the 2nd millennium BCE to the 6th century BCE. He rejected the polytheistic, ritualistic religions of his time, preaching a radical monotheism focused on ethical responsibility. His original teachings and hymns are preserved in the <em>Gathas</em>, the oldest portion of the Avesta.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Zoroastrianism was the dominant state religion of three massive, successive Persian Empires: the Achaemenid, Parthian, and Sasanian. At its peak, the faith spanned from Greece and Egypt in the west to the Indus Valley in the east. It was severely diminished following the Arab-Islamic conquest of Persia in the 7th century CE, leading to centuries of decline and the migration of refugees to India.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, Zoroastrianism is one of the world's smallest religions, with estimates of only 100,000 to 200,000 followers worldwide. The two primary populations are the Parsis in India (descendants of the Persian refugees) and the native Iranian Zoroastrians. Significant modern diaspora communities now exist in North America, the United Kingdom, and Australia.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Cyrus the Great (c. 600–530 BCE):</strong> The Achaemenid Emperor who, influenced by Zoroastrian tolerance, freed the Jewish people from Babylonian captivity and funded the rebuilding of their Temple.</li>
+                        <li><strong>Darius the Great (550–486 BCE):</strong> Persian King who formalized Ahura Mazda as the supreme deity of the empire.</li>
+                        <li><strong>King Vishtaspa:</strong> The early patron king who protected Zarathustra and allowed the faith to spread.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Dadabhai Naoroji (1825–1917):</strong> Parsi intellectual and the first Asian to be a British MP, instrumental in the early Indian independence movement.</li>
+                        <li><strong>Jamsetji Tata (1839–1904):</strong> Founder of the Tata Group, a massively influential Parsi industrialist and philanthropist in India.</li>
+                        <li><strong>Freddie Mercury (1946–1991):</strong> Born Farrokh Bulsara, the legendary lead singer of Queen was raised in a Parsi Zoroastrian family.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The faith survived the collapse of the Persian Empire and centuries of persecution through profound resilience. Continuity was maintained by the hereditary priesthood (the <em>Mobed</em>), who memorized and orally transmitted the complex Avestan liturgies. For the Parsis in India, continuity was preserved through strict endogamy (marrying only within the faith) to protect their unique identity as a tiny minority in a massive Hindu/Muslim landscape.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Zoroastrians worship fire.</strong><br>
+                Reality: They do not worship fire itself as a god. Fire (Atar) is revered as a sacred element and the purest physical manifestation of Ahura Mazda's light and wisdom. They pray facing a flame just as Muslims face the Kaaba or Jews face Jerusalem.</p>
+                <p><strong>Misconception: It is a polytheistic or equally dualistic religion.</strong><br>
+                Reality: Ahura Mazda is the supreme, uncreated Creator. The destructive spirit (Angra Mainyu) is not an equal "evil god," but a lesser, opposing force that will ultimately be defeated at the end of time.</p>
+                <p><strong>Misconception: It is a dead or extinct religion.</strong><br>
+                Reality: Though small in number, the Zoroastrian community remains a vibrant, deeply philanthropic, and culturally influential global presence today.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>The most pressing existential challenge for Zoroastrianism today is extreme demographic decline. Because traditional Parsi communities strictly prohibit conversion and only recognize children of Zoroastrian fathers as members of the faith, low birth rates and high rates of interfaith marriage are rapidly shrinking the population.</p>
+                <p>This has sparked intense, ongoing internal debates between orthodox members (who believe strict rules are necessary to preserve ethnic and religious purity) and reformists (who argue that the faith must accept converts and the children of intermarried women to survive).</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Devout Zoroastrians pray five times a day, always facing a source of light (the sun, the moon, or a fire). The central daily practice for initiated members is the untying and retying of the <em>Kusti</em> (a sacred woven cord worn over a white <em>Sudreh</em> shirt) while reciting specific prayers, serving as a physical reminder of their spiritual armor against evil.</p>
+                <p>Communal practice involves visiting the Fire Temple (Agiary or Atash Behram), where eternal flames are continuously fed with sandalwood and tended to by priests. </p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Zoroastrianism's theological innovations—such as a linear view of time, a final judgment, a savior figure, and a cosmic struggle between good and evil—profoundly shaped the foundations of Judaism, Christianity, and Islam, making it one of the most influential belief systems in human history.</p>
+                <p>In the modern era, the Parsi community in India has had an outsized impact on global philanthropy and industry. Driven by the maxim of "Good Deeds," Zoroastrian families (like the Tatas and Godrejs) built much of India's modern infrastructure, including premier hospitals, scientific research institutes, universities, and massive charitable trusts that benefit people of all faiths.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

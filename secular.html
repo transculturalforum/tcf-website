@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secular Worldviews - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core principles, history, and ethics of Secular Worldviews with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Secular Worldviews - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core principles, history, and ethics of Secular Worldviews with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/27771787/pexels-photo-27771787.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Secular Worldviews - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core principles, history, and ethics of Secular Worldviews with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/27771787/pexels-photo-27771787.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html" class="active-page">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/27771787/pexels-photo-27771787.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-atom religion-icon-bg"></i>
+        <h1>Secular Worldviews</h1>
+        <p>A broad category encompassing atheism, agnosticism, and humanism, relying on reason, science, and human empathy rather than supernatural beliefs to understand the universe and guide morality.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Worldview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>"Secular worldviews" is an umbrella term that includes atheism, agnosticism, secular humanism, freethought, and various forms of skepticism. It is not a religion, but rather a philosophical approach to life that seeks to understand the universe and human existence without relying on supernatural deities, divine revelation, or religious dogma.</p>
+                <p>Secular individuals generally believe that the natural universe is all that exists, and that the scientific method is the most reliable tool for discovering truth. Rather than deriving morality from sacred texts or divine command, secular ethics are typically based on human empathy, compassion, the mitigation of suffering, and the promotion of human flourishing.</p>
+                <p>Secular Humanism, the most structured of these philosophies, asserts that human beings have the right and responsibility to give meaning and shape to their own lives, advocating for democracy, human rights, and the strict separation of church and state.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>While secular individuals do not adhere to a central dogma, the following principles represent the foundational values of modern secular humanism and scientific skepticism:</p>
+                <ul class="principles-list">
+                    <li><strong>Naturalism:</strong> The physical universe is all there is; there is no supernatural realm.</li>
+                    <li><strong>Reason and Logic:</strong> Critical thinking is the best guide for beliefs and actions.</li>
+                    <li><strong>Scientific Inquiry:</strong> The scientific method is the most reliable way to understand reality.</li>
+                    <li><strong>Atheism/Agnosticism:</strong> The absence of belief in deities, or the view that the existence of deities is unknown/unknowable.</li>
+                    <li><strong>Secular Ethics:</strong> Morality is derived from human empathy and the desire to reduce suffering.</li>
+                    <li><strong>Human Rights:</strong> An unwavering commitment to universal human rights, dignity, and equality.</li>
+                    <li><strong>Separation of Church and State:</strong> Governments should remain neutral in religious matters.</li>
+                    <li><strong>Freedom of and from Religion:</strong> Everyone has the right to practice their faith, or to practice none at all.</li>
+                    <li><strong>Self-Determination:</strong> Individuals have the right to autonomy over their own bodies and life choices.</li>
+                    <li><strong>One Life:</strong> The belief that this life is our only life, making it immensely precious and meaningful.</li>
+                    <li><strong>Meaning is Self-Created:</strong> Human beings create their own purpose; it is not handed down from above.</li>
+                    <li><strong>Evolution:</strong> Humans are an integral part of nature, having evolved through natural selection.</li>
+                    <li><strong>Egalitarianism:</strong> A commitment to dismantling systemic prejudice, racism, and sexism.</li>
+                    <li><strong>Compassion:</strong> An ethical imperative to care for the vulnerable and marginalized.</li>
+                    <li><strong>Intellectual Freedom:</strong> The right to question, critique, and investigate all ideas without fear of blasphemy.</li>
+                    <li><strong>Environmental Stewardship:</strong> A responsibility to protect the planet for current and future generations.</li>
+                    <li><strong>Democracy:</strong> Society is best governed by democratic processes, not theocratic rule.</li>
+                    <li><strong>Global Citizenship:</strong> We are a single human family; national boundaries are secondary to universal human well-being.</li>
+                    <li><strong>Fallibilism:</strong> The acceptance that human knowledge is imperfect and must constantly be revised based on new evidence.</li>
+                    <li><strong>Human Progress:</strong> Through collective effort, science, and empathy, we can solve humanity's greatest problems.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>There are no religiously mandated dietary restrictions (such as kosher or halal laws) in secular worldviews. Dietary choices are driven by personal preference, health science, and ethics. Because secular morality is heavily focused on reducing suffering and environmental sustainability, many secular individuals choose to adopt vegetarian or vegan diets for ethical and ecological reasons rather than religious ones.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Secular worldviews place absolute trust in evidence-based medicine and the scientific method. Medical decisions are made in consultation with doctors and current scientific consensus. Interventions such as vaccines, stem-cell research, and genetic therapies are generally supported as tools to alleviate human suffering.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Blood transfusions and organ transplants are fully supported. Organ donation is frequently viewed as a profound ethical imperative and a final act of human solidarity, as secular individuals generally do not believe the physical body is required for an afterlife.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Cleanliness is understood entirely through the lens of biology and hygiene (germ theory), not through concepts of ritual purity or spiritual defilement. Practices focus on preventing disease and promoting public health.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Worldview</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founders</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>Founders</h3>
+                    <p>Secularism and atheism have no single founder. Non-theistic and skeptical thought has existed in human societies for millennia. The philosophical roots of modern secularism can be traced back to the Carvaka school in ancient India (c. 600 BCE), which rejected the Vedas and the afterlife, as well as ancient Greek philosophers like Epicurus and Democritus, who proposed a universe made entirely of natural atoms rather than the whims of the gods.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Historically, secular and atheistic views were often held by minority groups of philosophers and scholars. During the Middle Ages in Europe, openly declaring atheism was extremely dangerous and often punishable by death under heresy laws. The worldview began to gain significant cultural traction during the 18th-century Enlightenment, driven by scientific discoveries that challenged religious authority.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, people identifying as non-religious, atheist, or agnostic represent one of the fastest-growing demographics globally. They form a massive portion of the population in Europe (particularly Scandinavia and France), East Asia (China and Japan), Australasia, and increasingly in the United States and Canada, reflecting a massive cultural shift toward secularization in industrialized democracies.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Epicurus (c. 341–270 BCE):</strong> Ancient Greek philosopher who taught that the universe operates on natural laws without divine intervention.</li>
+                        <li><strong>Baruch Spinoza (1632–1677):</strong> Enlightenment philosopher who laid the groundwork for modern secularism and the critique of religious orthodoxy.</li>
+                        <li><strong>Charles Darwin (1809–1882):</strong> His theory of evolution by natural selection revolutionized the understanding of human origins without the need for a creator.</li>
+                        <li><strong>Robert G. Ingersoll (1833–1899):</strong> Known as "The Great Agnostic," a prominent American orator who championed freethought and secularism.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Carl Sagan (1934–1996):</strong> Astronomer and science communicator who deeply popularized scientific skepticism and a sense of wonder at the natural cosmos.</li>
+                        <li><strong>Christopher Hitchens (1949–2011) & Richard Dawkins (b. 1941):</strong> Prominent public intellectuals and authors of the "New Atheism" movement who fiercely debated religious dogmatism.</li>
+                        <li><strong>Stephen Hawking (1942–2018):</strong> Theoretical physicist whose work on the origins of the universe further marginalized the necessity of a creator deity in modern cosmology.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>Unlike religions that rely on sacred texts to maintain continuity, secular worldviews maintain their principles through the rigorous institutions of science, public education, philosophy, and democratic law. The "self-correcting" nature of the scientific method ensures that secular understanding continuously evolves and improves as new evidence is discovered, valuing intellectual flexibility over dogmatic continuity.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Atheists have no moral compass because they don't fear divine punishment.</strong><br>
+                Reality: Secular morality is highly developed. It is based on human empathy, the social contract, and the understanding that actions have real consequences on the well-being of others in this life. Many argue that doing good simply because it helps others is more ethical than doing good out of fear of hell or desire for heavenly reward.</p>
+                <p><strong>Misconception: Atheism is just a different religion.</strong><br>
+                Reality: Atheism is simply the lack of belief in a deity. It has no holy books, no clergy, no rituals, and no required dogma. Saying atheism is a religion is often compared to saying "off" is a TV channel or "bald" is a hair color.</p>
+                <p><strong>Misconception: Secularism is an angry rebellion against God.</strong><br>
+                Reality: One cannot rebel against something they do not believe exists. Secular individuals simply find natural and scientific explanations for the universe more compelling and evidence-based than supernatural ones.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>In heavily theocratic or deeply religious countries, atheists and secularists face severe persecution. In several nations, blasphemy and apostasy (leaving a religion) are still crimes punishable by imprisonment or death, forcing secular individuals to live in hiding.</p>
+                <p>In Western democracies, a primary challenge for secular groups is protecting the separation of church and state against the rise of Christian nationalism, ensuring that public policies, education, and laws are based on civic reasoning rather than the religious doctrines of a specific group.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>While there are no required rituals, many secular people engage in daily practices to cultivate well-being and meaning, such as secular mindfulness meditation, journaling, or studying science and philosophy. </p>
+                <p>Community engagement is a major practice; many secular humanists prioritize volunteering, philanthropy, and civic activism as their way of improving the world. Secular communities also celebrate life milestones (births, marriages, deaths) and natural events (like the solstices) with humanist ceremonies focused on human connection and the natural world.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Secular and humanist philosophies were the primary drivers of the Enlightenment, laying the foundational concepts for modern democracy, freedom of speech, and universal human rights. The insistence on separating church from state has historically been the greatest protector of religious freedom, preventing any one religion from dominating others.</p>
+                <p>Furthermore, because secular ethics are not bound by ancient texts, secular groups have consistently been at the global forefront of championing evolving human rights, including women's bodily autonomy, LGBTQ+ equality, the right to medical assistance in dying, and massive advancements in medical and environmental science.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

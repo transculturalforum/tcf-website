@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islam - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Islam with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Islam - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Islam with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/34029394/pexels-photo-34029394.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Islam - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Islam with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/34029394/pexels-photo-34029394.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs used inside longer sections */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html" class="active-page">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/34029394/pexels-photo-34029394.jpeg?auto=compress&cs=tinysrgb&w=1600'); --banner-pos: center 75%;">
+        <i class="fa-solid fa-star-and-crescent religion-icon-bg"></i>
+        <h1>Islam</h1>
+        <p>A major world religion grounded in the absolute oneness of God, the finality of the Prophet Muhammad's message, and a comprehensive way of life.</p>
+    </header>
+
+
+    <main class="schematic-container">
+
+        <!-- Left: Tab Navigation Menu (follows the topics of "Islam in general") -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Islam at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Denominations and Schools</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Islam is one of the world's major monotheistic religions and the second-largest religious tradition globally. Muslims believe that there is one God, Allah, who created the universe and humanity and who sent guidance through a long line of prophets, including Adam, Noah, Abraham, Moses, David, Solomon, Jesus, and Muhammad.</p>
+                <p>Islam teaches that Muhammad ﷺ was the final prophet and that the Qur'an is God's final revealed scripture. Muslims understand Islam not simply as a collection of beliefs, but as a comprehensive way of life encompassing worship, ethics, family, community, commerce, social responsibility, and the individual's relationship with God.</p>
+                <p>The Arabic word <strong>Islam</strong> is related to the root <em>s-l-m</em>, associated with peace, safety, and submission. In Islamic religious terminology, Islam means submission and devotion to God.</p>
+                <h3>The Declaration of Faith</h3>
+                <p dir="rtl" lang="ar" style="text-align: center; font-size: 1.6rem; color: #2F3E2B;"><strong>لا إله إلا الله محمد رسول الله</strong></p>
+                <p style="text-align: center;"><strong>"There is no deity worthy of worship except Allah, and Muhammad is the Messenger of Allah."</strong></p>
+                <p>The Qur'an presents the fundamental message of Islam as the worship of the one God and righteous conduct toward creation. The Prophet Muhammad's teachings and example, known as the <strong>Sunnah</strong>, provide practical explanations of how Muslims understand and practice that message.</p>
+            </div>
+
+            <!-- 1. ISLAM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Islam at a Glance</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glance-name')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-adherents')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-where')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-branches')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-terms')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-basics')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glance-holidays')">Holidays</button>
+                </div>
+
+                <div id="glance-name" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p><strong>Islam.</strong> A follower of Islam is called a <strong>Muslim</strong>. The word <em>Muslim</em> means one who submits to God.</p>
+                    <p>Muslims commonly use <strong>Allah</strong> for God. "Allah" is the Arabic word for God and is also used by Arabic-speaking Christians and Jews.</p>
+                    <p>Islam does not teach that Muslims worship a different creator from the God worshiped by Abraham, Moses, and Jesus. Rather, Islam presents itself as a continuation and restoration of the monotheistic tradition associated with Abraham and the earlier prophets.</p>
+                </div>
+
+                <div id="glance-adherents" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>According to Pew Research Center's comprehensive analysis of religious populations, there were approximately <strong>2.0 billion Muslims worldwide in 2020</strong>, representing about <strong>25.6% of the world's population</strong>. Muslims lived in virtually every region of the world.</p>
+                    <p>Although Islam is often associated with the Middle East, the largest Muslim populations are found in Asia. Indonesia, Pakistan, India, Bangladesh, and Nigeria are among the countries with the largest Muslim populations. Pew estimates that only about one-fifth of the world's Muslims live in the Middle East and North Africa.</p>
+                    <p>Islam is therefore a global religion rather than an exclusively Arab or Middle Eastern religion.</p>
+                </div>
+
+                <div id="glance-where" class="history-sub-section">
+                    <h3>Where Islam Is Practiced</h3>
+                    <p>Muslims live on every inhabited continent. Large Muslim populations are found in:</p>
+                    <ul class="principles-list">
+                        <li>Southeast Asia</li>
+                        <li>South Asia</li>
+                        <li>Central Asia</li>
+                        <li>the Middle East</li>
+                        <li>North Africa</li>
+                        <li>sub-Saharan Africa</li>
+                        <li>Europe</li>
+                        <li>North America</li>
+                        <li>South America</li>
+                        <li>Australia</li>
+                    </ul>
+                    <p>Muslims come from hundreds of ethnic and cultural backgrounds and speak hundreds of languages.</p>
+                    <p>Arabic has a uniquely important religious position because the Qur'an was revealed in Arabic and formal Islamic prayer is performed using Qur'anic Arabic. However, being Arab and being Muslim are not synonymous. Most Muslims in the world are <strong>not Arab</strong>.</p>
+                </div>
+
+                <div id="glance-branches" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>The two largest branches are Sunni Islam and Shi'a Islam.</p>
+                    <h3>Sunni Islam</h3>
+                    <p>Sunni Muslims constitute the majority of Muslims worldwide. Major Sunni legal schools include:</p>
+                    <ul class="principles-list">
+                        <li>Hanafi</li>
+                        <li>Maliki</li>
+                        <li>Shafi'i</li>
+                        <li>Hanbali</li>
+                    </ul>
+                    <p>These schools generally agree on the fundamental beliefs and pillars of Islam while differing on some questions of jurisprudence and interpretation.</p>
+                    <h3>Shi'a Islam</h3>
+                    <p>Shi'a Muslims constitute the other major branch of Islam. Major Shi'a traditions include:</p>
+                    <ul class="principles-list">
+                        <li>Twelver Shi'ism</li>
+                        <li>Ismaili Shi'ism</li>
+                        <li>Zaidi Shi'ism</li>
+                    </ul>
+                    <p>Twelver Shi'ism is the largest Shi'a tradition. Shi'a Islam places particular theological importance on the family of the Prophet Muhammad, especially Ali ibn Abi Talib and the Imams descended from him.</p>
+                    <h3>Other Traditions</h3>
+                    <p>Islam also includes other historical and theological traditions, including Ibadi Islam and various theological and spiritual schools.</p>
+                </div>
+
+                <div id="glance-terms" class="history-sub-section">
+                    <h3>Important Islamic Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Allah:</strong> God</li>
+                        <li><strong>Islam:</strong> Submission to God</li>
+                        <li><strong>Muslim:</strong> One who submits to God</li>
+                        <li><strong>Iman:</strong> Faith</li>
+                        <li><strong>Ihsan:</strong> Spiritual excellence</li>
+                        <li><strong>Qur'an:</strong> The central scripture of Islam</li>
+                        <li><strong>Sunnah:</strong> The way and example of the Prophet</li>
+                        <li><strong>Hadith:</strong> Reports of the Prophet's words, actions, approvals, and descriptions</li>
+                        <li><strong>Sharia:</strong> Divine guidance/law as understood through Islamic sources</li>
+                        <li><strong>Fiqh:</strong> Human jurisprudential interpretation</li>
+                        <li><strong>Ummah:</strong> The worldwide Muslim community</li>
+                        <li><strong>Salah:</strong> Formal prayer</li>
+                        <li><strong>Zakat:</strong> Obligatory charitable giving</li>
+                        <li><strong>Sawm:</strong> Fasting</li>
+                        <li><strong>Hajj:</strong> Pilgrimage to Mecca</li>
+                        <li><strong>Tawhid:</strong> Divine oneness</li>
+                        <li><strong>Taqwa:</strong> God-consciousness</li>
+                        <li><strong>Halal:</strong> Permitted</li>
+                        <li><strong>Haram:</strong> Prohibited</li>
+                        <li><strong>Du'a:</strong> Personal supplication</li>
+                        <li><strong>Jihad:</strong> Striving/struggle; its meaning depends on context</li>
+                        <li><strong>Shirk:</strong> Associating partners with God</li>
+                    </ul>
+                </div>
+
+                <div id="glance-basics" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>The classical formulation of Islamic faith identifies belief in:</p>
+                    <ol>
+                        <li>Allah</li>
+                        <li>His angels</li>
+                        <li>His revealed books</li>
+                        <li>His messengers</li>
+                        <li>the Day of Judgment</li>
+                        <li>divine decree (<em>qadar</em>)</li>
+                    </ol>
+                    <p>This formulation appears prominently in the famous <strong>Hadith of Gabriel</strong>, recorded in both Sahih al-Bukhari and Sahih Muslim.</p>
+                    <h3>The Five Pillars</h3>
+                    <p>Islam also identifies five fundamental practices commonly called the <strong>Five Pillars</strong>:</p>
+                    <ol>
+                        <li><strong>Shahadah:</strong> declaration of faith</li>
+                        <li><strong>Salah:</strong> prayer</li>
+                        <li><strong>Zakat:</strong> obligatory charity</li>
+                        <li><strong>Sawm:</strong> fasting Ramadan</li>
+                        <li><strong>Hajj:</strong> pilgrimage to Mecca for those able to perform it</li>
+                    </ol>
+                    <p>This is explicitly stated in Sahih al-Bukhari.</p>
+                </div>
+
+                <div id="glance-holidays" class="history-sub-section">
+                    <h3>Eid al-Fitr</h3>
+                    <p>Eid al-Fitr marks the conclusion of Ramadan. It is a day of:</p>
+                    <ul class="principles-list">
+                        <li>communal prayer</li>
+                        <li>celebration</li>
+                        <li>family gatherings</li>
+                        <li>charity</li>
+                        <li>visiting relatives and friends</li>
+                        <li>gratitude to God</li>
+                    </ul>
+                    <h3>Eid al-Adha</h3>
+                    <p>Eid al-Adha occurs during the annual Hajj season. It commemorates Abraham's willingness to obey God's command and is associated with sacrifice, generosity, and devotion.</p>
+                    <h3>Ramadan</h3>
+                    <p>Ramadan is not technically a holiday but the most important annual month of fasting and intensified worship in Islam.</p>
+                </div>
+            </div>
+
+            <!-- 2. CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-god')">God, Prophets &amp; Revelation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-scripture')">Qur'an &amp; Hadith</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-angels')">Angels</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-human')">Human Nature, Sin &amp; Repentance</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-worship')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-life')">Life, Death &amp; Afterlife</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-freewill')">Free Will &amp; Destiny</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-morality')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-god" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>The central theological concept in Islam is <strong>Tawhid</strong>, the absolute oneness of God. The Qur'an describes God as: "He is Allah, One and Indivisible." It continues by describing God as the eternal sustainer who neither begets nor is begotten and to whom nothing is comparable.</p>
+                    <p>Islam rejects:</p>
+                    <ul class="principles-list">
+                        <li>polytheism</li>
+                        <li>incarnation of God</li>
+                        <li>division of God into persons</li>
+                        <li>worship of created beings</li>
+                        <li>idols or intermediaries as objects of worship</li>
+                    </ul>
+                    <p>One of the Qur'an's most comprehensive descriptions of God is Ayat al-Kursi, Qur'an 2:255, which describes God as the Ever-Living and Sustainer of creation.</p>
+
+                    <h3>Prophets</h3>
+                    <p>Islam teaches that God sent prophets to humanity throughout history. Among those explicitly mentioned in the Qur'an are:</p>
+                    <ul class="principles-list">
+                        <li>Adam</li>
+                        <li>Noah</li>
+                        <li>Abraham</li>
+                        <li>Ishmael</li>
+                        <li>Isaac</li>
+                        <li>Jacob</li>
+                        <li>Joseph</li>
+                        <li>Moses</li>
+                        <li>Aaron</li>
+                        <li>David</li>
+                        <li>Solomon</li>
+                        <li>Jonah</li>
+                        <li>Job</li>
+                        <li>Zachariah</li>
+                        <li>John the Baptist</li>
+                        <li>Jesus</li>
+                        <li>Muhammad</li>
+                    </ul>
+                    <p>Muslims therefore regard Jesus as a prophet and Messiah, but not as God. Islam teaches that Muhammad ﷺ is the <strong>final prophet</strong>. The prophetic message is fundamentally understood as calling humanity to worship the one God and live righteously.</p>
+
+                    <h3>Revelation</h3>
+                    <p>Muslims believe that God revealed guidance to humanity through His messengers. The Qur'an refers to previous revelations, including the Torah, the Psalms, and the Gospel.</p>
+                    <p>Islam teaches that the original revelations came from God but that the Qur'an is the final revelation and was entrusted to Muhammad. The Qur'an repeatedly presents itself as confirmation of previous revelation while also serving as a final criterion.</p>
+                </div>
+
+                <div id="bel-scripture" class="history-sub-section">
+                    <h3>The Qur'an</h3>
+                    <p>The <strong>Qur'an</strong> is the central scripture of Islam. Muslims believe it is the literal word of God revealed to Muhammad ﷺ through the angel Gabriel over approximately 23 years. It contains:</p>
+                    <ul class="principles-list">
+                        <li>theology</li>
+                        <li>stories of prophets</li>
+                        <li>moral teachings</li>
+                        <li>laws and principles</li>
+                        <li>spiritual guidance</li>
+                        <li>descriptions of the afterlife</li>
+                        <li>guidance concerning family and society</li>
+                        <li>principles of justice</li>
+                        <li>worship</li>
+                        <li>personal character</li>
+                    </ul>
+                    <p>The Qur'an consists of 114 chapters (<em>surahs</em>). Its original Arabic text occupies a unique position in Islamic worship. Muslims throughout the world memorize portions of the Qur'an, and many memorize the entire scripture.</p>
+
+                    <h3>Sunnah and Hadith</h3>
+                    <p>The second major source for understanding Islam is the <strong>Sunnah</strong>, the example and teachings of Muhammad ﷺ. A <strong>hadith</strong> is a transmitted report concerning the Prophet's statements, actions, approvals, and characteristics.</p>
+                    <p>Among Sunni Muslims, the two most authoritative hadith collections are <strong>Sahih al-Bukhari</strong> and <strong>Sahih Muslim</strong>. Other major collections include:</p>
+                    <ul class="principles-list">
+                        <li>Sunan Abu Dawud</li>
+                        <li>Jami' al-Tirmidhi</li>
+                        <li>Sunan al-Nasa'i</li>
+                        <li>Sunan Ibn Majah</li>
+                    </ul>
+                    <p>Muslim scholars developed sophisticated methods for evaluating hadith transmission, including examination of chains of transmission and narrators.</p>
+                    <p>Shi'a Muslims have their own major hadith collections, including:</p>
+                    <ul class="principles-list">
+                        <li><em>al-Kafi</em></li>
+                        <li><em>Man la yahduruhu al-faqih</em></li>
+                        <li><em>Tahdhib al-ahkam</em></li>
+                        <li><em>al-Istibsar</em></li>
+                    </ul>
+                    <p>The two traditions do not treat all hadith collections identically.</p>
+                </div>
+
+                <div id="bel-angels" class="history-sub-section">
+                    <h3>Angels and Spiritual Beings</h3>
+                    <p>Islam teaches belief in angels. Angels are created by God and fulfill various functions. Among the best-known angels are:</p>
+                    <ul>
+                        <li><strong>Jibril (Gabriel):</strong> associated with revelation</li>
+                        <li><strong>Mikail (Michael):</strong> mentioned in the Qur'an</li>
+                        <li><strong>Israfil:</strong> traditionally associated with the trumpet</li>
+                        <li><strong>Malik:</strong> guardian of Hell</li>
+                    </ul>
+                    <p>Islam also teaches the existence of <strong>jinn</strong>, created beings possessing moral responsibility.</p>
+                    <p>Satan, or <strong>Iblis</strong>, is identified in the Qur'an as a rebellious being who refused God's command concerning Adam.</p>
+                </div>
+
+                <div id="bel-human" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Islam teaches that human beings are created by God with dignity, moral responsibility, and the capacity to recognize and respond to truth. The Qur'an describes humanity as originating from a single human origin and emphasizes the common dignity of human beings.</p>
+                    <p>Islam does not teach that every human being inherits the personal guilt of Adam. Instead, each person is responsible for his or her own actions.</p>
+
+                    <h3>Sin</h3>
+                    <p>Islam recognizes two broad categories of wrongdoing: sins against God, and wrongs committed against other human beings. Some sins are described as major sins, while others are considered lesser. Islam emphasizes that wrongdoing does not permanently separate a person from God's mercy.</p>
+
+                    <h3>Repentance</h3>
+                    <p><strong>Tawbah</strong>, or repentance, is central to Islamic spirituality. A person who sins is encouraged to:</p>
+                    <ol>
+                        <li>recognize the wrongdoing</li>
+                        <li>stop the wrongdoing</li>
+                        <li>sincerely regret it</li>
+                        <li>seek God's forgiveness</li>
+                        <li>repair harm done to others where applicable</li>
+                    </ol>
+                    <p>The Qur'an repeatedly emphasizes divine mercy. Islam therefore combines moral accountability with the possibility of forgiveness.</p>
+                </div>
+
+                <div id="bel-worship" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>The formal Islamic prayer is called <strong>Salah</strong>. Muslims ordinarily perform five obligatory prayers each day:</p>
+                    <ul class="principles-list">
+                        <li>Fajr</li>
+                        <li>Dhuhr</li>
+                        <li>Asr</li>
+                        <li>Maghrib</li>
+                        <li>Isha</li>
+                    </ul>
+                    <p>Prayer includes standing, bowing, prostration, recitation of Qur'an, and remembrance of God. Muslims face the <strong>Ka'bah in Mecca</strong> during formal prayer.</p>
+                    <p>The Qur'an links worship with ethical behavior rather than treating religious ritual as an isolated activity. Qur'an 2:177, for example, combines belief, prayer, charity, fulfilling promises, and patience as elements of righteousness.</p>
+
+                    <h3>Charity</h3>
+                    <p>Charity has a central position in Islam. Two important concepts are:</p>
+                    <ul>
+                        <li><strong>Zakat:</strong> An obligatory form of charitable giving required from qualifying Muslims according to established rules.</li>
+                        <li><strong>Sadaqah:</strong> Voluntary charity.</li>
+                    </ul>
+                    <p>Charity may involve:</p>
+                    <ul class="principles-list">
+                        <li>money</li>
+                        <li>food</li>
+                        <li>assistance to the poor</li>
+                        <li>helping travelers</li>
+                        <li>supporting orphans</li>
+                        <li>community service</li>
+                        <li>acts of kindness</li>
+                    </ul>
+                    <p>The Qur'an describes righteous people as those who give wealth to relatives, orphans, the needy, travelers, and others in need.</p>
+
+                    <h3>Fasting</h3>
+                    <p>During Ramadan, adult Muslims who are physically able generally abstain from food and drink from dawn until sunset. Fasting also includes a broader discipline of:</p>
+                    <ul class="principles-list">
+                        <li>self-control</li>
+                        <li>prayer</li>
+                        <li>generosity</li>
+                        <li>avoiding sinful behavior</li>
+                        <li>spiritual reflection</li>
+                    </ul>
+                    <p>The Qur'an states that fasting was prescribed so that believers might develop <strong>taqwa</strong>, commonly translated as God-consciousness or piety.</p>
+                    <p>Islam also provides exemptions and accommodations for illness, travel, pregnancy and other circumstances according to Islamic jurisprudence.</p>
+                </div>
+
+                <div id="bel-life" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Islam regards human life as sacred and meaningful. Life is viewed as a trust from God. Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>worship God</li>
+                        <li>develop moral character</li>
+                        <li>care for family</li>
+                        <li>seek knowledge</li>
+                        <li>work</li>
+                        <li>serve others</li>
+                        <li>protect justice</li>
+                        <li>avoid oppression</li>
+                    </ul>
+                    <p>Islam does not generally regard worldly life as meaningless. Rather, earthly life is viewed as a period of moral responsibility and preparation for the afterlife.</p>
+
+                    <h3>Death</h3>
+                    <p>Death is considered a transition rather than annihilation. Islam teaches that every human being will die and eventually be resurrected. The Qur'an repeatedly reminds humanity that worldly life is temporary and that ultimate accountability lies with God.</p>
+
+                    <h3>Afterlife</h3>
+                    <p>Islam teaches:</p>
+                    <ol>
+                        <li>death</li>
+                        <li>an intermediate state</li>
+                        <li>resurrection</li>
+                        <li>judgment</li>
+                        <li>eternal consequence</li>
+                    </ol>
+                    <p>Belief in resurrection is an essential element of Islamic faith. The Hadith of Gabriel explicitly includes belief in resurrection and the meeting with God.</p>
+
+                    <h3>Heaven</h3>
+                    <p><strong>Jannah</strong>, or Paradise, is described as the ultimate reward for those who attain God's mercy and righteousness. Qur'anic descriptions include gardens, rivers, peace, security, freedom from suffering, and closeness to God.</p>
+                    <p>The descriptions are intended both as promises and as illustrations of realities beyond ordinary human experience.</p>
+
+                    <h3>Hell</h3>
+                    <p><strong>Jahannam</strong>, or Hell, represents punishment and separation from God's mercy for those condemned by divine judgment. Islam teaches that God's judgment is perfectly informed and just. The Qur'an repeatedly combines descriptions of punishment with descriptions of divine mercy and forgiveness.</p>
+
+                    <h3>Judgment</h3>
+                    <p>Islam teaches that every person will ultimately stand before God. Human beings will be accountable for their deeds. The Qur'an emphasizes that justice will be exact and that no individual will be treated unjustly. This belief provides an important foundation for Islamic ethics.</p>
+                </div>
+
+                <div id="bel-freewill" class="history-sub-section">
+                    <h3>Free Will and Destiny</h3>
+                    <p>Islam teaches <strong>Qadar</strong>, divine decree. At the same time, human beings possess meaningful responsibility and choice.</p>
+                    <p>Islamic theology has historically debated precisely how divine knowledge, divine decree, and human choice relate to one another. The mainstream Islamic position affirms both:</p>
+                    <ul>
+                        <li>God's complete knowledge and sovereignty</li>
+                        <li>human moral responsibility</li>
+                    </ul>
+                    <p>The Hadith of Gabriel includes belief in divine decree among the elements of faith.</p>
+                </div>
+
+                <div id="bel-morality" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Islamic morality includes both religious obligations and universal ethical principles. Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>justice</li>
+                        <li>mercy</li>
+                        <li>generosity</li>
+                        <li>patience</li>
+                        <li>forgiveness</li>
+                        <li>humility</li>
+                        <li>fulfilling promises</li>
+                        <li>respect for parents</li>
+                        <li>protection of the vulnerable</li>
+                        <li>honesty in business</li>
+                        <li>keeping agreements</li>
+                    </ul>
+                    <p>The Qur'an states: "Indeed, Allah orders justice and good conduct and giving to relatives." It also condemns immorality, wrongdoing, and oppression.</p>
+
+                    <h3>Family</h3>
+                    <p>Family occupies a central position in Islam. The Qur'an begins its discussion of humanity and family relationships by emphasizing the common origin of men and women. Islam places particular importance on parents, children, spouses, relatives, orphans, and neighbors.</p>
+                    <p>Respect for parents is emphasized repeatedly. The Qur'an instructs believers not even to express irritation toward elderly parents and commands respectful speech toward them.</p>
+
+                    <h3>Marriage</h3>
+                    <p>Islam considers marriage a legitimate and important institution. The Qur'an describes marriage in terms of tranquility, affection, mercy, and companionship.</p>
+                    <p>Marriage involves legal rights and responsibilities for both spouses. Islamic jurisprudence contains detailed regulations concerning:</p>
+                    <ul class="principles-list">
+                        <li>marriage contracts</li>
+                        <li>financial rights</li>
+                        <li>inheritance</li>
+                        <li>divorce</li>
+                        <li>child welfare</li>
+                        <li>maintenance</li>
+                        <li>family responsibilities</li>
+                    </ul>
+                    <p>There are differences among Islamic legal schools regarding particular rules.</p>
+
+                    <h3>Community</h3>
+                    <p>Islam emphasizes the concept of the <strong>Ummah</strong>, the worldwide Muslim community. The mosque historically functions not only as a place of prayer but also as a center for:</p>
+                    <ul class="principles-list">
+                        <li>education</li>
+                        <li>charity</li>
+                        <li>community gatherings</li>
+                        <li>counseling</li>
+                        <li>social support</li>
+                        <li>religious learning</li>
+                    </ul>
+                    <p>Muslim communities today vary enormously according to country and culture.</p>
+
+                    <h3>Treatment of Others</h3>
+                    <p>Islamic ethics apply to people beyond the Muslim community. The Qur'an commands justice even when dealing with people whom believers dislike: "Do not let the hatred of a people lead you to injustice. Be just."</p>
+                    <p>Another Qur'anic passage states that God does not prohibit Muslims from behaving kindly and fairly toward people who have not fought them because of religion or expelled them from their homes. The Qur'an also states: "There is no compulsion in religion."</p>
+                    <p>The interpretation and historical application of these verses have been extensively discussed by Islamic scholars, particularly concerning religious freedom, warfare, political authority, and relations between religious communities.</p>
+                </div>
+            </div>
+
+            <!-- 3. SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+
+                <h3>The Qur'an</h3>
+                <p>The Qur'an is the foundational Islamic scripture. Its major themes include:</p>
+                <ul class="principles-list">
+                    <li>God</li>
+                    <li>creation</li>
+                    <li>revelation</li>
+                    <li>prophecy</li>
+                    <li>worship</li>
+                    <li>morality</li>
+                    <li>justice</li>
+                    <li>family</li>
+                    <li>social responsibility</li>
+                    <li>history</li>
+                    <li>death</li>
+                    <li>resurrection</li>
+                    <li>judgment</li>
+                    <li>Paradise</li>
+                    <li>Hell</li>
+                </ul>
+                <p>The Qur'an is simultaneously a theological, moral, spiritual, and legal text.</p>
+
+                <h3>The Sunnah</h3>
+                <p>The Sunnah is the prophetic model. It answers practical questions such as:</p>
+                <ul>
+                    <li>How is prayer performed?</li>
+                    <li>How is pilgrimage performed?</li>
+                    <li>How is charity calculated?</li>
+                    <li>How should Muslims conduct themselves?</li>
+                    <li>How should family relationships be handled?</li>
+                    <li>How should business transactions be conducted?</li>
+                </ul>
+                <p>The Sunnah therefore provides practical context for the Qur'an.</p>
+
+                <h3>Islamic Scholarship</h3>
+                <p>Over the centuries, Muslim scholars developed extensive intellectual disciplines including:</p>
+                <ul class="principles-list">
+                    <li>Qur'anic interpretation (<em>tafsir</em>)</li>
+                    <li>hadith studies</li>
+                    <li>Islamic jurisprudence (<em>fiqh</em>)</li>
+                    <li>theology (<em>kalam</em>)</li>
+                    <li>Arabic linguistics</li>
+                    <li>philosophy</li>
+                    <li>ethics</li>
+                    <li>spirituality</li>
+                    <li>history</li>
+                </ul>
+                <p>Major classical scholars include figures such as:</p>
+                <ul class="principles-list">
+                    <li>Abu Hanifa</li>
+                    <li>Malik ibn Anas</li>
+                    <li>al-Shafi'i</li>
+                    <li>Ahmad ibn Hanbal</li>
+                    <li>al-Bukhari</li>
+                    <li>Muslim ibn al-Hajjaj</li>
+                    <li>al-Tabari</li>
+                    <li>al-Ghazali</li>
+                    <li>Ibn Rushd</li>
+                    <li>Ibn Taymiyyah</li>
+                    <li>Fakhr al-Din al-Razi</li>
+                </ul>
+                <p>Shi'a intellectual traditions produced their own major scholars and schools.</p>
+            </div>
+
+            <!-- 4. HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-origins')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-medina')">Migration to Medina</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-kabah')">Mecca and the Ka'bah</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-expansion')">Expansion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-milestones')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-figures')">Historical Figures</button>
+                </div>
+
+                <div id="hist-origins" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Islam emerged in western Arabia in the early seventh century CE. Muhammad ﷺ was born in Mecca around 570 CE. According to Islamic tradition, his first revelation occurred around 610 CE when he was approximately 40 years old.</p>
+                    <p>The early message emphasized:</p>
+                    <ul class="principles-list">
+                        <li>monotheism</li>
+                        <li>worship of God</li>
+                        <li>moral accountability</li>
+                        <li>care for the poor</li>
+                        <li>rejection of idolatry</li>
+                        <li>resurrection</li>
+                        <li>justice</li>
+                    </ul>
+                    <p>The early Muslim community faced significant opposition in Mecca.</p>
+                </div>
+
+                <div id="hist-medina" class="history-sub-section">
+                    <h3>Migration to Medina</h3>
+                    <p>In 622 CE, Muhammad ﷺ and his followers migrated from Mecca to Yathrib, later known as Medina. This migration, the <strong>Hijrah</strong>, became the starting point of the Islamic calendar.</p>
+                    <p>In Medina, the Muslim community developed into a religious and social community. Muhammad served simultaneously as:</p>
+                    <ul class="principles-list">
+                        <li>prophet</li>
+                        <li>religious teacher</li>
+                        <li>community leader</li>
+                        <li>judge</li>
+                        <li>statesman</li>
+                    </ul>
+                </div>
+
+                <div id="hist-kabah" class="history-sub-section">
+                    <h3>Mecca and the Ka'bah</h3>
+                    <p>Mecca contains the <strong>Ka'bah</strong>, the central sanctuary toward which Muslims pray. Islamic tradition associates the Ka'bah with Abraham and his son Ishmael.</p>
+                    <p>Muslims do not worship the Ka'bah. Rather, it serves as a common direction and focal point for Muslim prayer.</p>
+                </div>
+
+                <div id="hist-expansion" class="history-sub-section">
+                    <h3>Expansion</h3>
+                    <p>Following Muhammad's death in 632 CE, Muslim communities expanded rapidly. During the first several centuries of Islamic history, Muslim-ruled territories extended across:</p>
+                    <ul class="principles-list">
+                        <li>Arabia</li>
+                        <li>the Levant</li>
+                        <li>Egypt</li>
+                        <li>North Africa</li>
+                        <li>Persia</li>
+                        <li>Central Asia</li>
+                        <li>parts of Europe</li>
+                        <li>South Asia</li>
+                    </ul>
+                    <p>Islam subsequently spread through many different mechanisms, including:</p>
+                    <ul class="principles-list">
+                        <li>migration</li>
+                        <li>trade</li>
+                        <li>scholarship</li>
+                        <li>preaching</li>
+                        <li>political expansion</li>
+                        <li>Sufi networks</li>
+                        <li>intermarriage</li>
+                        <li>local adoption</li>
+                    </ul>
+                    <p>The history of Islamic expansion was therefore not a single uniform process.</p>
+                </div>
+
+                <div id="hist-milestones" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>610 CE:</strong> Beginning of Qur'anic revelation.</li>
+                        <li><strong>622 CE:</strong> Hijrah to Medina.</li>
+                        <li><strong>632 CE:</strong> Death of Muhammad ﷺ.</li>
+                        <li><strong>7th–8th centuries:</strong> Rapid expansion of Muslim-ruled territories.</li>
+                        <li><strong>8th–13th centuries:</strong> Development of major centers of scholarship, science, philosophy, medicine, mathematics, astronomy, literature, and law.</li>
+                        <li><strong>8th–15th centuries:</strong> Muslim civilization flourishes in places including Baghdad, Damascus, Cairo, Cordoba, Fez, Bukhara, Samarkand, and later Istanbul.</li>
+                        <li><strong>1258:</strong> Mongol destruction of Baghdad.</li>
+                        <li><strong>1453:</strong> Ottoman conquest of Constantinople.</li>
+                        <li><strong>16th–17th centuries:</strong> Ottoman, Safavid, and Mughal empires become major centers of Muslim political power.</li>
+                        <li><strong>18th–20th centuries:</strong> European imperialism and colonial rule reshape much of the Muslim world.</li>
+                        <li><strong>20th century:</strong> Creation of modern Muslim-majority nation-states and development of modern Islamic political, educational, and intellectual movements.</li>
+                        <li><strong>21st century:</strong> Islam continues to develop within highly diverse global societies.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-figures" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <ul class="principles-list">
+                        <li>Muhammad</li>
+                        <li>Abu Bakr</li>
+                        <li>Umar ibn al-Khattab</li>
+                        <li>Uthman ibn Affan</li>
+                        <li>Ali ibn Abi Talib</li>
+                        <li>Aisha</li>
+                        <li>Fatimah</li>
+                        <li>Hasan ibn Ali</li>
+                        <li>Husayn ibn Ali</li>
+                        <li>Imam Abu Hanifa</li>
+                        <li>Imam Malik</li>
+                        <li>Imam al-Shafi'i</li>
+                        <li>Imam Ahmad ibn Hanbal</li>
+                        <li>al-Bukhari</li>
+                        <li>Muslim</li>
+                        <li>al-Tabari</li>
+                        <li>al-Ghazali</li>
+                        <li>Ibn Sina</li>
+                        <li>al-Khwarizmi</li>
+                        <li>Ibn Rushd</li>
+                        <li>Ibn Khaldun</li>
+                        <li>Salah al-Din</li>
+                        <li>Rumi</li>
+                    </ul>
+                    <p>And numerous scholars, scientists, physicians, philosophers, artists, rulers, and educators across Muslim history.</p>
+                </div>
+            </div>
+
+            <!-- 5. MAJOR DENOMINATIONS AND SCHOOLS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Denominations and Schools</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'den-sunni')">Sunni Schools</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-shia')">Shi'a Traditions</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-sufism')">Sufism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-interpretations')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-regional')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'den-culture')">Culture vs. Religion</button>
+                </div>
+
+                <div id="den-sunni" class="history-sub-section active">
+                    <h3>Hanafi</h3>
+                    <p>Historically influential across South Asia, Central Asia, Turkey, parts of the Middle East, and the Balkans.</p>
+                    <h3>Maliki</h3>
+                    <p>Particularly influential in North Africa and West Africa.</p>
+                    <h3>Shafi'i</h3>
+                    <p>Historically influential in East Africa, Egypt, Yemen, and Southeast Asia.</p>
+                    <h3>Hanbali</h3>
+                    <p>Historically associated particularly with parts of the Arabian Peninsula.</p>
+                    <p>These schools are generally regarded as legitimate Sunni schools rather than separate religions.</p>
+                </div>
+
+                <div id="den-shia" class="history-sub-section">
+                    <h3>Twelver Shi'ism</h3>
+                    <p>The largest Shi'a tradition. It recognizes twelve Imams, beginning with Ali and continuing through Muhammad al-Mahdi.</p>
+                    <h3>Ismaili Shi'ism</h3>
+                    <p>Ismaili traditions follow a different succession of Imams and include several communities with distinct institutions and interpretations.</p>
+                    <h3>Zaidi Shi'ism</h3>
+                    <p>Historically concentrated particularly in Yemen.</p>
+                </div>
+
+                <div id="den-sufism" class="history-sub-section">
+                    <h3>Sufism</h3>
+                    <p><strong>Sufism</strong>, or Islamic spirituality, emphasizes:</p>
+                    <ul class="principles-list">
+                        <li>purification of the heart</li>
+                        <li>remembrance of God</li>
+                        <li>love of God</li>
+                        <li>spiritual discipline</li>
+                        <li>humility</li>
+                        <li>ethical transformation</li>
+                    </ul>
+                    <p>Sufi traditions exist within both Sunni and Shi'a environments. Major historical figures associated with Islamic spirituality include:</p>
+                    <ul class="principles-list">
+                        <li>al-Junayd</li>
+                        <li>al-Ghazali</li>
+                        <li>Rabi'a al-Adawiyya</li>
+                        <li>Jalal al-Din Rumi</li>
+                        <li>Abd al-Qadir al-Jilani</li>
+                    </ul>
+                    <p>Sufism encompasses many different orders and traditions rather than one uniform organization.</p>
+                </div>
+
+                <div id="den-interpretations" class="history-sub-section">
+                    <h3>Conservative, Reformist, and Progressive Interpretations</h3>
+                    <p>Modern Muslims differ significantly in their interpretation of:</p>
+                    <ul class="principles-list">
+                        <li>Islamic law</li>
+                        <li>gender</li>
+                        <li>political authority</li>
+                        <li>religious freedom</li>
+                        <li>democracy</li>
+                        <li>secularism</li>
+                        <li>economics</li>
+                        <li>education</li>
+                        <li>family law</li>
+                        <li>relations with non-Muslims</li>
+                    </ul>
+                    <p>Terms such as <strong>conservative</strong>, <strong>traditionalist</strong>, <strong>reformist</strong>, <strong>modernist</strong>, and <strong>progressive</strong> are useful in some contexts but can oversimplify the enormous diversity of Muslim thought.</p>
+                    <p>Two Muslims may share the same Qur'an and basic beliefs while reaching different conclusions about a modern political or social question.</p>
+                </div>
+
+                <div id="den-regional" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <p>Islam is practiced differently across cultures. For example:</p>
+                    <ul>
+                        <li><strong>Indonesia:</strong> Islam is deeply integrated with Southeast Asian culture.</li>
+                        <li><strong>West Africa:</strong> Islam has long interacted with African traditions and Sufi institutions.</li>
+                        <li><strong>South Asia:</strong> Islamic practice includes diverse Sunni, Shi'a, Sufi, Deobandi, Barelvi, Ahl-e-Hadith, and other intellectual traditions.</li>
+                        <li><strong>Middle East:</strong> Arab Muslim societies include Sunni, Shi'a, Ibadi, Christian, and other religious communities.</li>
+                        <li><strong>United States:</strong> American Muslims include African Americans, Arab Americans, South Asians, Africans, Turks, Iranians, Bosnians, converts, and immigrants from many other countries.</li>
+                    </ul>
+                    <p>Consequently, there is no single "Muslim culture."</p>
+                </div>
+
+                <div id="den-culture" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>One of the most important distinctions when studying Islam is the difference between <strong>Islamic teaching</strong> and <strong>cultural practice</strong>.</p>
+                    <p>Examples of cultural practices that may be associated with Muslim societies but are not necessarily religious requirements include:</p>
+                    <ul class="principles-list">
+                        <li>particular wedding customs</li>
+                        <li>specific foods</li>
+                        <li>particular clothing styles</li>
+                        <li>architectural styles</li>
+                        <li>ethnic greetings</li>
+                        <li>wedding celebrations</li>
+                        <li>burial customs beyond the religious requirements</li>
+                        <li>gender customs</li>
+                        <li>family structures</li>
+                    </ul>
+                    <p>A practice may be common in a Muslim-majority society without being mandated by Islam. Conversely, a religious requirement may be practiced differently in different cultures.</p>
+                </div>
+            </div>
+
+            <!-- 6. MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Islam is an Arab religion.</strong><br>
+                Fact: Islam is a global religion. Most Muslims are not Arab. Asia contains the largest Muslim population.</p>
+                <p><strong>Myth: Muslims worship Muhammad.</strong><br>
+                Fact: Muslims worship Allah alone. Muhammad is regarded as God's final messenger, not as God. The central Islamic principle is Tawhid, the absolute oneness of God.</p>
+                <p><strong>Myth: Muslims worship the Ka'bah.</strong><br>
+                Fact: Muslims face the Ka'bah when praying, but they do not worship it. It functions as the common direction of prayer.</p>
+                <p><strong>Myth: Jesus has no place in Islam.</strong><br>
+                Fact: Jesus has a major place in Islamic theology. Muslims believe that Jesus was born miraculously, was the Messiah, performed miracles by God's permission, was a prophet and messenger, received revelation, and will have an important role in Islamic eschatology. Islam differs from Christianity concerning Jesus' divine status and crucifixion.</p>
+                <p><strong>Myth: Islam teaches that people inherit Adam's sin.</strong><br>
+                Fact: Islam does not teach inherited personal guilt. Human beings are individually accountable for their own actions.</p>
+                <p><strong>Myth: Jihad simply means "holy war."</strong><br>
+                Fact: The Arabic word <em>jihad</em> literally concerns striving or exertion. It can refer to spiritual and moral struggle as well as other forms of striving. In Islamic jurisprudence, armed struggle has its own terminology, rules, conditions, and historical debates. Reducing <em>jihad</em> to simply "holy war" does not capture the full meaning of the word.</p>
+                <p><strong>Myth: Islam prohibits all interaction with non-Muslims.</strong><br>
+                Fact: Islamic scripture contains extensive guidance concerning relations with people of other faiths. The Qur'an explicitly permits kindness and justice toward people who are not fighting or expelling Muslims.</p>
+                <p><strong>Myth: Islam has one uniform interpretation.</strong><br>
+                Fact: Muslims have developed numerous legal, theological, philosophical, and spiritual schools. There are significant differences between Sunni and Shi'a traditions and within each.</p>
+            </div>
+
+            <!-- 7. RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-family')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-education')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-food')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-gender')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-work')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-health')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-community')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-civic')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-america')">Islam in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-humanity')">Islam and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-values')">Knowledge, Justice, Dignity &amp; Mercy</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-faith')">Faith, Practice &amp; Character</button>
+                </div>
+
+                <div id="life-family" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Islamic life. Muslims are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>parental relationships</li>
+                        <li>marriage</li>
+                        <li>kinship</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>relationships with neighbors</li>
+                    </ul>
+                    <p>Islam places particularly strong emphasis on caring for parents.</p>
+                    <h3>Marriage</h3>
+                    <p>Marriage is both a religious and legal institution. An Islamic marriage generally involves consent, a marriage contract, a dowry (<em>mahr</em>), and responsibilities between spouses. Islamic law recognizes marriage as a relationship involving rights and responsibilities.</p>
+                    <h3>Children</h3>
+                    <p>Children are regarded as a trust and responsibility. Parents are expected to provide care, education, protection, moral guidance, and affection. Islamic tradition places significant emphasis on treating children with mercy.</p>
+                </div>
+
+                <div id="life-education" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>The pursuit of knowledge has historically been important in Islamic civilization. Muslim societies developed institutions dedicated to:</p>
+                    <ul class="principles-list">
+                        <li>Qur'anic studies</li>
+                        <li>medicine</li>
+                        <li>mathematics</li>
+                        <li>astronomy</li>
+                        <li>philosophy</li>
+                        <li>law</li>
+                        <li>language</li>
+                        <li>literature</li>
+                    </ul>
+                    <p>Historically significant centers of learning included Baghdad, Cairo, Cordoba, Damascus, and other cities.</p>
+                </div>
+
+                <div id="life-food" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Islamic dietary law distinguishes between <strong>Halal</strong> (permitted) and <strong>Haram</strong> (prohibited). Commonly recognized prohibitions include:</p>
+                    <ul class="principles-list">
+                        <li>pork</li>
+                        <li>blood</li>
+                        <li>carrion</li>
+                        <li>intoxicants</li>
+                    </ul>
+                    <p>Muslims may also follow specific rules concerning animal slaughter. Dietary practice varies in strictness among individuals and communities.</p>
+                    <h3>Clothing</h3>
+                    <p>Islam teaches modesty for both men and women. The Qur'an addresses modest behavior and modest dress for both sexes.</p>
+                    <p>Muslim clothing varies greatly by country, climate, culture, personal interpretation, and religious school. Examples include:</p>
+                    <ul class="principles-list">
+                        <li>hijab</li>
+                        <li>abaya</li>
+                        <li>thobe</li>
+                        <li>kufi</li>
+                        <li>turban</li>
+                        <li>shalwar kameez</li>
+                    </ul>
+                    <p>None of these represents a single universal Muslim culture.</p>
+                </div>
+
+                <div id="life-gender" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Islam gives men and women both religious and moral responsibility. Both are accountable before God. The Qur'an addresses men and women directly regarding worship, morality, charity, modesty, family, and responsibility.</p>
+                    <p>At the same time, classical Islamic jurisprudence establishes different legal responsibilities for men and women in certain areas. Modern Muslims differ substantially in how these teachings should be interpreted and applied.</p>
+                </div>
+
+                <div id="life-work" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Work is generally regarded positively in Islam when it is lawful and ethical. Muslims are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>earn honestly</li>
+                        <li>avoid fraud</li>
+                        <li>honor contracts</li>
+                        <li>pay workers properly</li>
+                        <li>avoid exploitation</li>
+                        <li>support dependents</li>
+                        <li>contribute to society</li>
+                    </ul>
+                    <h3>Business Ethics</h3>
+                    <p>Islamic economic ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>transparency</li>
+                        <li>fulfilling contracts</li>
+                        <li>avoiding fraud</li>
+                        <li>avoiding exploitation</li>
+                        <li>fair measurement</li>
+                        <li>responsibility toward the poor</li>
+                    </ul>
+                    <p>The Qur'an explicitly distinguishes legitimate commerce from <strong>riba</strong>, traditionally translated as usury or interest, and prohibits riba. Islamic jurisprudence has consequently developed extensive principles concerning financial transactions.</p>
+                    <h3>Charity</h3>
+                    <p>Charity is integrated into ordinary Muslim life. Muslims may give:</p>
+                    <ul class="principles-list">
+                        <li>Zakat</li>
+                        <li>Sadaqah</li>
+                        <li>food</li>
+                        <li>clothing</li>
+                        <li>medical assistance</li>
+                        <li>educational assistance</li>
+                        <li>community support</li>
+                    </ul>
+                    <p>Mosques frequently operate charitable programs.</p>
+                </div>
+
+                <div id="life-health" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Islam generally regards preservation of human life as an important moral objective. Muslim physicians historically made significant contributions to:</p>
+                    <ul class="principles-list">
+                        <li>hospitals</li>
+                        <li>pharmacology</li>
+                        <li>surgery</li>
+                        <li>ophthalmology</li>
+                        <li>medical education</li>
+                        <li>public health</li>
+                    </ul>
+                    <p>Islamic law also addresses issues involving:</p>
+                    <ul class="principles-list">
+                        <li>illness</li>
+                        <li>fasting</li>
+                        <li>medical treatment</li>
+                        <li>disability</li>
+                        <li>end-of-life questions</li>
+                        <li>organ transplantation</li>
+                        <li>reproductive medicine</li>
+                    </ul>
+                    <p>Modern Muslim scholars and medical ethicists continue to debate emerging medical technologies.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Traditional Muslim funeral practice generally includes washing the body, shrouding, funeral prayer, and burial. Muslim funerals are normally conducted relatively quickly when circumstances permit. The body is treated with dignity and respect.</p>
+                </div>
+
+                <div id="life-community" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The two principal annual Islamic festivals are Eid al-Fitr and Eid al-Adha. Muslims also observe Ramadan as a major sacred month. Some communities additionally commemorate other occasions, particularly within Shi'a traditions.</p>
+                    <h3>Community Life</h3>
+                    <p>Muslim community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>mosques</li>
+                        <li>Islamic schools</li>
+                        <li>charitable organizations</li>
+                        <li>cultural organizations</li>
+                        <li>family gatherings</li>
+                        <li>youth programs</li>
+                        <li>educational programs</li>
+                    </ul>
+                    <p>In the United States, mosques may also function as community centers providing:</p>
+                    <ul class="principles-list">
+                        <li>food assistance</li>
+                        <li>marriage services</li>
+                        <li>counseling</li>
+                        <li>educational programs</li>
+                        <li>interfaith programs</li>
+                        <li>civic engagement</li>
+                        <li>refugee assistance</li>
+                        <li>youth activities</li>
+                    </ul>
+                </div>
+
+                <div id="life-civic" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Islamic history includes many different political models. There is no single universally accepted modern Islamic political system. Muslims today participate in:</p>
+                    <ul class="principles-list">
+                        <li>democracies</li>
+                        <li>constitutional monarchies</li>
+                        <li>republics</li>
+                        <li>parliamentary systems</li>
+                        <li>secular states</li>
+                        <li>Muslim-majority states with varying degrees of religious law</li>
+                    </ul>
+                    <p>Muslims living in non-Muslim-majority countries participate in civic life in diverse ways. In the United States, Muslim citizens may participate in:</p>
+                    <ul class="principles-list">
+                        <li>voting</li>
+                        <li>political parties</li>
+                        <li>public service</li>
+                        <li>advocacy</li>
+                        <li>charitable organizations</li>
+                        <li>interfaith organizations</li>
+                        <li>local government</li>
+                        <li>professional associations</li>
+                    </ul>
+                    <p>Political participation is therefore shaped by both Islamic principles and the constitutional and civic framework of the country in which Muslims live.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Islam has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Jews</li>
+                        <li>Christians</li>
+                        <li>Zoroastrians</li>
+                        <li>Hindus</li>
+                        <li>Buddhists</li>
+                        <li>people of other religions</li>
+                        <li>people without religious belief</li>
+                    </ul>
+                    <p>The Qur'an recognizes Jews and Christians as <strong>People of the Book</strong> in a number of contexts. Islam simultaneously maintains its own theological claims while instructing Muslims to behave justly and ethically toward others.</p>
+                    <p>The Qur'an's command that religious differences should not lead believers to abandon justice is especially significant.</p>
+                </div>
+
+                <div id="life-america" class="history-sub-section">
+                    <h3>Islam in America</h3>
+                    <p>Islam has a long history in the United States. American Muslims include people whose families have lived in the United States for generations as well as recent immigrants and converts.</p>
+                    <p>Major Muslim communities include people with roots in:</p>
+                    <ul class="principles-list">
+                        <li>Africa</li>
+                        <li>the Middle East</li>
+                        <li>South Asia</li>
+                        <li>Southeast Asia</li>
+                        <li>Europe</li>
+                        <li>Central Asia</li>
+                        <li>the Caribbean</li>
+                        <li>Latin America</li>
+                    </ul>
+                    <p>African American Muslim history is particularly significant in the development of Islam in the United States.</p>
+                    <p>American Muslims today participate in virtually every profession, including medicine, engineering, law, education, business, government, science, technology, military service, journalism, and the arts.</p>
+                </div>
+
+                <div id="life-humanity" class="history-sub-section">
+                    <h3>Islam and Humanity</h3>
+                    <p>Islamic civilization made major historical contributions in numerous areas.</p>
+                    <h3>Mathematics</h3>
+                    <p>Muslim scholars contributed to algebra, arithmetic, geometry, and astronomy. The word <strong>algebra</strong> derives from the Arabic <em>al-jabr</em>.</p>
+                    <h3>Medicine</h3>
+                    <p>Islamic civilization produced major physicians and medical encyclopedias. Among the best-known was <strong>Ibn Sina (Avicenna)</strong>. Muslim hospitals developed systems of inpatient treatment, medical education, pharmacies, and specialized wards.</p>
+                    <h3>Astronomy</h3>
+                    <p>Muslim astronomers developed extensive astronomical tables and observatories. Astronomy was particularly important because of its relationship to:</p>
+                    <ul class="principles-list">
+                        <li>prayer times</li>
+                        <li>lunar calendars</li>
+                        <li>determining Ramadan</li>
+                        <li>determining the direction of prayer</li>
+                        <li>navigation</li>
+                    </ul>
+                    <h3>Philosophy</h3>
+                    <p>Muslim philosophers engaged deeply with Aristotle, Plato, logic, metaphysics, ethics, medicine, and political philosophy. Important figures included al-Farabi, Ibn Sina, and Ibn Rushd.</p>
+                </div>
+
+                <div id="life-values" class="history-sub-section">
+                    <h3>Islam and Knowledge</h3>
+                    <p>The Qur'an repeatedly encourages reflection, observation, learning, and the use of reason. The Islamic intellectual tradition consequently developed extensive disciplines devoted to understanding revelation, language, nature, society, law, history, and philosophy.</p>
+                    <p>Islamic civilization's intellectual history was neither static nor uniform. There were vigorous debates among theologians, philosophers, jurists, scientists, mystics, and political thinkers.</p>
+                    <h3>Islam and Justice</h3>
+                    <p>Justice is one of the most important recurring themes in Islamic scripture. The Qur'an instructs believers to uphold justice even when doing so conflicts with their own interests or those of their relatives. It also states that hatred toward another group must not become an excuse for injustice.</p>
+                    <p>This principle provides an important framework for Islamic ethics: <strong>justice is not supposed to depend upon whether the other person is one's friend, relative, neighbor, or opponent.</strong></p>
+                    <h3>Islam and Human Dignity</h3>
+                    <p>The Qur'an describes humanity as one human family and presents ethnic and tribal diversity as part of God's creation. Qur'an 49:13 states that humanity was created from a male and female and divided into peoples and tribes so that people might know one another. It identifies righteousness, not ethnicity, as the basis of honor before God.</p>
+                    <p>This provides an important Islamic foundation for understanding:</p>
+                    <ul class="principles-list">
+                        <li>human equality</li>
+                        <li>ethnic diversity</li>
+                        <li>cultural diversity</li>
+                        <li>international relationships</li>
+                        <li>opposition to racial superiority</li>
+                    </ul>
+                    <h3>Islam and Mercy</h3>
+                    <p>Mercy is one of the most prominent attributes associated with God in the Qur'an. Nearly every Qur'anic chapter begins with <strong>Bismillāh al-Raḥmān al-Raḥīm</strong>, commonly translated: <strong>"In the name of Allah, the Most Compassionate, the Most Merciful."</strong></p>
+                    <p>The Prophet Muhammad ﷺ is also described in the Qur'an as a mercy to the worlds. Mercy therefore represents a central theme of Islamic spirituality and ethics.</p>
+                </div>
+
+                <div id="life-faith" class="history-sub-section">
+                    <h3>Islam as Faith, Practice, and Character</h3>
+                    <p>A particularly important feature of Islam is that it does not reduce religion to intellectual belief. The famous Hadith of Gabriel presents Islam through three interconnected dimensions:</p>
+                    <ul>
+                        <li><strong>Islam:</strong> Outward submission and religious practice.</li>
+                        <li><strong>Iman:</strong> Faith and belief.</li>
+                        <li><strong>Ihsan:</strong> Spiritual excellence, worshiping God with awareness that God sees the worshiper.</li>
+                    </ul>
+                    <p>The Prophet ﷺ explained these concepts in the famous hadith and concluded that Gabriel had come to teach people their religion.</p>
+                    <p>This three-part framework can be useful for understanding Islam as: <strong>belief + practice + character/spiritual excellence.</strong></p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Islam is a global monotheistic tradition centered on the worship of one God, revelation, prophecy, moral responsibility, and accountability in the afterlife. Its central scripture is the Qur'an, while the Sunnah of Muhammad ﷺ provides the principal model for understanding how Islamic teachings are practiced.</p>
+                <h3>Theological Core</h3>
+                <ul class="principles-list">
+                    <li>belief in one God</li>
+                    <li>belief in God's prophets</li>
+                    <li>belief in revelation</li>
+                    <li>belief in angels</li>
+                    <li>belief in resurrection and judgment</li>
+                    <li>belief in divine decree</li>
+                    <li>moral responsibility</li>
+                </ul>
+                <h3>Practical Core: The Five Pillars</h3>
+                <ul class="principles-list">
+                    <li>declaration of faith</li>
+                    <li>prayer</li>
+                    <li>charity</li>
+                    <li>fasting</li>
+                    <li>pilgrimage</li>
+                </ul>
+                <h3>Ethical Core</h3>
+                <ul class="principles-list">
+                    <li>justice</li>
+                    <li>mercy</li>
+                    <li>honesty</li>
+                    <li>generosity</li>
+                    <li>family responsibility</li>
+                    <li>protection of the vulnerable</li>
+                    <li>keeping promises</li>
+                    <li>respect for parents</li>
+                    <li>accountability before God</li>
+                </ul>
+                <p>Islam has also produced a vast and diverse civilization encompassing theology, law, philosophy, medicine, mathematics, astronomy, literature, architecture, art, education, and social institutions.</p>
+                <p>At the same time, Islam should not be understood as a single culture. Muslims today represent enormous ethnic, linguistic, national, theological, legal, and cultural diversity. Understanding Islam therefore requires distinguishing among <strong>scripture, theology, jurisprudence, history, culture, and contemporary practice</strong>.</p>
+                <p>The Qur'an itself describes humanity as diverse peoples and tribes who are meant to know one another. That principle provides a useful foundation for studying Islam not simply as a set of doctrines, but as a living global tradition practiced by approximately two billion people across the world.</p>
+            </div>
+
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>This page draws primarily on the foundational Islamic sources: the Qur'an, the Sunnah and Hadith, and the classical Islamic scholarly tradition.</p>
+
+                <h3>1. The Qur'an</h3>
+                <p>The Qur'an is the first and most important reference for Islamic theology. Useful primary passages include:</p>
+                <ul>
+                    <li><strong>Qur'an 1:</strong> Al-Fatihah</li>
+                    <li><strong>Qur'an 2:21–22:</strong> worship of God</li>
+                    <li><strong>Qur'an 2:177:</strong> comprehensive definition of righteousness</li>
+                    <li><strong>Qur'an 2:183–187:</strong> fasting</li>
+                    <li><strong>Qur'an 2:255:</strong> God's attributes</li>
+                    <li><strong>Qur'an 2:256:</strong> religious compulsion</li>
+                    <li><strong>Qur'an 3:19:</strong> Islam and submission to God</li>
+                    <li><strong>Qur'an 4:1:</strong> common human origin</li>
+                    <li><strong>Qur'an 4:135:</strong> justice</li>
+                    <li><strong>Qur'an 5:8:</strong> justice even toward those one dislikes</li>
+                    <li><strong>Qur'an 16:90:</strong> justice, excellence, and charity</li>
+                    <li><strong>Qur'an 17:23–24:</strong> parents</li>
+                    <li><strong>Qur'an 24:30–31:</strong> modesty</li>
+                    <li><strong>Qur'an 30:21:</strong> marriage</li>
+                    <li><strong>Qur'an 39:53:</strong> divine forgiveness</li>
+                    <li><strong>Qur'an 49:13:</strong> human diversity and equality</li>
+                    <li><strong>Qur'an 60:8:</strong> kindness and justice toward peaceful non-Muslims</li>
+                    <li><strong>Qur'an 112:</strong> God's absolute oneness</li>
+                </ul>
+
+                <h3>2. Sahih al-Bukhari</h3>
+                <p>Especially important:</p>
+                <ul class="principles-list">
+                    <li>Book of Revelation</li>
+                    <li>Book of Faith</li>
+                    <li>Book of Knowledge</li>
+                    <li>Book of Prayer</li>
+                    <li>Book of Zakat</li>
+                    <li>Book of Fasting</li>
+                    <li>Book of Hajj</li>
+                    <li>Book of Marriage</li>
+                    <li>Book of Good Manners</li>
+                </ul>
+                <p>The Hadith of Gabriel and the Five Pillars are particularly important foundational texts.</p>
+
+                <h3>3. Sahih Muslim</h3>
+                <p>Particularly important for Islam, Iman, Ihsan, divine decree, worship, ethics, and social conduct. The Hadith of Gabriel is also recorded in Sahih Muslim.</p>
+
+                <h3>4. Other Major Hadith Collections</h3>
+                <p>For more detailed jurisprudential and historical research:</p>
+                <ul class="principles-list">
+                    <li>Sunan Abu Dawud</li>
+                    <li>Jami' al-Tirmidhi</li>
+                    <li>Sunan al-Nasa'i</li>
+                    <li>Sunan Ibn Majah</li>
+                </ul>
+
+                <h3>5. Shi'a Primary Traditions</h3>
+                <p>Shi'a sources are represented alongside Sunni sources rather than presenting Sunni sources as though they were the entirety of Islam. Important collections include:</p>
+                <ul class="principles-list">
+                    <li><em>al-Kafi</em></li>
+                    <li><em>Man la yahduruhu al-faqih</em></li>
+                    <li><em>Tahdhib al-ahkam</em></li>
+                    <li><em>al-Istibsar</em></li>
+                </ul>
+                <p>These collections are understood according to Shi'a scholarly methodology rather than judged solely by Sunni hadith standards.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

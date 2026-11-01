@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Transcultural Forum Inc.</title>
+    <meta name="description" content="Join Transcultural Forum for upcoming community events, interactive workshops, and open dialogues that bring people together to share and preserve traditions.">
+    <!-- Link the main style sheet to match navigation bar, dropdown, and logo perfectly -->
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Events | Transcultural Forum Inc.">
+    <meta property="og:description" content="Join Transcultural Forum for upcoming community events, interactive workshops, and open dialogues that bring people together to share and preserve traditions.">
+    <meta property="og:image" content="https://images.pexels.com/photos/1207513/pexels-photo-1207513.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Events | Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Join Transcultural Forum for upcoming community events, interactive workshops, and open dialogues that bring people together to share and preserve traditions.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/1207513/pexels-photo-1207513.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Specific Styles for the Events Page & Layout */
+        
+        /* Events Page Header (Matches theme) */
+        .events-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .events-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .events-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Two-Column Layout Container */
+        .events-layout-container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3.5rem; /* Gap between left content and right sidebar */
+        }
+
+        /* Left Column: Main Event Cards */
+        .main-events-content {
+            flex: 2.2; /* Takes up roughly 70% of the space */
+        }
+
+        .section-subtitle {
+            font-family: 'Georgia', serif;
+            font-size: 1.75rem;
+            color: #2F3E2B;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Tab Content Switching Logic Styles */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active-content {
+            display: block;
+        }
+
+        /* Filter Controls */
+        .filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            background-color: #F4F1EA;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #E4E1DA;
+        }
+
+        .filter-btn {
+            background-color: #FFFFFF;
+            border: 1px solid #D6DBD2;
+            color: #2F3E2B;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+        }
+
+        .filter-btn.active-filter {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 2px 6px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Cultures Calendar Styling */
+        .cultures-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem; /* Slightly more space for in-depth content */
+        }
+
+        .culture-card {
+            background: #FFFFFF;
+            border-left: 4px solid #3C6B5F;
+            border-top: 1px solid #E6E8E3;
+            border-right: 1px solid #E6E8E3;
+            border-bottom: 1px solid #E6E8E3;
+            border-radius: 0 8px 8px 0;
+            padding: 2.2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        /* Animation class for filtering */
+        .culture-card.hidden-card {
+            display: none !important;
+        }
+
+        .culture-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #E6E8E3;
+            padding-bottom: 0.75rem;
+        }
+
+        .culture-card-header h3 {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.4rem;
+        }
+
+        .culture-date {
+            font-weight: bold;
+            color: #3C6B5F;
+            font-size: 0.95rem;
+            margin-left: 10px;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .culture-card p {
+            color: #555555;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .culture-card strong.sub-header {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.4rem;
+            color: #2F3E2B;
+            font-family: 'Georgia', serif;
+            font-size: 1.05rem;
+        }
+
+        .culture-type {
+            font-size: 0.75rem;
+            background-color: #F4F1EA;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            color: #3C6B5F;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        /* Right Column: Sidebar */
+        .events-sidebar {
+            flex: 0.8; /* Takes up roughly 30% of the space */
+            align-self: flex-start;
+            position: sticky;
+            top: 100px; /* Sticks scroll offset below the main navbar */
+            text-align: left;
+        }
+
+        /* Sidebar Navigation List (Right side Tabs) */
+        .sidebar-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            border-bottom: 1px solid #E6E8E3;
+        }
+
+        .sidebar-nav-list li {
+            border-top: 1px solid #E6E8E3;
+        }
+
+        .sidebar-nav-list a {
+            display: block;
+            padding: 0.9rem 0;
+            color: #3C6B5F;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .sidebar-nav-list a:hover {
+            color: #2F3E2B;
+            padding-left: 8px; /* Smooth slide-in hover effect */
+        }
+
+        .sidebar-nav-list li.active-tab a {
+            font-weight: bold;
+            color: #2F3E2B;
+            border-left: 3px solid #3C6B5F;
+            padding-left: 8px;
+        }
+
+        /* Info box under sidebar tabs */
+        .sidebar-info-box {
+            background-color: #F4F1EA;
+            border: 1px solid #E4E1DA;
+            border-radius: 6px;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-info-box h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-info-box p {
+            margin: 0;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Stay Tuned Graphic Container */
+        .stay-tuned-container {
+            border: 2px dashed #D6DBD2;
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #FFFDF9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .stay-tuned-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            color: #2F3E2B;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-text {
+            color: #555555;
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive Media Queries */
+        @media (max-width: 900px) {
+            .events-layout-container {
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+            .events-sidebar {
+                position: static;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger active-page">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html" class="active-page">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Events Page Header -->
+    <header class="events-header photo-banner" style="--banner: url('https://images.pexels.com/photos/1207513/pexels-photo-1207513.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <h1>Events</h1>
+        <p>Gatherings, interactive workshops, and open dialogues that bring communities together to share and preserve traditions.</p>
+    </header>
+
+    <!-- Two-Column Layout Wrapper -->
+    <div class="events-layout-container">
+        
+        <!-- Left Side: Dynamic Content Area -->
+        <main class="main-events-content">
+            
+            <!-- TAB 1: TCF EVENT CALENDAR -->
+            <div id="tcf-calendar-content" class="tab-content active-content">
+                <h2 class="section-subtitle">Upcoming TCF Events</h2>
+
+                <!-- Teaser Block with 'Under Construction', emojis, newsletter, and category labels removed -->
+                <div class="stay-tuned-container">
+                    <h3 class="stay-tuned-title">Stay Tuned!</h3>
+                    <p class="stay-tuned-text">We are actively organizing our next round of panels, community dialogs, and interactive events. Please check back soon.</p>
+                </div>
+            </div>
+
+            <!-- TAB 2: CULTURES CALENDAR -->
+            <div id="cultures-calendar-content" class="tab-content">
+                <h2 class="section-subtitle">Global Cultures Calendar (2026)</h2>
+                <p style="margin-bottom: 1.5rem; color: #555;">An in-depth guide to major interfaith observances, sacred holy days, and global heritage celebrations for the year 2026.</p>
+
+                <!-- Interactive Filter Row -->
+                <div class="filter-container">
+                    <button class="filter-btn active-filter" onclick="filterCulture('all')">Show All</button>
+                    <button class="filter-btn" onclick="filterCulture('islam')">Islam</button>
+                    <button class="filter-btn" onclick="filterCulture('judaism')">Judaism</button>
+                    <button class="filter-btn" onclick="filterCulture('christianity')">Christianity</button>
+                    <button class="filter-btn" onclick="filterCulture('hinduism')">Hinduism</button>
+                    <button class="filter-btn" onclick="filterCulture('buddhism')">Buddhism</button>
+                    <button class="filter-btn" onclick="filterCulture('sikhism')">Sikhism</button>
+                    <button class="filter-btn" onclick="filterCulture('east asian heritage')">East Asian</button>
+                </div>
+
+                <div class="cultures-list" id="cultures-list-container">
+                    
+                    <!-- LUNAR NEW YEAR -->
+                    <div class="culture-card" data-category="east asian heritage">
+                        <div class="culture-card-header">
+                            <h3>Lunar New Year (Year of the Horse)</h3>
+                            <span class="culture-date">February 17, 2026</span>
+                        </div>
+                        <p>
+                            Signifying the end of the winter season and the renewal of life, the Lunar New Year is deeply rooted in ancient agricultural rhythms and astronomical calculations. In East Asian cosmology, the transition of the year relies on the lunisolar calendar, ensuring a dynamic shift in elemental alignments. 
+                            <strong class="sub-header">Traditions & Rituals:</strong>
+                            Families gather across geographic boundaries for the essential "reunion dinner" (Nian Ye Fan) to honor ancestors and sweep away the accumulated misfortune of the previous year. Celebrations are defined by the giving of red envelopes (Hongbao) filled with crisp money to symbolize prosperity and protection, the lighting of loud firecrackers to ward off the mythical, destructive beast Nian, and spectacular public dragon dances. In 2026, the transition welcomes the Year of the Horse, a zodiac sign celebrated across generations for its high energy, pursuit of freedom, independence, and swift, decisive progress.
+                        </p>
+                        <span class="culture-type">East Asian Heritage</span>
+                    </div>
+
+                    <!-- RAMADAN -->
+                    <div class="culture-card" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Ramadan (Holy Month of Fasting)</h3>
+                            <span class="culture-date">Feb 18 - Mar 19, 2026</span>
+                        </div>
+                        <p>
+                            Commemorating the historical month in which the Quran was first revealed to Prophet Muhammad on Laylat al-Qadr (the Night of Decree), Ramadan is the spiritual anchor of the Islamic year. It constitutes the fourth pillar of Islam, during which the gates of heaven are believed to be opened and spiritual rewards are exponentially multiplied.
+                            <strong class="sub-header">Spiritual Mechanics & Community:</strong>
+                            Observing Muslims practice strict fasting (Sawm)—abstaining entirely from food, liquids, smoking, and negative behaviors from dawn (Fajr) until dusk (Maghrib). The pre-dawn meal of Suhoor and the sunset breaking of the fast (Iftar), traditionally initiated with dates and water, serve as deeply communal points of gathering. Spiritually, the month emphasizes self-discipline, inner purification, intensive nightly prayers (Taraweeh), and obligatory charity (Zakat) to build empathy for the less fortunate, redirecting the human heart back to its divine creator.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- HOLI -->
+                    <div class="culture-card" data-category="hinduism">
+                        <div class="culture-card-header">
+                            <h3>Holi (Festival of Colors)</h3>
+                            <span class="culture-date">March 3, 2026</span>
+                        </div>
+                        <p>
+                            This ancient Hindu spring festival is an exuberant celebration of rebirth, love, and the divine triumph of good over evil. Theologically, it is anchored in the scriptural legend of young Prahlad's miraculous survival over the demoness Holika due to his absolute devotion to Lord Vishnu, as well as the playful, divine love shared between Lord Krishna and Radha.
+                            <strong class="sub-header">The Ritual of Color & Unity:</strong>
+                            The festivities begin the night before with the lighting of the Holika bonfire, where communities gather to sing, dance, and perform rites symbolizing the burning away of past grievances, internal impurities, and negative ego. The following day, communities take to the streets to playfully throw vibrant colored powders (gulal) and water, effectively dissolving rigid social hierarchies of caste, age, and gender, reconciling broken relationships, and welcoming the arrival of spring with music, dancing, and traditional cardamom-infused sweets like gujiya.
+                        </p>
+                        <span class="culture-type">Hinduism</span>
+                    </div>
+
+                    <!-- EID AL-FITR -->
+                    <div class="culture-card" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Eid al-Fitr (Festival of Breaking the Fast)</h3>
+                            <span class="culture-date">March 20, 2026</span>
+                        </div>
+                        <p>
+                            To celebrate the successful completion of the intensive spiritual training and physical endurance of Ramadan, Muslims around the globe observe Eid al-Fitr, which translates directly to the "Festival of Breaking the Fast." It begins on the first day of Shawwal, the tenth month of the lunar Islamic calendar.
+                            <strong class="sub-header">Gratitude & Festivities:</strong>
+                            The day commences with a special, highly attended congregational prayer in the early morning, preceded by the distribution of a specific, mandatory charity (Zakat al-Fitr) to ensure those in poverty can also participate in the holiday. Affectionately nicknamed the "Sweet Eid," it is marked by wearing new clothes, exchanging gifts, visiting extended family, forgiving past disputes, and consuming decadent traditional desserts. It serves as a moment of profound gratitude to God for giving believers the strength to observe the fast.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- PASSOVER -->
+                    <div class="culture-card" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Passover (Pesach)</h3>
+                            <span class="culture-date">April 2 - April 10, 2026</span>
+                        </div>
+                        <p>
+                            Passover is a foundational Jewish holiday commemorating the biblical Exodus and the physical and spiritual liberation of the Israelites from Egyptian slavery under the leadership of Moses. It is a profound celebration of human dignity, liberty, and the enduring covenant between God and the Jewish people.
+                            <strong class="sub-header">The Seder & Unleavened Bread:</strong>
+                            Over the first two nights, families gather for the highly structured Seder meal, where they read the Haggadah to retell the story of freedom to the next generation. The Seder plate features deeply symbolic foods, including bitter herbs (maror) to recall the pain of bondage, and Matzo (unleavened flatbread) to remember the haste in which the Israelites fled. Throughout the eight-day holiday, all leavened grain products (chametz) are strictly avoided, turning the physical home and the human heart into spaces of deep cleansing and historical remembrance.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- EASTER -->
+                    <div class="culture-card" data-category="christianity">
+                        <div class="culture-card-header">
+                            <h3>Easter</h3>
+                            <span class="culture-date">April 5, 2026</span>
+                        </div>
+                        <p>
+                            Easter stands as the absolute cornerstone of Christian theology, celebrating the resurrection of Jesus Christ from the dead three days after his crucifixion on Good Friday. This miraculous event is understood by believers as the ultimate triumph over sin, physical mortality, and spiritual darkness, establishing a path to eternal salvation.
+                            <strong class="sub-header">Liturgical Liturgy & Symbolism:</strong>
+                            Marking the culmination of the forty-day penitential season of Lent and the intensity of Holy Week, Easter Sunday is a festival of profound hope and joy. Believers celebrate with festive liturgical church services, joyful hymns of resurrection, and sunrise services. Culturally, the holiday has also incorporated rich, ancient symbols of new life, such as decorative Easter lilies, newly hatched chicks, and painted eggs, which represent the tomb of Christ from which new, eternal life cracked open.
+                        </p>
+                        <span class="culture-type">Christianity</span>
+                    </div>
+
+                    <!-- VAISAKHI -->
+                    <div class="culture-card" data-category="sikhism">
+                        <div class="culture-card-header">
+                            <h3>Vaisakhi</h3>
+                            <span class="culture-date">April 14, 2026</span>
+                        </div>
+                        <p>
+                            While historically rooted in the agricultural rhythms of the Punjab region as a joyous harvest festival, Vaisakhi holds paramount spiritual and historical significance for Sikhs. It commemorates the creation of the Khalsa (the collective body of initiated Sikhs) by Guru Gobind Singh in 1699, which established a distinct community identity, a code of high moral discipline, and a commitment to fighting social injustice and defending the oppressed.
+                            <strong class="sub-header">Religious Observances:</strong>
+                            The day is celebrated by raising the Sikh flag (Nishan Sahib) outside Gurudwaras, performing intensive devotional singing (Kirtan), and holding massive, vibrant community processions (Nagar Kirtans) that fill the streets with martial arts displays (Gatka) and hymns. Free communal kitchens (Langar) are expanded, offering hot vegetarian meals to all visitors regardless of background, caste, or creed, reinforcing the radical equality at the core of Sikhism.
+                        </p>
+                        <span class="culture-type">Sikhism</span>
+                    </div>
+
+                    <!-- VESAK -->
+                    <div class="culture-card" data-category="buddhism">
+                        <div class="culture-card-header">
+                            <h3>Vesak (Buddha Day)</h3>
+                            <span class="culture-date">May 1, 2026</span>
+                        </div>
+                        <p>
+                            Vesak is the most sacred day in the Buddhist calendar, commemorating three pivotal, interconnected milestones in the life of Gautama Buddha: his physical birth, his attainment of supreme enlightenment (Nirvana) under the Bodhi tree, and his passing into final liberation (Parinirvana). It is a day dedicated to the peaceful contemplation of the Dharma (the Buddha's teachings on suffering and liberation).
+                            <strong class="sub-header">Mindfulness & Compassion:</strong>
+                            Observers gather at temples before dawn to hoist Buddhist flags, sing spiritual hymns, meditate deeply, and make symbolic offerings of flowers, candles, and incense. These offerings serve to remind believers that all physical form is impermanent and fleeting. Devotees prioritize acts of compassion (Dana), giving charity to shelters, organizing blood drives, and releasing captive animals to reflect the Buddha's teachings of universal loving-kindness and non-harming (Ahimsā).
+                        </p>
+                        <span class="culture-type">Buddhism</span>
+                    </div>
+
+                    <!-- EID AL-ADHA -->
+                    <div class="culture-card" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Eid al-Adha (Festival of Sacrifice & Culmination of Hajj)</h3>
+                            <span class="culture-date">May 27, 2026</span>
+                        </div>
+                        <p>
+                            Eid al-Adha is the second of the two major Islamic holidays, honoring the profound devotion of Prophet Ibrahim (Abraham), who was willing to sacrifice his son in obedience to God's command before a ram was miraculously substituted. This sacred festival marks the grand finale of the **annual Hajj pilgrimage** to Mecca—the mandatory, once-in-a-lifetime spiritual journey that constitutes the fifth pillar of Islam.
+                            <strong class="sub-header">The Ritual of Sacrifice & Hajj:</strong>
+                            Millions of pilgrims conclude their exhausting rites in Mina and Mount Arafat, shedding their worldly status in simple white garments (Ihram) to stand equal before God. In solidarity with the pilgrims, families worldwide who are financially able perform the ritual sacrifice of an animal (Qurbani). The meat is strictly divided into three equal portions: one-third for the immediate household, one-third for friends and neighbors, and one-third for those experiencing poverty and hunger, cementing social cohesion, global charity, and absolute devotion.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- AL-HIJRA (ISLAMIC NEW YEAR) -->
+                    <div class="culture-card" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Al-Hijra (The Islamic New Year - 1st Muharram)</h3>
+                            <span class="culture-date">June 16 - June 17, 2026</span>
+                        </div>
+                        <p>
+                            Al-Hijra, occurring on the first day of the sacred month of Muharram, marks the beginning of the Islamic lunar year (marking the transition to Hijri year 1448). Unlike solar-based celebrations, Al-Hijra is not observed with fireworks or boisterous parties; instead, it is a period of quiet spiritual reflection, historical remembrance, and deep communal solidarity.
+                            <strong class="sub-header">The Migration & Creation of the Calendar:</strong>
+                            The holiday commemorates the historic migration (Hijrah) of Prophet Muhammad and his early companions in 622 CE from the persecution of Mecca to the welcoming oasis of Yathrib (later renamed Medina, "The City of the Prophet"). This journey was not merely a flight from danger, but a pivotal transition that allowed the first Islamic community (Ummah) to establish a society built on justice, mutual defense, and religious freedom. Recognizing the transformative nature of this migration, the second Caliph, Umar ibn al-Khattab, officially established the Hijri calendar in 639 CE, designating the year of the Hijrah as Year 1. Muslims use this day to reflect on the sacrifices of the early pioneers and to set spiritual intentions for the upcoming year.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- ROSH HASHANAH -->
+                    <div class="culture-card" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Rosh Hashanah (The Jewish New Year)</h3>
+                            <span class="culture-date">Sept 11 - Sept 13, 2026</span>
+                        </div>
+                        <p>
+                            Translating literally to "Head of the Year," Rosh Hashanah is the Jewish New Year and the solemn gateway to the Ten Days of Repentance (Yamim Noraim). It is understood in Jewish theology as the anniversary of the creation of the world, serving as a period of deep self-assessment, reflection, and prayer before the Divine.
+                            <strong class="sub-header">The Call of the Shofar:</strong>
+                            A central commandment of the holiday is the sounding of the Shofar (a ram's horn) in the synagogue, a raw, piercing sound that serves as a spiritual wake-up call to shake off moral slumber, return to righteous paths, and seek forgiveness. Festivities are highlighted by eating round challah bread (symbolizing the cyclical, crown-like flow of life) and dipping fresh apples in honey, expressing a collective, hopeful prayer for a sweet, fruitful year ahead.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- YOM KIPPUR -->
+                    <div class="culture-card" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Yom Kippur (The Day of Atonement)</h3>
+                            <span class="culture-date">Sept 20 - Sept 21, 2026</span>
+                        </div>
+                        <p>
+                            Yom Kippur is the absolute holiest, most solemn day of the Jewish year, concluding the Ten Days of Repentance that began on Rosh Hashanah. It is a day of radical purification, where humanity stands bare before God, seeking atonement for transgressions committed over the past year.
+                            <strong class="sub-header">Self-Denial & Rebirth:</strong>
+                            The holiday is defined by a strict, twenty-five-hour fast from all food and water, during which physical comforts—including bathing, perfumes, and leather shoes—are set aside to focus entirely on the soul's relationship with the Divine. The day is spent in almost continuous prayer inside the synagogue, culminating in the five services of atonement where the community confesses collective sins. It is a profound, meditative space for seeking forgiveness from both God and fellow human beings, ending with a single, long blast of the Shofar (the Tekiah Gedolah) to signal the sealing of the Book of Life.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- MID-AUTUMN FESTIVAL -->
+                    <div class="culture-card" data-category="east asian heritage">
+                        <div class="culture-card-header">
+                            <h3>Mid-Autumn Festival</h3>
+                            <span class="culture-date">September 25, 2026</span>
+                        </div>
+                        <p>
+                            Dating back over three thousand years to ancient emperors worshipping the autumn moon for prosperous harvests, the Mid-Autumn Festival is a celebration of family unity, thanksgiving, and abundance. Linked deeply to the mythological tale of Chang'e, the Moon Goddess who drank the elixir of immortality and took residence on the moon, the festival highlights the harmony of nature.
+                            <strong class="sub-header">Mooncakes & Illuminated Lanterns:</strong>
+                            Families gather to gaze at the full moon, which, in its perfect roundness, represents completion and family reunion. The holiday's signature custom is the sharing of mooncakes—rich, intricately molded pastries filled with sweet lotus seed paste, sweet bean paste, and salted egg yolks representing the moon. Cities and parks are illuminated with thousands of glowing paper lanterns, and families write poetry and drink cassette-flavored wine to honor their heritage.
+                        </p>
+                        <span class="culture-type">East Asian Heritage</span>
+                    </div>
+
+                    <!-- DIWALI -->
+                    <div class="culture-card" data-category="hinduism">
+                        <div class="culture-card-header">
+                            <h3>Diwali (The Festival of Lights)</h3>
+                            <span class="culture-date">November 8, 2026</span>
+                        </div>
+                        <p>
+                            Diwali is India’s biggest and most celebrated five-day festival, symbolizing the spiritual victory of light over darkness, good over evil, and knowledge over ignorance. For many, it celebrates the epic return of Lord Rama, along with his wife Sita and brother Lakshmana, to his kingdom of Ayodhya after defeating the demon king Ravana and completing 14 years of exile.
+                            <strong class="sub-header">Lamps, Rangoli, & Wealth:</strong>
+                            Families prepare by thoroughly cleaning and decorating their homes, painting beautiful geometric floor patterns (rangoli) made of colored powder, sand, or flower petals at entryways. The night of Diwali is marked by lighting hundreds of tiny clay oil lamps (diyas) and setting off fireworks to guide Lakshmi, the goddess of wealth, fortune, and prosperity, into the home. It is a time for sharing rich sweets, wearing new clothing, and forgiving past conflicts to begin the year anew.
+                        </p>
+                        <span class="culture-type">Hinduism</span>
+                    </div>
+
+                    <!-- HANUKKAH -->
+                    <div class="culture-card" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Hanukkah (The Festival of Lights)</h3>
+                            <span class="culture-date">Dec 4 - Dec 12, 2026</span>
+                        </div>
+                        <p>
+                            Hanukkah is an eight-day Jewish festival commemorating the heroic reclamation of Jerusalem and the rededication of the Second Temple in the 2nd century BCE after a successful revolt against the Seleucid Empire. It is a powerful celebration of religious freedom, cultural preservation, and resilience against forced assimilation.
+                            <strong class="sub-header">The Miracle of the Oil:</strong>
+                            According to historical tradition, when the Maccabees went to light the Temple's menorah, they found only a single cruse of sacred olive oil—enough to last one day. Miraculously, the oil burned bright for eight full days. Families celebrate by lighting one additional candle on the nine-branched menorah (Hanukkiah) each night, eating traditional foods fried in oil (like latkes and jelly donuts) to honor the miracle, playing the game of dreidel, and celebrating the triumph of the few over the many.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- CHRISTMAS -->
+                    <div class="culture-card" data-category="christianity">
+                        <div class="culture-card-header">
+                            <h3>Christmas</h3>
+                            <span class="culture-date">December 25, 2026</span>
+                        </div>
+                        <p>
+                            Christmas is the major Christian celebration commemorating the Nativity and birth of Jesus Christ in Bethlehem. Theologically, the day represents the Incarnation—God entering the human world to offer salvation, reconciliation, and hope to humanity.
+                            <strong class="sub-header">Liturgical Rites & Secular Customs:</strong>
+                            Communities celebrate with candlelight Christmas Eve services, Midnight Masses, and nativity scene displays (creches). Globally, the holiday has inspired extensive cultural traditions of generosity, including decorating evergreen trees, hanging wreaths, singing carols, and exchanging gifts to mirror the offerings of the Biblical Magi. It is a season defined by charity, reaching out to those experiencing isolation, and celebrating the warmth of family and community.
+                        </p>
+                        <span class="culture-type">Christianity</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Right Side: Navigation Tabs Sidebar -->
+        <aside class="events-sidebar">
+            <ul class="sidebar-nav-list" id="sidebar-tabs">
+                <li id="tab-tcf" class="active-tab"><a onclick="switchTab('tcf-calendar')">TCF Event Calendar</a></li>
+                <li id="tab-cultures"><a onclick="switchTab('cultures-calendar')">Cultures Calendar</a></li>
+            </ul>
+
+            <!-- Adjusted Questions box -->
+            <div class="sidebar-info-box">
+                <h3>Questions?</h3>
+                <p>If you have any question or concern please contact us at <strong style="color: #3C6B5F;">transculturalforum@gmail.com</strong>.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- JavaScript to toggle the tabs and filter the calendar items -->
+    <script>
+        // Main Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active-content');
+            });
+
+            // Deactivate all tab link styles
+            const tabs = document.querySelectorAll('.sidebar-nav-list li');
+            tabs.forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            // Show selected content
+            document.getElementById(tabId + '-content').classList.add('active-content');
+
+            // Apply active styles to the selected tab
+            if (tabId === 'tcf-calendar') {
+                document.getElementById('tab-tcf').classList.add('active-tab');
+            } else if (tabId === 'cultures-calendar') {
+                document.getElementById('tab-cultures').classList.add('active-tab');
+            }
+        }
+
+        // Calendar Category Filtering Logic
+        function filterCulture(category) {
+            // Update Active Filter Button Style
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active-filter');
+            });
+            
+            // Add active styling to clicked button
+            event.target.classList.add('active-filter');
+
+            // Toggle Cards Visibility based on selected category attribute
+            const cards = document.querySelectorAll('.culture-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('hidden-card');
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+        }
+    </script>
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

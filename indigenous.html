@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigenous Traditions - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Indigenous spiritualities with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Indigenous Traditions - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Indigenous spiritualities with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/6610368/pexels-photo-6610368.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Indigenous Traditions - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Indigenous spiritualities with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/6610368/pexels-photo-6610368.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html" class="active-page">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/6610368/pexels-photo-6610368.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-leaf religion-icon-bg"></i>
+        <h1>Indigenous Traditions</h1>
+        <p>A vast, diverse array of earth-centered spiritualities practiced by the original inhabitants of lands across the globe, deeply rooted in kinship with nature and ancestors.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Unlike universalizing religions such as Christianity or Islam, "Indigenous Traditions" is an umbrella term encompassing thousands of highly distinct, localized belief systems practiced by Indigenous peoples globally—from the Native Americans and First Nations of North America to the Aboriginal peoples of Australia, the Maori of New Zealand, the Sami of Scandinavia, and countless tribes across Africa and the Amazon.</p>
+                <p>Despite incredible diversity in language, rituals, and deities, these traditions generally share a worldview characterized by <em>animism</em>—the belief that the entire natural world, including animals, plants, rivers, and mountains, possesses a spiritual essence. Indigenous spiritualities are not typically separated into a "religion" practiced only on specific days; rather, spirituality is seamlessly woven into every aspect of daily life, survival, and community governance.</p>
+                <p>There are no global holy books in these traditions. Instead, sacred knowledge, histories, and moral laws are preserved and transmitted through robust oral traditions, storytelling, songs, dances, and deep, ongoing relationships with specific ancestral landscapes.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>While beliefs vary significantly from tribe to tribe, scholars and Indigenous elders often identify these overarching spiritual principles:</p>
+                <ul class="principles-list">
+                    <li><strong>Animism / Spiritual Ecology:</strong> All elements of nature (animals, plants, rocks) have consciousness and spirit.</li>
+                    <li><strong>Interconnectedness:</strong> The "Web of Life"—everything in the universe is fundamentally related and interdependent.</li>
+                    <li><strong>The Creator / Great Spirit:</strong> Belief in a pervasive life-force or ultimate Creator, often viewed as mysterious or distant.</li>
+                    <li><strong>Reverence for Ancestors:</strong> Ancestors remain active in the spiritual realm and guide the living community.</li>
+                    <li><strong>Reciprocity:</strong> Taking from the earth requires giving back through offerings, gratitude, and sustainable harvesting.</li>
+                    <li><strong>Oral Tradition:</strong> Sacred knowledge is passed down through myths, songs, and storytelling, not written texts.</li>
+                    <li><strong>Sacred Landscapes:</strong> Specific geographical features (mountains, rivers, caves) are intrinsically holy and hold spiritual power.</li>
+                    <li><strong>Community over Individual:</strong> The health and survival of the tribe or clan supersedes individual ambition.</li>
+                    <li><strong>Custodianship of the Earth:</strong> Humans are stewards of the land, not its owners or conquerors.</li>
+                    <li><strong>Shamans and Healers:</strong> Reliance on medicine men/women who mediate between the physical and spiritual realms.</li>
+                    <li><strong>Dreams and Visions:</strong> Dreams are viewed as real experiences and crucial methods of receiving spiritual guidance.</li>
+                    <li><strong>Rites of Passage:</strong> Highly structured ceremonies marking birth, coming of age (e.g., Vision Quests), marriage, and death.</li>
+                    <li><strong>Respect for Elders:</strong> Elders are revered as the primary keepers of wisdom, language, and cultural survival.</li>
+                    <li><strong>Animal Spirits and Totems:</strong> Animals serve as guides, protectors, and kin, offering lessons to humans.</li>
+                    <li><strong>Power of the Spoken Word:</strong> Words, chants, and names possess actual spiritual power to shape reality.</li>
+                    <li><strong>Circular Time:</strong> Time is viewed as cyclical, tied to the seasons and generations, rather than strictly linear.</li>
+                    <li><strong>Non-compartmentalization:</strong> There is no separation between the "secular" and the "sacred"; daily chores are spiritual acts.</li>
+                    <li><strong>Balance and Harmony:</strong> Illness or environmental disaster is the result of a loss of cosmic or spiritual balance.</li>
+                    <li><strong>Respect for the Four Directions:</strong> Honoring the cardinal directions, elements (earth, air, fire, water), and the cycles of the sun/moon.</li>
+                    <li><strong>Adaptability and Resilience:</strong> The deep spiritual endurance that has allowed cultures to survive centuries of colonization.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>For Indigenous peoples, acquiring food through hunting, fishing, or agriculture is a sacred act. A hunt is not viewed as a conquest, but as a mutual exchange where an animal gives its life to sustain humans. Hunters typically offer prayers of gratitude and utilize every part of the animal to show respect. Traditional diets are intimately tied to the local biome and are increasingly being reclaimed today for community health.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Indigenous medicine relies on Traditional Ecological Knowledge (TEK)—centuries of observation regarding local plant properties. Illness is often viewed holistically, resulting not just from physical pathogens, but from social disharmony, spiritual imbalance, or broken taboos. Modern medicine is frequently utilized today alongside traditional healers who address the spiritual root of the illness.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Views on medical procedures like organ transplants vary wildly across different cultures. Some Indigenous traditions have strong taboos regarding bodily integrity, believing the body must remain whole for the afterlife. Others embrace these procedures if they align with the community's survival and the overarching principle of helping others.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Purification is a central daily practice, often achieved through smoke. Smudging (burning sacred medicines like sage, sweetgrass, or cedar) is used across the Americas to cleanse people and spaces of negative energy. Sweat lodges and ritual river bathing are also vital methods for physical and spiritual purification.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>Founders</h3>
+                    <p>Unlike world religions, Indigenous traditions have no single historical founder. Their origins stretch back tens of thousands of years to the dawn of humanity. These belief systems evolved organically over millennia as human communities adapted to, observed, and developed spiritual relationships with their specific local environments.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Prior to the expansion of major global religions (like Christianity, Islam, and Buddhism) and the eras of European colonialism, Indigenous spiritualities were the universal default of human religious expression, covering every habitable continent on the globe.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, there are an estimated 370 to 500 million Indigenous people living in over 90 countries. Their spiritual traditions have often been suppressed, driven underground, or heavily syncretized (blended) with the religions brought by colonizers (such as the blending of Catholic saints with traditional deities in Latin America).</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Cultural Heroes and Tricksters:</strong> Mythological figures present in oral traditions (e.g., Raven, Coyote, or the Rainbow Serpent) who shaped the world and taught humans how to survive.</li>
+                        <li><strong>Historical Resistance Leaders:</strong> Figures like Sitting Bull (Lakota), Black Elk (Oglala Lakota), and Yaa Asantewaa (Ashanti) who defended their people's lands and spiritual autonomy against colonial expansion.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Elders and Knowledge Keepers:</strong> The most important figures today are the community elders who are fighting to preserve dying languages, traditional ecological knowledge, and ceremonial protocols.</li>
+                        <li><strong>Modern Activists:</strong> Indigenous leaders globally (like those involved in the Standing Rock movement or Amazonian land defense) who frame modern environmental activism as a sacred spiritual duty.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>Because these traditions are oral, their survival relies entirely on the unbroken chain of transmission from elders to youth. Colonial policies globally (such as the residential and boarding school systems in North America and Australia) specifically targeted this continuity by removing children from their communities and banning Indigenous languages and ceremonies. Today, the continuity of these principles is being powerfully reclaimed through language revitalization programs, the return of ancestral lands, and the revival of traditional ceremonies like the Sun Dance or Potlatch.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Indigenous traditions are primitive or "religions of the past."</strong><br>
+                Reality: Indigenous spiritualities are vibrant, living traditions. They are highly complex, philosophically rich, and deeply relevant to modern global issues, particularly regarding ecology and sustainability.</p>
+                <p><strong>Misconception: They "worship nature" like a god.</strong><br>
+                Reality: Indigenous peoples do not typically worship a tree or a rock as a deity; rather, they respect the spiritual essence or life-force *within* the tree or rock, viewing all elements of creation as relatives rather than objects.</p>
+                <p><strong>Misconception: Indigenous spirituality is monolithic.</strong><br>
+                Reality: There is no single "Native American religion" or "African traditional religion." There are thousands of distinct nations, each with completely unique languages, cosmologies, and protocols.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>The greatest physical challenge to Indigenous spirituality today is the continued destruction of sacred lands by extractive industries (mining, deforestation, oil pipelines). Because their spirituality is geographically bound, destroying a sacred mountain is akin to burning down a cathedral.</p>
+                <p>A major cultural challenge is the appropriation of Indigenous spiritual practices by the "New Age" movement. The commercialization and unauthorized use of sacred items (like white sage) or ceremonies (like sweat lodges) by non-Indigenous individuals is widely condemned by Indigenous elders as highly disrespectful and harmful.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Daily practices vary immensely but often involve starting the day with prayers of gratitude directed to the Creator, the sun, or the four cardinal directions. Smudging with sacred herbs is a common daily practice for purification.</p>
+                <p>Community practices are deeply tied to the natural calendar, involving seasonal ceremonies for planting, harvesting, the solstices, and animal migrations. These gatherings utilize drumming, chanting, and dancing to align the human community with the rhythms of the earth.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>The most profound impact of Indigenous traditions today is in global environmental conservation. Despite comprising less than 5% of the global population, Indigenous peoples protect and manage lands that hold an estimated 80% of the world's remaining biodiversity. Their spiritual framework of custodianship—treating the earth as a relative rather than a resource—offers a vital, sustainable alternative to modern extractive capitalism.</p>
+                <p>Furthermore, Indigenous philosophies of restorative justice (focusing on healing the community and the victim rather than merely punishing the offender) are increasingly influencing modern legal and social work systems globally.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

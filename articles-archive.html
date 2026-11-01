@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Research | Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore peer-reviewed articles, research, and community data across Religions, Cultures, Topics, and Comparisons.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Articles &amp; Research | Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore peer-reviewed articles, research, and community data across Religions, Cultures, Topics, and Comparisons.">
+    <meta property="og:image" content="https://images.pexels.com/photos/13061431/pexels-photo-13061431.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Articles &amp; Research | Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore peer-reviewed articles, research, and community data across Religions, Cultures, Topics, and Comparisons.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/13061431/pexels-photo-13061431.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Hero Header */
+        .archive-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.2rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .archive-header p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.92;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Main Container */
+        .archive-page-container {
+            max-width: 1150px;
+            margin: 3.5rem auto 5rem auto;
+            padding: 0 2rem;
+        }
+
+        /* General Description Box */
+        .research-overview-box {
+            background-color: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            border-left: 5px solid #D4AF37;
+            border-radius: 8px;
+            padding: 2.5rem 3rem;
+            margin-bottom: 3.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .research-overview-box h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #E6E8E3;
+            padding-bottom: 0.75rem;
+        }
+
+        .research-overview-box p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .research-overview-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-heading {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.9rem;
+            text-align: center;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .section-subheading {
+            color: #555;
+            text-align: center;
+            font-size: 1.05rem;
+            margin: 0 auto 2.5rem auto;
+            max-width: 650px;
+        }
+
+        /* 4-Option Transitional Grid (2x2 Layout) */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.2rem;
+        }
+
+        .pillar-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FFFFFF;
+            border: 1px solid #E6E8E3;
+            border-top: 4px solid #3C6B5F;
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+            cursor: pointer;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(60, 107, 95, 0.12);
+            border-top-color: #D4AF37;
+        }
+
+        .pillar-top {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #F4F1EA;
+            color: #3C6B5F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            border: 1px solid #E4E1DA;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .pillar-card:hover .pillar-icon {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+        }
+
+        .pillar-title-group h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.75rem;
+            margin: 0 0 0.3rem 0;
+        }
+
+        .pillar-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #D4AF37;
+            display: block;
+        }
+
+        .pillar-description {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 0 0 1.75rem 0;
+            flex-grow: 1;
+        }
+
+        .pillar-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #3C6B5F;
+            font-weight: 700;
+            font-size: 1rem;
+            padding-top: 1.1rem;
+            border-top: 1px dashed #E6E8E3;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .pillar-card:hover .pillar-cta {
+            color: #2F3E2B;
+            gap: 0.9rem;
+        }
+
+        @media (max-width: 850px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .archive-header h1 {
+                font-size: 2.4rem;
+            }
+            .research-overview-box {
+                padding: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger active-page">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html" class="active-page">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="archive-header photo-banner" style="--banner: url('https://images.pexels.com/photos/13061431/pexels-photo-13061431.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-book-open-reader header-icon-bg"></i>
+        <h1>Articles & Research</h1>
+        <p>Your gateway to our research library, peer-reviewed articles, and structured analyses across world religions, global cultures, contemporary topics, and comparative studies.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="archive-page-container">
+
+        <!-- General Description About Articles & Research -->
+        <section class="research-overview-box">
+            <h2>About Our Research & Educational Archive</h2>
+            <p>At Transcultural Forum Inc., our written scholarship and educational resources are designed to bridge divides through accurate, accessible, and well-researched knowledge. We examine how belief systems and cultural identities shape daily life, ethical decisions, health practices, and community cohesion across the globe.</p>
+            <p>To help you navigate our work effortlessly, our articles, encyclopedic profiles, and analytical tools are organized into four core areas below: <strong>Religions</strong>, <strong>Cultures</strong>, <strong>Topics</strong>, and <strong>Comparisons</strong>. Select any category to open its dedicated section.</p>
+        </section>
+
+        <h2 class="section-heading">Select a Research Category</h2>
+        <p class="section-subheading">Choose one of our four foundational hubs below to explore its articles, profiles, and interactive tools.</p>
+
+        <!-- 4 Transition Cards Corresponding to the 4 Existing Tabs -->
+        <section class="pillars-grid">
+
+            <!-- 1. Religions Tab -->
+            <a href="religions.html" class="pillar-card">
+                <div>
+                    <div class="pillar-top">
+                        <div class="pillar-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                        <div class="pillar-title-group">
+                            <h3>Religions</h3>
+                            <span class="pillar-tag">11 World Faiths & Worldviews</span>
+                        </div>
+                    </div>
+                    <p class="pillar-description">Explore comprehensive profiles on major world religions, indigenous spiritualities, and secular worldviews—covering their 20 core principles, historical founders, daily life guidance, medical ethics, and societal impact.</p>
+                </div>
+                <span class="pillar-cta">Explore Religions <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 2. Cultures Tab -->
+            <a href="cultures.html" class="pillar-card">
+                <div>
+                    <div class="pillar-top">
+                        <div class="pillar-icon"><i class="fa-solid fa-earth-africa"></i></div>
+                        <div class="pillar-title-group">
+                            <h3>Cultures</h3>
+                            <span class="pillar-tag">Global Heritage & Traditions</span>
+                        </div>
+                    </div>
+                    <p class="pillar-description">Discover the historical evolution, demographics, culinary traditions, and notable figures of major cultural spheres across Africa, Asia, the Americas, Europe, and the Middle East, alongside lived community stories.</p>
+                </div>
+                <span class="pillar-cta">Explore Cultures <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 3. Topics Tab -->
+            <a href="topics.html" class="pillar-card">
+                <div>
+                    <div class="pillar-top">
+                        <div class="pillar-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="pillar-title-group">
+                            <h3>Topics</h3>
+                            <span class="pillar-tag">Thematic & Social Research</span>
+                        </div>
+                    </div>
+                    <p class="pillar-description">Dive into focused articles and thematic analyses addressing contemporary questions, shared human values, ethics, sacred spaces, and the intersection of ancient traditions with modern society.</p>
+                </div>
+                <span class="pillar-cta">Explore Topics <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 4. Comparisons Tab -->
+            <a href="comparisons.html" class="pillar-card">
+                <div>
+                    <div class="pillar-top">
+                        <div class="pillar-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <div class="pillar-title-group">
+                            <h3>Comparisons</h3>
+                            <span class="pillar-tag">Side-by-Side Analysis</span>
+                        </div>
+                    </div>
+                    <p class="pillar-description">Use our Interactive Comparison Engine and comparative research to examine any two religions or cultures side-by-side—highlighting shared values, theological contrasts, and historical intersections.</p>
+                </div>
+                <span class="pillar-cta">Explore Comparisons <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Link to the main Javascript file for mobile menu -->
+    <script src="script.js"></script>
+</body>
+</html>

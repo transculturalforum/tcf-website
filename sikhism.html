@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikhism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Sikhism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sikhism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Sikhism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/31617840/pexels-photo-31617840.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sikhism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Sikhism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/31617840/pexels-photo-31617840.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html" class="active-page">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/31617840/pexels-photo-31617840.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-khanda religion-icon-bg"></i>
+        <h1>Sikhism</h1>
+        <p>A monotheistic faith founded in the Punjab region emphasizing absolute equality, honest labor, social justice, and devotion to the One Creator.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Sikhism, natively known as Sikhi, is the world's fifth-largest major religion, with approximately 30 million followers globally. It originated in the 15th century in the Punjab region of the Indian subcontinent, founded by Guru Nanak Dev Ji and subsequently led by a succession of nine other human Gurus.</p>
+                <p>The faith is fundamentally monotheistic, centered on the belief in <em>Ik Onkar</em>—One Creator who is present everywhere and in everyone. Sikhism radically rejected the rigid social stratifications of its time, actively dismantling the caste system and affirming the absolute spiritual and secular equality of all human beings, regardless of gender, race, or social status.</p>
+                <p>Sikhs seek to live a householder's life (rather than an ascetic one), balancing daily worldly responsibilities with intense spiritual devotion. The supreme spiritual authority of Sikhism today is the <em>Guru Granth Sahib</em>, a sacred scripture compiled by the Gurus themselves, which Sikhs revere as their eternal, living Guru.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>The Sikh way of life is governed by a profound commitment to truth, equality, and active service. The core principles include:</p>
+                <ul class="principles-list">
+                    <li><strong>Ik Onkar:</strong> Belief in One Supreme, all-pervading Creator.</li>
+                    <li><strong>Equality of All Humans:</strong> Total rejection of race, caste, and class divisions.</li>
+                    <li><strong>Gender Equality:</strong> Complete spiritual and temporal equality between men and women.</li>
+                    <li><strong>Naam Japna:</strong> Meditating upon and remembering God's name daily.</li>
+                    <li><strong>Kirat Karni:</strong> Earning a living honestly through hard work and integrity.</li>
+                    <li><strong>Vand Chhakna:</strong> Sharing one's wealth, resources, and food with those in need.</li>
+                    <li><strong>Seva:</strong> Selfless service to the community and humanity without expecting reward.</li>
+                    <li><strong>Langar:</strong> The free community kitchen where all sit on the floor and eat together as equals.</li>
+                    <li><strong>Rejection of Blind Rituals:</strong> Dismissing empty superstitions, fasting, and ritualism without inner purity.</li>
+                    <li><strong>The Concept of Guru:</strong> The divine light or enlightener that removes spiritual darkness.</li>
+                    <li><strong>Guru Granth Sahib:</strong> The holy scripture functioning as the eternal, living Guru.</li>
+                    <li><strong>Miri-Piri:</strong> The harmonious balance between temporal (political) and spiritual obligations.</li>
+                    <li><strong>Justice and Defense:</strong> The moral obligation to stand up for justice and defend the oppressed.</li>
+                    <li><strong>The Five Ks:</strong> The five physical articles of faith worn by initiated Sikhs (Khalsa).</li>
+                    <li><strong>Khalsa:</strong> The collective body of initiated, deeply committed Sikhs dedicated to a pure life.</li>
+                    <li><strong>Family Life (Grihastha):</strong> Embracing family and social life over monastic renunciation.</li>
+                    <li><strong>Karma and Reincarnation:</strong> The soul's journey through lives, influenced by one's actions.</li>
+                    <li><strong>Mukti:</strong> The ultimate liberation from the cycle of birth and death; merging with God.</li>
+                    <li><strong>Overcoming the Five Thieves:</strong> Controlling lust, rage, greed, attachment, and ego (Kaam, Krodh, Lobh, Moh, Ahankar).</li>
+                    <li><strong>Chardi Kala:</strong> Maintaining an eternally optimistic, joyous, and resilient attitude in all circumstances.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>In the Gurdwara (Sikh place of worship), the community meal (Langar) is always strictly lacto-vegetarian so that people of any faith or dietary restriction can eat together. Outside the Gurdwara, dietary choices vary. However, initiated Sikhs are strictly forbidden from eating meat slaughtered in a ritualistic manner (such as Halal or Kosher, known as Kutha meat). Intoxicants, including alcohol, tobacco, and recreational drugs, are strictly prohibited.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Sikhism views the human body as a sacred vessel gifted by the Creator. Maintaining physical health is seen as a duty. Medical interventions, science, and surgery are fully supported, as science is viewed as a means of understanding the intricate workings of God's creation.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Blood transfusions and organ donations are highly encouraged. Sikhism views saving a life as one of the highest forms of <em>Seva</em> (selfless service). Because the physical body is temporary but the soul is eternal, donating organs to help another human is considered a deeply noble act.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Cleanliness is both a physical and spiritual requirement. Sikhs wash their hands and feet before entering the Gurdwara. For those who keep <em>Kesh</em> (uncut hair), cleanliness is paramount; the hair must be washed regularly and combed at least twice a day using a <em>Kanga</em> (a small wooden comb, one of the Five Ks).</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founder: Guru Nanak Dev Ji</h3>
+                    <p>Guru Nanak was born in 1469 in Talwandi (now Nankana Sahib, Pakistan) in the Punjab region. After a profound spiritual revelation at the age of 30, he declared, "There is no Hindu, there is no Muslim," emphasizing that all are equal before God. He spent decades traveling extensively across the Middle East, Tibet, and India, engaging with scholars of different faiths and preaching a message of truth, honest labor, and inner devotion over empty rituals.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Sikhism grew steadily in the Punjab region during the tenure of the ten human Gurus (1469–1708). In 1699, the tenth Guru, Guru Gobind Singh, established the Khalsa—an initiated community of "Saint-Soldiers" to defend the oppressed. In the late 18th and early 19th centuries, the Sikh Empire (led by Maharaja Ranjit Singh) unified a massive, multi-religious state across the Punjab, known for its secularism and religious tolerance.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Following the partition of India and Pakistan in 1947, millions of Sikhs were violently displaced, leading the majority to settle in the Indian state of Punjab. Today, while most Sikhs still reside in India, there is a massive, thriving global diaspora. Major Sikh populations exist in Canada, the United Kingdom, the United States, Australia, and East Africa.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>The Ten Gurus:</strong> The continuous spiritual lineage from Guru Nanak to Guru Gobind Singh.</li>
+                        <li><strong>Guru Tegh Bahadur (1621–1675):</strong> The ninth Guru, martyred by the Mughal Empire for defending the religious freedom of Kashmiri Hindus—a profound historic act of standing up for another faith's right to practice.</li>
+                        <li><strong>Maharaja Ranjit Singh (1780–1839):</strong> The founder of the Sikh Empire, known as the "Lion of Punjab," celebrated for his secular rule and military prowess.</li>
+                        <li><strong>Mai Bhago:</strong> A revered warrior saint who led Sikh soldiers into battle in 1705.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Bhagat Puran Singh (1904–1992):</strong> A visionary humanitarian who founded Pingalwara in Amritsar, dedicating his life to the destitute, sick, and disabled.</li>
+                        <li><strong>Note on Leadership:</strong> Modern Sikhism has no central human figure like a Pope. The supreme authority rests exclusively with the Guru Granth Sahib and the collective wisdom of the Khalsa.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The continuity of Sikhism is uniquely safeguarded by the <em>Guru Granth Sahib</em>. Unlike other religious texts that were compiled centuries after the founders' deaths, the Sikh scripture was written, compiled, and authenticated by the Gurus themselves. In 1708, the tenth Guru, Guru Gobind Singh, permanently transferred spiritual authority to this text, ending the line of human Gurus. Because the scripture itself is the Guru, the core teachings remain pristine and unalterable by modern clergy or political leaders.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Sikhism is a blend of Hinduism and Islam.</strong><br>
+                Reality: While it emerged in a region where both religions were prominent, Sikhism is a distinct, independent revelation with its own unique philosophy, scripture, institutions, and concept of God.</p>
+                <p><strong>Misconception: Men wearing turbans are affiliated with terrorism.</strong><br>
+                Reality: Since 9/11, Sikhs in the West have frequently been targets of misdirected hate crimes. For a Sikh, the turban (Dastar) is a crown of royalty, a commitment to equality, and a highly visible pledge to protect the weak and stand for justice. It represents the exact opposite of terrorism.</p>
+                <p><strong>Misconception: Sikhs are an aggressive or militant group.</strong><br>
+                Reality: The carrying of the <em>Kirpan</em> (a small ceremonial sword) by initiated Sikhs represents a moral duty to defend the defenseless. It is an instrument of grace and justice, never an instrument of aggression or offense. Sikhs strive to embody the "Saint-Soldier" ideal—spiritually elevated yet prepared to stand against tyranny.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>In the diaspora, Sikhs continue to battle discrimination, bullying, and systemic misunderstandings regarding their articles of faith (specifically the turban and the Kirpan) in workplaces and schools. </p>
+                <p>In their ancestral homeland of Punjab, the community faces severe socio-economic challenges, including a devastating agricultural crisis, water depletion, a rampant drug epidemic among the youth, and ongoing political tensions regarding state rights and human rights accountability dating back to the violence of the 1980s.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Practicing Sikhs adhere to <em>Nitnem</em>, a schedule of daily prayers read in the early morning, evening, and before sleep. Initiated Sikhs (the Khalsa) commit to wearing the Five Ks at all times: <em>Kesh</em> (uncut hair covered by a turban), <em>Kara</em> (a steel bracelet symbolizing connection to God), <em>Kanga</em> (a wooden comb for cleanliness), <em>Kachhera</em> (cotton undergarment for modesty), and <em>Kirpan</em> (a ceremonial blade for justice).</p>
+                <p>Attending the Gurdwara for communal singing of hymns (Kirtan) and partaking in the Langar (community kitchen) are frequent, highly valued social and spiritual practices.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Sikhism's institution of <em>Langar</em> is one of the greatest organized systems of human equity and charity in the world. The Golden Temple in Amritsar alone serves free, hot meals to roughly 100,000 people every single day, regardless of their background or belief.</p>
+                <p>Modern Sikh humanitarian organizations, such as Khalsa Aid, are consistently among the first responders in global disaster zones, war fronts, and refugee camps, embodying the core principle of "recognizing the whole human race as one."</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

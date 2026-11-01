@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buddhism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Buddhism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Buddhism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Buddhism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/38338114/pexels-photo-38338114.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Buddhism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Buddhism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/38338114/pexels-photo-38338114.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html" class="active-page">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/38338114/pexels-photo-38338114.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-dharmachakra religion-icon-bg"></i>
+        <h1>Buddhism</h1>
+        <p>A spiritual path focused on ethical discipline, profound psychological insight, and the attainment of liberation from suffering.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Founded in ancient India during the 6th century BCE by Siddhartha Gautama, known as the Buddha (the "Awakened One"), Buddhism shifted the religious paradigm away from the worship of supreme creator deities. Instead, it offers a deeply practical, psychological, and ethical methodology for personal development and ultimate liberation.</p>
+                <p>The core of Buddhist thought identifies that human existence involves suffering (Dukkha), which is caused by our endless cravings, attachments, and ignorance. By following a structured path of moral living and intense mental discipline (meditation), an individual can extinguish this craving and achieve Nirvana—a state of supreme peace and release from the cycle of rebirth.</p>
+                <p>Buddhism is largely non-theistic, meaning it does not rely on a belief in a creator God. Today, it encompasses approximately 500 million followers worldwide and is divided into three primary traditions: Theravada (the "School of the Elders"), Mahayana (the "Great Vehicle"), and Vajrayana (the "Diamond Vehicle," including Tibetan Buddhism).</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>The foundational framework of Buddhism is built upon the Four Noble Truths, the Eightfold Path, and key philosophical insights:</p>
+                <ul class="principles-list">
+                    <li><strong>Dukkha:</strong> The truth that suffering, dissatisfaction, and impermanence are inherent to existence.</li>
+                    <li><strong>Samudaya:</strong> The truth that the root cause of suffering is craving (attachment) and ignorance.</li>
+                    <li><strong>Nirodha:</strong> The truth that there is an end to suffering by extinguishing craving.</li>
+                    <li><strong>Magga:</strong> The truth that the Eightfold Path is the method to achieve this liberation.</li>
+                    <li><strong>Right View:</strong> Understanding the true nature of reality and the Four Noble Truths.</li>
+                    <li><strong>Right Intention:</strong> Cultivating thoughts of renunciation, goodwill, and harmlessness.</li>
+                    <li><strong>Right Speech:</strong> Abstaining from lying, divisive speech, harsh words, and idle chatter.</li>
+                    <li><strong>Right Action:</strong> Acting ethically; refraining from killing, stealing, and sexual misconduct.</li>
+                    <li><strong>Right Livelihood:</strong> Earning a living in a way that does not cause harm to others.</li>
+                    <li><strong>Right Effort:</strong> Diligently cultivating wholesome mental states and abandoning unwholesome ones.</li>
+                    <li><strong>Right Mindfulness:</strong> Maintaining clear, non-judgmental awareness of the body, feelings, and mind.</li>
+                    <li><strong>Right Concentration:</strong> Developing deep mental focus and meditative absorption (Jhana).</li>
+                    <li><strong>Anicca (Impermanence):</strong> The universal law that all conditioned things are in a constant state of flux.</li>
+                    <li><strong>Anatta (Non-Self):</strong> The understanding that there is no permanent, unchanging soul or core identity.</li>
+                    <li><strong>Karma:</strong> Intentional actions (mental, verbal, and physical) that determine future consequences.</li>
+                    <li><strong>Samsara:</strong> The continuous, wandering cycle of birth, death, and rebirth.</li>
+                    <li><strong>Nirvana:</strong> The ultimate goal; the extinguishing of the fires of greed, hatred, and delusion.</li>
+                    <li><strong>Ahimsa:</strong> The principle of non-harming and non-violence toward all sentient beings.</li>
+                    <li><strong>Karuna (Compassion):</strong> The active desire to remove the suffering of others.</li>
+                    <li><strong>Metta (Loving-kindness):</strong> Cultivating unconditional goodwill toward all beings.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>Dietary practices vary by tradition. Because of the principle of <em>Ahimsa</em> (non-violence), Mahayana traditions strongly advocate for vegetarianism or veganism. In Theravada traditions, monks and nuns traditionally eat whatever is offered to them in their alms bowls, which may include meat, provided the animal was not killed specifically for them.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Buddhism is deeply compatible with modern science, particularly psychology and neuroscience, as both rely on empirical observation and the investigation of the mind. The 14th Dalai Lama has famously stated that if scientific analysis were to conclusively demonstrate certain claims in Buddhism to be false, then Buddhism must change and accept the findings of science. Modern medicine is fully embraced.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Buddhism highly encourages blood and organ donation. Giving of one's own body to save another is viewed as a supreme act of <em>Dana</em> (generosity) and <em>Karuna</em> (compassion). It exemplifies the Buddhist teaching of non-attachment to the physical body.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Physical cleanliness is highly valued, particularly within monastic communities where sweeping, cleaning, and maintaining order are viewed as active forms of mindfulness practice (especially prominent in Zen traditions). A clean environment is believed to foster a clear, tranquil mind.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founder: Siddhartha Gautama</h3>
+                    <p>Born a prince in Lumbini (modern-day Nepal) in the 6th century BCE, Siddhartha Gautama lived a sheltered life of luxury. Upon witnessing old age, sickness, and death for the first time, he renounced his royal title to seek a solution to human suffering. After years of extreme asceticism, he discovered the "Middle Way." Meditating beneath the Bodhi tree in Bodh Gaya, India, he attained supreme enlightenment (Nirvana) and spent the next 45 years teaching the Dharma.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Buddhism began in the Ganges basin of India. In the 3rd century BCE, the powerful Mauryan Emperor Ashoka converted to Buddhism, transforming it into a major state religion and sending missionaries throughout Asia. It spread rapidly along the Silk Road into China, Korea, and Japan, and southwards into Sri Lanka and Southeast Asia, while eventually declining in India itself.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, there are roughly 500 million Buddhists globally. It is the dominant religion in many Southeast Asian countries (Thailand, Myanmar, Cambodia, Laos) and maintains a massive cultural and philosophical presence in East Asia (China, Japan, South Korea, Vietnam). Since the 20th century, Buddhism has seen significant growth in Western countries, particularly driven by an interest in meditation and mindfulness.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Emperor Ashoka (304–232 BCE):</strong> Indian emperor who abandoned warfare to propagate Buddhist ethics across Asia.</li>
+                        <li><strong>Nagarjuna (c. 150–250 CE):</strong> Brilliant philosopher who articulated the concept of <em>Sunyata</em> (Emptiness), central to Mahayana Buddhism.</li>
+                        <li><strong>Bodhidharma (5th/6th century CE):</strong> The semi-legendary monk credited with transmitting Chan (Zen) Buddhism to China.</li>
+                        <li><strong>Padmasambhava (8th century CE):</strong> The "Second Buddha" who was instrumental in bringing Tantric Buddhism to Tibet.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Tenzin Gyatso (b. 1935):</strong> The 14th Dalai Lama, spiritual leader of Tibet and global advocate for peace and non-violence.</li>
+                        <li><strong>Thich Nhat Hanh (1926–2022):</strong> Vietnamese Zen master who popularized "Engaged Buddhism" and mindfulness in the West.</li>
+                        <li><strong>B.R. Ambedkar (1891–1956):</strong> Indian social reformer who initiated the Dalit Buddhist movement, converting hundreds of thousands of marginalized "untouchables" to Buddhism to escape the caste system.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The continuity of Buddhism is credited to the <em>Sangha</em>—the monastic community of monks and nuns established by the Buddha. By passing down the teachings (first orally, then codified into texts like the Pali Canon), the Sangha ensured the survival of the Dharma. Buddhism is highly syncretic, meaning it has continually adapted to new cultures (merging with Daoism in China to create Zen, and with Bon in Tibet to create Vajrayana) without losing its core foundation of the Four Noble Truths.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Buddhists worship the Buddha as a God.</strong><br>
+                Reality: The historical Buddha was a human being, not a creator deity. While statues of the Buddha are shown great reverence, they serve as inspiring reminders of human potential for enlightenment, not as idols to be worshipped for divine favors.</p>
+                <p><strong>Misconception: Buddhism is pessimistic.</strong><br>
+                Reality: Because the First Noble Truth focuses on suffering (Dukkha), it is often labeled pessimistic. However, Buddhists view it as realistic—like a doctor diagnosing a disease to offer a cure. The ultimate message is profoundly optimistic: suffering can be entirely overcome.</p>
+                <p><strong>Misconception: Karma means "fate."</strong><br>
+                Reality: Karma literally means "action." It is not a system of pre-destined fate, but a system of cause and effect based on intentional choices. This means individuals have immense agency to shape their present and future.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>In modern times, Buddhist communities face political challenges, such as the suppression of Tibetan Buddhism by the Chinese government, and internal crises, such as the rise of violent, extremist Buddhist nationalism in Myanmar and Sri Lanka targeting minority groups.</p>
+                <p>In the West, a major challenge is the "commercialization of mindfulness"—where Buddhist meditation techniques are stripped of their ethical framework (the Eightfold Path) and sold merely as corporate productivity or stress-reduction tools.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Daily practice for lay Buddhists typically involves adhering to the Five Precepts (commitments to abstain from killing, stealing, sexual misconduct, lying, and intoxication). Many maintain a small shrine in their homes where they offer water, flowers, or incense to a Buddha statue to cultivate reverence and gratitude.</p>
+                <p>Meditation is the cornerstone of practice, utilizing techniques such as <em>Vipassana</em> (insight meditation focused on the breath to observe impermanence) or <em>Metta</em> (loving-kindness meditation to generate goodwill toward all living beings).</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Buddhism's deep exploration of the mind has profoundly influenced modern psychology, cognitive behavioral therapy, and the global integration of mindfulness into education and healthcare.</p>
+                <p>The core principle of Ahimsa (non-harming) has made Buddhism a historic and modern pillar of the global peace movement. Furthermore, its teaching on the radical interconnectedness of all life forms provides a powerful philosophical foundation for modern animal rights and ecological conservation movements.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

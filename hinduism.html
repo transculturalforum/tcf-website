@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinduism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Hinduism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hinduism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Hinduism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/34431714/pexels-photo-34431714.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hinduism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Hinduism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/34431714/pexels-photo-34431714.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html" class="active-page">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/34431714/pexels-photo-34431714.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-om religion-icon-bg"></i>
+        <h1>Hinduism</h1>
+        <p>A diverse, ancient complex of beliefs, philosophies, and rituals originating in the Indian subcontinent, guiding followers toward spiritual liberation.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Hinduism is widely considered the oldest living religion in the world, with roots and customs dating back more than 4,000 years in the Indus Valley and the Indian subcontinent. With over 1.2 billion followers, it is the third-largest religion globally.</p>
+                <p>Unlike most major religions, Hinduism has no single founder, no single scripture, and no commonly agreed-upon set of teachings. Instead, it is a vast, complex tapestry of diverse philosophies, rituals, and traditions known natively as <em>Sanatana Dharma</em> (the "Eternal Order" or "Eternal Path").</p>
+                <p>While outsiders often view Hinduism as polytheistic due to its vast pantheon of deities, many Hindus consider these gods and goddesses to be diverse manifestations of a single, formless, and infinite divine reality known as <em>Brahman</em>. The ultimate spiritual goal for a Hindu is to achieve <em>Moksha</em>—liberation from the endless cycle of death and rebirth.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>Because of its immense diversity, beliefs vary widely, but the following 20 principles form the philosophical bedrock for the majority of Hindu traditions:</p>
+                <ul class="principles-list">
+                    <li><strong>Brahman:</strong> The ultimate, formless, infinite, and eternal divine reality.</li>
+                    <li><strong>Atman:</strong> The true, eternal soul or inner self within every living being.</li>
+                    <li><strong>Dharma:</strong> Righteous duty, ethics, and living in accordance with cosmic law.</li>
+                    <li><strong>Karma:</strong> The universal law of cause and effect; every action influences the future.</li>
+                    <li><strong>Samsara:</strong> The continuous, ongoing cycle of birth, death, and reincarnation.</li>
+                    <li><strong>Moksha:</strong> The ultimate goal of life: spiritual liberation from Samsara.</li>
+                    <li><strong>Ahimsa:</strong> The principle of non-violence and profound respect for all living things.</li>
+                    <li><strong>Satya:</strong> The commitment to truthfulness in thought, word, and deed.</li>
+                    <li><strong>Asteya:</strong> The ethical practice of non-stealing and honesty.</li>
+                    <li><strong>Brahmacharya:</strong> Control of the senses and spiritual discipline.</li>
+                    <li><strong>Aparigraha:</strong> Non-possessiveness and detachment from material greed.</li>
+                    <li><strong>Ishvara / Bhagavan:</strong> The concept of a personal God or supreme being.</li>
+                    <li><strong>Avataras:</strong> The belief that the divine incarnates on Earth to restore cosmic order (e.g., Rama, Krishna).</li>
+                    <li><strong>The Vedas:</strong> Acceptance of the ancient scriptures as the ultimate spiritual authority.</li>
+                    <li><strong>Purusharthas:</strong> The four goals of human life: Dharma, Artha (prosperity), Kama (pleasure), and Moksha.</li>
+                    <li><strong>Yoga:</strong> Spiritual paths to union with the divine (Bhakti, Jnana, Karma, and Raja Yoga).</li>
+                    <li><strong>Puja:</strong> Devotional worship, reverence, and honor paid to the divine.</li>
+                    <li><strong>Maya:</strong> The concept that the material world is an illusion distracting from true reality.</li>
+                    <li><strong>Guru:</strong> Deep reverence for spiritual teachers who guide followers from darkness to light.</li>
+                    <li><strong>Tolerance & Pluralism:</strong> The acceptance that there are many valid paths to the divine.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>Dietary practices vary significantly based on region and tradition. Because of the principle of <em>Ahimsa</em> (non-violence), many Hindus are strict vegetarians. Even among those who eat meat, beef is almost universally avoided because the cow is considered a highly sacred symbol of life, maternal nourishment, and non-violence. Fasting on specific days (like Ekadashi or festivals) is a common practice for spiritual purification.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Hinduism embraces science and logic, seeing no inherent conflict between scientific discovery and spiritual truth. The traditional Hindu system of medicine is <em>Ayurveda</em>, which emphasizes a holistic balance of mind, body, and spirit. Modern medical treatments are universally accepted.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>There are no religious prohibitions against blood transfusions or organ donation. On the contrary, the Hindu principle of <em>Daan</em> (selfless giving or charity) heavily encourages organ donation, framing it as a noble sacrifice that can save a life and generate positive Karma.</p>
+
+                <h3>Cleanliness (Saucha)</h3>
+                <p><em>Saucha</em> (purity) is a critical component of daily life. It involves keeping the physical body clean (such as bathing before morning prayers or entering a temple) as well as maintaining the purity of the mind and the living environment. The kitchen and the home altar (Puja room) are kept exceptionally clean to honor the divine presence.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founder</h3>
+                    <p>Unlike Christianity, Islam, or Buddhism, Hinduism has no single founder. It is a synthesis of various Indian cultures and traditions. Its earliest roots are traced back to the ancient Indus Valley Civilization (c. 3300–1300 BCE) and the subsequent Vedic period, where early seers (Rishis) orally transmitted profound spiritual truths that were later codified into the sacred texts known as the Vedas.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Historically, Hinduism was confined largely to the Indian subcontinent. However, through ancient trade routes, cultural exchange, and peaceful expansion, Hindu philosophies, epics (like the Ramayana), and architecture deeply influenced Southeast Asia, particularly in modern-day Cambodia, Thailand, Indonesia (especially Bali), and Malaysia.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, while the vast majority of Hindus live in India and Nepal, large, vibrant diaspora populations exist globally. Significant Hindu communities have flourished in the United States, the United Kingdom, Canada, Mauritius, Fiji, Guyana, and the Caribbean, bringing Hindu temples, festivals, and philosophies to every continent.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Adi Shankara (c. 8th century CE):</strong> Brilliant philosopher who consolidated the doctrine of Advaita Vedanta (non-dualism).</li>
+                        <li><strong>Ramanuja (1017–1137 CE):</strong> Influential theologian who promoted Vishishtadvaita (qualified non-dualism) and deeply influenced the Bhakti (devotional) movement.</li>
+                        <li><strong>Mirabai (16th century):</strong> A celebrated mystic poet and passionate devotee of Lord Krishna whose songs are still sung today.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Sri Ramakrishna (1836–1886):</strong> A profound mystic who taught the unity of all religions through his own direct spiritual experiences.</li>
+                        <li><strong>Swami Vivekananda (1863–1902):</strong> Brought Hindu philosophy and Yoga to the Western world, famously addressing the 1893 World's Parliament of Religions in Chicago.</li>
+                        <li><strong>Mahatma Gandhi (1869–1948):</strong> Political and spiritual leader who employed the Hindu principle of <em>Ahimsa</em> (non-violence) to successfully lead India's independence movement.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>Hinduism's remarkable continuity over millennia is due to its highly decentralized nature. Without a single Pope or central authority, the traditions were kept alive at the grassroots level through the oral transmission of the Vedas, the deep bonds of the family unit, and the traditional Guru-Shishya (teacher-student) lineage. Hinduism proved incredibly resilient, absorbing and adapting to new philosophical ideas rather than fracturing, allowing it to survive centuries of foreign rule and colonization.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Hindus worship millions of independent gods.</strong><br>
+                Reality: While the Hindu pantheon is vast, most Hindus view these deities as different facets, expressions, or avatars of one supreme, infinite reality (Brahman). It is often described as "monistic" or "henotheistic."</p>
+                <p><strong>Misconception: Hindus worship idols.</strong><br>
+                Reality: Hindus do not believe the stone or metal statue itself is God. A <em>Murti</em> (image or statue) serves as a physical focal point to help the human mind concentrate on and connect with the abstract, infinite divine during prayer (Puja).</p>
+                <p><strong>Misconception: The oppressive Caste System is a core religious requirement.</strong><br>
+                Reality: Originally, society was divided into functional occupational groups (Varnas). Over time, this degraded into a rigid, oppressive, and discriminatory hereditary system. Many modern Hindu reformers, spiritual leaders, and the Indian constitution actively fight against caste-based discrimination, viewing it as a social corruption rather than a true spiritual doctrine.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>Internally, Hinduism continues to grapple with the social legacy of the caste system and the push to ensure total equality and dignity for historically marginalized communities (Dalits). Additionally, the diaspora faces the challenge of passing down complex, ancient traditions to younger generations growing up in highly secular, Westernized environments.</p>
+                <p>Politically, the rise of Hindu nationalism (Hindutva) in India has created intense, ongoing debates about the relationship between religion and state, the treatment of religious minorities, and the defining of a modern, pluralistic Indian identity.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Daily Hindu practice is deeply personal and centered in the home. Most Hindu households have a dedicated shrine or altar where family members perform <em>Puja</em>—lighting a lamp (diya), offering flowers or fruit, burning incense, and ringing a bell to honor the divine.</p>
+                <p>Individuals may also practice <em>Japa</em> (the meditative repetition of a mantra, such as the Gayatri Mantra or "Om"), perform physical Yoga postures and breathwork, and engage in daily acts of respect, such as touching the feet of elders to seek their blessing.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Hinduism has gifted the world profound tools for mental and physical well-being. The global spread of Yoga and mindfulness meditation, rooted entirely in ancient Hindu philosophy, has revolutionized modern approaches to holistic health, stress reduction, and psychology.</p>
+                <p>Furthermore, the deep Hindu commitment to <em>Ahimsa</em> (non-violence) provided the ethical blueprint for some of the 20th century's most successful civil rights movements, profoundly influencing leaders like Martin Luther King Jr. Finally, Hinduism's inherent reverence for nature—seeing rivers, mountains, and animals as sacred—offers a powerful, ancient framework for modern ecological conservation.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

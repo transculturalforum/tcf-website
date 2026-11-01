@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahá'í Faith - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of the Bahá'í Faith with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bahá&#x27;í Faith - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of the Bahá&#x27;í Faith with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/4727066/pexels-photo-4727066.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bahá&#x27;í Faith - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of the Bahá&#x27;í Faith with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/4727066/pexels-photo-4727066.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html" class="active-page">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/4727066/pexels-photo-4727066.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-earth-americas religion-icon-bg"></i>
+        <h1>Bahá'í Faith</h1>
+        <p>An independent world religion founded in 19th-century Persia that emphasizes the spiritual unity of all humankind.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Founded in 19th-century Persia (modern-day Iran) by Bahá'u'lláh, the Bahá'í Faith is one of the world's youngest independent religions. It emerged with the core teaching that all major world religions—including Judaism, Christianity, Islam, Hinduism, and Buddhism—are part of a single, progressive revelation from one God.</p>
+                <p>The faith rests on three central pillars: the unity of God, the unity of religion, and the unity of humanity. Bahá'ís believe that humanity is coming of age and that the time has come for a unified global society based on justice, equity, and peace.</p>
+                <p>Unlike many older world religions, the Bahá'í Faith has no clergy or priesthood. Instead, it governs itself through democratically elected local, national, and international councils, placing the responsibility of spiritual growth and community building directly in the hands of the individual.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>The Bahá'í Faith is built upon a distinct set of social and spiritual principles aimed at global unity:</p>
+                <ul class="principles-list">
+                    <li><strong>Oneness of God:</strong> There is only one Creator, unknowable in essence.</li>
+                    <li><strong>Oneness of Religion:</strong> All major religions come from the same divine source.</li>
+                    <li><strong>Oneness of Humanity:</strong> All humans are equal members of one global family.</li>
+                    <li><strong>Elimination of Prejudice:</strong> Eradication of racism, nationalism, and religious bigotry.</li>
+                    <li><strong>Equality of Genders:</strong> Absolute spiritual and social equality of women and men.</li>
+                    <li><strong>Harmony of Science & Religion:</strong> Science and religion must agree; they are two wings of human progress.</li>
+                    <li><strong>Independent Investigation of Truth:</strong> Individuals must seek truth without blind imitation.</li>
+                    <li><strong>Universal Education:</strong> Compulsory, high-quality education for all children.</li>
+                    <li><strong>Elimination of Extremes:</strong> Eradication of extreme wealth and extreme poverty.</li>
+                    <li><strong>Universal Auxiliary Language:</strong> Adoption of an international language to foster communication.</li>
+                    <li><strong>Spiritual Solutions to Economic Problems:</strong> Economics must be guided by spiritual and moral principles.</li>
+                    <li><strong>Abolition of Clergy:</strong> No priesthood; individuals approach God directly.</li>
+                    <li><strong>World Peace:</strong> The necessity of establishing a global, federated system of governance.</li>
+                    <li><strong>Inherent Nobility of Humans:</strong> Human beings are created noble, not inherently sinful.</li>
+                    <li><strong>Progressive Revelation:</strong> God reveals truth sequentially over time through divine messengers.</li>
+                    <li><strong>Protection of Cultural Diversity:</strong> Unity does not mean uniformity; diversity is celebrated.</li>
+                    <li><strong>Work as Worship:</strong> Work performed in the spirit of service to humanity is a form of worship.</li>
+                    <li><strong>Harmony with Nature:</strong> Respect for the environment and the interconnectedness of all life.</li>
+                    <li><strong>Loyalty to Government:</strong> Obedience to one's government and strict non-involvement in partisan politics.</li>
+                    <li><strong>Importance of Family:</strong> Marriage and family as the foundational building blocks of society.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>The Bahá'í teachings do not impose strict dietary laws, such as keeping kosher or halal, and do not forbid specific meats. However, the consumption of alcohol and mind-altering drugs is strictly prohibited unless prescribed by a qualified physician for medical treatment. The writings generally advocate for a simple, healthy diet.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Bahá'ís are explicitly commanded to seek the advice of competent physicians when ill. The faith teaches that science and religion are entirely compatible. If a religious belief contradicts established science, Bahá'ís believe it is merely superstition. Medical science is highly respected as a vital tool for human well-being.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>There are no prohibitions against blood transfusions, organ donations, or receiving organ transplants. In fact, these acts are widely supported within the community as profound expressions of service and love for humanity.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Bahá'u'lláh placed a massive emphasis on physical cleanliness, describing it as the emblem of spiritual purity. Believers are encouraged to wear clean clothes, maintain immaculate homes, and observe high standards of personal hygiene, independent of any ritual ablution requirements.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founders</h3>
+                    <p>The Bahá'í Faith is unique in having two divine messengers. The Báb (meaning "The Gate") announced his mission in 1844, preparing the way for a greater messenger. In 1863, Bahá'u'lláh (meaning "The Glory of God") announced that he was the promised educator foretold by the Báb and all past world religions. He spent the remainder of his life in exile and imprisonment, writing extensively to define the faith's principles.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>The faith originated in 19th-century Persia (Iran). Early followers faced intense persecution from both the state and religious authorities. During Bahá'u'lláh's exiles, the faith spread through the Ottoman Empire, establishing roots in what is today Iraq, Turkey, and Israel/Palestine.</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, the Bahá'í Faith is the second most geographically widespread religion in the world (after Christianity). It has millions of adherents spread across over 200 countries and territories. Major populations exist in India, the United States, Kenya, South America, and Southeast Asia, creating an incredibly diverse global community.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>The Báb (1819–1850):</strong> The Herald of the Bahá'í Faith, executed by the Persian government.</li>
+                        <li><strong>Bahá'u'lláh (1817–1892):</strong> The Founder, whose vast writings form the core of Bahá'í scripture.</li>
+                        <li><strong>'Abdu'l-Bahá (1844–1921):</strong> The eldest son of Bahá'u'lláh, appointed as the authorized interpreter of the teachings and the center of the Covenant.</li>
+                        <li><strong>Shoghi Effendi (1897–1957):</strong> The Guardian of the Bahá'í Faith, who guided its global expansion and translated many sacred texts into English.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <p>Unlike other faiths, there are no individual principal figures or leaders in the modern Bahá'í Faith. In 1963, the community elected the <strong>Universal House of Justice</strong>, a nine-member international governing council based in Haifa, Israel. This council guides the global community today, fulfilling Bahá'u'lláh's vision of a religion governed by elected institutions rather than individuals.</p>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The Bahá'í Faith has maintained strict continuity primarily through its "Covenant." Bahá'u'lláh explicitly wrote down his succession plan, appointing his son, 'Abdu'l-Bahá, as the sole interpreter of his writings. This written chain of authority passed to Shoghi Effendi and finally to the democratically elected Universal House of Justice. Because the line of authority is explicitly documented in the founder's own handwriting, the Bahá'í Faith has uniquely avoided any major sectarian schisms or divisions in its history.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: It is a sect of Islam.</strong><br>
+                Reality: While it emerged from an Islamic cultural background in Persia, the Bahá'í Faith is a completely independent world religion with its own founder, distinct scriptures, holy days, and laws.</p>
+                <p><strong>Misconception: It is a syncretic religion (a mix of other faiths).</strong><br>
+                Reality: Bahá'ís do not pick and choose beliefs from other faiths to create a new one. They believe Bahá'u'lláh brought a direct, new revelation from God that updates and builds upon the spiritual truths of the past.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>The most severe challenge facing the Bahá'í Faith today is the intense, state-sponsored persecution of the Bahá'í community in Iran (and increasingly in Yemen). In Iran, Bahá'ís are routinely imprisoned for their beliefs, their businesses are closed, their cemeteries are bulldozed, and their youth are banned from attending universities.</p>
+                <p>Globally, a primary challenge is navigating community building and social action while adhering strictly to the Bahá'í law of non-involvement in partisan politics, especially in highly polarized modern societies.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Bahá'ís are obligated to recite one of three obligatory prayers daily. They are also asked to read from the sacred scriptures each morning and evening, and to practice daily meditation and self-reflection.</p>
+                <p>Communally, Bahá'ís gather every 19 days for the "Nineteen Day Feast," which is the spiritual and administrative heart of the community, involving prayers, administrative consultation, and socializing. Annually, Bahá'ís observe a 19-day fast in March, abstaining from food and drink from sunrise to sunset to detach from material desires.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>The Bahá'í community is intensely focused on grassroots socio-economic development. Globally, they run thousands of educational initiatives, agricultural projects, and health clinics. Because of their core principle of gender equality, Bahá'ís have historically championed women's rights, establishing schools for girls in regions where such education was previously forbidden.</p>
+                <p>Furthermore, Bahá'ís are highly active in interfaith dialogue, race amity initiatives, and the United Nations, consistently working to foster dialogue, eradicate prejudice, and build peaceful, united communities at the neighborhood level.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Us | Transcultural Forum Inc.</title>
+    <meta name="description" content="Support Transcultural Forum Inc. by making a secure, tax-deductible donation. 100% of your contribution directly funds our cross-cultural programs.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Support Us | Transcultural Forum Inc.">
+    <meta property="og:description" content="Support Transcultural Forum Inc. by making a secure, tax-deductible donation. 100% of your contribution directly funds our cross-cultural programs.">
+    <meta property="og:image" content="https://images.pexels.com/photos/15678267/pexels-photo-15678267.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Support Us | Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Support Transcultural Forum Inc. by making a secure, tax-deductible donation. 100% of your contribution directly funds our cross-cultural programs.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/15678267/pexels-photo-15678267.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        .donate-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .donate-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .donate-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .donate-container {
+            max-width: 800px;
+            margin: 4rem auto 5rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .donate-container h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .donate-container p.lead-text {
+            color: #555;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Donate Card Styling */
+        .zeffy-container {
+            background: #FFFFFF;
+            border: 1px solid #E6E8E3;
+            border-top: 4px solid #D4AF37;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            width: 100%;
+            padding: 3rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .donate-button {
+            display: inline-block;
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 1.1rem 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(60, 107, 95, 0.25);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .donate-button:hover,
+        .donate-button:focus {
+            background-color: #2F3E2B;
+            transform: translateY(-2px);
+        }
+
+        .payment-methods {
+            margin: 1.75rem 0 0 0;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .payment-note {
+            margin: 0.75rem 0 0 0;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Zelle Card Styling */
+        .zelle-container {
+            background: #F7F5EF;
+            border: 1px solid #E6E8E3;
+            border-radius: 8px;
+            margin-top: 2rem;
+            padding: 2rem;
+        }
+
+        .zelle-container h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.4rem;
+            margin: 0 0 0.75rem 0;
+        }
+
+        .zelle-container p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0.5rem 0;
+        }
+
+        .zelle-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+
+        .zelle-email strong {
+            color: #3C6B5F;
+            font-size: 1.15rem;
+            word-break: break-all;
+        }
+
+        .copy-button {
+            background: #FFFFFF;
+            border: 1px solid #3C6B5F;
+            color: #3C6B5F;
+            border-radius: 6px;
+            padding: 0.35rem 0.9rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .copy-button:hover,
+        .copy-button:focus {
+            background: #3C6B5F;
+            color: #FFFDF9;
+        }
+
+        @media (max-width: 600px) {
+            .zeffy-container,
+            .zelle-container {
+                padding: 2rem 1.25rem;
+            }
+
+            .donate-button {
+                display: block;
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html" class="active-page">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="donate-header photo-banner" style="--banner: url('https://images.pexels.com/photos/15678267/pexels-photo-15678267.jpeg?auto=compress&cs=tinysrgb&w=1600'); --banner-pos: center 40%;">
+        <h1>Make a Donation</h1>
+        <p>Your generosity directly funds our community events, cultural research, and the platforms we use to elevate diverse voices.</p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="donate-container">
+        <h2>Partner With Us</h2>
+        <p class="lead-text">As a registered 501(c)(3) non-profit organization, your contribution is tax-deductible. We use Zeffy for our secure donations, which means <strong>100% of your gift goes directly to Transcultural Forum Inc.</strong> without any platform fees being deducted.</p>
+
+        <!-- Link to Zeffy's hosted form (Apple Pay / Google Pay are hidden on embedded Zeffy forms) -->
+        <div class="zeffy-container">
+            <a class="donate-button" href="https://www.zeffy.com/donation-form/support-transcultural-forum-inc" target="_blank" rel="noopener">Donate Now</a>
+            <p class="payment-methods">Give securely with <strong>Apple Pay</strong>, <strong>Google Pay</strong>, or any credit or debit card.</p>
+            <p class="payment-note">You'll be taken to our secure donation page on Zeffy.</p>
+        </div>
+
+        <!-- Zelle Option -->
+        <div class="zelle-container">
+            <h3>Prefer Zelle?</h3>
+            <p>You can send your gift directly through your bank's Zelle app to:</p>
+            <div class="zelle-email">
+                <strong id="zelle-email">Transculturalforum@gmail.com</strong>
+                <button type="button" class="copy-button" id="copy-zelle">Copy</button>
+            </div>
+            <p class="payment-note">Please include your full name and email in the memo. Receipts for Zelle gifts are sent by email within a few days.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Link to the main Javascript file for mobile menu -->
+    <script src="script.js"></script>
+
+    <!-- Copy the Zelle email to the clipboard -->
+    <script>
+        document.getElementById('copy-zelle').addEventListener('click', function () {
+            var button = this;
+            var email = document.getElementById('zelle-email').textContent;
+            navigator.clipboard.writeText(email).then(function () {
+                button.textContent = 'Copied!';
+                setTimeout(function () { button.textContent = 'Copy'; }, 2000);
+            });
+        });
+    </script>
+</body>
+</html>

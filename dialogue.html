@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Dialogue | Transcultural Forum Inc.</title>
+    <meta name="description" content="Join the conversation. Discuss cultural topics, ask questions, comment on articles with references, and engage in free, respectful dialogue.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Dialogue | Transcultural Forum Inc.">
+    <meta property="og:description" content="Join the conversation. Discuss cultural topics, ask questions, comment on articles with references, and engage in free, respectful dialogue.">
+    <meta property="og:image" content="https://images.pexels.com/photos/8518732/pexels-photo-8518732.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Dialogue | Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Join the conversation. Discuss cultural topics, ask questions, comment on articles with references, and engage in free, respectful dialogue.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/8518732/pexels-photo-8518732.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling */
+        .dialogue-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dialogue-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dialogue-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Layout Architecture */
+        .dialogue-layout {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .main-feed {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .dialogue-sidebar {
+            flex: 1.1;
+            position: sticky;
+            top: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Discussion Thread Cards */
+        .thread-card {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            border-left: 4px solid #3C6B5F;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .thread-meta {
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .admin-badge {
+            background-color: #D4AF37;
+            color: #2F3E2B;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .thread-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.6rem;
+            color: #2F3E2B;
+            margin: 0 0 1rem 0;
+        }
+
+        .thread-card p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .thread-actions {
+            border-top: 1px solid #E6E8E3;
+            padding-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            color: #3C6B5F;
+            font-weight: bold;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .action-btn:hover {
+            color: #2D5148;
+            text-decoration: underline;
+        }
+
+        /* Comments Section */
+        .comments-section {
+            display: none;
+            margin-top: 1.5rem;
+            background: #F4F1EA;
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .comments-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .comment {
+            background: #FFFDF9;
+            padding: 1rem;
+            border-radius: 4px;
+            border: 1px solid #D6DBD2;
+            margin-bottom: 1rem;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #2F3E2B;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .comment-time {
+            font-size: 0.75rem;
+            color: #777;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .reply-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin-top: 1.25rem;
+            border-top: 1px dashed #D6DBD2;
+            padding-top: 1rem;
+        }
+
+        .reply-box textarea,
+        .reply-box input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #D6DBD2;
+            border-radius: 4px;
+            font-family: inherit;
+            background: #FFFDF9;
+            color: #2F3E2B;
+            resize: vertical;
+        }
+
+        .reference-alert-note {
+            font-size: 0.82rem;
+            color: #2F3E2B;
+            background-color: #FFF9E6;
+            border-left: 3px solid #D4AF37;
+            padding: 0.6rem 0.8rem;
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+
+        .post-reply-btn {
+            background-color: #3C6B5F;
+            color: #fff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        .post-reply-btn:hover {
+            background-color: #2D5148;
+        }
+
+        /* Community Q&A Board */
+        .qa-board {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .qa-card {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .question-box {
+            padding: 1.5rem;
+            background: #F9F8F6;
+            border-bottom: 1px solid #E6E8E3;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .q-icon {
+            background: #2F3E2B;
+            color: #FFF;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .question-text {
+            margin: 0;
+            font-weight: bold;
+            color: #2F3E2B;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .question-author {
+            display: block;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 0.5rem;
+            font-weight: normal;
+        }
+
+        .answer-box {
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .a-icon {
+            background: #D4AF37;
+            color: #2F3E2B;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .answer-text {
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Sidebar Elements */
+        .sidebar-box {
+            background: #F4F1EA;
+            border: 1px solid #D6DBD2;
+            border-top: 4px solid #3C6B5F;
+            border-radius: 6px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .sidebar-box h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .guidelines-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .guidelines-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .guidelines-list li::before {
+            content: "•";
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Submission Form */
+        .form-group {
+            margin-bottom: 1.1rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2F3E2B;
+            margin-bottom: 0.35rem;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid #D6DBD2;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: #FFFDF9;
+            color: #2F3E2B;
+            width: 100%;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3C6B5F;
+        }
+
+        .helper-hint {
+            font-size: 0.78rem;
+            color: #3C6B5F;
+            margin-top: 0.3rem;
+        }
+
+        .required-star {
+            color: #B23A22;
+            font-weight: bold;
+        }
+
+        .submit-btn {
+            background-color: #3C6B5F;
+            color: #fff;
+            padding: 0.85rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #2D5148;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .dialogue-layout {
+                flex-direction: column;
+            }
+            .dialogue-sidebar {
+                width: 100%;
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html" class="active-page">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Header -->
+    <header class="dialogue-header photo-banner" style="--banner: url('https://images.pexels.com/photos/8518732/pexels-photo-8518732.jpeg?auto=compress&cs=tinysrgb&w=1600'); --banner-pos: center 30%;">
+        <i class="fa-solid fa-comments header-icon-bg"></i>
+        <h1>Free Dialogue</h1>
+        <p>A public square for open, respectful conversation. Engage with our official discussion topics, comment on a specific article or idea with supporting references, or ask a question for our community Q&A board.</p>
+    </header>
+
+    <main class="dialogue-layout">
+        
+        <!-- Left: Main Feed (Discussions & Q&A) -->
+        <div class="main-feed">
+            
+            <!-- Active Discussions Section -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-users"></i> Active Discussions</h2>
+                
+                <!-- Discussion Thread 1 -->
+                <article class="thread-card">
+                    <div class="thread-meta">
+                        <span>Posted: Oct 12, 2026</span>
+                        <span class="admin-badge">Admin Topic</span>
+                    </div>
+                    <h3>How does your culture balance tradition with modernity?</h3>
+                    <p>In a rapidly globalizing world, maintaining ancient traditions while adapting to modern lifestyles is a universal challenge. Whether it's dietary laws, modest dress codes, or language preservation, how do you or your family navigate this balance daily? Share your thoughts below.</p>
+                    
+                    <div class="thread-actions">
+                        <button class="action-btn" onclick="toggleComments('comments-1')"><i class="fa-regular fa-comment"></i> Join the Discussion (3)</button>
+                    </div>
+
+                    <!-- Expandable Comments -->
+                    <div class="comments-section" id="comments-1">
+                        <div class="comment">
+                            <div class="comment-author">Elena R.</div>
+                            <div class="comment-time">Oct 12, 2026 at 2:15 PM</div>
+                            <p class="comment-text">For us, the biggest challenge is preserving the language. We speak English at work and school, but we strictly instituted a "Spanish only" rule at the dinner table. It keeps the kids connected to their grandparents.</p>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-author">David K.</div>
+                            <div class="comment-time">Oct 13, 2026 at 9:30 AM</div>
+                            <p class="comment-text">As a modern secular Jew, I don't keep strict Kosher, but we still observe Shabbat dinners every Friday. It's less about the literal laws for me, and more about enforcing a mandatory technology-free evening for family connection.</p>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-author">Aisha F.</div>
+                            <div class="comment-time">Oct 13, 2026 at 11:05 AM</div>
+                            <p class="comment-text">Modest fashion has actually gotten much easier with the internet! There are so many brands now creating beautiful, modern hijabs and clothing that let me express my personal style without compromising my faith.</p>
+                        </div>
+                        
+                        <!-- Reply Box with Mandatory Reference -->
+                        <div class="reply-box">
+                            <div class="reference-alert-note">
+                                <i class="fa-solid fa-book-bookmark"></i> <strong>Reference Required:</strong> When commenting on an idea or topic, please include a supporting reference (scripture, historical text, academic study, or verifiable source).
+                            </div>
+                            <textarea id="reply-text-1" rows="3" placeholder="Add your comment to this idea..."></textarea>
+                            <input type="text" id="reply-ref-1" placeholder="Required Reference / Source (e.g., Book, Scripture, Study, or URL)...">
+                            <button class="post-reply-btn" onclick="submitThreadReply('reply-text-1', 'reply-ref-1')">Post Reply</button>
+                        </div>
+                    </div>
+                </article>
+
+                <br>
+
+                <!-- Discussion Thread 2 -->
+                <article class="thread-card">
+                    <div class="thread-meta">
+                        <span>Posted: Oct 05, 2026</span>
+                        <span class="admin-badge">Admin Topic</span>
+                    </div>
+                    <h3>The Role of Fasting Across Faiths</h3>
+                    <p>From Yom Kippur and Ramadan to Lent and the Bahá'í 19-Day Fast, voluntary abstention from food is a shared human practice. What does fasting mean to you personally? Is it about discipline, empathy for the poor, or spiritual clarity?</p>
+                    
+                    <div class="thread-actions">
+                        <button class="action-btn" onclick="toggleComments('comments-2')"><i class="fa-regular fa-comment"></i> Join the Discussion (0)</button>
+                    </div>
+
+                    <!-- Expandable Comments -->
+                    <div class="comments-section" id="comments-2">
+                        <p style="color: #777; font-style: italic;">Be the first to reply to this topic.</p>
+                        <div class="reply-box">
+                            <div class="reference-alert-note">
+                                <i class="fa-solid fa-book-bookmark"></i> <strong>Reference Required:</strong> When commenting on an idea or topic, please include a supporting reference (scripture, historical text, academic study, or verifiable source).
+                            </div>
+                            <textarea id="reply-text-2" rows="3" placeholder="Add your comment to this idea..."></textarea>
+                            <input type="text" id="reply-ref-2" placeholder="Required Reference / Source (e.g., Book, Scripture, Study, or URL)...">
+                            <button class="post-reply-btn" onclick="submitThreadReply('reply-text-2', 'reply-ref-2')">Post Reply</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Community Q&A Board -->
+            <section>
+                <h2 class="section-title"><i class="fa-solid fa-clipboard-question"></i> Community Q&A Board</h2>
+                <div class="qa-board">
+                    
+                    <!-- Q&A Pair 1 -->
+                    <div class="qa-card">
+                        <div class="question-box">
+                            <div class="q-icon">Q</div>
+                            <div>
+                                <p class="question-text">I've noticed that several cultures have a version of a "Festival of Lights." Is there a historical connection between Diwali in Hinduism and Hanukkah in Judaism?</p>
+                                <span class="question-author">Submitted by: Marcus T.</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="a-icon">A</div>
+                            <div>
+                                <p class="answer-text"><strong>Transcultural Forum Admin:</strong> Great question, Marcus! While they are both beautifully centered around the symbolism of light triumphing over darkness, there is no direct historical or theological link between the two. Diwali has ancient roots in the Indian subcontinent, marking the triumphant return of Lord Rama (among other traditions depending on the region). Hanukkah commemorates a specific historical event in 2nd-century BCE Judea—the rededication of the Second Temple. The shared theme of "light" is a universal human response to the approaching winter months and the innate desire for hope in the dark!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Q&A Pair 2 -->
+                    <div class="qa-card">
+                        <div class="question-box">
+                            <div class="q-icon">Q</div>
+                            <div>
+                                <p class="question-text">Can you explain the difference between 'Secular Humanism' and simply being 'Atheist'?</p>
+                                <span class="question-author">Submitted by: Sarah J.</span>
+                            </div>
+                        </div>
+                        <div class="answer-box">
+                            <div class="a-icon">A</div>
+                            <div>
+                                <p class="answer-text"><strong>Transcultural Forum Admin:</strong> Absolutely. "Atheism" is simply the lack of belief in a god or gods—it tells you what a person <em>doesn't</em> believe, but nothing about their morals or worldview. "Secular Humanism," on the other hand, is an active, positive philosophy. It states that since we do not rely on supernatural intervention, human beings have the profound responsibility to shape their own lives, create their own meaning, and act ethically based on empathy, reason, and a desire to reduce human suffering.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right: Sidebar (Form & Guidelines) -->
+        <aside class="dialogue-sidebar">
+            
+            <!-- Rules Box -->
+            <div class="sidebar-box">
+                <h3>Forum Guidelines</h3>
+                <ul class="guidelines-list">
+                    <li><strong>Assume Good Intent:</strong> We are here to learn from one another. Ask questions out of curiosity, not judgment.</li>
+                    <li><strong>Maintain Neutrality:</strong> Share your own beliefs and experiences proudly, but do not invalidate the beliefs of others.</li>
+                    <li><strong>Cite Your References:</strong> If you are adding a comment or perspective to an article or idea, you <strong>must</strong> select the specific article/idea and provide a verifiable reference (scripture, historical source, or peer-reviewed study).</li>
+                    <li><strong>Zero Tolerance:</strong> Hate speech, proselytizing, or derogatory language will result in immediate removal.</li>
+                </ul>
+            </div>
+
+            <!-- Submit a Question OR Comment on an Idea Form (Formspree) -->
+            <div class="sidebar-box">
+                <h3>Ask a Question or Comment on an Idea</h3>
+                <p style="color: #555; font-size: 0.93rem; margin-bottom: 1.25rem; line-height: 1.5;">Submit a question for our Q&A board, or select a specific article/idea to contribute a comment. <strong>Note: All comments on an article or idea must include a supporting reference.</strong></p>
+                
+                <form id="qa-form" action="https://formspree.io/f/mjyvrrqr" method="POST">
+                    <div class="form-group">
+                        <label for="qa-name">First Name (or Initials) <span class="required-star">*</span></label>
+                        <input type="text" id="qa-name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qa-email">Email (Kept private) <span class="required-star">*</span></label>
+                        <input type="email" id="qa-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="submission-type">What would you like to submit? <span class="required-star">*</span></label>
+                        <select id="submission-type" name="submission_type" onchange="toggleSubmissionFields()" required>
+                            <option value="Question">Ask a General Question (for Q&A Board)</option>
+                            <option value="Comment on an Idea / Article">Add a Comment to a Specific Article or Idea (Reference Required)</option>
+                        </select>
+                    </div>
+
+                    <!-- Auto-Synced Selection Field for Commenting on an Article / Idea -->
+                    <div id="idea-selection-container" style="display: none;">
+                        <div class="form-group">
+                            <label for="idea-category">1. Choose Section / Category <span class="required-star">*</span></label>
+                            <select id="idea-category" name="section_category" onchange="filterSyncedIdeasByCategory()">
+                                <option value="all">All Sections (Articles, Discussions, Religions & Cultures)</option>
+                                <option value="Discussions">Active Discussions (Free Dialogue)</option>
+                                <option value="Topics & Articles">Topics & Research Articles</option>
+                                <option value="Religions">Religions & Worldviews</option>
+                                <option value="Cultures">Global Cultures</option>
+                                <option value="Comparisons">Comparisons</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="selected-idea">2. Select or Type the Exact Article / Idea <span class="required-star">*</span></label>
+                            <input 
+                                type="text" 
+                                id="selected-idea" 
+                                name="target_article_or_idea" 
+                                list="auto-synced-ideas-list" 
+                                placeholder="Click to choose from list or type title..."
+                                autocomplete="off">
+                            <datalist id="auto-synced-ideas-list">
+                                <!-- Populated automatically by JavaScript from your live site pages -->
+                            </datalist>
+                            <span class="helper-hint"><i class="fa-solid fa-arrows-rotate"></i> This list automatically syncs with new articles, topics, and discussions uploaded to the site.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="qa-question" id="message-label">Your Question <span class="required-star">*</span></label>
+                        <textarea id="qa-question" name="message" rows="5" placeholder="What would you like to know?" required></textarea>
+                    </div>
+
+                    <div class="form-group" id="reference-group" style="display: none;">
+                        <label for="qa-reference">Reference / Source for Your Comment <span class="required-star">* (Required)</span></label>
+                        <textarea id="qa-reference" name="reference_source" rows="3" placeholder="Please cite your source (e.g., Scriptural verse, academic paper, historical book, author, or direct URL)..."></textarea>
+                        <div class="reference-alert-note" style="margin-top: 0.4rem;">
+                            <i class="fa-solid fa-circle-exclamation"></i> Comments on articles or ideas cannot be published without a verifiable reference.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="qa-submit-btn">Submit Question</button>
+                    <p id="qa-form-status" style="display:none; color:#3C6B5F; font-weight:600; margin-top:1rem; text-align:center;"></p>
+                </form>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script>
+        // --- AUTOMATIC SITE-WIDE ARTICLE & IDEA SCANNER ---
+        // Stores all discovered titles across your site so the dropdown stays automatically updated
+        const syncedSiteItems = [];
+
+        function addSyncedItem(category, title) {
+            const cleanTitle = title.replace(/\s+/g, ' ').trim();
+            if (!cleanTitle) return;
+            const exists = syncedSiteItems.some(item => item.title.toLowerCase() === cleanTitle.toLowerCase());
+            if (!exists) {
+                syncedSiteItems.push({ category, title: cleanTitle });
+            }
+        }
+
+        async function syncSiteArticlesAndIdeas() {
+            // 1. Scan active discussion threads directly on this page (dialogue.html)
+            document.querySelectorAll('.thread-card h3').forEach(heading => {
+                addSyncedItem('Discussions', `Discussion: ${heading.innerText}`);
+            });
+
+            // 2. Scan religions from the navigation bar dropdown automatically
+            document.querySelectorAll('.dropdown-menu a[href$=".html"]').forEach(link => {
+                const href = link.getAttribute('href');
+                if (!['events.html', 'social-media.html', 'podcast.html', 'articles-archive.html'].includes(href)) {
+                    addSyncedItem('Religions', `Religion: ${link.innerText}`);
+                }
+            });
+
+            // 3. Automatically fetch and scan headings from topics.html, cultures.html, and articles-archive.html
+            const pagesToScan = [
+                { url: 'topics.html', category: 'Topics & Articles', prefix: 'Topic / Article', selector: 'h2, h3' },
+                { url: 'cultures.html', category: 'Cultures', prefix: 'Culture', selector: '.culture-card h2' },
+                { url: 'articles-archive.html', category: 'Topics & Articles', prefix: 'Article', selector: '.article-card h3' }
+            ];
+
+            for (const page of pagesToScan) {
+                try {
+                    const res = await fetch(page.url);
+                    if (res.ok) {
+                        const htmlText = await res.text();
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(htmlText, 'text/html');
+                        doc.querySelectorAll(page.selector).forEach(el => {
+                            const text = el.innerText.trim();
+                            // Ignore generic UI headings
+                            if (text && !['No cultures found', 'Share Your Story', 'Stay Tuned!', 'Select a Research Category', 'About Our Research & Educational Archive'].includes(text)) {
+                                addSyncedItem(page.category, `${page.prefix}: ${text}`);
+                            }
+                        });
+                    }
+                } catch (err) {
+                    // Fallback silently if opened locally via file:// protocol
+                }
+            }
+
+            renderSyncedDatalist('all');
+        }
+
+        function renderSyncedDatalist(selectedCategory) {
+            const datalist = document.getElementById('auto-synced-ideas-list');
+            if (!datalist) return;
+            datalist.innerHTML = '';
+
+            syncedSiteItems
+                .filter(item => selectedCategory === 'all' || item.category === selectedCategory)
+                .forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.title;
+                    datalist.appendChild(option);
+                });
+        }
+
+        function filterSyncedIdeasByCategory() {
+            const category = document.getElementById('idea-category').value;
+            const input = document.getElementById('selected-idea');
+            input.value = ''; // Reset input so user can pick from the filtered list
+            renderSyncedDatalist(category);
+        }
+
+        // Run automatic scanner as soon as page loads
+        window.addEventListener('DOMContentLoaded', syncSiteArticlesAndIdeas);
+
+        // Toggle mock comments visibility
+        function toggleComments(commentId) {
+            const commentSection = document.getElementById(commentId);
+            if (commentSection.classList.contains('active')) {
+                commentSection.classList.remove('active');
+            } else {
+                commentSection.classList.add('active');
+            }
+        }
+
+        // Validate thread reply box to require both comment and reference
+        function submitThreadReply(textId, refId) {
+            const commentVal = document.getElementById(textId).value.trim();
+            const refVal = document.getElementById(refId).value.trim();
+
+            if (!commentVal) {
+                alert("Please enter your comment before submitting.");
+                return;
+            }
+            if (!refVal) {
+                alert("Please provide a reference or source for your comment before submitting.");
+                document.getElementById(refId).focus();
+                return;
+            }
+
+            alert("Thank you! Your comment and reference have been submitted for moderation.");
+            document.getElementById(textId).value = "";
+            document.getElementById(refId).value = "";
+        }
+
+        // Toggle conditional fields when switching between "Question" and "Comment on an Idea / Article"
+        function toggleSubmissionFields() {
+            const typeSelect = document.getElementById('submission-type').value;
+            const ideaContainer = document.getElementById('idea-selection-container');
+            const selectedIdea = document.getElementById('selected-idea');
+            const referenceGroup = document.getElementById('reference-group');
+            const referenceInput = document.getElementById('qa-reference');
+            const messageLabel = document.getElementById('message-label');
+            const messageTextarea = document.getElementById('qa-question');
+            const submitBtn = document.getElementById('qa-submit-btn');
+
+            if (typeSelect === 'Comment on an Idea / Article') {
+                ideaContainer.style.display = 'block';
+                selectedIdea.setAttribute('required', 'required');
+                referenceGroup.style.display = 'flex';
+                referenceInput.setAttribute('required', 'required');
+                messageLabel.innerHTML = 'Your Comment on this Article / Idea <span class="required-star">*</span>';
+                messageTextarea.placeholder = 'Share your perspective, addition, or scholarly insight on the selected idea...';
+                submitBtn.textContent = 'Submit Comment & Reference';
+            } else {
+                ideaContainer.style.display = 'none';
+                selectedIdea.removeAttribute('required');
+                selectedIdea.value = '';
+                referenceGroup.style.display = 'none';
+                referenceInput.removeAttribute('required');
+                referenceInput.value = '';
+                messageLabel.innerHTML = 'Your Question <span class="required-star">*</span>';
+                messageTextarea.placeholder = 'What would you like to know?';
+                submitBtn.textContent = 'Submit Question';
+            }
+        }
+
+        // Q&A / Idea Comment Form Submission Logic
+        const qaForm = document.getElementById("qa-form");
+        const qaStatus = document.getElementById("qa-form-status");
+
+        if (qaForm) {
+            qaForm.addEventListener("submit", async function(event) {
+                event.preventDefault(); 
+                
+                const data = new FormData(qaForm);
+                
+                try {
+                    const response = await fetch(qaForm.action, {
+                        method: qaForm.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        qaStatus.style.display = "block";
+                        qaStatus.style.color = "#3C6B5F";
+                        qaStatus.textContent = "Submitted successfully! Thank you for contributing to the dialogue.";
+                        qaForm.reset();
+                        toggleSubmissionFields();
+                    } else {
+                        qaStatus.style.display = "block";
+                        qaStatus.style.color = "red";
+                        qaStatus.textContent = "Oops! There was a problem submitting your form.";
+                    }
+                } catch (error) {
+                    qaStatus.style.display = "block";
+                    qaStatus.style.color = "red";
+                    qaStatus.textContent = "Oops! There was a network error.";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

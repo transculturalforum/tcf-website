@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judaism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Judaism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Judaism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Judaism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/5986519/pexels-photo-5986519.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Judaism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Judaism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/5986519/pexels-photo-5986519.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="judaism.html" class="active-page">Judaism</a></li>
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/5986519/pexels-photo-5986519.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-star-of-david religion-icon-bg"></i>
+        <h1>Judaism</h1>
+        <p>An ancient monotheistic religion representing the cultural, legal, and spiritual heritage of the Jewish people, centered around a covenant with God.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu (Cleaned of Numbers) -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Judaism is one of the oldest monotheistic religions in the world, originating in the ancient Near East over 3,000 years ago. It is the ethnic, cultural, and spiritual religion of the Jewish people, built upon the foundational belief that God established a unique and eternal covenant with them.</p>
+                <p>The spiritual center of Judaism is the Torah (the first five books of the Hebrew Bible), which details God's laws, teachings, and the history of the Israelites. Judaism is deeply action-oriented, emphasizing ethical behavior in this world (orthopraxy) over strict adherence to rigid dogma (orthodoxy).</p>
+                <p>Today, the religion features several major denominations or movements—including Orthodox, Conservative, Reform, and Reconstructionist—which differ primarily in how strictly they interpret and apply traditional Jewish law (Halakha) in the modern era.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>The philosophical and ethical framework of Judaism is guided by these core principles (heavily influenced by the classical 13 Principles of Maimonides and expanded to include broader Jewish ethics):</p>
+                <ul class="principles-list">
+                    <li><strong>Monotheism:</strong> Belief in a single, indivisible, and absolute Creator God.</li>
+                    <li><strong>Incorporeality of God:</strong> God is entirely spiritual and has no physical body or form.</li>
+                    <li><strong>Eternality of God:</strong> God is the eternal First and Last, existing outside of time.</li>
+                    <li><strong>Exclusive Worship:</strong> Prayer and worship are to be directed to God alone.</li>
+                    <li><strong>Validity of Prophecy:</strong> The words of the Hebrew prophets are true.</li>
+                    <li><strong>Primacy of Moses:</strong> Moses was the greatest of all prophets.</li>
+                    <li><strong>Divine Origin of Torah:</strong> The Torah was given by God to Moses.</li>
+                    <li><strong>Immutability of Torah:</strong> The Torah's laws and teachings will not be fundamentally changed.</li>
+                    <li><strong>Divine Providence:</strong> God knows the deeds and thoughts of humanity.</li>
+                    <li><strong>Reward and Punishment:</strong> God rewards those who keep His commandments and punishes transgressors.</li>
+                    <li><strong>The Messianic Age:</strong> The belief in the eventual coming of the Messiah to bring an era of universal peace.</li>
+                    <li><strong>Resurrection:</strong> The belief that the dead will be resurrected in the Messianic era.</li>
+                    <li><strong>Tikkun Olam:</strong> The moral obligation to "repair the world" through social action and justice.</li>
+                    <li><strong>Pikuach Nefesh:</strong> The sanctity of human life supersedes almost all other religious laws.</li>
+                    <li><strong>Tzedakah:</strong> The obligation to pursue justice through charitable giving.</li>
+                    <li><strong>Shabbat:</strong> Observing the Sabbath as a day of complete rest and spiritual renewal.</li>
+                    <li><strong>Chesed:</strong> The practice of deep loving-kindness toward others.</li>
+                    <li><strong>The Covenant:</strong> The ongoing, mutual agreement and relationship between God and the Jewish people.</li>
+                    <li><strong>Torah Lishmah:</strong> The profound value of studying sacred texts for their own sake.</li>
+                    <li><strong>Klal Yisrael:</strong> The interconnectedness, unity, and shared destiny of the global Jewish community.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet (Kashrut)</h3>
+                <p>Many Jews follow dietary laws known as <em>Kashrut</em> (keeping Kosher). This involves eating only permitted animals (e.g., mammals with split hooves that chew the cud, fish with fins and scales) that have been ritually slaughtered (Shechita) to minimize suffering. It also strictly forbids mixing meat and dairy products in the same meal, or using the same cookware for both.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Judaism holds a profound respect for medical science. Doctors are viewed as essential partners with God in the work of healing. The principle of <em>Pikuach Nefesh</em> dictates that saving a human life overrides almost all other religious rules. For example, one must break the Sabbath restrictions if it means getting a sick person to the hospital.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Because saving a life is the highest imperative, blood transfusions are entirely permitted and encouraged. Similarly, most Jewish authorities highly encourage organ donation to save lives, viewing it as the ultimate act of <em>Chesed</em> (loving-kindness) and an honor to the deceased.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Ritual purity is an important concept. Practices include <em>Netilat Yadayim</em> (ritual hand washing upon waking and before eating bread) and the use of a <em>Mikvah</em> (a natural ritual bath) used primarily by observant women after menstruation, as well as during conversions to Judaism.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founders</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founders</h3>
+                    <p>Judaism traces its origins to the Biblical patriarch Abraham, who is considered the father of the Jewish people and the first to espouse monotheism. The religion was later codified and given its legal framework by Moses, who, according to tradition, led the Israelites out of Egyptian slavery and received the Torah from God at Mount Sinai.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Historically centered in the ancient Kingdoms of Israel and Judah in the Levant, the Jewish people suffered major dispersions (the Diaspora), beginning with the Babylonian exile in 586 BCE and culminating in the Roman destruction of the Second Temple in 70 CE. This scattered the Jewish population across the Middle East, North Africa (Sephardic and Mizrahi Jews), and eventually throughout Europe (Ashkenazi Jews).</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, the global Jewish population is roughly 15.3 million. Due to the atrocities of the Holocaust and subsequent geopolitical shifts, the vast majority of Jews now live in two places: the State of Israel (established in 1948) and the United States, with smaller communities in France, Canada, the United Kingdom, and Argentina.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>King David & King Solomon:</strong> Ancient monarchs who united the tribes and built the First Temple in Jerusalem.</li>
+                        <li><strong>The Prophets (Isaiah, Jeremiah):</strong> Figures who called the people back to ethical behavior and social justice.</li>
+                        <li><strong>Maimonides (Rambam) (1138–1204):</strong> Preeminent medieval Sephardic philosopher and Torah scholar who codified Jewish law.</li>
+                        <li><strong>Rashi (1040–1105):</strong> French rabbi whose comprehensive commentaries on the Talmud and Tanakh remain essential study tools today.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Rabbi Abraham Joshua Heschel (1907–1972):</strong> A prominent theologian and civil rights activist who famously marched with Dr. Martin Luther King Jr.</li>
+                        <li><strong>Rabbi Menachem Mendel Schneerson (1902–1994):</strong> The "Lubavitcher Rebbe," who transformed the Chabad-Lubavitch movement into a global force for Jewish outreach.</li>
+                        <li><strong>Elie Wiesel (1928–2016):</strong> Holocaust survivor, author, and Nobel Laureate who became a powerful global voice for human rights.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The survival of Judaism across thousands of years of exile and persecution is largely attributed to its culture of continuous study and the transmission of knowledge from generation to generation (<em>L'dor V'dor</em>). Following the destruction of the Temple in 70 CE, Judaism shifted from a priest-and-sacrifice model to a rabbi-and-study model. The compilation of the Talmud allowed ancient laws to be rigorously debated, interpreted, and adapted to new historical realities without losing their core divine origins.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: The "God of the Old Testament" is exclusively wrathful.</strong><br>
+                Reality: The Hebrew Bible portrays God as deeply merciful, slow to anger, and full of loving-kindness. The Christian contrast between a "God of wrath" in the Old Testament and a "God of love" in the New Testament is a theological misrepresentation of Jewish scripture.</p>
+                <p><strong>Misconception: Judaism is just Christianity without Jesus.</strong><br>
+                Reality: Judaism is a complete, distinct theological framework. It has its own unique concepts regarding the nature of the Messiah (viewed as a human political/spiritual leader, not divine), the nature of sin, and the afterlife.</p>
+                <p><strong>Misconception: Jews constitute a single race.</strong><br>
+                Reality: Jews are an ethno-religious group with immense genetic and cultural diversity, including Ashkenazi (European), Sephardic (Spanish/Iberian), Mizrahi (Middle Eastern), and Beta Israel (Ethiopian) populations.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>Externally, the global Jewish community continues to face the persistent challenge of rising antisemitism, prejudice, and security threats to synagogues and community centers. Internally, the Diaspora navigates the tension of assimilation—balancing engagement with secular, modern culture while preserving distinct Jewish identity and practices.</p>
+                <p>Additionally, there are ongoing theological and political debates between the Orthodox, Conservative, and Reform movements regarding the interpretation of Halakha (Jewish law), interfaith marriage, and the role of women in religious leadership.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Observant Jews pray three times a day (Shacharit in the morning, Mincha in the afternoon, and Maariv in the evening). During morning prayers, men (and some women in liberal traditions) wear a <em>Tallit</em> (prayer shawl with fringes) and <em>Tefillin</em> (leather boxes containing scripture strapped to the arm and head).</p>
+                <p>The cornerstone of Jewish practice is the observance of Shabbat, beginning Friday evening at sunset and ending Saturday night. It is a time completely detached from labor, technology, and commerce, dedicated entirely to family meals, synagogue attendance, and spiritual rest.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Judaism's ethical framework has had an immeasurable impact on global civilization. The concept of the Sabbath introduced the revolutionary idea of a mandated "weekend" and rest for all people, including laborers and animals. The biblical prophets laid the groundwork for modern concepts of social justice, demanding that society care for the widow, the orphan, and the stranger.</p>
+                <p>Furthermore, the deep cultural value placed on questioning, literacy, and education has led to outsized Jewish contributions to modern science, literature, medicine, and philosophy, consistently pushing humanity toward intellectual and social progress.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

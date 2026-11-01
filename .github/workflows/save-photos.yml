@@ -1,0 +1,30 @@
+name: Save photos with the site
+
+# Downloads every photo listed in .github/photos/photo-list.txt into images/photos
+# and switches the pages to those copies, then commits the result.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: save-photos
+  cancel-in-progress: false
+
+jobs:
+  save-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash .github/photos/save-photos.sh
+      - name: Commit any changes
+        run: |
+          git add -A images/photos ./*.html
+          if git diff --cached --quiet; then echo "Nothing to change."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Save photos with the site"
+          git push

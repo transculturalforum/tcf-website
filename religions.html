@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Religions & Worldviews | Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore global religions, spiritual traditions, and secular worldviews. Select a tradition to learn about its history, core principles, and daily practices.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Religions &amp; Worldviews | Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore global religions, spiritual traditions, and secular worldviews. Select a tradition to learn about its history, core principles, and daily practices.">
+    <meta property="og:image" content="https://images.pexels.com/photos/1194396/pexels-photo-1194396.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Religions &amp; Worldviews | Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore global religions, spiritual traditions, and secular worldviews. Select a tradition to learn about its history, core principles, and daily practices.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/1194396/pexels-photo-1194396.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Hero Header */
+        .religions-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religions-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.2rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religions-header p {
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.92;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Main Container */
+        .religions-page-container {
+            max-width: 1200px;
+            margin: 3.5rem auto 5rem auto;
+            padding: 0 2rem;
+        }
+
+        /* General Description Section */
+        .religion-overview-box {
+            background-color: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            border-left: 5px solid #D4AF37;
+            border-radius: 8px;
+            padding: 2.5rem 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .religion-overview-box h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #E6E8E3;
+            padding-bottom: 0.75rem;
+        }
+
+        .religion-overview-box p {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .religion-overview-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Search Bar Area (Name Search Only) */
+        .search-section {
+            background-color: #F4F1EA;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid #E4E1DA;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .search-label {
+            font-family: 'Georgia', serif;
+            font-size: 1.15rem;
+            color: #2F3E2B;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .search-bar-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .search-bar-container i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3C6B5F;
+            font-size: 1.05rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.95rem 1.2rem 0.95rem 2.8rem;
+            border: 1px solid #D6DBD2;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-family: inherit;
+            background-color: #FFFDF9;
+            color: #2F3E2B;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #3C6B5F;
+            box-shadow: 0 0 0 3px rgba(60, 107, 95, 0.15);
+        }
+
+        /* Empty State Message */
+        .empty-state-message {
+            display: none;
+            text-align: center;
+            background: #FFFDF9;
+            border: 2px dashed #D6DBD2;
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .empty-state-message h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state-message p {
+            color: #555;
+            margin: 0;
+        }
+
+        /* Transition Cards Grid */
+        .religions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 2rem;
+        }
+
+        .religion-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #FFFFFF;
+            border: 1px solid #E6E8E3;
+            border-top: 4px solid #3C6B5F;
+            border-radius: 8px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+            cursor: pointer;
+        }
+
+        .religion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 24px rgba(60, 107, 95, 0.12);
+            border-top-color: #D4AF37;
+        }
+
+        .religion-card.hidden-card {
+            display: none !important;
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #F4F1EA;
+            color: #3C6B5F;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            border: 1px solid #E4E1DA;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .religion-card:hover .card-icon {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+        }
+
+        .card-title-group h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.55rem;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .card-subtitle {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #D4AF37;
+            display: block;
+        }
+
+        .card-description {
+            color: #555;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin: 0 0 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .card-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #3C6B5F;
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #E6E8E3;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .religion-card:hover .card-cta {
+            color: #2F3E2B;
+            gap: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .religions-header h1 {
+                font-size: 2.4rem;
+            }
+            .religion-overview-box {
+                padding: 1.75rem;
+            }
+            .religions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger active-page">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="religions-header photo-banner" style="--banner: url('https://images.pexels.com/photos/1194396/pexels-photo-1194396.jpeg?auto=compress&cs=tinysrgb&w=1600'); --banner-pos: center 60%;">
+        <i class="fa-solid fa-Hands-praying fa-hands-praying header-icon-bg"></i>
+        <h1>Religions & Worldviews</h1>
+        <p>Explore the spiritual paths, moral philosophies, and sacred traditions that have guided human civilization across millennia.</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="religions-page-container">
+
+        <!-- General Description About Religion -->
+        <section class="religion-overview-box">
+            <h2>Understanding Religion & Human Worldviews</h2>
+            <p>Throughout history, religion has served as one of humanity's most profound frameworks for seeking meaning, purpose, and connection. Across continents and eras, spiritual traditions and philosophical worldviews have emerged to address life's deepest questions: our origins, our ethical responsibilities to one another, the nature of suffering, and our place within the cosmos.</p>
+            <p>While individual traditions differ in their theology, sacred texts, and daily rituals—ranging from monotheistic covenants and dharmic paths of liberation to animistic kinship with nature and secular humanism—they share a common human aspiration toward compassion, justice, and community building. Select any tradition below to explore its overview, 20 core principles, daily life guidance, history, and positive impact on society.</p>
+        </section>
+
+        <!-- Search Area (Name Search Only) -->
+        <section class="search-section">
+            <label for="religion-search" class="search-label">Find a Religion or Worldview</label>
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input 
+                    type="text" 
+                    id="religion-search" 
+                    class="search-input" 
+                    placeholder="Type the name of a religion (e.g., Christianity, Islam, Buddhism...)" 
+                    onkeyup="searchReligionByName()">
+            </div>
+        </section>
+
+        <!-- Empty State Message -->
+        <div id="empty-state-message" class="empty-state-message">
+            <h3>No matching religion found</h3>
+            <p>Please check your spelling or clear the search box to view all 11 religions and worldviews.</p>
+        </div>
+
+        <!-- 11 Clickable Religion Transition Cards -->
+        <section class="religions-grid" id="religions-grid">
+
+            <!-- 1. Christianity -->
+            <a href="christianity.html" class="religion-card" data-name="christianity">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-cross"></i></div>
+                        <div class="card-title-group">
+                            <h3>Christianity</h3>
+                            <span class="card-subtitle">Abrahamic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">A monotheistic faith centered on the life, teachings, death, and resurrection of Jesus of Nazareth, emphasizing salvation through grace and love of neighbor.</p>
+                </div>
+                <span class="card-cta">Explore Christianity <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 2. Islam -->
+            <a href="islam.html" class="religion-card" data-name="islam">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-star-and-crescent"></i></div>
+                        <div class="card-title-group">
+                            <h3>Islam</h3>
+                            <span class="card-subtitle">Abrahamic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">A monotheistic faith centered on devotion to the One God (Allah) as revealed to the Prophet Muhammad in the Quran, guided by the Five Pillars of practice and charity.</p>
+                </div>
+                <span class="card-cta">Explore Islam <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 3. Judaism -->
+            <a href="judaism.html" class="religion-card" data-name="judaism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-star-of-david"></i></div>
+                        <div class="card-title-group">
+                            <h3>Judaism</h3>
+                            <span class="card-subtitle">Abrahamic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">An ancient monotheistic covenant between God and the Jewish people, prioritizing ethical behavior (Halakha), sacred study of the Torah, and repairing the world.</p>
+                </div>
+                <span class="card-cta">Explore Judaism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 4. Hinduism -->
+            <a href="hinduism.html" class="religion-card" data-name="hinduism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-om"></i></div>
+                        <div class="card-title-group">
+                            <h3>Hinduism</h3>
+                            <span class="card-subtitle">Dharmic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">A diverse synthesis of ancient philosophies from the Indian subcontinent acknowledging a supreme reality (Brahman) and guiding followers through Dharma, Karma, and Moksha.</p>
+                </div>
+                <span class="card-cta">Explore Hinduism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 5. Buddhism -->
+            <a href="buddhism.html" class="religion-card" data-name="buddhism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-dharmachakra"></i></div>
+                        <div class="card-title-group">
+                            <h3>Buddhism</h3>
+                            <span class="card-subtitle">Dharmic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">A spiritual and psychological path founded by Siddhartha Gautama (the Buddha), focused on ethical discipline, mindfulness, and liberation from suffering via the Eightfold Path.</p>
+                </div>
+                <span class="card-cta">Explore Buddhism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 6. Sikhism -->
+            <a href="sikhism.html" class="religion-card" data-name="sikhism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-khanda"></i></div>
+                        <div class="card-title-group">
+                            <h3>Sikhism</h3>
+                            <span class="card-subtitle">Dharmic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">A monotheistic religion founded in the Punjab region by Guru Nanak, championing absolute human equality, honest labor, selfless community service (Seva), and devotion to One Creator.</p>
+                </div>
+                <span class="card-cta">Explore Sikhism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 7. Bahá'í Faith -->
+            <a href="bahai.html" class="religion-card" data-name="bahai faith bahá'í faith">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                        <div class="card-title-group">
+                            <h3>Bahá'í Faith</h3>
+                            <span class="card-subtitle">Global Monotheism</span>
+                        </div>
+                    </div>
+                    <p class="card-description">An independent world religion founded by Bahá'u'lláh in 19th-century Persia resting on three central pillars: the unity of God, the unity of religion, and the unity of humanity.</p>
+                </div>
+                <span class="card-cta">Explore Bahá'í Faith <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 8. Jainism -->
+            <a href="jainism.html" class="religion-card" data-name="jainism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-hand"></i></div>
+                        <div class="card-title-group">
+                            <h3>Jainism</h3>
+                            <span class="card-subtitle">Dharmic Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">An ancient Indian spiritual path centered on supreme non-violence (Ahimsa) toward all living beings, non-possessiveness, and the purification and liberation of the soul.</p>
+                </div>
+                <span class="card-cta">Explore Jainism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 9. Indigenous Traditions -->
+            <a href="indigenous.html" class="religion-card" data-name="indigenous traditions">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                        <div class="card-title-group">
+                            <h3>Indigenous Traditions</h3>
+                            <span class="card-subtitle">Global Heritage</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Ancient, place-based spiritualities passed down through oral traditions, deeply rooted in sacred kinship with nature, reverence for ancestors, and the interconnected web of life.</p>
+                </div>
+                <span class="card-cta">Explore Indigenous Traditions <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 10. Zoroastrianism -->
+            <a href="zoroastrianism.html" class="religion-card" data-name="zoroastrianism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                        <div class="card-title-group">
+                            <h3>Zoroastrianism</h3>
+                            <span class="card-subtitle">Ancient Iranian Tradition</span>
+                        </div>
+                    </div>
+                    <p class="card-description">One of the world's oldest monotheistic faiths, founded by the Prophet Zarathustra and guided by the cosmic triumph of truth (Asha) through "Good Thoughts, Good Words, Good Deeds."</p>
+                </div>
+                <span class="card-cta">Explore Zoroastrianism <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <!-- 11. Secular Worldviews -->
+            <a href="secular.html" class="religion-card" data-name="secular worldviews humanism atheism">
+                <div>
+                    <div class="card-top">
+                        <div class="card-icon"><i class="fa-solid fa-compass"></i></div>
+                        <div class="card-title-group">
+                            <h3>Secular Worldviews</h3>
+                            <span class="card-subtitle">Humanist & Non-Religious</span>
+                        </div>
+                    </div>
+                    <p class="card-description">Philosophical frameworks including secular humanism, agnosticism, and atheism that ground human ethics, meaning, and civic responsibility in reason, science, and empathy.</p>
+                </div>
+                <span class="card-cta">Explore Secular Worldviews <i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Search Script (Filters strictly by Religion Name) -->
+    <script>
+        function searchReligionByName() {
+            // Normalize query (strips accents so typing "bahai" matches "Bahá'í Faith")
+            const rawQuery = document.getElementById('religion-search').value.toLowerCase().trim();
+            const query = rawQuery.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            
+            const cards = document.querySelectorAll('.religion-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const nameData = card.getAttribute('data-name').toLowerCase();
+                const normalizedName = nameData.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+                if (query === '' || normalizedName.includes(query)) {
+                    card.classList.remove('hidden-card');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            const emptyState = document.getElementById('empty-state-message');
+            emptyState.style.display = (visibleCount === 0) ? 'block' : 'none';
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jainism - Transcultural Forum Inc.</title>
+    <meta name="description" content="Explore the core beliefs, history, and traditions of Jainism with Transcultural Forum Inc.">
+    <!-- Link previews on social media and messaging apps -->
+    <meta property="og:site_name" content="Transcultural Forum Inc.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jainism - Transcultural Forum Inc.">
+    <meta property="og:description" content="Explore the core beliefs, history, and traditions of Jainism with Transcultural Forum Inc.">
+    <meta property="og:image" content="https://images.pexels.com/photos/29449928/pexels-photo-29449928.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jainism - Transcultural Forum Inc.">
+    <meta name="twitter:description" content="Explore the core beliefs, history, and traditions of Jainism with Transcultural Forum Inc.">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/29449928/pexels-photo-29449928.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+
+    <!-- Browser tab and home-screen icons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Navigation Bar Font Size Adjustment to fit all tabs */
+        .navbar .nav-links a {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        /* Header styling from your original design */
+        .religion-detail-header {
+            background-color: #3C6B5F;
+            color: #FFFDF9;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religion-detail-header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-detail-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .religion-icon-bg {
+            position: absolute;
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.05);
+            top: -20px;
+            right: -20px;
+            z-index: 1;
+            transform: rotate(-15deg);
+        }
+
+        /* Schema Layout: 9-Tab Interface */
+        .schematic-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        /* Left Side: 9-Tab Navigation */
+        .template-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 100px;
+            background: #F4F1EA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+        }
+
+        .template-nav-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: #FFFDF9;
+            border: 1px solid #E6E8E3;
+            color: #2F3E2B;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 4px;
+        }
+
+        .template-nav-btn:hover {
+            background: #E6E8E3;
+        }
+
+        .template-nav-btn.active {
+            background: #3C6B5F;
+            color: #FFFDF9;
+            border-color: #3C6B5F;
+            box-shadow: 0 4px 10px rgba(60, 107, 95, 0.2);
+        }
+
+        /* Right Side: Content Display */
+        .template-content-area {
+            flex: 1;
+            background: #FFFDF9;
+            padding: 3rem;
+            border-radius: 8px;
+            border: 1px solid #D6DBD2;
+            min-height: 700px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .template-section {
+            display: none;
+        }
+
+        .template-section.active {
+            display: block;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .template-section h2 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 2.2rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        
+        .template-section h3 {
+            font-family: 'Georgia', serif;
+            color: #3C6B5F;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-section p, .template-section li {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Bulleted principles list */
+        .principles-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 2rem;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+        }
+        
+        .principles-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sub-Tabs specifically for History section */
+        .sub-tab-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E6E8E3;
+            padding-bottom: 1rem;
+        }
+
+        .sub-tab-btn {
+            background: #FFFDF9;
+            border: 1px solid #D6DBD2;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #555;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        
+        .sub-tab-btn:hover {
+            background: #F4F1EA;
+        }
+
+        .sub-tab-btn.active {
+            background: #D4AF37;
+            color: #2F3E2B;
+            border-color: #D4AF37;
+        }
+
+        .history-sub-section {
+            display: none;
+        }
+
+        .history-sub-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 900px) {
+            .schematic-container {
+                flex-direction: column;
+            }
+            .template-sidebar {
+                flex: auto;
+                width: 100%;
+                position: static;
+            }
+            .principles-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Synchronized Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
+            <span class="logo-text">Transcultural Forum Inc.</span>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">Our Mission</a></li>
+            
+            <li class="dropdown-tab">
+                <a href="#" class="dropdown-trigger">What We Do</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="social-media.html">Social Media</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="articles-archive.html">Articles & Research</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown-tab">
+                <a href="religions.html" class="dropdown-trigger">Religions</a>
+                <ul class="dropdown-menu">
+                    <li><a href="christianity.html">Christianity</a></li>
+                    <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
+                    <li><a href="hinduism.html">Hinduism</a></li>
+                    <li><a href="buddhism.html">Buddhism</a></li>
+                    <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="jainism.html" class="active-page">Jainism</a></li>
+                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
+                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
+                    <li><a href="secular.html">Secular Worldviews</a></li>
+                </ul>
+            </li>
+
+            <li><a href="cultures.html">Cultures</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="comparisons.html">Comparisons</a></li>
+            <li><a href="dialogue.html">Free Dialogue</a></li>
+            <li><a href="donate.html">Support Us</a></li>
+            <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+
+    <!-- Attractive Header -->
+    <header class="religion-detail-header photo-banner" style="--banner: url('https://images.pexels.com/photos/29449928/pexels-photo-29449928.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <i class="fa-solid fa-hand religion-icon-bg"></i>
+        <h1>Jainism</h1>
+        <p>An ancient Indian religion centered on the absolute practice of non-violence, asceticism, and the spiritual liberation of the soul.</p>
+    </header>
+
+    <main class="schematic-container">
+        
+        <!-- Left: 9-Tab Navigation Menu -->
+        <aside class="template-sidebar">
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+        </aside>
+
+        <!-- Right: Content Display Area -->
+        <section class="template-content-area">
+            
+            <!-- OVERVIEW -->
+            <div id="sec-overview" class="template-section active">
+                <h2>Overview</h2>
+                <p>Jainism is one of the world's oldest continuously practiced religions, originating in the Indian subcontinent. With approximately 4 to 5 million followers today, it is a relatively small global community, yet its philosophical impact on Indian culture and global ethics is profound.</p>
+                <p>The faith is fundamentally grounded in <em>Ahimsa</em> (absolute non-violence). Jains believe that animals, plants, and even microscopic organisms possess living souls (Jiva) and must be treated with supreme respect. The ultimate goal of Jainism is <em>Moksha</em>—the complete liberation of the soul from the continuous cycle of death and rebirth (Samsara).</p>
+                <p>Jainism is non-theistic in the sense that it rejects the idea of a supreme creator God who manages the universe. Instead, it teaches that the universe is eternal and governed by natural cosmic laws. Spiritual veneration is directed toward the <em>Tirthankaras</em>—24 fully enlightened human beings who conquered the physical world and taught the path to spiritual liberation.</p>
+            </div>
+
+            <!-- CORE PRINCIPLES (20) -->
+            <div id="sec-principles" class="template-section">
+                <h2>Core Principles</h2>
+                <p>Jain philosophy and daily life are strictly guided by these foundational tenets, encompassing metaphysics and rigorous ethical vows:</p>
+                <ul class="principles-list">
+                    <li><strong>Ahimsa:</strong> Supreme non-violence in thought, word, and deed toward all living beings.</li>
+                    <li><strong>Anekantavada:</strong> The "many-sidedness" of truth; realizing that ultimate reality is complex and pluralistic.</li>
+                    <li><strong>Aparigraha:</strong> Non-attachment to worldly possessions, people, and material desires.</li>
+                    <li><strong>Satya:</strong> Absolute truthfulness, provided speaking the truth does not cause harm.</li>
+                    <li><strong>Asteya:</strong> Non-stealing; taking nothing that is not explicitly and willingly given.</li>
+                    <li><strong>Brahmacharya:</strong> Chastity for laypeople and complete celibacy for monks and nuns.</li>
+                    <li><strong>Jiva:</strong> The belief that every living entity, no matter how small, contains a conscious, eternal soul.</li>
+                    <li><strong>Ajiva:</strong> The non-living components of the universe (matter, space, time, motion).</li>
+                    <li><strong>Karma:</strong> Viewed physically as fine particulate matter that sticks to the soul based on one's actions.</li>
+                    <li><strong>Samsara:</strong> The continuous cycle of birth, suffering, death, and reincarnation.</li>
+                    <li><strong>Moksha:</strong> The burning away of all Karma to achieve the liberation of the soul.</li>
+                    <li><strong>The Three Jewels (Ratnatraya):</strong> The path to liberation requires Right Faith, Right Knowledge, and Right Conduct.</li>
+                    <li><strong>Right Faith (Samyak Darshana):</strong> Rational belief in the fundamental substances of reality.</li>
+                    <li><strong>Right Knowledge (Samyak Jnana):</strong> Correct understanding of the soul and the universe.</li>
+                    <li><strong>Right Conduct (Samyak Charitra):</strong> Living ethically according to Jain vows to stop the influx of Karma.</li>
+                    <li><strong>Tirthankaras:</strong> Reverence for the 24 spiritual victors who built the ford across the ocean of rebirth.</li>
+                    <li><strong>Asceticism (Tapas):</strong> Severe self-discipline and austerity to burn away existing Karma.</li>
+                    <li><strong>Eternal Universe:</strong> The belief that the universe was never created and will never be destroyed.</li>
+                    <li><strong>Equality of Souls:</strong> Every soul has the exact same potential to achieve supreme enlightenment.</li>
+                    <li><strong>Forgiveness (Micchami Dukkadam):</strong> The active, annual practice of seeking and granting forgiveness to all beings.</li>
+                </ul>
+            </div>
+
+            <!-- GUIDANCE ON DAILY LIFE -->
+            <div id="sec-guidance" class="template-section">
+                <h2>Guidance on Daily Life</h2>
+                
+                <h3>Food & Diet</h3>
+                <p>The Jain diet is arguably the strictest religiously motivated diet in the world, governed entirely by Ahimsa. All Jains are strict vegetarians. Furthermore, devout Jains avoid eating root vegetables (like onions, garlic, and potatoes) because uprooting the plant kills it and harms the microscopic life in the soil. Unfiltered water and eating after sunset are also frequently avoided to prevent accidentally ingesting tiny insects.</p>
+
+                <h3>Health, Science, & Medicine</h3>
+                <p>Jainism values medical science but requires that treatments align as closely as possible with non-violence. Jains frequently seek out medicines that do not use animal testing or animal by-products. Despite strict personal austerities, the physical body must be maintained well enough to pursue spiritual practices.</p>
+
+                <h3>Blood Transfusions & Organ Transplants</h3>
+                <p>Blood transfusions and organ transplants are generally acceptable in modern Jain practice for laypeople, as they are viewed as acts of supreme compassion and do not inherently involve violence, provided the donation is voluntary and ethical.</p>
+
+                <h3>Cleanliness</h3>
+                <p>Physical cleanliness is practiced, but spiritual purity is the priority. Monks and nuns take the principle of Ahimsa to extremes—sweeping the path before they walk to avoid stepping on insects and sometimes wearing masks over their mouths to avoid inhaling microscopic organisms.</p>
+            </div>
+
+            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <div id="sec-history" class="template-section">
+                <h2>History of the Religion</h2>
+                
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
+                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                </div>
+
+                <div id="hist-founder" class="history-sub-section active">
+                    <h3>The Founders (Tirthankaras)</h3>
+                    <p>Jainism does not trace its origins to a single historical founder. Instead, it teaches that the truth is periodically forgotten and revived by a series of 24 enlightened beings called <em>Tirthankaras</em> (Ford-makers). The first of the current cosmic era was Lord Rishabhanatha. The 24th and most recent Tirthankara was Lord Mahavira, a contemporary of the Buddha in the 6th century BCE, who formalized and organized the Jain community into its current structure.</p>
+                </div>
+                
+                <div id="hist-old-dist" class="history-sub-section">
+                    <h3>Old Distribution</h3>
+                    <p>Jainism has historically been confined entirely to the Indian subcontinent. It gained immense prominence in ancient India, frequently receiving royal patronage from dynasties such as the Maurya (Chandragupta Maurya famously retired to become a Jain monk). The faith later split into two main sects over differing interpretations of monastic codes: the Digambara (sky-clad) and Svetambara (white-clad).</p>
+                </div>
+                
+                <div id="hist-new-dist" class="history-sub-section">
+                    <h3>New Distribution</h3>
+                    <p>Today, the vast majority of Jains still live in India, heavily concentrated in the western states of Gujarat, Rajasthan, and Maharashtra. However, due to modern migration, thriving diaspora communities exist in the United States, the United Kingdom, Canada, and East Africa (particularly Kenya). Because of their traditional prohibition against agricultural work (which involves killing pests), Jains are largely urbanized and prominently involved in business and finance.</p>
+                </div>
+                
+                <div id="hist-past-figs" class="history-sub-section">
+                    <h3>Principal Figures - Past</h3>
+                    <ul>
+                        <li><strong>Lord Mahavira (599–527 BCE):</strong> The 24th Tirthankara who reinvigorated the Jain tradition and established its core ethical guidelines.</li>
+                        <li><strong>Acharya Bhadrabahu (c. 3rd century BCE):</strong> The last leader of the undivided Jain monastic order and spiritual teacher to Emperor Chandragupta Maurya.</li>
+                        <li><strong>Acharya Hemachandra (1089–1172 CE):</strong> A legendary scholar, poet, and polymath who greatly expanded Jain influence in Western India.</li>
+                    </ul>
+                </div>
+                
+                <div id="hist-recent-figs" class="history-sub-section">
+                    <h3>Principal Figures - Recent</h3>
+                    <ul>
+                        <li><strong>Virchand Gandhi (1864–1901):</strong> The brilliant scholar who famously represented Jainism at the first World's Parliament of Religions in Chicago in 1893.</li>
+                        <li><strong>Shrimad Rajchandra (1867–1901):</strong> A revered poet and philosopher widely known for being Mahatma Gandhi's spiritual guide and heavily influencing Gandhi's concept of non-violence.</li>
+                        <li><strong>Acharya Vidyasagar (1946–2024):</strong> A recently deceased, highly respected Digambara monk known for his intense asceticism, scholarship, and revival of classical Jain education.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTINUITY OF PRINCIPLES -->
+            <div id="sec-continuity" class="template-section">
+                <h2>Continuity of the Principles</h2>
+                <p>The continuity of Jainism is maintained through the symbiotic relationship between the monastic order (Sadhus and Sadhvis) and the lay community (Shravakas and Shravikas). Monks and nuns adhere to extreme, strict ascetic vows to preserve the purity of the spiritual path. The lay community, in turn, supports the monastics with food and shelter, while adhering to a more practical, diluted version of the same ethical vows in their daily lives. This mutual reliance has preserved Jain doctrines across millennia.</p>
+            </div>
+
+            <!-- MISCONCEPTIONS -->
+            <div id="sec-misconceptions" class="template-section">
+                <h2>Misconceptions</h2>
+                <p><strong>Misconception: Jainism is just a strict sect of Hinduism.</strong><br>
+                Reality: Jainism is an independent, distinct religion. It explicitly rejects the authority of the Hindu Vedas, the Hindu caste system, and the concept of a creator God, having its own unique scriptures (Agamas) and cosmology.</p>
+                <p><strong>Misconception: Jainism is completely atheistic.</strong><br>
+                Reality: While Jains reject a creator deity who manages the universe or answers prayers, they are not atheists in the Western sense. They deeply worship the liberated souls of the Tirthankaras as the ultimate model of divine perfection.</p>
+                <p><strong>Misconception: All Jains practice extreme, dangerous asceticism.</strong><br>
+                Reality: The severe ascetic practices (such as pulling out one's own hair or fasting for weeks) are strictly reserved for initiated monks and nuns. Laypeople live normal, integrated lives in society, balancing family and business with their religious vows.</p>
+            </div>
+
+            <!-- CURRENT CHALLENGES -->
+            <div id="sec-challenges" class="template-section">
+                <h2>Current Challenges</h2>
+                <p>The primary challenge for modern Jains is maintaining the strict ethical and dietary requirements of Ahimsa in a rapidly globalized, fast-paced world where hidden animal products and exploitative supply chains are ubiquitous.</p>
+                <p>For the diaspora, passing down the incredibly complex philosophical concepts and the strict lifestyle requirements to youth growing up in Western, consumer-driven cultures presents an ongoing existential challenge to the community's traditional way of life.</p>
+            </div>
+
+            <!-- PRACTICAL DAILY PRACTICES -->
+            <div id="sec-practices" class="template-section">
+                <h2>Practical Daily Practices</h2>
+                <p>Devout lay Jains perform a daily meditation ritual known as <em>Samayika</em>, spending 48 minutes in deep reflection and equanimity. Many visit Jain temples (Deravasar) to perform devotional worship and bathe the idols of the Tirthankaras.</p>
+                <p>One of the most important annual practices is the festival of <em>Paryushana</em>, an 8-to-10 day period of intense fasting, reflection, and the recitation of sacred texts. It culminates in the ritual of <em>Pratikramana</em>, where Jains explicitly ask for forgiveness from all living beings for any harm they may have caused, intentionally or unintentionally.</p>
+            </div>
+
+            <!-- POSITIVE IMPACT ON SOCIETY -->
+            <div id="sec-impact" class="template-section">
+                <h2>Positive Impact on Society and Humans</h2>
+                <p>Jainism's absolute dedication to <em>Ahimsa</em> (non-violence) has had a massive ripple effect across the world, most notably influencing Mahatma Gandhi's strategy of non-violent resistance, which later inspired Martin Luther King Jr.</p>
+                <p>Furthermore, because Jains traditionally avoided agriculture and military professions, they gravitated toward business and finance. Today, the Jain community is renowned for its immense philanthropic contributions in India, funding vast networks of schools, hospitals, animal sanctuaries (Panjrapoles), and disaster relief efforts, viewing wealth primarily as a tool for public welfare.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
+        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
+        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- JavaScript for Tab Logic -->
+    <script>
+        function openSection(evt, sectionId) {
+            // Hide all main sections
+            var sections = document.getElementsByClassName("template-section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+                sections[i].classList.remove("active");
+            }
+            // Remove active class from all main buttons
+            var buttons = document.getElementsByClassName("template-nav-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            // Show the current section and add active class to button
+            document.getElementById(sectionId).style.display = "block";
+            document.getElementById(sectionId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        function openHistoryTab(evt, tabId) {
+            // Hide all history sub-sections
+            var subSections = document.getElementsByClassName("history-sub-section");
+            for (var i = 0; i < subSections.length; i++) {
+                subSections[i].style.display = "none";
+                subSections[i].classList.remove("active");
+            }
+            // Remove active class from all sub-tab buttons
+            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            for (var i = 0; i < subButtons.length; i++) {
+                subButtons[i].classList.remove("active");
+            }
+            // Show current sub-section
+            document.getElementById(tabId).style.display = "block";
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
