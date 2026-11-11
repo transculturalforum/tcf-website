@@ -226,6 +226,47 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Row-aligned results: the same section sits at the same height in both columns.
+           Each column is drawn as one card made of stacked cells. */
+        .results-container.aligned {
+            row-gap: 0;
+            column-gap: 2rem;
+        }
+
+        .result-cell {
+            background: #FFFDF9;
+            border-left: 1px solid #E6E8E3;
+            border-right: 1px solid #E6E8E3;
+            padding: 1.75rem 2rem 0 2rem;
+            min-width: 0;
+        }
+
+        .result-cell > :first-child { margin-top: 0; }
+        .result-cell > :last-child { margin-bottom: 0; }
+
+        .result-cell.cell-head {
+            border-top: 4px solid #3C6B5F;
+            border-radius: 6px 6px 0 0;
+            padding-top: 2rem;
+        }
+
+        .result-cell.cell-head > h3 {
+            font-family: 'Georgia', serif;
+            color: #2F3E2B;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 0.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        .result-cell.cell-head > .column-subject { margin-bottom: 0; }
+
+        .result-cell.cell-last {
+            border-bottom: 1px solid #E6E8E3;
+            border-radius: 0 0 6px 6px;
+            padding-bottom: 2rem;
+        }
+
         /* Visit Religion Page Footer Banner inside Results */
         .more-details-notice {
             margin-top: 2rem;
@@ -312,6 +353,21 @@
             .results-container {
                 grid-template-columns: 1fr;
             }
+            /* On phones the columns stack: all of the first choice, then all of the second */
+            .results-container.aligned .result-cell {
+                order: var(--stack-order);
+            }
+            .results-container.aligned .result-cell.col-b.cell-head {
+                margin-top: 2rem;
+            }
+            .results-container.aligned .result-cell.cell-blank {
+                display: none;
+            }
+            .results-container.aligned .result-cell.cell-last-filled {
+                border-bottom: 1px solid #E6E8E3;
+                border-radius: 0 0 6px 6px;
+                padding-bottom: 2rem;
+            }
             .vs-badge {
                 display: none;
             }
@@ -349,7 +405,8 @@
             margin-bottom: 1rem;
         }
 
-        .result-column .column-subject {
+        .result-column .column-subject,
+        .result-cell .column-subject {
             color: #3C6B5F;
             font-weight: 600;
             font-size: 0.95rem;
@@ -505,10 +562,7 @@
 
             <div id="religion-results" class="results-wrapper">
                 <div class="compare-summary" id="religion-summary"></div>
-                <div class="results-container">
-                    <div class="result-column" id="religion-col-a"></div>
-                    <div class="result-column" id="religion-col-b"></div>
-                </div>
+                <div class="results-container" id="religion-columns"></div>
 
                 <div class="more-details-notice">
                     <p><i class="fa-solid fa-circle-info" style="color: #D4AF37;"></i> If you want to know more, visit the pages of the religions you chose.</p>
@@ -555,10 +609,7 @@
 
             <div id="culture-results" class="results-wrapper">
                 <div class="compare-summary" id="culture-summary"></div>
-                <div class="results-container">
-                    <div class="result-column" id="culture-col-a"></div>
-                    <div class="result-column" id="culture-col-b"></div>
-                </div>
+                <div class="results-container" id="culture-columns"></div>
 
                 <div class="more-details-notice">
                     <p><i class="fa-solid fa-circle-info" style="color: #D4AF37;"></i> If you want to know more, visit our Cultures page.</p>
@@ -1016,6 +1067,110 @@
             }
         }
 
+        // ---- Row alignment -------------------------------------------------
+        // Splits a section's HTML into blocks, one per heading, so matching
+        // headings in the two columns can be placed on the same row.
+        function splitIntoBlocks(html) {
+            const holder = document.createElement("div");
+            holder.innerHTML = html || "";
+            // Unwrap grouping divs so every heading sits at the top level
+            holder.querySelectorAll(".cmp-sub").forEach(sub => sub.replaceWith(...sub.childNodes));
+            const blocks = [];
+            let current = { key: "", nodes: [] };
+            Array.from(holder.childNodes).forEach(node => {
+                if (node.nodeType === 1 && node.tagName === "H3") {
+                    if (current.nodes.some(hasContent)) blocks.push(current);
+                    current = { key: headingKey(node.textContent), nodes: [] };
+                }
+                current.nodes.push(node);
+            });
+            if (current.nodes.some(hasContent)) blocks.push(current);
+            return blocks.map(b => ({
+                key: b.key,
+                html: b.nodes.map(n => n.nodeType === 1 ? n.outerHTML : n.textContent).join("")
+            }));
+        }
+
+        function hasContent(node) {
+            return node.nodeType === 1 || node.textContent.trim() !== "";
+        }
+
+        function headingKey(text) {
+            return text.toLowerCase()
+                .replace(/&/g, " and ")
+                .replace(/[‘’'`]/g, "")
+                .replace(/[^a-z0-9]+/g, " ")
+                .trim();
+        }
+
+        // "Medicine" matches "Medicine and Healthcare", "Prophets" matches
+        // "Prophets and Biblical Figures"; otherwise headings must be the same.
+        function headingsMatch(a, b) {
+            if (a === b) return true;
+            if (!a || !b) return false;
+            return a.startsWith(b + " ") || b.startsWith(a + " ");
+        }
+
+        // Pairs the two lists of blocks into rows. Matching headings share a row
+        // (keeping each column's own order); anything without a partner is
+        // grouped into the row between the nearest matched headings.
+        function alignBlocks(listA, listB) {
+            const n = listA.length, m = listB.length;
+            const dp = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+            for (let i = n - 1; i >= 0; i--) {
+                for (let j = m - 1; j >= 0; j--) {
+                    dp[i][j] = headingsMatch(listA[i].key, listB[j].key)
+                        ? dp[i + 1][j + 1] + 1
+                        : Math.max(dp[i + 1][j], dp[i][j + 1]);
+                }
+            }
+            const rows = [];
+            let gapA = [], gapB = [];
+            const flushGap = () => {
+                if (gapA.length || gapB.length) rows.push([gapA.join(""), gapB.join("")]);
+                gapA = []; gapB = [];
+            };
+            let i = 0, j = 0;
+            while (i < n || j < m) {
+                if (i < n && j < m && headingsMatch(listA[i].key, listB[j].key) && dp[i][j] === dp[i + 1][j + 1] + 1) {
+                    flushGap();
+                    rows.push([listA[i].html, listB[j].html]);
+                    i++; j++;
+                } else if (j >= m || (i < n && dp[i + 1][j] >= dp[i][j + 1])) {
+                    gapA.push(listA[i++].html);
+                } else {
+                    gapB.push(listB[j++].html);
+                }
+            }
+            flushGap();
+            return rows;
+        }
+
+        // Draws the two columns as a grid, one row per section.
+        // headA/headB: header HTML; rows: [[htmlA, htmlB], ...]
+        function renderAlignedColumns(container, headA, headB, rows, bodyClass) {
+            const all = [[headA, headB], ...rows];
+            const last = all.length - 1;
+            const total = all.length;
+            container.classList.add("aligned");
+            container.innerHTML = all.map(([a, b], r) => [a, b].map((html, c) => {
+                const classes = ["result-cell", c === 0 ? "col-a" : "col-b"];
+                if (r === 0) classes.push("cell-head");
+                else if (bodyClass) classes.push(bodyClass);
+                if (r === last) classes.push("cell-last");
+                if (r > 0 && !html) classes.push("cell-blank");
+                const order = c * total + r;
+                return `<div class="${classes.join(" ")}" style="--stack-order:${order}">${html}</div>`;
+            }).join("")).join("");
+            // On phones the last cell in a column may be hidden when blank;
+            // give the last visible cell the card's bottom edge instead.
+            ["col-a", "col-b"].forEach(col => {
+                const cells = Array.from(container.querySelectorAll(".result-cell." + col));
+                const lastFilled = cells.filter(el => !el.classList.contains("cell-blank")).pop();
+                if (lastFilled) lastFilled.classList.add("cell-last-filled");
+            });
+        }
+
         function runReligionComparison(quiet) {
             const key1 = document.getElementById("religion1").value;
             const key2 = document.getElementById("religion2").value;
@@ -1039,13 +1194,16 @@
                 <span class="result-tag">Comparing: ${label}</span>
             `;
 
-            [["religion-col-a", r1], ["religion-col-b", r2]].forEach(([colId, r]) => {
-                document.getElementById(colId).innerHTML = `
-                    <h3>${r.title}</h3>
-                    <p class="column-subject">${label}</p>
-                    <div class="result-body">${r.sections[subject]}</div>
-                `;
-            });
+            const head = r => `<h3>${r.title}</h3><p class="column-subject">${label}</p>`;
+            const missing = r => `<p><em>${r.title} does not have this section yet.</em></p>`;
+            const blocksA = splitIntoBlocks(r1.sections[subject] || missing(r1));
+            const blocksB = splitIntoBlocks(r2.sections[subject] || missing(r2));
+            renderAlignedColumns(
+                document.getElementById("religion-columns"),
+                head(r1), head(r2),
+                alignBlocks(blocksA, blocksB),
+                "result-body"
+            );
 
             document.getElementById("religion-links").innerHTML = `
                 <a href="${r1.pageUrl}" class="detail-link-btn">Visit ${r1.title} Page <i class="fa-solid fa-arrow-right"></i></a>
@@ -1080,18 +1238,14 @@
                 <span class="result-tag">Comparing: ${label}</span>
             `;
 
-            [["culture-col-a", c1], ["culture-col-b", c2]].forEach(([colId, c]) => {
-                document.getElementById(colId).innerHTML = `
-                    <h3>${c.title}</h3>
-                    <p class="column-subject">${c.region}</p>
-                    ${topics.map(t => `
-                        <div class="result-section">
-                            <h4>${cultureTopics[t]}</h4>
-                            ${c.sections[t]}
-                        </div>
-                    `).join("")}
-                `;
-            });
+            const head = c => `<h3>${c.title}</h3><p class="column-subject">${c.region}</p>`;
+            const topicHtml = (c, t) => `<h4>${cultureTopics[t]}</h4>${c.sections[t] || ""}`;
+            renderAlignedColumns(
+                document.getElementById("culture-columns"),
+                head(c1), head(c2),
+                topics.map(t => [topicHtml(c1, t), topicHtml(c2, t)]),
+                "result-section"
+            );
 
             showResults(document.getElementById("culture-results"));
         }
