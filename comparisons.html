@@ -226,6 +226,31 @@
             margin-bottom: 1.5rem;
         }
 
+        /* Narrow a comparison down to one section, e.g. Children or Family */
+        .section-filter {
+            max-width: 460px;
+            margin: -0.5rem auto 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .section-filter label {
+            font-weight: 600;
+            color: #2F3E2B;
+            font-size: 0.95rem;
+        }
+
+        .section-filter select:disabled {
+            color: #888;
+            cursor: not-allowed;
+        }
+
+        .result-cell .no-match-note {
+            color: #777;
+            font-style: italic;
+        }
+
         /* Row-aligned results: the same section sits at the same height in both columns.
            Each column is drawn as one card made of stacked cells. */
         .results-container.aligned {
@@ -562,6 +587,12 @@
 
             <div id="religion-results" class="results-wrapper">
                 <div class="compare-summary" id="religion-summary"></div>
+                <div class="section-filter" id="religion-section-filter">
+                    <label for="religion-section">Focus on one section (optional):</label>
+                    <select id="religion-section" class="compare-select">
+                        <option value="">All sections</option>
+                    </select>
+                </div>
                 <div class="results-container" id="religion-columns"></div>
 
                 <div class="more-details-notice">
@@ -1080,13 +1111,14 @@
             Array.from(holder.childNodes).forEach(node => {
                 if (node.nodeType === 1 && node.tagName === "H3") {
                     if (current.nodes.some(hasContent)) blocks.push(current);
-                    current = { key: headingKey(node.textContent), nodes: [] };
+                    current = { key: headingKey(node.textContent), title: node.textContent.trim(), nodes: [] };
                 }
                 current.nodes.push(node);
             });
             if (current.nodes.some(hasContent)) blocks.push(current);
             return blocks.map(b => ({
                 key: b.key,
+                title: b.title || "",
                 html: b.nodes.map(n => n.nodeType === 1 ? n.outerHTML : n.textContent).join("")
             }));
         }
@@ -1097,18 +1129,35 @@
 
         function headingKey(text) {
             return text.toLowerCase()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                 .replace(/&/g, " and ")
                 .replace(/[‘’'`]/g, "")
                 .replace(/[^a-z0-9]+/g, " ")
                 .trim();
         }
 
+        // The words that carry a heading's meaning, without small words or
+        // religion names, so "Islam in America" and "Christianity in America" match.
+        const fillerWords = new Set(("and the of a an in with as to for on its their " +
+            "christianity christian christians islam islamic muslim muslims judaism jewish jews " +
+            "hinduism hindu hindus buddhism buddhist buddhists sikhism sikh sikhs jainism jain jains " +
+            "zoroastrianism zoroastrian zoroastrians bahai faith secular indigenous").split(" "));
+        function meaningWords(key) {
+            return new Set(key.split(" ").filter(w => w && !fillerWords.has(w)));
+        }
+
         // "Medicine" matches "Medicine and Healthcare", "Prophets" matches
-        // "Prophets and Biblical Figures"; otherwise headings must be the same.
+        // "Prophets and Biblical Figures", "Islam and Mercy" matches "Christianity and Mercy".
         function headingsMatch(a, b) {
             if (a === b) return true;
             if (!a || !b) return false;
-            return a.startsWith(b + " ") || b.startsWith(a + " ");
+            if (a.startsWith(b + " ") || b.startsWith(a + " ")) return true;
+            // Mostly the same words: "Relationships With Other Faiths" and
+            // "Relationships With People of Other Faiths"
+            const wa = meaningWords(a), wb = meaningWords(b);
+            if (!wa.size || !wb.size) return false;
+            const shared = [...wa].filter(w => wb.has(w)).length;
+            return shared / (wa.size + wb.size - shared) >= 0.6;
         }
 
         // Pairs the two lists of blocks into rows. Matching headings share a row
@@ -1127,19 +1176,19 @@
             const rows = [];
             let gapA = [], gapB = [];
             const flushGap = () => {
-                if (gapA.length || gapB.length) rows.push([gapA.join(""), gapB.join("")]);
+                if (gapA.length || gapB.length) rows.push({ a: gapA, b: gapB, matched: false });
                 gapA = []; gapB = [];
             };
             let i = 0, j = 0;
             while (i < n || j < m) {
                 if (i < n && j < m && headingsMatch(listA[i].key, listB[j].key) && dp[i][j] === dp[i + 1][j + 1] + 1) {
                     flushGap();
-                    rows.push([listA[i].html, listB[j].html]);
+                    rows.push({ a: [listA[i]], b: [listB[j]], matched: true });
                     i++; j++;
                 } else if (j >= m || (i < n && dp[i + 1][j] >= dp[i][j + 1])) {
-                    gapA.push(listA[i++].html);
+                    gapA.push(listA[i++]);
                 } else {
-                    gapB.push(listB[j++].html);
+                    gapB.push(listB[j++]);
                 }
             }
             flushGap();
@@ -1171,6 +1220,22 @@
             });
         }
 
+        // Refills the section dropdown, keeping the reader's choice when the
+        // new religions or subject have a section with the same heading.
+        function fillSectionChoices(choices) {
+            const select = document.getElementById("religion-section");
+            const previous = select.value;
+            const previousKey = previous.replace(/^(both|a|b):/, "");
+            select.innerHTML = '<option value="">All sections</option>' +
+                choices.map(c => `<option value="${c.value}">${c.label}</option>`).join("");
+            select.disabled = choices.length < 2;
+            if (!previous) return null;
+            const keep = choices.find(c => c.value === previous) ||
+                choices.find(c => headingsMatch(c.value.replace(/^(both|a|b):/, ""), previousKey));
+            select.value = keep ? keep.value : "";
+            return keep || null;
+        }
+
         function runReligionComparison(quiet) {
             const key1 = document.getElementById("religion1").value;
             const key2 = document.getElementById("religion2").value;
@@ -1198,10 +1263,33 @@
             const missing = r => `<p><em>${r.title} does not have this section yet.</em></p>`;
             const blocksA = splitIntoBlocks(r1.sections[subject] || missing(r1));
             const blocksB = splitIntoBlocks(r2.sections[subject] || missing(r2));
+            const aligned = alignBlocks(blocksA, blocksB);
+            const join = list => list.map(b => b.html).join("");
+            const noMatch = r => `<p class="no-match-note">${r.title} has no matching section here. Choose "All sections" to read everything.</p>`;
+
+            // Build the "focus on one section" choices from the headings found
+            const choices = [];
+            aligned.forEach(row => {
+                if (row.matched) {
+                    const a = row.a[0], b = row.b[0];
+                    if (!a.key) return;
+                    const label = a.title === b.title ? a.title : `${a.title} / ${b.title}`;
+                    choices.push({ value: "both:" + a.key, label, cells: [a.html, b.html] });
+                } else {
+                    row.a.filter(x => x.key).forEach(x => choices.push({
+                        value: "a:" + x.key, label: `${x.title} (${r1.title} only)`, cells: [x.html, noMatch(r2)]
+                    }));
+                    row.b.filter(x => x.key).forEach(x => choices.push({
+                        value: "b:" + x.key, label: `${x.title} (${r2.title} only)`, cells: [noMatch(r1), x.html]
+                    }));
+                }
+            });
+            const picked = fillSectionChoices(choices);
+
             renderAlignedColumns(
                 document.getElementById("religion-columns"),
                 head(r1), head(r2),
-                alignBlocks(blocksA, blocksB),
+                picked ? [picked.cells] : aligned.map(row => [join(row.a), join(row.b)]),
                 "result-body"
             );
 
@@ -1251,7 +1339,7 @@
         }
 
         // Once results are showing, changing any dropdown updates them right away
-        ["religion1", "religion2", "religion-subject"].forEach(id =>
+        ["religion1", "religion2", "religion-subject", "religion-section"].forEach(id =>
             document.getElementById(id).addEventListener("change", () => {
                 if (document.getElementById("religion-results").style.display === "block") runReligionComparison(true);
             }));
