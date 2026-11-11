@@ -2,3 +2,19 @@
 [build]
   publish = "."
   command = ""
+
+# Security settings sent with every page. They don't change how the site looks.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Always use the secure (https) connection for the next year.
+    Strict-Transport-Security = "max-age=31536000"
+    # Don't let other websites show this site inside a frame.
+    X-Frame-Options = "SAMEORIGIN"
+    Content-Security-Policy = "frame-ancestors 'self'"
+    # Browsers must treat each file as the type it says it is.
+    X-Content-Type-Options = "nosniff"
+    # Share only the site name, not the full page address, when visitors follow outside links.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # The site never needs the camera, microphone or location.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

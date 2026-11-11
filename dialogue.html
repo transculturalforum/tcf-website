@@ -669,6 +669,8 @@
                 <p style="color: #555; font-size: 0.93rem; margin-bottom: 1.25rem; line-height: 1.5;">Submit a question for our Q&A board, or select a specific article/idea to contribute a comment. <strong>Note: All comments on an article or idea must include a supporting reference.</strong></p>
                 
                 <form id="qa-form" action="https://formspree.io/f/mjyvrrqr" method="POST">
+                <!-- Spam trap: hidden from people, bots fill it in and Formspree discards the message -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="qa-name">First Name (or Initials) <span class="required-star">*</span></label>
                         <input type="text" id="qa-name" name="name" required>
