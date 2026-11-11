@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,159 +311,939 @@
         <p>An ancient Indian religion centered on the absolute practice of non-violence, asceticism, and the spiritual liberation of the soul.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Jainism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Sects and Traditions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Jainism is one of the world's oldest continuously practiced religions, originating in the Indian subcontinent. With approximately 4 to 5 million followers today, it is a relatively small global community, yet its philosophical impact on Indian culture and global ethics is profound.</p>
-                <p>The faith is fundamentally grounded in <em>Ahimsa</em> (absolute non-violence). Jains believe that animals, plants, and even microscopic organisms possess living souls (Jiva) and must be treated with supreme respect. The ultimate goal of Jainism is <em>Moksha</em>—the complete liberation of the soul from the continuous cycle of death and rebirth (Samsara).</p>
-                <p>Jainism is non-theistic in the sense that it rejects the idea of a supreme creator God who manages the universe. Instead, it teaches that the universe is eternal and governed by natural cosmic laws. Spiritual veneration is directed toward the <em>Tirthankaras</em>—24 fully enlightened human beings who conquered the physical world and taught the path to spiritual liberation.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Jainism is an ancient religion of India. It teaches that every living being has a soul, and that the path to liberation is through non-violence, self-discipline, and spiritual knowledge.</p>
+                <p>Jains follow the teachings of the Tirthankaras, "ford-makers," who crossed the river of rebirth and showed others the way. The 24th and most recent Tirthankara was Mahavira, who lived in the 6th to 5th centuries BCE in what is now Bihar, India.</p>
+                <p>Jainism does not teach a creator God. Jains believe the universe is eternal and uncreated. They worship the Tirthankaras not as creators or as gods who grant favors, but as perfect souls who are models to follow.</p>
+                <p>Jainism is known above all for its commitment to ahimsa, non-violence toward every living being, from humans and animals to insects and plants.</p>
+                <p>A key Jain teaching summarizes this outlook:</p>
+                <blockquote>"Souls render service to one another." (Parasparopagraho Jivanam — Tattvartha Sutra 5.21)</blockquote>
+                <p>This phrase is the motto of the Jain community. It expresses the belief that all life is bound together in mutual support.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>Jain philosophy and daily life are strictly guided by these foundational tenets, encompassing metaphysics and rigorous ethical vows:</p>
+            <!-- JAINISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Jainism at a Glance</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
+                </div>
+
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Jainism, or Jain Dharma</p>
+                    <p>A follower of Jainism is called a Jain.</p>
+                    <p>The word Jain comes from jina, meaning "victor" or "conqueror." A jina is someone who has conquered inner passions such as anger, pride, deceit, and greed, and attained perfect knowledge.</p>
+                </div>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>India's 2011 census recorded about 4.5 million Jains, about 0.4% of India's population. Including the diaspora, there are an estimated 4 to 6 million Jains worldwide.</p>
+                    <p>Global surveys usually include Jains in an "other religions" category, so precise figures vary.</p>
+                </div>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Jainism Is Practiced</h3>
+                    <p>Most Jains live in India, especially in:</p>
+                    <ul class="principles-list">
+                        <li>Maharashtra</li>
+                        <li>Rajasthan</li>
+                        <li>Gujarat</li>
+                        <li>Madhya Pradesh</li>
+                        <li>Karnataka</li>
+                    </ul>
+                    <p>Diaspora communities are found in:</p>
+                    <ul class="principles-list">
+                        <li>the United States and Canada</li>
+                        <li>the United Kingdom</li>
+                        <li>Kenya and East Africa</li>
+                        <li>Belgium (especially the diamond trade in Antwerp)</li>
+                        <li>Singapore and Malaysia</li>
+                        <li>Japan</li>
+                        <li>Australia</li>
+                    </ul>
+                    <p>Jain sacred texts were composed in Ardhamagadhi Prakrit, Sanskrit, and other languages. Today Jains speak Gujarati, Hindi, Marathi, Kannada, and many other languages.</p>
+                </div>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>The two main branches are:</p>
+                    <h3>Digambara</h3>
+                    <p>"Sky-clad." Digambara monks do not wear clothing as a sign of complete renunciation. Digambaras are strongest in Karnataka, Maharashtra, and Madhya Pradesh. They teach that women must be reborn as men before attaining liberation.</p>
+                    <h3>Shvetambara</h3>
+                    <p>"White-clad." Shvetambara monks and nuns wear white robes. Shvetambaras are strongest in Gujarat and Rajasthan. They teach that women can attain liberation.</p>
+                    <p>Sub-groups include:</p>
+                    <ul>
+                        <li>Shvetambara Murtipujaka (image-worshiping)</li>
+                        <li>Sthanakvasi (non-image-worshiping)</li>
+                        <li>Terapanthi (Shvetambara)</li>
+                        <li>Digambara Bisapanthi and Terapanthi</li>
+                        <li>modern movements such as those inspired by Shrimad Rajchandra and Kanji Swami</li>
+                    </ul>
+                    <p>The branches agree on the core teachings while differing on monastic practice, scriptures, and certain beliefs.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Jain Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Jina:</strong> Victor over inner passions</li>
+                        <li><strong>Tirthankara:</strong> "Ford-maker"; one of 24 great teachers</li>
+                        <li><strong>Jiva:</strong> Soul; living being</li>
+                        <li><strong>Ajiva:</strong> Non-living matter</li>
+                        <li><strong>Karma:</strong> Subtle matter that binds the soul</li>
+                        <li><strong>Ahimsa:</strong> Non-violence</li>
+                        <li><strong>Anekantavada:</strong> Many-sidedness; no single viewpoint holds the whole truth</li>
+                        <li><strong>Aparigraha:</strong> Non-possessiveness</li>
+                        <li><strong>Moksha:</strong> Liberation of the soul</li>
+                        <li><strong>Siddha:</strong> A liberated soul</li>
+                        <li><strong>Kevala jnana:</strong> Omniscience; perfect knowledge</li>
+                        <li><strong>Samsara:</strong> The cycle of birth and death</li>
+                        <li><strong>Three Jewels:</strong> Right faith, right knowledge, right conduct</li>
+                        <li><strong>Navkar Mantra:</strong> The most important Jain prayer</li>
+                        <li><strong>Derasar / Basadi:</strong> Jain temple</li>
+                        <li><strong>Sadhu / Sadhvi:</strong> Monk / nun</li>
+                        <li><strong>Shravaka / Shravika:</strong> Lay man / lay woman</li>
+                        <li><strong>Paryushana:</strong> The most important annual festival</li>
+                        <li><strong>Samayika:</strong> Meditation of equanimity</li>
+                        <li><strong>Pratikramana:</strong> Ritual of confession and reflection</li>
+                        <li><strong>Sallekhana:</strong> Voluntary fasting at the end of life</li>
+                    </ul>
+                </div>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>Core Jain beliefs include:</p>
+                    <ol>
+                        <li>every living being has an eternal soul (jiva)</li>
+                        <li>the universe is eternal and uncreated</li>
+                        <li>the soul is bound by karma</li>
+                        <li>the soul goes through cycles of rebirth</li>
+                        <li>the soul can be freed through its own effort</li>
+                        <li>liberated souls (siddhas) dwell in eternal bliss and perfect knowledge</li>
+                    </ol>
+                    <p>The path to liberation is the Three Jewels (Ratnatraya):</p>
+                    <ol>
+                        <li>Right faith (samyak darshana)</li>
+                        <li>Right knowledge (samyak jnana)</li>
+                        <li>Right conduct (samyak charitra)</li>
+                    </ol>
+                    <p>The Tattvartha Sutra opens: "Right faith, right knowledge, and right conduct together are the path to liberation."</p>
+                    <p>The five great vows are:</p>
+                    <ol>
+                        <li>Ahimsa — non-violence</li>
+                        <li>Satya — truthfulness</li>
+                        <li>Asteya — not stealing</li>
+                        <li>Brahmacharya — chastity</li>
+                        <li>Aparigraha — non-possessiveness</li>
+                    </ol>
+                    <p>Monks and nuns follow these vows strictly. Lay Jains follow them in a more limited form.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Jain Holidays</h3>
+                    <h3>Paryushana and Das Lakshana</h3>
+                    <p>The most important Jain festival, held in August or September. Shvetambaras observe eight days (Paryushana) and Digambaras ten days (Das Lakshana Parva).</p>
+                    <p>It is a time of:</p>
+                    <ul class="principles-list">
+                        <li>fasting</li>
+                        <li>prayer and meditation</li>
+                        <li>scripture reading</li>
+                        <li>confession and reflection</li>
+                        <li>asking forgiveness</li>
+                    </ul>
+                    <p>It ends with Samvatsari, the day of forgiveness. Jains ask everyone they may have hurt for forgiveness, saying "Micchami Dukkadam," meaning "may my wrongdoing be forgiven."</p>
+                    <h3>Mahavir Jayanti</h3>
+                    <p>Celebrates the birth of Mahavira, usually in March or April.</p>
+                    <h3>Diwali</h3>
+                    <p>For Jains, Diwali marks Mahavira's attainment of liberation (moksha). Lamps are lit to symbolize the light of knowledge.</p>
+                    <h3>Other Observances</h3>
+                    <ul>
+                        <li>Akshaya Tritiya</li>
+                        <li>Kartik Purnima</li>
+                        <li>Mahamastakabhisheka, the ceremony anointing the statue of Bahubali at Shravanabelagola, held about every 12 years</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">The Universe &amp; the Tirthankaras</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">The Agamas</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Liberation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>The Universe and the Question of God</h3>
+                    <p>Jainism teaches that the universe was never created and will never end. It runs according to natural laws, including the law of karma.</p>
+                    <p>Jainism does not teach a creator God who controls the universe or judges people. Every soul has the potential to become perfect, and liberated souls are honored as divine.</p>
+                    <p>Jainism rejects:</p>
+                    <ul class="principles-list">
+                        <li>a creator God</li>
+                        <li>the idea that a god can remove a person's karma</li>
+                        <li>animal sacrifice</li>
+                        <li>violence of any kind</li>
+                        <li>the idea that any single viewpoint holds the complete truth</li>
+                    </ul>
+                    <h3>The Tirthankaras</h3>
+                    <p>Jains believe that in each half-cycle of time, 24 Tirthankaras appear. They attain perfect knowledge and teach the path to liberation.</p>
+                    <p>In the present age, the 24 Tirthankaras include:</p>
+                    <ul>
+                        <li>Rishabhanatha (Adinatha), the first</li>
+                        <li>Neminatha, the 22nd</li>
+                        <li>Parshvanatha, the 23rd, who most historians agree was a historical person who lived around the 9th to 8th centuries BCE</li>
+                        <li>Mahavira, the 24th</li>
+                    </ul>
+                    <p>Jains do not consider Mahavira the founder of Jainism. They believe he revived and taught an eternal truth.</p>
+                    <h3>Revelation and Knowledge</h3>
+                    <p>In Jainism, truth is not revealed by God. It is known through perfect knowledge (kevala jnana), which the Tirthankaras attained.</p>
+                    <p>The Tirthankaras' teachings were passed on by their chief disciples, called ganadharas, who arranged them into scriptures.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Jain Scriptures (Agamas)</h3>
+                    <p>The Agamas are the main Jain scriptures.</p>
+                    <h3>Shvetambara canon</h3>
+                    <p>Shvetambaras accept a canon of about 45 texts (32 for Sthanakvasis and Terapanthis), including:</p>
+                    <ul class="principles-list">
+                        <li>the Acharanga Sutra, on monastic conduct</li>
+                        <li>the Sutrakritanga</li>
+                        <li>the Kalpa Sutra, with the lives of the Tirthankaras</li>
+                        <li>the Uttaradhyayana Sutra, on ethics and teaching</li>
+                    </ul>
+                    <h3>Digambara texts</h3>
+                    <p>Digambaras believe the original Agamas were lost. They rely on later texts, including:</p>
+                    <ul class="principles-list">
+                        <li>the Shatkhandagama</li>
+                        <li>the Kashayapahuda</li>
+                        <li>the works of Kundakunda, such as the Samayasara</li>
+                    </ul>
+                    <h3>Shared text</h3>
+                    <p>The Tattvartha Sutra by Umaswati is accepted by both branches and is the best-known summary of Jain teaching.</p>
+                    <p>These texts contain:</p>
+                    <ul class="principles-list">
+                        <li>teachings on the soul and karma</li>
+                        <li>ethics and vows</li>
+                        <li>rules for monks and nuns</li>
+                        <li>cosmology</li>
+                        <li>the lives of the Tirthankaras</li>
+                        <li>philosophy and logic</li>
+                    </ul>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings</h3>
+                    <p>Jain cosmology includes heavenly beings (devas), humans, animals and plants, and hell beings.</p>
+                    <p>Gods are souls living in heavenly realms because of good karma. They are not eternal, and they cannot grant liberation.</p>
+                    <p>Many Jain temples include guardian deities (yakshas and yakshis), such as Padmavati and Ambika, who protect the faith.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Jainism teaches that every soul is pure by nature, with infinite knowledge, perception, bliss, and energy.</p>
+                    <p>This true nature is covered by karma, which builds up through actions driven by passions.</p>
+                    <p>Human birth is especially valuable because only humans can practice the full path to liberation.</p>
+                    <p>Jainism does not teach inherited sin. Each soul is responsible for its own karma.</p>
+                    <h3>Karma</h3>
+                    <p>Jainism has a distinctive understanding of karma. Karma is a kind of very fine matter that sticks to the soul when a person acts with passion.</p>
+                    <p>The four main passions (kashayas) are:</p>
+                    <ul class="principles-list">
+                        <li>anger</li>
+                        <li>pride</li>
+                        <li>deceit</li>
+                        <li>greed</li>
+                    </ul>
+                    <p>There are eight types of karma. Some block knowledge, perception, and energy; others determine a soul's body, lifespan, and experiences.</p>
+                    <p>No god can remove karma. Each soul must free itself through its own effort.</p>
+                    <h3>Stopping and Removing Karma</h3>
+                    <p>Jainism teaches that karma can be:</p>
+                    <ol>
+                        <li>stopped from entering the soul (samvara) through self-control</li>
+                        <li>removed from the soul (nirjara) through austerity, meditation, and repentance</li>
+                    </ol>
+                    <p>Daily and annual confession (pratikramana) helps Jains reflect on harm done and seek forgiveness. Jains ask forgiveness from all living beings with the words:</p>
+                    <blockquote>"I forgive all living beings. May all living beings forgive me. I have friendship with all, and enmity with none."</blockquote>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>The most important Jain prayer is the Navkar (Namokar) Mantra. It honors five kinds of holy beings:</p>
+                    <ul class="principles-list">
+                        <li>Arihants (Tirthankaras and others with perfect knowledge)</li>
+                        <li>Siddhas (liberated souls)</li>
+                        <li>Acharyas (spiritual leaders)</li>
+                        <li>Upadhyayas (teachers)</li>
+                        <li>Sadhus and sadhvis (monks and nuns)</li>
+                    </ul>
+                    <p>It names no individual, showing respect for qualities rather than persons.</p>
+                    <p>Jain worship may include:</p>
+                    <ul>
+                        <li>reciting the Navkar Mantra</li>
+                        <li>temple worship (puja) with water, sandalwood, flowers, rice, and lamps</li>
+                        <li>meditation (samayika)</li>
+                        <li>reading scriptures</li>
+                        <li>visiting monks and nuns</li>
+                        <li>pilgrimage</li>
+                    </ul>
+                    <p>Jains worship the Tirthankaras as ideals, not to ask for favors. Some Jain sects do not use images in worship.</p>
+                    <h3>Charity</h3>
+                    <p>Charity (dana) is an important duty for lay Jains.</p>
+                    <p>Charity may involve:</p>
+                    <ul class="principles-list">
+                        <li>giving food to monks and nuns</li>
+                        <li>supporting temples and schools</li>
+                        <li>building and running animal shelters (panjrapoles)</li>
+                        <li>feeding the hungry</li>
+                        <li>supporting hospitals</li>
+                        <li>donating to education</li>
+                    </ul>
+                    <p>Jain communities are known for their extensive charitable work.</p>
+                    <h3>Fasting</h3>
+                    <p>Fasting is one of the most important Jain practices. It is a form of austerity (tapas) that helps remove karma.</p>
+                    <p>Common forms of fasting include:</p>
+                    <ul class="principles-list">
+                        <li>complete fasting with only boiled water</li>
+                        <li>eating one meal a day</li>
+                        <li>eating only certain foods</li>
+                        <li>not eating after sunset</li>
+                        <li>fasting for many days during Paryushana</li>
+                    </ul>
+                    <p>Fasting should be done with calm and equanimity, not as a display.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Jainism regards all life as sacred.</p>
+                    <p>Jains believe that even the smallest beings, such as insects and microorganisms, have souls. Living beings are classified by the number of senses they have, from one sense (plants, earth, water) to five senses (humans and animals).</p>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>avoid harming any living being</li>
+                        <li>speak truthfully</li>
+                        <li>live simply</li>
+                        <li>control their passions</li>
+                        <li>practice self-discipline</li>
+                        <li>support the community</li>
+                        <li>seek knowledge</li>
+                    </ul>
+                    <h3>Death</h3>
+                    <p>Death is the soul leaving its body. The soul then takes a new birth according to its karma.</p>
+                    <p>Jains hope to die peacefully, with a calm mind, reciting the Navkar Mantra.</p>
+                    <h3>Rebirth</h3>
+                    <p>The soul is reborn in one of four states:</p>
+                    <ul class="principles-list">
+                        <li>heavenly beings</li>
+                        <li>humans</li>
+                        <li>animals and plants</li>
+                        <li>hell beings</li>
+                    </ul>
+                    <p>Rebirth continues until the soul is freed from all karma.</p>
+                    <h3>Liberation (Moksha)</h3>
+                    <p>Moksha is the final goal of Jainism. When a soul is free from all karma, it rises to the top of the universe, to a place called Siddhashila.</p>
+                    <p>There, the liberated soul (siddha) lives forever in:</p>
+                    <ul class="principles-list">
+                        <li>infinite knowledge</li>
+                        <li>infinite perception</li>
+                        <li>infinite bliss</li>
+                        <li>infinite energy</li>
+                    </ul>
+                    <h3>Heavens and Hells</h3>
+                    <p>Jain cosmology describes many heavens and hells. They are temporary. A soul stays there until the karma that caused that birth is used up. Neither is the final goal.</p>
+                    <h3>Judgment</h3>
+                    <p>Jainism has no judgment by God. The law of karma acts naturally and exactly. Each person experiences the results of their own actions.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will</h3>
+                    <p>Jainism strongly emphasizes self-effort. The soul is responsible for its own bondage and its own liberation.</p>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Jain ethics are based on the five vows.</p>
+                    <p>Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>non-violence</li>
+                        <li>truthfulness</li>
+                        <li>honesty</li>
+                        <li>self-control</li>
+                        <li>forgiveness</li>
+                        <li>humility</li>
+                        <li>simplicity</li>
+                        <li>contentment</li>
+                        <li>compassion</li>
+                        <li>respect for all life</li>
+                    </ul>
+                    <p>The Acharanga Sutra teaches:</p>
+                    <blockquote>"All beings are fond of life; they like pleasure and hate pain, shun destruction and like to live. To all, life is dear."</blockquote>
+                    <h3>Many-Sidedness (Anekantavada)</h3>
+                    <p>Jainism teaches that reality is complex and can be seen from many viewpoints. No single viewpoint has the whole truth.</p>
+                    <p>The famous story of the blind men and the elephant, each of whom touches a different part and describes it differently, is often used to explain this teaching.</p>
+                    <p>Anekantavada encourages tolerance, humility, and respect for other views.</p>
+                    <h3>Family</h3>
+                    <p>Family is important in Jain life. Lay Jains are householders who support family, community, and monastics.</p>
+                    <p>Jainism places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>parents</li>
+                        <li>children</li>
+                        <li>spouses</li>
+                        <li>elders</li>
+                        <li>monks and nuns</li>
+                        <li>the community</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is a social and religious institution in Jain life. Jain weddings include prayers, the Navkar Mantra, and vows. Customs vary by region and community.</p>
+                    <p>Lay Jains are expected to be faithful in marriage under the vow of brahmacharya.</p>
+                    <h3>Community</h3>
+                    <p>The Jain community is called the fourfold sangha:</p>
+                    <ul class="principles-list">
+                        <li>monks (sadhus)</li>
+                        <li>nuns (sadhvis)</li>
+                        <li>lay men (shravakas)</li>
+                        <li>lay women (shravikas)</li>
+                    </ul>
+                    <p>Temples and community halls serve as centers for worship, education, festivals, and charity.</p>
+                    <h3>Treatment of Others</h3>
+                    <p>Jain ethics apply to all living beings.</p>
+                    <p>Jainism teaches non-violence in thought, word, and deed. It also teaches friendship toward all beings (maitri), joy in the virtues of others (pramoda), compassion for those who suffer (karunya), and tolerance toward those who disagree (madhyastha).</p>
+                </div>
+            </div>
+
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Agamas</h3>
+                <p>The Agamas are the foundation of Jain scripture.</p>
+                <p>Their major themes include:</p>
                 <ul class="principles-list">
-                    <li><strong>Ahimsa:</strong> Supreme non-violence in thought, word, and deed toward all living beings.</li>
-                    <li><strong>Anekantavada:</strong> The "many-sidedness" of truth; realizing that ultimate reality is complex and pluralistic.</li>
-                    <li><strong>Aparigraha:</strong> Non-attachment to worldly possessions, people, and material desires.</li>
-                    <li><strong>Satya:</strong> Absolute truthfulness, provided speaking the truth does not cause harm.</li>
-                    <li><strong>Asteya:</strong> Non-stealing; taking nothing that is not explicitly and willingly given.</li>
-                    <li><strong>Brahmacharya:</strong> Chastity for laypeople and complete celibacy for monks and nuns.</li>
-                    <li><strong>Jiva:</strong> The belief that every living entity, no matter how small, contains a conscious, eternal soul.</li>
-                    <li><strong>Ajiva:</strong> The non-living components of the universe (matter, space, time, motion).</li>
-                    <li><strong>Karma:</strong> Viewed physically as fine particulate matter that sticks to the soul based on one's actions.</li>
-                    <li><strong>Samsara:</strong> The continuous cycle of birth, suffering, death, and reincarnation.</li>
-                    <li><strong>Moksha:</strong> The burning away of all Karma to achieve the liberation of the soul.</li>
-                    <li><strong>The Three Jewels (Ratnatraya):</strong> The path to liberation requires Right Faith, Right Knowledge, and Right Conduct.</li>
-                    <li><strong>Right Faith (Samyak Darshana):</strong> Rational belief in the fundamental substances of reality.</li>
-                    <li><strong>Right Knowledge (Samyak Jnana):</strong> Correct understanding of the soul and the universe.</li>
-                    <li><strong>Right Conduct (Samyak Charitra):</strong> Living ethically according to Jain vows to stop the influx of Karma.</li>
-                    <li><strong>Tirthankaras:</strong> Reverence for the 24 spiritual victors who built the ford across the ocean of rebirth.</li>
-                    <li><strong>Asceticism (Tapas):</strong> Severe self-discipline and austerity to burn away existing Karma.</li>
-                    <li><strong>Eternal Universe:</strong> The belief that the universe was never created and will never be destroyed.</li>
-                    <li><strong>Equality of Souls:</strong> Every soul has the exact same potential to achieve supreme enlightenment.</li>
-                    <li><strong>Forgiveness (Micchami Dukkadam):</strong> The active, annual practice of seeking and granting forgiveness to all beings.</li>
+                    <li>the soul</li>
+                    <li>karma</li>
+                    <li>non-violence</li>
+                    <li>the vows</li>
+                    <li>monastic discipline</li>
+                    <li>the cosmos</li>
+                    <li>the Tirthankaras</li>
+                    <li>liberation</li>
+                </ul>
+                <h3>The Tattvartha Sutra</h3>
+                <p>The Tattvartha Sutra, written around the 2nd to 5th centuries CE, sets out the whole Jain system in about 350 verses. It explains the seven basic truths (tattvas):</p>
+                <ol>
+                    <li>soul (jiva)</li>
+                    <li>non-soul (ajiva)</li>
+                    <li>inflow of karma (asrava)</li>
+                    <li>bondage (bandha)</li>
+                    <li>stopping karma (samvara)</li>
+                    <li>removing karma (nirjara)</li>
+                    <li>liberation (moksha)</li>
+                </ol>
+                <h3>Jain Scholarship</h3>
+                <p>Jain scholars made major contributions to:</p>
+                <ul>
+                    <li>logic and philosophy</li>
+                    <li>mathematics</li>
+                    <li>astronomy</li>
+                    <li>grammar</li>
+                    <li>literature in Prakrit, Sanskrit, Kannada, Tamil, and Gujarati</li>
+                    <li>ethics</li>
+                </ul>
+                <p>Major scholars include:</p>
+                <ul class="principles-list">
+                    <li>Kundakunda</li>
+                    <li>Umaswati</li>
+                    <li>Siddhasena Divakara</li>
+                    <li>Samantabhadra</li>
+                    <li>Haribhadra</li>
+                    <li>Hemachandra</li>
+                    <li>Yashovijaya</li>
                 </ul>
             </div>
 
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>The Jain diet is arguably the strictest religiously motivated diet in the world, governed entirely by Ahimsa. All Jains are strict vegetarians. Furthermore, devout Jains avoid eating root vegetables (like onions, garlic, and potatoes) because uprooting the plant kills it and harms the microscopic life in the soil. Unfiltered water and eating after sunset are also frequently avoided to prevent accidentally ingesting tiny insects.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Jainism values medical science but requires that treatments align as closely as possible with non-violence. Jains frequently seek out medicines that do not use animal testing or animal by-products. Despite strict personal austerities, the physical body must be maintained well enough to pursue spiritual practices.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Blood transfusions and organ transplants are generally acceptable in modern Jain practice for laypeople, as they are viewed as acts of supreme compassion and do not inherently involve violence, provided the donation is voluntary and ethical.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Physical cleanliness is practiced, but spiritual purity is the priority. Monks and nuns take the principle of Ahimsa to extremes—sweeping the path before they walk to avoid stepping on insects and sometimes wearing masks over their mouths to avoid inhaling microscopic organisms.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <!-- HISTORY -->
             <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+                <h2>History</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">Mahavira</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Sacred Places</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Expansion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founders (Tirthankaras)</h3>
-                    <p>Jainism does not trace its origins to a single historical founder. Instead, it teaches that the truth is periodically forgotten and revived by a series of 24 enlightened beings called <em>Tirthankaras</em> (Ford-makers). The first of the current cosmic era was Lord Rishabhanatha. The 24th and most recent Tirthankara was Lord Mahavira, a contemporary of the Buddha in the 6th century BCE, who formalized and organized the Jain community into its current structure.</p>
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Jains believe their religion is eternal and has been taught by a series of Tirthankaras.</p>
+                    <p>Historians generally agree that Parshvanatha, the 23rd Tirthankara, lived around the 9th to 8th centuries BCE, and Mahavira in the 6th to 5th centuries BCE.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Jainism has historically been confined entirely to the Indian subcontinent. It gained immense prominence in ancient India, frequently receiving royal patronage from dynasties such as the Maurya (Chandragupta Maurya famously retired to become a Jain monk). The faith later split into two main sects over differing interpretations of monastic codes: the Digambara (sky-clad) and Svetambara (white-clad).</p>
-                </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, the vast majority of Jains still live in India, heavily concentrated in the western states of Gujarat, Rajasthan, and Maharashtra. However, due to modern migration, thriving diaspora communities exist in the United States, the United Kingdom, Canada, and East Africa (particularly Kenya). Because of their traditional prohibition against agricultural work (which involves killing pests), Jains are largely urbanized and prominently involved in business and finance.</p>
-                </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
-                    <ul>
-                        <li><strong>Lord Mahavira (599–527 BCE):</strong> The 24th Tirthankara who reinvigorated the Jain tradition and established its core ethical guidelines.</li>
-                        <li><strong>Acharya Bhadrabahu (c. 3rd century BCE):</strong> The last leader of the undivided Jain monastic order and spiritual teacher to Emperor Chandragupta Maurya.</li>
-                        <li><strong>Acharya Hemachandra (1089–1172 CE):</strong> A legendary scholar, poet, and polymath who greatly expanded Jain influence in Western India.</li>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>Mahavira</h3>
+                    <p>Mahavira was born as Vardhamana into a royal family near present-day Patna, Bihar. Traditional Shvetambara accounts place his birth in 599 BCE; many scholars place him later, around the same period as the Buddha.</p>
+                    <p>At about 30, he renounced his home and practiced intense austerity and meditation for about twelve and a half years. He then attained perfect knowledge (kevala jnana).</p>
+                    <p>He taught for about 30 years and attained liberation at Pavapuri, Bihar.</p>
+                    <p>His teaching emphasized:</p>
+                    <ul class="principles-list">
+                        <li>non-violence</li>
+                        <li>truthfulness</li>
+                        <li>non-possessiveness</li>
+                        <li>self-discipline</li>
+                        <li>equality of all souls</li>
+                        <li>liberation through one's own effort</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Sacred Places</h3>
+                    <p>Important Jain pilgrimage sites include:</p>
                     <ul>
-                        <li><strong>Virchand Gandhi (1864–1901):</strong> The brilliant scholar who famously represented Jainism at the first World's Parliament of Religions in Chicago in 1893.</li>
-                        <li><strong>Shrimad Rajchandra (1867–1901):</strong> A revered poet and philosopher widely known for being Mahatma Gandhi's spiritual guide and heavily influencing Gandhi's concept of non-violence.</li>
-                        <li><strong>Acharya Vidyasagar (1946–2024):</strong> A recently deceased, highly respected Digambara monk known for his intense asceticism, scholarship, and revival of classical Jain education.</li>
+                        <li>Shatrunjaya (Palitana), Gujarat, with over 800 temples</li>
+                        <li>Mount Girnar, Gujarat</li>
+                        <li>Sammed Shikhar, Jharkhand, where 20 Tirthankaras attained liberation</li>
+                        <li>Pavapuri, Bihar, where Mahavira attained liberation</li>
+                        <li>Shravanabelagola, Karnataka, with the giant statue of Bahubali</li>
+                        <li>Dilwara Temples at Mount Abu, Rajasthan</li>
+                        <li>Ranakpur Temple, Rajasthan</li>
+                    </ul>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Expansion</h3>
+                    <p>Jainism spread across India with support from kings and merchants. According to tradition, the Mauryan emperor Chandragupta became a Jain monk and moved to South India.</p>
+                    <p>Jainism was influential in Gujarat, Rajasthan, Karnataka, and Tamil Nadu. Jain merchants and scholars played major roles in Indian society.</p>
+                    <p>In the 20th century, Jains migrated to East Africa, Britain, North America, and elsewhere.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>c. 9th–8th century BCE:</strong> Life of Parshvanatha.</li>
+                        <li><strong>c. 6th–5th century BCE:</strong> Life of Mahavira.</li>
+                        <li><strong>c. 4th–3rd century BCE:</strong> Chandragupta Maurya and Bhadrabahu go to South India, according to tradition.</li>
+                        <li><strong>c. 1st century CE onward:</strong> Gradual division into Digambara and Shvetambara traditions.</li>
+                        <li><strong>5th century CE:</strong> Council of Valabhi; Shvetambara scriptures are written down.</li>
+                        <li><strong>981 CE:</strong> Statue of Bahubali completed at Shravanabelagola.</li>
+                        <li><strong>11th–13th centuries:</strong> Dilwara temples built; the scholar Hemachandra flourishes.</li>
+                        <li><strong>15th–18th centuries:</strong> Rise of the Sthanakvasi and Terapanthi movements.</li>
+                        <li><strong>1893:</strong> Virchand Gandhi represents Jainism at the World's Parliament of Religions in Chicago.</li>
+                        <li><strong>20th century:</strong> Mahatma Gandhi, influenced by Jain teachings, promotes non-violence; Jain diaspora communities form.</li>
+                        <li><strong>2014:</strong> The Indian government recognizes Jains as a national minority community.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Rishabhanatha</li>
+                        <li>Parshvanatha</li>
+                        <li>Mahavira</li>
+                        <li>Gautama Swami (Indrabhuti), Mahavira's chief disciple</li>
+                        <li>Chandana, head of Mahavira's community of nuns</li>
+                        <li>Bhadrabahu</li>
+                        <li>Kundakunda</li>
+                        <li>Umaswati</li>
+                        <li>Hemachandra</li>
+                        <li>Shrimad Rajchandra, spiritual guide to Mahatma Gandhi</li>
+                        <li>Virchand Gandhi</li>
+                        <li>Acharya Tulsi</li>
+                        <li>many monks, nuns, scholars, merchants, and patrons across Jain history</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The continuity of Jainism is maintained through the symbiotic relationship between the monastic order (Sadhus and Sadhvis) and the lay community (Shravakas and Shravikas). Monks and nuns adhere to extreme, strict ascetic vows to preserve the purity of the spiritual path. The lay community, in turn, supports the monastics with food and shelter, while adhering to a more practical, diluted version of the same ethical vows in their daily lives. This mutual reliance has preserved Jain doctrines across millennia.</p>
+            <!-- MAJOR SECTS AND TRADITIONS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Sects and Traditions</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Digambara</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Shvetambara</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Modern Movements</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-6')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Digambara</h3>
+                    <p>Monks practice complete renunciation, including of clothing. They eat once a day from their hands.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Shvetambara</h3>
+                    <p>Monks and nuns wear white. The Shvetambara community includes:</p>
+                    <ul>
+                        <li>Murtipujaka, who worship in temples with images</li>
+                        <li>Sthanakvasi, who do not use images and meet in halls (sthanaks)</li>
+                        <li>Terapanthi, a reform tradition founded in the 18th century</li>
+                    </ul>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Modern Movements</h3>
+                    <ul class="principles-list">
+                        <li>followers of Shrimad Rajchandra</li>
+                        <li>followers of Kanji Swami</li>
+                        <li>Jain organizations in the diaspora that bring sects together</li>
+                    </ul>
+                    <p>These traditions are all regarded as Jain rather than as separate religions.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Traditional and Modern Interpretations</h3>
+                    <p>Modern Jains differ on:</p>
+                    <ul class="principles-list">
+                        <li>the role of temples and images</li>
+                        <li>women's spiritual status</li>
+                        <li>strictness of diet, including dairy</li>
+                        <li>use of technology by monks</li>
+                        <li>adapting to life abroad</li>
+                        <li>environmental activism</li>
+                    </ul>
+                    <p>Two Jains may share the same core beliefs while reaching different conclusions on modern questions.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>Gujarat and Rajasthan</h3>
+                    <p>Mostly Shvetambara, with large temple complexes.</p>
+                    <h3>Karnataka and Maharashtra</h3>
+                    <p>Large Digambara communities.</p>
+                    <h3>Diaspora</h3>
+                    <p>Communities in the US, UK, and Kenya often build temples shared by different sects.</p>
+                    <h3>United States</h3>
+                    <p>American Jains include immigrants from India and East Africa, their children, and some converts. The Federation of Jain Associations in North America (JAINA) connects communities.</p>
+                </div>
+
+                <div id="deno-6" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>It is important to distinguish between Jain teaching and regional culture.</p>
+                    <p>Examples of cultural practices that are not core Jain requirements include:</p>
+                    <ul class="principles-list">
+                        <li>particular wedding customs</li>
+                        <li>regional dress</li>
+                        <li>certain foods unrelated to non-violence</li>
+                        <li>caste-like community divisions</li>
+                        <li>business traditions</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Jainism is just a strict sect of Hinduism.</strong><br>
-                Reality: Jainism is an independent, distinct religion. It explicitly rejects the authority of the Hindu Vedas, the Hindu caste system, and the concept of a creator God, having its own unique scriptures (Agamas) and cosmology.</p>
-                <p><strong>Misconception: Jainism is completely atheistic.</strong><br>
-                Reality: While Jains reject a creator deity who manages the universe or answers prayers, they are not atheists in the Western sense. They deeply worship the liberated souls of the Tirthankaras as the ultimate model of divine perfection.</p>
-                <p><strong>Misconception: All Jains practice extreme, dangerous asceticism.</strong><br>
-                Reality: The severe ascetic practices (such as pulling out one's own hair or fasting for weeks) are strictly reserved for initiated monks and nuns. Laypeople live normal, integrated lives in society, balancing family and business with their religious vows.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Jainism is a sect of Hinduism or Buddhism.</strong><br>
+                Fact: Jainism is an independent religion with its own scriptures, teachers, and philosophy.</p>
+                <p><strong>Myth: Jains worship Mahavira as God.</strong><br>
+                Fact: Jains honor Mahavira and the other Tirthankaras as perfect souls and models, not as a creator God who grants favors.</p>
+                <p><strong>Myth: Jainism is only for monks.</strong><br>
+                Fact: Most Jains are lay people who follow the vows in a form suited to family and working life.</p>
+                <p><strong>Myth: Non-violence means Jains are passive.</strong><br>
+                Fact: Non-violence in Jainism is an active discipline of care for all life, expressed in charity, animal welfare, and peaceful action.</p>
+                <p><strong>Myth: The Jain swastika is related to the Nazi symbol.</strong><br>
+                Fact: The swastika is an ancient Jain symbol of the four states of existence and of well-being. Its meaning was distorted by the Nazis.</p>
+                <p><strong>Myth: All Jains wear masks.</strong><br>
+                Fact: Only some monks and nuns, mainly in the Sthanakvasi and Terapanthi traditions, wear a mouth cloth (muhapatti) to avoid harming tiny beings.</p>
+                <p><strong>Myth: Jainism has one uniform practice.</strong><br>
+                Fact: Digambara and Shvetambara traditions, and their sub-groups, differ significantly.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>The primary challenge for modern Jains is maintaining the strict ethical and dietary requirements of Ahimsa in a rapidly globalized, fast-paced world where hidden animal products and exploitative supply chains are ubiquitous.</p>
-                <p>For the diaspora, passing down the incredibly complex philosophical concepts and the strict lifestyle requirements to youth growing up in Western, consumer-driven cultures presents an ongoing existential challenge to the community's traditional way of life.</p>
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Jainism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Jainism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; the Environment</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Faith, Knowledge &amp; Conduct</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Jain life.</p>
+                    <p>Jains are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents and elders</li>
+                        <li>faithful marriage</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>hospitality to monks and nuns</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is a social and religious bond.</p>
+                    <p>A Jain wedding generally involves:</p>
+                    <ul class="principles-list">
+                        <li>prayers and the Navkar Mantra</li>
+                        <li>vows of mutual responsibility</li>
+                        <li>family blessings</li>
+                    </ul>
+                    <h3>Children</h3>
+                    <p>Children are taught Jain values at home, at temple classes (pathshala), and through stories.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                    </ul>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Learning is highly valued. Jains preserved large manuscript libraries, called gyan bhandars, some of which are among the oldest libraries in India.</p>
+                    <p>Jain communities today support schools, colleges, and scholarships.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Jain food practice is guided by non-violence.</p>
+                    <p>Common practices include:</p>
+                    <ul>
+                        <li>strict vegetarianism</li>
+                        <li>avoiding root vegetables such as potatoes, onions, garlic, and carrots, because harvesting them kills the whole plant and many small organisms</li>
+                        <li>not eating after sunset (chauvihar)</li>
+                        <li>avoiding honey and alcohol</li>
+                        <li>filtering water</li>
+                        <li>many Jains are now vegan, avoiding dairy because of harm to animals</li>
+                    </ul>
+                    <p>Dietary practice varies among individuals and sects.</p>
+                    <h3>Clothing</h3>
+                    <p>Jainism encourages simplicity.</p>
+                    <p>Shvetambara monks and nuns wear white. Digambara monks wear no clothing. Lay Jains dress according to local culture, often wearing simple clothes for temple worship.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Women and men are both lay members and monastics in Jainism. Jain nuns outnumber monks.</p>
+                    <p>The two branches differ on whether a woman can attain liberation in this life: Shvetambaras say she can, and Digambaras say she must first be reborn as a man.</p>
+                    <p>Modern Jains discuss women's roles in leadership and worship.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Jains are encouraged to choose work that causes the least possible harm.</p>
+                    <p>Many Jains have traditionally worked in trade, banking, jewelry, and later in medicine, law, technology, and business. Farming was often avoided because it harms small creatures in the soil.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Jain business ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>not cheating</li>
+                        <li>limiting possessions and greed</li>
+                        <li>giving to charity</li>
+                        <li>avoiding businesses that harm animals</li>
+                    </ul>
+                    <p>The vow of aparigraha encourages Jains to limit what they own and to give surplus wealth away.</p>
+                    <h3>Charity</h3>
+                    <p>Charity is integrated into Jain life.</p>
+                    <p>Jains may give:</p>
+                    <ul class="principles-list">
+                        <li>food and shelter</li>
+                        <li>support to animal shelters and bird hospitals</li>
+                        <li>support for schools and hospitals</li>
+                        <li>disaster relief</li>
+                        <li>support for monks and nuns</li>
+                    </ul>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Jainism values the protection of life. Jains generally accept modern medicine, though some avoid medicines made from animal products.</p>
+                    <p>Jains support many hospitals, including animal and bird hospitals such as the Charity Birds Hospital in Delhi.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Jain funeral practice generally includes:</p>
+                    <ul class="principles-list">
+                        <li>reciting the Navkar Mantra</li>
+                        <li>cremation as soon as possible</li>
+                        <li>a time of prayer and reflection</li>
+                    </ul>
+                    <p>Sallekhana is an ancient Jain practice of gradually reducing food at the very end of life, when death is near, with permission of a spiritual teacher. Jains see it as a peaceful and conscious acceptance of death, not suicide. Its legal status has been debated in India.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The major Jain observances are Paryushana and Das Lakshana, Samvatsari, Mahavir Jayanti, and Diwali.</p>
+                    <h3>Community Life</h3>
+                    <p>Jain community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>temples</li>
+                        <li>upashrayas (lodgings for monks and nuns)</li>
+                        <li>pathshalas (religious schools)</li>
+                        <li>charitable trusts</li>
+                        <li>festivals</li>
+                    </ul>
+                    <p>In the United States, Jain centers may also provide youth programs, language classes, meditation, and interfaith programs.</p>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>There is no single Jain political system. Jains live as minorities in India and abroad and participate in civic life.</p>
+                    <p>Jain principles of non-violence influenced Mahatma Gandhi and, through him, the civil rights movement.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Jainism has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Hindus</li>
+                        <li>Buddhists</li>
+                        <li>Muslims</li>
+                        <li>Sikhs</li>
+                        <li>Christians</li>
+                        <li>Zoroastrians</li>
+                    </ul>
+                    <p>Anekantavada encourages Jains to respect other views as partial truths.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Jainism in America</h3>
+                    <p>Jains began arriving in the United States in significant numbers after 1965. JAINA was founded in 1981. American Jains have built temples and centers across the country and are active in medicine, technology, business, and science.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Jainism and Humanity</h3>
+                    <p>Jain civilization made major contributions in many areas.</p>
+                    <h3>Non-Violence</h3>
+                    <p>Jain teaching on ahimsa influenced Gandhi and modern movements for non-violence, vegetarianism, and animal welfare.</p>
+                    <h3>Art and Architecture</h3>
+                    <p>Jain temples such as Dilwara and Ranakpur are masterpieces of marble carving.</p>
+                    <h3>Mathematics and Science</h3>
+                    <p>Jain texts discuss very large numbers, types of infinity, and the classification of living beings.</p>
+                    <h3>Libraries</h3>
+                    <p>Jain manuscript libraries preserved many ancient Indian texts.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Jainism and Knowledge</h3>
+                    <p>Right knowledge is one of the Three Jewels. Jain logic developed sophisticated ways of describing truth from multiple perspectives, such as syadvada ("maybe" or conditional statements).</p>
+                    <h3>Jainism and Justice</h3>
+                    <p>Jain teaching connects justice with non-violence and honest dealing. Hurting others, including by exploitation, binds the soul with karma.</p>
+                    <h3>Jainism and Human Dignity</h3>
+                    <p>Jainism teaches that every soul is equal in its potential for perfect knowledge and bliss. This includes animals and other beings.</p>
+                    <p>This provides a Jain foundation for:</p>
+                    <ul class="principles-list">
+                        <li>equality</li>
+                        <li>respect for all life</li>
+                        <li>environmental care</li>
+                        <li>tolerance</li>
+                    </ul>
+                    <h3>Jainism and the Environment</h3>
+                    <p>Jain teachings of non-violence, non-possessiveness, and the interdependence of all life are often linked to environmental protection. Living simply and limiting consumption are part of Jain practice.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Jainism as Faith, Knowledge, and Conduct</h3>
+                    <p>Jainism does not reduce religion to belief. The Three Jewels present the path as:</p>
+                    <h3>Right Faith</h3>
+                    <p>Trust in the truth taught by the Tirthankaras.</p>
+                    <h3>Right Knowledge</h3>
+                    <p>Accurate understanding of the soul, karma, and reality.</p>
+                    <h3>Right Conduct</h3>
+                    <p>Living by the vows, especially non-violence.</p>
+                    <p>This framework can be useful for understanding Jainism as faith + knowledge + conduct.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Devout lay Jains perform a daily meditation ritual known as <em>Samayika</em>, spending 48 minutes in deep reflection and equanimity. Many visit Jain temples (Deravasar) to perform devotional worship and bathe the idols of the Tirthankaras.</p>
-                <p>One of the most important annual practices is the festival of <em>Paryushana</em>, an 8-to-10 day period of intense fasting, reflection, and the recitation of sacred texts. It culminates in the ritual of <em>Pratikramana</em>, where Jains explicitly ask for forgiveness from all living beings for any harm they may have caused, intentionally or unintentionally.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Jainism is an ancient Indian tradition centered on the eternal soul, karma, non-violence, and liberation through one's own effort.</p>
+                <p>At its core are:</p>
+                <ul class="principles-list">
+                    <li>the Three Jewels</li>
+                    <li>the five vows</li>
+                    <li>the teaching of the Tirthankaras</li>
+                    <li>karma and rebirth</li>
+                    <li>the goal of moksha</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>prayer and meditation</li>
+                    <li>fasting</li>
+                    <li>careful diet</li>
+                    <li>confession and forgiveness</li>
+                    <li>charity</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>non-violence</li>
+                    <li>truthfulness</li>
+                    <li>non-possessiveness</li>
+                    <li>forgiveness</li>
+                    <li>many-sidedness and tolerance</li>
+                    <li>respect for all life</li>
+                </ul>
+                <p>Though small in number, Jains have had a large influence on Indian culture, business, art, and the global movement for non-violence.</p>
+                <p>Understanding Jainism requires distinguishing among scripture, philosophy, monastic practice, lay practice, and culture.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Jainism's absolute dedication to <em>Ahimsa</em> (non-violence) has had a massive ripple effect across the world, most notably influencing Mahatma Gandhi's strategy of non-violent resistance, which later inspired Martin Luther King Jr.</p>
-                <p>Furthermore, because Jains traditionally avoided agriculture and military professions, they gravitated toward business and finance. Today, the Jain community is renowned for its immense philanthropic contributions in India, funding vast networks of schools, hospitals, animal sanctuaries (Panjrapoles), and disaster relief efforts, viewing wealth primarily as a tool for public welfare.</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Jainism, we recommend relying on primary Jain sources.</p>
+                <h3>1. Tattvartha Sutra</h3>
+                <p>Umaswati's summary of Jain philosophy, accepted by both major branches. Especially:</p>
+                <ul class="principles-list">
+                    <li>1.1 — the Three Jewels as the path to liberation</li>
+                    <li>5.21 — "Souls render service to one another"</li>
+                    <li>7.1 — the vows</li>
+                </ul>
+                <h3>2. Shvetambara Agamas</h3>
+                <ul class="principles-list">
+                    <li>Acharanga Sutra — non-violence and conduct</li>
+                    <li>Uttaradhyayana Sutra — ethics and teachings</li>
+                    <li>Kalpa Sutra — lives of the Tirthankaras</li>
+                </ul>
+                <h3>3. Digambara Texts</h3>
+                <ul class="principles-list">
+                    <li>Shatkhandagama</li>
+                    <li>Kundakunda, Samayasara</li>
+                </ul>
+                <h3>4. Prayers</h3>
+                <ul class="principles-list">
+                    <li>Navkar (Namokar) Mantra</li>
+                    <li>Pratikramana sutras</li>
+                </ul>
+                <h3>5. Demographic Data</h3>
+                <ul class="principles-list">
+                    <li>Census of India 2011</li>
+                </ul>
             </div>
 
         </section>
@@ -481,15 +1276,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

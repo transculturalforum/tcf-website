@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -264,9 +279,9 @@
             <li class="dropdown-tab">
                 <a href="religions.html" class="dropdown-trigger">Religions</a>
                 <ul class="dropdown-menu">
-                    <li><a href="judaism.html" class="active-page">Judaism</a></li>
                     <li><a href="christianity.html">Christianity</a></li>
                     <li><a href="islam.html">Islam</a></li>
+                    <li><a href="judaism.html" class="active-page">Judaism</a></li>
                     <li><a href="hinduism.html">Hinduism</a></li>
                     <li><a href="buddhism.html">Buddhism</a></li>
                     <li><a href="sikhism.html">Sikhism</a></li>
@@ -296,160 +311,1117 @@
         <p>An ancient monotheistic religion representing the cultural, legal, and spiritual heritage of the Jewish people, centered around a covenant with God.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu (Cleaned of Numbers) -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Judaism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Denominations and Movements</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Judaism is one of the oldest monotheistic religions in the world, originating in the ancient Near East over 3,000 years ago. It is the ethnic, cultural, and spiritual religion of the Jewish people, built upon the foundational belief that God established a unique and eternal covenant with them.</p>
-                <p>The spiritual center of Judaism is the Torah (the first five books of the Hebrew Bible), which details God's laws, teachings, and the history of the Israelites. Judaism is deeply action-oriented, emphasizing ethical behavior in this world (orthopraxy) over strict adherence to rigid dogma (orthodoxy).</p>
-                <p>Today, the religion features several major denominations or movements—including Orthodox, Conservative, Reform, and Reconstructionist—which differ primarily in how strictly they interpret and apply traditional Jewish law (Halakha) in the modern era.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Judaism is one of the world's oldest monotheistic religions. It is the religion of the Jewish people and traces its origins to Abraham, Isaac, and Jacob, and to the covenant between God and the people of Israel at Mount Sinai.</p>
+                <p>Jews believe that there is one God, who created the universe, who acts in history, and who gave the Torah to the Jewish people as a guide for life. Judaism understands itself not simply as a set of beliefs but as a covenant relationship with God expressed through study, prayer, ethical conduct, family life, community, and the observance of commandments (mitzvot).</p>
+                <p>Judaism is both a religion and a people. A person may be Jewish by birth or by conversion, and Jewish identity includes religious, cultural, ethnic, and historical dimensions.</p>
+                <p>The central declaration of Jewish faith is the Shema:</p>
+                <blockquote>"Hear, O Israel: the Lord is our God, the Lord is One." (Deuteronomy 6:4)</blockquote>
+                <p>The Shema is recited in morning and evening prayers and is traditionally among the last words a Jew says before death.</p>
+                <p>The Hebrew Bible presents the basic message of Judaism as the love and service of the one God, and justice and kindness toward others. The prophet Micah summarized it this way:</p>
+                <blockquote>"Do justice, love kindness, and walk humbly with your God." (Micah 6:8)</blockquote>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>The philosophical and ethical framework of Judaism is guided by these core principles (heavily influenced by the classical 13 Principles of Maimonides and expanded to include broader Jewish ethics):</p>
+            <!-- JUDAISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Judaism at a Glance</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
+                </div>
+
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Judaism</p>
+                    <p>A follower of Judaism is called a Jew. The collective is often called the Jewish people.</p>
+                    <p>The word "Jew" comes from Judah, one of the twelve tribes of Israel and the name of the southern kingdom of ancient Israel. The Hebrew term for the people is Am Yisrael, "the people of Israel."</p>
+                    <p>Jews commonly refer to God by several names. Out of reverence, the four-letter name of God (YHWH) is not pronounced. In prayer Jews say Adonai ("my Lord"), and in conversation many say HaShem ("the Name"). Some Jews write "G-d" in English out of respect.</p>
+                </div>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>According to Pew Research Center, there were approximately 14.8 million Jews worldwide in 2020, about 0.2% of the world's population.</p>
+                    <p>Estimates vary depending on how Jewish identity is defined, for example whether people who have a Jewish parent but do not practice Judaism are counted. Some estimates that use broader definitions are higher.</p>
+                </div>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Judaism Is Practiced</h3>
+                    <p>Nearly 80% of the world's Jews live in two countries: Israel and the United States.</p>
+                    <p>Other significant Jewish communities are found in:</p>
+                    <ul class="principles-list">
+                        <li>France</li>
+                        <li>Canada</li>
+                        <li>the United Kingdom</li>
+                        <li>Argentina</li>
+                        <li>Russia</li>
+                        <li>Germany</li>
+                        <li>Australia</li>
+                        <li>Brazil</li>
+                        <li>South Africa</li>
+                        <li>Ukraine</li>
+                        <li>Mexico</li>
+                    </ul>
+                    <p>Jews speak many languages. Hebrew has a special religious position because it is the language of the Hebrew Bible and of prayer. Aramaic is the language of much of the Talmud. Jewish communities also developed their own languages, such as Yiddish and Ladino.</p>
+                </div>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>Modern Judaism includes several major movements:</p>
+                    <h3>Orthodox Judaism</h3>
+                    <p>Holds that the Written and Oral Torah were given by God and that Jewish law (halakha) is binding. It includes Modern Orthodox and Haredi ("ultra-Orthodox") communities, including Hasidic groups.</p>
+                    <h3>Conservative (Masorti) Judaism</h3>
+                    <p>Holds that Jewish law is binding but develops over time through scholarly interpretation.</p>
+                    <h3>Reform (Progressive / Liberal) Judaism</h3>
+                    <p>Emphasizes ethical teachings and personal autonomy. It treats traditional law as a source of guidance rather than as strictly binding.</p>
+                    <h3>Reconstructionist Judaism</h3>
+                    <p>Views Judaism as an evolving religious civilization of the Jewish people.</p>
+                    <p>Many Jews do not belong to any movement. Some identify as secular or cultural Jews.</p>
+                    <p>Jews are also often described by their ancestral community:</p>
+                    <ul>
+                        <li>Ashkenazi: from Central and Eastern Europe</li>
+                        <li>Sephardi: from Spain and Portugal, later North Africa, the Ottoman Empire, and elsewhere</li>
+                        <li>Mizrahi: from the Middle East and North Africa</li>
+                        <li>Ethiopian (Beta Israel), Yemenite, Indian, and other communities</li>
+                    </ul>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Jewish Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Torah:</strong> Teaching; the Five Books of Moses, or Jewish teaching in general</li>
+                        <li><strong>Tanakh:</strong> The Hebrew Bible: Torah, Prophets, and Writings</li>
+                        <li><strong>Talmud:</strong> Rabbinic discussions of law and lore</li>
+                        <li><strong>Mitzvah (plural mitzvot):</strong> Commandment; also a good deed</li>
+                        <li><strong>Halakha:</strong> Jewish law ("the way to walk")</li>
+                        <li><strong>Covenant (Brit):</strong> The relationship between God and Israel</li>
+                        <li><strong>Shabbat:</strong> The Sabbath, from Friday sunset to Saturday night</li>
+                        <li><strong>Synagogue:</strong> House of prayer, study, and assembly</li>
+                        <li><strong>Rabbi:</strong> Teacher and religious leader</li>
+                        <li><strong>Kosher:</strong> Fit, permitted according to Jewish dietary law</li>
+                        <li><strong>Tzedakah:</strong> Charity; literally "justice" or "righteousness"</li>
+                        <li><strong>Teshuvah:</strong> Repentance; returning</li>
+                        <li><strong>Tikkun olam:</strong> Repairing the world</li>
+                        <li><strong>Chesed:</strong> Loving-kindness</li>
+                        <li><strong>Bar / Bat Mitzvah:</strong> Coming of age as an adult in Jewish law</li>
+                        <li><strong>Shema:</strong> The central declaration of faith</li>
+                        <li><strong>Messiah (Mashiach):</strong> The anointed one who will bring redemption</li>
+                        <li><strong>Kippah:</strong> Head covering</li>
+                        <li><strong>Tallit:</strong> Prayer shawl</li>
+                        <li><strong>Tefillin:</strong> Leather boxes containing Torah verses, worn in prayer</li>
+                        <li><strong>Mezuzah:</strong> Scroll on the doorpost of a Jewish home</li>
+                    </ul>
+                </div>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>Judaism is centered more on practice than on a formal creed, but the medieval philosopher Maimonides set out Thirteen Principles of Faith that are widely recited. They include belief in:</p>
+                    <ol>
+                        <li>God as the Creator</li>
+                        <li>God's unity</li>
+                        <li>God's non-physical nature</li>
+                        <li>God's eternity</li>
+                        <li>prayer to God alone</li>
+                        <li>prophecy</li>
+                        <li>the unique prophecy of Moses</li>
+                        <li>the divine origin of the Torah</li>
+                        <li>the unchanging nature of the Torah</li>
+                        <li>God's knowledge of human actions</li>
+                        <li>reward and punishment</li>
+                        <li>the coming of the Messiah</li>
+                        <li>the resurrection of the dead</li>
+                    </ol>
+                    <p>The core relationship in Judaism is the covenant. Jewish tradition counts 613 commandments in the Torah: 248 positive commandments and 365 prohibitions.</p>
+                    <p>Major practices include:</p>
+                    <ol>
+                        <li>prayer</li>
+                        <li>Torah study</li>
+                        <li>observing Shabbat and the festivals</li>
+                        <li>keeping kosher</li>
+                        <li>tzedakah (charity) and acts of kindness</li>
+                        <li>lifecycle rituals</li>
+                    </ol>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Jewish Holidays</h3>
+                    <h3>Rosh Hashanah</h3>
+                    <p>The Jewish New Year. It begins the High Holy Days, a time of reflection and repentance. The shofar (ram's horn) is blown.</p>
+                    <h3>Yom Kippur</h3>
+                    <p>The Day of Atonement, the holiest day of the Jewish year. It is a day of:</p>
+                    <ul class="principles-list">
+                        <li>fasting</li>
+                        <li>prayer</li>
+                        <li>confession</li>
+                        <li>seeking forgiveness</li>
+                        <li>reconciliation</li>
+                    </ul>
+                    <h3>Passover (Pesach)</h3>
+                    <p>Celebrates the Exodus from slavery in Egypt. Families hold a Seder meal and retell the story using the Haggadah. Leavened bread is not eaten.</p>
+                    <h3>Shavuot</h3>
+                    <p>Commemorates the giving of the Torah at Mount Sinai.</p>
+                    <h3>Sukkot</h3>
+                    <p>The festival of booths. Families build and eat in temporary huts (sukkot), recalling the Israelites' journey in the wilderness.</p>
+                    <h3>Hanukkah</h3>
+                    <p>The festival of lights, remembering the rededication of the Temple in Jerusalem in the second century BCE. It is a minor festival in religious law, though it is widely celebrated.</p>
+                    <h3>Purim</h3>
+                    <p>Celebrates the rescue of the Jews of Persia, as told in the Book of Esther.</p>
+                    <h3>Shabbat</h3>
+                    <p>The weekly Sabbath is the most frequent and one of the most important Jewish holy days.</p>
+                </div>
+            </div>
+
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God, Prophets &amp; Revelation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Torah &amp; Talmud</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Angels &amp; Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Afterlife</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will &amp; Providence</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>The central belief of Judaism is that God is one.</p>
+                    <p>God is understood as:</p>
+                    <ul class="principles-list">
+                        <li>Creator of the universe</li>
+                        <li>eternal</li>
+                        <li>without physical form</li>
+                        <li>all-knowing and all-powerful</li>
+                        <li>just and merciful</li>
+                        <li>personally involved in history and human life</li>
+                    </ul>
+                    <p>Judaism rejects:</p>
+                    <ul class="principles-list">
+                        <li>polytheism</li>
+                        <li>the worship of idols</li>
+                        <li>any physical image of God</li>
+                        <li>incarnation of God in human form</li>
+                        <li>the worship of created beings</li>
+                    </ul>
+                    <p>The Torah describes God as "compassionate and gracious, slow to anger, abounding in kindness and truth" (Exodus 34:6).</p>
+                    <h3>Patriarchs, Matriarchs, and Prophets</h3>
+                    <p>Judaism honors the ancestors of the Jewish people:</p>
+                    <ul class="principles-list">
+                        <li>the patriarchs: Abraham, Isaac, and Jacob</li>
+                        <li>the matriarchs: Sarah, Rebecca, Rachel, and Leah</li>
+                    </ul>
+                    <p>It also honors the prophets, through whom God spoke, including:</p>
+                    <ul class="principles-list">
+                        <li>Moses, the greatest prophet</li>
+                        <li>Aaron and Miriam</li>
+                        <li>Joshua</li>
+                        <li>Samuel</li>
+                        <li>Nathan</li>
+                        <li>Elijah and Elisha</li>
+                        <li>Isaiah</li>
+                        <li>Jeremiah</li>
+                        <li>Ezekiel</li>
+                        <li>the twelve "minor" prophets, such as Amos, Hosea, and Micah</li>
+                        <li>Deborah and Huldah, among the women prophets</li>
+                    </ul>
+                    <p>Jewish tradition teaches that prophecy ended in the early Second Temple period.</p>
+                    <h3>Revelation</h3>
+                    <p>Judaism teaches that God revealed the Torah to Moses at Mount Sinai, in the presence of the whole people of Israel.</p>
+                    <p>Traditional Judaism teaches that God gave two forms of Torah:</p>
+                    <ul>
+                        <li>the Written Torah, the Five Books of Moses</li>
+                        <li>the Oral Torah, an accompanying tradition of interpretation, later written down in the Mishnah and Talmud</li>
+                    </ul>
+                    <p>Different Jewish movements understand revelation in different ways, from a literal giving of the text to an ongoing human response to the divine.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Hebrew Bible (Tanakh)</h3>
+                    <p>The Hebrew Bible is the central scripture of Judaism. "Tanakh" is an acronym of its three parts:</p>
+                    <ul>
+                        <li>Torah (Teaching): Genesis, Exodus, Leviticus, Numbers, Deuteronomy</li>
+                        <li>Nevi'im (Prophets): including Joshua, Judges, Samuel, Kings, Isaiah, Jeremiah, Ezekiel, and the twelve minor prophets</li>
+                        <li>Ketuvim (Writings): including Psalms, Proverbs, Job, Ruth, Esther, Song of Songs, and Ecclesiastes</li>
+                    </ul>
+                    <p>It contains:</p>
+                    <ul class="principles-list">
+                        <li>the story of creation</li>
+                        <li>the history of Israel</li>
+                        <li>laws and commandments</li>
+                        <li>prophecy</li>
+                        <li>poetry and prayer</li>
+                        <li>wisdom literature</li>
+                        <li>moral teachings</li>
+                    </ul>
+                    <p>A handwritten Torah scroll (Sefer Torah) is the most sacred object in a synagogue. A portion is read each Shabbat, completing the whole Torah once a year.</p>
+                    <h3>The Talmud and Rabbinic Literature</h3>
+                    <p>The second major source for understanding Judaism is the Oral Torah, as recorded and developed by the rabbis.</p>
+                    <p>Key texts include:</p>
+                    <ul>
+                        <li>the Mishnah, compiled around 200 CE</li>
+                        <li>the Jerusalem Talmud, about 400 CE</li>
+                        <li>the Babylonian Talmud, about 500 CE, which is the most authoritative</li>
+                        <li>the Midrash, interpretations and stories based on the Bible</li>
+                    </ul>
+                    <p>The Talmud includes:</p>
+                    <ul class="principles-list">
+                        <li>halakha: legal discussions</li>
+                        <li>aggadah: stories, ethics, and theology</li>
+                    </ul>
+                    <p>Later legal codes include Maimonides' Mishneh Torah and the Shulchan Aruch by Joseph Karo, with the glosses of Moses Isserles.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Angels and Spiritual Beings</h3>
+                    <p>The Hebrew Bible mentions angels (malakhim, "messengers") who carry out God's will.</p>
+                    <p>Named angels include:</p>
+                    <ul class="principles-list">
+                        <li>Michael</li>
+                        <li>Gabriel</li>
+                        <li>Raphael</li>
+                    </ul>
+                    <p>In the Hebrew Bible, "the satan" ("the adversary") appears as an accuser, such as in the Book of Job. Judaism generally does not teach that Satan is an independent force of evil opposed to God.</p>
+                    <p>Judaism also teaches that each person has a good inclination (yetzer hatov) and an evil inclination (yetzer hara).</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Judaism teaches that every human being is created in the image of God (Genesis 1:27).</p>
+                    <p>Human beings have dignity, free will, and moral responsibility.</p>
+                    <p>Judaism does not teach that people inherit Adam's guilt. Each person is born pure, and each person is responsible for their own actions. A traditional morning prayer begins: "My God, the soul you have given me is pure."</p>
+                    <h3>Sin</h3>
+                    <p>Judaism describes sin (chet) as "missing the mark."</p>
+                    <p>Jewish tradition distinguishes between:</p>
+                    <ul class="principles-list">
+                        <li>sins against God</li>
+                        <li>wrongs against other people</li>
+                    </ul>
+                    <p>Yom Kippur atones for sins against God, but for wrongs against other people, one must first ask forgiveness from the person harmed (Mishnah Yoma 8:9).</p>
+                    <h3>Repentance</h3>
+                    <p>Teshuvah, "returning," is central to Judaism.</p>
+                    <p>Maimonides describes repentance as:</p>
+                    <ol>
+                        <li>recognizing the wrongdoing</li>
+                        <li>stopping it</li>
+                        <li>sincerely regretting it</li>
+                        <li>confessing it before God</li>
+                        <li>resolving not to repeat it</li>
+                        <li>making amends and asking forgiveness from anyone harmed</li>
+                    </ol>
+                    <p>The days from Rosh Hashanah to Yom Kippur, called the Ten Days of Repentance, are especially devoted to teshuvah.</p>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>Jewish prayer is called tefillah.</p>
+                    <p>Observant Jews pray three times a day:</p>
+                    <ul class="principles-list">
+                        <li>Shacharit (morning)</li>
+                        <li>Mincha (afternoon)</li>
+                        <li>Maariv / Arvit (evening)</li>
+                    </ul>
+                    <p>Prayer includes:</p>
+                    <ul class="principles-list">
+                        <li>the Shema</li>
+                        <li>the Amidah, a central standing prayer</li>
+                        <li>blessings and psalms</li>
+                        <li>reading from the Torah on certain days</li>
+                    </ul>
+                    <p>Traditional communal prayer requires a minyan, a quorum of ten adults. Jews outside Israel traditionally face toward Jerusalem when praying.</p>
+                    <p>Judaism links prayer with ethical action. The prophets taught that worship without justice is empty (Isaiah 1:11–17).</p>
+                    <h3>Charity</h3>
+                    <p>Tzedakah has a central place in Judaism. The word means "justice" or "righteousness," because giving to the poor is seen as a duty, not an option.</p>
+                    <p>Two related concepts are:</p>
+                    <h3>Tzedakah</h3>
+                    <p>Giving to those in need, traditionally at least one-tenth of income where possible.</p>
+                    <h3>Gemilut chasadim</h3>
+                    <p>Acts of loving-kindness, such as visiting the sick, comforting mourners, and welcoming guests.</p>
+                    <p>Maimonides described eight levels of charity. The highest is helping a person become self-sufficient, for example through a loan, partnership, or job.</p>
+                    <h3>Fasting</h3>
+                    <p>Judaism has several fast days. The most important is Yom Kippur, when adult Jews abstain from food and drink for about 25 hours.</p>
+                    <p>Tisha B'Av, which mourns the destruction of the First and Second Temples and other tragedies, is also a full fast.</p>
+                    <p>Fasting is linked to:</p>
+                    <ul class="principles-list">
+                        <li>repentance</li>
+                        <li>prayer</li>
+                        <li>mourning</li>
+                        <li>self-reflection</li>
+                    </ul>
+                    <p>People who are ill, pregnant, or otherwise at risk are exempt. Jewish law requires them to eat if fasting would endanger their health.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Judaism regards life as sacred and good.</p>
+                    <p>The Torah commands: "Choose life" (Deuteronomy 30:19).</p>
+                    <p>The principle of pikuach nefesh, saving a life, overrides almost all other commandments.</p>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>serve God</li>
+                        <li>study Torah</li>
+                        <li>observe the commandments</li>
+                        <li>care for family</li>
+                        <li>work</li>
+                        <li>pursue justice</li>
+                        <li>help others</li>
+                        <li>repair the world</li>
+                    </ul>
+                    <p>Judaism generally focuses more on how to live well in this world than on speculation about the next.</p>
+                    <h3>Death</h3>
+                    <p>Judaism treats death as a natural part of life and a time for honoring the dead and comforting mourners.</p>
+                    <p>The Bible teaches that "the dust returns to the earth as it was, and the spirit returns to God who gave it" (Ecclesiastes 12:7).</p>
+                    <h3>Afterlife</h3>
+                    <p>Jewish beliefs about the afterlife are less detailed than in some other religions, and Jews hold a range of views.</p>
+                    <p>Traditional Judaism teaches:</p>
+                    <ol>
+                        <li>the soul continues after death</li>
+                        <li>the World to Come (Olam HaBa)</li>
+                        <li>the coming of the Messiah</li>
+                        <li>the resurrection of the dead</li>
+                    </ol>
+                    <p>The Mishnah teaches that "all Israel has a share in the World to Come," and later tradition taught that righteous people of all nations do as well.</p>
+                    <h3>Heaven</h3>
+                    <p>Gan Eden (the Garden of Eden) is a traditional term for the spiritual reward of the righteous after death.</p>
+                    <p>Rabbinic tradition describes it as a place where the righteous enjoy closeness to God's presence.</p>
+                    <h3>Gehinnom</h3>
+                    <p>Gehinnom is a place of purification for souls after death. In most traditional teaching, it is temporary. A common tradition teaches that most souls spend no more than twelve months there.</p>
+                    <h3>Judgment</h3>
+                    <p>Judaism teaches that God judges every person with justice and mercy.</p>
+                    <p>Rosh Hashanah is described as the Day of Judgment, when, according to tradition, each person's fate for the coming year is written, and on Yom Kippur it is sealed. Repentance, prayer, and charity are said to change a harsh decree.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will and Providence</h3>
+                    <p>Judaism strongly affirms free will.</p>
+                    <p>The Talmud teaches: "Everything is in the hands of Heaven except the fear of Heaven" (Berakhot 33b), meaning God decides much about our circumstances, but each person chooses whether to be good.</p>
+                    <p>Rabbi Akiva taught: "Everything is foreseen, yet freedom of choice is given" (Pirkei Avot 3:15).</p>
+                    <p>The mainstream Jewish position affirms both:</p>
+                    <ul class="principles-list">
+                        <li>God's knowledge and providence</li>
+                        <li>human freedom and responsibility</li>
+                    </ul>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Jewish ethics are rooted in the Torah and developed by the prophets and rabbis.</p>
+                    <p>Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>justice</li>
+                        <li>loving-kindness</li>
+                        <li>truthfulness</li>
+                        <li>humility</li>
+                        <li>generosity</li>
+                        <li>honoring parents</li>
+                        <li>welcoming strangers</li>
+                        <li>protecting the vulnerable</li>
+                        <li>honest business</li>
+                        <li>keeping promises</li>
+                        <li>guarding one's speech</li>
+                    </ul>
+                    <p>The Torah commands: "Love your neighbor as yourself" (Leviticus 19:18).</p>
+                    <p>When asked to summarize the Torah, the sage Hillel said: "What is hateful to you, do not do to your neighbor. That is the whole Torah; the rest is commentary. Go and learn" (Talmud, Shabbat 31a).</p>
+                    <p>The Ten Commandments (Exodus 20; Deuteronomy 5) are a foundation of Jewish ethics.</p>
+                    <h3>Family</h3>
+                    <p>Family is central to Jewish life. Many of the most important rituals, such as the Shabbat meal and the Passover Seder, take place at home.</p>
+                    <p>Judaism places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>parents</li>
+                        <li>children</li>
+                        <li>spouses</li>
+                        <li>extended family</li>
+                        <li>the elderly</li>
+                        <li>orphans and widows</li>
+                    </ul>
+                    <p>"Honor your father and your mother" is one of the Ten Commandments.</p>
+                    <h3>Marriage</h3>
+                    <p>Judaism considers marriage a sacred bond (kiddushin, "sanctification").</p>
+                    <p>A traditional Jewish wedding includes:</p>
+                    <ul>
+                        <li>the ketubah, a marriage contract that sets out the husband's obligations to his wife</li>
+                        <li>the chuppah, a wedding canopy</li>
+                        <li>the giving of a ring</li>
+                        <li>the seven blessings (sheva brachot)</li>
+                        <li>breaking a glass, recalling the destruction of the Temple</li>
+                    </ul>
+                    <p>Jewish law allows divorce. In traditional law it requires a document called a get.</p>
+                    <p>The movements differ on various marriage rules.</p>
+                    <h3>Community</h3>
+                    <p>Judaism places strong emphasis on community (kehillah).</p>
+                    <p>The synagogue functions not only as a place of prayer but also as a center for:</p>
+                    <ul class="principles-list">
+                        <li>study</li>
+                        <li>education</li>
+                        <li>celebrations</li>
+                        <li>community meetings</li>
+                        <li>charity</li>
+                        <li>social support</li>
+                    </ul>
+                    <p>Many communities also have a mikveh (ritual bath), schools, burial societies, and charitable organizations.</p>
+                    <h3>Treatment of Others</h3>
+                    <p>Jewish ethics apply to everyone.</p>
+                    <p>The Torah repeatedly commands kindness to strangers:</p>
+                    <blockquote>"You shall love the stranger, for you were strangers in the land of Egypt." (Deuteronomy 10:19)</blockquote>
+                    <p>Rabbinic tradition teaches the Seven Laws of Noah, a universal moral code for all humanity. Non-Jews who keep these laws are considered righteous.</p>
+                    <p>Judaism generally does not seek converts, though it accepts sincere converts.</p>
+                </div>
+            </div>
+
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Torah</h3>
+                <p>The Torah is the foundational Jewish scripture.</p>
+                <p>Its major themes include:</p>
                 <ul class="principles-list">
-                    <li><strong>Monotheism:</strong> Belief in a single, indivisible, and absolute Creator God.</li>
-                    <li><strong>Incorporeality of God:</strong> God is entirely spiritual and has no physical body or form.</li>
-                    <li><strong>Eternality of God:</strong> God is the eternal First and Last, existing outside of time.</li>
-                    <li><strong>Exclusive Worship:</strong> Prayer and worship are to be directed to God alone.</li>
-                    <li><strong>Validity of Prophecy:</strong> The words of the Hebrew prophets are true.</li>
-                    <li><strong>Primacy of Moses:</strong> Moses was the greatest of all prophets.</li>
-                    <li><strong>Divine Origin of Torah:</strong> The Torah was given by God to Moses.</li>
-                    <li><strong>Immutability of Torah:</strong> The Torah's laws and teachings will not be fundamentally changed.</li>
-                    <li><strong>Divine Providence:</strong> God knows the deeds and thoughts of humanity.</li>
-                    <li><strong>Reward and Punishment:</strong> God rewards those who keep His commandments and punishes transgressors.</li>
-                    <li><strong>The Messianic Age:</strong> The belief in the eventual coming of the Messiah to bring an era of universal peace.</li>
-                    <li><strong>Resurrection:</strong> The belief that the dead will be resurrected in the Messianic era.</li>
-                    <li><strong>Tikkun Olam:</strong> The moral obligation to "repair the world" through social action and justice.</li>
-                    <li><strong>Pikuach Nefesh:</strong> The sanctity of human life supersedes almost all other religious laws.</li>
-                    <li><strong>Tzedakah:</strong> The obligation to pursue justice through charitable giving.</li>
-                    <li><strong>Shabbat:</strong> Observing the Sabbath as a day of complete rest and spiritual renewal.</li>
-                    <li><strong>Chesed:</strong> The practice of deep loving-kindness toward others.</li>
-                    <li><strong>The Covenant:</strong> The ongoing, mutual agreement and relationship between God and the Jewish people.</li>
-                    <li><strong>Torah Lishmah:</strong> The profound value of studying sacred texts for their own sake.</li>
-                    <li><strong>Klal Yisrael:</strong> The interconnectedness, unity, and shared destiny of the global Jewish community.</li>
+                    <li>God</li>
+                    <li>creation</li>
+                    <li>covenant</li>
+                    <li>the patriarchs and matriarchs</li>
+                    <li>slavery and Exodus</li>
+                    <li>the giving of the law</li>
+                    <li>worship</li>
+                    <li>justice</li>
+                    <li>holiness</li>
+                    <li>the land of Israel</li>
+                </ul>
+                <p>The Torah is simultaneously a theological, historical, moral, and legal text.</p>
+                <h3>The Oral Torah and the Talmud</h3>
+                <p>The Talmud answers practical questions such as:</p>
+                <ul class="principles-list">
+                    <li>How is Shabbat observed?</li>
+                    <li>How do the dietary laws work?</li>
+                    <li>How should business be conducted?</li>
+                    <li>What are the duties within a family?</li>
+                    <li>How should courts judge?</li>
+                    <li>How should one pray?</li>
+                </ul>
+                <p>The Talmud preserves disagreements as well as conclusions. Debate and questioning are part of Jewish learning.</p>
+                <h3>Jewish Scholarship</h3>
+                <p>Over the centuries, Jewish scholars developed learning in:</p>
+                <ul class="principles-list">
+                    <li>Bible commentary</li>
+                    <li>Talmud study</li>
+                    <li>Jewish law</li>
+                    <li>philosophy</li>
+                    <li>mysticism (Kabbalah)</li>
+                    <li>ethics (Mussar)</li>
+                    <li>Hebrew grammar</li>
+                    <li>poetry</li>
+                </ul>
+                <p>Major scholars include:</p>
+                <ul class="principles-list">
+                    <li>Hillel and Shammai</li>
+                    <li>Rabbi Akiva</li>
+                    <li>Rabbi Judah HaNasi, compiler of the Mishnah</li>
+                    <li>Rashi</li>
+                    <li>Maimonides (Rambam)</li>
+                    <li>Nachmanides (Ramban)</li>
+                    <li>Judah Halevi</li>
+                    <li>Joseph Karo</li>
+                    <li>Isaac Luria</li>
+                    <li>the Vilna Gaon</li>
+                    <li>the Baal Shem Tov</li>
                 </ul>
             </div>
 
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet (Kashrut)</h3>
-                <p>Many Jews follow dietary laws known as <em>Kashrut</em> (keeping Kosher). This involves eating only permitted animals (e.g., mammals with split hooves that chew the cud, fish with fins and scales) that have been ritually slaughtered (Shechita) to minimize suffering. It also strictly forbids mixing meat and dairy products in the same meal, or using the same cookware for both.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Judaism holds a profound respect for medical science. Doctors are viewed as essential partners with God in the work of healing. The principle of <em>Pikuach Nefesh</em> dictates that saving a human life overrides almost all other religious rules. For example, one must break the Sabbath restrictions if it means getting a sick person to the hospital.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Because saving a life is the highest imperative, blood transfusions are entirely permitted and encouraged. Similarly, most Jewish authorities highly encourage organ donation to save lives, viewing it as the ultimate act of <em>Chesed</em> (loving-kindness) and an honor to the deceased.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Ritual purity is an important concept. Practices include <em>Netilat Yadayim</em> (ritual hand washing upon waking and before eating bread) and the use of a <em>Mikvah</em> (a natural ritual bath) used primarily by observant women after menstruation, as well as during conversions to Judaism.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <!-- HISTORY -->
             <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+                <h2>History</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founders</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">Slavery and the Exodus</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Kingdom and Temple</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Jerusalem</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Second Temple and Diaspora</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-7')">Historical Figures</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founders</h3>
-                    <p>Judaism traces its origins to the Biblical patriarch Abraham, who is considered the father of the Jewish people and the first to espouse monotheism. The religion was later codified and given its legal framework by Moses, who, according to tradition, led the Israelites out of Egyptian slavery and received the Torah from God at Mount Sinai.</p>
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Jewish tradition traces its origins to Abraham, who left Mesopotamia in response to God's call, roughly 4,000 years ago according to traditional reckoning.</p>
+                    <p>Abraham's grandson Jacob, also called Israel, had twelve sons, who became the twelve tribes of Israel.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Historically centered in the ancient Kingdoms of Israel and Judah in the Levant, the Jewish people suffered major dispersions (the Diaspora), beginning with the Babylonian exile in 586 BCE and culminating in the Roman destruction of the Second Temple in 70 CE. This scattered the Jewish population across the Middle East, North Africa (Sephardic and Mizrahi Jews), and eventually throughout Europe (Ashkenazi Jews).</p>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>Slavery and the Exodus</h3>
+                    <p>According to the Bible, the Israelites were enslaved in Egypt. God freed them through Moses, an event remembered each year at Passover.</p>
+                    <p>At Mount Sinai, God gave the Torah and made a covenant with the people. After forty years in the wilderness, they entered the land of Canaan.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, the global Jewish population is roughly 15.3 million. Due to the atrocities of the Holocaust and subsequent geopolitical shifts, the vast majority of Jews now live in two places: the State of Israel (established in 1948) and the United States, with smaller communities in France, Canada, the United Kingdom, and Argentina.</p>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Kingdom and Temple</h3>
+                    <p>Around 1000 BCE, David established Jerusalem as the capital of a united kingdom. His son Solomon built the First Temple.</p>
+                    <p>The kingdom later divided into Israel in the north and Judah in the south. The northern kingdom fell to Assyria in 722 BCE. The Babylonians destroyed the First Temple in 586 BCE and took many Jews into exile.</p>
                 </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Jerusalem</h3>
+                    <p>Jerusalem is the holiest city in Judaism. The site of the Temple is the holiest place in Judaism.</p>
+                    <p>The Western Wall, part of the retaining wall of the Second Temple complex, is today the most important place of Jewish prayer.</p>
+                    <p>Jews pray facing Jerusalem, and many prayers express longing for it.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Second Temple and Diaspora</h3>
+                    <p>After the Persian king Cyrus allowed Jews to return, the Second Temple was built. The Romans destroyed it in 70 CE.</p>
+                    <p>After this, rabbinic Judaism developed, focused on prayer, Torah study, and the synagogue. Most Jews lived in the diaspora for nearly 2,000 years, in the Middle East, North Africa, Europe, and beyond.</p>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
                     <ul>
-                        <li><strong>King David & King Solomon:</strong> Ancient monarchs who united the tribes and built the First Temple in Jerusalem.</li>
-                        <li><strong>The Prophets (Isaiah, Jeremiah):</strong> Figures who called the people back to ethical behavior and social justice.</li>
-                        <li><strong>Maimonides (Rambam) (1138–1204):</strong> Preeminent medieval Sephardic philosopher and Torah scholar who codified Jewish law.</li>
-                        <li><strong>Rashi (1040–1105):</strong> French rabbi whose comprehensive commentaries on the Talmud and Tanakh remain essential study tools today.</li>
+                        <li><strong>c. 2000–1700 BCE:</strong> Traditional period of Abraham.</li>
+                        <li><strong>c. 1300–1200 BCE:</strong> Traditional period of the Exodus and Sinai.</li>
+                        <li><strong>c. 1000 BCE:</strong> King David establishes Jerusalem as capital.</li>
+                        <li><strong>586 BCE:</strong> Babylonians destroy the First Temple; Babylonian exile.</li>
+                        <li><strong>516 BCE:</strong> Second Temple completed.</li>
+                        <li><strong>164 BCE:</strong> Maccabean revolt; rededication of the Temple (Hanukkah).</li>
+                        <li><strong>70 CE:</strong> Romans destroy the Second Temple.</li>
+                        <li><strong>c. 200 CE:</strong> Mishnah compiled.</li>
+                        <li><strong>c. 500 CE:</strong> Babylonian Talmud completed.</li>
+                        <li><strong>10th–12th centuries:</strong> "Golden Age" of Jewish culture in Muslim Spain.</li>
+                        <li><strong>1492:</strong> Jews expelled from Spain.</li>
+                        <li><strong>18th century:</strong> Rise of Hasidism and the Jewish Enlightenment (Haskalah).</li>
+                        <li><strong>19th century:</strong> Emergence of Reform, Conservative, and Orthodox movements; rise of Zionism.</li>
+                        <li><strong>1881–1924:</strong> Mass migration of Eastern European Jews to the United States.</li>
+                        <li><strong>1939–1945:</strong> The Holocaust: about six million Jews murdered by Nazi Germany and its collaborators.</li>
+                        <li><strong>1948:</strong> Establishment of the State of Israel.</li>
+                        <li><strong>21st century:</strong> Jewish life continues in diverse communities around the world.</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="hist-7" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
                     <ul>
-                        <li><strong>Rabbi Abraham Joshua Heschel (1907–1972):</strong> A prominent theologian and civil rights activist who famously marched with Dr. Martin Luther King Jr.</li>
-                        <li><strong>Rabbi Menachem Mendel Schneerson (1902–1994):</strong> The "Lubavitcher Rebbe," who transformed the Chabad-Lubavitch movement into a global force for Jewish outreach.</li>
-                        <li><strong>Elie Wiesel (1928–2016):</strong> Holocaust survivor, author, and Nobel Laureate who became a powerful global voice for human rights.</li>
+                        <li>Abraham and Sarah</li>
+                        <li>Moses</li>
+                        <li>Miriam</li>
+                        <li>David</li>
+                        <li>Solomon</li>
+                        <li>Isaiah</li>
+                        <li>Esther</li>
+                        <li>Ezra</li>
+                        <li>Judah Maccabee</li>
+                        <li>Hillel</li>
+                        <li>Rabbi Akiva</li>
+                        <li>Rabbi Judah HaNasi</li>
+                        <li>Rashi</li>
+                        <li>Maimonides</li>
+                        <li>Judah Halevi</li>
+                        <li>Gracia Mendes Nasi</li>
+                        <li>Isaac Luria</li>
+                        <li>the Baal Shem Tov</li>
+                        <li>Moses Mendelssohn</li>
+                        <li>Theodor Herzl</li>
+                        <li>Abraham Joshua Heschel</li>
+                        <li>many rabbis, scholars, scientists, writers, artists, and leaders across Jewish history</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The survival of Judaism across thousands of years of exile and persecution is largely attributed to its culture of continuous study and the transmission of knowledge from generation to generation (<em>L'dor V'dor</em>). Following the destruction of the Temple in 70 CE, Judaism shifted from a priest-and-sacrifice model to a rabbi-and-study model. The compilation of the Talmud allowed ancient laws to be rigorously debated, interpreted, and adapted to new historical realities without losing their core divine origins.</p>
+            <!-- MAJOR DENOMINATIONS AND MOVEMENTS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Denominations and Movements</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Orthodox Judaism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Conservative (Masorti) Judaism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Reform Judaism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Reconstructionist Judaism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Other Groups</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-6')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-7')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-8')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Orthodox Judaism</h3>
+                    <h3>Modern Orthodox</h3>
+                    <p>Combines strict observance of Jewish law with engagement in modern society and education.</p>
+                    <h3>Haredi</h3>
+                    <p>Emphasizes separation from secular culture and intensive Torah study.</p>
+                    <h3>Hasidic</h3>
+                    <p>A movement founded in 18th-century Eastern Europe by the Baal Shem Tov, emphasizing joy, prayer, and devotion. Groups include Chabad-Lubavitch, Satmar, and Ger.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Conservative (Masorti) Judaism</h3>
+                    <p>Founded in 19th-century Germany and developed in the United States. It seeks to preserve Jewish law while allowing for historical development.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Reform Judaism</h3>
+                    <p>Founded in 19th-century Germany. It is the largest Jewish movement in the United States.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Reconstructionist Judaism</h3>
+                    <p>Founded in the 20th century by Mordecai Kaplan in the United States.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Other Groups</h3>
+                    <ul>
+                        <li>Karaite Judaism, which accepts only the written Bible as authoritative</li>
+                        <li>Humanistic Judaism, a non-theistic movement</li>
+                        <li>Jewish Renewal</li>
+                    </ul>
+                    <p>These movements are all part of the Jewish people, though they disagree on important questions.</p>
+                </div>
+
+                <div id="deno-6" class="history-sub-section">
+                    <h3>Traditional and Progressive Interpretations</h3>
+                    <p>Modern Jews differ significantly on:</p>
+                    <ul class="principles-list">
+                        <li>the authority of Jewish law</li>
+                        <li>the role of women</li>
+                        <li>LGBTQ inclusion</li>
+                        <li>conversion</li>
+                        <li>intermarriage</li>
+                        <li>Shabbat and dietary observance</li>
+                        <li>the role of the State of Israel</li>
+                    </ul>
+                    <p>Two Jews may share the same scripture and history while reaching very different conclusions.</p>
+                </div>
+
+                <div id="deno-7" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>Israel</h3>
+                    <p>Jewish holidays are national holidays and Hebrew is the everyday language. Israelis range from very secular to very religious.</p>
+                    <h3>United States</h3>
+                    <p>American Jews include Reform, Conservative, Orthodox, Reconstructionist, and unaffiliated Jews, and also Israeli, Russian-speaking, Persian, Syrian, Ethiopian, and many other communities.</p>
+                    <h3>Europe</h3>
+                    <p>Jewish communities rebuilt after the Holocaust. France has the largest Jewish community in Europe.</p>
+                    <h3>Latin America</h3>
+                    <p>Significant communities in Argentina, Brazil, and Mexico.</p>
+                    <h3>Ethiopia, India, and elsewhere</h3>
+                    <p>Communities such as the Beta Israel of Ethiopia and the Bene Israel of India have their own long traditions.</p>
+                    <p>Consequently, there is no single "Jewish culture."</p>
+                </div>
+
+                <div id="deno-8" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>It is important to distinguish between Jewish religious law and Jewish culture.</p>
+                    <p>Examples of cultural practices that are not religious requirements include:</p>
+                    <ul class="principles-list">
+                        <li>specific foods, such as bagels or gefilte fish</li>
+                        <li>Yiddish or Ladino</li>
+                        <li>klezmer music</li>
+                        <li>particular wedding dances</li>
+                        <li>regional clothing styles</li>
+                        <li>certain family customs</li>
+                    </ul>
+                    <p>A practice may be common among Jews without being religiously required. Conversely, the same religious law may be practiced differently in different communities.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: The "God of the Old Testament" is exclusively wrathful.</strong><br>
-                Reality: The Hebrew Bible portrays God as deeply merciful, slow to anger, and full of loving-kindness. The Christian contrast between a "God of wrath" in the Old Testament and a "God of love" in the New Testament is a theological misrepresentation of Jewish scripture.</p>
-                <p><strong>Misconception: Judaism is just Christianity without Jesus.</strong><br>
-                Reality: Judaism is a complete, distinct theological framework. It has its own unique concepts regarding the nature of the Messiah (viewed as a human political/spiritual leader, not divine), the nature of sin, and the afterlife.</p>
-                <p><strong>Misconception: Jews constitute a single race.</strong><br>
-                Reality: Jews are an ethno-religious group with immense genetic and cultural diversity, including Ashkenazi (European), Sephardic (Spanish/Iberian), Mizrahi (Middle Eastern), and Beta Israel (Ethiopian) populations.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Judaism is only a race or only a religion.</strong><br>
+                Fact: Judaism is both a religion and a people. People of every race and ethnicity are Jewish, and people can join through conversion.</p>
+                <p><strong>Myth: Judaism is the religion of the "Old Testament" only.</strong><br>
+                Fact: Jews read the Hebrew Bible through the Oral Torah and the Talmud. Rabbinic Judaism has developed over 2,000 years.</p>
+                <p><strong>Myth: Jews believe God is harsh and Christians believe God is loving.</strong><br>
+                Fact: The Hebrew Bible repeatedly describes God as merciful, compassionate, and loving. "Love your neighbor as yourself" comes from the Torah (Leviticus 19:18).</p>
+                <p><strong>Myth: "Chosen people" means Jews think they are superior.</strong><br>
+                Fact: In Jewish teaching, being chosen means having been given responsibilities, not privileges. It is understood as a calling to live by the Torah.</p>
+                <p><strong>Myth: Hanukkah is the "Jewish Christmas".</strong><br>
+                Fact: Hanukkah is a minor festival with its own history. The most important Jewish holy days are Shabbat, Rosh Hashanah, Yom Kippur, and the pilgrimage festivals.</p>
+                <p><strong>Myth: Judaism has one uniform interpretation.</strong><br>
+                Fact: Jews hold a wide range of beliefs and practices. Debate is part of Jewish tradition; the Talmud preserves both majority and minority opinions.</p>
+                <p><strong>Myth: All Jews are Israeli, and all Israelis are Jewish.</strong><br>
+                Fact: Most Jews outside Israel are citizens of other countries. About a quarter of Israel's citizens are not Jewish.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>Externally, the global Jewish community continues to face the persistent challenge of rising antisemitism, prejudice, and security threats to synagogues and community centers. Internally, the Diaspora navigates the tension of assimilation—balancing engagement with secular, modern culture while preserving distinct Jewish identity and practices.</p>
-                <p>Additionally, there are ongoing theological and political debates between the Orthodox, Conservative, and Reform movements regarding the interpretation of Halakha (Jewish law), interfaith marriage, and the role of women in religious leadership.</p>
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Judaism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Judaism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Repairing the World</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Torah, Worship &amp; Kindness</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Jewish life.</p>
+                    <p>Jews are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents</li>
+                        <li>marriage</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>family meals on Shabbat and holidays</li>
+                        <li>relationships with neighbors</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is both a religious covenant and a legal agreement.</p>
+                    <p>A Jewish marriage generally involves:</p>
+                    <ul class="principles-list">
+                        <li>consent of both partners</li>
+                        <li>a ketubah (marriage contract)</li>
+                        <li>a ceremony under the chuppah</li>
+                        <li>mutual responsibilities</li>
+                    </ul>
+                    <h3>Children</h3>
+                    <p>Children are regarded as a blessing and a responsibility.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education, especially Torah education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                    </ul>
+                    <p>Important rituals include brit milah (circumcision) for boys on the eighth day, naming ceremonies for girls, and Bar and Bat Mitzvah at 13 (12 for girls in many communities).</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Learning is one of Judaism's most important values. The Mishnah teaches that Torah study is equal to all the other commandments, because it leads to them.</p>
+                    <p>Jewish communities developed:</p>
+                    <ul class="principles-list">
+                        <li>schools for children</li>
+                        <li>yeshivas for advanced study</li>
+                        <li>study partnerships (chavruta)</li>
+                        <li>libraries and publishing</li>
+                    </ul>
+                    <p>Jewish communities historically placed high value on literacy.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Jewish dietary law is called kashrut. Food that meets the rules is kosher.</p>
+                    <p>Basic rules include:</p>
+                    <ul>
+                        <li>only certain animals may be eaten (for example, no pork or shellfish)</li>
+                        <li>meat and dairy may not be eaten together</li>
+                        <li>animals must be slaughtered in a specific way (shechita)</li>
+                        <li>blood may not be eaten</li>
+                    </ul>
+                    <p>Observance varies widely, from strict to none.</p>
+                    <h3>Clothing</h3>
+                    <p>Judaism values modesty (tzniut).</p>
+                    <p>Traditional items include:</p>
+                    <ul class="principles-list">
+                        <li>kippah (head covering)</li>
+                        <li>tallit (prayer shawl)</li>
+                        <li>tzitzit (fringes)</li>
+                        <li>tefillin, worn at weekday morning prayer</li>
+                        <li>head coverings for many married Orthodox women</li>
+                    </ul>
+                    <p>Clothing varies widely, from Hasidic dress to everyday modern clothing.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Judaism teaches that men and women are both created in God's image.</p>
+                    <p>Traditional Jewish law gives men and women different religious duties in some areas. Orthodox communities generally maintain these differences.</p>
+                    <p>Reform, Conservative, and Reconstructionist Judaism ordain women as rabbis and count women in a minyan. Modern Jews differ substantially on these questions.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Work is regarded positively in Judaism.</p>
+                    <p>The Torah commands six days of work and one day of rest. The rabbis praised those who support themselves by their own work.</p>
+                    <p>Jews are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>work honestly</li>
+                        <li>pay workers on time</li>
+                        <li>avoid fraud</li>
+                        <li>support their families</li>
+                        <li>contribute to the community</li>
+                    </ul>
+                    <h3>Business Ethics</h3>
+                    <p>Jewish law has detailed rules for business, including:</p>
+                    <ul>
+                        <li>honest weights and measures</li>
+                        <li>no deceptive practices</li>
+                        <li>paying workers promptly</li>
+                        <li>not charging interest to fellow Jews (with legal mechanisms developed later)</li>
+                        <li>returning lost property</li>
+                        <li>fair competition</li>
+                    </ul>
+                    <p>The Talmud teaches that one of the first questions a person is asked after death is: "Did you conduct your business honestly?"</p>
+                    <h3>Charity</h3>
+                    <p>Tzedakah is part of daily Jewish life.</p>
+                    <p>Jews may give:</p>
+                    <ul class="principles-list">
+                        <li>money to the poor</li>
+                        <li>food</li>
+                        <li>interest-free loans</li>
+                        <li>support for education</li>
+                        <li>community support</li>
+                        <li>volunteer service</li>
+                    </ul>
+                    <p>Many homes keep a charity box (pushke). Jewish communities have long supported free loan societies, burial societies, and care for the sick.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Judaism regards saving life as one of the highest values. Most commandments may be set aside to save a life.</p>
+                    <p>Jewish physicians made major contributions to medicine, including Maimonides, who was a physician as well as a rabbi.</p>
+                    <p>Jewish law addresses issues such as:</p>
+                    <ul class="principles-list">
+                        <li>end-of-life care</li>
+                        <li>organ donation, widely supported to save a life</li>
+                        <li>fertility treatment</li>
+                        <li>autopsy</li>
+                        <li>fasting while ill</li>
+                    </ul>
+                    <h3>Death and Funerals</h3>
+                    <p>Traditional Jewish funeral practice includes:</p>
+                    <ul class="principles-list">
+                        <li>washing and preparing the body (tahara)</li>
+                        <li>a simple shroud and plain coffin</li>
+                        <li>burial, usually as soon as possible</li>
+                        <li>the mourner's prayer, Kaddish</li>
+                        <li>shiva, seven days of mourning at home</li>
+                        <li>shloshim, thirty days of mourning</li>
+                        <li>annual remembrance (yahrzeit)</li>
+                    </ul>
+                    <p>Traditional Judaism forbids cremation, though some liberal Jews accept it.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The most frequent holy day is Shabbat. The High Holy Days are Rosh Hashanah and Yom Kippur. The three pilgrimage festivals are Passover, Shavuot, and Sukkot.</p>
+                    <p>Other observances include Hanukkah, Purim, Tisha B'Av, and Holocaust Remembrance Day (Yom HaShoah).</p>
+                    <h3>Community Life</h3>
+                    <p>Jewish community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>synagogues</li>
+                        <li>Jewish schools and day schools</li>
+                        <li>community centers</li>
+                        <li>charitable organizations</li>
+                        <li>summer camps</li>
+                        <li>youth movements</li>
+                        <li>burial societies</li>
+                    </ul>
+                    <p>In the United States, synagogues and Jewish community centers may also provide:</p>
+                    <ul class="principles-list">
+                        <li>food assistance</li>
+                        <li>social services</li>
+                        <li>counseling</li>
+                        <li>adult education</li>
+                        <li>interfaith programs</li>
+                        <li>refugee resettlement</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Jewish history includes many different political situations, from ancient kingdoms to minority communities across the world to the modern State of Israel.</p>
+                    <p>A Talmudic principle, "the law of the land is the law" (dina d'malkhuta dina), teaches Jews to follow the civil law of the country they live in.</p>
+                    <p>Jews today live in:</p>
+                    <ul class="principles-list">
+                        <li>democracies</li>
+                        <li>the State of Israel</li>
+                        <li>countries where they are small minorities</li>
+                    </ul>
+                    <p>In the United States, Jewish citizens participate in voting, public service, advocacy, charitable work, and interfaith work. American Jews were active in the civil rights movement.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Judaism has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Christians</li>
+                        <li>Muslims</li>
+                        <li>Zoroastrians</li>
+                        <li>Hindus</li>
+                        <li>people of other religions</li>
+                        <li>people without religious belief</li>
+                    </ul>
+                    <p>Jews lived for centuries in Christian and Muslim societies, at times in periods of cooperation and at other times under persecution.</p>
+                    <p>Since the 20th century, Jewish-Christian and Jewish-Muslim dialogue has grown. The Catholic Church's 1965 declaration Nostra Aetate was a turning point in Jewish-Catholic relations.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Judaism in America</h3>
+                    <p>Jews have lived in what is now the United States since 1654, when 23 Jews arrived in New Amsterdam.</p>
+                    <p>American Jews include people with roots in:</p>
+                    <ul class="principles-list">
+                        <li>Central and Eastern Europe</li>
+                        <li>Spain, Portugal, and the Mediterranean</li>
+                        <li>the Middle East and North Africa</li>
+                        <li>Iran</li>
+                        <li>Israel</li>
+                        <li>the former Soviet Union</li>
+                        <li>Ethiopia</li>
+                        <li>Latin America</li>
+                    </ul>
+                    <p>In 1790, George Washington wrote to the Jewish congregation in Newport, Rhode Island, that the government "gives to bigotry no sanction, to persecution no assistance."</p>
+                    <p>American Jews today participate in every field, including medicine, law, science, business, education, government, journalism, and the arts.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Judaism and Humanity</h3>
+                    <p>Jewish civilization made major contributions in many areas.</p>
+                    <h3>Ethics and Law</h3>
+                    <p>The Hebrew Bible's teachings, including the Ten Commandments, the weekly day of rest, and care for the poor and stranger, have shaped Western law and ethics.</p>
+                    <h3>Medicine and Science</h3>
+                    <p>Jewish physicians and scientists have made major contributions across history, from Maimonides to modern science.</p>
+                    <h3>Literature and Thought</h3>
+                    <p>Jewish writers and thinkers have contributed to philosophy, literature, and the arts in many languages.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Judaism and Knowledge</h3>
+                    <p>Judaism encourages questioning and debate. The Talmud records arguments between schools and minority opinions.</p>
+                    <p>Jewish tradition describes Torah study as lifelong. Pirkei Avot teaches: "Who is wise? One who learns from every person."</p>
+                    <h3>Judaism and Justice</h3>
+                    <p>Justice is one of the most important themes in Judaism.</p>
+                    <p>The Torah commands:</p>
+                    <blockquote>"Justice, justice you shall pursue." (Deuteronomy 16:20)</blockquote>
+                    <p>The prophets repeatedly called for justice for the poor, the widow, the orphan, and the stranger.</p>
+                    <h3>Judaism and Human Dignity</h3>
+                    <p>Judaism teaches that every person is created in the image of God.</p>
+                    <p>The Mishnah teaches that God created only one human being at first, so that no one could say "my ancestor is greater than yours," and that "whoever saves one life, it is as if they saved an entire world" (Mishnah Sanhedrin 4:5).</p>
+                    <p>This provides a Jewish foundation for:</p>
+                    <ul class="principles-list">
+                        <li>human equality</li>
+                        <li>the value of each individual</li>
+                        <li>opposition to racism</li>
+                        <li>care for the stranger</li>
+                    </ul>
+                    <h3>Judaism and Repairing the World</h3>
+                    <p>Tikkun olam, "repairing the world," is a widely used idea in modern Judaism. It expresses the responsibility to make the world more just and whole.</p>
+                    <p>Pirkei Avot teaches: "It is not your duty to finish the work, but neither are you free to abandon it" (Pirkei Avot 2:16).</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Judaism as Torah, Worship, and Kindness</h3>
+                    <p>Judaism does not reduce religion to belief. A famous teaching in Pirkei Avot says:</p>
+                    <blockquote>"The world stands on three things: on Torah, on worship, and on acts of loving-kindness." (Pirkei Avot 1:2)</blockquote>
+                    <h3>Torah</h3>
+                    <p>Study of God's teaching.</p>
+                    <h3>Avodah</h3>
+                    <p>Worship and service of God.</p>
+                    <h3>Gemilut Chasadim</h3>
+                    <p>Acts of loving-kindness.</p>
+                    <p>This framework can be useful for understanding Judaism as learning + worship + kindness.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Observant Jews pray three times a day (Shacharit in the morning, Mincha in the afternoon, and Maariv in the evening). During morning prayers, men (and some women in liberal traditions) wear a <em>Tallit</em> (prayer shawl with fringes) and <em>Tefillin</em> (leather boxes containing scripture strapped to the arm and head).</p>
-                <p>The cornerstone of Jewish practice is the observance of Shabbat, beginning Friday evening at sunset and ending Saturday night. It is a time completely detached from labor, technology, and commerce, dedicated entirely to family meals, synagogue attendance, and spiritual rest.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Judaism is a monotheistic tradition centered on the one God, the covenant with the people of Israel, the Torah, and the commandments.</p>
+                <p>Its central scripture is the Hebrew Bible, interpreted through the Oral Torah, the Talmud, and centuries of rabbinic tradition.</p>
+                <p>At its theological core are:</p>
+                <ul class="principles-list">
+                    <li>belief in one God</li>
+                    <li>the covenant</li>
+                    <li>revelation of the Torah</li>
+                    <li>the prophets</li>
+                    <li>reward and punishment</li>
+                    <li>the hope for the Messiah and the World to Come</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>prayer</li>
+                    <li>Torah study</li>
+                    <li>Shabbat and the festivals</li>
+                    <li>kashrut</li>
+                    <li>tzedakah</li>
+                    <li>lifecycle rituals</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>justice</li>
+                    <li>loving-kindness</li>
+                    <li>honesty</li>
+                    <li>care for the stranger</li>
+                    <li>honoring parents</li>
+                    <li>protecting life</li>
+                    <li>repairing the world</li>
+                </ul>
+                <p>Judaism has made deep contributions to religion, ethics, law, literature, and science. Jews today represent great diversity of language, country, observance, and culture.</p>
+                <p>Understanding Judaism requires distinguishing among scripture, law, belief, history, peoplehood, and contemporary practice.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Judaism's ethical framework has had an immeasurable impact on global civilization. The concept of the Sabbath introduced the revolutionary idea of a mandated "weekend" and rest for all people, including laborers and animals. The biblical prophets laid the groundwork for modern concepts of social justice, demanding that society care for the widow, the orphan, and the stranger.</p>
-                <p>Furthermore, the deep cultural value placed on questioning, literacy, and education has led to outsized Jewish contributions to modern science, literature, medicine, and philosophy, consistently pushing humanity toward intellectual and social progress.</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Judaism, we recommend relying on primary Jewish sources.</p>
+                <h3>1. The Hebrew Bible (Tanakh)</h3>
+                <p>Useful primary passages include:</p>
+                <ul>
+                    <li>Genesis 1:27 — humans created in God's image</li>
+                    <li>Genesis 12 — the call of Abraham</li>
+                    <li>Exodus 20 and Deuteronomy 5 — the Ten Commandments</li>
+                    <li>Exodus 34:6–7 — God's attributes of mercy</li>
+                    <li>Leviticus 19 — holiness and ethics, including "love your neighbor"</li>
+                    <li>Deuteronomy 6:4–9 — the Shema</li>
+                    <li>Deuteronomy 10:19 — love of the stranger</li>
+                    <li>Deuteronomy 16:20 — justice</li>
+                    <li>Deuteronomy 30:19 — "choose life"</li>
+                    <li>Isaiah 1:17 — "seek justice, relieve the oppressed"</li>
+                    <li>Micah 6:8 — "do justice, love kindness"</li>
+                    <li>Psalm 23 and Psalm 145</li>
+                </ul>
+                <p>Sefaria (sefaria.org) offers free Hebrew and English texts.</p>
+                <h3>2. The Mishnah and Talmud</h3>
+                <ul class="principles-list">
+                    <li>Pirkei Avot (Ethics of the Fathers)</li>
+                    <li>Mishnah Sanhedrin 4:5 — value of each life</li>
+                    <li>Mishnah Yoma 8:9 — repentance and forgiveness</li>
+                    <li>Talmud Shabbat 31a — Hillel's summary of the Torah</li>
+                    <li>Talmud Berakhot — prayer and blessings</li>
+                </ul>
+                <h3>3. Codes of Jewish Law</h3>
+                <ul>
+                    <li>Maimonides, Mishneh Torah (especially Laws of Repentance and Laws of Gifts to the Poor)</li>
+                    <li>Shulchan Aruch</li>
+                </ul>
+                <h3>4. Jewish Thought</h3>
+                <ul class="principles-list">
+                    <li>Maimonides, Guide for the Perplexed and Thirteen Principles</li>
+                    <li>Judah Halevi, The Kuzari</li>
+                    <li>Abraham Joshua Heschel, The Sabbath</li>
+                </ul>
+                <h3>5. Demographic Data</h3>
+                <ul>
+                    <li>Pew Research Center, "How the Global Religious Landscape Changed From 2010 to 2020" (2025)</li>
+                </ul>
             </div>
 
         </section>
@@ -482,15 +1454,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

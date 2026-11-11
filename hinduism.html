@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,159 +311,1142 @@
         <p>A diverse, ancient complex of beliefs, philosophies, and rituals originating in the Indian subcontinent, guiding followers toward spiritual liberation.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Hinduism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Denominations and Schools</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Hinduism is widely considered the oldest living religion in the world, with roots and customs dating back more than 4,000 years in the Indus Valley and the Indian subcontinent. With over 1.2 billion followers, it is the third-largest religion globally.</p>
-                <p>Unlike most major religions, Hinduism has no single founder, no single scripture, and no commonly agreed-upon set of teachings. Instead, it is a vast, complex tapestry of diverse philosophies, rituals, and traditions known natively as <em>Sanatana Dharma</em> (the "Eternal Order" or "Eternal Path").</p>
-                <p>While outsiders often view Hinduism as polytheistic due to its vast pantheon of deities, many Hindus consider these gods and goddesses to be diverse manifestations of a single, formless, and infinite divine reality known as <em>Brahman</em>. The ultimate spiritual goal for a Hindu is to achieve <em>Moksha</em>—liberation from the endless cycle of death and rebirth.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Hinduism is one of the world's oldest living religious traditions and the third-largest religion in the world. It has no single founder and no single date of origin. It grew over thousands of years in South Asia from the Vedic tradition and many regional and devotional traditions.</p>
+                <p>Many Hindus call their tradition Sanatana Dharma, "the eternal way" or "the eternal order." Hindus understand it not only as a set of beliefs but as a whole way of life that includes worship, ethics, family duties, festivals, food, art, music, and philosophy.</p>
+                <p>Hinduism holds that there is one ultimate reality, called Brahman, which can be approached in many forms. Hindus worship God in forms such as Vishnu, Shiva, and the Divine Mother (Devi), and many see the many deities as expressions of one divine reality.</p>
+                <p>A famous verse of the Rig Veda states:</p>
+                <blockquote>"Truth is one; the wise call it by many names." (Rig Veda 1.164.46)</blockquote>
+                <p>The sacred syllable Om (Aum) is the most widely used Hindu symbol. It represents the sound of ultimate reality and is chanted at the beginning of prayers and recitations.</p>
+                <p>Hindu teaching presents the purpose of life as living according to dharma (right conduct and duty) and, ultimately, attaining moksha, liberation from the cycle of birth and death.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>Because of its immense diversity, beliefs vary widely, but the following 20 principles form the philosophical bedrock for the majority of Hindu traditions:</p>
+            <!-- HINDUISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Hinduism at a Glance</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
+                </div>
+
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Hinduism</p>
+                    <p>A follower of Hinduism is called a Hindu.</p>
+                    <p>The word "Hindu" comes from the name of the Indus River (Sindhu in Sanskrit). It was first used by outsiders, such as Persians and later Arabs, to describe the people living beyond the Indus. Over time, Hindus also adopted the word.</p>
+                    <p>Many Hindus prefer the term Sanatana Dharma. Hinduism is often described as a family of related traditions rather than a single organized religion.</p>
+                </div>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>According to Pew Research Center, there were approximately 1.2 billion Hindus worldwide in 2020, about 14.9% of the world's population.</p>
+                    <p>About 95% of the world's Hindus live in India, where Hindus are roughly 80% of the population. Hinduism is the majority religion in India and Nepal.</p>
+                </div>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Hinduism Is Practiced</h3>
+                    <p>Hindus live on every inhabited continent.</p>
+                    <p>Large Hindu populations are found in:</p>
+                    <ul class="principles-list">
+                        <li>India</li>
+                        <li>Nepal</li>
+                        <li>Bangladesh</li>
+                        <li>Sri Lanka</li>
+                        <li>Pakistan</li>
+                        <li>Indonesia (especially Bali)</li>
+                        <li>Malaysia and Singapore</li>
+                        <li>Mauritius</li>
+                        <li>Fiji</li>
+                        <li>Trinidad and Tobago, Guyana, and Suriname</li>
+                        <li>the United Kingdom</li>
+                        <li>the United States and Canada</li>
+                        <li>the Gulf states</li>
+                        <li>South Africa</li>
+                    </ul>
+                    <p>Many communities outside South Asia were formed by indentured laborers in the 19th century, and others by more recent migration.</p>
+                    <p>Hindus speak many languages, including Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam, Nepali, and Balinese. Sanskrit has a special religious position as the language of the Vedas and of many rituals, while Tamil and other regional languages have their own sacred literature.</p>
+                </div>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>Hinduism has several major devotional traditions, defined by the form of God that is worshiped as supreme:</p>
+                    <h3>Vaishnavism</h3>
+                    <p>Devotion to Vishnu and his avatars, especially Krishna and Rama. It is the largest tradition.</p>
+                    <h3>Shaivism</h3>
+                    <p>Devotion to Shiva, often worshiped in the form of the linga.</p>
+                    <h3>Shaktism</h3>
+                    <p>Devotion to the Divine Mother (Devi or Shakti), in forms such as Durga, Kali, Parvati, and Lakshmi.</p>
+                    <h3>Smartism</h3>
+                    <p>A tradition that honors five or six deities as equal forms of the one Brahman. It is associated with the philosopher Adi Shankara.</p>
+                    <p>Hinduism also has major philosophical schools, including Vedanta, Yoga, Samkhya, Nyaya, Vaisheshika, and Mimamsa, as well as many modern movements.</p>
+                    <p>These traditions overlap. Many Hindu families worship several deities at home.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Hindu Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Brahman:</strong> Ultimate reality; the absolute</li>
+                        <li><strong>Atman:</strong> The true self or soul</li>
+                        <li><strong>Ishvara / Bhagavan:</strong> God as personal Lord</li>
+                        <li><strong>Deva / Devi:</strong> A god / a goddess</li>
+                        <li><strong>Dharma:</strong> Duty, right conduct, cosmic order</li>
+                        <li><strong>Karma:</strong> Action and its consequences</li>
+                        <li><strong>Samsara:</strong> The cycle of birth, death, and rebirth</li>
+                        <li><strong>Moksha:</strong> Liberation from the cycle of rebirth</li>
+                        <li><strong>Avatar:</strong> A descent or incarnation of God, especially of Vishnu</li>
+                        <li><strong>Puja:</strong> Worship, offering</li>
+                        <li><strong>Murti:</strong> A sacred image in which God is worshiped</li>
+                        <li><strong>Mandir:</strong> Temple</li>
+                        <li><strong>Bhakti:</strong> Loving devotion to God</li>
+                        <li><strong>Yoga:</strong> Discipline or path of union with God</li>
+                        <li><strong>Guru:</strong> Spiritual teacher</li>
+                        <li><strong>Mantra:</strong> Sacred sound or verse</li>
+                        <li><strong>Ahimsa:</strong> Non-violence</li>
+                        <li><strong>Darshan:</strong> Seeing and being seen by the divine</li>
+                        <li><strong>Prasad:</strong> Food blessed after being offered to God</li>
+                        <li><strong>Samskara:</strong> Rite of passage</li>
+                        <li><strong>Ashrama:</strong> Stage of life</li>
+                        <li><strong>Om:</strong> Sacred syllable representing ultimate reality</li>
+                    </ul>
+                </div>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>There is no single creed for all Hindus, but most share these core beliefs:</p>
+                    <ol>
+                        <li>Brahman, the one ultimate reality</li>
+                        <li>Atman, the eternal soul in every living being</li>
+                        <li>Karma, the moral law of cause and effect</li>
+                        <li>Samsara, the cycle of rebirth</li>
+                        <li>Moksha, liberation from rebirth</li>
+                        <li>Dharma, the duty and right conduct that sustain the world</li>
+                        <li>The authority of the Vedas</li>
+                    </ol>
+                    <p>Hindu tradition also describes four goals of human life (purusharthas):</p>
+                    <ol>
+                        <li>Dharma — righteousness and duty</li>
+                        <li>Artha — prosperity and livelihood</li>
+                        <li>Kama — pleasure and love</li>
+                        <li>Moksha — liberation</li>
+                    </ol>
+                    <p>It also describes paths (yogas) to God or liberation:</p>
+                    <ul class="principles-list">
+                        <li>Bhakti yoga — the path of devotion</li>
+                        <li>Karma yoga — the path of selfless action</li>
+                        <li>Jnana yoga — the path of knowledge</li>
+                        <li>Raja (Dhyana) yoga — the path of meditation</li>
+                    </ul>
+                    <p>These paths are taught in the Bhagavad Gita.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Hindu Holidays</h3>
+                    <h3>Diwali (Deepavali)</h3>
+                    <p>Diwali, the festival of lights, is the most widely celebrated Hindu festival. It celebrates the victory of light over darkness and good over evil. Many Hindus associate it with Rama's return to Ayodhya and with the goddess Lakshmi.</p>
+                    <p>It is a time of:</p>
+                    <ul class="principles-list">
+                        <li>lighting oil lamps (diyas)</li>
+                        <li>worship of Lakshmi and Ganesha</li>
+                        <li>family gatherings</li>
+                        <li>sweets and new clothes</li>
+                        <li>cleaning and decorating homes</li>
+                        <li>generosity</li>
+                    </ul>
+                    <h3>Holi</h3>
+                    <p>The spring festival of colors celebrates love, renewal, and the triumph of good over evil. People throw colored powder and water, sing, and share food.</p>
+                    <h3>Navaratri and Durga Puja</h3>
+                    <p>Nine nights honoring the Divine Mother. In Bengal it is celebrated as Durga Puja, and the tenth day, Dussehra (Vijayadashami), marks Rama's victory over Ravana.</p>
+                    <h3>Other Major Festivals</h3>
+                    <ul class="principles-list">
+                        <li>Janmashtami: birth of Krishna</li>
+                        <li>Maha Shivaratri: the great night of Shiva</li>
+                        <li>Ganesh Chaturthi: honoring Ganesha</li>
+                        <li>Rama Navami: birth of Rama</li>
+                        <li>Pongal, Makar Sankranti, and Onam: harvest festivals</li>
+                        <li>Raksha Bandhan: the bond between brothers and sisters</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God, Avatars &amp; Revelation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Vedas, Epics &amp; Gita</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Rebirth</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will &amp; Destiny</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>Hinduism teaches that there is one ultimate reality, Brahman, which is infinite, eternal, and the source of all that exists.</p>
+                    <p>The Upanishads describe Brahman as:</p>
+                    <blockquote>"Truth, knowledge, infinity." (Taittiriya Upanishad 2.1)</blockquote>
+                    <p>Hindus approach the divine in different ways:</p>
+                    <ul>
+                        <li>as impersonal Brahman beyond all form</li>
+                        <li>as a personal God (Ishvara or Bhagavan), such as Vishnu, Krishna, or Shiva</li>
+                        <li>as the Divine Mother</li>
+                        <li>through many deities who represent aspects of the divine</li>
+                    </ul>
+                    <p>Many Hindus describe this as one God with many forms and names. Scholars sometimes use the word henotheism, meaning devotion to one supreme God without denying other deities.</p>
+                    <p>Hinduism generally rejects:</p>
+                    <ul class="principles-list">
+                        <li>the idea that the divine can be limited to one name or form</li>
+                        <li>the idea that the material world is all there is</li>
+                        <li>harm to living beings without need</li>
+                        <li>the idea that one life determines eternal fate</li>
+                    </ul>
+                    <p>The Trimurti is a well-known image of three divine functions: Brahma the creator, Vishnu the preserver, and Shiva the transformer.</p>
+                    <h3>Avatars and Divine Teachers</h3>
+                    <p>Hinduism teaches that God descends into the world in different forms, called avatars, to restore dharma.</p>
+                    <p>In the Bhagavad Gita, Krishna says:</p>
+                    <blockquote>"Whenever righteousness declines and unrighteousness rises, I manifest myself... to establish dharma, I come into being age after age." (Bhagavad Gita 4.7–8)</blockquote>
+                    <p>The ten traditional avatars of Vishnu (Dashavatara) include:</p>
+                    <ul class="principles-list">
+                        <li>Matsya (the fish)</li>
+                        <li>Kurma (the tortoise)</li>
+                        <li>Varaha (the boar)</li>
+                        <li>Narasimha (the man-lion)</li>
+                        <li>Vamana (the dwarf)</li>
+                        <li>Parashurama</li>
+                        <li>Rama</li>
+                        <li>Krishna</li>
+                        <li>the Buddha or Balarama (lists differ)</li>
+                        <li>Kalki, who is yet to come</li>
+                    </ul>
+                    <p>Hindus also honor rishis (ancient seers), gurus, and saints as teachers who reveal spiritual truth.</p>
+                    <h3>Revelation</h3>
+                    <p>Hindu sacred texts are divided into two categories:</p>
+                    <h3>Shruti ("that which is heard")</h3>
+                    <p>Eternal truths heard by the ancient rishis in deep meditation. These are the Vedas, including the Upanishads. They are considered the highest authority.</p>
+                    <h3>Smriti ("that which is remembered")</h3>
+                    <p>Texts composed and handed down by human authors, including the epics, the Puranas, and law books. They explain and apply the truths of the Vedas.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Vedas</h3>
+                    <p>The Vedas are the oldest Hindu scriptures, composed in Sanskrit and passed down orally with extraordinary precision for centuries.</p>
+                    <p>The four Vedas are:</p>
+                    <ul class="principles-list">
+                        <li>Rig Veda: hymns</li>
+                        <li>Sama Veda: chants and melodies</li>
+                        <li>Yajur Veda: ritual formulas</li>
+                        <li>Atharva Veda: prayers, spells, and practical wisdom</li>
+                    </ul>
+                    <p>Each Veda has four layers:</p>
+                    <ul class="principles-list">
+                        <li>Samhitas: hymns</li>
+                        <li>Brahmanas: ritual explanations</li>
+                        <li>Aranyakas: "forest texts"</li>
+                        <li>Upanishads: philosophical teachings</li>
+                    </ul>
+                    <p>The Vedic chanting tradition is recognized by UNESCO as part of humanity's intangible cultural heritage.</p>
+                    <h3>Epics, Puranas, and the Bhagavad Gita</h3>
+                    <p>The epics and Puranas brought Hindu teaching to people through stories:</p>
+                    <ul>
+                        <li>the Ramayana, the story of Rama and Sita</li>
+                        <li>the Mahabharata, the great epic of the Bharata family, which contains the Bhagavad Gita</li>
+                        <li>the Puranas, collections of stories about the gods, creation, and sacred places</li>
+                    </ul>
+                    <p>The Bhagavad Gita is one of the most widely read Hindu texts. It is a dialogue between the warrior Arjuna and Krishna, who teaches about duty, devotion, knowledge, and the eternal self.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Deities and Spiritual Beings</h3>
+                    <p>Hindus honor many deities, including:</p>
+                    <ul>
+                        <li>Ganesha — remover of obstacles, honored at the start of any undertaking</li>
+                        <li>Lakshmi — prosperity and good fortune</li>
+                        <li>Saraswati — knowledge, music, and the arts</li>
+                        <li>Hanuman — devotion, strength, and service</li>
+                        <li>Durga — protective power of the Divine Mother</li>
+                        <li>Surya — the sun</li>
+                        <li>Murugan (Kartikeya) — especially popular in Tamil Nadu</li>
+                    </ul>
+                    <p>Hindu tradition also describes devas, asuras (beings opposed to the devas), ancestors (pitris), and other beings.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Hinduism teaches that every living being has an eternal soul, the atman. The atman is not born and does not die.</p>
+                    <p>The Bhagavad Gita says:</p>
+                    <blockquote>"Just as a person casts off worn-out clothes and puts on new ones, so the embodied self casts off worn-out bodies and takes on new ones." (Bhagavad Gita 2.22)</blockquote>
+                    <p>The atman is pure, but it is covered by ignorance (avidya) and attachment. This ignorance leads people to identify with the body and ego.</p>
+                    <p>Hinduism does not teach inherited guilt. Each soul experiences the results of its own karma.</p>
+                    <h3>Wrongdoing and Karma</h3>
+                    <p>Hinduism speaks of papa (wrongdoing) and punya (merit). Wrong actions go against dharma and create bad karma.</p>
+                    <p>The main inner causes of wrongdoing are often listed as:</p>
+                    <ul class="principles-list">
+                        <li>desire (kama)</li>
+                        <li>anger (krodha)</li>
+                        <li>greed (lobha)</li>
+                        <li>delusion (moha)</li>
+                        <li>pride (mada)</li>
+                        <li>envy (matsarya)</li>
+                    </ul>
+                    <p>Karma is not punishment by an angry God. It is the law that actions bring corresponding results, in this life or a future one.</p>
+                    <h3>Repentance and Purification</h3>
+                    <p>Hinduism offers many ways to purify oneself:</p>
+                    <ol>
+                        <li>recognizing the wrong</li>
+                        <li>sincere regret</li>
+                        <li>prayer and devotion</li>
+                        <li>penance (prayashchitta), such as fasting or pilgrimage</li>
+                        <li>charity and service</li>
+                        <li>making amends to those harmed</li>
+                    </ol>
+                    <p>Many Hindus bathe in sacred rivers such as the Ganges as an act of purification. Devotional traditions teach that God's grace can free a devotee from the effects of past karma.</p>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>The most common form of Hindu worship is puja. It can take place at home or in a temple.</p>
+                    <p>Puja may include:</p>
+                    <ul class="principles-list">
+                        <li>lighting a lamp</li>
+                        <li>offering flowers, fruit, water, and food</li>
+                        <li>burning incense</li>
+                        <li>chanting mantras and prayers</li>
+                        <li>singing devotional songs (bhajans and kirtans)</li>
+                        <li>aarti, waving a lamp before the deity</li>
+                        <li>receiving prasad</li>
+                    </ul>
+                    <p>Most Hindu homes have a shrine. Many Hindus pray at dawn and dusk. The Gayatri Mantra from the Rig Veda is one of the most important daily prayers.</p>
+                    <p>Hindus worship God through murtis, sacred images. Hindus see the murti as a focus through which God is present and approached, not as a mere statue.</p>
+                    <p>Meditation, yoga, pilgrimage, and the recitation of God's names (japa) are also important.</p>
+                    <h3>Charity</h3>
+                    <p>Charity (dana) is an important duty in Hinduism.</p>
+                    <p>Charity may involve:</p>
+                    <ul class="principles-list">
+                        <li>feeding the hungry</li>
+                        <li>supporting temples</li>
+                        <li>caring for cows and animals</li>
+                        <li>helping the poor and sick</li>
+                        <li>supporting education</li>
+                        <li>free community kitchens</li>
+                    </ul>
+                    <p>The Bhagavad Gita teaches that the best gift is given at the right time and place to a worthy person, without expectation of return (Bhagavad Gita 17.20).</p>
+                    <p>Selfless service (seva) is highly valued.</p>
+                    <h3>Fasting</h3>
+                    <p>Fasting (upavasa or vrata) is common in Hinduism. It is generally voluntary and practiced for spiritual discipline and devotion.</p>
+                    <p>Common fasting days include:</p>
+                    <ul class="principles-list">
+                        <li>Ekadashi, the eleventh day of each lunar fortnight</li>
+                        <li>Maha Shivaratri</li>
+                        <li>Navaratri</li>
+                        <li>Karva Chauth, observed by many married women in North India</li>
+                        <li>particular weekdays dedicated to a deity</li>
+                    </ul>
+                    <p>Fasts range from skipping one meal to avoiding grains, or taking only water. Exceptions are made for health, age, and pregnancy.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Hinduism regards life as sacred and as an opportunity for spiritual growth.</p>
+                    <p>Traditional Hindu thought describes four stages of life (ashramas):</p>
+                    <ol>
+                        <li>Brahmacharya — student</li>
+                        <li>Grihastha — householder</li>
+                        <li>Vanaprastha — retirement and spiritual focus</li>
+                        <li>Sannyasa — renunciation</li>
+                    </ol>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>fulfill their duties</li>
+                        <li>care for their family</li>
+                        <li>earn an honest living</li>
+                        <li>respect parents, teachers, and guests</li>
+                        <li>seek knowledge</li>
+                        <li>practice non-violence</li>
+                        <li>grow in devotion and self-knowledge</li>
+                    </ul>
+                    <h3>Death</h3>
+                    <p>Death is seen as the soul leaving one body to move on to another. The soul itself does not die.</p>
+                    <p>Hindus often hope to die with the name of God on their lips, and many wish to die in a holy place such as Varanasi.</p>
+                    <h3>Rebirth</h3>
+                    <p>Hinduism teaches that the soul is reborn many times in samsara, according to its karma.</p>
+                    <p>A soul may be reborn as a human, animal, or other being. The cycle continues until the soul attains moksha.</p>
+                    <h3>Moksha (Liberation)</h3>
+                    <p>Moksha is the ultimate goal of Hinduism. It is freedom from the cycle of birth and death.</p>
+                    <p>Different schools describe moksha differently:</p>
+                    <ul>
+                        <li>Advaita Vedanta: realizing that the atman is identical with Brahman</li>
+                        <li>Vishishtadvaita and Dvaita Vedanta: eternal loving relationship with God in his divine realm</li>
+                        <li>Yoga and Samkhya: the self's freedom from matter</li>
+                    </ul>
+                    <h3>Heavens and Hells</h3>
+                    <p>Hindu texts describe heavenly realms (svarga) and hell realms (naraka).</p>
+                    <p>These are temporary. A soul enjoys heaven or suffers in hell as a result of its karma, and is then reborn. They are not the final goal. Moksha is beyond both.</p>
+                    <h3>Judgment</h3>
+                    <p>In Hindu tradition, Yama, the god of death, oversees the departed soul's passage. His record-keeper, Chitragupta, is said to keep account of each person's deeds.</p>
+                    <p>Ultimately, it is the law of karma that determines a soul's future. This belief encourages ethical living.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will and Destiny</h3>
+                    <p>Hinduism teaches that present circumstances are partly shaped by past karma (prarabdha), but people still have free will to act now.</p>
+                    <p>The Bhagavad Gita teaches people to act according to their duty without attachment to the results:</p>
+                    <blockquote>"You have a right to your actions, but never to their fruits." (Bhagavad Gita 2.47)</blockquote>
+                    <p>The mainstream Hindu view affirms both:</p>
+                    <ul class="principles-list">
+                        <li>the effect of past karma</li>
+                        <li>present freedom and responsibility</li>
+                    </ul>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Hindu ethics are based on dharma.</p>
+                    <p>The Yoga Sutras of Patanjali list five yamas (restraints):</p>
+                    <ol>
+                        <li>ahimsa — non-violence</li>
+                        <li>satya — truthfulness</li>
+                        <li>asteya — not stealing</li>
+                        <li>brahmacharya — sexual restraint</li>
+                        <li>aparigraha — non-possessiveness</li>
+                    </ol>
+                    <p>And five niyamas (observances): purity, contentment, self-discipline, study, and devotion to God.</p>
+                    <p>Other repeatedly emphasized virtues include:</p>
+                    <ul class="principles-list">
+                        <li>compassion</li>
+                        <li>generosity</li>
+                        <li>hospitality ("the guest is God")</li>
+                        <li>humility</li>
+                        <li>patience</li>
+                        <li>self-control</li>
+                        <li>respect for parents and elders</li>
+                        <li>respect for teachers</li>
+                        <li>care for animals and nature</li>
+                    </ul>
+                    <h3>Family</h3>
+                    <p>Family is central to Hindu life. Many Hindus live in extended or joint families.</p>
+                    <p>Hinduism places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>parents</li>
+                        <li>children</li>
+                        <li>spouses</li>
+                        <li>grandparents and elders</li>
+                        <li>ancestors</li>
+                        <li>guests</li>
+                    </ul>
+                    <p>A well-known teaching from the Taittiriya Upanishad says:</p>
+                    <blockquote>"Treat your mother as God. Treat your father as God. Treat your teacher as God. Treat your guest as God." (Taittiriya Upanishad 1.11)</blockquote>
+                    <h3>Marriage</h3>
+                    <p>Marriage (vivaha) is one of the most important samskaras (rites of passage) and is considered a sacred bond.</p>
+                    <p>A Hindu wedding commonly includes:</p>
+                    <ul class="principles-list">
+                        <li>the sacred fire (agni) as witness</li>
+                        <li>the couple walking around the fire</li>
+                        <li>saptapadi, the "seven steps," with seven vows</li>
+                        <li>blessings from family and priests</li>
+                    </ul>
+                    <p>Marriage is understood as a partnership in dharma, prosperity, love, and spiritual growth. Wedding customs vary greatly by region and community. Many marriages are arranged with family involvement, though love marriages are increasingly common.</p>
+                    <h3>Community</h3>
+                    <p>Hindu community life centers on the family, the temple, and the wider community of devotees.</p>
+                    <p>Temples historically function not only as places of worship but also as centers for:</p>
+                    <ul class="principles-list">
+                        <li>education</li>
+                        <li>music and dance</li>
+                        <li>festivals</li>
+                        <li>charity and feeding</li>
+                        <li>weddings and ceremonies</li>
+                        <li>cultural gatherings</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Hindu ethics apply to all beings.</p>
+                    <p>The Maha Upanishad contains the phrase:</p>
+                    <blockquote>"The world is one family." (Vasudhaiva Kutumbakam)</blockquote>
+                    <p>The principle of ahimsa extends non-violence to animals and nature. The Bhagavad Gita describes a wise person as one who sees the same divine self in all beings (Bhagavad Gita 6.29).</p>
+                    <p>Hindu tradition also accepts that there are many paths to the divine. At the same time, Hindus have debated how to apply these ideals, including in relation to caste and social hierarchy.</p>
+                </div>
+            </div>
+
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Vedas and Upanishads</h3>
+                <p>The Vedas are the foundation of Hindu scripture. The Upanishads, the final part of the Vedas, contain the philosophical heart of Hinduism.</p>
+                <p>Major themes include:</p>
                 <ul class="principles-list">
-                    <li><strong>Brahman:</strong> The ultimate, formless, infinite, and eternal divine reality.</li>
-                    <li><strong>Atman:</strong> The true, eternal soul or inner self within every living being.</li>
-                    <li><strong>Dharma:</strong> Righteous duty, ethics, and living in accordance with cosmic law.</li>
-                    <li><strong>Karma:</strong> The universal law of cause and effect; every action influences the future.</li>
-                    <li><strong>Samsara:</strong> The continuous, ongoing cycle of birth, death, and reincarnation.</li>
-                    <li><strong>Moksha:</strong> The ultimate goal of life: spiritual liberation from Samsara.</li>
-                    <li><strong>Ahimsa:</strong> The principle of non-violence and profound respect for all living things.</li>
-                    <li><strong>Satya:</strong> The commitment to truthfulness in thought, word, and deed.</li>
-                    <li><strong>Asteya:</strong> The ethical practice of non-stealing and honesty.</li>
-                    <li><strong>Brahmacharya:</strong> Control of the senses and spiritual discipline.</li>
-                    <li><strong>Aparigraha:</strong> Non-possessiveness and detachment from material greed.</li>
-                    <li><strong>Ishvara / Bhagavan:</strong> The concept of a personal God or supreme being.</li>
-                    <li><strong>Avataras:</strong> The belief that the divine incarnates on Earth to restore cosmic order (e.g., Rama, Krishna).</li>
-                    <li><strong>The Vedas:</strong> Acceptance of the ancient scriptures as the ultimate spiritual authority.</li>
-                    <li><strong>Purusharthas:</strong> The four goals of human life: Dharma, Artha (prosperity), Kama (pleasure), and Moksha.</li>
-                    <li><strong>Yoga:</strong> Spiritual paths to union with the divine (Bhakti, Jnana, Karma, and Raja Yoga).</li>
-                    <li><strong>Puja:</strong> Devotional worship, reverence, and honor paid to the divine.</li>
-                    <li><strong>Maya:</strong> The concept that the material world is an illusion distracting from true reality.</li>
-                    <li><strong>Guru:</strong> Deep reverence for spiritual teachers who guide followers from darkness to light.</li>
-                    <li><strong>Tolerance & Pluralism:</strong> The acceptance that there are many valid paths to the divine.</li>
+                    <li>Brahman and atman</li>
+                    <li>creation</li>
+                    <li>sacrifice and worship</li>
+                    <li>meditation</li>
+                    <li>karma and rebirth</li>
+                    <li>liberation</li>
+                    <li>ethics</li>
+                    <li>the nature of consciousness</li>
+                </ul>
+                <p>Major Upanishads include the Isha, Kena, Katha, Mundaka, Mandukya, Chandogya, and Brihadaranyaka.</p>
+                <h3>The Bhagavad Gita</h3>
+                <p>The Gita is often called the essence of Hindu teaching. It answers practical questions such as:</p>
+                <ul class="principles-list">
+                    <li>How should I act when duties conflict?</li>
+                    <li>What is the true self?</li>
+                    <li>How can I act without selfishness?</li>
+                    <li>How can I love God?</li>
+                    <li>What happens at death?</li>
+                </ul>
+                <h3>Other Important Texts</h3>
+                <ul>
+                    <li>Ramayana and Mahabharata</li>
+                    <li>the Puranas, such as the Bhagavata Purana</li>
+                    <li>Dharma Shastras, such as the Manusmriti</li>
+                    <li>Yoga Sutras of Patanjali</li>
+                    <li>Brahma Sutras</li>
+                    <li>Agamas and Tantras, which guide temple worship</li>
+                    <li>Tamil devotional poetry, such as the Tirumurai and the Divya Prabandham</li>
+                    <li>Tirukkural, a Tamil text on ethics</li>
+                </ul>
+                <h3>Hindu Scholarship</h3>
+                <p>Hindus developed extensive learning in:</p>
+                <ul class="principles-list">
+                    <li>philosophy and logic</li>
+                    <li>Sanskrit grammar (Panini)</li>
+                    <li>mathematics and astronomy</li>
+                    <li>Ayurveda (medicine)</li>
+                    <li>music and dance</li>
+                    <li>architecture (Vastu Shastra)</li>
+                    <li>law and ethics</li>
+                </ul>
+                <p>Major philosophers include:</p>
+                <ul class="principles-list">
+                    <li>Adi Shankara (Advaita Vedanta)</li>
+                    <li>Ramanuja (Vishishtadvaita Vedanta)</li>
+                    <li>Madhva (Dvaita Vedanta)</li>
+                    <li>Patanjali (Yoga)</li>
+                    <li>Abhinavagupta (Kashmir Shaivism)</li>
                 </ul>
             </div>
 
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>Dietary practices vary significantly based on region and tradition. Because of the principle of <em>Ahimsa</em> (non-violence), many Hindus are strict vegetarians. Even among those who eat meat, beef is almost universally avoided because the cow is considered a highly sacred symbol of life, maternal nourishment, and non-violence. Fasting on specific days (like Ekadashi or festivals) is a common practice for spiritual purification.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Hinduism embraces science and logic, seeing no inherent conflict between scientific discovery and spiritual truth. The traditional Hindu system of medicine is <em>Ayurveda</em>, which emphasizes a holistic balance of mind, body, and spirit. Modern medical treatments are universally accepted.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>There are no religious prohibitions against blood transfusions or organ donation. On the contrary, the Hindu principle of <em>Daan</em> (selfless giving or charity) heavily encourages organ donation, framing it as a noble sacrifice that can save a life and generate positive Karma.</p>
-
-                <h3>Cleanliness (Saucha)</h3>
-                <p><em>Saucha</em> (purity) is a critical component of daily life. It involves keeping the physical body clean (such as bathing before morning prayers or entering a temple) as well as maintaining the purity of the mind and the living environment. The kitchen and the home altar (Puja room) are kept exceptionally clean to honor the divine presence.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <!-- HISTORY -->
             <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+                <h2>History</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">The Age of the Upanishads</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Epics and Devotion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Sacred Places</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Expansion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-7')">Historical Figures</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founder</h3>
-                    <p>Unlike Christianity, Islam, or Buddhism, Hinduism has no single founder. It is a synthesis of various Indian cultures and traditions. Its earliest roots are traced back to the ancient Indus Valley Civilization (c. 3300–1300 BCE) and the subsequent Vedic period, where early seers (Rishis) orally transmitted profound spiritual truths that were later codified into the sacred texts known as the Vedas.</p>
-                </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Historically, Hinduism was confined largely to the Indian subcontinent. However, through ancient trade routes, cultural exchange, and peaceful expansion, Hindu philosophies, epics (like the Ramayana), and architecture deeply influenced Southeast Asia, particularly in modern-day Cambodia, Thailand, Indonesia (especially Bali), and Malaysia.</p>
-                </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, while the vast majority of Hindus live in India and Nepal, large, vibrant diaspora populations exist globally. Significant Hindu communities have flourished in the United States, the United Kingdom, Canada, Mauritius, Fiji, Guyana, and the Caribbean, bringing Hindu temples, festivals, and philosophies to every continent.</p>
-                </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
-                    <ul>
-                        <li><strong>Adi Shankara (c. 8th century CE):</strong> Brilliant philosopher who consolidated the doctrine of Advaita Vedanta (non-dualism).</li>
-                        <li><strong>Ramanuja (1017–1137 CE):</strong> Influential theologian who promoted Vishishtadvaita (qualified non-dualism) and deeply influenced the Bhakti (devotional) movement.</li>
-                        <li><strong>Mirabai (16th century):</strong> A celebrated mystic poet and passionate devotee of Lord Krishna whose songs are still sung today.</li>
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Hinduism has no single founder or date of origin.</p>
+                    <p>Its roots include the Indus Valley Civilization (about 2600–1900 BCE) and the Vedic culture of northern India. The Rig Veda was likely composed between about 1500 and 1200 BCE, though dates are debated.</p>
+                    <p>The early Vedic religion emphasized:</p>
+                    <ul class="principles-list">
+                        <li>hymns to deities such as Agni, Indra, and Varuna</li>
+                        <li>fire sacrifice (yajna)</li>
+                        <li>cosmic order (rita)</li>
+                        <li>the role of priests</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>The Age of the Upanishads</h3>
+                    <p>Around 800–300 BCE, the Upanishads shifted the focus toward meditation, the self, and liberation. Ideas such as karma, samsara, and moksha became central.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Epics and Devotion</h3>
+                    <p>Between roughly 400 BCE and 400 CE, the Ramayana, Mahabharata, and Bhagavad Gita took shape. Worship of Vishnu, Shiva, and the Goddess grew, along with temple building.</p>
+                    <p>From around the 6th century CE, the bhakti (devotional) movement began in South India with Tamil poet-saints, the Alvars and Nayanars. It later spread across India.</p>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Sacred Places</h3>
+                    <p>Hindus consider many places sacred, including:</p>
+                    <ul class="principles-list">
+                        <li>Varanasi (Kashi), on the Ganges</li>
+                        <li>the Ganges, Yamuna, and other sacred rivers</li>
+                        <li>Prayagraj, site of the Kumbh Mela</li>
+                        <li>Vrindavan and Mathura, associated with Krishna</li>
+                        <li>Ayodhya, associated with Rama</li>
+                        <li>Tirupati</li>
+                        <li>the Char Dham pilgrimage sites</li>
+                        <li>the twelve Jyotirlingas of Shiva</li>
+                    </ul>
+                    <p>The Kumbh Mela is often described as the largest religious gathering on earth.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Expansion</h3>
+                    <p>Hinduism spread through:</p>
+                    <ul class="principles-list">
+                        <li>trade with Southeast Asia</li>
+                        <li>royal patronage</li>
+                        <li>temple building</li>
+                        <li>migration</li>
+                        <li>teachers and gurus</li>
+                    </ul>
+                    <p>Hindu kingdoms flourished in Southeast Asia. Angkor Wat in Cambodia was originally built as a Hindu temple dedicated to Vishnu. Bali in Indonesia remains predominantly Hindu.</p>
+                    <p>In the 19th century, many Indians were taken as indentured laborers to the Caribbean, Fiji, Mauritius, and Africa. In the 20th century, migration brought large Hindu communities to Britain, North America, and the Gulf.</p>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
                     <ul>
-                        <li><strong>Sri Ramakrishna (1836–1886):</strong> A profound mystic who taught the unity of all religions through his own direct spiritual experiences.</li>
-                        <li><strong>Swami Vivekananda (1863–1902):</strong> Brought Hindu philosophy and Yoga to the Western world, famously addressing the 1893 World's Parliament of Religions in Chicago.</li>
-                        <li><strong>Mahatma Gandhi (1869–1948):</strong> Political and spiritual leader who employed the Hindu principle of <em>Ahimsa</em> (non-violence) to successfully lead India's independence movement.</li>
+                        <li><strong>c. 2600–1900 BCE:</strong> Indus Valley Civilization.</li>
+                        <li><strong>c. 1500–1200 BCE:</strong> Composition of the Rig Veda (dates debated).</li>
+                        <li><strong>c. 800–300 BCE:</strong> The major Upanishads.</li>
+                        <li><strong>c. 400 BCE–400 CE:</strong> The Ramayana, Mahabharata, and Bhagavad Gita take shape.</li>
+                        <li><strong>4th–6th centuries CE:</strong> Gupta period; growth of temple worship and classical Hindu culture.</li>
+                        <li><strong>6th–9th centuries:</strong> Tamil bhakti saints.</li>
+                        <li><strong>8th century:</strong> Adi Shankara.</li>
+                        <li><strong>11th–13th centuries:</strong> Ramanuja and Madhva.</li>
+                        <li><strong>12th century:</strong> Angkor Wat built.</li>
+                        <li><strong>15th–17th centuries:</strong> North Indian bhakti saints such as Kabir, Mirabai, Tulsidas, and Chaitanya.</li>
+                        <li><strong>19th century:</strong> Reform movements such as the Brahmo Samaj and Arya Samaj; Swami Vivekananda.</li>
+                        <li><strong>1893:</strong> Vivekananda's address at the World's Parliament of Religions in Chicago introduces Hinduism to many Americans.</li>
+                        <li><strong>1947:</strong> Independence of India.</li>
+                        <li><strong>20th–21st centuries:</strong> Global Hindu diaspora; yoga becomes popular worldwide.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-7" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Vyasa and Valmiki, traditional authors of the epics</li>
+                        <li>Patanjali</li>
+                        <li>Adi Shankara</li>
+                        <li>Ramanuja</li>
+                        <li>Madhva</li>
+                        <li>Basavanna</li>
+                        <li>Andal and other Tamil saints</li>
+                        <li>Mirabai</li>
+                        <li>Tulsidas</li>
+                        <li>Chaitanya Mahaprabhu</li>
+                        <li>Ramakrishna</li>
+                        <li>Swami Vivekananda</li>
+                        <li>Ram Mohan Roy</li>
+                        <li>Sri Aurobindo</li>
+                        <li>Ramana Maharshi</li>
+                        <li>Mahatma Gandhi</li>
+                        <li>A. C. Bhaktivedanta Swami Prabhupada</li>
+                        <li>many saints, poets, scholars, artists, and reformers across Hindu history</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>Hinduism's remarkable continuity over millennia is due to its highly decentralized nature. Without a single Pope or central authority, the traditions were kept alive at the grassroots level through the oral transmission of the Vedas, the deep bonds of the family unit, and the traditional Guru-Shishya (teacher-student) lineage. Hinduism proved incredibly resilient, absorbing and adapting to new philosophical ideas rather than fracturing, allowing it to survive centuries of foreign rule and colonization.</p>
+            <!-- MAJOR DENOMINATIONS AND SCHOOLS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Denominations and Schools</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Vaishnavism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Shaivism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Shaktism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Smartism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">The Six Classical Schools of Philosophy</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-6')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-7')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-8')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Vaishnavism</h3>
+                    <p>Vishnu, Krishna, and Rama are worshiped as the Supreme Lord. Sub-traditions include Sri Vaishnavism, Gaudiya Vaishnavism (including ISKCON), and the Swaminarayan movement.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Shaivism</h3>
+                    <p>Shiva is worshiped as the Supreme Lord. Sub-traditions include Shaiva Siddhanta in Tamil Nadu, Kashmir Shaivism, and the Lingayats of Karnataka.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Shaktism</h3>
+                    <p>The Goddess is worshiped as supreme. Shaktism is especially strong in Bengal, Assam, and Kerala.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Smartism</h3>
+                    <p>Honors several deities as forms of Brahman and follows Adi Shankara's Advaita philosophy.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>The Six Classical Schools of Philosophy</h3>
+                    <ul class="principles-list">
+                        <li>Nyaya: logic</li>
+                        <li>Vaisheshika: atomism and categories of reality</li>
+                        <li>Samkhya: spirit and matter</li>
+                        <li>Yoga: meditation and discipline</li>
+                        <li>Mimamsa: Vedic ritual and dharma</li>
+                        <li>Vedanta: the nature of Brahman</li>
+                    </ul>
+                    <p>These schools are generally regarded as parts of one broad tradition rather than separate religions.</p>
+                </div>
+
+                <div id="deno-6" class="history-sub-section">
+                    <h3>Traditional and Reformist Interpretations</h3>
+                    <p>Modern Hindus differ in their views on:</p>
+                    <ul class="principles-list">
+                        <li>caste</li>
+                        <li>temple rituals</li>
+                        <li>gender roles</li>
+                        <li>interreligious relations</li>
+                        <li>the role of religion in politics</li>
+                        <li>vegetarianism</li>
+                        <li>traditional and modern lifestyles</li>
+                    </ul>
+                    <p>Reform movements have challenged caste discrimination and practices such as child marriage. Terms such as traditional and reformist can oversimplify. Two Hindus may share the same scriptures and beliefs while reaching different conclusions about modern issues.</p>
+                </div>
+
+                <div id="deno-7" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>North India</h3>
+                    <p>Worship of Rama and Krishna is very prominent, and Hindi devotional poetry is widely sung.</p>
+                    <h3>South India</h3>
+                    <p>Great temple traditions, Tamil devotional literature, and classical music and dance.</p>
+                    <h3>Bengal and Eastern India</h3>
+                    <p>Durga Puja and Kali worship are central.</p>
+                    <h3>Nepal</h3>
+                    <p>Hinduism is mixed with Buddhist traditions.</p>
+                    <h3>Bali</h3>
+                    <p>Balinese Hinduism includes unique temple and ritual traditions.</p>
+                    <h3>Caribbean and Fiji</h3>
+                    <p>Communities descended from indentured workers keep traditions such as the Ramayana recitation.</p>
+                    <h3>United States</h3>
+                    <p>American Hindus include:</p>
+                    <ul class="principles-list">
+                        <li>immigrants from India, Nepal, Sri Lanka, and Bangladesh</li>
+                        <li>Indo-Caribbean Hindus</li>
+                        <li>Hindus from Fiji and Africa</li>
+                        <li>converts, including members of ISKCON and Vedanta societies</li>
+                        <li>second- and third-generation Hindu Americans</li>
+                    </ul>
+                    <p>Consequently, there is no single "Hindu culture."</p>
+                </div>
+
+                <div id="deno-8" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>It is important to distinguish between Hindu religious teaching and cultural practice.</p>
+                    <p>Examples of cultural practices that are not necessarily religious requirements include:</p>
+                    <ul>
+                        <li>particular wedding customs</li>
+                        <li>dowry, which is illegal in India and opposed by many religious leaders</li>
+                        <li>specific regional foods</li>
+                        <li>styles of dress</li>
+                        <li>caste-based customs</li>
+                        <li>gender customs</li>
+                        <li>family structures</li>
+                    </ul>
+                    <p>A practice may be common in a Hindu society without being required by Hinduism. Conversely, a religious practice may be expressed differently in different cultures.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Hindus worship millions of independent gods.</strong><br>
-                Reality: While the Hindu pantheon is vast, most Hindus view these deities as different facets, expressions, or avatars of one supreme, infinite reality (Brahman). It is often described as "monistic" or "henotheistic."</p>
-                <p><strong>Misconception: Hindus worship idols.</strong><br>
-                Reality: Hindus do not believe the stone or metal statue itself is God. A <em>Murti</em> (image or statue) serves as a physical focal point to help the human mind concentrate on and connect with the abstract, infinite divine during prayer (Puja).</p>
-                <p><strong>Misconception: The oppressive Caste System is a core religious requirement.</strong><br>
-                Reality: Originally, society was divided into functional occupational groups (Varnas). Over time, this degraded into a rigid, oppressive, and discriminatory hereditary system. Many modern Hindu reformers, spiritual leaders, and the Indian constitution actively fight against caste-based discrimination, viewing it as a social corruption rather than a true spiritual doctrine.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Hindus worship 330 million gods.</strong><br>
+                Fact: The phrase reflects the belief that the divine has countless forms. Many Hindus understand all these forms as expressions of one ultimate reality.</p>
+                <p><strong>Myth: Hindus worship idols.</strong><br>
+                Fact: Hindus worship God through murtis. They see the murti as a sacred focus through which God is present, not as God limited to stone or metal.</p>
+                <p><strong>Myth: Hindus worship cows.</strong><br>
+                Fact: Hindus revere the cow as a symbol of generosity and the giving earth. Cows are respected and protected, but they are not worshiped as God.</p>
+                <p><strong>Myth: Caste is a core religious requirement.</strong><br>
+                Fact: The caste system developed as a social structure in South Asia. Many Hindu saints and reformers rejected caste discrimination, and India's Constitution outlaws "untouchability." The Bhagavad Gita teaches that the same divine self is in all beings.</p>
+                <p><strong>Myth: All Hindus are vegetarian.</strong><br>
+                Fact: Many Hindus are vegetarian, but many are not. Practice varies by region, community, and family. Most Hindus avoid beef.</p>
+                <p><strong>Myth: Yoga is just exercise.</strong><br>
+                Fact: Yoga is a spiritual discipline with roots in Hindu philosophy. Physical postures (asanas) are only one part of it.</p>
+                <p><strong>Myth: The swastika in Hinduism is a hate symbol.</strong><br>
+                Fact: The swastika is an ancient Hindu symbol of good fortune, used for thousands of years. Its meaning was distorted by the Nazis in the 20th century.</p>
+                <p><strong>Myth: Hinduism has one uniform interpretation.</strong><br>
+                Fact: Hinduism includes many traditions, philosophies, and practices, from strict non-dualism to intense devotion to a personal God.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>Internally, Hinduism continues to grapple with the social legacy of the caste system and the push to ensure total equality and dignity for historically marginalized communities (Dalits). Additionally, the diaspora faces the challenge of passing down complex, ancient traditions to younger generations growing up in highly secular, Westernized environments.</p>
-                <p>Politically, the rise of Hindu nationalism (Hindutva) in India has created intense, ongoing debates about the relationship between religion and state, the treatment of religious minorities, and the defining of a modern, pluralistic Indian identity.</p>
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Hinduism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Hinduism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Non-Violence</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Knowledge, Devotion &amp; Action</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Hindu life.</p>
+                    <p>Hindus are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents and elders</li>
+                        <li>care for children</li>
+                        <li>strong extended family ties</li>
+                        <li>care for elderly relatives</li>
+                        <li>honor for ancestors</li>
+                        <li>hospitality</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is a sacred rite and a family matter.</p>
+                    <p>A Hindu wedding generally includes:</p>
+                    <ul class="principles-list">
+                        <li>consent of the couple and families</li>
+                        <li>rituals before the sacred fire</li>
+                        <li>the seven steps (saptapadi)</li>
+                        <li>vows of mutual duty and support</li>
+                    </ul>
+                    <h3>Children</h3>
+                    <p>Children are regarded as a blessing and a responsibility.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral and spiritual guidance</li>
+                        <li>affection</li>
+                    </ul>
+                    <p>Rites of passage for children include naming, first feeding of solid food, first haircut, and, in some communities, the sacred thread ceremony (upanayana).</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Learning is highly valued. Saraswati, goddess of knowledge, is honored by students, and the guru-student relationship is sacred.</p>
+                    <p>Ancient India developed learning in:</p>
+                    <ul class="principles-list">
+                        <li>mathematics</li>
+                        <li>astronomy</li>
+                        <li>medicine</li>
+                        <li>grammar and linguistics</li>
+                        <li>philosophy</li>
+                        <li>music and dance</li>
+                        <li>architecture</li>
+                    </ul>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Hindu food practice is shaped by ahimsa and purity.</p>
+                    <p>Common practices include:</p>
+                    <ul>
+                        <li>vegetarianism, especially among many Brahmin, Vaishnava, and Gujarati communities</li>
+                        <li>avoiding beef</li>
+                        <li>avoiding alcohol for many</li>
+                        <li>offering food to God before eating it</li>
+                        <li>sattvic food, considered pure and calming</li>
+                    </ul>
+                    <p>Dietary practice varies greatly by region and family.</p>
+                    <h3>Clothing</h3>
+                    <p>Hindu dress varies by region and culture. Modesty and cleanliness are valued.</p>
+                    <p>Examples include:</p>
+                    <ul class="principles-list">
+                        <li>sari</li>
+                        <li>salwar kameez</li>
+                        <li>dhoti</li>
+                        <li>kurta</li>
+                        <li>bindi, a mark on the forehead</li>
+                        <li>tilak, a sacred mark worn after worship</li>
+                        <li>sindoor, worn by many married women</li>
+                    </ul>
+                    <p>None of these represents a single universal Hindu culture.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Hinduism honors the divine as feminine as well as masculine, and goddesses are worshiped widely.</p>
+                    <p>Women were seers of some Vedic hymns and have been great saints and teachers. At the same time, traditional texts and customs have often placed women in roles subordinate to men.</p>
+                    <p>Modern Hindus differ substantially on gender roles. Women today serve as priests in some communities, as gurus, and as leaders.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Work is a way of fulfilling dharma.</p>
+                    <p>The Bhagavad Gita teaches karma yoga: performing one's duty well and selflessly, offering the results to God.</p>
+                    <p>Hindus are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>earn honestly</li>
+                        <li>support their family</li>
+                        <li>avoid exploitation</li>
+                        <li>share wealth</li>
+                        <li>serve society</li>
+                    </ul>
+                    <h3>Business Ethics</h3>
+                    <p>Artha, prosperity, is a legitimate goal of life when it is pursued in line with dharma.</p>
+                    <p>Hindu ethics in business emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>fair dealing</li>
+                        <li>keeping promises</li>
+                        <li>generosity</li>
+                        <li>supporting the community</li>
+                    </ul>
+                    <p>Many Hindu business owners begin a new financial year with worship of Lakshmi and Ganesha.</p>
+                    <h3>Charity</h3>
+                    <p>Charity is integrated into Hindu life.</p>
+                    <p>Hindus may give:</p>
+                    <ul class="principles-list">
+                        <li>food (anna dana)</li>
+                        <li>money</li>
+                        <li>clothing</li>
+                        <li>education</li>
+                        <li>medical help</li>
+                        <li>service at temples</li>
+                    </ul>
+                    <p>Many temples run free kitchens.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Hinduism regards caring for health as part of dharma.</p>
+                    <p>Ayurveda, the traditional Indian medical system, emphasizes balance, diet, herbs, and lifestyle. Most Hindus also fully accept modern medicine.</p>
+                    <p>Hindu views on modern medical issues vary. Organ donation is widely seen as an act of charity (dana).</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Traditional Hindu funeral practice generally includes:</p>
+                    <ul class="principles-list">
+                        <li>washing and dressing the body</li>
+                        <li>prayers and chanting</li>
+                        <li>cremation, usually as soon as possible</li>
+                        <li>scattering ashes in a sacred river</li>
+                        <li>a period of mourning, often 10–13 days</li>
+                        <li>shraddha rites honoring ancestors</li>
+                    </ul>
+                    <p>Young children and holy persons may be buried instead of cremated in some traditions.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The most widely celebrated Hindu festival is Diwali. Other major festivals include Holi, Navaratri, Dussehra, Janmashtami, Maha Shivaratri, Ganesh Chaturthi, and regional harvest festivals.</p>
+                    <h3>Community Life</h3>
+                    <p>Hindu community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>temples</li>
+                        <li>cultural associations</li>
+                        <li>language and music classes</li>
+                        <li>festivals</li>
+                        <li>family gatherings</li>
+                        <li>youth programs</li>
+                    </ul>
+                    <p>In the United States, temples often also function as community centers providing:</p>
+                    <ul class="principles-list">
+                        <li>language classes</li>
+                        <li>classical dance and music lessons</li>
+                        <li>weddings and ceremonies</li>
+                        <li>interfaith programs</li>
+                        <li>food assistance</li>
+                        <li>youth camps</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Hindu history includes many political models, from ancient kingdoms to modern democracy.</p>
+                    <p>There is no single Hindu political system. Hindus today live in:</p>
+                    <ul class="principles-list">
+                        <li>democracies, including India, the world's largest democracy</li>
+                        <li>secular states</li>
+                        <li>countries where Hindus are minorities</li>
+                    </ul>
+                    <p>Hindus in the United States participate in voting, public service, advocacy, and interfaith work.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Hinduism has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Buddhists</li>
+                        <li>Jains</li>
+                        <li>Sikhs</li>
+                        <li>Muslims</li>
+                        <li>Christians</li>
+                        <li>Jews</li>
+                        <li>Zoroastrians (Parsis)</li>
+                        <li>people of no religion</li>
+                    </ul>
+                    <p>India has given shelter to Jewish, Zoroastrian, and Tibetan Buddhist communities over the centuries.</p>
+                    <p>Many Hindus see other religions as different paths to the same truth.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Hinduism in America</h3>
+                    <p>Hindu ideas reached America in the 19th century through writers such as Ralph Waldo Emerson and Henry David Thoreau, who read the Bhagavad Gita. Swami Vivekananda's 1893 visit was a turning point.</p>
+                    <p>Large-scale Hindu immigration began after the Immigration and Nationality Act of 1965.</p>
+                    <p>American Hindus have roots in:</p>
+                    <ul class="principles-list">
+                        <li>India</li>
+                        <li>Nepal</li>
+                        <li>Sri Lanka</li>
+                        <li>Bangladesh</li>
+                        <li>the Caribbean</li>
+                        <li>Fiji</li>
+                        <li>Africa</li>
+                    </ul>
+                    <p>Hindu Americans today participate in medicine, engineering, technology, business, science, education, government, and the arts.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Hinduism and Humanity</h3>
+                    <p>Hindu civilization made major contributions in many areas.</p>
+                    <h3>Mathematics</h3>
+                    <p>Indian mathematicians developed the decimal place-value system and the use of zero as a number. Aryabhata and Brahmagupta made major contributions to algebra and astronomy.</p>
+                    <h3>Medicine</h3>
+                    <p>Ayurveda and the surgical text of Sushruta are among the oldest medical traditions.</p>
+                    <h3>Yoga and Meditation</h3>
+                    <p>Yoga and meditation are now practiced by millions worldwide. The United Nations declared June 21 as International Day of Yoga.</p>
+                    <h3>Arts and Architecture</h3>
+                    <p>Hindu temples, classical music, and dance forms such as Bharatanatyam have influenced art across Asia and the world.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Hinduism and Knowledge</h3>
+                    <p>Hindu tradition honors knowledge as sacred. The Upanishads distinguish between ordinary knowledge and higher knowledge of the self.</p>
+                    <p>Hindu thinkers debated logic, language, consciousness, and the nature of reality for thousands of years.</p>
+                    <h3>Hinduism and Justice</h3>
+                    <p>Dharma includes justice: protecting the weak, keeping order, and treating others fairly.</p>
+                    <p>Mahatma Gandhi drew on Hindu teachings of truth (satya) and non-violence (ahimsa) to develop non-violent resistance (satyagraha), which later inspired Martin Luther King Jr.</p>
+                    <h3>Hinduism and Human Dignity</h3>
+                    <p>Hinduism teaches that the same divine self (atman) lives in every being.</p>
+                    <p>This provides a Hindu foundation for:</p>
+                    <ul class="principles-list">
+                        <li>human equality</li>
+                        <li>respect for all life</li>
+                        <li>religious tolerance</li>
+                        <li>rejecting discrimination</li>
+                    </ul>
+                    <h3>Hinduism and Non-Violence</h3>
+                    <p>Ahimsa, non-violence toward all living beings, is one of the most important Hindu values.</p>
+                    <p>The Mahabharata says:</p>
+                    <blockquote>"Non-violence is the highest dharma." (Ahimsa paramo dharmah)</blockquote>
+                    <p>Ahimsa shapes Hindu views on food, ethics, and the environment.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Hinduism as Knowledge, Devotion, and Action</h3>
+                    <p>Hinduism does not reduce religion to belief. The Bhagavad Gita presents three main paths:</p>
+                    <h3>Jnana</h3>
+                    <p>The path of knowledge and wisdom.</p>
+                    <h3>Bhakti</h3>
+                    <p>The path of loving devotion to God.</p>
+                    <h3>Karma</h3>
+                    <p>The path of selfless action and duty.</p>
+                    <p>This framework can be useful for understanding Hinduism as knowledge + devotion + right action.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Daily Hindu practice is deeply personal and centered in the home. Most Hindu households have a dedicated shrine or altar where family members perform <em>Puja</em>—lighting a lamp (diya), offering flowers or fruit, burning incense, and ringing a bell to honor the divine.</p>
-                <p>Individuals may also practice <em>Japa</em> (the meditative repetition of a mantra, such as the Gayatri Mantra or "Om"), perform physical Yoga postures and breathwork, and engage in daily acts of respect, such as touching the feet of elders to seek their blessing.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Hinduism is one of the world's oldest living religious traditions, centered on one ultimate reality, the eternal self, dharma, karma, and liberation.</p>
+                <p>Its scriptures include the Vedas and Upanishads, the Bhagavad Gita, the epics, and the Puranas.</p>
+                <p>At its theological core are:</p>
+                <ul class="principles-list">
+                    <li>Brahman, the one ultimate reality</li>
+                    <li>God worshiped in many forms</li>
+                    <li>the eternal atman</li>
+                    <li>karma and rebirth</li>
+                    <li>moksha</li>
+                    <li>the authority of the Vedas</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>worship (puja)</li>
+                    <li>devotion</li>
+                    <li>meditation and yoga</li>
+                    <li>festivals</li>
+                    <li>pilgrimage</li>
+                    <li>rites of passage</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>dharma</li>
+                    <li>non-violence</li>
+                    <li>truthfulness</li>
+                    <li>generosity</li>
+                    <li>hospitality</li>
+                    <li>respect for parents and elders</li>
+                    <li>care for all living beings</li>
+                </ul>
+                <p>Hinduism has shaped philosophy, mathematics, medicine, art, music, and architecture for thousands of years. It should not be understood as a single culture. Hindus represent enormous linguistic, regional, and philosophical diversity.</p>
+                <p>Understanding Hinduism requires distinguishing among scripture, philosophy, devotion, history, and culture.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Hinduism has gifted the world profound tools for mental and physical well-being. The global spread of Yoga and mindfulness meditation, rooted entirely in ancient Hindu philosophy, has revolutionized modern approaches to holistic health, stress reduction, and psychology.</p>
-                <p>Furthermore, the deep Hindu commitment to <em>Ahimsa</em> (non-violence) provided the ethical blueprint for some of the 20th century's most successful civil rights movements, profoundly influencing leaders like Martin Luther King Jr. Finally, Hinduism's inherent reverence for nature—seeing rivers, mountains, and animals as sacred—offers a powerful, ancient framework for modern ecological conservation.</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Hinduism, we recommend relying on primary Hindu sources.</p>
+                <h3>1. The Vedas and Upanishads</h3>
+                <p>Useful passages include:</p>
+                <ul>
+                    <li>Rig Veda 1.164.46 — "Truth is one; the wise call it by many names"</li>
+                    <li>Rig Veda 3.62.10 — the Gayatri Mantra</li>
+                    <li>Rig Veda 10.129 — the Hymn of Creation (Nasadiya Sukta)</li>
+                    <li>Isha Upanishad — God in all things</li>
+                    <li>Katha Upanishad — death and the eternal self</li>
+                    <li>Chandogya Upanishad 6.8–6.16 — "You are That" (Tat tvam asi)</li>
+                    <li>Taittiriya Upanishad 1.11 — respect for parents, teachers, and guests</li>
+                    <li>Brihadaranyaka Upanishad 1.3.28 — "Lead me from the unreal to the real"</li>
+                </ul>
+                <h3>2. The Bhagavad Gita</h3>
+                <p>Especially important:</p>
+                <ul class="principles-list">
+                    <li>Chapter 2 — the eternal self and duty</li>
+                    <li>Chapter 3 — karma yoga</li>
+                    <li>Chapter 4 — avatars</li>
+                    <li>Chapter 6 — meditation and equal vision</li>
+                    <li>Chapter 12 — devotion</li>
+                    <li>Chapter 18 — summary of the teaching</li>
+                </ul>
+                <h3>3. The Epics and Puranas</h3>
+                <ul class="principles-list">
+                    <li>Ramayana of Valmiki</li>
+                    <li>Mahabharata</li>
+                    <li>Bhagavata Purana</li>
+                </ul>
+                <h3>4. Philosophical Texts</h3>
+                <ul>
+                    <li>Yoga Sutras of Patanjali</li>
+                    <li>Brahma Sutras with the commentaries of Shankara, Ramanuja, and Madhva</li>
+                </ul>
+                <h3>5. Devotional Literature</h3>
+                <ul class="principles-list">
+                    <li>Tamil Tirumurai and Divya Prabandham</li>
+                    <li>Ramcharitmanas of Tulsidas</li>
+                    <li>poems of Mirabai and Kabir</li>
+                </ul>
+                <h3>6. Demographic Data</h3>
+                <ul>
+                    <li>Pew Research Center, "How the Global Religious Landscape Changed From 2010 to 2020" (2025)</li>
+                </ul>
             </div>
 
         </section>
@@ -481,15 +1479,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

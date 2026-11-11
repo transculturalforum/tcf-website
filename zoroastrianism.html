@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,159 +311,823 @@
         <p>One of the world's oldest continuously practiced monotheistic religions, originating in ancient Persia and grounded in the cosmic struggle between truth and falsehood.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Zoroastrianism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Traditions and Communities</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Zoroastrianism, founded by the Prophet Zarathustra (Zoroaster) in ancient Iran, is one of the world's oldest organized faiths. It served as the state religion of the pre-Islamic Persian empires for over a millennium and profoundly influenced the theological development of Judaism, Christianity, and Islam.</p>
-                <p>The faith is fundamentally monotheistic, centered on the worship of <em>Ahura Mazda</em> (the "Wise Lord"), the supreme, omniscient, and entirely good creator of the universe. Zoroastrian cosmology is defined by a cosmic dualism: the ongoing moral and spiritual struggle between <em>Asha</em> (truth, order, and light) and <em>Druj</em> (falsehood, chaos, and darkness).</p>
-                <p>Human beings are viewed as crucial allies of Ahura Mazda in this struggle. The ultimate purpose of a Zoroastrian's life is to participate actively in the world to promote goodness through the core maxim: <em>Humata, Hukhta, Hvarshta</em> (Good Thoughts, Good Words, Good Deeds). The sacred texts of the faith are collectively known as the <em>Avesta</em>.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Zoroastrianism is one of the world's oldest continuously practiced religions. It was founded in ancient Iran by the prophet Zarathushtra, known in Greek as Zoroaster.</p>
+                <p>Zoroastrians believe in one supreme, wise, and good God, Ahura Mazda, the creator of all that is good. They teach that the world is the scene of a struggle between good and evil, truth and the lie, and that every person must freely choose to stand on the side of good.</p>
+                <p>Zoroastrianism was the main religion of several great Persian empires for more than a thousand years. Many scholars believe that its ideas about one God, angels, judgment, heaven and hell, resurrection, and a final renewal of the world influenced Judaism, Christianity, and Islam, though the extent of this influence is debated.</p>
+                <p>Zoroastrians understand their faith not simply as belief but as a way of life based on three principles:</p>
+                <blockquote>"Good thoughts, good words, good deeds." (Humata, Hukhta, Hvarshta)</blockquote>
+                <p>These three words are the best-known summary of the faith.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>The Zoroastrian worldview is guided by a profound sense of moral responsibility and purity. The core principles include:</p>
-                <ul class="principles-list">
-                    <li><strong>Ahura Mazda:</strong> Belief in one Supreme God, the uncreated, benevolent Wise Lord.</li>
-                    <li><strong>Asha:</strong> The cosmic principle of truth, righteousness, and divine order.</li>
-                    <li><strong>Druj:</strong> The opposing force of falsehood, deceit, and chaos.</li>
-                    <li><strong>Angra Mainyu:</strong> The destructive spirit responsible for evil, death, and suffering.</li>
-                    <li><strong>Free Will:</strong> Humans possess the ultimate freedom and responsibility to choose between good and evil.</li>
-                    <li><strong>Humata (Good Thoughts):</strong> The mental foundation of a righteous life.</li>
-                    <li><strong>Hukhta (Good Words):</strong> The verbal expression of truth and kindness.</li>
-                    <li><strong>Hvarshta (Good Deeds):</strong> The physical manifestation of charity and constructive action.</li>
-                    <li><strong>Amesha Spentas:</strong> The "Bounteous Immortals," divine sparks or emanations of Ahura Mazda.</li>
-                    <li><strong>Yazatas:</strong> Venerable spiritual beings or angels worthy of worship.</li>
-                    <li><strong>Sanctity of Elements:</strong> Fire, water, earth, and air are sacred creations and must not be polluted.</li>
-                    <li><strong>Sacred Fire:</strong> Revered not as a god, but as the ultimate symbol of Ahura Mazda's light, truth, and purity.</li>
-                    <li><strong>Chinvat Bridge:</strong> The Bridge of Judgment crossed by the soul after death.</li>
-                    <li><strong>Heaven and Hell:</strong> States of existence representing the culmination of the soul's choices, rather than eternal physical places.</li>
-                    <li><strong>Frashokereti:</strong> The final, ultimate renovation of the universe where evil is permanently destroyed.</li>
-                    <li><strong>Saoshyant:</strong> The belief in a future savior figure who will lead humanity in the final renovation.</li>
-                    <li><strong>Spiritual Equality:</strong> Men and women are entirely equal in their spiritual duties and access to salvation.</li>
-                    <li><strong>Charity and Philanthropy:</strong> A strict obligation to alleviate the suffering of others and build up the community.</li>
-                    <li><strong>Active Participation:</strong> Asceticism and withdrawal from the world are rejected; one must actively fight evil through a joyful, constructive life.</li>
-                    <li><strong>Sudreh and Kusti:</strong> The sacred white undergarment and woven cord worn daily as spiritual armor.</li>
-                </ul>
-            </div>
-
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>Zoroastrianism has very few absolute dietary restrictions. Followers are generally encouraged to eat a balanced, healthy diet to maintain the strength needed to perform good deeds. While some fasting is practiced in other religions, Zoroastrianism discourages severe fasting or bodily deprivation, viewing it as weakening a warrior of Ahura Mazda. However, in the Indian Parsi community, many abstain from beef and pork out of respect for local Hindu and Muslim cultures.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>The faith views sickness, disease, and death as the work of the destructive spirit (Angra Mainyu). Therefore, practicing medicine, healing the sick, and pursuing scientific advancement are seen as direct, holy acts of combating evil. Physical and mental health are highly prized.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Modern Zoroastrianism generally supports blood transfusions and organ transplants. Because saving a life and alleviating suffering are paramount expressions of "Good Deeds," these medical interventions are seen as deeply aligning with the faith's core values.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Cleanliness is absolute and central to the faith. Zoroastrians view physical dirt, pollution, and decay as manifestations of Druj (chaos). Elaborate purification rituals (like the <em>Padyab</em>) are performed before prayers. The elements—especially water and fire—must be kept pristine, which historically led to unique funerary practices to avoid polluting the earth or fire with a corpse.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
-            <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+            <!-- ZOROASTRIANISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Zoroastrianism at a Glance</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founder: Zarathustra</h3>
-                    <p>Prophet Zarathustra (known to the Greeks as Zoroaster) lived in ancient Eastern Iran or Central Asia. His exact dates are highly debated by scholars, ranging from the 2nd millennium BCE to the 6th century BCE. He rejected the polytheistic, ritualistic religions of his time, preaching a radical monotheism focused on ethical responsibility. His original teachings and hymns are preserved in the <em>Gathas</em>, the oldest portion of the Avesta.</p>
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Zoroastrianism</p>
+                    <p>A follower is called a Zoroastrian. The religion is also known as Mazdayasna, "the worship of Mazda," and its followers as Mazdayasnians.</p>
+                    <p>Zoroastrians in India are known as Parsis ("Persians"), and those who remained in Iran are often called Iranis or Iranian Zoroastrians.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Zoroastrianism was the dominant state religion of three massive, successive Persian Empires: the Achaemenid, Parthian, and Sasanian. At its peak, the faith spanned from Greece and Egypt in the west to the Indus Valley in the east. It was severely diminished following the Arab-Islamic conquest of Persia in the 7th century CE, leading to centuries of decline and the migration of refugees to India.</p>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>The world's Zoroastrian population is small: estimates generally range from about 100,000 to 200,000 people.</p>
+                    <p>India's 2011 census counted about 57,000 Parsis. Iran has an estimated 15,000 to 25,000 Zoroastrians. The rest live in diaspora communities.</p>
+                    <p>The community has been declining in many places because of low birth rates, emigration, and marriage outside the faith.</p>
+                    <p>Some estimates are higher when they include people in Iran, Central Asia, and Kurdish regions who identify with Zoroastrian heritage.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, Zoroastrianism is one of the world's smallest religions, with estimates of only 100,000 to 200,000 followers worldwide. The two primary populations are the Parsis in India (descendants of the Persian refugees) and the native Iranian Zoroastrians. Significant modern diaspora communities now exist in North America, the United Kingdom, and Australia.</p>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Zoroastrianism Is Practiced</h3>
+                    <p>Zoroastrians live mainly in:</p>
+                    <ul class="principles-list">
+                        <li>India, especially Mumbai and Gujarat</li>
+                        <li>Iran, especially Tehran, Yazd, and Kerman</li>
+                        <li>the United States</li>
+                        <li>Canada</li>
+                        <li>the United Kingdom</li>
+                        <li>Australia</li>
+                        <li>Pakistan, especially Karachi</li>
+                        <li>the Gulf states</li>
+                        <li>New Zealand</li>
+                    </ul>
+                    <p>Avestan is the sacred language of Zoroastrian scripture. Middle Persian (Pahlavi) was used for later religious texts. Parsis speak Gujarati and English, and Iranian Zoroastrians speak Persian and Dari.</p>
                 </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
-                    <ul>
-                        <li><strong>Cyrus the Great (c. 600–530 BCE):</strong> The Achaemenid Emperor who, influenced by Zoroastrian tolerance, freed the Jewish people from Babylonian captivity and funded the rebuilding of their Temple.</li>
-                        <li><strong>Darius the Great (550–486 BCE):</strong> Persian King who formalized Ahura Mazda as the supreme deity of the empire.</li>
-                        <li><strong>King Vishtaspa:</strong> The early patron king who protected Zarathustra and allowed the faith to spread.</li>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>Zoroastrianism does not have major denominations, but there are important communities and differences:</p>
+                    <h3>Parsis</h3>
+                    <p>Descendants of Zoroastrians who migrated from Iran to India, traditionally in the 8th to 10th centuries CE.</p>
+                    <h3>Iranian Zoroastrians</h3>
+                    <p>Descendants of those who remained in Iran.</p>
+                    <h3>Calendar Differences</h3>
+                    <p>There are three calendars in use: Shahenshahi, Kadmi, and Fasli. This means some festivals are celebrated on different dates by different groups.</p>
+                    <h3>Traditional and Reformist Views</h3>
+                    <p>Communities differ on matters such as accepting converts, interfaith marriage, and funeral practices.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Zoroastrian Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Ahura Mazda:</strong> "Wise Lord"; God</li>
+                        <li><strong>Zarathushtra (Zoroaster):</strong> The prophet of the faith</li>
+                        <li><strong>Avesta:</strong> The Zoroastrian scriptures</li>
+                        <li><strong>Gathas:</strong> Hymns composed by Zarathushtra</li>
+                        <li><strong>Asha:</strong> Truth, righteousness, cosmic order</li>
+                        <li><strong>Druj:</strong> The lie, falsehood, disorder</li>
+                        <li><strong>Spenta Mainyu:</strong> The Holy or Bounteous Spirit</li>
+                        <li><strong>Angra Mainyu (Ahriman):</strong> The destructive spirit</li>
+                        <li><strong>Amesha Spentas:</strong> Six "Bounteous Immortals," divine qualities</li>
+                        <li><strong>Yazatas:</strong> "Ones worthy of worship"; divine beings</li>
+                        <li><strong>Fravashi:</strong> The guardian spirit of each person</li>
+                        <li><strong>Atash:</strong> Sacred fire</li>
+                        <li><strong>Atash Behram:</strong> The highest grade of sacred fire</li>
+                        <li><strong>Agiary / Dar-e Mehr:</strong> Fire temple</li>
+                        <li><strong>Navjote / Sedreh-pushi:</strong> Initiation ceremony</li>
+                        <li><strong>Sudreh:</strong> Sacred undershirt</li>
+                        <li><strong>Kusti:</strong> Sacred cord worn around the waist</li>
+                        <li><strong>Chinvat Bridge:</strong> The bridge of judgment after death</li>
+                        <li><strong>Frashokereti:</strong> The final renewal of the world</li>
+                        <li><strong>Saoshyant:</strong> The future savior</li>
+                        <li><strong>Mobed / Dastur:</strong> Priest / high priest</li>
+                        <li><strong>Nowruz:</strong> The New Year</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
-                    <ul>
-                        <li><strong>Dadabhai Naoroji (1825–1917):</strong> Parsi intellectual and the first Asian to be a British MP, instrumental in the early Indian independence movement.</li>
-                        <li><strong>Jamsetji Tata (1839–1904):</strong> Founder of the Tata Group, a massively influential Parsi industrialist and philanthropist in India.</li>
-                        <li><strong>Freddie Mercury (1946–1991):</strong> Born Farrokh Bulsara, the legendary lead singer of Queen was raised in a Parsi Zoroastrian family.</li>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>Core Zoroastrian beliefs include:</p>
+                    <ol>
+                        <li>one supreme God, Ahura Mazda</li>
+                        <li>Zarathushtra as God's prophet</li>
+                        <li>the cosmic struggle between good (asha) and evil (druj)</li>
+                        <li>human free will to choose good</li>
+                        <li>judgment of each soul after death</li>
+                        <li>the final defeat of evil and renewal of the world</li>
+                    </ol>
+                    <p>The ethical heart of the faith is the threefold path of good thoughts, good words, and good deeds.</p>
+                    <p>Zoroastrians also honor the Amesha Spentas, six divine qualities or beings created by Ahura Mazda:</p>
+                    <ol>
+                        <li>Vohu Manah — Good Mind</li>
+                        <li>Asha Vahishta — Best Truth</li>
+                        <li>Khshathra Vairya — Desirable Dominion</li>
+                        <li>Spenta Armaiti — Holy Devotion</li>
+                        <li>Haurvatat — Wholeness</li>
+                        <li>Ameretat — Immortality</li>
+                    </ol>
+                    <p>Each is also linked with a part of creation, such as animals, fire, metals, earth, water, and plants.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Zoroastrian Holidays</h3>
+                    <h3>Nowruz</h3>
+                    <p>The New Year, celebrated at the spring equinox, around March 20 or 21. It celebrates renewal and the triumph of light. Nowruz is now celebrated by many peoples of Iran, Central Asia, and beyond.</p>
+                    <p>It is a time of:</p>
+                    <ul class="principles-list">
+                        <li>prayer</li>
+                        <li>visiting family and friends</li>
+                        <li>new clothes</li>
+                        <li>special foods</li>
+                        <li>setting a festive table with symbolic items</li>
+                        <li>charity</li>
+                    </ul>
+                    <h3>Gahambars</h3>
+                    <p>Six seasonal festivals that honor the stages of creation. Communities share meals, and rich and poor eat together.</p>
+                    <h3>Muktad (Farvardigan)</h3>
+                    <p>The last ten days of the year, when the souls of the departed are remembered.</p>
+                    <h3>Other Observances</h3>
+                    <ul class="principles-list">
+                        <li>Khordad Sal: the birthday of Zarathushtra</li>
+                        <li>Zartosht no Diso: the anniversary of Zarathushtra's death</li>
+                        <li>Sadeh: a midwinter fire festival in Iran</li>
+                        <li>Mehregan and Tirgan: ancient Iranian festivals</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The faith survived the collapse of the Persian Empire and centuries of persecution through profound resilience. Continuity was maintained by the hereditary priesthood (the <em>Mobed</em>), who memorized and orally transmitted the complex Avestan liturgies. For the Parsis in India, continuity was preserved through strict endogamy (marrying only within the faith) to protect their unique identity as a tiny minority in a massive Hindu/Muslim landscape.</p>
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God, Zarathushtra &amp; Revelation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">The Avesta</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Charity &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Afterlife</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>Zoroastrians believe in one supreme God, Ahura Mazda, the "Wise Lord."</p>
+                    <p>Ahura Mazda is described as:</p>
+                    <ul class="principles-list">
+                        <li>the creator of all good things</li>
+                        <li>wise</li>
+                        <li>just</li>
+                        <li>good</li>
+                        <li>the source of truth and light</li>
+                        <li>a friend to humanity</li>
+                    </ul>
+                    <p>Ahura Mazda does not create evil. Evil comes from Angra Mainyu, the destructive spirit, who opposes the good creation.</p>
+                    <p>Zoroastrianism rejects:</p>
+                    <ul class="principles-list">
+                        <li>worship of evil powers</li>
+                        <li>the idea that God is the source of suffering</li>
+                        <li>the idea that people are puppets of fate</li>
+                        <li>falsehood</li>
+                    </ul>
+                    <h3>Zarathushtra</h3>
+                    <p>Zarathushtra is the prophet of the faith. Zoroastrians believe Ahura Mazda revealed the truth to him in a series of visions.</p>
+                    <p>Scholars disagree about when he lived. Many place him between about 1500 and 1000 BCE, based on the language of the Gathas, while others suggest a later date around the 7th or 6th centuries BCE. He likely lived in eastern Iran or Central Asia.</p>
+                    <p>According to tradition, he was a priest who received his first vision at age 30, faced strong opposition, and finally found support from King Vishtaspa.</p>
+                    <p>He is honored as a prophet, not as God.</p>
+                    <h3>Revelation</h3>
+                    <p>Zoroastrians believe Zarathushtra received direct revelation from Ahura Mazda. His own words are preserved in the Gathas, 17 hymns in the Old Avestan language.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Avesta</h3>
+                    <p>The Avesta is the sacred scripture of Zoroastrianism. Much of it was lost over the centuries, especially during invasions. What survives includes:</p>
+                    <ul class="principles-list">
+                        <li>the Yasna, the main liturgy, which contains the Gathas</li>
+                        <li>the Visperad, additions to the Yasna</li>
+                        <li>the Vendidad (Videvdad), laws of purity and against evil</li>
+                        <li>the Yashts, hymns to divine beings</li>
+                        <li>the Khordeh Avesta, a book of daily prayers</li>
+                    </ul>
+                    <p>It contains:</p>
+                    <ul class="principles-list">
+                        <li>hymns of praise</li>
+                        <li>teachings on good and evil</li>
+                        <li>prayers</li>
+                        <li>laws of purity</li>
+                        <li>stories of creation</li>
+                        <li>descriptions of the end of time</li>
+                    </ul>
+                    <h3>Later Texts</h3>
+                    <p>Many Zoroastrian teachings were set down in Middle Persian (Pahlavi) texts from the 9th and 10th centuries CE, including:</p>
+                    <ul class="principles-list">
+                        <li>the Bundahishn, on creation</li>
+                        <li>the Denkard, an encyclopedia of Zoroastrian knowledge</li>
+                        <li>the Arda Viraf Namag, a vision of heaven and hell</li>
+                    </ul>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Divine and Spiritual Beings</h3>
+                    <p>Zoroastrians honor:</p>
+                    <ul>
+                        <li>the Amesha Spentas, the six "Bounteous Immortals"</li>
+                        <li>the Yazatas, divine beings such as Mithra (covenant and truth), Anahita (waters), and Sraosha (obedience and prayer)</li>
+                        <li>the Fravashis, guardian spirits of the righteous</li>
+                    </ul>
+                    <p>Angra Mainyu, also called Ahriman, leads the forces of evil, along with demons (daevas).</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Zoroastrianism teaches that humans are created good by Ahura Mazda.</p>
+                    <p>Every person has free will and must choose between good and evil. The Gathas describe this choice as a choice between two primal spirits.</p>
+                    <p>Zoroastrianism does not teach inherited sin. Each person is judged by their own thoughts, words, and deeds.</p>
+                    <h3>Sin</h3>
+                    <p>Sin is anything that supports the lie (druj) and harms the good creation.</p>
+                    <p>Sin includes:</p>
+                    <ul class="principles-list">
+                        <li>falsehood</li>
+                        <li>injustice</li>
+                        <li>cruelty</li>
+                        <li>pollution of the elements</li>
+                        <li>breaking promises</li>
+                        <li>harming the good creation</li>
+                    </ul>
+                    <h3>Repentance</h3>
+                    <p>Zoroastrianism teaches that wrongdoing can be overcome by repentance and good deeds.</p>
+                    <p>A person who has done wrong is encouraged to:</p>
+                    <ol>
+                        <li>recognize the wrong</li>
+                        <li>confess it</li>
+                        <li>sincerely regret it</li>
+                        <li>pray for forgiveness, using the Patet prayers of repentance</li>
+                        <li>make amends with good actions</li>
+                    </ol>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>Zoroastrians traditionally pray five times a day, during five periods called gahs.</p>
+                    <p>Common prayers include:</p>
+                    <ul>
+                        <li>the Ashem Vohu, praising truth</li>
+                        <li>the Ahuna Vairya (Yatha Ahu Vairyo), the most sacred prayer</li>
+                        <li>the Kusti prayers, said while untying and retying the sacred cord</li>
+                    </ul>
+                    <p>Zoroastrians often pray facing a source of light, such as the sun, a lamp, or fire.</p>
+                    <p>Fire temples house sacred fires. The highest grade, the Atash Behram, may be kept burning continuously for centuries. Only Zoroastrians traditionally enter the inner areas of fire temples in India.</p>
+                    <p>Zoroastrians do not worship fire itself. Fire is a symbol of God's light, purity, and truth.</p>
+                    <h3>Charity</h3>
+                    <p>Charity is a strong value in Zoroastrian life.</p>
+                    <p>Charity may involve:</p>
+                    <ul class="principles-list">
+                        <li>helping the poor</li>
+                        <li>supporting education</li>
+                        <li>building hospitals</li>
+                        <li>community housing</li>
+                        <li>supporting priests and fire temples</li>
+                        <li>public service</li>
+                    </ul>
+                    <p>Parsi philanthropists built many hospitals, schools, and institutions in India.</p>
+                    <h3>Fasting</h3>
+                    <p>Zoroastrianism generally does not encourage fasting. It values health, joy, and active life. Fasting and extreme self-denial are seen as weakening a person's ability to do good.</p>
+                    <p>Some Zoroastrians avoid meat on certain days of the month dedicated to animals.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Zoroastrianism regards life as good and as a gift of Ahura Mazda.</p>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>think, speak, and act well</li>
+                        <li>tell the truth</li>
+                        <li>work hard</li>
+                        <li>marry and raise families</li>
+                        <li>care for the elements: fire, water, earth, and air</li>
+                        <li>help the poor</li>
+                        <li>enjoy life with gratitude</li>
+                    </ul>
+                    <p>Zoroastrianism rejects withdrawal from the world. It encourages active participation in improving the world.</p>
+                    <h3>Death</h3>
+                    <p>Death is seen as the work of evil. A dead body is considered impure, so special rites protect the living and the elements from it.</p>
+                    <h3>Afterlife</h3>
+                    <p>Zoroastrianism teaches:</p>
+                    <ol>
+                        <li>the soul stays near the body for three days after death</li>
+                        <li>on the fourth dawn it crosses the Chinvat Bridge</li>
+                        <li>the soul is judged</li>
+                        <li>it goes to the House of Song (heaven), the House of the Lie (hell), or an intermediate place</li>
+                        <li>at the end of time, resurrection and the final renewal</li>
+                    </ol>
+                    <h3>Heaven</h3>
+                    <p>Heaven is called the House of Song (Garo Demana) or the Best Existence. It is a place of light, joy, and nearness to Ahura Mazda.</p>
+                    <h3>Hell</h3>
+                    <p>Hell is called the House of the Lie (Druj Demana). It is a place of darkness and suffering.</p>
+                    <p>In Zoroastrian teaching, hell is not eternal. At the end of time, all souls will be purified.</p>
+                    <h3>Judgment</h3>
+                    <p>After death, each soul's thoughts, words, and deeds are weighed. The soul then crosses the Chinvat Bridge.</p>
+                    <p>Tradition describes the bridge as becoming wide for the righteous and narrow like a blade for the wicked. The righteous soul is met by a beautiful maiden representing its own conscience (daena), and the wicked by a hideous figure.</p>
+                    <h3>The Final Renewal</h3>
+                    <p>Zoroastrianism teaches that at the end of time, a savior called the Saoshyant will come. The dead will be resurrected, evil will be defeated, and the world will be made perfect again. This renewal is called Frashokereti.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will</h3>
+                    <p>Free will is central to Zoroastrianism. Every person freely chooses whether to support good or evil, and each choice matters for the outcome of the cosmic struggle.</p>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Zoroastrian ethics are summarized in good thoughts, good words, and good deeds.</p>
+                    <p>Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>truthfulness</li>
+                        <li>justice</li>
+                        <li>honesty</li>
+                        <li>charity</li>
+                        <li>hard work</li>
+                        <li>keeping promises</li>
+                        <li>loyalty</li>
+                        <li>care for the environment</li>
+                        <li>respect for parents</li>
+                        <li>cleanliness and purity</li>
+                    </ul>
+                    <p>The Ashem Vohu prayer teaches:</p>
+                    <blockquote>"Righteousness is the best good. Happiness comes to the one who is righteous for the sake of the best righteousness."</blockquote>
+                    <h3>Family</h3>
+                    <p>Family is central to Zoroastrian life.</p>
+                    <p>Zoroastrianism places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>parents</li>
+                        <li>children</li>
+                        <li>spouses</li>
+                        <li>elders</li>
+                        <li>ancestors</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is highly valued and seen as a religious duty. A Parsi wedding (lagan) includes prayers, the blessing of the couple by priests, and the throwing of rice.</p>
+                    <p>Whether children of mixed marriages, especially children of Parsi women who marry outside the faith, are accepted as Zoroastrian is a major debate in the community.</p>
+                    <h3>Community</h3>
+                    <p>Zoroastrian community life centers around:</p>
+                    <ul class="principles-list">
+                        <li>fire temples</li>
+                        <li>community halls</li>
+                        <li>charitable trusts</li>
+                        <li>the anjuman (local community association)</li>
+                        <li>the panchayat (community council)</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Zoroastrian ethics call for truth and justice toward all.</p>
+                    <p>Cyrus the Great, a ruler of the Persian empire who followed Iranian religious traditions, is remembered for allowing conquered peoples to practice their own religions and for allowing the Jews to return to Jerusalem.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Zoroastrians worship fire.</strong><br>
-                Reality: They do not worship fire itself as a god. Fire (Atar) is revered as a sacred element and the purest physical manifestation of Ahura Mazda's light and wisdom. They pray facing a flame just as Muslims face the Kaaba or Jews face Jerusalem.</p>
-                <p><strong>Misconception: It is a polytheistic or equally dualistic religion.</strong><br>
-                Reality: Ahura Mazda is the supreme, uncreated Creator. The destructive spirit (Angra Mainyu) is not an equal "evil god," but a lesser, opposing force that will ultimately be defeated at the end of time.</p>
-                <p><strong>Misconception: It is a dead or extinct religion.</strong><br>
-                Reality: Though small in number, the Zoroastrian community remains a vibrant, deeply philanthropic, and culturally influential global presence today.</p>
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Gathas</h3>
+                <p>The Gathas are the most sacred Zoroastrian texts because they are believed to be the words of Zarathushtra himself.</p>
+                <p>Their major themes include:</p>
+                <ul class="principles-list">
+                    <li>Ahura Mazda</li>
+                    <li>truth and the lie</li>
+                    <li>free choice</li>
+                    <li>the good mind</li>
+                    <li>devotion</li>
+                    <li>justice</li>
+                    <li>the final judgment</li>
+                </ul>
+                <h3>The Avesta</h3>
+                <p>The wider Avesta includes prayers, hymns, laws, and rituals.</p>
+                <p>The Vendidad answers practical questions such as:</p>
+                <ul class="principles-list">
+                    <li>How should purity be kept?</li>
+                    <li>How should the dead be treated?</li>
+                    <li>How should fire, water, and earth be protected?</li>
+                    <li>How should one fight evil?</li>
+                </ul>
+                <h3>Zoroastrian Scholarship</h3>
+                <p>Zoroastrian priests preserved the Avesta orally for many centuries. In the Sasanian period (224–651 CE), they created a special alphabet to write it down.</p>
+                <p>In the modern era, Parsi scholars and Western researchers have studied the Avestan language and history.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>The most pressing existential challenge for Zoroastrianism today is extreme demographic decline. Because traditional Parsi communities strictly prohibit conversion and only recognize children of Zoroastrian fathers as members of the faith, low birth rates and high rates of interfaith marriage are rapidly shrinking the population.</p>
-                <p>This has sparked intense, ongoing internal debates between orthodox members (who believe strict rules are necessary to preserve ethnic and religious purity) and reformists (who argue that the faith must accept converts and the children of intermarried women to survive).</p>
+            <!-- HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">The Persian Empires</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Sacred Places</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Decline and Migration</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
+                </div>
+
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Zarathushtra preached in ancient eastern Iran or Central Asia. His teachings emphasized:</p>
+                    <ul class="principles-list">
+                        <li>one supreme God</li>
+                        <li>truth and justice</li>
+                        <li>free choice</li>
+                        <li>rejection of violent rituals and corrupt priests</li>
+                        <li>the coming judgment</li>
+                    </ul>
+                </div>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>The Persian Empires</h3>
+                    <p>Zoroastrianism became central in ancient Iran.</p>
+                    <h3>Achaemenid Empire (c. 550–330 BCE)</h3>
+                    <p>Founded by Cyrus the Great. Darius I and later kings honored Ahura Mazda, and Darius's inscriptions name Ahura Mazda as the source of his rule. Historians debate how fully the early Achaemenid kings followed Zarathushtra's teaching.</p>
+                    <h3>Parthian Empire (247 BCE–224 CE)</h3>
+                    <p>Zoroastrian practice continued.</p>
+                    <h3>Sasanian Empire (224–651 CE)</h3>
+                    <p>Zoroastrianism became the official state religion. Fire temples flourished, and the Avesta was written down.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Sacred Places</h3>
+                    <p>Important places include:</p>
+                    <ul>
+                        <li>Yazd, Iran, home of an Atash Behram whose fire tradition holds has burned for over 1,500 years</li>
+                        <li>Chak Chak, a mountain shrine near Yazd</li>
+                        <li>Udvada, Gujarat, India, home of the Iranshah Atash Behram, which has burned since the Parsis arrived in India</li>
+                        <li>Mumbai's fire temples</li>
+                    </ul>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Decline and Migration</h3>
+                    <p>After the Arab conquest of Iran in the 7th century, Zoroastrians gradually became a minority as most Iranians converted to Islam.</p>
+                    <p>According to the Qissa-i Sanjan, a group of Zoroastrians traveled to India and arrived at Sanjan in Gujarat. A local ruler welcomed them on certain conditions. They became the Parsi community.</p>
+                    <p>The Parsis later flourished, especially in Mumbai under British rule, in business, industry, and philanthropy.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>c. 1500–1000 BCE (dates debated):</strong> Life of Zarathushtra.</li>
+                        <li><strong>c. 550–330 BCE:</strong> Achaemenid Empire; Cyrus the Great.</li>
+                        <li><strong>539 BCE:</strong> Cyrus conquers Babylon and allows exiled peoples, including the Jews, to return home.</li>
+                        <li><strong>224–651 CE:</strong> Sasanian Empire; Zoroastrianism is the state religion.</li>
+                        <li><strong>7th century:</strong> Arab conquest of Iran.</li>
+                        <li><strong>c. 8th–10th centuries:</strong> Parsis migrate to India.</li>
+                        <li><strong>9th–10th centuries:</strong> Middle Persian texts such as the Denkard and Bundahishn are written.</li>
+                        <li><strong>18th–19th centuries:</strong> Parsis rise to prominence in Mumbai.</li>
+                        <li><strong>1854:</strong> The Persian Zoroastrian Amelioration Fund is founded to help Zoroastrians in Iran.</li>
+                        <li><strong>20th century:</strong> Migration to North America, Britain, and Australia.</li>
+                        <li><strong>21st century:</strong> Communities worldwide work to preserve the faith and address declining numbers.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Zarathushtra</li>
+                        <li>King Vishtaspa</li>
+                        <li>Cyrus the Great</li>
+                        <li>Darius I</li>
+                        <li>Ardashir I, founder of the Sasanian Empire</li>
+                        <li>Kartir, a Sasanian high priest</li>
+                        <li>Dadabhai Naoroji, early Indian nationalist and British MP</li>
+                        <li>Jamsetji Tata, industrialist</li>
+                        <li>Sir Dorabji Tata</li>
+                        <li>Homi Bhabha, nuclear physicist</li>
+                        <li>many priests, scholars, merchants, and philanthropists across Zoroastrian history</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Devout Zoroastrians pray five times a day, always facing a source of light (the sun, the moon, or a fire). The central daily practice for initiated members is the untying and retying of the <em>Kusti</em> (a sacred woven cord worn over a white <em>Sudreh</em> shirt) while reciting specific prayers, serving as a physical reminder of their spiritual armor against evil.</p>
-                <p>Communal practice involves visiting the Fire Temple (Agiary or Atash Behram), where eternal flames are continuously fed with sandalwood and tended to by priests. </p>
+            <!-- TRADITIONS AND COMMUNITIES -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Traditions and Communities</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Parsis</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Iranian Zoroastrians</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Parsis</h3>
+                    <p>The Parsi community of India has preserved ancient rituals and priestly traditions. Parsis are known for education, business, and charity.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Iranian Zoroastrians</h3>
+                    <p>Iranian Zoroastrians have kept their faith through centuries as a minority. Iran's constitution recognizes Zoroastrians as a religious minority with a reserved seat in parliament.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Traditional and Reformist Interpretations</h3>
+                    <p>Zoroastrians today differ on:</p>
+                    <ul>
+                        <li>accepting converts</li>
+                        <li>children of interfaith marriages</li>
+                        <li>funeral practices</li>
+                        <li>the role of ritual purity</li>
+                        <li>the role of women as priests (some communities now train women as mobedyars)</li>
+                        <li>the authority of later texts compared with the Gathas</li>
+                    </ul>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>India</h3>
+                    <p>Parsi traditions include Gujarati language, specific foods, and strict temple access rules.</p>
+                    <h3>Iran</h3>
+                    <p>Iranian Zoroastrians celebrate festivals such as Sadeh and keep their own customs.</p>
+                    <h3>Diaspora</h3>
+                    <p>In North America, Parsis and Iranians often worship together in Dar-e Mehrs.</p>
+                    <h3>United States</h3>
+                    <p>American Zoroastrians include Parsis from India and Pakistan, Iranians, and some converts. FEZANA, the Federation of Zoroastrian Associations of North America, connects communities.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>It is important to distinguish between Zoroastrian teaching and Parsi or Iranian culture.</p>
+                    <p>Examples of cultural practices that are not core religious requirements include:</p>
+                    <ul class="principles-list">
+                        <li>specific Parsi foods</li>
+                        <li>Gujarati language</li>
+                        <li>particular wedding customs</li>
+                        <li>regional dress</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Zoroastrianism's theological innovations—such as a linear view of time, a final judgment, a savior figure, and a cosmic struggle between good and evil—profoundly shaped the foundations of Judaism, Christianity, and Islam, making it one of the most influential belief systems in human history.</p>
-                <p>In the modern era, the Parsi community in India has had an outsized impact on global philanthropy and industry. Driven by the maxim of "Good Deeds," Zoroastrian families (like the Tatas and Godrejs) built much of India's modern infrastructure, including premier hospitals, scientific research institutes, universities, and massive charitable trusts that benefit people of all faiths.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Zoroastrians worship fire.</strong><br>
+                Fact: Zoroastrians pray in the presence of fire as a symbol of God's light and purity. They worship Ahura Mazda.</p>
+                <p><strong>Myth: Zoroastrianism has two equal gods.</strong><br>
+                Fact: Zoroastrianism teaches that Ahura Mazda is the one supreme God. Evil is real but is not equal to God and will be defeated.</p>
+                <p><strong>Myth: Zoroastrianism is extinct.</strong><br>
+                Fact: Zoroastrianism is a living religion practiced by communities in India, Iran, and around the world.</p>
+                <p><strong>Myth: Zoroastrianism is the same as ancient Persian culture.</strong><br>
+                Fact: Zoroastrianism is a religion. Iranian culture includes many traditions from Zoroastrian, Islamic, and other sources.</p>
+                <p><strong>Myth: All Zoroastrians use Towers of Silence.</strong><br>
+                Fact: Traditional Parsis in India use dakhmas (Towers of Silence), where bodies are exposed to the sun and birds. Many Zoroastrians today, including in Iran and the diaspora, use burial or cremation.</p>
+            </div>
+
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Zoroastrianism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Zoroastrianism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice &amp; Human Dignity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Thought, Word &amp; Deed</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Zoroastrian life.</p>
+                    <p>Zoroastrians are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents</li>
+                        <li>marriage</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>remembrance of ancestors</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is a religious duty and a joyful event.</p>
+                    <h3>Children</h3>
+                    <p>Children are initiated into the faith through the Navjote (in India) or Sedreh-pushi (in Iran), usually between ages 7 and 15. The child puts on the sudreh and kusti for the first time.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                    </ul>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Education is highly valued. Parsis were pioneers of education in India, including for girls.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Zoroastrianism does not have strict dietary laws. Many Zoroastrians eat meat, though some avoid it on certain days. Good food is enjoyed as part of a happy life.</p>
+                    <h3>Clothing</h3>
+                    <p>Initiated Zoroastrians wear the sudreh (a white undershirt) and the kusti (a cord tied around the waist), which they untie and retie during prayers.</p>
+                    <p>Many wear a head covering during prayer. Priests wear white.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Zarathushtra addressed both men and women in his teachings. Both are equally responsible for choosing good.</p>
+                    <p>Traditionally only men were priests. Today, women have been trained as assistant priests (mobedyars) in Iran and North America.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Hard work is a religious virtue. Farming and productive work are praised in the Avesta as helping the good creation.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Zoroastrian business ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>keeping contracts</li>
+                        <li>fair dealing</li>
+                        <li>charity</li>
+                    </ul>
+                    <p>Mithra, the divine being of covenant, represents faithfulness to agreements.</p>
+                    <h3>Charity</h3>
+                    <p>Charity is integrated into Zoroastrian life. Parsi trusts provide housing, healthcare, and education.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Zoroastrianism values health and healing. Ancient texts mention three kinds of healing: by herbs, by the knife (surgery), and by holy words.</p>
+                    <p>Parsi philanthropists founded many hospitals.</p>
+                    <h3>Environment</h3>
+                    <p>Zoroastrianism teaches respect for the elements: fire, water, earth, and air. Polluting them is considered sinful. This has led many to describe Zoroastrianism as an early environmental faith.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Traditional Zoroastrian funeral practice includes:</p>
+                    <ul>
+                        <li>prayers</li>
+                        <li>a dog's gaze (sagdid), believed to drive away impurity</li>
+                        <li>exposure of the body in a dakhma (Tower of Silence) in traditional Parsi practice</li>
+                        <li>prayers for the soul for four days</li>
+                        <li>annual remembrance</li>
+                    </ul>
+                    <p>The aim is to avoid polluting fire, earth, and water. Because vultures have declined in India, some communities use solar concentrators, burial, or cremation.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The major Zoroastrian observances are Nowruz, the Gahambars, the Muktad, Khordad Sal, and Zartosht no Diso.</p>
+                    <h3>Community Life</h3>
+                    <p>Community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>fire temples</li>
+                        <li>community halls</li>
+                        <li>youth groups</li>
+                        <li>charitable trusts</li>
+                        <li>festivals</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Zoroastrians today live as minorities and participate in civic life. Parsis such as Dadabhai Naoroji and Pherozeshah Mehta were leaders of India's independence movement.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Zoroastrianism has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Jews</li>
+                        <li>Christians</li>
+                        <li>Muslims</li>
+                        <li>Hindus</li>
+                        <li>Buddhists</li>
+                    </ul>
+                    <p>The Hebrew Bible speaks of Cyrus with honor, calling him God's "anointed" (Isaiah 45:1).</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Zoroastrianism in America</h3>
+                    <p>Zoroastrians began settling in North America in large numbers in the late 20th century. They have built Dar-e Mehrs and community centers, and participate in medicine, engineering, business, law, and education.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Zoroastrianism and Humanity</h3>
+                    <h3>Ethical Monotheism</h3>
+                    <p>Zoroastrianism was among the earliest religions to teach one supreme good God, individual moral choice, and final judgment.</p>
+                    <h3>Human Rights</h3>
+                    <p>The Cyrus Cylinder, from 539 BCE, has been described by some as an early declaration of tolerance, though historians debate this description.</p>
+                    <h3>Philanthropy</h3>
+                    <p>Parsi philanthropy shaped modern India's education, science, and industry.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Zoroastrianism and Knowledge</h3>
+                    <p>Zoroastrianism values the Good Mind (Vohu Manah) and the use of wisdom in choosing right.</p>
+                    <h3>Zoroastrianism and Justice</h3>
+                    <p>Asha (truth and righteousness) is the central value of Zoroastrianism. Justice means living according to asha.</p>
+                    <h3>Zoroastrianism and Human Dignity</h3>
+                    <p>Every person is a creation of Ahura Mazda and has free will and moral responsibility.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Zoroastrianism as Thought, Word, and Deed</h3>
+                    <p>Zoroastrianism presents religion as:</p>
+                    <h3>Humata</h3>
+                    <p>Good thoughts.</p>
+                    <h3>Hukhta</h3>
+                    <p>Good words.</p>
+                    <h3>Hvarshta</h3>
+                    <p>Good deeds.</p>
+                    <p>This framework can be useful for understanding Zoroastrianism as right intention + right speech + right action.</p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Zoroastrianism is one of the oldest living religions, centered on Ahura Mazda, the teachings of Zarathushtra, and the struggle between truth and falsehood.</p>
+                <p>At its theological core are:</p>
+                <ul class="principles-list">
+                    <li>one supreme God</li>
+                    <li>the prophet Zarathushtra</li>
+                    <li>free will</li>
+                    <li>the struggle of good and evil</li>
+                    <li>judgment after death</li>
+                    <li>the final renewal of the world</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>prayer, often before fire</li>
+                    <li>the sudreh and kusti</li>
+                    <li>purity</li>
+                    <li>festivals</li>
+                    <li>charity</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>good thoughts, good words, good deeds</li>
+                    <li>truth</li>
+                    <li>justice</li>
+                    <li>care for the environment</li>
+                    <li>hard work</li>
+                    <li>generosity</li>
+                </ul>
+                <p>Though small in number today, Zoroastrians have made major contributions to religion, ethics, government, and philanthropy.</p>
+            </div>
+
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Zoroastrianism, we recommend relying on primary Zoroastrian sources.</p>
+                <h3>1. The Gathas</h3>
+                <ul class="principles-list">
+                    <li>Yasna 28–34, 43–51, and 53</li>
+                    <li>Yasna 30 — the choice between two spirits</li>
+                    <li>Yasna 45 — the two spirits</li>
+                </ul>
+                <h3>2. The Avesta</h3>
+                <ul class="principles-list">
+                    <li>Yasna</li>
+                    <li>Visperad</li>
+                    <li>Vendidad</li>
+                    <li>Yashts</li>
+                    <li>Khordeh Avesta (daily prayers)</li>
+                </ul>
+                <p>Avesta.org provides English translations.</p>
+                <h3>3. Middle Persian Texts</h3>
+                <ul class="principles-list">
+                    <li>Bundahishn</li>
+                    <li>Denkard</li>
+                    <li>Arda Viraf Namag</li>
+                </ul>
+                <h3>4. Historical Sources</h3>
+                <ul class="principles-list">
+                    <li>the Cyrus Cylinder (British Museum)</li>
+                    <li>Achaemenid royal inscriptions</li>
+                </ul>
+                <h3>5. Community Sources</h3>
+                <ul>
+                    <li>FEZANA (Federation of Zoroastrian Associations of North America)</li>
+                    <li>Census of India 2011</li>
+                </ul>
             </div>
 
         </section>
@@ -481,15 +1160,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -264,13 +279,13 @@
             <li class="dropdown-tab">
                 <a href="religions.html" class="dropdown-trigger">Religions</a>
                 <ul class="dropdown-menu">
-                    <li><a href="judaism.html">Judaism</a></li>
                     <li><a href="christianity.html">Christianity</a></li>
                     <li><a href="islam.html">Islam</a></li>
-                    <li><a href="bahai.html">Bahá'í Faith</a></li>
+                    <li><a href="judaism.html">Judaism</a></li>
                     <li><a href="hinduism.html">Hinduism</a></li>
                     <li><a href="buddhism.html">Buddhism</a></li>
                     <li><a href="sikhism.html">Sikhism</a></li>
+                    <li><a href="bahai.html">Bahá'í Faith</a></li>
                     <li><a href="jainism.html">Jainism</a></li>
                     <li><a href="indigenous.html">Indigenous Traditions</a></li>
                     <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
@@ -296,160 +311,768 @@
         <p>A broad category encompassing atheism, agnosticism, and humanism, relying on reason, science, and human empathy rather than supernatural beliefs to understand the universe and guide morality.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Worldview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Secular Worldviews at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Ideas</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Key Texts and Ideas</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Movements and Viewpoints</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Worldview and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>"Secular worldviews" is an umbrella term that includes atheism, agnosticism, secular humanism, freethought, and various forms of skepticism. It is not a religion, but rather a philosophical approach to life that seeks to understand the universe and human existence without relying on supernatural deities, divine revelation, or religious dogma.</p>
-                <p>Secular individuals generally believe that the natural universe is all that exists, and that the scientific method is the most reliable tool for discovering truth. Rather than deriving morality from sacred texts or divine command, secular ethics are typically based on human empathy, compassion, the mitigation of suffering, and the promotion of human flourishing.</p>
-                <p>Secular Humanism, the most structured of these philosophies, asserts that human beings have the right and responsibility to give meaning and shape to their own lives, advocating for democracy, human rights, and the strict separation of church and state.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>"Secular worldviews" is an umbrella term for ways of understanding life without relying on religious belief. It includes atheism, agnosticism, secular humanism, freethought, rationalism, and the outlook of many people who describe themselves as having "no religion."</p>
+                <p>Secular worldviews are not a religion. They have no shared scripture, no founder, and no required beliefs. What they often share is the view that human beings can understand the world through reason, evidence, and experience, and can live meaningful, ethical lives without belief in God or the supernatural.</p>
+                <p>The word "secular" comes from the Latin saeculum, meaning "this age" or "this world." It refers to what belongs to ordinary human life rather than to religion.</p>
+                <p>Secular humanism, the most developed of these outlooks, holds that people have the right and responsibility to give meaning and shape to their own lives. Humanists International summarizes humanism as:</p>
+                <blockquote>"A democratic and ethical life stance which affirms that human beings have the right and responsibility to give meaning and shape to their own lives." (Humanists International, Minimum Statement on Humanism)</blockquote>
+                <p>Many secular people value human rights, democracy, science, free inquiry, and the separation of religion and government.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>While secular individuals do not adhere to a central dogma, the following principles represent the foundational values of modern secular humanism and scientific skepticism:</p>
+            <!-- SECULAR WORLDVIEWS AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Secular Worldviews at a Glance</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Streams</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Principles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Observances</button>
+                </div>
+
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Common terms include:</p>
+                    <ul>
+                        <li><strong>Atheist:</strong> a person who does not believe in God or gods</li>
+                        <li><strong>Agnostic:</strong> a person who believes that the existence of God is unknown or unknowable</li>
+                        <li><strong>Humanist / secular humanist:</strong> a person who holds a non-religious ethical life stance centered on human welfare</li>
+                        <li><strong>Freethinker:</strong> a person who forms opinions through reason rather than authority or tradition</li>
+                        <li><strong>Skeptic:</strong> a person who questions claims that lack evidence</li>
+                        <li><strong>"Nones" / religiously unaffiliated:</strong> people who do not identify with any religion</li>
+                    </ul>
+                    <p>These categories overlap. Many people who say they have "no religion" still believe in God or a higher power, or describe themselves as "spiritual but not religious."</p>
+                </div>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of People</h3>
+                    <p>According to Pew Research Center, there were approximately 1.9 billion religiously unaffiliated people worldwide in 2020, about 24.2% of the world's population. This group grew by about 270 million between 2010 and 2020, more than any group except Muslims.</p>
+                    <p>"Religiously unaffiliated" includes atheists, agnostics, and people who describe their religion as "nothing in particular." Not all of them hold a secular worldview in the philosophical sense.</p>
+                </div>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Secular Worldviews Are Common</h3>
+                    <p>Religiously unaffiliated people live in every region of the world.</p>
+                    <p>Large unaffiliated populations or high proportions are found in:</p>
+                    <ul class="principles-list">
+                        <li>China</li>
+                        <li>Japan</li>
+                        <li>South Korea</li>
+                        <li>Vietnam</li>
+                        <li>the Czech Republic</li>
+                        <li>the Netherlands</li>
+                        <li>the United Kingdom</li>
+                        <li>Scandinavia</li>
+                        <li>Australia and New Zealand</li>
+                        <li>Canada</li>
+                        <li>the United States</li>
+                        <li>Uruguay</li>
+                    </ul>
+                    <p>China has the largest number of religiously unaffiliated people in the world. In the United States, about 28% of adults were religiously unaffiliated in 2023, according to Pew.</p>
+                </div>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Streams and Traditions</h3>
+                    <h3>Atheism</h3>
+                    <p>The absence of belief in God or gods. Some atheists actively deny that God exists, and others simply lack belief.</p>
+                    <h3>Agnosticism</h3>
+                    <p>The view that the existence of God cannot be known. The term was coined by Thomas Henry Huxley in 1869.</p>
+                    <h3>Secular Humanism</h3>
+                    <p>An ethical, non-religious life stance based on reason, compassion, and human welfare.</p>
+                    <h3>Freethought and Rationalism</h3>
+                    <p>Movements that emphasize reason and evidence over authority and tradition.</p>
+                    <h3>Religious Humanism and Cultural Religion</h3>
+                    <p>Some people hold humanist values while taking part in religious communities or traditions for cultural reasons, such as Humanistic Judaism or cultural Christians.</p>
+                    <h3>Secularism</h3>
+                    <p>A political principle that religion and government should be separate. Secularism is held by many religious people as well as non-religious people.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Secular:</strong> Not connected with religion</li>
+                        <li><strong>Secularism:</strong> Separation of religion and state</li>
+                        <li><strong>Atheism:</strong> Absence of belief in God or gods</li>
+                        <li><strong>Agnosticism:</strong> The view that God's existence is unknown or unknowable</li>
+                        <li><strong>Humanism:</strong> An ethical life stance focused on human welfare and reason</li>
+                        <li><strong>Naturalism:</strong> The view that only the natural world exists</li>
+                        <li><strong>Empiricism:</strong> Knowledge comes from experience and evidence</li>
+                        <li><strong>Rationalism:</strong> Reason as the chief source of knowledge</li>
+                        <li><strong>Scientific method:</strong> Testing ideas through observation and experiment</li>
+                        <li><strong>Skepticism:</strong> Questioning claims and asking for evidence</li>
+                        <li><strong>Freethought:</strong> Forming beliefs by reason, not authority</li>
+                        <li><strong>Ethics:</strong> Principles of right and wrong</li>
+                        <li><strong>Utilitarianism:</strong> Ethics based on the greatest good for the greatest number</li>
+                        <li><strong>Human rights:</strong> Rights belonging to all people</li>
+                        <li><strong>Celebrant:</strong> A person who leads non-religious ceremonies</li>
+                        <li><strong>"Nones":</strong> People with no religious affiliation</li>
+                    </ul>
+                </div>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Principles</h3>
+                    <p>Secular worldviews have no creed, but many secular humanists share the following principles:</p>
+                    <ol>
+                        <li>naturalism: the natural world is all that exists</li>
+                        <li>reason and evidence as the best guides to truth</li>
+                        <li>the scientific method as the most reliable way to understand the world</li>
+                        <li>ethics based on human welfare, empathy, and reason</li>
+                        <li>human dignity and human rights</li>
+                        <li>democracy and freedom of thought</li>
+                        <li>separation of religion and government</li>
+                    </ol>
+                    <p>The Amsterdam Declaration of 2002, adopted by Humanists International, lists core humanist values, including:</p>
+                    <ol>
+                        <li>humanism is ethical</li>
+                        <li>humanism is rational</li>
+                        <li>humanism supports democracy and human rights</li>
+                        <li>humanism insists that personal liberty must be combined with social responsibility</li>
+                        <li>humanism is a response to the demand for an alternative to dogmatic religion</li>
+                        <li>humanism values artistic creativity and imagination</li>
+                        <li>humanism is a life stance aiming at the maximum possible fulfillment</li>
+                    </ol>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Notable Observances</h3>
+                    <p>Secular worldviews have no religious holidays. Some secular and humanist days include:</p>
+                    <h3>Darwin Day (February 12)</h3>
+                    <p>Celebrates science and the birthday of Charles Darwin.</p>
+                    <h3>World Humanist Day (June 21)</h3>
+                    <p>Celebrates humanist values around the June solstice.</p>
+                    <h3>International Day of Reason / National Day of Reason</h3>
+                    <p>Observed by some groups in the United States.</p>
+                    <h3>Human Rights Day (December 10)</h3>
+                    <p>Marks the adoption of the Universal Declaration of Human Rights.</p>
+                    <p>Many secular people also celebrate cultural holidays, such as Christmas, Lunar New Year, Diwali, or Thanksgiving, as family and cultural events.</p>
+                </div>
+            </div>
+
+            <!-- CORE IDEAS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Ideas</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God, Thinkers &amp; Knowledge</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Key Texts</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Reflection &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life &amp; Death</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>The Question of God</h3>
+                    <p>Secular worldviews do not include belief in God as part of their outlook.</p>
+                    <ul>
+                        <li>Atheists do not believe in God or gods, usually because they find the evidence or arguments unconvincing.</li>
+                        <li>Agnostics believe that the question cannot be answered with certainty.</li>
+                        <li>Some secular people do not consider the question important.</li>
+                    </ul>
+                    <p>Secular humanists generally reject:</p>
+                    <ul class="principles-list">
+                        <li>belief in the supernatural without evidence</li>
+                        <li>the idea that morality depends on religion</li>
+                        <li>the use of religion to justify discrimination</li>
+                        <li>religious authority over government</li>
+                    </ul>
+                    <p>At the same time, secular humanism supports freedom of religion and belief for everyone, including religious people.</p>
+                    <h3>Thinkers and Teachers</h3>
+                    <p>Secular worldviews have no prophets. They draw on a long line of thinkers, scientists, and reformers from many cultures, including:</p>
+                    <ul>
+                        <li>the Charvaka school of ancient India, which rejected the supernatural</li>
+                        <li>Confucius, who focused on ethics and human relationships</li>
+                        <li>Epicurus and Democritus in ancient Greece</li>
+                        <li>Lucretius in ancient Rome</li>
+                        <li>Enlightenment philosophers such as David Hume, Voltaire, and Denis Diderot</li>
+                        <li>Charles Darwin, Bertrand Russell, and many modern scientists and philosophers</li>
+                    </ul>
+                    <h3>Sources of Knowledge</h3>
+                    <p>Secular worldviews do not accept revelation as a source of knowledge. Instead they rely on:</p>
+                    <ul class="principles-list">
+                        <li>observation</li>
+                        <li>reason</li>
+                        <li>the scientific method</li>
+                        <li>critical thinking</li>
+                        <li>the shared experience of humanity</li>
+                    </ul>
+                    <p>Knowledge is understood as open to revision when new evidence appears.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>Key Texts and Thinkers</h3>
+                    <p>Secular worldviews have no scripture. Important texts include:</p>
+                    <ul class="principles-list">
+                        <li>Lucretius, On the Nature of Things</li>
+                        <li>David Hume, Dialogues Concerning Natural Religion</li>
+                        <li>Thomas Paine, The Age of Reason</li>
+                        <li>John Stuart Mill, On Liberty and Utilitarianism</li>
+                        <li>Charles Darwin, On the Origin of Species</li>
+                        <li>Bertrand Russell, Why I Am Not a Christian</li>
+                        <li>the Humanist Manifestos (1933, 1973, 2003)</li>
+                        <li>the Amsterdam Declaration (2002)</li>
+                        <li>Carl Sagan, The Demon-Haunted World</li>
+                    </ul>
+                    <p>These texts are respected but are not treated as sacred or authoritative.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings</h3>
+                    <p>Most secular people do not believe in spirits, angels, demons, or other supernatural beings. They explain experiences often described as supernatural through psychology, neuroscience, or natural causes.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Secular humanists generally view human beings as part of nature, shaped by evolution.</p>
+                    <p>Humans are seen as:</p>
+                    <ul class="principles-list">
+                        <li>capable of reason</li>
+                        <li>social beings</li>
+                        <li>capable of empathy and cooperation</li>
+                        <li>capable of both good and harm</li>
+                        <li>responsible for their own choices</li>
+                    </ul>
+                    <p>Secular humanism does not include the idea of sin against God. People are understood to have both strengths and flaws that can be improved through education, community, and good institutions.</p>
+                    <h3>Wrongdoing</h3>
+                    <p>In secular ethics, wrongdoing is usually understood as causing harm, treating people unfairly, breaking trust, or violating rights.</p>
+                    <h3>Making Amends</h3>
+                    <p>Secular ethics emphasize:</p>
+                    <ol>
+                        <li>recognizing harm</li>
+                        <li>taking responsibility</li>
+                        <li>apologizing</li>
+                        <li>repairing harm</li>
+                        <li>learning and changing</li>
+                    </ol>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Reflection and Ritual</h3>
+                    <p>Secular people do not pray to God, but many practice:</p>
+                    <ul class="principles-list">
+                        <li>meditation and mindfulness</li>
+                        <li>reflection and journaling</li>
+                        <li>appreciation of art, music, and nature</li>
+                        <li>gratitude practices</li>
+                        <li>community gatherings</li>
+                    </ul>
+                    <p>Some humanist communities hold regular meetings with talks, music, and discussion.</p>
+                    <h3>Charity</h3>
+                    <p>Many secular people believe that helping others is a moral duty. Examples include:</p>
+                    <ul class="principles-list">
+                        <li>donating to effective charities</li>
+                        <li>volunteering</li>
+                        <li>disaster relief</li>
+                        <li>supporting education and healthcare</li>
+                        <li>blood and organ donation</li>
+                    </ul>
+                    <p>The effective altruism movement, which uses evidence to find the most effective ways to help others, includes many secular people.</p>
+                    <h3>Fasting</h3>
+                    <p>Secular worldviews have no religious fasting. Some secular people fast for health reasons or join religious friends in solidarity.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Secular humanists generally believe that this life is the only one, which makes it precious.</p>
+                    <p>People are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>live meaningfully</li>
+                        <li>seek knowledge</li>
+                        <li>love and care for others</li>
+                        <li>contribute to society</li>
+                        <li>enjoy life responsibly</li>
+                        <li>reduce suffering</li>
+                        <li>protect the planet for future generations</li>
+                    </ul>
+                    <p>Meaning is not given from outside but created through relationships, work, creativity, and service.</p>
+                    <h3>Death</h3>
+                    <p>Most secular people view death as the natural and permanent end of the individual's life. Many find comfort in the legacy they leave, in the memory of loved ones, and in being part of nature.</p>
+                    <p>Epicurus wrote: "Death is nothing to us; for when we exist, death is not present, and when death is present, we do not exist."</p>
+                    <h3>Afterlife</h3>
+                    <p>Most secular people do not believe in an afterlife. Some agnostics remain open to the question.</p>
+                    <h3>Accountability</h3>
+                    <p>Secular ethics hold that people are accountable to one another, to society, and to their own conscience, rather than to divine judgment.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will</h3>
+                    <p>Secular thinkers hold a range of views on free will, from belief in genuine free choice to the view that choices are determined by brain processes. Most agree that people should be held responsible for their actions in practical life.</p>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Secular ethics draw on reason, empathy, and human experience.</p>
+                    <p>Major approaches include:</p>
+                    <ul class="principles-list">
+                        <li>consequentialism, which judges actions by their results</li>
+                        <li>virtue ethics, which focuses on character</li>
+                        <li>deontology, which focuses on duties and rights</li>
+                        <li>the "Golden Rule," found in many cultures</li>
+                    </ul>
+                    <p>Values frequently emphasized include:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>fairness</li>
+                        <li>compassion</li>
+                        <li>responsibility</li>
+                        <li>respect for others</li>
+                        <li>freedom</li>
+                        <li>equality</li>
+                        <li>curiosity</li>
+                        <li>courage</li>
+                        <li>tolerance</li>
+                    </ul>
+                    <h3>Family</h3>
+                    <p>Family is important to most secular people, and many hold family values similar to their neighbors of any faith.</p>
+                    <h3>Marriage</h3>
+                    <p>Marriage is seen as a civil and personal commitment. Many secular couples have civil weddings or humanist ceremonies led by trained celebrants.</p>
+                    <h3>Community</h3>
+                    <p>Secular people find community in families, friendships, workplaces, clubs, and civic organizations.</p>
+                    <p>Organized secular communities include:</p>
+                    <ul class="principles-list">
+                        <li>humanist associations</li>
+                        <li>Ethical Culture societies</li>
+                        <li>freethought groups</li>
+                        <li>Sunday Assembly congregations</li>
+                        <li>student secular groups</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Secular humanism emphasizes the equal dignity of all people. The Universal Declaration of Human Rights (1948) is often cited by humanists as a statement of shared values.</p>
+                </div>
+            </div>
+
+            <!-- KEY TEXTS AND IDEAS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Key Texts and Ideas</h2>
+                <h3>The Humanist Manifestos</h3>
+                <p>The Humanist Manifesto I (1933) was written in the United States. It was followed by Humanist Manifesto II (1973) and Humanism and Its Aspirations (2003).</p>
+                <p>Major themes include:</p>
                 <ul class="principles-list">
-                    <li><strong>Naturalism:</strong> The physical universe is all there is; there is no supernatural realm.</li>
-                    <li><strong>Reason and Logic:</strong> Critical thinking is the best guide for beliefs and actions.</li>
-                    <li><strong>Scientific Inquiry:</strong> The scientific method is the most reliable way to understand reality.</li>
-                    <li><strong>Atheism/Agnosticism:</strong> The absence of belief in deities, or the view that the existence of deities is unknown/unknowable.</li>
-                    <li><strong>Secular Ethics:</strong> Morality is derived from human empathy and the desire to reduce suffering.</li>
-                    <li><strong>Human Rights:</strong> An unwavering commitment to universal human rights, dignity, and equality.</li>
-                    <li><strong>Separation of Church and State:</strong> Governments should remain neutral in religious matters.</li>
-                    <li><strong>Freedom of and from Religion:</strong> Everyone has the right to practice their faith, or to practice none at all.</li>
-                    <li><strong>Self-Determination:</strong> Individuals have the right to autonomy over their own bodies and life choices.</li>
-                    <li><strong>One Life:</strong> The belief that this life is our only life, making it immensely precious and meaningful.</li>
-                    <li><strong>Meaning is Self-Created:</strong> Human beings create their own purpose; it is not handed down from above.</li>
-                    <li><strong>Evolution:</strong> Humans are an integral part of nature, having evolved through natural selection.</li>
-                    <li><strong>Egalitarianism:</strong> A commitment to dismantling systemic prejudice, racism, and sexism.</li>
-                    <li><strong>Compassion:</strong> An ethical imperative to care for the vulnerable and marginalized.</li>
-                    <li><strong>Intellectual Freedom:</strong> The right to question, critique, and investigate all ideas without fear of blasphemy.</li>
-                    <li><strong>Environmental Stewardship:</strong> A responsibility to protect the planet for current and future generations.</li>
-                    <li><strong>Democracy:</strong> Society is best governed by democratic processes, not theocratic rule.</li>
-                    <li><strong>Global Citizenship:</strong> We are a single human family; national boundaries are secondary to universal human well-being.</li>
-                    <li><strong>Fallibilism:</strong> The acceptance that human knowledge is imperfect and must constantly be revised based on new evidence.</li>
-                    <li><strong>Human Progress:</strong> Through collective effort, science, and empathy, we can solve humanity's greatest problems.</li>
+                    <li>reason and science</li>
+                    <li>ethics without religion</li>
+                    <li>democracy</li>
+                    <li>human rights</li>
+                    <li>the welfare of all people</li>
+                </ul>
+                <h3>The Enlightenment</h3>
+                <p>The Enlightenment of the 17th and 18th centuries promoted reason, science, individual rights, and religious tolerance. Its ideas shaped modern democracy and the separation of church and state.</p>
+                <h3>Secular Scholarship</h3>
+                <p>Secular thinkers have contributed to:</p>
+                <ul class="principles-list">
+                    <li>philosophy</li>
+                    <li>science</li>
+                    <li>political theory</li>
+                    <li>ethics</li>
+                    <li>psychology</li>
+                    <li>literature</li>
                 </ul>
             </div>
 
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>There are no religiously mandated dietary restrictions (such as kosher or halal laws) in secular worldviews. Dietary choices are driven by personal preference, health science, and ethics. Because secular morality is heavily focused on reducing suffering and environmental sustainability, many secular individuals choose to adopt vegetarian or vegan diets for ethical and ecological reasons rather than religious ones.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Secular worldviews place absolute trust in evidence-based medicine and the scientific method. Medical decisions are made in consultation with doctors and current scientific consensus. Interventions such as vaccines, stem-cell research, and genetic therapies are generally supported as tools to alleviate human suffering.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Blood transfusions and organ transplants are fully supported. Organ donation is frequently viewed as a profound ethical imperative and a final act of human solidarity, as secular individuals generally do not believe the physical body is required for an afterlife.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Cleanliness is understood entirely through the lens of biology and hygiene (germ theory), not through concepts of ritual purity or spiritual defilement. Practices focus on preventing disease and promoting public health.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
+            <!-- HISTORY -->
             <div id="sec-history" class="template-section">
-                <h2>History of the Worldview</h2>
-                
+                <h2>History</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founders</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">The Enlightenment</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">The Rise of Secularism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">The Twentieth Century and Today</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>Founders</h3>
-                    <p>Secularism and atheism have no single founder. Non-theistic and skeptical thought has existed in human societies for millennia. The philosophical roots of modern secularism can be traced back to the Carvaka school in ancient India (c. 600 BCE), which rejected the Vedas and the afterlife, as well as ancient Greek philosophers like Epicurus and Democritus, who proposed a universe made entirely of natural atoms rather than the whims of the gods.</p>
-                </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Historically, secular and atheistic views were often held by minority groups of philosophers and scholars. During the Middle Ages in Europe, openly declaring atheism was extremely dangerous and often punishable by death under heresy laws. The worldview began to gain significant cultural traction during the 18th-century Enlightenment, driven by scientific discoveries that challenged religious authority.</p>
-                </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, people identifying as non-religious, atheist, or agnostic represent one of the fastest-growing demographics globally. They form a massive portion of the population in Europe (particularly Scandinavia and France), East Asia (China and Japan), Australasia, and increasingly in the United States and Canada, reflecting a massive cultural shift toward secularization in industrialized democracies.</p>
-                </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Doubt about religious claims is very old. Examples include:</p>
                     <ul>
-                        <li><strong>Epicurus (c. 341–270 BCE):</strong> Ancient Greek philosopher who taught that the universe operates on natural laws without divine intervention.</li>
-                        <li><strong>Baruch Spinoza (1632–1677):</strong> Enlightenment philosopher who laid the groundwork for modern secularism and the critique of religious orthodoxy.</li>
-                        <li><strong>Charles Darwin (1809–1882):</strong> His theory of evolution by natural selection revolutionized the understanding of human origins without the need for a creator.</li>
-                        <li><strong>Robert G. Ingersoll (1833–1899):</strong> Known as "The Great Agnostic," a prominent American orator who championed freethought and secularism.</li>
+                        <li>the Charvaka (Lokayata) school in ancient India</li>
+                        <li>skeptical passages in the Rig Veda's Hymn of Creation</li>
+                        <li>Greek philosophers such as Democritus, Epicurus, and Protagoras</li>
+                        <li>Lucretius in Rome</li>
+                        <li>Confucian focus on ethics over the supernatural</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>The Enlightenment</h3>
+                    <p>In 17th- and 18th-century Europe, thinkers emphasized reason and evidence. Some, such as Baron d'Holbach, openly argued for atheism. Others, such as Thomas Jefferson and Thomas Paine, were deists.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>The Rise of Secularism</h3>
+                    <p>In the 19th century, the term "secularism" was coined by George Jacob Holyoake in Britain. Freethought movements grew in Europe and America.</p>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>The Twentieth Century and Today</h3>
+                    <p>The 20th century saw both the growth of humanism and the rise of states that enforced atheism, such as the Soviet Union, which persecuted religious believers. Secular humanists distinguish their support for freedom of belief from state-imposed atheism.</p>
+                    <p>In recent decades, the number of religiously unaffiliated people has grown in many countries.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
                     <ul>
-                        <li><strong>Carl Sagan (1934–1996):</strong> Astronomer and science communicator who deeply popularized scientific skepticism and a sense of wonder at the natural cosmos.</li>
-                        <li><strong>Christopher Hitchens (1949–2011) & Richard Dawkins (b. 1941):</strong> Prominent public intellectuals and authors of the "New Atheism" movement who fiercely debated religious dogmatism.</li>
-                        <li><strong>Stephen Hawking (1942–2018):</strong> Theoretical physicist whose work on the origins of the universe further marginalized the necessity of a creator deity in modern cosmology.</li>
+                        <li><strong>c. 6th century BCE onward:</strong> Charvaka materialism in India; early Greek naturalism.</li>
+                        <li><strong>1st century BCE:</strong> Lucretius writes On the Nature of Things.</li>
+                        <li><strong>17th–18th centuries:</strong> The Enlightenment.</li>
+                        <li><strong>1791:</strong> The First Amendment of the U.S. Constitution forbids establishment of religion.</li>
+                        <li><strong>1859:</strong> Darwin publishes On the Origin of Species.</li>
+                        <li><strong>1869:</strong> Huxley coins the term "agnostic."</li>
+                        <li><strong>1876:</strong> Felix Adler founds the Ethical Culture movement in New York.</li>
+                        <li><strong>1933:</strong> Humanist Manifesto I.</li>
+                        <li><strong>1948:</strong> Universal Declaration of Human Rights.</li>
+                        <li><strong>1952:</strong> International Humanist and Ethical Union (now Humanists International) founded.</li>
+                        <li><strong>2002:</strong> The Amsterdam Declaration.</li>
+                        <li><strong>21st century:</strong> Rapid growth of the religiously unaffiliated in many countries.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Epicurus</li>
+                        <li>Lucretius</li>
+                        <li>Baruch Spinoza</li>
+                        <li>David Hume</li>
+                        <li>Voltaire</li>
+                        <li>Thomas Paine</li>
+                        <li>Mary Wollstonecraft</li>
+                        <li>John Stuart Mill</li>
+                        <li>Charles Darwin</li>
+                        <li>Robert Ingersoll</li>
+                        <li>Elizabeth Cady Stanton</li>
+                        <li>Bertrand Russell</li>
+                        <li>Albert Einstein, who described himself as not believing in a personal God</li>
+                        <li>Jawaharlal Nehru</li>
+                        <li>Periyar E. V. Ramasamy, Indian rationalist and social reformer</li>
+                        <li>Carl Sagan</li>
+                        <li>many scientists, writers, and reformers</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>Unlike religions that rely on sacred texts to maintain continuity, secular worldviews maintain their principles through the rigorous institutions of science, public education, philosophy, and democratic law. The "self-correcting" nature of the scientific method ensures that secular understanding continuously evolves and improves as new evidence is discovered, valuing intellectual flexibility over dogmatic continuity.</p>
+            <!-- MAJOR MOVEMENTS AND VIEWPOINTS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Movements and Viewpoints</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Secular Humanism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Atheist Organizations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Rationalist Movements</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">"Spiritual but Not Religious"</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Different Approaches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-6')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-7')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Secular Humanism</h3>
+                    <p>Organized humanism, represented by groups such as Humanists International, Humanists UK, and the American Humanist Association.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Atheist Organizations</h3>
+                    <p>Groups that advocate for the rights of non-believers and for separation of church and state.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Rationalist Movements</h3>
+                    <p>In India, rationalist movements challenge superstition and caste.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>"Spiritual but Not Religious"</h3>
+                    <p>Many people without religious affiliation have spiritual beliefs or practices but reject organized religion.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Different Approaches</h3>
+                    <p>Secular people differ on:</p>
+                    <ul class="principles-list">
+                        <li>how critical to be of religion</li>
+                        <li>whether to form communities and rituals</li>
+                        <li>the role of religion in public life</li>
+                        <li>free will</li>
+                        <li>political issues</li>
+                    </ul>
+                    <p>Two secular people may share the same rejection of religious belief while disagreeing about almost everything else.</p>
+                </div>
+
+                <div id="deno-6" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>Europe</h3>
+                    <p>Many countries have large secular populations and long histories of humanist organizations.</p>
+                    <h3>East Asia</h3>
+                    <p>Many people do not identify with a religion but take part in traditional practices such as ancestor rituals.</p>
+                    <h3>India</h3>
+                    <p>Rationalist movements have challenged superstition and caste.</p>
+                    <h3>United States</h3>
+                    <p>American "nones" include atheists, agnostics, and many who believe in God but do not belong to a religion.</p>
+                </div>
+
+                <div id="deno-7" class="history-sub-section">
+                    <h3>Cultural Practices Versus Secular Beliefs</h3>
+                    <p>Many secular people continue cultural traditions linked to religion, such as holiday meals, music, and family customs, without religious belief.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Atheists have no moral compass because they don't fear divine punishment.</strong><br>
-                Reality: Secular morality is highly developed. It is based on human empathy, the social contract, and the understanding that actions have real consequences on the well-being of others in this life. Many argue that doing good simply because it helps others is more ethical than doing good out of fear of hell or desire for heavenly reward.</p>
-                <p><strong>Misconception: Atheism is just a different religion.</strong><br>
-                Reality: Atheism is simply the lack of belief in a deity. It has no holy books, no clergy, no rituals, and no required dogma. Saying atheism is a religion is often compared to saying "off" is a TV channel or "bald" is a hair color.</p>
-                <p><strong>Misconception: Secularism is an angry rebellion against God.</strong><br>
-                Reality: One cannot rebel against something they do not believe exists. Secular individuals simply find natural and scientific explanations for the universe more compelling and evidence-based than supernatural ones.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Secular people have no morals.</strong><br>
+                Fact: Secular ethics are based on empathy, reason, and concern for others. Research has not shown that non-religious people are less moral than religious people.</p>
+                <p><strong>Myth: Atheism is a religion.</strong><br>
+                Fact: Atheism is the absence of belief in God. It has no scripture, rituals, or required beliefs.</p>
+                <p><strong>Myth: Secularism means opposition to religion.</strong><br>
+                Fact: Secularism means that government does not favor any religion. Many religious people support secularism because it protects their freedom.</p>
+                <p><strong>Myth: Secular people have no meaning in life.</strong><br>
+                Fact: Many secular people find deep meaning in relationships, work, creativity, service, and the natural world.</p>
+                <p><strong>Myth: All "nones" are atheists.</strong><br>
+                Fact: Many religiously unaffiliated people believe in God or a higher power.</p>
+                <p><strong>Myth: Science and religion must conflict.</strong><br>
+                Fact: Many secular people and religious people value science. Secular people simply do not include the supernatural in their worldview.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>In heavily theocratic or deeply religious countries, atheists and secularists face severe persecution. In several nations, blasphemy and apostasy (leaving a religion) are still crimes punishable by imprisonment or death, forcing secular individuals to live in hiding.</p>
-                <p>In Western democracies, a primary challenge for secular groups is protecting the separation of church and state against the rise of Christian nationalism, ensuring that public policies, education, and laws are based on civic reasoning rather than the religious doctrines of a specific group.</p>
+            <!-- WORLDVIEW AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Worldview and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Secular Worldviews in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Secular Worldviews and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Compassion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Reason, Ethics &amp; Human Flourishing</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Secular people value family relationships and often raise children to think critically and act kindly.</p>
+                    <h3>Marriage</h3>
+                    <p>Marriage may be a civil ceremony or a humanist ceremony. In some countries, such as Scotland, humanist weddings are legally recognized and very popular.</p>
+                    <h3>Children</h3>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                    </ul>
+                    <p>Humanist naming ceremonies are an alternative to religious ceremonies for welcoming a child.</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Secular humanists place strong emphasis on education, science literacy, and critical thinking.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Secular worldviews have no dietary rules. Many secular people choose vegetarian or other diets for ethical, environmental, or health reasons.</p>
+                    <h3>Clothing</h3>
+                    <p>There is no secular dress code.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Secular humanism generally supports full equality between women and men and LGBTQ rights.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Work is valued as a way to support oneself and contribute to society.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Secular business ethics emphasize honesty, fairness, transparency, and social responsibility.</p>
+                    <h3>Charity</h3>
+                    <p>Many secular people give to charity and volunteer. Secular charities and humanist groups run aid programs worldwide.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Secular people generally rely on evidence-based medicine. Most support organ donation, and many support medical research.</p>
+                    <p>Secular views on end-of-life questions, such as assisted dying, vary, though many humanist organizations support the right to choose.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Secular funerals and memorials often include:</p>
+                    <ul class="principles-list">
+                        <li>celebrating the person's life</li>
+                        <li>stories and tributes</li>
+                        <li>music and readings</li>
+                        <li>burial or cremation</li>
+                        <li>leadership by a family member or humanist celebrant</li>
+                    </ul>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>Secular people often celebrate cultural and national holidays. Some observe humanist days such as Darwin Day and World Humanist Day.</p>
+                    <h3>Community Life</h3>
+                    <p>Secular community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>humanist and freethought groups</li>
+                        <li>volunteering</li>
+                        <li>discussion groups</li>
+                        <li>science and education events</li>
+                        <li>online communities</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Secular people participate in all areas of political life. Many advocate for:</p>
+                    <ul class="principles-list">
+                        <li>separation of religion and state</li>
+                        <li>freedom of thought and expression</li>
+                        <li>human rights</li>
+                        <li>science-based policy</li>
+                    </ul>
+                    <p>In some countries, atheists face legal discrimination or punishment. Humanists International publishes the Freedom of Thought Report on this issue.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Many secular people work alongside religious people in interfaith and community organizations, on shared goals such as human rights, poverty, and the environment.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Secular Worldviews in America</h3>
+                    <p>The U.S. Constitution establishes no official religion and forbids religious tests for public office.</p>
+                    <p>The share of Americans with no religious affiliation grew from under 10% in the 1990s to around 28% in 2023, according to Pew.</p>
+                    <p>Secular Americans participate in every field, including science, medicine, education, business, government, and the arts.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Secular Worldviews and Humanity</h3>
+                    <h3>Science</h3>
+                    <p>Scientific inquiry, which secular thinkers champion, has transformed medicine, technology, and understanding of the universe.</p>
+                    <h3>Human Rights</h3>
+                    <p>Enlightenment thinkers, both religious and secular, helped develop the ideas behind modern human rights.</p>
+                    <h3>Democracy</h3>
+                    <p>The separation of religion and state, supported by both religious and secular people, protects freedom of belief for all.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Secular Worldviews and Knowledge</h3>
+                    <p>Secular worldviews value questioning, evidence, and the willingness to change one's mind.</p>
+                    <h3>Secular Worldviews and Justice</h3>
+                    <p>Many secular ethics focus on fairness, equality before the law, and reducing suffering.</p>
+                    <h3>Secular Worldviews and Human Dignity</h3>
+                    <p>Secular humanism holds that every person has equal worth because of their shared humanity.</p>
+                    <h3>Secular Worldviews and Compassion</h3>
+                    <p>Empathy is central to secular ethics. Many secular people see compassion as a natural human capacity to be developed.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Secular Humanism as Reason, Ethics, and Human Flourishing</h3>
+                    <p>Secular humanism can be understood through three dimensions:</p>
+                    <h3>Reason</h3>
+                    <p>Using evidence and critical thinking to understand the world.</p>
+                    <h3>Ethics</h3>
+                    <p>Acting with compassion and responsibility.</p>
+                    <h3>Human Flourishing</h3>
+                    <p>Working for a world where all people can live full and free lives.</p>
+                    <p>This framework can be useful for understanding secular humanism as reason + ethics + flourishing.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>While there are no required rituals, many secular people engage in daily practices to cultivate well-being and meaning, such as secular mindfulness meditation, journaling, or studying science and philosophy. </p>
-                <p>Community engagement is a major practice; many secular humanists prioritize volunteering, philanthropy, and civic activism as their way of improving the world. Secular communities also celebrate life milestones (births, marriages, deaths) and natural events (like the solstices) with humanist ceremonies focused on human connection and the natural world.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Secular worldviews are ways of understanding life without religious belief, including atheism, agnosticism, and secular humanism.</p>
+                <p>At their core are:</p>
+                <ul class="principles-list">
+                    <li>naturalism</li>
+                    <li>reason and evidence</li>
+                    <li>science</li>
+                    <li>ethics based on human welfare</li>
+                    <li>freedom of thought</li>
+                </ul>
+                <p>At their practical core are:</p>
+                <ul class="principles-list">
+                    <li>education</li>
+                    <li>civic participation</li>
+                    <li>community and service</li>
+                    <li>non-religious ceremonies</li>
+                </ul>
+                <p>At their ethical core are:</p>
+                <ul class="principles-list">
+                    <li>honesty</li>
+                    <li>fairness</li>
+                    <li>compassion</li>
+                    <li>human rights</li>
+                    <li>equality</li>
+                    <li>responsibility</li>
+                </ul>
+                <p>The religiously unaffiliated make up about a quarter of the world's population and represent a great variety of views.</p>
+                <p>Understanding secular worldviews requires distinguishing among atheism, agnosticism, humanism, secularism, and the many people who are simply unaffiliated.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Secular and humanist philosophies were the primary drivers of the Enlightenment, laying the foundational concepts for modern democracy, freedom of speech, and universal human rights. The insistence on separating church from state has historically been the greatest protector of religious freedom, preventing any one religion from dominating others.</p>
-                <p>Furthermore, because secular ethics are not bound by ancient texts, secular groups have consistently been at the global forefront of championing evolving human rights, including women's bodily autonomy, LGBTQ+ equality, the right to medical assistance in dying, and massive advancements in medical and environmental science.</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information, we recommend relying on primary sources from secular and humanist organizations and thinkers.</p>
+                <h3>1. Humanist Statements</h3>
+                <ul>
+                    <li>Humanists International, Minimum Statement on Humanism</li>
+                    <li>The Amsterdam Declaration (2002)</li>
+                    <li>Humanist Manifestos I, II, and III (American Humanist Association)</li>
+                </ul>
+                <h3>2. Classic Texts</h3>
+                <ul class="principles-list">
+                    <li>Epicurus, Letter to Menoeceus</li>
+                    <li>Lucretius, On the Nature of Things</li>
+                    <li>David Hume, Dialogues Concerning Natural Religion</li>
+                    <li>Thomas Paine, The Age of Reason</li>
+                    <li>John Stuart Mill, On Liberty</li>
+                    <li>Charles Darwin, On the Origin of Species</li>
+                    <li>Bertrand Russell, Why I Am Not a Christian</li>
+                </ul>
+                <h3>3. Human Rights</h3>
+                <ul class="principles-list">
+                    <li>Universal Declaration of Human Rights (1948)</li>
+                </ul>
+                <h3>4. Organizations</h3>
+                <ul class="principles-list">
+                    <li>Humanists International</li>
+                    <li>Humanists UK</li>
+                    <li>American Humanist Association</li>
+                    <li>Freedom From Religion Foundation</li>
+                    <li>Center for Inquiry</li>
+                </ul>
+                <h3>5. Demographic Data</h3>
+                <ul>
+                    <li>Pew Research Center, "How the Global Religious Landscape Changed From 2010 to 2020" (2025)</li>
+                    <li>Pew Research Center, Religious Landscape Study (2023–24)</li>
+                    <li>Humanists International, Freedom of Thought Report</li>
+                </ul>
             </div>
 
         </section>
@@ -482,15 +1105,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }
