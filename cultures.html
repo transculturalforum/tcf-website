@@ -2860,6 +2860,8 @@
                 <h3>Share Your Story</h3>
                 <p>Select your culture below and share your lived experience, family traditions, or recipes to help us build a richer historical archive.</p>
                 <form id="culture-story-form" action="https://formspree.io/f/mjyvrrqr" method="POST">
+                <!-- Spam trap: hidden from people, bots fill it in and Formspree discards the message -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="story-name">Name</label>
                         <input type="text" id="story-name" name="name" placeholder="John Doe" required>

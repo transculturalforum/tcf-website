@@ -179,6 +179,8 @@
             </div>
 
             <form id="volunteer-form" class="volunteer-form" action="https://formspree.io/f/xgoglrzk" method="POST">
+                <!-- Spam trap: hidden from people, bots fill it in and Formspree discards the message -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="first-name">First Name</label>
