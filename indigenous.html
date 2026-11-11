@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,157 +311,798 @@
         <p>A vast, diverse array of earth-centered spiritualities practiced by the original inhabitants of lands across the globe, deeply rooted in kinship with nature and ancestors.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Indigenous Traditions at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Sacred Knowledge and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Diversity of Traditions</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Unlike universalizing religions such as Christianity or Islam, "Indigenous Traditions" is an umbrella term encompassing thousands of highly distinct, localized belief systems practiced by Indigenous peoples globally—from the Native Americans and First Nations of North America to the Aboriginal peoples of Australia, the Maori of New Zealand, the Sami of Scandinavia, and countless tribes across Africa and the Amazon.</p>
-                <p>Despite incredible diversity in language, rituals, and deities, these traditions generally share a worldview characterized by <em>animism</em>—the belief that the entire natural world, including animals, plants, rivers, and mountains, possesses a spiritual essence. Indigenous spiritualities are not typically separated into a "religion" practiced only on specific days; rather, spirituality is seamlessly woven into every aspect of daily life, survival, and community governance.</p>
-                <p>There are no global holy books in these traditions. Instead, sacred knowledge, histories, and moral laws are preserved and transmitted through robust oral traditions, storytelling, songs, dances, and deep, ongoing relationships with specific ancestral landscapes.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>"Indigenous spiritual traditions" is an umbrella term for the religious and spiritual ways of life of the world's Indigenous peoples. These include Native American and First Nations peoples of North America, Indigenous peoples of Latin America, Aboriginal and Torres Strait Islander peoples of Australia, the Māori of Aotearoa New Zealand, the Sámi of northern Europe, Native Hawaiians, and many peoples of Africa, Asia, the Arctic, and the Pacific.</p>
+                <p>These traditions are not one religion. Each people has its own language, ceremonies, sacred stories, and relationship with its land. What they often share is a worldview in which spiritual life cannot be separated from land, community, ancestors, and everyday life.</p>
+                <p>Many Indigenous peoples do not have a separate word for "religion." Spirituality is understood as a way of living in right relationship with the Creator or spiritual powers, with other people, with animals and plants, and with the land.</p>
+                <p>The Lakota phrase "Mitákuye Oyás'iŋ," often translated "all my relatives" or "we are all related," expresses a theme found in many Indigenous traditions:</p>
+                <blockquote>All beings are connected, and each has a responsibility to the others.</blockquote>
+                <p>Many Indigenous people today practice traditional spirituality, Christianity, Islam, or another religion, or combine traditional ways with another faith.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>While beliefs vary significantly from tribe to tribe, scholars and Indigenous elders often identify these overarching spiritual principles:</p>
-                <ul class="principles-list">
-                    <li><strong>Animism / Spiritual Ecology:</strong> All elements of nature (animals, plants, rocks) have consciousness and spirit.</li>
-                    <li><strong>Interconnectedness:</strong> The "Web of Life"—everything in the universe is fundamentally related and interdependent.</li>
-                    <li><strong>The Creator / Great Spirit:</strong> Belief in a pervasive life-force or ultimate Creator, often viewed as mysterious or distant.</li>
-                    <li><strong>Reverence for Ancestors:</strong> Ancestors remain active in the spiritual realm and guide the living community.</li>
-                    <li><strong>Reciprocity:</strong> Taking from the earth requires giving back through offerings, gratitude, and sustainable harvesting.</li>
-                    <li><strong>Oral Tradition:</strong> Sacred knowledge is passed down through myths, songs, and storytelling, not written texts.</li>
-                    <li><strong>Sacred Landscapes:</strong> Specific geographical features (mountains, rivers, caves) are intrinsically holy and hold spiritual power.</li>
-                    <li><strong>Community over Individual:</strong> The health and survival of the tribe or clan supersedes individual ambition.</li>
-                    <li><strong>Custodianship of the Earth:</strong> Humans are stewards of the land, not its owners or conquerors.</li>
-                    <li><strong>Shamans and Healers:</strong> Reliance on medicine men/women who mediate between the physical and spiritual realms.</li>
-                    <li><strong>Dreams and Visions:</strong> Dreams are viewed as real experiences and crucial methods of receiving spiritual guidance.</li>
-                    <li><strong>Rites of Passage:</strong> Highly structured ceremonies marking birth, coming of age (e.g., Vision Quests), marriage, and death.</li>
-                    <li><strong>Respect for Elders:</strong> Elders are revered as the primary keepers of wisdom, language, and cultural survival.</li>
-                    <li><strong>Animal Spirits and Totems:</strong> Animals serve as guides, protectors, and kin, offering lessons to humans.</li>
-                    <li><strong>Power of the Spoken Word:</strong> Words, chants, and names possess actual spiritual power to shape reality.</li>
-                    <li><strong>Circular Time:</strong> Time is viewed as cyclical, tied to the seasons and generations, rather than strictly linear.</li>
-                    <li><strong>Non-compartmentalization:</strong> There is no separation between the "secular" and the "sacred"; daily chores are spiritual acts.</li>
-                    <li><strong>Balance and Harmony:</strong> Illness or environmental disaster is the result of a loss of cosmic or spiritual balance.</li>
-                    <li><strong>Respect for the Four Directions:</strong> Honoring the cardinal directions, elements (earth, air, fire, water), and the cycles of the sun/moon.</li>
-                    <li><strong>Adaptability and Resilience:</strong> The deep spiritual endurance that has allowed cultures to survive centuries of colonization.</li>
-                </ul>
-            </div>
-
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>For Indigenous peoples, acquiring food through hunting, fishing, or agriculture is a sacred act. A hunt is not viewed as a conquest, but as a mutual exchange where an animal gives its life to sustain humans. Hunters typically offer prayers of gratitude and utilize every part of the animal to show respect. Traditional diets are intimately tied to the local biome and are increasingly being reclaimed today for community health.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Indigenous medicine relies on Traditional Ecological Knowledge (TEK)—centuries of observation regarding local plant properties. Illness is often viewed holistically, resulting not just from physical pathogens, but from social disharmony, spiritual imbalance, or broken taboos. Modern medicine is frequently utilized today alongside traditional healers who address the spiritual root of the illness.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Views on medical procedures like organ transplants vary wildly across different cultures. Some Indigenous traditions have strong taboos regarding bodily integrity, believing the body must remain whole for the afterlife. Others embrace these procedures if they align with the community's survival and the overarching principle of helping others.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Purification is a central daily practice, often achieved through smoke. Smudging (burning sacred medicines like sage, sweetgrass, or cedar) is used across the Americas to cleanse people and spaces of negative energy. Sweat lodges and ritual river bathing are also vital methods for physical and spiritual purification.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
-            <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+            <!-- INDIGENOUS TRADITIONS AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Indigenous Traditions at a Glance</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Families of Tradition</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Common Themes</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Ceremonies</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>Founders</h3>
-                    <p>Unlike world religions, Indigenous traditions have no single historical founder. Their origins stretch back tens of thousands of years to the dawn of humanity. These belief systems evolved organically over millennia as human communities adapted to, observed, and developed spiritual relationships with their specific local environments.</p>
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>There is no single name. Each people uses its own terms for its spiritual ways, often meaning simply "our way," "the law," or "the teachings."</p>
+                    <p>Commonly used English terms include:</p>
+                    <ul class="principles-list">
+                        <li>Indigenous spirituality</li>
+                        <li>traditional religion</li>
+                        <li>Native spirituality</li>
+                        <li>African traditional religions</li>
+                        <li>Aboriginal spirituality</li>
+                    </ul>
+                    <p>The terms "pagan," "primitive," and "animist" have often been used in ways that are disrespectful and are best avoided unless a community uses them itself.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Prior to the expansion of major global religions (like Christianity, Islam, and Buddhism) and the eras of European colonialism, Indigenous spiritualities were the universal default of human religious expression, covering every habitable continent on the globe.</p>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of People</h3>
+                    <p>The United Nations estimates that there are more than 476 million Indigenous people living in 90 countries, about 6% of the world's population. They represent around 5,000 different cultures.</p>
+                    <p>Not all Indigenous people practice traditional spirituality. Many are Christian, Muslim, Buddhist, or of other faiths, and many combine traditions. Surveys that count "folk" or "traditional" religions use different definitions, so numbers vary widely.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, there are an estimated 370 to 500 million Indigenous people living in over 90 countries. Their spiritual traditions have often been suppressed, driven underground, or heavily syncretized (blended) with the religions brought by colonizers (such as the blending of Catholic saints with traditional deities in Latin America).</p>
-                </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Indigenous Traditions Are Practiced</h3>
+                    <p>Indigenous peoples live on every inhabited continent, including:</p>
                     <ul>
-                        <li><strong>Cultural Heroes and Tricksters:</strong> Mythological figures present in oral traditions (e.g., Raven, Coyote, or the Rainbow Serpent) who shaped the world and taught humans how to survive.</li>
-                        <li><strong>Historical Resistance Leaders:</strong> Figures like Sitting Bull (Lakota), Black Elk (Oglala Lakota), and Yaa Asantewaa (Ashanti) who defended their people's lands and spiritual autonomy against colonial expansion.</li>
+                        <li>North America (Native American, First Nations, Inuit, and Métis peoples)</li>
+                        <li>Central and South America (including Maya, Quechua, Aymara, Mapuche, and Amazonian peoples)</li>
+                        <li>Australia (Aboriginal and Torres Strait Islander peoples)</li>
+                        <li>the Pacific (Māori, Native Hawaiians, and many Pacific Islander peoples)</li>
+                        <li>Africa (including the Yoruba, Akan, Zulu, San, Maasai, and many others)</li>
+                        <li>the Arctic and northern Europe (including the Sámi and Inuit)</li>
+                        <li>Asia (including the Ainu of Japan, Adivasi peoples of India, and many peoples of Southeast Asia and Siberia)</li>
+                    </ul>
+                    <p>Indigenous peoples speak thousands of languages. Language is often closely connected to spiritual knowledge, because ceremonies, prayers, and sacred names are carried in the language.</p>
+                </div>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Families of Tradition</h3>
+                    <p>Because each people is distinct, it is more accurate to speak of regional families of tradition than of branches. Examples include:</p>
+                    <h3>Native American and First Nations Traditions</h3>
+                    <p>Hundreds of nations, each with their own ceremonies, such as the Sun Dance, the sweat lodge, the potlatch, and the Longhouse traditions of the Haudenosaunee.</p>
+                    <h3>Aboriginal Australian Traditions</h3>
+                    <p>Centered on the Dreaming, the ancestral law and creation stories connected to specific country (land).</p>
+                    <h3>African Traditional Religions</h3>
+                    <p>Including Yoruba (Ifá and Òrìṣà), Akan, Igbo, Zulu, and many others, often with a supreme Creator, spirits, and ancestors.</p>
+                    <h3>Māori and Polynesian Traditions</h3>
+                    <p>Centered on whakapapa (genealogy), mana (spiritual authority), and tapu (sacredness).</p>
+                    <h3>Sámi and Arctic Traditions</h3>
+                    <p>Including the noaidi (spiritual specialist), the drum, and sacred places in the landscape.</p>
+                    <h3>Latin American Indigenous Traditions</h3>
+                    <p>Including Andean reverence for Pachamama (Mother Earth) and the apus (mountain spirits), and Maya calendar and ceremonial traditions.</p>
+                    <h3>African Diaspora Religions</h3>
+                    <p>Some traditions with African roots developed in the Americas, such as Vodou, Santería (Lucumí), and Candomblé. They are often discussed alongside Indigenous traditions, though they have their own histories.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Terminology</h3>
+                    <p>Each people has its own terms. The following are general English concepts and a few widely known examples, used with care:</p>
+                    <ul class="principles-list">
+                        <li><strong>Creator / Great Spirit:</strong> A supreme or originating power recognized by many peoples</li>
+                        <li><strong>Ancestors:</strong> Those who came before, who may continue to guide the living</li>
+                        <li><strong>Elders:</strong> Respected keepers of knowledge and teachings</li>
+                        <li><strong>Oral tradition:</strong> Knowledge passed on through speech, song, and story</li>
+                        <li><strong>Ceremony:</strong> A sacred event that renews relationships</li>
+                        <li><strong>Sacred site:</strong> A place with spiritual significance</li>
+                        <li><strong>Medicine:</strong> Spiritual power, healing, or a sacred object or plant</li>
+                        <li><strong>Reciprocity:</strong> Giving back in return for what is received</li>
+                        <li><strong>Relationality:</strong> The understanding that all beings are related</li>
+                        <li><strong>Totem / clan:</strong> A relationship between a family group and an animal or other being</li>
+                        <li><strong>Healer / spiritual leader:</strong> A person with special knowledge for healing and ceremony</li>
+                        <li><strong>The Dreaming:</strong> Aboriginal Australian term for ancestral law and creation</li>
+                        <li><strong>Whakapapa:</strong> Māori term for genealogy that links people to the land and the gods</li>
+                        <li><strong>Pachamama:</strong> Andean term for Mother Earth</li>
+                        <li><strong>Òrìṣà:</strong> Yoruba divine beings</li>
+                        <li><strong>Smudging:</strong> Purifying with the smoke of sacred plants (in some traditions)</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Common Themes</h3>
+                    <p>While beliefs differ greatly, scholars and Indigenous elders often identify these shared themes:</p>
+                    <ol>
+                        <li>a Creator or spiritual powers present in the world</li>
+                        <li>the relationship of all beings</li>
+                        <li>the sacredness of land</li>
+                        <li>respect for ancestors</li>
+                        <li>reciprocity and balance</li>
+                        <li>the passing on of knowledge through oral tradition and ceremony</li>
+                    </ol>
+                    <p>Many traditions also emphasize:</p>
+                    <ul class="principles-list">
+                        <li>gratitude</li>
+                        <li>respect</li>
+                        <li>humility</li>
+                        <li>generosity</li>
+                        <li>responsibility to future generations</li>
+                    </ul>
+                    <p>The Haudenosaunee (Iroquois) principle of considering the impact of decisions on the seventh generation is one well-known example.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Ceremonies and Observances</h3>
+                    <p>There are no worldwide Indigenous holidays. Ceremonies follow each people's calendar, often tied to seasons, harvests, the movement of the sun, moon, and stars, and stages of life.</p>
+                    <h3>Seasonal and Harvest Ceremonies</h3>
+                    <p>Examples include the Green Corn Ceremony of several Eastern Woodlands nations, first-salmon ceremonies of Pacific Northwest peoples, and the Andean Inti Raymi (Festival of the Sun).</p>
+                    <h3>New Year Observances</h3>
+                    <p>Examples include Matariki, the Māori New Year, marked by the rising of the Pleiades star cluster, which became a public holiday in New Zealand in 2022.</p>
+                    <h3>Gatherings</h3>
+                    <p>Powwows in North America are social and cultural gatherings with dance, song, and food. Some parts are sacred.</p>
+                    <h3>Remembrance Days</h3>
+                    <p>Many countries now observe days such as the International Day of the World's Indigenous Peoples (August 9), Indigenous Peoples' Day in the United States, and NAIDOC Week in Australia.</p>
+                </div>
+            </div>
+
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">The Creator &amp; Sacred Teachers</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Oral Tradition</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Ceremony, Sharing &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; the Ancestors</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Fate &amp; Responsibility</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>The Creator and Spiritual Powers</h3>
+                    <p>Many Indigenous traditions recognize a Creator or supreme power, sometimes described as distant and sometimes as present in all things.</p>
+                    <p>Examples include:</p>
+                    <ul class="principles-list">
+                        <li>Wakan Tanka, "the Great Mystery," among the Lakota</li>
+                        <li>Olódùmarè, the supreme being of the Yoruba</li>
+                        <li>Nyame, the sky god of the Akan</li>
+                        <li>Io, the supreme being in some Māori traditions</li>
+                    </ul>
+                    <p>Many traditions also recognize other spiritual beings, such as spirits of the land, water, and sky, culture heroes, and ancestors.</p>
+                    <p>Indigenous traditions generally reject:</p>
                     <ul>
-                        <li><strong>Elders and Knowledge Keepers:</strong> The most important figures today are the community elders who are fighting to preserve dying languages, traditional ecological knowledge, and ceremonial protocols.</li>
-                        <li><strong>Modern Activists:</strong> Indigenous leaders globally (like those involved in the Standing Rock movement or Amazonian land defense) who frame modern environmental activism as a sacred spiritual duty.</li>
+                        <li>the idea that humans are separate from nature</li>
+                        <li>the idea that land is only property</li>
+                        <li>the idea that the spiritual world is separate from everyday life</li>
+                    </ul>
+                    <h3>Teachers, Ancestors, and Culture Heroes</h3>
+                    <p>Most Indigenous traditions do not have prophets in the Abrahamic sense. Instead, they honor:</p>
+                    <ul>
+                        <li>ancestors who founded the people</li>
+                        <li>culture heroes who brought teachings, such as the White Buffalo Calf Woman in Lakota tradition, who brought the sacred pipe</li>
+                        <li>ancestral beings who shaped the land, such as the Rainbow Serpent in many Aboriginal traditions</li>
+                        <li>trickster figures such as Coyote or Raven, whose stories teach lessons through humor</li>
+                        <li>prophets in some traditions, such as the Haudenosaunee prophet Handsome Lake</li>
+                    </ul>
+                    <h3>Revelation and Sacred Knowledge</h3>
+                    <p>Sacred knowledge often comes through:</p>
+                    <ul class="principles-list">
+                        <li>stories handed down from the ancestors</li>
+                        <li>dreams and visions</li>
+                        <li>ceremony</li>
+                        <li>observation of the land and animals</li>
+                        <li>guidance from elders</li>
+                    </ul>
+                    <p>In some traditions, people seek a vision through fasting and prayer, for example in a vision quest.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>Sacred Knowledge and Oral Tradition</h3>
+                    <p>Most Indigenous traditions have no written scripture. Sacred knowledge is kept in:</p>
+                    <ul class="principles-list">
+                        <li>creation stories</li>
+                        <li>songs</li>
+                        <li>dances</li>
+                        <li>ceremonies</li>
+                        <li>art and designs</li>
+                        <li>place names</li>
+                        <li>wampum belts and other recording systems</li>
+                        <li>the land itself, which holds memory</li>
+                    </ul>
+                    <p>Some knowledge is open to everyone. Other knowledge is restricted to people who have been initiated or who hold certain responsibilities. Respecting these limits is important.</p>
+                    <p>Some written texts exist, such as the Popol Vuh, a K'iche' Maya sacred narrative written down in the 16th century.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings</h3>
+                    <p>Many traditions describe a world full of spiritual life. This may include:</p>
+                    <ul class="principles-list">
+                        <li>spirits of animals, plants, rivers, and mountains</li>
+                        <li>ancestor spirits</li>
+                        <li>guardian spirits</li>
+                        <li>beings who live in the sky, water, or under the earth</li>
+                    </ul>
+                    <p>Scholars often use the word "animism" for the belief that the natural world is alive with spirit. Many Indigenous people describe it instead as recognizing that all beings are relatives.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Many Indigenous traditions teach that humans are one part of the web of life, not its masters.</p>
+                    <p>Humans are often described as the "youngest" or most dependent of beings, who must learn from animals, plants, and the land.</p>
+                    <p>Each person is born with gifts and responsibilities, and identity is closely connected to family, clan, and land.</p>
+                    <h3>Wrongdoing and Imbalance</h3>
+                    <p>In many traditions, wrongdoing is understood as breaking relationship or upsetting balance:</p>
+                    <ul class="principles-list">
+                        <li>disrespecting the land or animals</li>
+                        <li>breaking sacred law</li>
+                        <li>harming others in the community</li>
+                        <li>failing to give back</li>
+                    </ul>
+                    <p>Such actions are believed to harm not only the person who acts but also the family, community, and land.</p>
+                    <h3>Restoring Balance</h3>
+                    <p>Many Indigenous traditions emphasize restoring relationship rather than only punishing.</p>
+                    <p>This may involve:</p>
+                    <ol>
+                        <li>acknowledging the harm</li>
+                        <li>making offerings or prayers</li>
+                        <li>apologizing to those harmed</li>
+                        <li>ceremonies of cleansing or healing</li>
+                        <li>making amends to the family and community</li>
+                    </ol>
+                    <p>Restorative practices such as talking circles and peacemaking courts, used in some Native American and First Nations communities, have influenced modern restorative justice.</p>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer, Ceremony, and Worship</h3>
+                    <p>Prayer and ceremony are central to many Indigenous ways of life.</p>
+                    <p>Examples include:</p>
+                    <ul>
+                        <li>offerings of tobacco, food, or other gifts</li>
+                        <li>smudging with sacred plants such as sage, sweetgrass, or cedar</li>
+                        <li>sweat lodge ceremonies</li>
+                        <li>song and drumming</li>
+                        <li>dance</li>
+                        <li>pipe ceremonies</li>
+                        <li>giving thanks at the start of gatherings</li>
+                        <li>ceremonies at sacred sites</li>
+                    </ul>
+                    <p>The Haudenosaunee Thanksgiving Address, spoken at the opening of gatherings, gives thanks to the people, the earth, the waters, the plants, the animals, the winds, the sun, the moon, the stars, and the Creator.</p>
+                    <h3>Generosity and Sharing</h3>
+                    <p>Generosity is highly valued in many Indigenous cultures.</p>
+                    <p>Examples include:</p>
+                    <ul>
+                        <li>the potlatch of Pacific Northwest peoples, where hosts give away gifts</li>
+                        <li>giveaways at powwows and ceremonies</li>
+                        <li>sharing the harvest or hunt with elders and families in need</li>
+                        <li>feeding guests</li>
+                    </ul>
+                    <p>A person's status is often measured by what they give, not what they keep.</p>
+                    <h3>Fasting</h3>
+                    <p>Fasting is part of some ceremonies, such as vision quests and the Sun Dance, where participants may go without food or water for a time as an act of sacrifice and prayer.</p>
+                    <p>These practices are guided by elders and spiritual leaders.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Many Indigenous traditions regard life as a sacred gift with responsibilities.</p>
+                    <p>People are expected to:</p>
+                    <ul class="principles-list">
+                        <li>respect elders</li>
+                        <li>care for children</li>
+                        <li>care for the land</li>
+                        <li>share with others</li>
+                        <li>keep the ceremonies</li>
+                        <li>learn the language and teachings</li>
+                        <li>live in balance</li>
+                    </ul>
+                    <p>Many traditions mark stages of life, such as birth, naming, coming of age, marriage, and becoming an elder, with ceremonies.</p>
+                    <h3>Death</h3>
+                    <p>Death is often seen as a journey to the spirit world or a return to the ancestors.</p>
+                    <p>Funerals and mourning practices are important for helping the spirit on its journey and supporting the family.</p>
+                    <h3>Afterlife and the Ancestors</h3>
+                    <p>Beliefs about the afterlife vary greatly. Many traditions teach that:</p>
+                    <ul class="principles-list">
+                        <li>the dead join the ancestors</li>
+                        <li>ancestors remain connected to the living</li>
+                        <li>ancestors can guide and protect the living</li>
+                        <li>the living have duties to remember and honor the dead</li>
+                    </ul>
+                    <p>Some traditions include beliefs in reincarnation within the family or community. Others describe a spirit world or land of the dead.</p>
+                    <h3>Judgment and Accountability</h3>
+                    <p>Most Indigenous traditions do not focus on a single final judgment. Accountability is often understood through relationships: actions have consequences for the community, the land, and future generations.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Fate and Responsibility</h3>
+                    <p>Many traditions teach that people have gifts and paths given by the Creator or ancestors, but that each person is responsible for how they live.</p>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Indigenous ethics often center on respect and responsibility.</p>
+                    <p>Values frequently taught include:</p>
+                    <ul class="principles-list">
+                        <li>respect</li>
+                        <li>humility</li>
+                        <li>honesty</li>
+                        <li>generosity</li>
+                        <li>courage</li>
+                        <li>wisdom</li>
+                        <li>love</li>
+                        <li>reciprocity</li>
+                        <li>care for the land</li>
+                        <li>respect for elders</li>
+                    </ul>
+                    <p>The Seven Grandfather Teachings of the Anishinaabe are one well-known example: wisdom, love, respect, bravery, honesty, humility, and truth.</p>
+                    <h3>Family and Kinship</h3>
+                    <p>Kinship is central in Indigenous cultures. It often extends beyond the immediate family to:</p>
+                    <ul class="principles-list">
+                        <li>clans</li>
+                        <li>extended families</li>
+                        <li>adopted relatives</li>
+                        <li>animals and natural beings considered relatives</li>
+                    </ul>
+                    <p>Kinship systems often guide marriage, responsibilities, and ceremony.</p>
+                    <h3>Marriage</h3>
+                    <p>Marriage customs vary greatly. They often involve the families and wider community, and may include gift exchanges and ceremonies.</p>
+                    <h3>Community</h3>
+                    <p>In many Indigenous traditions, the community, rather than the individual, is the center of spiritual life.</p>
+                    <p>Gathering places may include:</p>
+                    <ul class="principles-list">
+                        <li>longhouses</li>
+                        <li>ceremonial grounds</li>
+                        <li>kivas</li>
+                        <li>marae (Māori meeting grounds)</li>
+                        <li>community halls</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Many Indigenous traditions emphasize hospitality and respect toward visitors.</p>
+                    <p>They also teach respect toward animals, plants, and the land as fellow beings.</p>
+                </div>
+            </div>
+
+            <!-- SACRED KNOWLEDGE AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Sacred Knowledge and Teachings</h2>
+                <h3>Creation Stories</h3>
+                <p>Creation stories explain how the world, the people, and the land came to be, and teach how people should live.</p>
+                <p>Examples include:</p>
+                <ul>
+                    <li>the Haudenosaunee story of Sky Woman, who fell to earth and was helped by the animals to create land on the back of a turtle</li>
+                    <li>the Aboriginal Australian Dreaming stories</li>
+                    <li>the Māori story of Ranginui (Sky Father) and Papatūānuku (Earth Mother)</li>
+                    <li>the Yoruba story of Ọbàtálá creating the land</li>
+                </ul>
+                <h3>The Role of Elders</h3>
+                <p>Elders are honored as keepers of knowledge. They pass on language, stories, ceremonies, and law, and guide decision-making.</p>
+                <h3>Indigenous Knowledge Systems</h3>
+                <p>Indigenous peoples developed sophisticated knowledge in:</p>
+                <ul>
+                    <li>astronomy</li>
+                    <li>ecology and land management</li>
+                    <li>medicine and healing plants</li>
+                    <li>agriculture, such as the "Three Sisters" of corn, beans, and squash</li>
+                    <li>navigation, such as Polynesian wayfinding across the Pacific</li>
+                    <li>governance</li>
+                </ul>
+                <p>This knowledge is increasingly recognized in science and environmental management.</p>
+            </div>
+
+            <!-- HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">Colonization</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Residential and Boarding Schools</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Revival and Recognition</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
+                </div>
+
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Indigenous spiritual traditions are among the oldest in the world. Aboriginal Australian cultures, for example, are among the oldest continuous cultures on earth, with a history in Australia of at least 50,000 to 65,000 years.</p>
+                    <p>Each tradition developed over thousands of years in close relationship with a particular place.</p>
+                </div>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>Colonization</h3>
+                    <p>From the 15th century onward, European colonization had devastating effects on Indigenous peoples, including:</p>
+                    <ul class="principles-list">
+                        <li>loss of land</li>
+                        <li>disease</li>
+                        <li>violence and war</li>
+                        <li>forced removal</li>
+                        <li>bans on ceremonies and languages</li>
+                        <li>forced conversion</li>
+                    </ul>
+                    <p>In the United States and Canada, governments outlawed many ceremonies. Canada banned the potlatch from 1885 to 1951. U.S. regulations restricted the Sun Dance and other ceremonies from the 1880s.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Residential and Boarding Schools</h3>
+                    <p>In the United States, Canada, Australia, and elsewhere, Indigenous children were taken from their families and sent to schools designed to erase their languages and cultures.</p>
+                    <p>Canada's Truth and Reconciliation Commission (2015) described this as cultural genocide. Australia's "Stolen Generations" refers to children removed from their families.</p>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Revival and Recognition</h3>
+                    <p>In the 20th and 21st centuries, many Indigenous peoples have worked to revive their languages, ceremonies, and traditions.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>Tens of thousands of years ago:</strong> Development of Indigenous cultures on every continent.</li>
+                        <li><strong>1492 onward:</strong> European colonization of the Americas.</li>
+                        <li><strong>1788:</strong> British colonization of Australia begins.</li>
+                        <li><strong>1840:</strong> Treaty of Waitangi signed between the British Crown and Māori chiefs.</li>
+                        <li><strong>1880s–1930s:</strong> Bans on Indigenous ceremonies in the United States and Canada.</li>
+                        <li><strong>1978:</strong> The American Indian Religious Freedom Act in the United States.</li>
+                        <li><strong>1990:</strong> The Native American Graves Protection and Repatriation Act (NAGPRA).</li>
+                        <li><strong>1994:</strong> The American Indian Religious Freedom Act is amended to protect the use of peyote in Native American Church ceremonies.</li>
+                        <li><strong>2007:</strong> The United Nations adopts the Declaration on the Rights of Indigenous Peoples.</li>
+                        <li><strong>2008:</strong> Australia's national apology to the Stolen Generations.</li>
+                        <li><strong>2015:</strong> Canada's Truth and Reconciliation Commission final report.</li>
+                        <li><strong>21st century:</strong> Language revival, land rights, and cultural renewal continue.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Hiawatha and the Peacemaker, founders of the Haudenosaunee Confederacy</li>
+                        <li>Handsome Lake, Seneca prophet</li>
+                        <li>Tecumseh and Tenskwatawa</li>
+                        <li>Sitting Bull</li>
+                        <li>Black Elk, Lakota holy man</li>
+                        <li>Wovoka, leader of the Ghost Dance movement</li>
+                        <li>Te Whiti o Rongomai, Māori leader of non-violent resistance</li>
+                        <li>Vine Deloria Jr., author and scholar</li>
+                        <li>Rigoberta Menchú, K'iche' Maya activist and Nobel laureate</li>
+                        <li>many elders, healers, leaders, and knowledge keepers</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>Because these traditions are oral, their survival relies entirely on the unbroken chain of transmission from elders to youth. Colonial policies globally (such as the residential and boarding school systems in North America and Australia) specifically targeted this continuity by removing children from their communities and banning Indigenous languages and ceremonies. Today, the continuity of these principles is being powerfully reclaimed through language revitalization programs, the return of ancestral lands, and the revival of traditional ceremonies like the Sun Dance or Potlatch.</p>
+            <!-- DIVERSITY OF TRADITIONS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Diversity of Traditions</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Distinct Peoples</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Traditional and Blended Practice</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Revival Movements</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Culture &amp; Commercialization</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Distinct Peoples</h3>
+                    <p>Each Indigenous people has its own spiritual tradition. It is important to name the specific people and not generalize.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Traditional and Blended Practice</h3>
+                    <p>Many Indigenous people combine traditional ways with Christianity or other religions. Examples include:</p>
+                    <ul>
+                        <li>the Native American Church, which combines traditional and Christian elements</li>
+                        <li>Andean Catholic festivals that include reverence for Pachamama</li>
+                        <li>African Independent Churches that blend Christianity with African traditions</li>
+                    </ul>
+                    <p>Some people practice only traditional ways. Others are Christian or follow another faith while keeping their culture.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Revival Movements</h3>
+                    <p>Many communities are reviving ceremonies and languages that were suppressed.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>North America</h3>
+                    <p>Hundreds of distinct nations, many with treaty relationships with governments.</p>
+                    <h3>Latin America</h3>
+                    <p>Indigenous traditions often blend with Catholicism.</p>
+                    <h3>Africa</h3>
+                    <p>Traditional religions remain important and often exist alongside Christianity and Islam.</p>
+                    <h3>Australia and the Pacific</h3>
+                    <p>The Dreaming, ancestral law, and connection to country are central for Aboriginal peoples; whakapapa and the marae for Māori.</p>
+                    <h3>United States</h3>
+                    <p>There are 574 federally recognized tribes, along with state-recognized and unrecognized tribes, each with its own traditions.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Culture, Spirituality, and Commercialization</h3>
+                    <p>It is important to distinguish authentic Indigenous practice from commercial imitations. Many Indigenous communities object to:</p>
+                    <ul>
+                        <li>selling ceremonies</li>
+                        <li>"plastic shamans," who claim false Indigenous spiritual authority</li>
+                        <li>use of sacred items as fashion</li>
+                        <li>sports mascots based on Indigenous peoples</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Indigenous traditions are primitive or "religions of the past."</strong><br>
-                Reality: Indigenous spiritualities are vibrant, living traditions. They are highly complex, philosophically rich, and deeply relevant to modern global issues, particularly regarding ecology and sustainability.</p>
-                <p><strong>Misconception: They "worship nature" like a god.</strong><br>
-                Reality: Indigenous peoples do not typically worship a tree or a rock as a deity; rather, they respect the spiritual essence or life-force *within* the tree or rock, viewing all elements of creation as relatives rather than objects.</p>
-                <p><strong>Misconception: Indigenous spirituality is monolithic.</strong><br>
-                Reality: There is no single "Native American religion" or "African traditional religion." There are thousands of distinct nations, each with completely unique languages, cosmologies, and protocols.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: All Indigenous peoples have the same religion.</strong><br>
+                Fact: There are thousands of distinct Indigenous peoples, each with its own traditions.</p>
+                <p><strong>Myth: Indigenous traditions are a thing of the past.</strong><br>
+                Fact: Indigenous traditions are living practices, carried on and revived by communities today.</p>
+                <p><strong>Myth: Indigenous peoples worship nature.</strong><br>
+                Fact: Many Indigenous traditions honor the land and its beings as relatives and as sacred. This is better described as respect and relationship than as "nature worship."</p>
+                <p><strong>Myth: Oral tradition is less reliable than written history.</strong><br>
+                Fact: Oral traditions have preserved detailed knowledge for thousands of years. Some Aboriginal Australian stories are believed to describe sea-level changes from more than 7,000 years ago.</p>
+                <p><strong>Myth: Anyone can practice Indigenous ceremonies.</strong><br>
+                Fact: Many ceremonies belong to specific peoples and require proper teaching and permission.</p>
+                <p><strong>Myth: Indigenous people cannot also be Christian or Muslim.</strong><br>
+                Fact: Many Indigenous people practice other religions, sometimes alongside their traditions.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>The greatest physical challenge to Indigenous spirituality today is the continued destruction of sacred lands by extractive industries (mining, deforestation, oil pipelines). Because their spirituality is geographically bound, destroying a sacred mountain is akin to burning down a cathedral.</p>
-                <p>A major cultural challenge is the appropriation of Indigenous spiritual practices by the "New Age" movement. The commercialization and unauthorized use of sacred items (like white sage) or ceremonies (like sweat lodges) by non-Indigenous individuals is widely condemned by Indigenous elders as highly disrespectful and harmful.</p>
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Indigenous Traditions in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Indigenous Traditions and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; the Earth</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Relationship, Ceremony &amp; Responsibility</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family and kinship are central.</p>
+                    <p>Indigenous peoples are often encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for elders</li>
+                        <li>care for children by the whole community</li>
+                        <li>strong extended family ties</li>
+                        <li>clan responsibilities</li>
+                        <li>connection to ancestors</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage customs vary and often involve the whole family and community.</p>
+                    <h3>Children</h3>
+                    <p>Children are often seen as sacred gifts. Raising children is shared by parents, grandparents, aunts, uncles, and the wider community.</p>
+                    <p>Naming ceremonies and coming-of-age ceremonies are important in many traditions.</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Traditional education happens through:</p>
+                    <ul class="principles-list">
+                        <li>storytelling</li>
+                        <li>observation</li>
+                        <li>apprenticeship</li>
+                        <li>ceremony</li>
+                        <li>time on the land</li>
+                    </ul>
+                    <p>Many communities today run language-immersion schools, such as Māori kōhanga reo.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Food is often sacred. Traditional foods such as wild rice, salmon, corn, bison, and seal are central to many cultures.</p>
+                    <p>Practices include:</p>
+                    <ul class="principles-list">
+                        <li>giving thanks before eating</li>
+                        <li>offering the first portion to the spirits or ancestors</li>
+                        <li>sharing the harvest or hunt</li>
+                        <li>taking only what is needed</li>
+                    </ul>
+                    <h3>Clothing</h3>
+                    <p>Traditional dress and regalia are used in ceremonies and gatherings. Some items, such as eagle feathers, are sacred and earned.</p>
+                    <p>In daily life, most Indigenous people wear everyday modern clothing.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Gender roles vary widely. Many traditions give women important spiritual and political roles. For example, Haudenosaunee clan mothers choose chiefs.</p>
+                    <p>Some North American Indigenous cultures recognize people with more than two gender roles. The term "Two-Spirit" was adopted in 1990 as a modern umbrella term.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Traditional work, such as hunting, fishing, gathering, and farming, is often spiritual as well as practical.</p>
+                    <h3>Economic Ethics</h3>
+                    <p>Many Indigenous traditions emphasize:</p>
+                    <ul class="principles-list">
+                        <li>sharing</li>
+                        <li>taking only what is needed</li>
+                        <li>sustainable use of resources</li>
+                        <li>responsibility to future generations</li>
+                    </ul>
+                    <h3>Charity and Sharing</h3>
+                    <p>Sharing is a duty in many cultures. Giveaways, feasts, and caring for those in need are common.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healing</h3>
+                    <p>Many traditions have healers who use plants, prayer, and ceremony.</p>
+                    <p>Many Indigenous people today use both traditional healing and modern medicine. Some hospitals now include Indigenous healing programs.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Funeral practices vary greatly. They may include:</p>
+                    <ul class="principles-list">
+                        <li>wakes and gatherings</li>
+                        <li>songs and prayers</li>
+                        <li>feasts</li>
+                        <li>giveaways</li>
+                        <li>mourning periods</li>
+                        <li>ceremonies to help the spirit's journey</li>
+                    </ul>
+                    <p>Many communities have worked to bring back ancestral remains held in museums, so that they can be properly reburied.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays and Ceremonies</h3>
+                    <p>Ceremonies follow each people's seasonal calendar. Public observances include Indigenous Peoples' Day, Matariki, and National Day for Truth and Reconciliation in Canada.</p>
+                    <h3>Community Life</h3>
+                    <p>Community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>ceremonies</li>
+                        <li>powwows and gatherings</li>
+                        <li>community councils</li>
+                        <li>language programs</li>
+                        <li>cultural centers</li>
+                        <li>youth programs</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Many Indigenous nations have their own governments, laws, and treaties. In the United States, federally recognized tribes are sovereign nations.</p>
+                    <p>Indigenous people participate in national politics, land rights movements, and environmental protection.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Indigenous peoples have long histories of interaction with Christian, Muslim, and other missionaries and neighbors, ranging from cooperation to forced conversion.</p>
+                    <p>Many churches have since apologized for their role in residential schools and colonization. Indigenous leaders are active in interfaith dialogue, especially on care for the earth.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Indigenous Traditions in America</h3>
+                    <p>Native Americans have lived in the Americas for many thousands of years.</p>
+                    <p>For much of U.S. history, Native ceremonies were restricted or banned. The American Indian Religious Freedom Act of 1978 recognized the right of Native Americans to practice their religions.</p>
+                    <p>Today Native Americans continue to protect sacred sites, revive languages, and practice ceremonies, while participating in every part of American life.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Indigenous Traditions and Humanity</h3>
+                    <h3>Ecology</h3>
+                    <p>Indigenous land management, such as cultural burning in Australia and North America, is increasingly recognized for environmental value.</p>
+                    <h3>Democracy</h3>
+                    <p>Historians debate the extent to which the Haudenosaunee Confederacy influenced American democratic ideas. In 1988 the U.S. Congress passed a resolution acknowledging that influence.</p>
+                    <h3>Agriculture</h3>
+                    <p>Indigenous peoples of the Americas developed corn, potatoes, tomatoes, beans, and many other foods now eaten worldwide.</p>
+                    <h3>Navigation</h3>
+                    <p>Polynesian navigators crossed thousands of miles of ocean using stars, waves, and birds.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Indigenous Traditions and Knowledge</h3>
+                    <p>Indigenous knowledge is based on long observation of the natural world. It is increasingly valued alongside scientific knowledge.</p>
+                    <h3>Indigenous Traditions and Justice</h3>
+                    <p>Many Indigenous approaches to justice focus on healing relationships and restoring balance.</p>
+                    <h3>Indigenous Traditions and Human Dignity</h3>
+                    <p>Many traditions teach that every person, and every being, has a place and a purpose in creation.</p>
+                    <p>The UN Declaration on the Rights of Indigenous Peoples (2007) affirms Indigenous peoples' right to practice their spiritual traditions and protect their sacred sites.</p>
+                    <h3>Indigenous Traditions and the Earth</h3>
+                    <p>Care for the land is central to many Indigenous traditions. Indigenous peoples manage or hold rights to a large share of the world's land, which includes much of the world's remaining biodiversity.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Indigenous Traditions as Relationship, Ceremony, and Responsibility</h3>
+                    <p>Indigenous traditions often present spirituality as:</p>
+                    <h3>Relationship</h3>
+                    <p>With the Creator, ancestors, people, animals, plants, and land.</p>
+                    <h3>Ceremony</h3>
+                    <p>Renewing these relationships through prayer, song, and ritual.</p>
+                    <h3>Responsibility</h3>
+                    <p>Living in a way that honors those relationships and protects future generations.</p>
+                    <p>This framework can be useful for understanding Indigenous traditions as relationship + ceremony + responsibility.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Daily practices vary immensely but often involve starting the day with prayers of gratitude directed to the Creator, the sun, or the four cardinal directions. Smudging with sacred herbs is a common daily practice for purification.</p>
-                <p>Community practices are deeply tied to the natural calendar, involving seasonal ceremonies for planting, harvesting, the solstices, and animal migrations. These gatherings utilize drumming, chanting, and dancing to align the human community with the rhythms of the earth.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Indigenous spiritual traditions are among the oldest and most diverse in the world. They are not one religion but many living traditions.</p>
+                <p>Common themes include:</p>
+                <ul class="principles-list">
+                    <li>a Creator or spiritual powers</li>
+                    <li>the relationship of all beings</li>
+                    <li>the sacredness of land</li>
+                    <li>respect for ancestors and elders</li>
+                    <li>reciprocity and balance</li>
+                    <li>oral tradition</li>
+                </ul>
+                <p>At their practical core are:</p>
+                <ul class="principles-list">
+                    <li>ceremony</li>
+                    <li>prayer and gratitude</li>
+                    <li>sharing</li>
+                    <li>passing on language and knowledge</li>
+                    <li>care for the land</li>
+                </ul>
+                <p>At their ethical core are:</p>
+                <ul class="principles-list">
+                    <li>respect</li>
+                    <li>humility</li>
+                    <li>generosity</li>
+                    <li>responsibility to future generations</li>
+                    <li>care for all relatives</li>
+                </ul>
+                <p>Despite colonization and suppression, Indigenous peoples continue to keep and revive their traditions.</p>
+                <p>Understanding Indigenous traditions requires listening to Indigenous peoples themselves and recognizing the distinct traditions of each people.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>The most profound impact of Indigenous traditions today is in global environmental conservation. Despite comprising less than 5% of the global population, Indigenous peoples protect and manage lands that hold an estimated 80% of the world's remaining biodiversity. Their spiritual framework of custodianship—treating the earth as a relative rather than a resource—offers a vital, sustainable alternative to modern extractive capitalism.</p>
-                <p>Furthermore, Indigenous philosophies of restorative justice (focusing on healing the community and the victim rather than merely punishing the offender) are increasingly influencing modern legal and social work systems globally.</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information, we recommend relying on Indigenous voices and sources wherever possible.</p>
+                <h3>1. International Documents</h3>
+                <ul>
+                    <li>United Nations Declaration on the Rights of Indigenous Peoples (2007)</li>
+                    <li>UN Permanent Forum on Indigenous Issues</li>
+                </ul>
+                <h3>2. National Documents</h3>
+                <ul>
+                    <li>American Indian Religious Freedom Act (1978)</li>
+                    <li>Native American Graves Protection and Repatriation Act (1990)</li>
+                    <li>Truth and Reconciliation Commission of Canada, Final Report (2015)</li>
+                    <li>Bringing Them Home Report (Australia, 1997)</li>
+                </ul>
+                <h3>3. Indigenous-Authored Works</h3>
+                <ul class="principles-list">
+                    <li>Black Elk Speaks (as told to John G. Neihardt)</li>
+                    <li>Vine Deloria Jr., God Is Red</li>
+                    <li>Robin Wall Kimmerer, Braiding Sweetgrass</li>
+                    <li>the Popol Vuh</li>
+                </ul>
+                <h3>4. Organizations</h3>
+                <ul>
+                    <li>National Museum of the American Indian (Smithsonian)</li>
+                    <li>Australian Institute of Aboriginal and Torres Strait Islander Studies (AIATSIS)</li>
+                    <li>Te Ara: The Encyclopedia of New Zealand</li>
+                </ul>
+                <h3>5. Demographic Data</h3>
+                <ul>
+                    <li>United Nations, State of the World's Indigenous Peoples</li>
+                    <li>U.S. Bureau of Indian Affairs (list of federally recognized tribes)</li>
+                </ul>
             </div>
 
         </section>
@@ -479,15 +1135,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

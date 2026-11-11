@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,159 +311,1010 @@
         <p>A monotheistic faith founded in the Punjab region emphasizing absolute equality, honest labor, social justice, and devotion to the One Creator.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Sikhism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Diversity of Practice</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Sikhism, natively known as Sikhi, is the world's fifth-largest major religion, with approximately 30 million followers globally. It originated in the 15th century in the Punjab region of the Indian subcontinent, founded by Guru Nanak Dev Ji and subsequently led by a succession of nine other human Gurus.</p>
-                <p>The faith is fundamentally monotheistic, centered on the belief in <em>Ik Onkar</em>—One Creator who is present everywhere and in everyone. Sikhism radically rejected the rigid social stratifications of its time, actively dismantling the caste system and affirming the absolute spiritual and secular equality of all human beings, regardless of gender, race, or social status.</p>
-                <p>Sikhs seek to live a householder's life (rather than an ascetic one), balancing daily worldly responsibilities with intense spiritual devotion. The supreme spiritual authority of Sikhism today is the <em>Guru Granth Sahib</em>, a sacred scripture compiled by the Gurus themselves, which Sikhs revere as their eternal, living Guru.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Sikhism (Sikhi) is a monotheistic religion founded in the Punjab region of South Asia in the late 15th century by Guru Nanak. It is one of the youngest of the major world religions and is often listed as the fifth-largest.</p>
+                <p>Sikhs believe in one God, the creator of all, who is beyond form and present in all creation. Sikhs follow the teachings of ten human Gurus, from Guru Nanak to Guru Gobind Singh, and of the Guru Granth Sahib, the Sikh scripture, which Sikhs regard as the living, eternal Guru.</p>
+                <p>Sikhs understand Sikhi as a complete way of life that joins devotion to God with honest work, service to others, equality, and justice. It rejects the idea that spiritual life requires withdrawing from the world.</p>
+                <p>The opening words of the Guru Granth Sahib, the Mool Mantar, express the core of Sikh belief:</p>
+                <blockquote>"Ik Onkar: There is one Creator. Truth is the Name. The Creator of all. Without fear. Without hatred. Timeless in form. Beyond birth. Self-existent. Known by the Guru's grace."</blockquote>
+                <p>Sikh life is often summarized in three principles taught by Guru Nanak: remember God (Naam Japna), earn an honest living (Kirat Karni), and share with others (Vand Chakna).</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>The Sikh way of life is governed by a profound commitment to truth, equality, and active service. The core principles include:</p>
-                <ul class="principles-list">
-                    <li><strong>Ik Onkar:</strong> Belief in One Supreme, all-pervading Creator.</li>
-                    <li><strong>Equality of All Humans:</strong> Total rejection of race, caste, and class divisions.</li>
-                    <li><strong>Gender Equality:</strong> Complete spiritual and temporal equality between men and women.</li>
-                    <li><strong>Naam Japna:</strong> Meditating upon and remembering God's name daily.</li>
-                    <li><strong>Kirat Karni:</strong> Earning a living honestly through hard work and integrity.</li>
-                    <li><strong>Vand Chhakna:</strong> Sharing one's wealth, resources, and food with those in need.</li>
-                    <li><strong>Seva:</strong> Selfless service to the community and humanity without expecting reward.</li>
-                    <li><strong>Langar:</strong> The free community kitchen where all sit on the floor and eat together as equals.</li>
-                    <li><strong>Rejection of Blind Rituals:</strong> Dismissing empty superstitions, fasting, and ritualism without inner purity.</li>
-                    <li><strong>The Concept of Guru:</strong> The divine light or enlightener that removes spiritual darkness.</li>
-                    <li><strong>Guru Granth Sahib:</strong> The holy scripture functioning as the eternal, living Guru.</li>
-                    <li><strong>Miri-Piri:</strong> The harmonious balance between temporal (political) and spiritual obligations.</li>
-                    <li><strong>Justice and Defense:</strong> The moral obligation to stand up for justice and defend the oppressed.</li>
-                    <li><strong>The Five Ks:</strong> The five physical articles of faith worn by initiated Sikhs (Khalsa).</li>
-                    <li><strong>Khalsa:</strong> The collective body of initiated, deeply committed Sikhs dedicated to a pure life.</li>
-                    <li><strong>Family Life (Grihastha):</strong> Embracing family and social life over monastic renunciation.</li>
-                    <li><strong>Karma and Reincarnation:</strong> The soul's journey through lives, influenced by one's actions.</li>
-                    <li><strong>Mukti:</strong> The ultimate liberation from the cycle of birth and death; merging with God.</li>
-                    <li><strong>Overcoming the Five Thieves:</strong> Controlling lust, rage, greed, attachment, and ego (Kaam, Krodh, Lobh, Moh, Ahankar).</li>
-                    <li><strong>Chardi Kala:</strong> Maintaining an eternally optimistic, joyous, and resilient attitude in all circumstances.</li>
-                </ul>
-            </div>
-
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>In the Gurdwara (Sikh place of worship), the community meal (Langar) is always strictly lacto-vegetarian so that people of any faith or dietary restriction can eat together. Outside the Gurdwara, dietary choices vary. However, initiated Sikhs are strictly forbidden from eating meat slaughtered in a ritualistic manner (such as Halal or Kosher, known as Kutha meat). Intoxicants, including alcohol, tobacco, and recreational drugs, are strictly prohibited.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Sikhism views the human body as a sacred vessel gifted by the Creator. Maintaining physical health is seen as a duty. Medical interventions, science, and surgery are fully supported, as science is viewed as a means of understanding the intricate workings of God's creation.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Blood transfusions and organ donations are highly encouraged. Sikhism views saving a life as one of the highest forms of <em>Seva</em> (selfless service). Because the physical body is temporary but the soul is eternal, donating organs to help another human is considered a deeply noble act.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Cleanliness is both a physical and spiritual requirement. Sikhs wash their hands and feet before entering the Gurdwara. For those who keep <em>Kesh</em> (uncut hair), cleanliness is paramount; the hair must be washed regularly and combed at least twice a day using a <em>Kanga</em> (a small wooden comb, one of the Five Ks).</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
-            <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+            <!-- SIKHISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Sikhism at a Glance</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founder: Guru Nanak Dev Ji</h3>
-                    <p>Guru Nanak was born in 1469 in Talwandi (now Nankana Sahib, Pakistan) in the Punjab region. After a profound spiritual revelation at the age of 30, he declared, "There is no Hindu, there is no Muslim," emphasizing that all are equal before God. He spent decades traveling extensively across the Middle East, Tibet, and India, engaging with scholars of different faiths and preaching a message of truth, honest labor, and inner devotion over empty rituals.</p>
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Sikhism, or Sikhi</p>
+                    <p>A follower of Sikhism is called a Sikh.</p>
+                    <p>The word Sikh means "learner" or "disciple" in Punjabi. A Sikh is a lifelong learner of the Guru's teaching.</p>
+                    <p>Sikhs commonly refer to God as Waheguru ("Wonderful Lord"). Other names used in the scripture include Akal Purakh ("Timeless Being"), Ram, Hari, Allah, and Khuda, reflecting the belief that God is one, whatever name is used.</p>
+                    <p>Sikhi is an independent religion. It is not a branch of Hinduism or Islam, though it emerged in a region where both were present.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Sikhism grew steadily in the Punjab region during the tenure of the ten human Gurus (1469–1708). In 1699, the tenth Guru, Guru Gobind Singh, established the Khalsa—an initiated community of "Saint-Soldiers" to defend the oppressed. In the late 18th and early 19th centuries, the Sikh Empire (led by Maharaja Ranjit Singh) unified a massive, multi-religious state across the Punjab, known for its secularism and religious tolerance.</p>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>There are approximately 25 to 30 million Sikhs worldwide.</p>
+                    <p>India's 2011 census recorded about 20.8 million Sikhs, around 1.7% of India's population. About three-quarters of India's Sikhs live in the state of Punjab, where they are the majority.</p>
+                    <p>Global surveys often include Sikhs in an "other religions" category, so precise figures vary.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Following the partition of India and Pakistan in 1947, millions of Sikhs were violently displaced, leading the majority to settle in the Indian state of Punjab. Today, while most Sikhs still reside in India, there is a massive, thriving global diaspora. Major Sikh populations exist in Canada, the United Kingdom, the United States, Australia, and East Africa.</p>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Sikhism Is Practiced</h3>
+                    <p>Most Sikhs live in India, especially Punjab, Haryana, Delhi, and Rajasthan.</p>
+                    <p>Large Sikh diaspora communities are found in:</p>
+                    <ul class="principles-list">
+                        <li>Canada</li>
+                        <li>the United Kingdom</li>
+                        <li>the United States</li>
+                        <li>Australia</li>
+                        <li>New Zealand</li>
+                        <li>Malaysia and Singapore</li>
+                        <li>Italy</li>
+                        <li>East Africa</li>
+                        <li>the Gulf states</li>
+                    </ul>
+                    <p>Canada has one of the largest Sikh populations outside India, around 2% of the national population.</p>
+                    <p>Punjabi has a special religious position because the Guru Granth Sahib is written in the Gurmukhi script, and Punjabi is the main language of worship. The scripture also includes verses in several other languages.</p>
                 </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>Sikhism does not have formal denominations in the way many religions do. Most Sikhs accept the Sikh Rehat Maryada, the code of conduct issued by the Shiromani Gurdwara Parbandhak Committee (SGPC) in 1950.</p>
+                    <p>Sikhs differ in their level of observance:</p>
+                    <h3>Amritdhari Sikhs</h3>
+                    <p>Sikhs who have taken Amrit, the initiation into the Khalsa. They keep the Five Ks and follow a strict code of conduct.</p>
+                    <h3>Keshdhari Sikhs</h3>
+                    <p>Sikhs who keep their hair uncut but have not been initiated.</p>
+                    <h3>Sahajdhari Sikhs</h3>
+                    <p>Sikhs who follow the Gurus' teachings but do not keep all the outward forms.</p>
+                    <p>There are also smaller groups and traditions, including:</p>
                     <ul>
-                        <li><strong>The Ten Gurus:</strong> The continuous spiritual lineage from Guru Nanak to Guru Gobind Singh.</li>
-                        <li><strong>Guru Tegh Bahadur (1621–1675):</strong> The ninth Guru, martyred by the Mughal Empire for defending the religious freedom of Kashmiri Hindus—a profound historic act of standing up for another faith's right to practice.</li>
-                        <li><strong>Maharaja Ranjit Singh (1780–1839):</strong> The founder of the Sikh Empire, known as the "Lion of Punjab," celebrated for his secular rule and military prowess.</li>
-                        <li><strong>Mai Bhago:</strong> A revered warrior saint who led Sikh soldiers into battle in 1705.</li>
+                        <li>Nihangs, a martial order with distinctive blue dress</li>
+                        <li>Udasis and Nirmalas, historic ascetic and scholarly orders</li>
+                        <li>Namdharis and Nirankaris, groups that accept living human gurus after Guru Gobind Singh, which mainstream Sikhs do not accept</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Sikh Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Waheguru:</strong> Wonderful Lord; the most common name for God</li>
+                        <li><strong>Ik Onkar:</strong> "There is one Creator"; the core symbol of Sikhi</li>
+                        <li><strong>Guru:</strong> Enlightener, teacher; the ten Gurus and the scripture</li>
+                        <li><strong>Guru Granth Sahib:</strong> The Sikh scripture and eternal Guru</li>
+                        <li><strong>Gurbani:</strong> The words of the Gurus in the scripture</li>
+                        <li><strong>Gurdwara:</strong> Sikh place of worship ("door of the Guru")</li>
+                        <li><strong>Khalsa:</strong> The community of initiated Sikhs</li>
+                        <li><strong>Amrit:</strong> Sacred initiation; "nectar"</li>
+                        <li><strong>Naam:</strong> The divine Name; God's presence</li>
+                        <li><strong>Naam Japna:</strong> Remembering and meditating on God</li>
+                        <li><strong>Kirat Karni:</strong> Earning an honest living</li>
+                        <li><strong>Vand Chakna:</strong> Sharing with others</li>
+                        <li><strong>Seva:</strong> Selfless service</li>
+                        <li><strong>Langar:</strong> Free communal kitchen</li>
+                        <li><strong>Sangat:</strong> Congregation, community</li>
+                        <li><strong>Hukam:</strong> Divine will, order</li>
+                        <li><strong>Haumai:</strong> Ego, self-centeredness</li>
+                        <li><strong>Gurmukh:</strong> One oriented toward the Guru</li>
+                        <li><strong>Manmukh:</strong> One oriented toward the self</li>
+                        <li><strong>Mukti:</strong> Liberation</li>
+                        <li><strong>Ardas:</strong> The Sikh communal prayer</li>
+                        <li><strong>Kirtan:</strong> Singing of hymns</li>
+                    </ul>
+                </div>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>Core Sikh beliefs include:</p>
+                    <ol>
+                        <li>one God, the Creator of all</li>
+                        <li>the teaching of the ten Gurus</li>
+                        <li>the Guru Granth Sahib as the eternal Guru</li>
+                        <li>the equality of all human beings</li>
+                        <li>karma and rebirth, and liberation through God's grace</li>
+                        <li>living a truthful, honest life within the world</li>
+                    </ol>
+                    <p>The three pillars of Sikh life taught by Guru Nanak are:</p>
+                    <ol>
+                        <li>Naam Japna — meditating on and remembering God</li>
+                        <li>Kirat Karni — earning an honest living</li>
+                        <li>Vand Chakna — sharing with others</li>
+                    </ol>
+                    <p>The Five Ks worn by initiated Sikhs are:</p>
+                    <ol>
+                        <li>Kesh — uncut hair</li>
+                        <li>Kara — a steel bracelet</li>
+                        <li>Kanga — a small wooden comb</li>
+                        <li>Kachera — cotton undergarment</li>
+                        <li>Kirpan — a ceremonial sword or blade</li>
+                    </ol>
+                    <p>Sikhs also speak of five vices to overcome: lust, anger, greed, attachment, and ego.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Sikh Holidays</h3>
+                    <h3>Vaisakhi</h3>
+                    <p>Vaisakhi, celebrated around April 13 or 14, marks the founding of the Khalsa in 1699 and is also a harvest festival in Punjab.</p>
+                    <p>It is a day of:</p>
+                    <ul class="principles-list">
+                        <li>gurdwara services</li>
+                        <li>processions (Nagar Kirtan)</li>
+                        <li>initiation ceremonies (Amrit Sanchar)</li>
+                        <li>langar</li>
+                        <li>music and celebration</li>
+                        <li>community gatherings</li>
+                    </ul>
+                    <h3>Gurpurabs</h3>
+                    <p>Anniversaries related to the Gurus. The most widely celebrated are:</p>
+                    <ul class="principles-list">
+                        <li>the birth of Guru Nanak (usually in November)</li>
+                        <li>the birth of Guru Gobind Singh</li>
+                        <li>the martyrdom of Guru Arjan</li>
+                        <li>the martyrdom of Guru Tegh Bahadur</li>
+                    </ul>
+                    <p>Gurpurabs often include an Akhand Path, a continuous 48-hour reading of the whole Guru Granth Sahib.</p>
+                    <h3>Bandi Chhor Divas</h3>
+                    <p>Celebrated at the same time as Diwali, it remembers the release of Guru Hargobind from imprisonment in Gwalior Fort, along with 52 other prisoners. The Golden Temple is lit up.</p>
+                    <h3>Hola Mohalla</h3>
+                    <p>A festival started by Guru Gobind Singh, held the day after Holi, with displays of martial skill, poetry, and music.</p>
+                </div>
+            </div>
+
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God, the Gurus &amp; Revelation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Guru Granth Sahib</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Service &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Liberation</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will &amp; Divine Will</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>The central belief of Sikhi is that God is one.</p>
+                    <p>The Mool Mantar describes God as:</p>
+                    <ul class="principles-list">
+                        <li>one</li>
+                        <li>the eternal truth</li>
+                        <li>the creator</li>
+                        <li>without fear</li>
+                        <li>without hatred</li>
+                        <li>timeless</li>
+                        <li>beyond birth and death</li>
+                        <li>self-existent</li>
+                    </ul>
+                    <p>God is understood as both nirgun (beyond qualities and form) and sargun (present within all creation).</p>
+                    <p>Sikhi rejects:</p>
+                    <ul class="principles-list">
+                        <li>worship of idols or images</li>
+                        <li>the idea that God takes birth in human form</li>
+                        <li>the idea that only one religious community can reach God</li>
+                        <li>empty ritual without inner devotion</li>
+                        <li>caste and status as measures of a person's worth</li>
+                    </ul>
+                    <h3>The Ten Gurus</h3>
+                    <p>Sikhs believe that the light of God was passed through ten human Gurus, like one flame lighting another:</p>
+                    <ol>
+                        <li>Guru Nanak (1469–1539)</li>
+                        <li>Guru Angad</li>
+                        <li>Guru Amar Das</li>
+                        <li>Guru Ram Das</li>
+                        <li>Guru Arjan</li>
+                        <li>Guru Hargobind</li>
+                        <li>Guru Har Rai</li>
+                        <li>Guru Har Krishan</li>
+                        <li>Guru Tegh Bahadur</li>
+                        <li>Guru Gobind Singh (1666–1708)</li>
+                    </ol>
+                    <p>Before his death in 1708, Guru Gobind Singh declared that there would be no more human Gurus. Guidance would come from the scripture, the Guru Granth Sahib, and from the community, the Guru Panth.</p>
+                    <p>Sikhs revere the Gurus as enlightened teachers who were fully in tune with God. They are not worshiped as God.</p>
+                    <h3>Revelation</h3>
+                    <p>Sikhs believe the Gurus' words (Gurbani) came from God. Guru Nanak described his hymns as words that came to him from God.</p>
+                    <p>The Gurus also included in the scripture the writings of Hindu and Muslim saints, called Bhagats, whose teachings agreed with their own. These include Kabir, Ravidas, Namdev, and the Sufi Sheikh Farid.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Guru Granth Sahib</h3>
+                    <p>The Guru Granth Sahib is the central scripture of Sikhi and is honored as the living Guru.</p>
+                    <p>It was first compiled by Guru Arjan in 1604 as the Adi Granth and installed in the Golden Temple. Guru Gobind Singh added the hymns of Guru Tegh Bahadur and declared it the eternal Guru.</p>
+                    <p>It contains:</p>
+                    <ul class="principles-list">
+                        <li>hymns praising God</li>
+                        <li>teachings on meditation and devotion</li>
+                        <li>ethical guidance</li>
+                        <li>reflections on human life and death</li>
+                        <li>teachings on equality</li>
+                        <li>criticism of empty ritual and hypocrisy</li>
+                    </ul>
+                    <p>The standard edition has 1,430 pages (angs). It is written in poetry and arranged in 31 main ragas (musical measures), because it is meant to be sung.</p>
+                    <p>The Guru Granth Sahib is treated with great respect. It is placed on a raised platform under a canopy, a whisk (chaur) is waved over it, and it is laid to rest in its own room at night.</p>
+                    <h3>Other Sikh Texts</h3>
+                    <p>Other important texts include:</p>
                     <ul>
-                        <li><strong>Bhagat Puran Singh (1904–1992):</strong> A visionary humanitarian who founded Pingalwara in Amritsar, dedicating his life to the destitute, sick, and disabled.</li>
-                        <li><strong>Note on Leadership:</strong> Modern Sikhism has no central human figure like a Pope. The supreme authority rests exclusively with the Guru Granth Sahib and the collective wisdom of the Khalsa.</li>
+                        <li>the Dasam Granth, attributed to Guru Gobind Singh, some of whose prayers are part of daily worship</li>
+                        <li>the writings of Bhai Gurdas, considered a key to understanding the scripture</li>
+                        <li>the Rehat Maryada, the Sikh code of conduct</li>
+                        <li>the Janamsakhis, traditional stories of Guru Nanak's life</li>
+                    </ul>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings</h3>
+                    <p>Sikhi focuses on God alone and does not place emphasis on angels or other spiritual beings.</p>
+                    <p>The Guru Granth Sahib sometimes refers to figures from Hindu and Muslim tradition, but it teaches that all of them are subject to God's will.</p>
+                    <p>The real obstacles to spiritual life are internal: the five vices and ego.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Sikhi teaches that God's light is present in every person. Guru Nanak taught:</p>
+                    <blockquote>"Recognize the light of God within all, and do not ask about caste. There is no caste in the world hereafter."</blockquote>
+                    <p>Human life is precious and rare. It is the opportunity to unite with God.</p>
+                    <p>Sikhi does not teach inherited sin. People become separated from God through haumai (ego), which makes them self-centered (manmukh). Through the Guru's teaching and God's grace, a person can become God-centered (gurmukh).</p>
+                    <h3>Wrongdoing</h3>
+                    <p>Sikhi teaches that wrongdoing comes from the five vices (Panj Chor, "five thieves"):</p>
+                    <ul class="principles-list">
+                        <li>kaam — lust</li>
+                        <li>krodh — anger</li>
+                        <li>lobh — greed</li>
+                        <li>moh — attachment</li>
+                        <li>ahankar — ego and pride</li>
+                    </ul>
+                    <p>These are countered by five virtues:</p>
+                    <ul class="principles-list">
+                        <li>sat — truth</li>
+                        <li>santokh — contentment</li>
+                        <li>daya — compassion</li>
+                        <li>nimrata — humility</li>
+                        <li>pyaar — love</li>
+                    </ul>
+                    <h3>Repentance and Forgiveness</h3>
+                    <p>Sikhi teaches that God is merciful and that sincere devotion can overcome past wrongs.</p>
+                    <p>A person who has done wrong is encouraged to:</p>
+                    <ol>
+                        <li>recognize the wrong</li>
+                        <li>sincerely regret it</li>
+                        <li>pray for forgiveness</li>
+                        <li>change their conduct</li>
+                        <li>repair harm where possible</li>
+                    </ol>
+                    <p>An initiated Sikh who breaks the code of conduct may appear before the Panj Pyare (five initiated Sikhs) at a gurdwara, confess, and accept a penance (tankhah).</p>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>Sikh worship centers on remembering God (simran) and singing hymns (kirtan).</p>
+                    <p>Initiated Sikhs recite five daily prayers (Nitnem):</p>
+                    <ul class="principles-list">
+                        <li>Japji Sahib (morning)</li>
+                        <li>Jaap Sahib (morning)</li>
+                        <li>Tav-Prasad Savaiye (morning)</li>
+                        <li>Rehras Sahib (evening)</li>
+                        <li>Kirtan Sohila (night)</li>
+                    </ul>
+                    <p>Many Sikhs rise early for prayer and meditation during the "ambrosial hours" (amrit vela) before dawn.</p>
+                    <p>Worship at the gurdwara includes:</p>
+                    <ul>
+                        <li>kirtan</li>
+                        <li>reading from the Guru Granth Sahib</li>
+                        <li>Ardas, the communal prayer</li>
+                        <li>the Hukamnama, a passage read at random as the day's guidance</li>
+                        <li>karah prasad, a sweet offering shared by all</li>
+                        <li>langar</li>
+                    </ul>
+                    <p>Sikh worship has no priests in the sense of a separate ordained class. Any Sikh, man or woman, may lead prayers or read from the scripture.</p>
+                    <h3>Service and Sharing</h3>
+                    <p>Seva, selfless service, is at the heart of Sikh practice.</p>
+                    <p>Seva may involve:</p>
+                    <ul class="principles-list">
+                        <li>cooking and serving in the langar</li>
+                        <li>cleaning the gurdwara</li>
+                        <li>caring for the sick and poor</li>
+                        <li>disaster relief</li>
+                        <li>helping anyone in need, regardless of religion</li>
+                    </ul>
+                    <p>Many Sikhs give dasvandh, one-tenth of their income, to charitable and community causes.</p>
+                    <p>The langar, started by Guru Nanak and expanded by Guru Amar Das, serves free vegetarian meals to everyone. All eat together, often seated on the floor, to show equality.</p>
+                    <h3>Fasting</h3>
+                    <p>Sikhi does not prescribe religious fasting. The Gurus taught that fasting and physical austerities do not bring a person closer to God unless the mind is changed.</p>
+                    <p>The Guru Granth Sahib teaches that true discipline is to control the mind, live honestly, and remember God.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Sikhi regards human life as a precious gift and a chance to unite with God.</p>
+                    <p>Sikhs reject withdrawal from the world. The ideal is to be a householder who lives a spiritual life within family and society.</p>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>remember God</li>
+                        <li>work honestly</li>
+                        <li>share with others</li>
+                        <li>serve the community</li>
+                        <li>care for family</li>
+                        <li>defend the weak</li>
+                        <li>stand for justice</li>
+                        <li>live with humility</li>
+                    </ul>
+                    <p>Guru Nanak taught that one should live "like a lotus in the water," untouched by the world's impurity while living fully in it.</p>
+                    <h3>Death</h3>
+                    <p>Sikhi teaches that death is a natural part of God's will (hukam). It is not to be feared.</p>
+                    <p>At death, the soul leaves the body. Sikhs are encouraged to accept death calmly and to remember God.</p>
+                    <h3>Rebirth and Liberation</h3>
+                    <p>Sikhi teaches that souls go through the cycle of birth and death according to their karma.</p>
+                    <p>The goal of life is mukti (liberation): freedom from the cycle of rebirth and union with God.</p>
+                    <p>Liberation comes through:</p>
+                    <ul class="principles-list">
+                        <li>God's grace (nadar)</li>
+                        <li>meditation on the Name</li>
+                        <li>living according to the Guru's teaching</li>
+                        <li>overcoming ego</li>
+                    </ul>
+                    <p>Sikhi teaches that liberation can be reached in this life. A person who has reached it is called jivan mukt.</p>
+                    <h3>Heaven and Hell</h3>
+                    <p>Sikhi does not place emphasis on heaven and hell as places of eternal reward or punishment.</p>
+                    <p>The Guru Granth Sahib often uses "heaven" and "hell" to describe states of life: closeness to God and separation from God. The deepest desire of a Sikh is not heaven but union with God.</p>
+                    <h3>Judgment</h3>
+                    <p>Sikhi teaches that God knows all deeds and that each person will be held accountable.</p>
+                    <p>Japji Sahib teaches:</p>
+                    <blockquote>"According to their deeds, some are brought close and some are kept far."</blockquote>
+                    <p>At the same time, Sikhs believe that God's grace is greater than any record of deeds.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will and Divine Will</h3>
+                    <p>Sikhi teaches that everything happens within God's hukam (divine will or order).</p>
+                    <p>People are free and responsible for their actions. Accepting God's will with contentment is a mark of spiritual maturity.</p>
+                    <p>The mainstream Sikh position affirms both:</p>
+                    <ul class="principles-list">
+                        <li>God's will and grace</li>
+                        <li>human responsibility and effort</li>
+                    </ul>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Sikh ethics are rooted in truth, honesty, equality, and service.</p>
+                    <p>Guru Nanak taught:</p>
+                    <blockquote>"Truth is higher than everything; higher still is truthful living."</blockquote>
+                    <p>Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>truthfulness</li>
+                        <li>honest work</li>
+                        <li>generosity</li>
+                        <li>humility</li>
+                        <li>compassion</li>
+                        <li>contentment</li>
+                        <li>courage</li>
+                        <li>equality</li>
+                        <li>respect for women</li>
+                        <li>defending the oppressed</li>
+                        <li>self-control</li>
+                    </ul>
+                    <p>The Sikh code of conduct prohibits:</p>
+                    <ul class="principles-list">
+                        <li>cutting hair</li>
+                        <li>using tobacco or intoxicants</li>
+                        <li>eating meat slaughtered by ritual methods (kutha)</li>
+                        <li>adultery</li>
+                    </ul>
+                    <h3>Family</h3>
+                    <p>Family is central to Sikh life. Sikhs value the householder's life above renunciation.</p>
+                    <p>Sikhi places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>parents</li>
+                        <li>children</li>
+                        <li>spouses</li>
+                        <li>elders</li>
+                        <li>extended family</li>
+                        <li>the wider community</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Sikh marriage is called Anand Karaj, "blissful union."</p>
+                    <p>The ceremony takes place in the presence of the Guru Granth Sahib. The couple walks around the scripture four times while four verses (the Laavan) written by Guru Ram Das are sung.</p>
+                    <p>Marriage is seen as a spiritual union in which two souls become "one light in two bodies."</p>
+                    <p>Sikh teaching rejects dowry and caste-based marriage restrictions, though these customs persist in some communities.</p>
+                    <h3>Community</h3>
+                    <p>The Sangat, the community of believers, is central to Sikhi.</p>
+                    <p>The Khalsa, established by Guru Gobind Singh in 1699, is the community of initiated Sikhs.</p>
+                    <p>The gurdwara functions not only as a place of worship but also as a center for:</p>
+                    <ul class="principles-list">
+                        <li>langar</li>
+                        <li>education</li>
+                        <li>Punjabi language classes</li>
+                        <li>music</li>
+                        <li>community events</li>
+                        <li>shelter for travelers</li>
+                        <li>social support</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Sikh ethics apply to everyone.</p>
+                    <p>Sikhi teaches the welfare of all. The Ardas prayer ends with a request for "Sarbat da bhala," the well-being of all humanity.</p>
+                    <p>Gurdwaras have four doors, especially at the Golden Temple, symbolizing openness to people from all directions and backgrounds.</p>
+                    <p>Guru Tegh Bahadur gave his life in 1675 defending the religious freedom of Kashmiri Hindus, who were not Sikhs. Sikhs remember this as a defense of the right of all people to practice their faith.</p>
+                </div>
+            </div>
+
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Guru Granth Sahib</h3>
+                <p>The Guru Granth Sahib is the foundational Sikh scripture.</p>
+                <p>Its major themes include:</p>
+                <ul class="principles-list">
+                    <li>the oneness of God</li>
+                    <li>the divine Name</li>
+                    <li>meditation and devotion</li>
+                    <li>the Guru's guidance</li>
+                    <li>equality</li>
+                    <li>ego and its cure</li>
+                    <li>divine will</li>
+                    <li>honest living</li>
+                    <li>liberation</li>
+                </ul>
+                <p>It is unique in containing the writings of teachers from different religious backgrounds.</p>
+                <h3>Japji Sahib</h3>
+                <p>Japji Sahib, written by Guru Nanak, opens the Guru Granth Sahib and is the first of the daily prayers. It is often seen as the summary of Sikh teaching.</p>
+                <h3>The Sikh Code of Conduct</h3>
+                <p>The Sikh Rehat Maryada answers practical questions such as:</p>
+                <ul class="principles-list">
+                    <li>How should daily prayer be performed?</li>
+                    <li>How should the gurdwara be run?</li>
+                    <li>How are births, marriages, and deaths observed?</li>
+                    <li>What are the duties of initiated Sikhs?</li>
+                    <li>How should Sikhs treat the scripture?</li>
+                </ul>
+                <h3>Sikh Scholarship</h3>
+                <p>Sikh learning developed in:</p>
+                <ul class="principles-list">
+                    <li>interpretation of the scripture</li>
+                    <li>music (Gurmat Sangeet)</li>
+                    <li>Punjabi literature</li>
+                    <li>history</li>
+                    <li>the Gurmukhi script, developed and promoted by Guru Angad</li>
+                </ul>
+                <p>Important interpreters include Bhai Gurdas, Bhai Nand Lal, Bhai Kahn Singh Nabha, and Bhai Vir Singh.</p>
+            </div>
+
+            <!-- HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">The Travels of Guru Nanak</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">The Development of the Sikh Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Amritsar and the Golden Temple</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">The Khalsa</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">The Sikh Empire and Later History</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-7')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-8')">Historical Figures</button>
+                </div>
+
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Guru Nanak was born in 1469 in Talwandi, now Nankana Sahib in Pakistan.</p>
+                    <p>According to Sikh tradition, around 1499, Guru Nanak disappeared into the river Bein for three days. He came out declaring: "There is no Hindu, there is no Muslim," meaning that God sees beyond religious labels.</p>
+                    <p>His teaching emphasized:</p>
+                    <ul class="principles-list">
+                        <li>the oneness of God</li>
+                        <li>meditation on God's Name</li>
+                        <li>equality of all people</li>
+                        <li>honest work</li>
+                        <li>sharing</li>
+                        <li>rejecting empty ritual and caste</li>
+                    </ul>
+                </div>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>The Travels of Guru Nanak</h3>
+                    <p>Guru Nanak made long journeys (udasis) across South Asia and, according to tradition, to Tibet, Sri Lanka, Mecca, and Baghdad. He talked with Hindu and Muslim holy men and taught through song.</p>
+                    <p>He settled at Kartarpur, where he founded a community of farmers and devotees who worked, prayed, and ate together.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>The Development of the Sikh Community</h3>
+                    <p>The later Gurus built the Sikh community:</p>
+                    <ul>
+                        <li>Guru Angad promoted the Gurmukhi script.</li>
+                        <li>Guru Amar Das expanded the langar and opposed practices such as purdah and sati.</li>
+                        <li>Guru Ram Das founded the city of Amritsar.</li>
+                        <li>Guru Arjan built the Harmandir Sahib and compiled the Adi Granth. He was executed in 1606 under the Mughal emperor Jahangir, becoming the first Sikh martyr Guru.</li>
+                        <li>Guru Hargobind took up arms to defend the community and wore two swords representing spiritual and worldly authority (miri and piri).</li>
+                        <li>Guru Tegh Bahadur was executed in Delhi in 1675.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Amritsar and the Golden Temple</h3>
+                    <p>The Harmandir Sahib, known as the Golden Temple, in Amritsar is the most important Sikh site.</p>
+                    <p>It was built in the late 16th century. Guru Arjan invited the Muslim Sufi saint Mian Mir to lay its foundation stone, according to tradition.</p>
+                    <p>The Golden Temple serves free meals to tens of thousands of people each day, regardless of religion.</p>
+                    <p>Next to it stands the Akal Takht, the highest seat of Sikh temporal authority.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>The Khalsa</h3>
+                    <p>On Vaisakhi in 1699, Guru Gobind Singh founded the Khalsa at Anandpur Sahib. He asked for volunteers willing to give their lives. Five men stepped forward, and they became the Panj Pyare (the Five Beloved Ones).</p>
+                    <p>Initiated men took the name Singh ("lion"), and women the name Kaur ("princess"), removing caste-based surnames.</p>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>The Sikh Empire and Later History</h3>
+                    <p>After the Gurus, Sikhs faced persecution but also established political power. Maharaja Ranjit Singh founded the Sikh Empire in Punjab in 1799.</p>
+                    <p>The British annexed Punjab in 1849. Sikhs later served in large numbers in the British Indian Army.</p>
+                </div>
+
+                <div id="hist-7" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>1469:</strong> Birth of Guru Nanak.</li>
+                        <li><strong>c. 1499:</strong> Guru Nanak's enlightenment experience.</li>
+                        <li><strong>1577:</strong> Founding of Amritsar.</li>
+                        <li><strong>1604:</strong> The Adi Granth is compiled and installed in the Harmandir Sahib.</li>
+                        <li><strong>1606:</strong> Martyrdom of Guru Arjan.</li>
+                        <li><strong>1675:</strong> Martyrdom of Guru Tegh Bahadur.</li>
+                        <li><strong>1699:</strong> Founding of the Khalsa.</li>
+                        <li><strong>1708:</strong> Guru Gobind Singh declares the Guru Granth Sahib the eternal Guru.</li>
+                        <li><strong>1799–1849:</strong> The Sikh Empire under Maharaja Ranjit Singh and his successors.</li>
+                        <li><strong>1873 onward:</strong> The Singh Sabha reform movement.</li>
+                        <li><strong>1920s:</strong> The Gurdwara Reform Movement; founding of the SGPC.</li>
+                        <li><strong>1947:</strong> Partition of India divides Punjab; many Sikhs migrate from western Punjab.</li>
+                        <li><strong>1984:</strong> Operation Blue Star at the Golden Temple and anti-Sikh violence in Delhi and elsewhere.</li>
+                        <li><strong>2019:</strong> Kartarpur Corridor opens, allowing Indian Sikhs visa-free access to Guru Nanak's final home in Pakistan.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-8" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>the ten Gurus</li>
+                        <li>Bhai Mardana, Guru Nanak's Muslim companion and musician</li>
+                        <li>Bebe Nanaki, Guru Nanak's sister and first follower</li>
+                        <li>Mata Khivi, who organized the early langar</li>
+                        <li>Bhai Gurdas</li>
+                        <li>Mata Sahib Kaur, "Mother of the Khalsa"</li>
+                        <li>Banda Singh Bahadur</li>
+                        <li>Mai Bhago, a woman warrior</li>
+                        <li>Maharaja Ranjit Singh</li>
+                        <li>Bhai Vir Singh</li>
+                        <li>many saints, scholars, soldiers, and community leaders across Sikh history</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The continuity of Sikhism is uniquely safeguarded by the <em>Guru Granth Sahib</em>. Unlike other religious texts that were compiled centuries after the founders' deaths, the Sikh scripture was written, compiled, and authenticated by the Gurus themselves. In 1708, the tenth Guru, Guru Gobind Singh, permanently transferred spiritual authority to this text, ending the line of human Gurus. Because the scripture itself is the Guru, the core teachings remain pristine and unalterable by modern clergy or political leaders.</p>
+            <!-- DIVERSITY OF PRACTICE -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Diversity of Practice</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Mainstream Khalsa Tradition</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Smaller Traditions</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Interpretations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Mainstream Khalsa Tradition</h3>
+                    <p>Most Sikhs follow the Rehat Maryada and accept the authority of the Akal Takht in religious matters.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Smaller Traditions</h3>
+                    <h3>Nihangs</h3>
+                    <p>A martial order known for blue robes, tall turbans, and preserving traditional practices.</p>
+                    <h3>Namdharis</h3>
+                    <p>A group that keeps a strict code and accepts a continuing line of living gurus.</p>
+                    <h3>Nanakpanthis and Sahajdharis</h3>
+                    <p>People who follow Guru Nanak's teachings without formal initiation.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Traditional and Modern Interpretations</h3>
+                    <p>Modern Sikhs differ in their views on:</p>
+                    <ul class="principles-list">
+                        <li>the observance of the Five Ks</li>
+                        <li>interpretation of the Dasam Granth</li>
+                        <li>the role of women in certain gurdwara duties</li>
+                        <li>caste in social practice</li>
+                        <li>politics and the Sikh homeland question</li>
+                        <li>adapting to life in the diaspora</li>
+                    </ul>
+                    <p>Two Sikhs may share the same beliefs while reaching different conclusions on modern questions.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>Punjab</h3>
+                    <p>Sikhi is closely linked to Punjabi language, music, and rural culture.</p>
+                    <h3>Diaspora</h3>
+                    <p>In Canada, the UK, and the US, Sikhs have built large gurdwaras, Punjabi schools, and community organizations.</p>
+                    <h3>United States</h3>
+                    <p>American Sikhs include:</p>
+                    <ul class="principles-list">
+                        <li>descendants of early 20th-century farmers in California</li>
+                        <li>immigrants from India</li>
+                        <li>Sikhs from East Africa and the UK</li>
+                        <li>converts</li>
+                    </ul>
+                    <p>Consequently, Sikh life varies across communities.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>It is important to distinguish between Sikh teaching and Punjabi culture.</p>
+                    <p>Examples of cultural practices that are not Sikh religious requirements include:</p>
+                    <ul class="principles-list">
+                        <li>dowry, which Sikh teaching opposes</li>
+                        <li>caste-based marriage customs, which Sikh teaching rejects</li>
+                        <li>bhangra dance</li>
+                        <li>particular foods</li>
+                        <li>clothing styles</li>
+                        <li>certain wedding celebrations</li>
+                    </ul>
+                    <p>A practice may be common among Punjabis without being taught by the Gurus.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Sikhism is a blend of Hinduism and Islam.</strong><br>
-                Reality: While it emerged in a region where both religions were prominent, Sikhism is a distinct, independent revelation with its own unique philosophy, scripture, institutions, and concept of God.</p>
-                <p><strong>Misconception: Men wearing turbans are affiliated with terrorism.</strong><br>
-                Reality: Since 9/11, Sikhs in the West have frequently been targets of misdirected hate crimes. For a Sikh, the turban (Dastar) is a crown of royalty, a commitment to equality, and a highly visible pledge to protect the weak and stand for justice. It represents the exact opposite of terrorism.</p>
-                <p><strong>Misconception: Sikhs are an aggressive or militant group.</strong><br>
-                Reality: The carrying of the <em>Kirpan</em> (a small ceremonial sword) by initiated Sikhs represents a moral duty to defend the defenseless. It is an instrument of grace and justice, never an instrument of aggression or offense. Sikhs strive to embody the "Saint-Soldier" ideal—spiritually elevated yet prepared to stand against tyranny.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Sikhism is a branch of Hinduism or a mix of Hinduism and Islam.</strong><br>
+                Fact: Sikhi is an independent religion with its own scripture, Gurus, beliefs, and practices.</p>
+                <p><strong>Myth: People who wear turbans are Muslim or Arab.</strong><br>
+                Fact: In Western countries, most people who wear turbans are Sikh. Sikhs have been targeted in hate crimes because of this confusion, especially after September 11, 2001.</p>
+                <p><strong>Myth: The kirpan is a weapon.</strong><br>
+                Fact: The kirpan is a religious article of faith that represents the duty to defend justice and protect the weak. It is not meant for aggression.</p>
+                <p><strong>Myth: Only men wear turbans.</strong><br>
+                Fact: Many Sikh women also wear turbans. Sikh teaching gives women and men equal status.</p>
+                <p><strong>Myth: Sikhs worship the Guru Granth Sahib as an idol.</strong><br>
+                Fact: Sikhs revere the scripture as the Guru because it contains the divine Word, but they worship only God.</p>
+                <p><strong>Myth: Sikhs worship the Gurus as God.</strong><br>
+                Fact: Sikhs honor the Gurus as divinely inspired teachers, not as God.</p>
+                <p><strong>Myth: Only Sikhs can eat in the langar.</strong><br>
+                Fact: Langar is free and open to everyone, regardless of religion, caste, gender, or background.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>In the diaspora, Sikhs continue to battle discrimination, bullying, and systemic misunderstandings regarding their articles of faith (specifically the turban and the Kirpan) in workplaces and schools. </p>
-                <p>In their ancestral homeland of Punjab, the community faces severe socio-economic challenges, including a devastating agricultural crisis, water depletion, a rampant drug epidemic among the youth, and ongoing political tensions regarding state rights and human rights accountability dating back to the violence of the 1980s.</p>
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Sikhism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Sikhism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Equality</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Devotion, Work &amp; Sharing</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Sikh life.</p>
+                    <p>Sikhs are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents and elders</li>
+                        <li>marriage</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>strong family ties</li>
+                        <li>hospitality</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Sikh marriage is a spiritual union.</p>
+                    <p>An Anand Karaj generally involves:</p>
+                    <ul class="principles-list">
+                        <li>the consent of both partners</li>
+                        <li>the presence of the Guru Granth Sahib</li>
+                        <li>the four Laavan</li>
+                        <li>the blessing of the community</li>
+                    </ul>
+                    <h3>Children</h3>
+                    <p>Children are regarded as a gift from God.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                        <li>teaching about Sikh values and Punjabi</li>
+                    </ul>
+                    <p>A child's name is often chosen by opening the Guru Granth Sahib at random and taking the first letter of the first word on the page.</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Education is highly valued. Guru Angad promoted literacy through the Gurmukhi script.</p>
+                    <p>Sikh communities support:</p>
+                    <ul class="principles-list">
+                        <li>schools and colleges</li>
+                        <li>Punjabi language classes</li>
+                        <li>music education</li>
+                        <li>scholarships</li>
+                    </ul>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>The langar serves vegetarian food so that people of all faiths can eat together.</p>
+                    <p>Many Sikhs are vegetarian, especially initiated Sikhs, though practice varies. The code of conduct prohibits meat killed ritually (kutha) and prohibits alcohol, tobacco, and intoxicants.</p>
+                    <h3>Clothing</h3>
+                    <p>Sikhs who keep their hair uncut usually cover it with a turban (dastar) or other head covering.</p>
+                    <p>Examples include:</p>
+                    <ul class="principles-list">
+                        <li>dastar (turban)</li>
+                        <li>patka (a smaller head covering often worn by boys)</li>
+                        <li>chunni (a scarf worn by many women)</li>
+                        <li>the kara, worn by most Sikhs</li>
+                    </ul>
+                    <p>The turban is a symbol of faith, dignity, and equality.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>Sikh teaching gives women and men equal status. Guru Nanak wrote:</p>
+                    <blockquote>"From woman, man is born... Why call her inferior, from whom kings are born?"</blockquote>
+                    <p>The Gurus opposed sati (widow burning), female infanticide, and the veiling of women. Women may lead prayers and perform all religious functions.</p>
+                    <p>In practice, some communities still have gender inequalities, and Sikhs today work to address them.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Kirat Karni, honest work, is one of the three pillars of Sikhi.</p>
+                    <p>Sikhs are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>earn honestly</li>
+                        <li>avoid begging and dependence when able to work</li>
+                        <li>avoid fraud</li>
+                        <li>support their families</li>
+                        <li>share their earnings</li>
+                    </ul>
+                    <p>Guru Nanak praised the honest bread of a poor carpenter, Bhai Lalo, over the rich feast of a corrupt official.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Sikh business ethics emphasize:</p>
+                    <ul class="principles-list">
+                        <li>honesty</li>
+                        <li>fairness</li>
+                        <li>avoiding exploitation</li>
+                        <li>sharing profits through dasvandh</li>
+                        <li>serving the community</li>
+                    </ul>
+                    <h3>Charity</h3>
+                    <p>Sharing is part of daily Sikh life.</p>
+                    <p>Sikhs may give:</p>
+                    <ul class="principles-list">
+                        <li>dasvandh (one-tenth of income)</li>
+                        <li>food through langar</li>
+                        <li>disaster relief</li>
+                        <li>medical aid</li>
+                        <li>education support</li>
+                        <li>volunteer service</li>
+                    </ul>
+                    <p>Sikh relief organizations such as Khalsa Aid provide aid around the world.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Sikhi supports caring for health and accepting medical treatment.</p>
+                    <p>Most Sikhs accept blood transfusions and organ donation as forms of seva.</p>
+                    <p>Initiated Sikhs may prefer that hair not be cut during medical treatment where possible, and may wish to keep their articles of faith on.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Traditional Sikh funeral practice includes:</p>
+                    <ul>
+                        <li>washing and dressing the body, with the Five Ks</li>
+                        <li>prayers and kirtan</li>
+                        <li>cremation</li>
+                        <li>scattering ashes in running water</li>
+                        <li>a reading of the whole Guru Granth Sahib (Sehaj Path) at home or gurdwara</li>
+                        <li>the Bhog ceremony at its conclusion</li>
+                    </ul>
+                    <p>Loud mourning is discouraged, because death is part of God's will.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The major Sikh observances are Vaisakhi, the Gurpurabs of Guru Nanak and Guru Gobind Singh, Bandi Chhor Divas, and Hola Mohalla.</p>
+                    <h3>Community Life</h3>
+                    <p>Sikh community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>gurdwaras</li>
+                        <li>langar</li>
+                        <li>Punjabi schools</li>
+                        <li>youth camps</li>
+                        <li>sports and cultural events</li>
+                        <li>charitable organizations</li>
+                    </ul>
+                    <p>In the United States, gurdwaras may also provide:</p>
+                    <ul class="principles-list">
+                        <li>food assistance</li>
+                        <li>shelter</li>
+                        <li>counseling</li>
+                        <li>language classes</li>
+                        <li>interfaith programs</li>
+                        <li>disaster relief</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Sikh teaching connects spiritual and worldly responsibility (miri piri). Sikhs believe in standing up for justice.</p>
+                    <p>Sikhs today live in:</p>
+                    <ul class="principles-list">
+                        <li>India and other democracies</li>
+                        <li>countries where they are small minorities</li>
+                    </ul>
+                    <p>In the United States, Sikhs participate in voting, public service, the military, law enforcement, advocacy, and interfaith work. Dalip Singh Saund, elected in 1956, was the first Asian American member of the U.S. Congress.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Sikhi has a long history of interaction with:</p>
+                    <ul class="principles-list">
+                        <li>Hindus</li>
+                        <li>Muslims</li>
+                        <li>Jains</li>
+                        <li>Buddhists</li>
+                        <li>Christians</li>
+                        <li>people of other religions</li>
+                        <li>people without religious belief</li>
+                    </ul>
+                    <p>The Guru Granth Sahib includes writings by Hindu and Muslim saints. Sikhs believe that people of all religions can reach God.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Sikhism in America</h3>
+                    <p>Sikhs have lived in the United States since the late 19th century. Many early immigrants worked on farms and railroads in California. The first American gurdwara was founded in Stockton, California, in 1912.</p>
+                    <p>American Sikhs today participate in medicine, engineering, technology, farming, trucking, business, law, education, government, and the military.</p>
+                    <p>After September 11, 2001, many Sikhs faced hate crimes. In 2012, a white supremacist killed six worshippers at a gurdwara in Oak Creek, Wisconsin. The Sikh community responded with outreach and education.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Sikhism and Humanity</h3>
+                    <p>Sikh civilization made contributions in many areas.</p>
+                    <h3>Free Community Kitchens</h3>
+                    <p>The langar is one of the largest free-meal systems in the world.</p>
+                    <h3>Music</h3>
+                    <p>Sikh sacred music (Gurmat Sangeet) preserves classical raga traditions.</p>
+                    <h3>Service in Crises</h3>
+                    <p>Sikh volunteers often provide food and aid in disasters and refugee crises.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Sikhism and Knowledge</h3>
+                    <p>The Gurus encouraged learning and literacy. The word Sikh itself means learner.</p>
+                    <h3>Sikhism and Justice</h3>
+                    <p>Justice is a central Sikh value. Guru Gobind Singh taught that when all other means have failed, it is right to take up the sword to defend justice.</p>
+                    <p>The Sikh ideal of the sant-sipahi ("saint-soldier") combines spiritual devotion with the courage to defend the oppressed.</p>
+                    <h3>Sikhism and Human Dignity</h3>
+                    <p>Sikhi teaches that every person carries the light of God. It rejects discrimination based on:</p>
+                    <ul class="principles-list">
+                        <li>caste</li>
+                        <li>gender</li>
+                        <li>race</li>
+                        <li>religion</li>
+                        <li>wealth</li>
+                    </ul>
+                    <h3>Sikhism and Equality</h3>
+                    <p>Equality is one of the most visible Sikh values.</p>
+                    <p>The langar, where everyone sits together to eat, and the names Singh and Kaur, which replace caste names, are practical expressions of equality.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Sikhism as Devotion, Work, and Sharing</h3>
+                    <p>Sikhi does not reduce religion to belief. Guru Nanak's three pillars present Sikh life as:</p>
+                    <h3>Naam Japna</h3>
+                    <p>Remembering God through meditation and prayer.</p>
+                    <h3>Kirat Karni</h3>
+                    <p>Earning an honest living.</p>
+                    <h3>Vand Chakna</h3>
+                    <p>Sharing with those in need.</p>
+                    <p>This framework can be useful for understanding Sikhi as devotion + honest work + sharing.</p>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Practicing Sikhs adhere to <em>Nitnem</em>, a schedule of daily prayers read in the early morning, evening, and before sleep. Initiated Sikhs (the Khalsa) commit to wearing the Five Ks at all times: <em>Kesh</em> (uncut hair covered by a turban), <em>Kara</em> (a steel bracelet symbolizing connection to God), <em>Kanga</em> (a wooden comb for cleanliness), <em>Kachhera</em> (cotton undergarment for modesty), and <em>Kirpan</em> (a ceremonial blade for justice).</p>
-                <p>Attending the Gurdwara for communal singing of hymns (Kirtan) and partaking in the Langar (community kitchen) are frequent, highly valued social and spiritual practices.</p>
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Sikhism is a monotheistic tradition centered on one God, the teachings of the ten Gurus, and the Guru Granth Sahib.</p>
+                <p>At its theological core are:</p>
+                <ul class="principles-list">
+                    <li>one God</li>
+                    <li>the divine Name</li>
+                    <li>the Guru's guidance</li>
+                    <li>God's will and grace</li>
+                    <li>karma, rebirth, and liberation</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>daily prayer and meditation</li>
+                    <li>kirtan</li>
+                    <li>seva</li>
+                    <li>langar</li>
+                    <li>the Five Ks for initiated Sikhs</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>equality</li>
+                    <li>truthful living</li>
+                    <li>honest work</li>
+                    <li>sharing</li>
+                    <li>humility</li>
+                    <li>courage</li>
+                    <li>defending the oppressed</li>
+                </ul>
+                <p>Sikhs today live across the world while keeping strong ties to Punjab. Sikhi should not be confused with Punjabi culture or with other religions.</p>
+                <p>Understanding Sikhism requires distinguishing among scripture, the Gurus' teachings, history, and culture.</p>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Sikhism's institution of <em>Langar</em> is one of the greatest organized systems of human equity and charity in the world. The Golden Temple in Amritsar alone serves free, hot meals to roughly 100,000 people every single day, regardless of their background or belief.</p>
-                <p>Modern Sikh humanitarian organizations, such as Khalsa Aid, are consistently among the first responders in global disaster zones, war fronts, and refugee camps, embodying the core principle of "recognizing the whole human race as one."</p>
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Sikhism, we recommend relying on primary Sikh sources.</p>
+                <h3>1. The Guru Granth Sahib</h3>
+                <p>Useful primary passages include:</p>
+                <ul class="principles-list">
+                    <li>the Mool Mantar (Ang 1)</li>
+                    <li>Japji Sahib (Angs 1–8)</li>
+                    <li>Rehras Sahib and Kirtan Sohila</li>
+                    <li>Asa di Var, on truthful living</li>
+                    <li>the Laavan (Ang 773–774), the marriage hymns</li>
+                    <li>Guru Nanak on women, Asa di Var (Ang 473)</li>
+                </ul>
+                <p>Free searchable texts with English translations are available at SikhiToTheMax and SearchGurbani.</p>
+                <h3>2. The Dasam Granth</h3>
+                <ul class="principles-list">
+                    <li>Jaap Sahib</li>
+                    <li>Tav-Prasad Savaiye</li>
+                </ul>
+                <h3>3. Sikh Rehat Maryada</h3>
+                <p>The official Sikh code of conduct published by the SGPC.</p>
+                <h3>4. Writings of Bhai Gurdas</h3>
+                <p>The Vaars of Bhai Gurdas, a key early interpretation of Sikh teaching.</p>
+                <h3>5. Demographic Data</h3>
+                <ul class="principles-list">
+                    <li>Census of India 2011</li>
+                    <li>Statistics Canada, 2021 Census</li>
+                </ul>
             </div>
 
         </section>
@@ -481,15 +1347,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

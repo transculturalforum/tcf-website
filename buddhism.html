@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,160 +311,1145 @@
         <p>A spiritual path focused on ethical discipline, profound psychological insight, and the attainment of liberation from suffering.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">Buddhism at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Denominations and Schools</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Founded in ancient India during the 6th century BCE by Siddhartha Gautama, known as the Buddha (the "Awakened One"), Buddhism shifted the religious paradigm away from the worship of supreme creator deities. Instead, it offers a deeply practical, psychological, and ethical methodology for personal development and ultimate liberation.</p>
-                <p>The core of Buddhist thought identifies that human existence involves suffering (Dukkha), which is caused by our endless cravings, attachments, and ignorance. By following a structured path of moral living and intense mental discipline (meditation), an individual can extinguish this craving and achieve Nirvana—a state of supreme peace and release from the cycle of rebirth.</p>
-                <p>Buddhism is largely non-theistic, meaning it does not rely on a belief in a creator God. Today, it encompasses approximately 500 million followers worldwide and is divided into three primary traditions: Theravada (the "School of the Elders"), Mahayana (the "Great Vehicle"), and Vajrayana (the "Diamond Vehicle," including Tibetan Buddhism).</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>Buddhism is one of the world's major religious and philosophical traditions. It began in northern India around the fifth century BCE with the teachings of Siddhartha Gautama, who became known as the Buddha, meaning "the Awakened One."</p>
+                <p>Buddhism teaches that human life is marked by suffering and dissatisfaction, that this suffering has causes, and that it can be brought to an end through wisdom, ethical conduct, and mental discipline. The goal of the Buddhist path is nirvana (Pali: nibbana), the complete ending of suffering and of the cycle of rebirth.</p>
+                <p>Buddhists understand Buddhism not simply as a set of beliefs but as a path of practice. It shapes meditation, ethics, family life, community, work, and how a person relates to every living being.</p>
+                <p>Unlike the Abrahamic religions, Buddhism does not center on a creator God. The Buddha is revered as a teacher who discovered the truth about reality and showed others how to realize it, not as a god to be worshiped as creator.</p>
+                <p>The central expression of Buddhist commitment is "taking refuge" in the Three Jewels:</p>
+                <blockquote>"I take refuge in the Buddha. I take refuge in the Dharma. I take refuge in the Sangha."</blockquote>
+                <p>The Buddha is the teacher, the Dharma is his teaching and the truth it points to, and the Sangha is the community of practitioners.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>The foundational framework of Buddhism is built upon the Four Noble Truths, the Eightfold Path, and key philosophical insights:</p>
-                <ul class="principles-list">
-                    <li><strong>Dukkha:</strong> The truth that suffering, dissatisfaction, and impermanence are inherent to existence.</li>
-                    <li><strong>Samudaya:</strong> The truth that the root cause of suffering is craving (attachment) and ignorance.</li>
-                    <li><strong>Nirodha:</strong> The truth that there is an end to suffering by extinguishing craving.</li>
-                    <li><strong>Magga:</strong> The truth that the Eightfold Path is the method to achieve this liberation.</li>
-                    <li><strong>Right View:</strong> Understanding the true nature of reality and the Four Noble Truths.</li>
-                    <li><strong>Right Intention:</strong> Cultivating thoughts of renunciation, goodwill, and harmlessness.</li>
-                    <li><strong>Right Speech:</strong> Abstaining from lying, divisive speech, harsh words, and idle chatter.</li>
-                    <li><strong>Right Action:</strong> Acting ethically; refraining from killing, stealing, and sexual misconduct.</li>
-                    <li><strong>Right Livelihood:</strong> Earning a living in a way that does not cause harm to others.</li>
-                    <li><strong>Right Effort:</strong> Diligently cultivating wholesome mental states and abandoning unwholesome ones.</li>
-                    <li><strong>Right Mindfulness:</strong> Maintaining clear, non-judgmental awareness of the body, feelings, and mind.</li>
-                    <li><strong>Right Concentration:</strong> Developing deep mental focus and meditative absorption (Jhana).</li>
-                    <li><strong>Anicca (Impermanence):</strong> The universal law that all conditioned things are in a constant state of flux.</li>
-                    <li><strong>Anatta (Non-Self):</strong> The understanding that there is no permanent, unchanging soul or core identity.</li>
-                    <li><strong>Karma:</strong> Intentional actions (mental, verbal, and physical) that determine future consequences.</li>
-                    <li><strong>Samsara:</strong> The continuous, wandering cycle of birth, death, and rebirth.</li>
-                    <li><strong>Nirvana:</strong> The ultimate goal; the extinguishing of the fires of greed, hatred, and delusion.</li>
-                    <li><strong>Ahimsa:</strong> The principle of non-harming and non-violence toward all sentient beings.</li>
-                    <li><strong>Karuna (Compassion):</strong> The active desire to remove the suffering of others.</li>
-                    <li><strong>Metta (Loving-kindness):</strong> Cultivating unconditional goodwill toward all beings.</li>
-                </ul>
-            </div>
-
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>Dietary practices vary by tradition. Because of the principle of <em>Ahimsa</em> (non-violence), Mahayana traditions strongly advocate for vegetarianism or veganism. In Theravada traditions, monks and nuns traditionally eat whatever is offered to them in their alms bowls, which may include meat, provided the animal was not killed specifically for them.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Buddhism is deeply compatible with modern science, particularly psychology and neuroscience, as both rely on empirical observation and the investigation of the mind. The 14th Dalai Lama has famously stated that if scientific analysis were to conclusively demonstrate certain claims in Buddhism to be false, then Buddhism must change and accept the findings of science. Modern medicine is fully embraced.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>Buddhism highly encourages blood and organ donation. Giving of one's own body to save another is viewed as a supreme act of <em>Dana</em> (generosity) and <em>Karuna</em> (compassion). It exemplifies the Buddhist teaching of non-attachment to the physical body.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Physical cleanliness is highly valued, particularly within monastic communities where sweeping, cleaning, and maintaining order are viewed as active forms of mindfulness practice (especially prominent in Zen traditions). A clean environment is believed to foster a clear, tranquil mind.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
-            <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+            <!-- BUDDHISM AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>Buddhism at a Glance</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founder: Siddhartha Gautama</h3>
-                    <p>Born a prince in Lumbini (modern-day Nepal) in the 6th century BCE, Siddhartha Gautama lived a sheltered life of luxury. Upon witnessing old age, sickness, and death for the first time, he renounced his royal title to seek a solution to human suffering. After years of extreme asceticism, he discovered the "Middle Way." Meditating beneath the Bodhi tree in Bodh Gaya, India, he attained supreme enlightenment (Nirvana) and spent the next 45 years teaching the Dharma.</p>
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>Buddhism</p>
+                    <p>A follower of Buddhism is called a Buddhist.</p>
+                    <p>The word comes from Buddha, a Sanskrit and Pali title meaning "awakened" or "enlightened." Buddhists often call their tradition the Buddha-Dharma, or simply the Dharma, meaning "the teaching."</p>
+                    <p>Buddhism does not ask its followers to reject every other belief. In many Asian societies Buddhists also take part in local, ancestral, Confucian, Daoist, Shinto, or Hindu practices.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>Buddhism began in the Ganges basin of India. In the 3rd century BCE, the powerful Mauryan Emperor Ashoka converted to Buddhism, transforming it into a major state religion and sending missionaries throughout Asia. It spread rapidly along the Silk Road into China, Korea, and Japan, and southwards into Sri Lanka and Southeast Asia, while eventually declining in India itself.</p>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>According to Pew Research Center, there were approximately 324 million Buddhists worldwide in 2020, about 4.1% of the world's population. Buddhism was the only major religious group whose number of adherents fell between 2010 and 2020, largely because of low birth rates and religious disaffiliation in East Asia.</p>
+                    <p>Counting Buddhists is difficult. In countries such as China and Japan, many people visit temples, honor the Buddha, and hold Buddhist funerals without identifying as Buddhist on surveys. Estimates that include these people are much higher.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, there are roughly 500 million Buddhists globally. It is the dominant religion in many Southeast Asian countries (Thailand, Myanmar, Cambodia, Laos) and maintains a massive cultural and philosophical presence in East Asia (China, Japan, South Korea, Vietnam). Since the 20th century, Buddhism has seen significant growth in Western countries, particularly driven by an interest in meditation and mindfulness.</p>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where Buddhism Is Practiced</h3>
+                    <p>Buddhism is practiced on every inhabited continent, but about 99% of Buddhists live in the Asia-Pacific region.</p>
+                    <p>Large Buddhist populations are found in:</p>
+                    <ul class="principles-list">
+                        <li>China</li>
+                        <li>Thailand</li>
+                        <li>Japan</li>
+                        <li>Myanmar (Burma)</li>
+                        <li>Sri Lanka</li>
+                        <li>Vietnam</li>
+                        <li>Cambodia</li>
+                        <li>Laos</li>
+                        <li>South Korea</li>
+                        <li>Taiwan</li>
+                        <li>Mongolia</li>
+                        <li>Bhutan</li>
+                        <li>Tibet and the Himalayan region</li>
+                        <li>North America, Europe, and Australia (growing communities)</li>
+                    </ul>
+                    <p>Buddhism began in India, but for many centuries it almost disappeared there. Today it has a modern Indian revival, especially among followers of B. R. Ambedkar.</p>
+                    <p>Buddhists speak many languages. Important scriptural languages include Pali, Sanskrit, Classical Chinese, and Tibetan. No single language is required for Buddhist practice.</p>
                 </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
-                    <ul>
-                        <li><strong>Emperor Ashoka (304–232 BCE):</strong> Indian emperor who abandoned warfare to propagate Buddhist ethics across Asia.</li>
-                        <li><strong>Nagarjuna (c. 150–250 CE):</strong> Brilliant philosopher who articulated the concept of <em>Sunyata</em> (Emptiness), central to Mahayana Buddhism.</li>
-                        <li><strong>Bodhidharma (5th/6th century CE):</strong> The semi-legendary monk credited with transmitting Chan (Zen) Buddhism to China.</li>
-                        <li><strong>Padmasambhava (8th century CE):</strong> The "Second Buddha" who was instrumental in bringing Tantric Buddhism to Tibet.</li>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>The three major branches are:</p>
+                    <h3>Theravada Buddhism</h3>
+                    <p>"The Way of the Elders." Theravada is the dominant tradition in Sri Lanka, Myanmar, Thailand, Cambodia, and Laos. It bases its teaching on the Pali Canon and places strong emphasis on monastic life, meditation, and the individual's path to liberation.</p>
+                    <h3>Mahayana Buddhism</h3>
+                    <p>"The Great Vehicle." Mahayana is the largest branch and is dominant in China, Japan, Korea, Vietnam, and Taiwan. It emphasizes the bodhisattva ideal, the commitment to attain awakening for the benefit of all beings.</p>
+                    <p>Major Mahayana schools include:</p>
+                    <ul class="principles-list">
+                        <li>Pure Land</li>
+                        <li>Chan / Zen</li>
+                        <li>Tiantai / Tendai</li>
+                        <li>Huayan</li>
+                        <li>Nichiren</li>
+                    </ul>
+                    <h3>Vajrayana Buddhism</h3>
+                    <p>"The Diamond Vehicle." Vajrayana is a form of Mahayana associated with Tibet, Bhutan, Mongolia, and parts of Russia, Nepal, and India. It uses tantric practices, mantras, visualizations, and the close guidance of a teacher (lama).</p>
+                    <p>Major Tibetan schools include:</p>
+                    <ul class="principles-list">
+                        <li>Nyingma</li>
+                        <li>Kagyu</li>
+                        <li>Sakya</li>
+                        <li>Gelug</li>
+                    </ul>
+                    <p>These branches agree on the core teachings of the Buddha while differing in emphasis, scriptures, and practice.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Buddhist Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Buddha:</strong> An awakened one; especially Siddhartha Gautama</li>
+                        <li><strong>Dharma (Dhamma):</strong> The Buddha's teaching; the truth about reality</li>
+                        <li><strong>Sangha:</strong> The community of monks, nuns, and lay practitioners</li>
+                        <li><strong>Three Jewels:</strong> Buddha, Dharma, and Sangha</li>
+                        <li><strong>Dukkha:</strong> Suffering, stress, dissatisfaction</li>
+                        <li><strong>Anicca / Anitya:</strong> Impermanence</li>
+                        <li><strong>Anatta / Anatman:</strong> Non-self; no permanent, unchanging soul</li>
+                        <li><strong>Karma (Kamma):</strong> Intentional action and its consequences</li>
+                        <li><strong>Samsara:</strong> The cycle of birth, death, and rebirth</li>
+                        <li><strong>Nirvana (Nibbana):</strong> The ending of suffering and rebirth; liberation</li>
+                        <li><strong>Bodhisattva:</strong> One dedicated to awakening for the sake of all beings</li>
+                        <li><strong>Sila:</strong> Ethical conduct</li>
+                        <li><strong>Samadhi:</strong> Concentration, meditative stability</li>
+                        <li><strong>Prajna (Panna):</strong> Wisdom, insight</li>
+                        <li><strong>Metta:</strong> Loving-kindness</li>
+                        <li><strong>Karuna:</strong> Compassion</li>
+                        <li><strong>Sutta / Sutra:</strong> A discourse of the Buddha</li>
+                        <li><strong>Vinaya:</strong> The monastic code of discipline</li>
+                        <li><strong>Dana:</strong> Generosity, giving</li>
+                        <li><strong>Stupa:</strong> A monument holding relics</li>
+                        <li><strong>Mantra:</strong> A sacred syllable or phrase used in practice</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>The core teaching of the Buddha is the Four Noble Truths:</p>
+                    <ol>
+                        <li>The truth of suffering (dukkha): life involves suffering and dissatisfaction.</li>
+                        <li>The truth of the cause of suffering: suffering arises from craving and attachment.</li>
+                        <li>The truth of the end of suffering: suffering can cease completely (nirvana).</li>
+                        <li>The truth of the path: the Noble Eightfold Path leads to the end of suffering.</li>
+                    </ol>
+                    <p>The Noble Eightfold Path consists of:</p>
+                    <ol>
+                        <li>Right view</li>
+                        <li>Right intention</li>
+                        <li>Right speech</li>
+                        <li>Right action</li>
+                        <li>Right livelihood</li>
+                        <li>Right effort</li>
+                        <li>Right mindfulness</li>
+                        <li>Right concentration</li>
+                    </ol>
+                    <p>These eight are commonly grouped into three trainings: ethics (sila), concentration (samadhi), and wisdom (prajna).</p>
+                    <p>The Four Noble Truths are set out in the Buddha's first sermon, the Dhammacakkappavattana Sutta ("Setting the Wheel of Dharma in Motion"), in the Samyutta Nikaya.</p>
+                    <p>Most Buddhists also undertake the Five Precepts, which are explained under Morality below.</p>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Buddhist Holidays</h3>
+                    <h3>Vesak (Buddha Day)</h3>
+                    <p>Vesak is the most important Buddhist festival in many countries. Theravada Buddhists celebrate the Buddha's birth, awakening, and passing away on the full moon of the month of Vesakha, usually in May.</p>
+                    <p>It is a day of:</p>
+                    <ul class="principles-list">
+                        <li>temple visits</li>
+                        <li>offerings of flowers, candles, and incense</li>
+                        <li>keeping extra precepts</li>
+                        <li>meditation and teaching</li>
+                        <li>generosity to the poor and to monks and nuns</li>
+                        <li>lanterns and processions</li>
+                    </ul>
+                    <h3>Losar and Lunar New Year</h3>
+                    <p>Tibetan Buddhists celebrate Losar, the Tibetan New Year. In East Asia, the Lunar New Year often includes temple visits and prayers for the coming year.</p>
+                    <h3>Other Observances</h3>
                     <ul>
-                        <li><strong>Tenzin Gyatso (b. 1935):</strong> The 14th Dalai Lama, spiritual leader of Tibet and global advocate for peace and non-violence.</li>
-                        <li><strong>Thich Nhat Hanh (1926–2022):</strong> Vietnamese Zen master who popularized "Engaged Buddhism" and mindfulness in the West.</li>
-                        <li><strong>B.R. Ambedkar (1891–1956):</strong> Indian social reformer who initiated the Dalit Buddhist movement, converting hundreds of thousands of marginalized "untouchables" to Buddhism to escape the caste system.</li>
+                        <li>Magha Puja (Sangha Day), honoring the gathering of 1,250 disciples</li>
+                        <li>Asalha Puja (Dharma Day), marking the first sermon</li>
+                        <li>Vassa, the three-month rainy-season retreat for monastics</li>
+                        <li>Kathina, when lay people offer robes to monks after the retreat</li>
+                        <li>Obon / Ullambana, honoring ancestors in East Asia</li>
+                        <li>Bodhi Day, marking the Buddha's awakening in Japanese and other Mahayana traditions</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The continuity of Buddhism is credited to the <em>Sangha</em>—the monastic community of monks and nuns established by the Buddha. By passing down the teachings (first orally, then codified into texts like the Pali Canon), the Sangha ensured the survival of the Dharma. Buddhism is highly syncretic, meaning it has continually adapted to new cultures (merging with Daoism in China to create Zen, and with Bon in Tibet to create Vajrayana) without losing its core foundation of the Four Noble Truths.</p>
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">The Buddha &amp; Ultimate Reality</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Scriptures &amp; Commentaries</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Meditation, Generosity &amp; Restraint</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Rebirth</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will &amp; Conditions</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>Ultimate Reality and the Question of God</h3>
+                    <p>Buddhism does not teach a creator God who made the universe and rules it. The Buddha set aside questions about the beginning of the universe as not helpful to ending suffering.</p>
+                    <p>Buddhist texts describe gods (devas) living in heavenly realms, but these beings are also impermanent, subject to karma and rebirth, and not ultimate. Even gods need the Dharma to be liberated.</p>
+                    <p>What Buddhism points to as ultimate is not a being but a reality: nirvana, the unconditioned, which is beyond suffering, birth, and death. Mahayana traditions also speak of emptiness (shunyata) and Buddha-nature, the potential for awakening present in all beings.</p>
+                    <p>Buddhism therefore rejects:</p>
+                    <ul class="principles-list">
+                        <li>the idea that a creator God controls human destiny</li>
+                        <li>the existence of a permanent, unchanging self or soul</li>
+                        <li>blind faith without investigation</li>
+                        <li>extreme self-indulgence and extreme self-denial</li>
+                    </ul>
+                    <h3>The Buddha and Enlightened Beings</h3>
+                    <p>Buddhists regard Siddhartha Gautama as the Buddha of our age. Buddhist tradition teaches that there were Buddhas before him and that a future Buddha, Maitreya, will come.</p>
+                    <p>The Buddha is understood as:</p>
+                    <ul class="principles-list">
+                        <li>a human being who attained complete awakening</li>
+                        <li>the teacher of the Dharma</li>
+                        <li>a model of wisdom and compassion</li>
+                        <li>a "field of merit," worthy of reverence</li>
+                    </ul>
+                    <p>Mahayana traditions also honor many Buddhas and bodhisattvas, including:</p>
+                    <ul>
+                        <li>Amitabha Buddha, the Buddha of Infinite Light</li>
+                        <li>Avalokiteshvara (Guanyin, Kannon), the bodhisattva of compassion</li>
+                        <li>Manjushri, the bodhisattva of wisdom</li>
+                        <li>Kshitigarbha (Jizo), protector of beings in difficult realms</li>
+                        <li>Tara, a female bodhisattva central in Tibetan Buddhism</li>
+                    </ul>
+                    <p>Theravada Buddhism honors the arahant, a person who has fully realized nirvana.</p>
+                    <h3>Revelation and Awakening</h3>
+                    <p>Buddhism does not describe its teaching as revelation from God. The Buddha taught what he discovered through his own awakening under the Bodhi tree.</p>
+                    <p>The Buddha encouraged people to test teachings through experience. In the Kalama Sutta, he advises people not to accept a teaching only because of tradition, scripture, or a teacher's authority, but to examine whether it leads to harm or to well-being.</p>
+                    <p>At the same time, Buddhists place deep trust in the Buddha's teaching and the guidance of experienced teachers.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Buddhist Scriptures</h3>
+                    <p>Buddhism has several large collections of scripture rather than a single book.</p>
+                    <h3>The Pali Canon (Tipitaka)</h3>
+                    <p>The scripture of Theravada Buddhism, preserved in the Pali language. "Tipitaka" means "Three Baskets":</p>
+                    <ul class="principles-list">
+                        <li>Vinaya Pitaka: monastic discipline</li>
+                        <li>Sutta Pitaka: the discourses of the Buddha</li>
+                        <li>Abhidhamma Pitaka: systematic analysis of mind and reality</li>
+                    </ul>
+                    <h3>The Chinese Canon</h3>
+                    <p>Mahayana scriptures used in East Asia, including translations of the early discourses and many Mahayana sutras.</p>
+                    <h3>The Tibetan Canon</h3>
+                    <p>The Kangyur (words of the Buddha) and Tengyur (commentaries by Indian masters).</p>
+                    <p>These scriptures contain:</p>
+                    <ul class="principles-list">
+                        <li>teachings on suffering and liberation</li>
+                        <li>instructions for meditation</li>
+                        <li>ethical guidance</li>
+                        <li>rules for monastic life</li>
+                        <li>stories of the Buddha's life and past lives (Jataka tales)</li>
+                        <li>philosophy of mind</li>
+                        <li>teachings on compassion and wisdom</li>
+                    </ul>
+                    <p>Many Buddhists memorize and chant passages such as the Dhammapada, the Heart Sutra, or the Metta Sutta.</p>
+                    <h3>Commentaries and Teaching Lineages</h3>
+                    <p>Beyond the scriptures, Buddhism relies on commentaries and on teachers who pass on the Dharma in living lineages.</p>
+                    <p>Important works and teachers include:</p>
+                    <ul>
+                        <li>Buddhaghosa's Visuddhimagga ("Path of Purification"), a key Theravada manual</li>
+                        <li>Nagarjuna's Mulamadhyamakakarika, foundational for Mahayana philosophy</li>
+                        <li>Asanga and Vasubandhu, founders of the Yogacara school</li>
+                        <li>Shantideva's Bodhicaryavatara ("Guide to the Bodhisattva's Way of Life")</li>
+                        <li>Zen and Chan teachers such as Huineng and Dogen</li>
+                    </ul>
+                    <p>In Zen and Tibetan Buddhism especially, the teacher-student relationship is central.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings and Realms</h3>
+                    <p>Traditional Buddhist cosmology describes many realms of existence into which beings may be reborn:</p>
+                    <ul class="principles-list">
+                        <li>gods (devas)</li>
+                        <li>demigods (asuras)</li>
+                        <li>humans</li>
+                        <li>animals</li>
+                        <li>hungry ghosts (pretas)</li>
+                        <li>hell beings</li>
+                    </ul>
+                    <p>Mara is described in the scriptures as a tempter who tried to stop the Buddha's awakening. Many Buddhists understand Mara both as a being and as a symbol of greed, fear, and delusion.</p>
+                    <p>Many Buddhists see these realms as literal places. Others also read them as descriptions of states of mind.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Buddhism teaches that a human birth is precious and rare because humans have the best opportunity to practice the Dharma and attain awakening.</p>
+                    <p>Buddhism teaches non-self (anatta): a person is made up of five changing aggregates (form, feeling, perception, mental formations, and consciousness), with no permanent, unchanging soul behind them.</p>
+                    <p>Mahayana traditions add that all beings have Buddha-nature, the potential to become awakened.</p>
+                    <p>Buddhism does not teach original sin. The roots of suffering are ignorance, greed, and hatred, which can be removed through practice.</p>
+                    <h3>Karma and Wrongdoing</h3>
+                    <p>Buddhism does not use the idea of sin against God. It speaks instead of skillful (kusala) and unskillful (akusala) actions.</p>
+                    <p>Karma means intentional action. The Buddha said that intention is what makes an action karma.</p>
+                    <p>Unskillful actions are rooted in:</p>
+                    <ul class="principles-list">
+                        <li>greed</li>
+                        <li>hatred</li>
+                        <li>delusion</li>
+                    </ul>
+                    <p>They lead to suffering for oneself and others. Skillful actions, rooted in generosity, love, and wisdom, lead to happiness.</p>
+                    <p>Karma is not fate or punishment from a judge. It is a natural process of cause and effect.</p>
+                    <h3>Purification and Making Amends</h3>
+                    <p>Buddhism offers ways to address harmful actions:</p>
+                    <ol>
+                        <li>honestly recognizing the harm</li>
+                        <li>feeling regret without self-hatred</li>
+                        <li>resolving not to repeat it</li>
+                        <li>confessing it, especially in monastic communities</li>
+                        <li>doing good actions and making amends where possible</li>
+                    </ol>
+                    <p>Monks and nuns confess faults to one another regularly. Tibetan Buddhism has specific purification practices, such as the Vajrasattva practice.</p>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Meditation, Devotion, and Worship</h3>
+                    <p>Meditation is central to Buddhist practice.</p>
+                    <p>The two main forms are:</p>
+                    <ul>
+                        <li>samatha: calm and concentration</li>
+                        <li>vipassana: insight into impermanence, suffering, and non-self</li>
+                    </ul>
+                    <p>Other common practices include:</p>
+                    <ul class="principles-list">
+                        <li>bowing to images of the Buddha</li>
+                        <li>chanting scriptures and mantras</li>
+                        <li>offering flowers, light, incense, and food</li>
+                        <li>circling stupas</li>
+                        <li>reciting the name of Amitabha Buddha (Pure Land)</li>
+                        <li>seated meditation (zazen) in Zen</li>
+                        <li>walking meditation</li>
+                        <li>loving-kindness meditation (metta)</li>
+                    </ul>
+                    <p>Bowing to a Buddha image is a sign of respect and gratitude for the teacher, not the worship of a statue.</p>
+                    <h3>Generosity</h3>
+                    <p>Generosity (dana) is the first of the ten perfections and the starting point of Buddhist practice.</p>
+                    <p>Generosity may involve:</p>
+                    <ul class="principles-list">
+                        <li>offering food to monks and nuns</li>
+                        <li>supporting temples</li>
+                        <li>helping the poor and sick</li>
+                        <li>releasing animals (in some traditions)</li>
+                        <li>giving time and care</li>
+                        <li>sharing the Dharma, considered the highest gift</li>
+                    </ul>
+                    <p>Lay Buddhists in Theravada countries often offer food to monks on their morning alms round. This builds a relationship of mutual support between lay people and monastics.</p>
+                    <h3>Fasting and Restraint</h3>
+                    <p>Buddhism rejects extreme fasting. Before his awakening, the Buddha practiced severe austerities and found that they did not lead to liberation. He taught the Middle Way between indulgence and self-punishment.</p>
+                    <p>Restraint still plays a role:</p>
+                    <ul>
+                        <li>Theravada monastics do not eat solid food after midday.</li>
+                        <li>Lay Buddhists may keep the Eight Precepts on observance days (uposatha), including not eating after noon.</li>
+                        <li>Many East Asian Buddhists keep vegetarian diets, permanently or on special days.</li>
+                        <li>Retreats include periods of silence and simplicity.</li>
+                    </ul>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Buddhism teaches that a human life is a rare and precious opportunity.</p>
+                    <p>Human beings are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>avoid harming living beings</li>
+                        <li>develop wisdom</li>
+                        <li>practice generosity and kindness</li>
+                        <li>train the mind through meditation</li>
+                        <li>support their families</li>
+                        <li>earn a livelihood that does no harm</li>
+                        <li>care for others who suffer</li>
+                    </ul>
+                    <p>Life is impermanent, which gives urgency to practice. It is not meaningless, because every moment is an opportunity to act skillfully.</p>
+                    <h3>Death</h3>
+                    <p>Buddhism treats death as a natural part of impermanence and a major moment for spiritual practice.</p>
+                    <p>The Buddha encouraged reflection on death to reduce attachment and to live wisely. Many traditions teach that the state of mind at death influences rebirth.</p>
+                    <h3>Rebirth and the Cycle of Samsara</h3>
+                    <p>Buddhism teaches that beings are reborn again and again according to their karma, in the cycle called samsara.</p>
+                    <p>Rebirth is not the transfer of an unchanging soul. It is often compared to one candle flame lighting another: there is continuity without a permanent self.</p>
+                    <p>The cycle continues until craving and ignorance are fully ended.</p>
+                    <p>Tibetan Buddhism teaches an intermediate state between death and rebirth, called the bardo, which may last up to 49 days.</p>
+                    <h3>Nirvana</h3>
+                    <p>Nirvana is the ultimate goal of Buddhism. The word means "blowing out," as in the blowing out of the fires of greed, hatred, and delusion.</p>
+                    <p>Nirvana is described as:</p>
+                    <ul class="principles-list">
+                        <li>the end of suffering</li>
+                        <li>peace</li>
+                        <li>freedom</li>
+                        <li>the unconditioned</li>
+                        <li>beyond birth and death</li>
+                    </ul>
+                    <p>The Buddha said that nirvana cannot be fully described in ordinary words.</p>
+                    <h3>Heavenly and Hell Realms</h3>
+                    <p>Buddhist texts describe heavenly realms of great pleasure and hell realms of great suffering.</p>
+                    <p>Neither is eternal. A being stays in a heaven or hell until the karma that caused that rebirth is used up. Then the being is reborn elsewhere.</p>
+                    <p>Pure Land Buddhism teaches that Amitabha Buddha created a "Pure Land," a realm where conditions for reaching awakening are ideal.</p>
+                    <h3>Moral Cause and Effect</h3>
+                    <p>Buddhism has no final Day of Judgment by God. Instead, the law of karma means every intentional action has results.</p>
+                    <p>The Dhammapada begins:</p>
+                    <blockquote>"Mind precedes all things; mind is their chief; they are mind-made. If one speaks or acts with a pure mind, happiness follows like a shadow that never leaves."</blockquote>
+                    <p>This teaching gives Buddhist ethics its foundation: each person shapes their own future through their intentions and actions.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will and Conditions</h3>
+                    <p>Buddhism teaches dependent origination (paticca-samuppada): everything arises because of causes and conditions.</p>
+                    <p>At the same time, Buddhism rejects fatalism. The Buddha criticized teachers who said that everything is determined in advance, because that would make effort pointless.</p>
+                    <p>The mainstream Buddhist view affirms both:</p>
+                    <ul class="principles-list">
+                        <li>that actions arise from conditions</li>
+                        <li>that people can choose, make effort, and change</li>
+                    </ul>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Buddhist ethics are based on non-harm, compassion, and wisdom.</p>
+                    <p>The Five Precepts for lay Buddhists are:</p>
+                    <ol>
+                        <li>to refrain from killing living beings</li>
+                        <li>to refrain from taking what is not given</li>
+                        <li>to refrain from sexual misconduct</li>
+                        <li>to refrain from false speech</li>
+                        <li>to refrain from intoxicants that cloud the mind</li>
+                    </ol>
+                    <p>Among the repeatedly emphasized virtues are:</p>
+                    <ul class="principles-list">
+                        <li>loving-kindness (metta)</li>
+                        <li>compassion (karuna)</li>
+                        <li>sympathetic joy (mudita)</li>
+                        <li>equanimity (upekkha)</li>
+                        <li>generosity</li>
+                        <li>patience</li>
+                        <li>honesty</li>
+                        <li>humility</li>
+                        <li>gratitude</li>
+                        <li>right speech</li>
+                        <li>respect for parents and teachers</li>
+                    </ul>
+                    <p>The first four virtues are called the Four Immeasurables or Brahmaviharas.</p>
+                    <h3>Family</h3>
+                    <p>Family is important in Buddhist societies.</p>
+                    <p>In the Sigalovada Sutta, the Buddha describes mutual duties between:</p>
+                    <ul class="principles-list">
+                        <li>parents and children</li>
+                        <li>teachers and students</li>
+                        <li>husbands and wives</li>
+                        <li>friends</li>
+                        <li>employers and workers</li>
+                        <li>lay people and religious teachers</li>
+                    </ul>
+                    <p>Children are taught to support their parents, and parents to guide their children away from harm and toward good.</p>
+                    <h3>Marriage</h3>
+                    <p>Buddhism does not treat marriage as a religious sacrament. It is generally seen as a civil and social matter.</p>
+                    <p>The Buddha's teachings on marriage emphasize:</p>
+                    <ul class="principles-list">
+                        <li>faithfulness</li>
+                        <li>respect</li>
+                        <li>kindness</li>
+                        <li>shared responsibilities</li>
+                        <li>shared values and generosity</li>
+                    </ul>
+                    <p>Monks may be invited to chant blessings at a wedding, but they do not usually conduct the ceremony. Wedding customs differ greatly from country to country.</p>
+                    <h3>Community</h3>
+                    <p>The Sangha is one of the Three Jewels. In a narrow sense it means the community of ordained monks and nuns. In a wider sense it includes all Buddhist practitioners.</p>
+                    <p>Temples and monasteries historically serve as centers for:</p>
+                    <ul class="principles-list">
+                        <li>education</li>
+                        <li>meditation</li>
+                        <li>festivals</li>
+                        <li>care for the sick and poor</li>
+                        <li>funerals and memorials</li>
+                        <li>community gatherings</li>
+                    </ul>
+                    <h3>Treatment of Others</h3>
+                    <p>Buddhist ethics apply to all beings, not only to Buddhists, and not only to humans.</p>
+                    <p>The Metta Sutta teaches:</p>
+                    <blockquote>"Just as a mother would protect her only child with her life, so one should cultivate a boundless heart toward all beings."</blockquote>
+                    <p>The Dhammapada also states:</p>
+                    <blockquote>"Hatred is never ended by hatred, but by non-hatred alone. This is an eternal law."</blockquote>
+                    <p>Emperor Ashoka, one of the most famous Buddhist rulers, issued edicts calling for respect for all religious communities.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: Buddhists worship the Buddha as a God.</strong><br>
-                Reality: The historical Buddha was a human being, not a creator deity. While statues of the Buddha are shown great reverence, they serve as inspiring reminders of human potential for enlightenment, not as idols to be worshipped for divine favors.</p>
-                <p><strong>Misconception: Buddhism is pessimistic.</strong><br>
-                Reality: Because the First Noble Truth focuses on suffering (Dukkha), it is often labeled pessimistic. However, Buddhists view it as realistic—like a doctor diagnosing a disease to offer a cure. The ultimate message is profoundly optimistic: suffering can be entirely overcome.</p>
-                <p><strong>Misconception: Karma means "fate."</strong><br>
-                Reality: Karma literally means "action." It is not a system of pre-destined fate, but a system of cause and effect based on intentional choices. This means individuals have immense agency to shape their present and future.</p>
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Pali Canon</h3>
+                <p>The Pali Canon is the oldest complete collection of Buddhist scriptures. It was written down in Sri Lanka in the first century BCE after centuries of oral transmission.</p>
+                <p>Its major themes include:</p>
+                <ul class="principles-list">
+                    <li>the Four Noble Truths</li>
+                    <li>the Eightfold Path</li>
+                    <li>impermanence and non-self</li>
+                    <li>karma and rebirth</li>
+                    <li>meditation</li>
+                    <li>ethics</li>
+                    <li>monastic discipline</li>
+                    <li>the life of the Buddha</li>
+                    <li>nirvana</li>
+                </ul>
+                <p>Well-known texts include the Dhammapada, the Sutta Nipata, and the Satipatthana Sutta (Foundations of Mindfulness).</p>
+                <h3>The Mahayana Sutras</h3>
+                <p>Mahayana sutras appeared in India from about the first century BCE onward. Important examples include:</p>
+                <ul class="principles-list">
+                    <li>the Heart Sutra</li>
+                    <li>the Diamond Sutra</li>
+                    <li>the Lotus Sutra</li>
+                    <li>the Pure Land sutras</li>
+                    <li>the Vimalakirti Sutra</li>
+                    <li>the Avatamsaka (Flower Garland) Sutra</li>
+                </ul>
+                <p>They emphasize emptiness, compassion, the bodhisattva path, and Buddha-nature.</p>
+                <h3>Buddhist Scholarship</h3>
+                <p>Over the centuries, Buddhists developed extensive learning in:</p>
+                <ul class="principles-list">
+                    <li>philosophy and logic</li>
+                    <li>psychology and analysis of mind (Abhidharma)</li>
+                    <li>monastic law</li>
+                    <li>meditation manuals</li>
+                    <li>translation</li>
+                    <li>medicine</li>
+                    <li>art and architecture</li>
+                </ul>
+                <p>Great monastic universities such as Nalanda and Vikramashila in India attracted students from across Asia.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>In modern times, Buddhist communities face political challenges, such as the suppression of Tibetan Buddhism by the Chinese government, and internal crises, such as the rise of violent, extremist Buddhist nationalism in Myanmar and Sri Lanka targeting minority groups.</p>
-                <p>In the West, a major challenge is the "commercialization of mindfulness"—where Buddhist meditation techniques are stripped of their ethical framework (the Eightfold Path) and sold merely as corporate productivity or stress-reduction tools.</p>
+            <!-- HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">The Buddha's Teaching Career</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">Sacred Places</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">Expansion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
+                </div>
+
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>Siddhartha Gautama was born in Lumbini, in present-day Nepal. Many scholars place his life around 480 to 400 BCE, though traditional dates are earlier.</p>
+                    <p>According to tradition, he was a prince who left his palace after encountering old age, sickness, death, and a wandering ascetic. After years of spiritual search, he attained awakening while meditating under a Bodhi tree in Bodh Gaya, India.</p>
+                    <p>His early teaching emphasized:</p>
+                    <ul class="principles-list">
+                        <li>the Four Noble Truths</li>
+                        <li>the Middle Way</li>
+                        <li>ethical conduct</li>
+                        <li>meditation</li>
+                        <li>compassion</li>
+                        <li>liberation from suffering</li>
+                    </ul>
+                </div>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>The Buddha's Teaching Career</h3>
+                    <p>The Buddha gave his first sermon at the Deer Park in Sarnath, near Varanasi. He taught for about 45 years across northern India.</p>
+                    <p>He founded orders of monks (bhikkhus) and later nuns (bhikkhunis), and taught people of every social class. He died at Kushinagar at about age 80. Buddhists call his death the parinirvana, his final passing into nirvana.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>Sacred Places</h3>
+                    <p>The four main pilgrimage sites are linked to the Buddha's life:</p>
+                    <ul class="principles-list">
+                        <li>Lumbini: birth</li>
+                        <li>Bodh Gaya: awakening</li>
+                        <li>Sarnath: first sermon</li>
+                        <li>Kushinagar: death</li>
+                    </ul>
+                    <p>Other important sites include the Temple of the Tooth in Sri Lanka, Borobudur in Indonesia, the Shwedagon Pagoda in Myanmar, and the Jokhang Temple in Lhasa.</p>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>Expansion</h3>
+                    <p>After the Buddha's death, Buddhism spread across Asia through:</p>
+                    <ul class="principles-list">
+                        <li>monks and missionaries</li>
+                        <li>royal support, especially from Emperor Ashoka</li>
+                        <li>trade routes, including the Silk Road</li>
+                        <li>translation of texts</li>
+                        <li>pilgrimage</li>
+                        <li>local adaptation</li>
+                    </ul>
+                    <p>It reached Sri Lanka in the third century BCE, China by the first century CE, Korea and Japan by the fourth to sixth centuries, Tibet by the seventh and eighth centuries, and Southeast Asia over many centuries.</p>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <p>Important milestones include:</p>
+                    <ul>
+                        <li><strong>c. 5th century BCE:</strong> Life and teaching of the Buddha.</li>
+                        <li><strong>Shortly after the Buddha's death:</strong> First Council at Rajagaha, where the teachings are recited.</li>
+                        <li><strong>3rd century BCE:</strong> Emperor Ashoka supports Buddhism and sends missionaries; Buddhism reaches Sri Lanka.</li>
+                        <li><strong>1st century BCE:</strong> The Pali Canon is written down in Sri Lanka; Mahayana sutras begin to appear.</li>
+                        <li><strong>1st–7th centuries CE:</strong> Buddhism spreads to China, Korea, Japan, and Southeast Asia.</li>
+                        <li><strong>5th–12th centuries:</strong> Nalanda flourishes as a great center of learning.</li>
+                        <li><strong>7th–11th centuries:</strong> Buddhism becomes established in Tibet.</li>
+                        <li><strong>12th–13th centuries:</strong> Buddhism declines sharply in India; Zen, Pure Land, and Nichiren schools develop in Japan.</li>
+                        <li><strong>19th–20th centuries:</strong> Buddhist revival movements in Asia; Buddhism spreads to the West.</li>
+                        <li><strong>1956:</strong> B. R. Ambedkar and hundreds of thousands of followers convert to Buddhism in India.</li>
+                        <li><strong>1959:</strong> The Dalai Lama goes into exile, helping spread Tibetan Buddhism worldwide.</li>
+                        <li><strong>21st century:</strong> Mindfulness practices drawn from Buddhism become widespread in medicine, education, and business.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul>
+                        <li>Siddhartha Gautama, the Buddha</li>
+                        <li>Ananda, the Buddha's attendant</li>
+                        <li>Sariputta and Moggallana, leading disciples</li>
+                        <li>Mahapajapati Gotami, the first Buddhist nun</li>
+                        <li>Emperor Ashoka</li>
+                        <li>Nagarjuna</li>
+                        <li>Buddhaghosa</li>
+                        <li>Bodhidharma</li>
+                        <li>Xuanzang, the Chinese pilgrim and translator</li>
+                        <li>Padmasambhava</li>
+                        <li>Atisha</li>
+                        <li>Milarepa</li>
+                        <li>Tsongkhapa</li>
+                        <li>Dogen</li>
+                        <li>Shinran</li>
+                        <li>Nichiren</li>
+                        <li>B. R. Ambedkar</li>
+                        <li>Thich Nhat Hanh</li>
+                        <li>the 14th Dalai Lama</li>
+                        <li>many monks, nuns, scholars, artists, and lay teachers across Buddhist history</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Daily practice for lay Buddhists typically involves adhering to the Five Precepts (commitments to abstain from killing, stealing, sexual misconduct, lying, and intoxication). Many maintain a small shrine in their homes where they offer water, flowers, or incense to a Buddha statue to cultivate reverence and gratitude.</p>
-                <p>Meditation is the cornerstone of practice, utilizing techniques such as <em>Vipassana</em> (insight meditation focused on the breath to observe impermanence) or <em>Metta</em> (loving-kindness meditation to generate goodwill toward all living beings).</p>
+            <!-- MAJOR DENOMINATIONS AND SCHOOLS -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Major Denominations and Schools</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Theravada</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Mahayana Schools</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Vajrayana (Tibetan Buddhism)</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Traditional, Modernist, and Engaged Buddhism</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-5')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-6')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Theravada</h3>
+                    <p>Historically dominant in:</p>
+                    <ul class="principles-list">
+                        <li>Sri Lanka</li>
+                        <li>Myanmar</li>
+                        <li>Thailand</li>
+                        <li>Cambodia</li>
+                        <li>Laos</li>
+                    </ul>
+                    <p>Theravada emphasizes the Pali Canon, monastic discipline, and insight meditation. The modern Vipassana movement grew out of Theravada teachers in Myanmar and Thailand.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Mahayana Schools</h3>
+                    <h3>Pure Land</h3>
+                    <p>The most widely practiced form of Buddhism in East Asia. It emphasizes faith in Amitabha Buddha and reciting his name to be reborn in his Pure Land.</p>
+                    <h3>Chan / Zen</h3>
+                    <p>Emphasizes meditation, direct insight, and the teacher-student relationship. Known as Chan in China, Seon in Korea, Thien in Vietnam, and Zen in Japan.</p>
+                    <h3>Nichiren</h3>
+                    <p>Japanese tradition centered on the Lotus Sutra and chanting its title. Soka Gakkai is a large lay movement in this tradition.</p>
+                    <h3>Tiantai / Tendai and Huayan</h3>
+                    <p>Philosophical schools that organized and interpreted the many Mahayana sutras.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Vajrayana (Tibetan Buddhism)</h3>
+                    <p>Tibetan Buddhism has four main schools: Nyingma, Kagyu, Sakya, and Gelug. The Dalai Lama belongs to the Gelug school. Japanese Shingon is also a Vajrayana tradition.</p>
+                    <p>These traditions are generally regarded as legitimate forms of Buddhism rather than separate religions.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Traditional, Modernist, and Engaged Buddhism</h3>
+                    <p>Modern Buddhists differ in their views on:</p>
+                    <ul class="principles-list">
+                        <li>the role of monks and nuns</li>
+                        <li>ordination of women</li>
+                        <li>rebirth and traditional cosmology</li>
+                        <li>meditation for lay people</li>
+                        <li>political involvement</li>
+                        <li>science and psychology</li>
+                        <li>vegetarianism</li>
+                        <li>adaptation to Western culture</li>
+                    </ul>
+                    <p>"Engaged Buddhism," a term associated with Thich Nhat Hanh, applies Buddhist principles to social justice, peace, and environmental issues.</p>
+                    <p>Terms such as traditional and modernist can oversimplify. Two Buddhists may share the same core teachings while reaching different conclusions about modern questions.</p>
+                </div>
+
+                <div id="deno-5" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <p>Buddhism is practiced differently across cultures.</p>
+                    <h3>Thailand and Sri Lanka</h3>
+                    <p>Many young men ordain as monks temporarily. Daily alms rounds are common.</p>
+                    <h3>China, Taiwan, and Vietnam</h3>
+                    <p>Pure Land and Chan practice are often combined, and vegetarian temple food is widespread.</p>
+                    <h3>Japan</h3>
+                    <p>Temples are closely linked to funerals and ancestor rites. Many people combine Buddhist and Shinto practice.</p>
+                    <h3>Tibet and the Himalayas</h3>
+                    <p>Prayer flags, prayer wheels, and mantras are part of daily life, and lamas hold an important role.</p>
+                    <h3>United States</h3>
+                    <p>American Buddhists include:</p>
+                    <ul>
+                        <li>Asian American families with generations of Buddhist heritage</li>
+                        <li>recent immigrants from Asia</li>
+                        <li>converts drawn to meditation</li>
+                        <li>practitioners of Zen, Tibetan, Theravada, and Nichiren traditions</li>
+                    </ul>
+                    <p>Consequently, there is no single "Buddhist culture."</p>
+                </div>
+
+                <div id="deno-6" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Teaching</h3>
+                    <p>It is important to distinguish between the Buddha's teaching and cultural practice.</p>
+                    <p>Examples of cultural practices found in Buddhist societies that are not core Buddhist requirements include:</p>
+                    <ul class="principles-list">
+                        <li>specific wedding customs</li>
+                        <li>particular foods</li>
+                        <li>clothing styles</li>
+                        <li>architectural styles</li>
+                        <li>fortune-telling or astrology at temples</li>
+                        <li>local spirit worship</li>
+                        <li>national festivals</li>
+                    </ul>
+                    <p>A practice may be common in a Buddhist-majority country without being taught by the Buddha. Conversely, a core teaching may be practiced in very different ways in different cultures.</p>
+                </div>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>Buddhism's deep exploration of the mind has profoundly influenced modern psychology, cognitive behavioral therapy, and the global integration of mindfulness into education and healthcare.</p>
-                <p>The core principle of Ahimsa (non-harming) has made Buddhism a historic and modern pillar of the global peace movement. Furthermore, its teaching on the radical interconnectedness of all life forms provides a powerful philosophical foundation for modern animal rights and ecological conservation movements.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: Buddhists worship the Buddha as a god.</strong><br>
+                Fact: Buddhists revere the Buddha as an awakened teacher, not as a creator God. Bowing to images expresses respect and gratitude, and helps focus the mind.</p>
+                <p><strong>Myth: The "Laughing Buddha" is the Buddha.</strong><br>
+                Fact: The smiling, round figure popular in East Asia is Budai, a Chinese folk figure associated with Maitreya. He is not Siddhartha Gautama.</p>
+                <p><strong>Myth: Buddhism is pessimistic.</strong><br>
+                Fact: Buddhism begins by recognizing suffering, but its message is that suffering can end. Its goal is lasting peace and happiness.</p>
+                <p><strong>Myth: All Buddhists are vegetarian.</strong><br>
+                Fact: Many Buddhists are vegetarian, especially in East Asian Mahayana traditions, but many others are not. Theravada monks eat what they are given.</p>
+                <p><strong>Myth: Karma means fate.</strong><br>
+                Fact: Karma means intentional action. Present choices shape the future, so a person is never simply trapped by the past.</p>
+                <p><strong>Myth: Buddhism is only meditation.</strong><br>
+                Fact: Meditation is central, but Buddhism also includes ethics, devotion, chanting, generosity, study, community, and ritual.</p>
+                <p><strong>Myth: Buddhism is not a religion.</strong><br>
+                Fact: Buddhism has scriptures, monastic orders, rituals, festivals, devotional practices, and teachings about rebirth and liberation. Some modern practitioners treat it mainly as philosophy, but for most Buddhists it is a religion.</p>
+                <p><strong>Myth: Buddhism has one uniform interpretation.</strong><br>
+                Fact: Theravada, Mahayana, and Vajrayana differ significantly in scripture, practice, and philosophy, and there is great diversity within each.</p>
+            </div>
+
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">Buddhism in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">Buddhism and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Compassion</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Wisdom, Ethics &amp; Meditation</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family is central to Buddhist life in most cultures.</p>
+                    <p>Buddhists are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents</li>
+                        <li>care for children</li>
+                        <li>faithfulness in marriage</li>
+                        <li>care for elderly relatives</li>
+                        <li>honor for ancestors</li>
+                        <li>good relationships with neighbors</li>
+                    </ul>
+                    <p>The Buddha taught that supporting one's parents is one of the highest blessings.</p>
+                    <h3>Marriage</h3>
+                    <p>Marriage is generally a civil and family matter rather than a religious sacrament.</p>
+                    <p>A Buddhist wedding may include:</p>
+                    <ul class="principles-list">
+                        <li>blessings chanted by monks</li>
+                        <li>offerings to the Three Jewels</li>
+                        <li>vows of mutual respect</li>
+                        <li>customs of the local culture</li>
+                    </ul>
+                    <h3>Children</h3>
+                    <p>Children are regarded as a responsibility and a blessing.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>protection</li>
+                        <li>moral guidance</li>
+                        <li>affection</li>
+                        <li>a good example</li>
+                    </ul>
+                    <p>Many families take children to the temple and teach them the Five Precepts.</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Learning has always been important in Buddhism. Monasteries were among the first schools in many Asian countries.</p>
+                    <p>Buddhist institutions developed learning in:</p>
+                    <ul class="principles-list">
+                        <li>philosophy</li>
+                        <li>languages and translation</li>
+                        <li>medicine</li>
+                        <li>logic</li>
+                        <li>art</li>
+                        <li>literature</li>
+                        <li>psychology</li>
+                    </ul>
+                    <p>In Thailand, Myanmar, and other countries, temples still provide basic education for many children.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Buddhist dietary practice follows the First Precept against killing.</p>
+                    <p>Common practices include:</p>
+                    <ul>
+                        <li>vegetarian or vegan diets, especially in East Asian Mahayana Buddhism</li>
+                        <li>avoiding alcohol under the Fifth Precept</li>
+                        <li>avoiding the "five pungent vegetables" (garlic, onion, and related plants) in some Chinese traditions</li>
+                        <li>monks eating only before noon in Theravada</li>
+                    </ul>
+                    <p>Dietary practice varies greatly among individuals, schools, and countries.</p>
+                    <h3>Clothing</h3>
+                    <p>Buddhism encourages simplicity and modesty.</p>
+                    <p>Monks and nuns wear robes. Their color often indicates the tradition:</p>
+                    <ul class="principles-list">
+                        <li>saffron or ochre in Theravada Southeast Asia</li>
+                        <li>maroon in Tibet</li>
+                        <li>gray, brown, or black in East Asia</li>
+                    </ul>
+                    <p>Lay Buddhists generally dress according to local culture. White clothing is often worn on observance days and at temple retreats.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>The Buddha taught that women and men can both attain awakening. He founded an order of nuns, which was unusual for its time.</p>
+                    <p>At the same time, traditional monastic rules give nuns additional rules, and full ordination for women disappeared in some Theravada and Tibetan lineages.</p>
+                    <p>Modern Buddhists differ substantially on women's ordination and leadership. Full ordination for women has been revived in Sri Lanka and in some Western and other communities.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Right Livelihood is part of the Eightfold Path.</p>
+                    <p>Buddhists are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>earn honestly</li>
+                        <li>avoid harming others</li>
+                        <li>avoid deception</li>
+                        <li>treat workers fairly</li>
+                        <li>support family</li>
+                        <li>share wealth generously</li>
+                    </ul>
+                    <h3>Business Ethics</h3>
+                    <p>The Buddha named five trades that lay followers should avoid:</p>
+                    <ul class="principles-list">
+                        <li>trading in weapons</li>
+                        <li>trading in living beings</li>
+                        <li>trading in meat</li>
+                        <li>trading in intoxicants</li>
+                        <li>trading in poisons</li>
+                    </ul>
+                    <p>Buddhist ethics also emphasize honesty, fair dealing, and generosity. The Buddha did not condemn wealth gained honestly, but he warned against greed and attachment.</p>
+                    <h3>Charity</h3>
+                    <p>Generosity is part of daily Buddhist life.</p>
+                    <p>Buddhists may give:</p>
+                    <ul class="principles-list">
+                        <li>food to monks and nuns</li>
+                        <li>support to temples</li>
+                        <li>disaster relief</li>
+                        <li>medical care</li>
+                        <li>education</li>
+                        <li>care for animals</li>
+                    </ul>
+                    <p>Organizations such as Tzu Chi in Taiwan run major global relief and medical programs.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Buddhism places high value on caring for the sick. The Buddha said that whoever cares for the sick cares for him.</p>
+                    <p>Buddhist traditions developed:</p>
+                    <ul class="principles-list">
+                        <li>monastic medicine</li>
+                        <li>Tibetan medicine</li>
+                        <li>hospitals and care centers</li>
+                        <li>hospice and end-of-life care</li>
+                    </ul>
+                    <p>Many Buddhists accept modern medicine, blood transfusions, and organ donation. Organ donation is often seen as an act of generosity, though views vary.</p>
+                    <p>Mindfulness practices drawn from Buddhism are widely used in modern healthcare.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Buddhist funerals vary by country but often include:</p>
+                    <ul>
+                        <li>chanting by monks</li>
+                        <li>reflection on impermanence</li>
+                        <li>merit-making for the deceased</li>
+                        <li>cremation (common, though burial also occurs)</li>
+                        <li>memorial rites on the 7th, 49th, and 100th days in some traditions</li>
+                    </ul>
+                    <p>The body is treated with respect. A calm and peaceful environment at the time of death is considered important.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The most widely observed Buddhist festival is Vesak.</p>
+                    <p>Buddhists also observe:</p>
+                    <ul class="principles-list">
+                        <li>uposatha (observance) days on the new and full moon</li>
+                        <li>the rainy-season retreat (Vassa)</li>
+                        <li>Kathina</li>
+                        <li>Lunar New Year and Losar</li>
+                        <li>Obon / Ullambana</li>
+                    </ul>
+                    <h3>Community Life</h3>
+                    <p>Buddhist community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>temples and monasteries</li>
+                        <li>meditation centers</li>
+                        <li>Dharma schools for children</li>
+                        <li>charitable organizations</li>
+                        <li>festivals</li>
+                        <li>retreats</li>
+                    </ul>
+                    <p>In the United States, temples and centers may also provide:</p>
+                    <ul class="principles-list">
+                        <li>meditation classes</li>
+                        <li>language and cultural programs</li>
+                        <li>support for immigrant families</li>
+                        <li>interfaith programs</li>
+                        <li>chaplaincy in hospitals and prisons</li>
+                        <li>youth activities</li>
+                    </ul>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Buddhist history includes many different relationships between Buddhism and government, from Ashoka's empire to modern democracies.</p>
+                    <p>There is no single Buddhist political system. Buddhists today live in:</p>
+                    <ul class="principles-list">
+                        <li>democracies</li>
+                        <li>constitutional monarchies</li>
+                        <li>one-party states</li>
+                        <li>secular states</li>
+                        <li>countries where Buddhism has a special constitutional status</li>
+                    </ul>
+                    <p>In the United States, Buddhist citizens participate in:</p>
+                    <ul class="principles-list">
+                        <li>voting</li>
+                        <li>public service</li>
+                        <li>advocacy</li>
+                        <li>interfaith work</li>
+                        <li>environmental movements</li>
+                        <li>peace movements</li>
+                    </ul>
+                    <p>Buddhist leaders such as Thich Nhat Hanh and the Dalai Lama have been known for their work for peace and nonviolence.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Buddhism has a long history of living alongside:</p>
+                    <ul class="principles-list">
+                        <li>Hindus</li>
+                        <li>Jains</li>
+                        <li>Confucians and Daoists</li>
+                        <li>Shinto practitioners</li>
+                        <li>Muslims</li>
+                        <li>Christians</li>
+                        <li>people of no religion</li>
+                    </ul>
+                    <p>Emperor Ashoka's Rock Edict XII urges people to honor the religions of others, saying that by honoring other faiths one also honors one's own.</p>
+                    <p>Buddhists today are active in interfaith dialogue, such as conversations between Buddhist and Christian monastics.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>Buddhism in America</h3>
+                    <p>Buddhism arrived in the United States in the 19th century with Chinese and Japanese immigrants.</p>
+                    <p>American Buddhists include people with roots in:</p>
+                    <ul class="principles-list">
+                        <li>China</li>
+                        <li>Japan</li>
+                        <li>Korea</li>
+                        <li>Vietnam</li>
+                        <li>Thailand</li>
+                        <li>Cambodia and Laos</li>
+                        <li>Sri Lanka</li>
+                        <li>Tibet and the Himalayas</li>
+                        <li>converts of many backgrounds</li>
+                    </ul>
+                    <p>During World War II, Japanese American Buddhists continued their practice in internment camps. Today American Buddhists participate in every field, including medicine, science, education, the arts, business, and public service. The U.S. military has Buddhist chaplains.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>Buddhism and Humanity</h3>
+                    <p>Buddhist civilization made major contributions in many areas.</p>
+                    <h3>Art and Architecture</h3>
+                    <p>Buddhism inspired stupas, pagodas, cave temples, sculpture, painting, and gardens across Asia, including Borobudur, Angkor, and the Ajanta caves.</p>
+                    <h3>Education</h3>
+                    <p>Monastic universities such as Nalanda were among the earliest large institutions of higher learning in the world.</p>
+                    <h3>Printing</h3>
+                    <p>The Diamond Sutra from Dunhuang, printed in 868 CE, is among the oldest dated printed books in the world.</p>
+                    <h3>Psychology</h3>
+                    <p>Buddhist analysis of the mind has influenced modern psychology, especially mindfulness-based therapies.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>Buddhism and Knowledge</h3>
+                    <p>The Buddha encouraged investigation rather than blind belief. Buddhist traditions developed detailed studies of:</p>
+                    <ul class="principles-list">
+                        <li>mind and perception</li>
+                        <li>logic</li>
+                        <li>language</li>
+                        <li>ethics</li>
+                        <li>the nature of reality</li>
+                    </ul>
+                    <p>Today, scientists and Buddhist teachers work together in research on meditation and the brain.</p>
+                    <h3>Buddhism and Justice</h3>
+                    <p>Buddhism approaches justice through non-harm, fairness, and compassion.</p>
+                    <p>The Buddha rejected judging people by birth or caste, teaching that a person is noble because of their actions, not their family.</p>
+                    <h3>Buddhism and Human Dignity</h3>
+                    <p>Buddhism teaches that every being has the potential for awakening. Human birth is precious, and all beings wish to be happy and avoid suffering.</p>
+                    <p>This provides a Buddhist foundation for:</p>
+                    <ul class="principles-list">
+                        <li>human equality</li>
+                        <li>rejecting caste discrimination</li>
+                        <li>concern for animals</li>
+                        <li>care for the environment</li>
+                        <li>nonviolence</li>
+                    </ul>
+                    <h3>Buddhism and Compassion</h3>
+                    <p>Compassion (karuna) is one of the most central themes in Buddhism.</p>
+                    <p>The bodhisattva vow, recited in many Mahayana traditions, begins:</p>
+                    <blockquote>"Beings are numberless; I vow to free them."</blockquote>
+                    <p>Compassion together with wisdom are often called the two wings of the Buddhist path.</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>Buddhism as Wisdom, Ethics, and Meditation</h3>
+                    <p>Buddhism does not reduce religion to belief. It presents the path through three trainings:</p>
+                    <h3>Sila</h3>
+                    <p>Ethical conduct: right speech, right action, and right livelihood.</p>
+                    <h3>Samadhi</h3>
+                    <p>Meditation and mental discipline: right effort, right mindfulness, and right concentration.</p>
+                    <h3>Prajna</h3>
+                    <p>Wisdom: right view and right intention.</p>
+                    <p>This framework can be useful for understanding Buddhism as ethics + mental discipline + wisdom.</p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>Buddhism is a global tradition centered on the teaching of the Buddha, the reality of suffering, and the path to liberation.</p>
+                <p>Its scriptures include the Pali Canon and the Mahayana and Tibetan canons, and it is passed on through living teachers and communities.</p>
+                <p>At its core are:</p>
+                <ul class="principles-list">
+                    <li>the Three Jewels</li>
+                    <li>the Four Noble Truths</li>
+                    <li>the Noble Eightfold Path</li>
+                    <li>karma and rebirth</li>
+                    <li>impermanence and non-self</li>
+                    <li>the goal of nirvana</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>ethical conduct</li>
+                    <li>meditation</li>
+                    <li>generosity</li>
+                    <li>devotion</li>
+                    <li>community</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>non-harm</li>
+                    <li>compassion</li>
+                    <li>loving-kindness</li>
+                    <li>honesty</li>
+                    <li>generosity</li>
+                    <li>equanimity</li>
+                    <li>respect for all living beings</li>
+                </ul>
+                <p>Buddhism has shaped the art, education, and philosophy of much of Asia for more than two thousand years. It should not be understood as a single culture: Buddhists today represent great diversity of language, nation, and practice.</p>
+                <p>Understanding Buddhism requires distinguishing among scripture, philosophy, practice, history, and culture.</p>
+            </div>
+
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about Buddhism, we recommend relying on primary Buddhist sources.</p>
+                <h3>1. The Pali Canon</h3>
+                <p>Useful primary texts include:</p>
+                <ul>
+                    <li>Dhammacakkappavattana Sutta (Samyutta Nikaya 56.11): the first sermon and the Four Noble Truths</li>
+                    <li>Anattalakkhana Sutta (SN 22.59): non-self</li>
+                    <li>Kalama Sutta (Anguttara Nikaya 3.65): investigating teachings</li>
+                    <li>Sigalovada Sutta (Digha Nikaya 31): lay ethics and family duties</li>
+                    <li>Metta Sutta (Sutta Nipata 1.8): loving-kindness</li>
+                    <li>Satipatthana Sutta (Majjhima Nikaya 10): mindfulness</li>
+                    <li>Maha-parinibbana Sutta (DN 16): the Buddha's final days</li>
+                    <li>The Dhammapada</li>
+                </ul>
+                <p>Free English translations: Access to Insight (accesstoinsight.org) and SuttaCentral (suttacentral.net).</p>
+                <h3>2. Mahayana Sutras</h3>
+                <ul class="principles-list">
+                    <li>The Heart Sutra</li>
+                    <li>The Diamond Sutra</li>
+                    <li>The Lotus Sutra</li>
+                    <li>The Smaller and Larger Sukhavativyuha Sutras (Pure Land)</li>
+                </ul>
+                <h3>3. Classical Commentaries</h3>
+                <ul class="principles-list">
+                    <li>Buddhaghosa, Visuddhimagga</li>
+                    <li>Nagarjuna, Mulamadhyamakakarika</li>
+                    <li>Shantideva, Bodhicaryavatara</li>
+                </ul>
+                <h3>4. Tibetan Sources</h3>
+                <ul class="principles-list">
+                    <li>The Kangyur and Tengyur</li>
+                    <li>Tsongkhapa, The Great Treatise on the Stages of the Path</li>
+                </ul>
+                <h3>5. Historical Sources</h3>
+                <ul class="principles-list">
+                    <li>The Edicts of Ashoka</li>
+                </ul>
+                <h3>6. Demographic Data</h3>
+                <ul>
+                    <li>Pew Research Center, "How the Global Religious Landscape Changed From 2010 to 2020" (2025)</li>
+                </ul>
             </div>
 
         </section>
@@ -482,15 +1482,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }

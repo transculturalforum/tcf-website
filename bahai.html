@@ -71,7 +71,7 @@
             transform: rotate(-15deg);
         }
 
-        /* Schema Layout: 9-Tab Interface */
+        /* Schema Layout: Tab Interface */
         .schematic-container {
             max-width: 1200px;
             margin: 4rem auto;
@@ -81,7 +81,7 @@
             align-items: flex-start;
         }
 
-        /* Left Side: 9-Tab Navigation */
+        /* Left Side: Tab Navigation */
         .template-sidebar {
             flex: 0 0 280px;
             position: sticky;
@@ -177,7 +177,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Sub-Tabs specifically for History section */
+        /* Sub-Tabs used inside longer sections */
         .sub-tab-container {
             display: flex;
             flex-wrap: wrap;
@@ -216,6 +216,21 @@
         .history-sub-section.active {
             display: block;
             animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .template-section blockquote {
+            margin: 0 0 1.5rem 0;
+            padding: 0.75rem 1.25rem;
+            border-left: 4px solid #D4AF37;
+            background: #F4F1EA;
+            color: #2F3E2B;
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .template-section ol {
+            padding-left: 1.5rem;
         }
 
         @keyframes fadeIn {
@@ -296,154 +311,821 @@
         <p>An independent world religion founded in 19th-century Persia that emphasizes the spiritual unity of all humankind.</p>
     </header>
 
+
     <main class="schematic-container">
-        
-        <!-- Left: 9-Tab Navigation Menu -->
+
+        <!-- Left: Tab Navigation Menu (follows the structure of the Islam page) -->
         <aside class="template-sidebar">
-            <button class="template-nav-btn active" onclick="openSection(event, 'sec-overview')">Overview</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-principles')">Core Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-guidance')">Guidance on Daily Life</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History of the Religion</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-continuity')">Continuity of Principles</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-misconceptions')">Misconceptions</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-challenges')">Current Challenges</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-practices')">Practical Daily Practices</button>
-            <button class="template-nav-btn" onclick="openSection(event, 'sec-impact')">Positive Impact on Society</button>
+            <button class="template-nav-btn active" onclick="openSection(event, 'sec-intro')">Introduction</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-glance')">The Bahá'í Faith at a Glance</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-beliefs')">Core Beliefs</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-scriptures')">Scriptures and Teachings</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-history')">History</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-denominations')">Community and Diversity</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-myths')">Myths and Facts</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-everyday')">Religion and Everyday Life</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-conclusion')">Conclusion</button>
+            <button class="template-nav-btn" onclick="openSection(event, 'sec-references')">References</button>
         </aside>
 
         <!-- Right: Content Display Area -->
         <section class="template-content-area">
-            
-            <!-- OVERVIEW -->
-            <div id="sec-overview" class="template-section active">
-                <h2>Overview</h2>
-                <p>Founded in 19th-century Persia (modern-day Iran) by Bahá'u'lláh, the Bahá'í Faith is one of the world's youngest independent religions. It emerged with the core teaching that all major world religions—including Judaism, Christianity, Islam, Hinduism, and Buddhism—are part of a single, progressive revelation from one God.</p>
-                <p>The faith rests on three central pillars: the unity of God, the unity of religion, and the unity of humanity. Bahá'ís believe that humanity is coming of age and that the time has come for a unified global society based on justice, equity, and peace.</p>
-                <p>Unlike many older world religions, the Bahá'í Faith has no clergy or priesthood. Instead, it governs itself through democratically elected local, national, and international councils, placing the responsibility of spiritual growth and community building directly in the hands of the individual.</p>
+
+            <!-- INTRODUCTION -->
+            <div id="sec-intro" class="template-section active">
+                <h2>Introduction</h2>
+                <p>The Bahá'í Faith is a monotheistic religion founded in 19th-century Iran by Bahá'u'lláh (1817–1892). It is one of the world's youngest independent religions and has spread to almost every country.</p>
+                <p>Bahá'ís believe in one God, who has revealed His will to humanity through a series of divine messengers, including Abraham, Moses, Buddha, Zoroaster, Jesus, Muhammad, the Báb, and Bahá'u'lláh. They believe that these messengers taught one progressively unfolding religion, suited to the needs of each age.</p>
+                <p>The central teaching of the Bahá'í Faith is unity: the oneness of God, the oneness of religion, and the oneness of humanity. Bahá'ís believe that humanity is now moving toward a unified, peaceful global society.</p>
+                <p>Bahá'u'lláh wrote:</p>
+                <blockquote>"The earth is but one country, and mankind its citizens."</blockquote>
+                <p>Bahá'ís understand their faith not simply as a set of beliefs but as a way of life that includes prayer, service, education, community building, and work for social justice.</p>
             </div>
 
-            <!-- CORE PRINCIPLES (20) -->
-            <div id="sec-principles" class="template-section">
-                <h2>Core Principles</h2>
-                <p>The Bahá'í Faith is built upon a distinct set of social and spiritual principles aimed at global unity:</p>
-                <ul class="principles-list">
-                    <li><strong>Oneness of God:</strong> There is only one Creator, unknowable in essence.</li>
-                    <li><strong>Oneness of Religion:</strong> All major religions come from the same divine source.</li>
-                    <li><strong>Oneness of Humanity:</strong> All humans are equal members of one global family.</li>
-                    <li><strong>Elimination of Prejudice:</strong> Eradication of racism, nationalism, and religious bigotry.</li>
-                    <li><strong>Equality of Genders:</strong> Absolute spiritual and social equality of women and men.</li>
-                    <li><strong>Harmony of Science & Religion:</strong> Science and religion must agree; they are two wings of human progress.</li>
-                    <li><strong>Independent Investigation of Truth:</strong> Individuals must seek truth without blind imitation.</li>
-                    <li><strong>Universal Education:</strong> Compulsory, high-quality education for all children.</li>
-                    <li><strong>Elimination of Extremes:</strong> Eradication of extreme wealth and extreme poverty.</li>
-                    <li><strong>Universal Auxiliary Language:</strong> Adoption of an international language to foster communication.</li>
-                    <li><strong>Spiritual Solutions to Economic Problems:</strong> Economics must be guided by spiritual and moral principles.</li>
-                    <li><strong>Abolition of Clergy:</strong> No priesthood; individuals approach God directly.</li>
-                    <li><strong>World Peace:</strong> The necessity of establishing a global, federated system of governance.</li>
-                    <li><strong>Inherent Nobility of Humans:</strong> Human beings are created noble, not inherently sinful.</li>
-                    <li><strong>Progressive Revelation:</strong> God reveals truth sequentially over time through divine messengers.</li>
-                    <li><strong>Protection of Cultural Diversity:</strong> Unity does not mean uniformity; diversity is celebrated.</li>
-                    <li><strong>Work as Worship:</strong> Work performed in the spirit of service to humanity is a form of worship.</li>
-                    <li><strong>Harmony with Nature:</strong> Respect for the environment and the interconnectedness of all life.</li>
-                    <li><strong>Loyalty to Government:</strong> Obedience to one's government and strict non-involvement in partisan politics.</li>
-                    <li><strong>Importance of Family:</strong> Marriage and family as the foundational building blocks of society.</li>
-                </ul>
-            </div>
-
-            <!-- GUIDANCE ON DAILY LIFE -->
-            <div id="sec-guidance" class="template-section">
-                <h2>Guidance on Daily Life</h2>
-                
-                <h3>Food & Diet</h3>
-                <p>The Bahá'í teachings do not impose strict dietary laws, such as keeping kosher or halal, and do not forbid specific meats. However, the consumption of alcohol and mind-altering drugs is strictly prohibited unless prescribed by a qualified physician for medical treatment. The writings generally advocate for a simple, healthy diet.</p>
-
-                <h3>Health, Science, & Medicine</h3>
-                <p>Bahá'ís are explicitly commanded to seek the advice of competent physicians when ill. The faith teaches that science and religion are entirely compatible. If a religious belief contradicts established science, Bahá'ís believe it is merely superstition. Medical science is highly respected as a vital tool for human well-being.</p>
-
-                <h3>Blood Transfusions & Organ Transplants</h3>
-                <p>There are no prohibitions against blood transfusions, organ donations, or receiving organ transplants. In fact, these acts are widely supported within the community as profound expressions of service and love for humanity.</p>
-
-                <h3>Cleanliness</h3>
-                <p>Bahá'u'lláh placed a massive emphasis on physical cleanliness, describing it as the emblem of spiritual purity. Believers are encouraged to wear clean clothes, maintain immaculate homes, and observe high standards of personal hygiene, independent of any ritual ablution requirements.</p>
-            </div>
-
-            <!-- HISTORY OF THE RELIGION (5 Sub-Tabs) -->
-            <div id="sec-history" class="template-section">
-                <h2>History of the Religion</h2>
-                
+            <!-- THE BAHÁ'Í FAITH AT A GLANCE -->
+            <div id="sec-glance" class="template-section">
+                <h2>The Bahá'í Faith at a Glance</h2>
                 <div class="sub-tab-container">
-                    <button class="sub-tab-btn active" onclick="openHistoryTab(event, 'hist-founder')">Founder</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-old-dist')">Old Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-new-dist')">New Distribution</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-past-figs')">Principal Figures (Past)</button>
-                    <button class="sub-tab-btn" onclick="openHistoryTab(event, 'hist-recent-figs')">Principal Figures (Recent)</button>
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'glan-1')">Name</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-2')">Adherents</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-3')">Where It Is Practiced</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-4')">Branches</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-5')">Terminology</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-6')">Basic Beliefs</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'glan-7')">Holidays</button>
                 </div>
 
-                <div id="hist-founder" class="history-sub-section active">
-                    <h3>The Founders</h3>
-                    <p>The Bahá'í Faith is unique in having two divine messengers. The Báb (meaning "The Gate") announced his mission in 1844, preparing the way for a greater messenger. In 1863, Bahá'u'lláh (meaning "The Glory of God") announced that he was the promised educator foretold by the Báb and all past world religions. He spent the remainder of his life in exile and imprisonment, writing extensively to define the faith's principles.</p>
+                <div id="glan-1" class="history-sub-section active">
+                    <h3>Name</h3>
+                    <p>The Bahá'í Faith</p>
+                    <p>A follower is called a Bahá'í.</p>
+                    <p>The name comes from Bahá, an Arabic word meaning "glory" or "splendor." Bahá'u'lláh means "the Glory of God."</p>
+                    <p>The Bahá'í Faith began in an Islamic setting, but Bahá'ís regard it as an independent religion with its own scriptures, laws, and institutions.</p>
                 </div>
-                
-                <div id="hist-old-dist" class="history-sub-section">
-                    <h3>Old Distribution</h3>
-                    <p>The faith originated in 19th-century Persia (Iran). Early followers faced intense persecution from both the state and religious authorities. During Bahá'u'lláh's exiles, the faith spread through the Ottoman Empire, establishing roots in what is today Iraq, Turkey, and Israel/Palestine.</p>
+
+                <div id="glan-2" class="history-sub-section">
+                    <h3>Approximate Number of Adherents</h3>
+                    <p>There are an estimated 5 to 8 million Bahá'ís worldwide. Bahá'í sources often cite more than 5 million, while the World Religion Database estimates about 8 million.</p>
+                    <p>Bahá'ís live in more than 200 countries and territories, making the Bahá'í Faith one of the most widely spread religions in the world, although small in number.</p>
                 </div>
-                
-                <div id="hist-new-dist" class="history-sub-section">
-                    <h3>New Distribution</h3>
-                    <p>Today, the Bahá'í Faith is the second most geographically widespread religion in the world (after Christianity). It has millions of adherents spread across over 200 countries and territories. Major populations exist in India, the United States, Kenya, South America, and Southeast Asia, creating an incredibly diverse global community.</p>
+
+                <div id="glan-3" class="history-sub-section">
+                    <h3>Where the Bahá'í Faith Is Practiced</h3>
+                    <p>Large Bahá'í communities are found in:</p>
+                    <ul class="principles-list">
+                        <li>India</li>
+                        <li>the United States</li>
+                        <li>Kenya</li>
+                        <li>Vietnam</li>
+                        <li>the Democratic Republic of the Congo</li>
+                        <li>the Philippines</li>
+                        <li>Zambia</li>
+                        <li>South Africa</li>
+                        <li>Iran</li>
+                        <li>Bolivia and other Latin American countries</li>
+                        <li>Pacific Island nations</li>
+                    </ul>
+                    <p>Iran, the birthplace of the faith, has an estimated 300,000 Bahá'ís, its largest religious minority, who face serious persecution.</p>
+                    <p>The Bahá'í writings were revealed mainly in Arabic and Persian and have been translated into more than 800 languages.</p>
                 </div>
-                
-                <div id="hist-past-figs" class="history-sub-section">
-                    <h3>Principal Figures - Past</h3>
-                    <ul>
-                        <li><strong>The Báb (1819–1850):</strong> The Herald of the Bahá'í Faith, executed by the Persian government.</li>
-                        <li><strong>Bahá'u'lláh (1817–1892):</strong> The Founder, whose vast writings form the core of Bahá'í scripture.</li>
-                        <li><strong>'Abdu'l-Bahá (1844–1921):</strong> The eldest son of Bahá'u'lláh, appointed as the authorized interpreter of the teachings and the center of the Covenant.</li>
-                        <li><strong>Shoghi Effendi (1897–1957):</strong> The Guardian of the Bahá'í Faith, who guided its global expansion and translated many sacred texts into English.</li>
+
+                <div id="glan-4" class="history-sub-section">
+                    <h3>Major Branches and Traditions</h3>
+                    <p>The Bahá'í Faith has remained unified, without denominations. Bahá'u'lláh set out a clear line of authority, called the Covenant:</p>
+                    <ol>
+                        <li>Bahá'u'lláh, the founder</li>
+                        <li>'Abdu'l-Bahá, his son, the appointed interpreter</li>
+                        <li>Shoghi Effendi, the Guardian</li>
+                        <li>the Universal House of Justice, elected since 1963</li>
+                    </ol>
+                    <p>Small groups that broke away from this line of succession are not recognized by the Bahá'í community.</p>
+                </div>
+
+                <div id="glan-5" class="history-sub-section">
+                    <h3>Important Bahá'í Terminology</h3>
+                    <ul class="principles-list">
+                        <li><strong>Bahá'u'lláh:</strong> "The Glory of God"; founder of the Bahá'í Faith</li>
+                        <li><strong>The Báb:</strong> "The Gate"; forerunner of Bahá'u'lláh</li>
+                        <li><strong>'Abdu'l-Bahá:</strong> "Servant of Bahá"; son and successor of Bahá'u'lláh</li>
+                        <li><strong>Manifestation of God:</strong> A divine messenger who reveals God's will</li>
+                        <li><strong>Progressive revelation:</strong> The belief that God reveals religion in stages</li>
+                        <li><strong>Kitáb-i-Aqdas:</strong> "The Most Holy Book"; book of laws</li>
+                        <li><strong>Kitáb-i-Íqán:</strong> "The Book of Certitude"</li>
+                        <li><strong>Covenant:</strong> The line of authority in the faith</li>
+                        <li><strong>Universal House of Justice:</strong> The supreme governing council</li>
+                        <li><strong>Spiritual Assembly:</strong> Elected local or national council</li>
+                        <li><strong>Feast (Nineteen Day Feast):</strong> The community gathering every Bahá'í month</li>
+                        <li><strong>Mashriqu'l-Adhkár:</strong> House of Worship</li>
+                        <li><strong>Ridván:</strong> The holiest festival</li>
+                        <li><strong>Naw-Rúz:</strong> The Bahá'í New Year</li>
+                        <li><strong>Obligatory prayer:</strong> Daily prayer required of adult Bahá'ís</li>
+                        <li><strong>Huqúqu'lláh:</strong> "The Right of God"; a spiritual payment</li>
+                        <li><strong>Consultation:</strong> The Bahá'í method of group decision-making</li>
+                        <li><strong>Bahá'í World Centre:</strong> Spiritual and administrative center in Haifa and Akka, Israel</li>
                     </ul>
                 </div>
-                
-                <div id="hist-recent-figs" class="history-sub-section">
-                    <h3>Principal Figures - Recent</h3>
-                    <p>Unlike other faiths, there are no individual principal figures or leaders in the modern Bahá'í Faith. In 1963, the community elected the <strong>Universal House of Justice</strong>, a nine-member international governing council based in Haifa, Israel. This council guides the global community today, fulfilling Bahá'u'lláh's vision of a religion governed by elected institutions rather than individuals.</p>
+
+                <div id="glan-6" class="history-sub-section">
+                    <h3>Basic Beliefs</h3>
+                    <p>Core Bahá'í beliefs include:</p>
+                    <ol>
+                        <li>the oneness of God</li>
+                        <li>the oneness of religion</li>
+                        <li>the oneness of humanity</li>
+                        <li>progressive revelation through Manifestations of God</li>
+                        <li>the immortality of the soul</li>
+                        <li>the harmony of science and religion</li>
+                    </ol>
+                    <p>Important Bahá'í social principles include:</p>
+                    <ol>
+                        <li>elimination of all forms of prejudice</li>
+                        <li>equality of women and men</li>
+                        <li>universal education</li>
+                        <li>independent investigation of truth</li>
+                        <li>elimination of extremes of wealth and poverty</li>
+                        <li>a universal auxiliary language</li>
+                        <li>world peace and a world federation</li>
+                    </ol>
+                </div>
+
+                <div id="glan-7" class="history-sub-section">
+                    <h3>Major Bahá'í Holidays</h3>
+                    <p>The Bahá'í calendar (Badí' calendar) has 19 months of 19 days, plus four or five extra days.</p>
+                    <h3>Naw-Rúz</h3>
+                    <p>The Bahá'í New Year, at the spring equinox (around March 20 or 21). It follows the 19-day fast.</p>
+                    <h3>Ridván</h3>
+                    <p>A twelve-day festival from about April 20 to May 2. It marks Bahá'u'lláh's declaration of his mission in Baghdad in 1863. The first, ninth, and twelfth days are holy days.</p>
+                    <h3>The Twin Holy Birthdays</h3>
+                    <p>The births of the Báb and Bahá'u'lláh, celebrated on consecutive days in October or November.</p>
+                    <h3>Other Holy Days</h3>
+                    <ul class="principles-list">
+                        <li>Declaration of the Báb (May)</li>
+                        <li>Ascension of Bahá'u'lláh (May)</li>
+                        <li>Martyrdom of the Báb (July)</li>
+                        <li>Day of the Covenant and Ascension of 'Abdu'l-Bahá (November)</li>
+                    </ul>
+                    <p>Bahá'ís suspend work on nine holy days of the year.</p>
                 </div>
             </div>
 
-            <!-- CONTINUITY OF PRINCIPLES -->
-            <div id="sec-continuity" class="template-section">
-                <h2>Continuity of the Principles</h2>
-                <p>The Bahá'í Faith has maintained strict continuity primarily through its "Covenant." Bahá'u'lláh explicitly wrote down his succession plan, appointing his son, 'Abdu'l-Bahá, as the sole interpreter of his writings. This written chain of authority passed to Shoghi Effendi and finally to the democratically elected Universal House of Justice. Because the line of authority is explicitly documented in the founder's own handwriting, the Bahá'í Faith has uniquely avoided any major sectarian schisms or divisions in its history.</p>
+            <!-- CORE BELIEFS -->
+            <div id="sec-beliefs" class="template-section">
+                <h2>Core Beliefs</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'bel-1')">God &amp; the Manifestations</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-2')">Writings &amp; Authority</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-3')">Spiritual Beings</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-4')">Human Nature &amp; Wrongdoing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-5')">Prayer, Service &amp; Fasting</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-6')">Life, Death &amp; Afterlife</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-7')">Free Will</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'bel-8')">Morality &amp; Society</button>
+                </div>
+
+                <div id="bel-1" class="history-sub-section active">
+                    <h3>God</h3>
+                    <p>Bahá'ís believe in one God, the creator of the universe.</p>
+                    <p>God is described as:</p>
+                    <ul class="principles-list">
+                        <li>one</li>
+                        <li>eternal</li>
+                        <li>all-knowing</li>
+                        <li>all-powerful</li>
+                        <li>loving</li>
+                        <li>just</li>
+                        <li>beyond human understanding in essence</li>
+                    </ul>
+                    <p>Bahá'u'lláh taught that God's essence is unknowable. People come to know God through His Manifestations, who reflect God's attributes like a perfect mirror reflects the sun.</p>
+                    <p>The Bahá'í Faith rejects:</p>
+                    <ul class="principles-list">
+                        <li>the idea that God has a physical form</li>
+                        <li>the idea that God becomes incarnate</li>
+                        <li>the idea that one religion alone has all truth for all time</li>
+                        <li>prejudice of every kind</li>
+                    </ul>
+                    <h3>Manifestations of God</h3>
+                    <p>Bahá'ís believe that God sends Manifestations to humanity. They include:</p>
+                    <ul class="principles-list">
+                        <li>Abraham</li>
+                        <li>Moses</li>
+                        <li>Krishna</li>
+                        <li>Zoroaster</li>
+                        <li>Buddha</li>
+                        <li>Jesus</li>
+                        <li>Muhammad</li>
+                        <li>the Báb</li>
+                        <li>Bahá'u'lláh</li>
+                    </ul>
+                    <p>Each Manifestation brings spiritual truths that are eternal and social laws suited to the time.</p>
+                    <p>Bahá'u'lláh is regarded as the Manifestation for this age. Bahá'ís believe he fulfills the promises of earlier religions. They do not believe he is the last Manifestation; another will come after at least 1,000 years.</p>
+                    <h3>Progressive Revelation</h3>
+                    <p>Bahá'ís believe that religious truth is revealed progressively, like a school in which humanity is taught more as it matures.</p>
+                    <p>All the great religions come from the same God. Their differences reflect the needs of different times and places.</p>
+                </div>
+
+                <div id="bel-2" class="history-sub-section">
+                    <h3>The Bahá'í Scriptures</h3>
+                    <p>The Bahá'í scriptures consist of the writings of the Báb and Bahá'u'lláh, and the authorized interpretations of 'Abdu'l-Bahá and Shoghi Effendi.</p>
+                    <p>Bahá'u'lláh's key works include:</p>
+                    <ul>
+                        <li>the Kitáb-i-Aqdas (The Most Holy Book): laws and institutions</li>
+                        <li>the Kitáb-i-Íqán (The Book of Certitude): progressive revelation</li>
+                        <li>the Hidden Words: short spiritual teachings</li>
+                        <li>the Seven Valleys: the spiritual journey</li>
+                        <li>Gleanings from the Writings of Bahá'u'lláh</li>
+                        <li>the Tablets to the kings and rulers of the world</li>
+                    </ul>
+                    <p>The writings contain:</p>
+                    <ul class="principles-list">
+                        <li>prayers</li>
+                        <li>spiritual teachings</li>
+                        <li>laws</li>
+                        <li>social principles</li>
+                        <li>explanations of earlier scriptures</li>
+                        <li>guidance for institutions</li>
+                    </ul>
+                    <p>Bahá'u'lláh's writings are very extensive. The Bahá'í community considers all original writings to be authoritative.</p>
+                    <h3>Interpretation and Authority</h3>
+                    <p>'Abdu'l-Bahá was appointed by Bahá'u'lláh as the interpreter of his writings. After him, Shoghi Effendi was appointed Guardian.</p>
+                    <p>Today the Universal House of Justice can legislate on matters not addressed in the writings. It cannot change the writings or give authoritative interpretations of them.</p>
+                    <p>Individual Bahá'ís may share their own understanding, but it has no authority over others.</p>
+                </div>
+
+                <div id="bel-3" class="history-sub-section">
+                    <h3>Spiritual Beings</h3>
+                    <p>The Bahá'í writings describe the spiritual world as beyond physical description.</p>
+                    <p>Bahá'ís do not believe in Satan as a real being. 'Abdu'l-Bahá explained that evil is the absence of good, as darkness is the absence of light. The "devil" is a symbol of the lower nature of human beings.</p>
+                </div>
+
+                <div id="bel-4" class="history-sub-section">
+                    <h3>Human Nature</h3>
+                    <p>Bahá'ís believe that each human being has a rational soul that comes into being at conception and is immortal.</p>
+                    <p>Human beings have two natures:</p>
+                    <ul class="principles-list">
+                        <li>a spiritual nature</li>
+                        <li>a material or animal nature</li>
+                    </ul>
+                    <p>The purpose of life is to develop the spiritual nature.</p>
+                    <p>Bahá'u'lláh wrote that every person is "a mine rich in gems of inestimable value," and that education reveals these gems.</p>
+                    <p>The Bahá'í Faith does not teach original sin or reincarnation.</p>
+                    <h3>Sin</h3>
+                    <p>Sin is turning away from God and following the lower nature.</p>
+                    <p>Bahá'ís are encouraged to:</p>
+                    <ul class="principles-list">
+                        <li>avoid backbiting</li>
+                        <li>avoid alcohol and drugs</li>
+                        <li>avoid gambling</li>
+                        <li>avoid sexual relations outside marriage</li>
+                        <li>avoid partisan politics</li>
+                    </ul>
+                    <h3>Repentance</h3>
+                    <p>Repentance is a private matter between the individual and God. Bahá'ís do not confess sins to any other person.</p>
+                    <p>A person who has done wrong is encouraged to:</p>
+                    <ol>
+                        <li>recognize the wrong</li>
+                        <li>turn to God in prayer</li>
+                        <li>sincerely regret it</li>
+                        <li>seek forgiveness</li>
+                        <li>make amends where possible</li>
+                        <li>strive to improve</li>
+                    </ol>
+                </div>
+
+                <div id="bel-5" class="history-sub-section">
+                    <h3>Prayer and Worship</h3>
+                    <p>Prayer is central to Bahá'í life.</p>
+                    <p>Every Bahá'í aged 15 and over says one of three obligatory prayers daily:</p>
+                    <ul class="principles-list">
+                        <li>the short prayer, once between noon and sunset</li>
+                        <li>the medium prayer, three times a day</li>
+                        <li>the long prayer, once a day</li>
+                    </ul>
+                    <p>Bahá'ís also:</p>
+                    <ul>
+                        <li>read from the sacred writings every morning and evening</li>
+                        <li>repeat "Alláh-u-Abhá" ("God is Most Glorious") 95 times a day</li>
+                        <li>pray for others</li>
+                        <li>meditate and reflect</li>
+                    </ul>
+                    <p>The Bahá'í Faith has no clergy. Worship is simple and has no sermons or set rituals beyond the reading of scripture and prayer.</p>
+                    <h3>Houses of Worship</h3>
+                    <p>Bahá'í Houses of Worship are open to people of all faiths. Each has nine sides and a central dome, symbolizing unity.</p>
+                    <p>Famous examples include:</p>
+                    <ul>
+                        <li>the Lotus Temple in New Delhi, India</li>
+                        <li>the Bahá'í House of Worship in Wilmette, Illinois, USA</li>
+                        <li>Houses of Worship in Panama, Australia, Uganda, Samoa, Germany, Chile, Cambodia, Colombia, and elsewhere</li>
+                    </ul>
+                    <h3>Charity and Service</h3>
+                    <p>Bahá'ís contribute voluntarily to the Bahá'í Fund. Only Bahá'ís may contribute.</p>
+                    <p>Huqúqu'lláh ("the Right of God") is a spiritual obligation to pay 19% of surplus wealth after necessary expenses.</p>
+                    <p>Service to humanity is seen as worship. 'Abdu'l-Bahá taught that work done in a spirit of service is worship.</p>
+                    <h3>Fasting</h3>
+                    <p>Bahá'ís aged 15 to 70 fast from sunrise to sunset for 19 days in March, ending at Naw-Rúz.</p>
+                    <p>The fast is a time of:</p>
+                    <ul class="principles-list">
+                        <li>prayer</li>
+                        <li>reflection</li>
+                        <li>spiritual renewal</li>
+                        <li>self-discipline</li>
+                    </ul>
+                    <p>Those who are ill, traveling, pregnant, nursing, or doing heavy labor are exempt.</p>
+                </div>
+
+                <div id="bel-6" class="history-sub-section">
+                    <h3>Life</h3>
+                    <p>Bahá'ís regard life as a time for the soul to develop spiritual qualities.</p>
+                    <p>Bahá'u'lláh wrote that humanity was created "to carry forward an ever-advancing civilization."</p>
+                    <p>Human beings are expected to:</p>
+                    <ul class="principles-list">
+                        <li>know and love God</li>
+                        <li>develop virtues</li>
+                        <li>serve humanity</li>
+                        <li>work in a trade or profession</li>
+                        <li>educate themselves and their children</li>
+                        <li>work for unity</li>
+                        <li>avoid prejudice</li>
+                    </ul>
+                    <h3>Death</h3>
+                    <p>Death is the soul's release from the body and its birth into the spiritual world.</p>
+                    <p>'Abdu'l-Bahá compared life in this world to a child's life in the womb, which prepares it for a much greater world after birth.</p>
+                    <h3>Afterlife</h3>
+                    <p>Bahá'ís believe that the soul continues to progress after death, toward God, forever.</p>
+                    <h3>Heaven and Hell</h3>
+                    <p>The Bahá'í writings describe heaven and hell not as physical places but as states of the soul:</p>
+                    <ul class="principles-list">
+                        <li>heaven is nearness to God</li>
+                        <li>hell is distance from God</li>
+                    </ul>
+                    <h3>Judgment</h3>
+                    <p>Bahá'ís believe that each person is accountable to God. Bahá'u'lláh wrote: "Bring thyself to account each day ere thou art summoned to a reckoning."</p>
+                    <p>God's justice is balanced by mercy, and Bahá'ís pray for the progress of the souls of the departed.</p>
+                </div>
+
+                <div id="bel-7" class="history-sub-section">
+                    <h3>Free Will</h3>
+                    <p>Bahá'ís believe that human beings have free will to choose good or evil. Some things, such as birth, illness, and death, are beyond human control, but each person is responsible for their own choices.</p>
+                </div>
+
+                <div id="bel-8" class="history-sub-section">
+                    <h3>Morality</h3>
+                    <p>Bahá'í ethics emphasize virtues such as:</p>
+                    <ul>
+                        <li>truthfulness, which 'Abdu'l-Bahá called "the foundation of all human virtues"</li>
+                        <li>honesty</li>
+                        <li>trustworthiness</li>
+                        <li>kindness</li>
+                        <li>justice</li>
+                        <li>chastity</li>
+                        <li>courtesy</li>
+                        <li>humility</li>
+                        <li>generosity</li>
+                        <li>service</li>
+                        <li>avoiding backbiting</li>
+                    </ul>
+                    <p>Bahá'u'lláh wrote in the Hidden Words:</p>
+                    <blockquote>"The best beloved of all things in My sight is Justice."</blockquote>
+                    <h3>Family</h3>
+                    <p>Family is central to Bahá'í life and is seen as the foundation of society.</p>
+                    <p>The Bahá'í Faith places particular importance on:</p>
+                    <ul class="principles-list">
+                        <li>unity within the family</li>
+                        <li>respect for parents</li>
+                        <li>the education of children</li>
+                        <li>equality between husband and wife</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Bahá'í marriage requires:</p>
+                    <ul>
+                        <li>the consent of both partners</li>
+                        <li>the consent of all living parents</li>
+                        <li>a simple ceremony with the vow: "We will all, verily, abide by the Will of God"</li>
+                    </ul>
+                    <p>Marriage is described as a "fortress for well-being." Bahá'ís may marry people of other faiths. Divorce is permitted but discouraged, and requires a "year of patience" first.</p>
+                    <h3>Community</h3>
+                    <p>Bahá'í community life centers around:</p>
+                    <ul class="principles-list">
+                        <li>the Nineteen Day Feast</li>
+                        <li>devotional gatherings</li>
+                        <li>children's classes</li>
+                        <li>junior youth groups</li>
+                        <li>study circles</li>
+                        <li>holy day celebrations</li>
+                    </ul>
+                    <p>Bahá'í communities are governed by elected councils called Spiritual Assemblies.</p>
+                    <h3>Treatment of Others</h3>
+                    <p>Bahá'ís are asked to associate with people of all religions "in a spirit of friendliness and fellowship," as Bahá'u'lláh wrote.</p>
+                    <p>Bahá'ís believe in the oneness of humanity and reject racism, nationalism, and religious prejudice.</p>
+                </div>
             </div>
 
-            <!-- MISCONCEPTIONS -->
-            <div id="sec-misconceptions" class="template-section">
-                <h2>Misconceptions</h2>
-                <p><strong>Misconception: It is a sect of Islam.</strong><br>
-                Reality: While it emerged from an Islamic cultural background in Persia, the Bahá'í Faith is a completely independent world religion with its own founder, distinct scriptures, holy days, and laws.</p>
-                <p><strong>Misconception: It is a syncretic religion (a mix of other faiths).</strong><br>
-                Reality: Bahá'ís do not pick and choose beliefs from other faiths to create a new one. They believe Bahá'u'lláh brought a direct, new revelation from God that updates and builds upon the spiritual truths of the past.</p>
+            <!-- SCRIPTURES AND TEACHINGS -->
+            <div id="sec-scriptures" class="template-section">
+                <h2>Scriptures and Teachings</h2>
+                <h3>The Writings of Bahá'u'lláh</h3>
+                <p>The writings of Bahá'u'lláh are the foundation of the Bahá'í Faith.</p>
+                <p>Their major themes include:</p>
+                <ul class="principles-list">
+                    <li>God</li>
+                    <li>the Manifestations of God</li>
+                    <li>the soul</li>
+                    <li>unity</li>
+                    <li>justice</li>
+                    <li>world peace</li>
+                    <li>prayer</li>
+                    <li>spiritual growth</li>
+                    <li>laws and institutions</li>
+                </ul>
+                <h3>The Writings of the Báb</h3>
+                <p>The Báb's writings, including the Persian Bayán, prepared the way for Bahá'u'lláh.</p>
+                <h3>The Writings of 'Abdu'l-Bahá and Shoghi Effendi</h3>
+                <p>'Abdu'l-Bahá's works, such as Some Answered Questions and Paris Talks, explain Bahá'í teachings. Shoghi Effendi's works, such as God Passes By, explain history and institutions.</p>
+                <h3>Bahá'í Administration</h3>
+                <p>The Bahá'í administrative order answers practical questions such as:</p>
+                <ul class="principles-list">
+                    <li>How are decisions made?</li>
+                    <li>How are leaders chosen?</li>
+                    <li>How are funds managed?</li>
+                    <li>How are community activities organized?</li>
+                </ul>
+                <p>Bahá'í elections have no nominations or campaigning. Members vote by secret ballot for those they believe are best qualified.</p>
             </div>
 
-            <!-- CURRENT CHALLENGES -->
-            <div id="sec-challenges" class="template-section">
-                <h2>Current Challenges</h2>
-                <p>The most severe challenge facing the Bahá'í Faith today is the intense, state-sponsored persecution of the Bahá'í community in Iran (and increasingly in Yemen). In Iran, Bahá'ís are routinely imprisoned for their beliefs, their businesses are closed, their cemeteries are bulldozed, and their youth are banned from attending universities.</p>
-                <p>Globally, a primary challenge is navigating community building and social action while adhering strictly to the Bahá'í law of non-involvement in partisan politics, especially in highly polarized modern societies.</p>
+            <!-- HISTORY -->
+            <div id="sec-history" class="template-section">
+                <h2>History</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'hist-1')">Origins</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-2')">Bahá'u'lláh</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-3')">'Abdu'l-Bahá and the Spread of the Faith</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-4')">The Bahá'í World Centre</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-5')">Milestones</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'hist-6')">Historical Figures</button>
+                </div>
+
+                <div id="hist-1" class="history-sub-section active">
+                    <h3>Origins</h3>
+                    <p>In 1844 in Shiraz, Iran, a young merchant named Siyyid 'Alí-Muhammad declared that he was the Báb, the "Gate," and that a greater messenger would soon appear.</p>
+                    <p>The Báb's movement spread rapidly but was violently persecuted. The Báb was executed in Tabriz in 1850. Thousands of his followers, called Bábís, were killed.</p>
+                </div>
+
+                <div id="hist-2" class="history-sub-section">
+                    <h3>Bahá'u'lláh</h3>
+                    <p>Mírzá Husayn-'Alí, known as Bahá'u'lláh, was born in Tehran in 1817 and was a follower of the Báb.</p>
+                    <p>In 1852 he was imprisoned in the Síyáh-Chál ("Black Pit") dungeon in Tehran. There, he experienced the beginning of his revelation.</p>
+                    <p>He was then exiled to:</p>
+                    <ul class="principles-list">
+                        <li>Baghdad (1853)</li>
+                        <li>Constantinople and Adrianople (1863–1868)</li>
+                        <li>Akka, in the Ottoman province of Syria (now Israel), in 1868</li>
+                    </ul>
+                    <p>In 1863, in the Garden of Ridván in Baghdad, he declared that he was the one promised by the Báb.</p>
+                    <p>He wrote to the kings and rulers of the world calling for peace and justice.</p>
+                    <p>He died near Akka in 1892.</p>
+                </div>
+
+                <div id="hist-3" class="history-sub-section">
+                    <h3>'Abdu'l-Bahá and the Spread of the Faith</h3>
+                    <p>'Abdu'l-Bahá led the community from 1892 to 1921. He traveled to Europe and North America (1911–1913), speaking about peace, racial unity, and the equality of women and men.</p>
+                    <p>Shoghi Effendi led the faith from 1921 to 1957. He developed the administrative institutions and helped spread the faith worldwide.</p>
+                </div>
+
+                <div id="hist-4" class="history-sub-section">
+                    <h3>The Bahá'í World Centre</h3>
+                    <p>The spiritual and administrative center is in Haifa and Akka, Israel. It includes:</p>
+                    <ul>
+                        <li>the Shrine of Bahá'u'lláh near Akka, the holiest Bahá'í site</li>
+                        <li>the Shrine of the Báb in Haifa</li>
+                        <li>the terraced gardens on Mount Carmel, a UNESCO World Heritage Site</li>
+                        <li>the seat of the Universal House of Justice</li>
+                    </ul>
+                </div>
+
+                <div id="hist-5" class="history-sub-section">
+                    <h3>Major Historical Milestones</h3>
+                    <ul>
+                        <li><strong>1844:</strong> Declaration of the Báb.</li>
+                        <li><strong>1850:</strong> Execution of the Báb.</li>
+                        <li><strong>1852:</strong> Bahá'u'lláh imprisoned in the Síyáh-Chál.</li>
+                        <li><strong>1863:</strong> Bahá'u'lláh's declaration in the Garden of Ridván.</li>
+                        <li><strong>1868:</strong> Bahá'u'lláh exiled to Akka.</li>
+                        <li><strong>1873:</strong> Kitáb-i-Aqdas completed.</li>
+                        <li><strong>1892:</strong> Death of Bahá'u'lláh.</li>
+                        <li><strong>1893:</strong> First public mention of the faith in America, at the World's Parliament of Religions in Chicago.</li>
+                        <li><strong>1912:</strong> 'Abdu'l-Bahá visits the United States and lays the foundation of the Wilmette House of Worship.</li>
+                        <li><strong>1921–1957:</strong> Ministry of Shoghi Effendi.</li>
+                        <li><strong>1963:</strong> First election of the Universal House of Justice.</li>
+                        <li><strong>1979 onward:</strong> Severe persecution of Bahá'ís in Iran after the Islamic Revolution.</li>
+                        <li><strong>21st century:</strong> Growth of community-building activities worldwide.</li>
+                    </ul>
+                </div>
+
+                <div id="hist-6" class="history-sub-section">
+                    <h3>Major Historical Figures</h3>
+                    <p>Important figures include:</p>
+                    <ul class="principles-list">
+                        <li>the Báb</li>
+                        <li>Bahá'u'lláh</li>
+                        <li>'Abdu'l-Bahá</li>
+                        <li>Shoghi Effendi</li>
+                        <li>Táhirih, poet and early advocate for women's rights</li>
+                        <li>Mullá Husayn, first to believe in the Báb</li>
+                        <li>Bahíyyih Khánum, daughter of Bahá'u'lláh</li>
+                        <li>Martha Root, traveling teacher</li>
+                        <li>Louis Gregory, African American Bahá'í leader</li>
+                        <li>Ruhiyyih Khanum</li>
+                        <li>many teachers, pioneers, and martyrs</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- PRACTICAL DAILY PRACTICES -->
-            <div id="sec-practices" class="template-section">
-                <h2>Practical Daily Practices</h2>
-                <p>Bahá'ís are obligated to recite one of three obligatory prayers daily. They are also asked to read from the sacred scriptures each morning and evening, and to practice daily meditation and self-reflection.</p>
-                <p>Communally, Bahá'ís gather every 19 days for the "Nineteen Day Feast," which is the spiritual and administrative heart of the community, involving prayers, administrative consultation, and socializing. Annually, Bahá'ís observe a 19-day fast in March, abstaining from food and drink from sunrise to sunset to detach from material desires.</p>
+            <!-- COMMUNITY AND DIVERSITY -->
+            <div id="sec-denominations" class="template-section">
+                <h2>Community and Diversity</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'deno-1')">Unity of the Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-2')">Diversity of Members</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-3')">Regional Differences</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'deno-4')">Culture vs. Religion</button>
+                </div>
+
+                <div id="deno-1" class="history-sub-section active">
+                    <h3>Unity of the Community</h3>
+                    <p>The Bahá'í Faith has no denominations. All Bahá'ís follow the same writings and institutions.</p>
+                </div>
+
+                <div id="deno-2" class="history-sub-section">
+                    <h3>Diversity of Members</h3>
+                    <p>Bahá'ís come from almost every ethnic, national, and religious background. Many communities include people who were previously Christian, Muslim, Hindu, Buddhist, Jewish, or of no religion.</p>
+                </div>
+
+                <div id="deno-3" class="history-sub-section">
+                    <h3>Regional Differences</h3>
+                    <h3>India</h3>
+                    <p>Home to one of the largest Bahá'í populations and the Lotus Temple.</p>
+                    <h3>Africa</h3>
+                    <p>Large and growing communities in Kenya, Zambia, Congo, and elsewhere.</p>
+                    <h3>Iran</h3>
+                    <p>The historical birthplace of the faith, where Bahá'ís face persecution.</p>
+                    <h3>United States</h3>
+                    <p>American Bahá'ís include people of every background, with an especially strong history of racial unity work.</p>
+                </div>
+
+                <div id="deno-4" class="history-sub-section">
+                    <h3>Cultural Practices Versus Religious Requirements</h3>
+                    <p>Bahá'ís are encouraged to keep their own cultures where these agree with Bahá'í principles. Food, dress, music, and celebration styles vary widely by country.</p>
+                </div>
             </div>
 
-            <!-- POSITIVE IMPACT ON SOCIETY -->
-            <div id="sec-impact" class="template-section">
-                <h2>Positive Impact on Society and Humans</h2>
-                <p>The Bahá'í community is intensely focused on grassroots socio-economic development. Globally, they run thousands of educational initiatives, agricultural projects, and health clinics. Because of their core principle of gender equality, Bahá'ís have historically championed women's rights, establishing schools for girls in regions where such education was previously forbidden.</p>
-                <p>Furthermore, Bahá'ís are highly active in interfaith dialogue, race amity initiatives, and the United Nations, consistently working to foster dialogue, eradicate prejudice, and build peaceful, united communities at the neighborhood level.</p>
+            <!-- MYTHS, COMMON MISCONCEPTIONS, AND FACTS -->
+            <div id="sec-myths" class="template-section">
+                <h2>Myths, Common Misconceptions, and Facts</h2>
+                <p><strong>Myth: The Bahá'í Faith is a sect of Islam.</strong><br>
+                Fact: The Bahá'í Faith began in an Islamic setting but is an independent religion with its own scriptures, laws, and institutions.</p>
+                <p><strong>Myth: Bahá'ís believe all religions are exactly the same.</strong><br>
+                Fact: Bahá'ís believe all religions come from one God and share spiritual truths, but they differ in social laws suited to their times.</p>
+                <p><strong>Myth: The Bahá'í Faith is a cult.</strong><br>
+                Fact: The Bahá'í Faith is an established world religion with no clergy, a democratically elected administration, and members in over 200 countries.</p>
+                <p><strong>Myth: Bahá'ís try to aggressively convert others.</strong><br>
+                Fact: Bahá'ís share their faith, but aggressive proselytizing is forbidden.</p>
+                <p><strong>Myth: Bahá'ís are involved in politics.</strong><br>
+                Fact: Bahá'ís do not join political parties or take sides in partisan politics, though they vote and serve their societies.</p>
+            </div>
+
+            <!-- RELIGION AND EVERYDAY LIFE -->
+            <div id="sec-everyday" class="template-section">
+                <h2>Religion and Everyday Life</h2>
+                <div class="sub-tab-container">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'life-1')">Family &amp; Children</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-2')">Education</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-3')">Food &amp; Clothing</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-4')">Gender Roles</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-5')">Work, Business &amp; Charity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-6')">Health &amp; Funerals</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-7')">Holidays &amp; Community</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-8')">Civic Life &amp; Other Faiths</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-9')">The Bahá'í Faith in America</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-10')">The Bahá'í Faith and Humanity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-11')">Knowledge, Justice, Human Dignity &amp; Unity</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'life-12')">Worship, Service &amp; Unity</button>
+                </div>
+
+                <div id="life-1" class="history-sub-section active">
+                    <h3>Family</h3>
+                    <p>Family unity is central to Bahá'í life.</p>
+                    <p>Bahá'ís are encouraged to maintain:</p>
+                    <ul class="principles-list">
+                        <li>respect for parents</li>
+                        <li>marriage</li>
+                        <li>care for children</li>
+                        <li>care for elderly relatives</li>
+                        <li>consultation within the family</li>
+                    </ul>
+                    <h3>Marriage</h3>
+                    <p>Marriage is a spiritual and social union based on mutual consent and parental consent.</p>
+                    <h3>Children</h3>
+                    <p>Bahá'ís place strong emphasis on the education of children.</p>
+                    <p>Parents are expected to provide:</p>
+                    <ul class="principles-list">
+                        <li>care</li>
+                        <li>education</li>
+                        <li>moral and spiritual guidance</li>
+                        <li>affection</li>
+                    </ul>
+                    <p>'Abdu'l-Bahá taught that if a family cannot educate all its children, daughters should be given priority, because mothers are the first educators.</p>
+                </div>
+
+                <div id="life-2" class="history-sub-section">
+                    <h3>Education</h3>
+                    <p>Universal education is a core Bahá'í principle. Bahá'ís run schools and educational programs in many countries.</p>
+                </div>
+
+                <div id="life-3" class="history-sub-section">
+                    <h3>Food</h3>
+                    <p>Bahá'ís have no dietary laws except avoiding alcohol and drugs (unless prescribed). Food customs follow local culture.</p>
+                    <h3>Clothing</h3>
+                    <p>Bahá'ís have no religious dress. They are encouraged to dress modestly and cleanly.</p>
+                </div>
+
+                <div id="life-4" class="history-sub-section">
+                    <h3>Gender Roles</h3>
+                    <p>The equality of women and men is a central principle. 'Abdu'l-Bahá compared humanity to a bird with two wings, men and women, that cannot fly unless both are strong.</p>
+                    <p>Women serve on all Bahá'í institutions except the Universal House of Justice, which is limited to men. Bahá'ís believe the reason for this will become clear in the future.</p>
+                </div>
+
+                <div id="life-5" class="history-sub-section">
+                    <h3>Work</h3>
+                    <p>Work done in a spirit of service is considered worship. Bahá'u'lláh made it obligatory for each person to engage in a trade or profession. Begging is forbidden.</p>
+                    <h3>Business Ethics</h3>
+                    <p>Bahá'í business ethics emphasize:</p>
+                    <ul>
+                        <li>trustworthiness</li>
+                        <li>honesty</li>
+                        <li>fair dealing</li>
+                        <li>avoiding exploitation</li>
+                        <li>fair and moderate interest, which Bahá'u'lláh permitted in his Tablet of Ishráqát</li>
+                    </ul>
+                    <h3>Charity</h3>
+                    <p>Bahá'ís contribute to the Bahá'í funds and to social and economic development projects in their communities.</p>
+                </div>
+
+                <div id="life-6" class="history-sub-section">
+                    <h3>Medicine and Healthcare</h3>
+                    <p>Bahá'u'lláh instructed his followers to consult competent physicians. Bahá'ís accept modern medicine. Organ donation is permitted.</p>
+                    <h3>Death and Funerals</h3>
+                    <p>Bahá'í funeral practice includes:</p>
+                    <ul class="principles-list">
+                        <li>washing and wrapping the body</li>
+                        <li>a ring with a sacred verse</li>
+                        <li>a coffin of durable material</li>
+                        <li>the Prayer for the Dead (for adults)</li>
+                        <li>burial within one hour's journey of the place of death</li>
+                        <li>the body facing toward the Shrine of Bahá'u'lláh</li>
+                    </ul>
+                    <p>Cremation is not permitted.</p>
+                </div>
+
+                <div id="life-7" class="history-sub-section">
+                    <h3>Holidays</h3>
+                    <p>The major Bahá'í holy days are Naw-Rúz, Ridván, the Twin Holy Birthdays, the Declaration of the Báb, and the commemorations of the passing of the central figures.</p>
+                    <h3>Community Life</h3>
+                    <p>Bahá'í community life commonly centers around:</p>
+                    <ul class="principles-list">
+                        <li>devotional gatherings</li>
+                        <li>children's classes</li>
+                        <li>junior youth groups</li>
+                        <li>study circles</li>
+                        <li>Nineteen Day Feasts</li>
+                    </ul>
+                    <p>These activities are open to everyone.</p>
+                </div>
+
+                <div id="life-8" class="history-sub-section">
+                    <h3>Politics and Civic Participation</h3>
+                    <p>Bahá'ís are required to obey the laws of their country and to avoid partisan politics.</p>
+                    <p>Bahá'ís vote, serve in public service, and work for social good. The Bahá'í International Community has consultative status at the United Nations.</p>
+                    <h3>Relationships With People of Other Faiths</h3>
+                    <p>Bahá'u'lláh taught Bahá'ís to "consort with the followers of all religions in a spirit of friendliness and fellowship."</p>
+                    <p>Bahá'ís are active in interfaith work. World Religion Day was started by the U.S. Bahá'í community in 1950.</p>
+                </div>
+
+                <div id="life-9" class="history-sub-section">
+                    <h3>The Bahá'í Faith in America</h3>
+                    <p>The Bahá'í Faith came to America in the 1890s. 'Abdu'l-Bahá visited in 1912 and spoke at churches, synagogues, universities, and Black institutions such as Howard University.</p>
+                    <p>American Bahá'ís have a long history of work for racial unity. The House of Worship in Wilmette, Illinois, was completed in 1953.</p>
+                </div>
+
+                <div id="life-10" class="history-sub-section">
+                    <h3>The Bahá'í Faith and Humanity</h3>
+                    <h3>Social Development</h3>
+                    <p>Bahá'ís run thousands of community development and education projects worldwide.</p>
+                    <h3>Architecture</h3>
+                    <p>Bahá'í Houses of Worship and the terraces on Mount Carmel are known for their architecture and gardens.</p>
+                    <h3>International Cooperation</h3>
+                    <p>Bahá'u'lláh called for collective security and world governance well before the League of Nations and the United Nations.</p>
+                </div>
+
+                <div id="life-11" class="history-sub-section">
+                    <h3>The Bahá'í Faith and Knowledge</h3>
+                    <p>The Bahá'í writings teach that science and religion must agree. 'Abdu'l-Bahá taught that religion contrary to science is superstition.</p>
+                    <h3>The Bahá'í Faith and Justice</h3>
+                    <p>Bahá'u'lláh called justice "the best beloved of all things" in God's sight. Bahá'ís believe justice is necessary for unity.</p>
+                    <h3>The Bahá'í Faith and Human Dignity</h3>
+                    <p>Bahá'ís believe in the oneness of humanity. Bahá'u'lláh wrote: "Ye are the fruits of one tree, and the leaves of one branch."</p>
+                    <p>This provides a Bahá'í foundation for:</p>
+                    <ul class="principles-list">
+                        <li>racial unity</li>
+                        <li>gender equality</li>
+                        <li>religious tolerance</li>
+                        <li>world peace</li>
+                    </ul>
+                    <h3>The Bahá'í Faith and Unity</h3>
+                    <p>Unity is the central theme of the Bahá'í Faith. Bahá'u'lláh wrote: "The well-being of mankind, its peace and security, are unattainable unless and until its unity is firmly established."</p>
+                </div>
+
+                <div id="life-12" class="history-sub-section">
+                    <h3>The Bahá'í Faith as Worship, Service, and Unity</h3>
+                    <p>The Bahá'í Faith presents religion as:</p>
+                    <h3>Worship</h3>
+                    <p>Prayer, meditation, and study of the writings.</p>
+                    <h3>Service</h3>
+                    <p>Service to humanity, seen as a form of worship.</p>
+                    <h3>Unity</h3>
+                    <p>Building unity in family, community, and the world.</p>
+                    <p>This framework can be useful for understanding the Bahá'í Faith as devotion + service + unity.</p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="sec-conclusion" class="template-section">
+                <h2>Conclusion</h2>
+                <p>The Bahá'í Faith is a global monotheistic religion centered on the oneness of God, religion, and humanity.</p>
+                <p>At its theological core are:</p>
+                <ul class="principles-list">
+                    <li>one God</li>
+                    <li>progressive revelation</li>
+                    <li>the Manifestations of God</li>
+                    <li>the immortal soul</li>
+                    <li>the Covenant</li>
+                </ul>
+                <p>At its practical core are:</p>
+                <ul class="principles-list">
+                    <li>daily prayer</li>
+                    <li>the annual fast</li>
+                    <li>the Nineteen Day Feast</li>
+                    <li>community-building activities</li>
+                    <li>service</li>
+                </ul>
+                <p>At its ethical core are:</p>
+                <ul class="principles-list">
+                    <li>unity</li>
+                    <li>justice</li>
+                    <li>truthfulness</li>
+                    <li>equality of women and men</li>
+                    <li>elimination of prejudice</li>
+                    <li>service to humanity</li>
+                </ul>
+                <p>Although relatively small, the Bahá'í community is spread across almost every country and reflects humanity's diversity.</p>
+            </div>
+
+            <!-- PRIMARY AND AUTHORITATIVE REFERENCES -->
+            <div id="sec-references" class="template-section">
+                <h2>Primary and Authoritative References</h2>
+                <p>For reliable information about the Bahá'í Faith, we recommend relying on primary Bahá'í sources.</p>
+                <h3>1. Writings of Bahá'u'lláh</h3>
+                <ul class="principles-list">
+                    <li>Kitáb-i-Aqdas (The Most Holy Book)</li>
+                    <li>Kitáb-i-Íqán (The Book of Certitude)</li>
+                    <li>The Hidden Words</li>
+                    <li>The Seven Valleys and the Four Valleys</li>
+                    <li>Gleanings from the Writings of Bahá'u'lláh</li>
+                    <li>Tablets of Bahá'u'lláh</li>
+                </ul>
+                <h3>2. Writings of the Báb</h3>
+                <ul class="principles-list">
+                    <li>Selections from the Writings of the Báb</li>
+                </ul>
+                <h3>3. Writings of 'Abdu'l-Bahá</h3>
+                <ul class="principles-list">
+                    <li>Some Answered Questions</li>
+                    <li>Paris Talks</li>
+                    <li>The Promulgation of Universal Peace</li>
+                </ul>
+                <h3>4. Writings of Shoghi Effendi</h3>
+                <ul class="principles-list">
+                    <li>God Passes By</li>
+                    <li>The World Order of Bahá'u'lláh</li>
+                </ul>
+                <h3>5. Online Sources</h3>
+                <ul class="principles-list">
+                    <li>Bahá'í Reference Library (bahai.org/library)</li>
+                    <li>bahai.org</li>
+                </ul>
+                <h3>6. Demographic Data</h3>
+                <ul class="principles-list">
+                    <li>World Religion Database</li>
+                    <li>Bahá'í International Community</li>
+                </ul>
             </div>
 
         </section>
@@ -476,15 +1158,17 @@
             evt.currentTarget.classList.add("active");
         }
 
-        function openHistoryTab(evt, tabId) {
-            // Hide all history sub-sections
-            var subSections = document.getElementsByClassName("history-sub-section");
+        function openSubTab(evt, tabId) {
+            // Only switch the sub-tabs inside the section that was clicked
+            var section = evt.currentTarget.closest(".template-section");
+            // Hide this section's sub-sections
+            var subSections = section.getElementsByClassName("history-sub-section");
             for (var i = 0; i < subSections.length; i++) {
                 subSections[i].style.display = "none";
                 subSections[i].classList.remove("active");
             }
-            // Remove active class from all sub-tab buttons
-            var subButtons = document.getElementsByClassName("sub-tab-btn");
+            // Remove active class from this section's sub-tab buttons
+            var subButtons = section.getElementsByClassName("sub-tab-btn");
             for (var i = 0; i < subButtons.length; i++) {
                 subButtons[i].classList.remove("active");
             }
