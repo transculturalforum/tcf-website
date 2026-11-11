@@ -441,16 +441,39 @@
         }
 
         /* Full section content copied from the religion and culture pages */
+        /* Section names stand out in copper so readers can scan both columns */
         .result-body h3 {
             font-family: 'Georgia', serif;
-            color: #3C6B5F;
-            font-size: 1.3rem;
+            color: #8A4B22;
+            background: #F6ECDF;
+            border-left: 4px solid #B87333;
+            border-radius: 4px;
+            padding: 0.45rem 0.8rem;
+            font-size: 1.25rem;
             margin-top: 1.75rem;
             margin-bottom: 0.75rem;
         }
 
+        .result-body h4.page-subheading {
+            font-family: 'Georgia', serif;
+            color: #8A4B22;
+            font-size: 1.1rem;
+            margin: 1.25rem 0 0.5rem 0;
+        }
+
+        .result-body .page-heading-note {
+            color: #8A6A50;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin: -0.35rem 0 0.75rem 0;
+        }
+
         .result-body h3.cmp-part {
             color: #2F3E2B;
+            background: none;
+            border-left: none;
+            border-radius: 0;
+            padding: 0 0 0.3rem 0;
             font-size: 1.5rem;
             border-bottom: 1px dashed #D6DBD2;
             padding-bottom: 0.3rem;
@@ -1101,7 +1124,118 @@
         // ---- Row alignment -------------------------------------------------
         // Splits a section's HTML into blocks, one per heading, so matching
         // headings in the two columns can be placed on the same row.
-        function splitIntoBlocks(html) {
+        // ---- Shared section names ------------------------------------------
+        // Each religion page names some sections in its own words. In the
+        // comparison every religion uses the same name, so the same topic is
+        // easy to find on both sides. When a page uses a different name, it is
+        // shown in small print under the shared one.
+        // Per subject: [shared name, [names used on the religion pages]]
+        const worshipNames = [
+            ["Prayer and Worship", ["Meditation, Devotion, and Worship", "Prayer, Ceremony, and Worship", "Reflection and Ritual"]],
+            ["Charity", ["Generosity", "Service and Sharing", "Charity and Service", "Generosity and Sharing"]],
+            ["Fasting", ["Fasting and Restraint"]]
+        ];
+        const sharedNames = {
+            glance: [
+            ["Approximate Number of Adherents", ["Approximate Number of People"]],
+            ["Major Branches and Traditions", ["Major Families of Tradition", "Major Streams and Traditions"]],
+            ["Basic Beliefs", ["Basic Christian Beliefs", "Common Themes", "Basic Principles"]],
+            ["Major Holidays", ["Major Ceremonies and Observances", "Notable Observances"]]
+            ],
+            principles: [
+            ["God", ["Ultimate Reality and the Question of God", "The Universe and the Question of God",
+                     "The Creator and Spiritual Powers", "The Question of God"]],
+            ["Prophets and Teachers", ["Prophets", "Prophets and Biblical Figures", "Patriarchs, Matriarchs, and Prophets",
+                     "The Buddha and Enlightened Beings", "Avatars and Divine Teachers", "The Ten Gurus",
+                     "Manifestations of God", "The Tirthankaras", "Teachers, Ancestors, and Culture Heroes",
+                     "Zarathushtra", "Thinkers and Teachers"]],
+            ["Revelation", ["Revelation and Awakening", "Progressive Revelation", "Revelation and Knowledge",
+                     "Revelation and Sacred Knowledge", "Sources of Knowledge"]],
+            ["Sacred Scriptures", ["Holy Scriptures", "The Qur'an", "The Hebrew Bible (Tanakh)", "The Buddhist Scriptures",
+                     "The Vedas", "The Guru Granth Sahib", "The Bahá'í Scriptures", "The Jain Scriptures (Agamas)",
+                     "Sacred Knowledge and Oral Tradition", "The Avesta", "Key Texts and Thinkers"]],
+            ["Other Sacred Texts", ["Sunnah and Hadith", "The Talmud and Rabbinic Literature",
+                     "Epics, Puranas, and the Bhagavad Gita", "Other Sikh Texts", "Later Texts"]],
+            ["Angels and Spiritual Beings", ["Spiritual Beings and Realms", "Deities and Spiritual Beings",
+                     "Spiritual Beings", "Divine and Spiritual Beings"]],
+            ["Sin and Wrongdoing", ["Sin", "Karma and Wrongdoing", "Wrongdoing and Karma", "Wrongdoing", "Karma",
+                     "Wrongdoing and Imbalance"]],
+            ["Repentance and Making Amends", ["Repentance", "Purification and Making Amends", "Repentance and Purification",
+                     "Repentance and Forgiveness", "Stopping and Removing Karma", "Restoring Balance", "Making Amends"]],
+            ...worshipNames,
+            ["Afterlife and Rebirth", ["Afterlife", "Rebirth and the Cycle of Samsara", "Rebirth", "Rebirth and Liberation",
+                     "Afterlife and the Ancestors"]],
+            ["Heaven and Hell", ["Heaven", "Heaven and Eternal Life", "Hell", "Hell and Punishment", "Gehinnom",
+                     "Heavenly and Hell Realms", "Heavens and Hells"]],
+            ["Liberation", ["Nirvana", "Moksha (Liberation)", "Liberation (Moksha)"]],
+            ["Judgment", ["Moral Cause and Effect", "Judgment and Accountability", "Accountability"]],
+            ["Free Will and Destiny", ["Free Will and Predestination", "Free Will and Providence", "Free Will and Conditions",
+                     "Free Will and Divine Will", "Free Will", "Fate and Responsibility"]],
+            ["Family", ["Family and Kinship"]]
+            ],
+            guidance: [
+            ["Business Ethics", ["Economic Ethics"]],
+            ["Medicine and Healthcare", ["Medicine", "Medicine and Healing"]],
+            ["Holidays", ["Holidays and Ceremonies"]],
+            ["Community Life", ["Community"]],
+            ["Charity", ["Charity and Sharing"]],
+            ["Relationships With People of Other Faiths", ["Relationships With Other Faiths"]]
+            ],
+            history: [
+            ["Expansion", ["Expansion and Geographic Spread"]]
+            ],
+            continuity: [
+            ["Scriptures and Teachings", ["Sacred Knowledge and Teachings", "Key Texts and Ideas"]],
+            ["Denominations and Schools", ["Major Denominations and Schools", "Major Denominations and Movements",
+                     "Diversity of Practice", "Community and Diversity", "Major Sects and Traditions",
+                     "Diversity of Traditions", "Traditions and Communities", "Major Movements and Viewpoints"]],
+            ["Traditional and Modern Interpretations", ["Conservative and Progressive Interpretations",
+                     "Conservative, Reformist, and Progressive Interpretations", "Traditional and Progressive Interpretations",
+                     "Traditional, Modernist, and Engaged Buddhism", "Traditional and Reformist Interpretations",
+                     "Traditional and Blended Practice", "Different Approaches"]],
+            ["Culture Versus Religion", ["Cultural Christianity vs. Religious Christianity",
+                     "Cultural Practices Versus Religious Requirements", "Cultural Practices Versus Religious Teaching",
+                     "Culture, Spirituality, and Commercialization", "Cultural Practices Versus Secular Beliefs"]]
+            ],
+            practices: worshipNames
+        };
+        // Names that only differ by the religion's own name; these get the shared
+        // name without the small print.
+        const religionWord = "(?:the )?(?:christianity|islam|judaism|buddhism|hinduism|sikhism|bahai faith|jainism|" +
+            "indigenous traditions|zoroastrianism|secular worldviews|secular humanism)";
+        const adjectiveWord = "(?:christian|islamic|jewish|buddhist|hindu|sikh|bahai|jain|zoroastrian|secular)";
+        const patternNames = [
+            [new RegExp("^where " + religionWord + " (?:is|are) (?:practiced|common)$"), "Where It Is Practiced"],
+            [new RegExp("^important (?:" + adjectiveWord + " )?terminology$"), "Important Terminology"],
+            [new RegExp("^major " + adjectiveWord + " holidays$"), "Major Holidays"],
+            [new RegExp("^" + adjectiveWord + " scholarship$"), "Scholarship"],
+            [new RegExp("^" + religionWord + " in america$"), "In America"],
+            [new RegExp("^" + religionWord + " and humanity$"), "Contributions to Humanity"],
+            [new RegExp("^" + religionWord + " and knowledge$"), "Knowledge"],
+            [new RegExp("^" + religionWord + " and justice$"), "Justice"],
+            [new RegExp("^" + religionWord + " and human dignity$"), "Human Dignity"],
+            [new RegExp("^" + religionWord + " and (?:mercy|love|repairing the world|compassion|non violence|equality|unity|the environment|the earth)$"), "A Central Value", true],
+            [new RegExp("^" + religionWord + " as .+"), "Faith in Practice", true]
+        ];
+        const sharedNameLookup = {};
+        Object.entries(sharedNames).forEach(([subject, list]) => {
+            const lookup = sharedNameLookup[subject] = new Map();
+            list.forEach(([shared, names]) => names.forEach(n => lookup.set(headingKey(n), shared)));
+        });
+
+        // Returns { name, original } where original is set when the page's own
+        // wording should still be shown.
+        function sharedName(title, subject) {
+            const key = headingKey(title);
+            const lookup = sharedNameLookup[subject];
+            if (lookup && lookup.has(key)) return { name: lookup.get(key), original: title };
+            for (const [pattern, name, showOriginal] of patternNames) {
+                if (pattern.test(key)) return { name, original: showOriginal ? title : "" };
+            }
+            return { name: title, original: "" };
+        }
+
+        function splitIntoBlocks(html, subject) {
             const holder = document.createElement("div");
             holder.innerHTML = html || "";
             // Unwrap grouping divs so every heading sits at the top level
@@ -1111,7 +1245,27 @@
             Array.from(holder.childNodes).forEach(node => {
                 if (node.nodeType === 1 && node.tagName === "H3") {
                     if (current.nodes.some(hasContent)) blocks.push(current);
-                    current = { key: headingKey(node.textContent), title: node.textContent.trim(), nodes: [] };
+                    const { name, original } = sharedName(node.textContent.trim(), subject);
+                    // A page with separate "Heaven" and "Hell" sections: keep them
+                    // together under the one shared name, with the second as a subheading.
+                    const previous = blocks[blocks.length - 1];
+                    if (previous && previous.title === name && name !== node.textContent.trim()) {
+                        const sub = document.createElement("h4");
+                        sub.className = "page-subheading";
+                        sub.textContent = original || node.textContent.trim();
+                        current = blocks.pop();
+                        current.nodes.push(sub);
+                        return;
+                    }
+                    if (name !== node.textContent.trim()) node.textContent = name;
+                    current = { key: headingKey(name), title: name, nodes: [node] };
+                    if (original && headingKey(original) !== headingKey(name)) {
+                        const note = document.createElement("p");
+                        note.className = "page-heading-note";
+                        note.textContent = "On this religion's page: " + original;
+                        current.nodes.push(note);
+                    }
+                    return;
                 }
                 current.nodes.push(node);
             });
@@ -1261,8 +1415,8 @@
 
             const head = r => `<h3>${r.title}</h3><p class="column-subject">${label}</p>`;
             const missing = r => `<p><em>${r.title} does not have this section yet.</em></p>`;
-            const blocksA = splitIntoBlocks(r1.sections[subject] || missing(r1));
-            const blocksB = splitIntoBlocks(r2.sections[subject] || missing(r2));
+            const blocksA = splitIntoBlocks(r1.sections[subject] || missing(r1), subject);
+            const blocksB = splitIntoBlocks(r2.sections[subject] || missing(r2), subject);
             const aligned = alignBlocks(blocksA, blocksB);
             const join = list => list.map(b => b.html).join("");
             const noMatch = r => `<p class="no-match-note">${r.title} has no matching section here. Choose "All sections" to read everything.</p>`;
