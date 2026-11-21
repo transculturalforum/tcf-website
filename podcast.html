@@ -269,6 +269,44 @@
                 font-size: 2rem;
             }
         }
+
+        /* Stay Tuned Graphic Container (same look as Topics, Events and Comparisons) */
+        .stay-tuned-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            border: 2px dashed #D6DBD2;
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #FFFDF9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .stay-tuned-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            color: #2F3E2B;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-text {
+            color: #555555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .stay-tuned-container { margin: 2rem 1rem; padding: 3rem 1.25rem; }
+        }
     </style>
 </head>
 <body>
@@ -341,101 +379,13 @@
         </div>
     </header>
 
-    <!-- Featured Episode Section -->
-    <section class="featured-episode">
-        <span class="featured-tag">Latest Release</span>
-        <h2>Episode 12: Preserving Oral Histories in the Digital Age</h2>
-        <div class="episode-meta">
-            <span><i class="fa-regular fa-calendar"></i> July 10, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 42 mins</span>
+    <main>
+        <!-- Episodes are on their way; the earlier sample episode layout is saved in project backups -->
+        <div class="stay-tuned-container">
+            <i class="fa-solid fa-microphone-lines stay-tuned-icon"></i>
+            <h2 class="stay-tuned-title">Stay Tuned!</h2>
+            <p class="stay-tuned-text">Our first episodes are in the works. Follow us on Spotify and YouTube using the buttons above, and you will hear about them as soon as they are released.</p>
         </div>
-        <p>In this episode, we sit down with Dr. Elena Rostova to discuss how modern technology helps diaspora communities capture, archive, and preserve oral histories that run the risk of fading away over generations. She offers actionable advice for capturing family stories using only your smartphone.</p>
-        
-        <!-- App redirect triggers -->
-        <div class="listen-actions-label">Listen to Episode 12 on:</div>
-        <div class="listen-actions">
-            <a href="https://spotify.com" class="listen-btn badge-spotify" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-spotify"></i> Spotify App
-            </a>
-            <a href="https://www.youtube.com/@TransculturalForum" class="listen-btn badge-youtube" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube"></i> YouTube
-            </a>
-        </div>
-    </section>
-
-    <!-- Past Episodes List -->
-    <h2 class="episode-section-title">Past Episodes</h2>
-    <main class="episode-grid">
-        
-        <!-- Episode 11 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 11</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>June 28, 2026</span> • <span>38 mins</span>
-                </div>
-                <h3>Language, Accent, and the Architecture of Identity</h3>
-                <p>We explore how speaking multiple languages and carrying accents shapes how we view ourselves and how the world responds to us. Guests share stories of navigating diverse linguistic landscapes.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Episode 10 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 10</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>June 14, 2026</span> • <span>51 mins</span>
-                </div>
-                <h3>The Global Kitchen: How Recipes Migrate</h3>
-                <p>How do family heritage dishes change when they are prepared across oceans with completely different ingredients? A deep dive into the evolution of global immigrant cuisine.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Episode 09 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 09</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>May 31, 2026</span> • <span>45 mins</span>
-                </div>
-                <h3>Art as a Universal Bridge</h3>
-                <p>Featuring visual artist Mateo Alvarez on how street murals and community art workshops create spaces for dialogue between deeply divided historical neighborhood populations.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <!-- Footer -->
