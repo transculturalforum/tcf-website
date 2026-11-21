@@ -368,6 +368,39 @@
                 min-height: 250px;
             }
         }
+
+        /* Stay Tuned Graphic Container (same look as Events and Comparisons) */
+        .stay-tuned-container {
+            border: 2px dashed #D6DBD2;
+            border-radius: 12px;
+            padding: 5rem 2rem;
+            text-align: center;
+            background-color: #FFFDF9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+            margin: 1rem 0 2rem;
+        }
+
+        .stay-tuned-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            color: #2F3E2B;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-text {
+            color: #555555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -429,127 +462,14 @@
     </header>
 
     <main class="page-container">
-        
-        <!-- Search and Filter Bar -->
-        <section class="topics-controls">
-            <div class="search-bar-container">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="article-search" class="search-input" placeholder="Search by keyword, author, or topic..." onkeyup="filterArticles()">
-            </div>
 
-            <div class="filter-container">
-                <button class="filter-btn active-filter" onclick="setCategory('all', this)">All Topics</button>
-                <button class="filter-btn" onclick="setCategory('theology', this)">Theology & Belief</button>
-                <button class="filter-btn" onclick="setCategory('rituals', this)">Cultural Rituals</button>
-                <button class="filter-btn" onclick="setCategory('ethics', this)">Ethics & Society</button>
-                <button class="filter-btn" onclick="setCategory('food', this)">Food & Faith</button>
-                <button class="filter-btn" onclick="setCategory('history', this)">Historical Analysis</button>
-            </div>
-        </section>
-
-        <!-- Featured Article -->
-        <article class="featured-article" data-category="ethics" id="featured-post">
-            <div class="featured-img-container">
-                <i class="fa-solid fa-hands-holding-circle"></i>
-            </div>
-            <div class="featured-content">
-                <span class="article-tag">Ethics & Society</span>
-                <h2>The Concept of 'Ahimsa' in the Modern World</h2>
-                <div class="article-meta">By Dr. Aliyah Rahman | Published: September 1, 2026</div>
-                <p>Originating in the ancient Indian traditions of Jainism, Hinduism, and Buddhism, the principle of Ahimsa (non-violence) has profoundly shaped global civil rights movements. This article explores how a 3,000-year-old theological concept offers a practical blueprint for addressing modern ecological crises and social polarization.</p>
-                <a href="#" class="read-btn">Read Featured Article</a>
-            </div>
-        </article>
-
-        <!-- Article Grid -->
-        <h2 class="section-title">Latest Articles</h2>
-        <div class="article-grid" id="article-grid">
-            
-            <article class="article-card" data-category="food">
-                <div class="card-img-placeholder"><i class="fa-solid fa-bowl-food"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Food & Faith</span>
-                    <h3>Communal Dining: The Langar and the Eucharist</h3>
-                    <p>A comparative look at how breaking bread functions as the ultimate social equalizer in Sikhism and Christianity, transforming a physical necessity into profound spiritual unity.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Aug 24, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-category="rituals">
-                <div class="card-img-placeholder"><i class="fa-solid fa-skull"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Cultural Rituals</span>
-                    <h3>Death and Joy: Understanding Día de los Muertos</h3>
-                    <p>How the syncretism of Indigenous Aztec reverence for the dead and Spanish Catholicism created a cultural masterpiece that celebrates mortality rather than mourning it.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Aug 12, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-category="theology">
-                <div class="card-img-placeholder"><i class="fa-solid fa-moon"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Theology & Belief</span>
-                    <h3>The Evolution of Monotheism</h3>
-                    <p>Tracing the concept of a single, supreme creator from the fiery dualism of Zoroastrianism through the foundational covenants of Judaism and into the global reach of Islam.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Jul 30, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-category="history">
-                <div class="card-img-placeholder"><i class="fa-solid fa-landmark"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Historical Analysis</span>
-                    <h3>The Silk Road: An Information Highway</h3>
-                    <p>Before the internet, the Silk Road facilitated the greatest exchange of religious philosophy in human history, allowing Buddhism and Islam to reshape the Asian continent.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Jul 15, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-category="rituals">
-                <div class="card-img-placeholder"><i class="fa-solid fa-water"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Cultural Rituals</span>
-                    <h3>Water as Purification: Mikvah, Wudu, and Baptism</h3>
-                    <p>Water is universally recognized as a purifying force. We explore the distinct spiritual mechanics of ritual bathing across the three Abrahamic faiths.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Jun 22, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="article-card" data-category="ethics">
-                <div class="card-img-placeholder"><i class="fa-solid fa-scale-balanced"></i></div>
-                <div class="card-content">
-                    <span class="article-tag">Ethics & Society</span>
-                    <h3>Secular Humanism and the Moral Compass</h3>
-                    <p>If morality isn't handed down by a deity, where does it come from? An exploration of how empathy and evolutionary biology form the bedrock of secular ethics.</p>
-                    <div class="card-footer">
-                        <span class="article-meta">Jun 05, 2026</span>
-                        <a href="#" class="read-link">Read <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Empty State (Shown via JS when search yields no results) -->
-            <div class="empty-state" id="empty-state">
-                <h3>No articles found</h3>
-                <p>We couldn't find any articles matching your search criteria. Please try a different keyword or category.</p>
-            </div>
-
+        <!-- Topics content is on its way; the earlier sample layout is saved in project backups -->
+        <div class="stay-tuned-container">
+            <i class="fa-solid fa-book-open stay-tuned-icon"></i>
+            <h3 class="stay-tuned-title">Stay Tuned!</h3>
+            <p class="stay-tuned-text">We are preparing our first collection of articles and thematic explorations on religion and culture. Please check back soon.</p>
         </div>
+
     </main>
 
     <!-- Footer -->
@@ -561,57 +481,5 @@
 
     <!-- Essential Scripts -->
     <script src="script.js"></script>
-    <script>
-        let currentCategory = 'all';
-
-        function setCategory(category, buttonElement) {
-            currentCategory = category;
-            
-            // Update active styling on buttons
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active-filter'));
-            buttonElement.classList.add('active-filter');
-
-            filterArticles();
-        }
-
-        function filterArticles() {
-            const searchQuery = document.getElementById('article-search').value.toLowerCase();
-            const articles = document.querySelectorAll('.article-card');
-            const featuredPost = document.getElementById('featured-post');
-            let visibleCount = 0;
-
-            // Handle the Featured Post (Hide it if searching or filtering)
-            if (searchQuery !== '' || currentCategory !== 'all') {
-                featuredPost.style.display = 'none';
-            } else {
-                featuredPost.style.display = 'flex';
-            }
-
-            // Handle Grid Articles
-            articles.forEach(article => {
-                const category = article.getAttribute('data-category');
-                const textContent = article.innerText.toLowerCase();
-
-                const matchesCategory = (currentCategory === 'all' || category === currentCategory);
-                const matchesSearch = (searchQuery === '' || textContent.includes(searchQuery));
-
-                if (matchesCategory && matchesSearch) {
-                    article.classList.remove('hidden');
-                    visibleCount++;
-                } else {
-                    article.classList.add('hidden');
-                }
-            });
-
-            // Handle Empty State
-            const emptyState = document.getElementById('empty-state');
-            if (visibleCount === 0 && (searchQuery !== '' || currentCategory !== 'all')) {
-                emptyState.style.display = 'block';
-            } else {
-                emptyState.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
