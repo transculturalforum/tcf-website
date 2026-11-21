@@ -82,3 +82,5 @@ pexels-9213703-w800.jpg	https://images.pexels.com/photos/9213703/pexels-photo-92
 pexels-9849657-w800.jpg	https://images.pexels.com/photos/9849657/pexels-photo-9849657.jpeg?auto=compress&cs=tinysrgb&w=800
 pexels-9863598-w800.jpg	https://images.pexels.com/photos/9863598/pexels-photo-9863598.jpeg?auto=compress&cs=tinysrgb&w=800
 pexels-9983077-w800.jpg	https://images.pexels.com/photos/9983077/pexels-photo-9983077.jpeg?auto=compress&cs=tinysrgb&w=800
+pexels-19562646-w1600.jpg	https://images.pexels.com/photos/19562646/pexels-photo-19562646.jpeg?auto=compress&cs=tinysrgb&w=1600
+pexels-19766571-w1600.jpg	https://images.pexels.com/photos/19766571/pexels-photo-19766571.jpeg?auto=compress&cs=tinysrgb&w=1600
