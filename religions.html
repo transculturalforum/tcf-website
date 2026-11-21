@@ -10,13 +10,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Religions &amp; Worldviews | Transcultural Forum Inc.">
     <meta property="og:description" content="Explore global religions, spiritual traditions, and secular worldviews. Select a tradition to learn about its history, core principles, and daily practices.">
-    <meta property="og:image" content="https://images.pexels.com/photos/19562646/pexels-photo-19562646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image" content="https://transculturalforum.org/images/photos/religion-symbols-share.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Religions &amp; Worldviews | Transcultural Forum Inc.">
     <meta name="twitter:description" content="Explore global religions, spiritual traditions, and secular worldviews. Select a tradition to learn about its history, core principles, and daily practices.">
-    <meta name="twitter:image" content="https://images.pexels.com/photos/19562646/pexels-photo-19562646.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta name="twitter:image" content="https://transculturalforum.org/images/photos/religion-symbols-share.jpg">
 
     <!-- Browser tab and home-screen icons -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -41,6 +41,47 @@
             padding: 5rem 2rem;
             position: relative;
             overflow: hidden;
+        }
+
+
+        .symbols-banner {
+            background-image: var(--banner) !important;
+        }
+        .symbols-banner h1 { color: #E7C873; }
+        .symbol-row {
+            list-style: none;
+            margin: 2.5rem auto 0;
+            padding: 0;
+            max-width: 1100px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        .symbol-row li {
+            width: 78px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .symbol-row img {
+            width: 72px;
+            height: 72px;
+        }
+        .symbol-row span {
+            margin-top: 0.4rem;
+            font-size: 0.78rem;
+            line-height: 1.25;
+            color: #F4EFE6;
+            opacity: 0.9;
+        }
+        @media (max-width: 768px) {
+            .symbol-row { gap: 1rem 0.75rem; margin-top: 1.75rem; }
+            .symbol-row li { width: 64px; }
+            .symbol-row img { width: 54px; height: 54px; }
+            .symbol-row span { font-size: 0.68rem; }
         }
 
         .religions-header h1 {
@@ -365,10 +406,22 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="religions-header photo-banner" style="--banner: url('images/photos/pexels-19562646-banner.jpg'); --banner-pos: center;">
-        <i class="fa-solid fa-Hands-praying fa-hands-praying header-icon-bg"></i>
+    <header class="religions-header photo-banner symbols-banner" style="--banner: radial-gradient(circle at 50% 35%, #4A6142 0%, #2F3E2B 60%, #222D1D 100%);">
         <h1>Religions & Worldviews</h1>
         <p>Explore the spiritual paths, moral philosophies, and sacred traditions that have guided human civilization across millennia.</p>
+        <ul class="symbol-row" aria-label="The 11 religions and worldviews on this page">
+            <li><img src="images/symbols/christianity.png" alt="" width="150" height="150"><span>Christianity</span></li>
+            <li><img src="images/symbols/islam.png" alt="" width="150" height="150"><span>Islam</span></li>
+            <li><img src="images/symbols/judaism.png" alt="" width="150" height="150"><span>Judaism</span></li>
+            <li><img src="images/symbols/hinduism.png" alt="" width="150" height="150"><span>Hinduism</span></li>
+            <li><img src="images/symbols/buddhism.png" alt="" width="150" height="150"><span>Buddhism</span></li>
+            <li><img src="images/symbols/sikhism.png" alt="" width="150" height="150"><span>Sikhism</span></li>
+            <li><img src="images/symbols/bahai.png" alt="" width="150" height="150"><span>Bahá'í Faith</span></li>
+            <li><img src="images/symbols/jainism.png" alt="" width="150" height="150"><span>Jainism</span></li>
+            <li><img src="images/symbols/indigenous.png" alt="" width="150" height="150"><span>Indigenous Traditions</span></li>
+            <li><img src="images/symbols/zoroastrianism.png" alt="" width="150" height="150"><span>Zoroastrianism</span></li>
+            <li><img src="images/symbols/secular.png" alt="" width="150" height="150"><span>Secular Worldviews</span></li>
+        </ul>
     </header>
 
     <!-- Main Container -->
@@ -379,9 +432,6 @@
             <h2>Understanding Religion & Human Worldviews</h2>
             <p>Throughout history, religion has served as one of humanity's most profound frameworks for seeking meaning, purpose, and connection. Across continents and eras, spiritual traditions and philosophical worldviews have emerged to address life's deepest questions: our origins, our ethical responsibilities to one another, the nature of suffering, and our place within the cosmos.</p>
             <p>While individual traditions differ in their theology, sacred texts, and daily rituals—ranging from monotheistic covenants and dharmic paths of liberation to animistic kinship with nature and secular humanism—they share a common human aspiration toward compassion, justice, and community building. Select any tradition below to explore its overview, 20 core principles, daily life guidance, history, and positive impact on society.</p>
-            <figure class="religion-symbols-figure">
-                <img src="images/photos/religion-symbols-1080.jpg" alt="Symbols of the eleven religions and worldviews: Christianity, Islam, Judaism, Hinduism, Buddhism, Sikhism, Bahá'í Faith, Jainism, Indigenous Traditions, Zoroastrianism and Secular Worldviews" width="1080" height="1080" loading="lazy">
-            </figure>
         </section>
 
         <!-- Search Area (Name Search Only) -->
