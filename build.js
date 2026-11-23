@@ -5,7 +5,8 @@
 //     into every page, where the page says <!-- SHARED MENU --> and <!-- SHARED FOOTER -->.
 //  2. Highlights the page you are on in the menu.
 //  3. Writes the current year in the footer.
-//  4. Adds the "official address" (canonical link) to each page and writes sitemap.xml,
+//  4. Makes icons.css with just the icons the pages use (see makeIcons below).
+//  5. Adds the "official address" (canonical link) to each page and writes sitemap.xml,
 //     the list of pages that Google and other search engines read.
 // It needs nothing installed besides Node, which Netlify already has.
 
@@ -16,7 +17,7 @@ const SITE = "https://transculturalforum.org";
 const ROOT = __dirname;
 const OUT = path.join(ROOT, "_site");
 // Files and folders that are part of the project but not part of the website itself.
-const SKIP = new Set([".git", ".github", "partials", "_site", "build.js", "netlify.toml", "README.md", "node_modules", ".gitignore"]);
+const SKIP = new Set([".git", ".github", "partials", "icons", "_site", "build.js", "netlify.toml", "README.md", "node_modules", ".gitignore"]);
 // Pages that should not be listed for search engines.
 const NOT_IN_SITEMAP = new Set(["404.html"]);
 
@@ -87,6 +88,40 @@ function buildPage(page, html) {
   return { html, problems, url };
 }
 
+// ICONS: pages use Font Awesome names, like <i class="fa-solid fa-utensils"></i>.
+// Instead of loading the whole Font Awesome library from another website, this finds
+// every icon the pages use and puts just those into icons.css. Any free Font Awesome
+// icon works: the full free set is in the icons/fontawesome folder.
+// (Font Awesome Free icons are licensed CC BY 4.0, see icons/fontawesome/LICENSE.txt.)
+function makeIcons(pages) {
+  const styles = { "fa-solid": "solid", "fa-regular": "regular", "fa-brands": "brands" };
+  const found = new Map();
+  for (const html of pages) {
+    for (const [, list] of html.matchAll(/class="([^"]*)"/g)) {
+      const names = list.split(/\s+/);
+      for (const style of Object.keys(styles).filter((s) => names.includes(s))) {
+        for (const name of names) {
+          if (!name.startsWith("fa-") || styles[name]) continue;
+          const file = path.join(ROOT, "icons/fontawesome", styles[style], name.slice(3) + ".svg");
+          if (fs.existsSync(file)) found.set(`.${style}.${name}`, file);
+        }
+      }
+    }
+  }
+  const rules = [...found].sort().map(([selector, file]) => {
+    const svg = fs.readFileSync(file, "utf8").replace(/<!--[\s\S]*?-->/g, "").trim();
+    const [, w, h] = svg.match(/viewBox="0 0 (\d+) (\d+)"/);
+    const data = svg.replace(/"/g, "'").replace(/[<>#%]/g, encodeURIComponent);
+    return `${selector}{--fa-icon:url("data:image/svg+xml,${data}");--fa-width:${(w / h).toFixed(4)}em}`;
+  });
+  return `/* Made automatically by build.js: only the icons this site uses.
+   Font Awesome Free by @fontawesome - https://fontawesome.com (icons: CC BY 4.0) */
+.fa-solid,.fa-regular,.fa-brands{display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa-solid::before,.fa-regular::before,.fa-brands::before{content:"";display:inline-block;width:var(--fa-width,1em);height:1em;vertical-align:top;background-color:currentColor;-webkit-mask:var(--fa-icon) center/contain no-repeat;mask:var(--fa-icon) center/contain no-repeat}
+${rules.join("\n")}
+`;
+}
+
 function copy(src, dest) {
   for (const name of fs.readdirSync(src)) {
     if (src === ROOT && SKIP.has(name)) continue;
@@ -108,6 +143,9 @@ for (const page of fs.readdirSync(ROOT).filter((f) => f.endsWith(".html")).sort(
   if (problems.length) { warnings++; console.log(`Note: ${page} has ${problems.join(" and ")}, so it keeps its own.`); }
   if (!NOT_IN_SITEMAP.has(page)) urls.push(url);
 }
+
+const sourcePages = fs.readdirSync(ROOT).filter((f) => f.endsWith(".html")).map((f) => fs.readFileSync(path.join(ROOT, f), "utf8"));
+fs.writeFileSync(path.join(OUT, "icons.css"), makeIcons(sourcePages));
 
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
