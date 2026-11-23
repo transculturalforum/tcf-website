@@ -38,6 +38,37 @@
         <p>Explore the historical foundations, vibrant culinary practices, and enduring traditions that shape our world. Compare cultures side-by-side and share your personal heritage.</p>
     </header>
 
+    <!-- World map: click a country to read about its culture (world-map.js) -->
+    <section class="world-map-section" aria-labelledby="world-map-heading">
+        <div class="world-map-intro">
+            <h2 id="world-map-heading">Explore the World Map</h2>
+            <p>Click a highlighted country to read about its culture.</p>
+        </div>
+        <div class="world-map-layout">
+            <div>
+                <div class="world-map-frame" id="world-map"></div>
+                <div class="world-map-legend">
+                    <span style="--swatch: #7FA79B;">Has a culture profile</span>
+                    <span style="--swatch: #D6D3C8;">Coming later</span>
+                    <span style="--swatch: #C29262;">Selected</span>
+                </div>
+            </div>
+            <aside class="world-map-panel" id="world-map-panel" aria-live="polite">
+                <h3>Pick a country</h3>
+                <p class="map-hint">Choose any green country on the map, or start with one of these:</p>
+                <div class="map-quick">
+                    <button type="button" data-country="Nigeria">Nigeria</button>
+                    <button type="button" data-country="Mexico">Mexico</button>
+                    <button type="button" data-country="India">India</button>
+                    <button type="button" data-country="Japan">Japan</button>
+                    <button type="button" data-country="Iran">Iran</button>
+                    <button type="button" data-country="Italy">Italy</button>
+                    <button type="button" data-country="New Zealand">New Zealand</button>
+                </div>
+            </aside>
+        </div>
+    </section>
+
     <!-- Main Layout Container -->
     <div class="cultures-layout-container">
         
@@ -1955,6 +1986,7 @@
 
     <!-- Essential Scripts -->
     <script src="script.js"></script>
+    <script src="world-map.js" defer></script>
     <script>
         // --- Combined Live Search, Filters, Sorting & Empty State ---
         const cultureList = document.querySelector('.cultures-list');

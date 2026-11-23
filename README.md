@@ -10,3 +10,6 @@ The site at https://transculturalforum.org. Every change pushed to `main` is pub
 - `404.html` is the "page not found" page. `robots.txt` points search engines at the sitemap.
 - `images/share/` holds the pictures shown when someone shares a page link on social media or in a message.
 - `.github/photos/photo-list.txt` lists the online photos the pages use. After every push, a GitHub Action saves any missing ones into `images/photos`, points the pages at those copies, and shrinks any new photo so pages stay fast (`shrink-photos.py`; photos already done are listed in `shrunk-list.txt`).
+- **Search:** the magnifying glass in the menu searches the whole site. `build.js` makes `search-index.json` from every page when the site is published, so new text is searchable with nothing to update.
+- **Insight of the Day** on the home page shows a different "Myth and Fact" from the religion pages each day. `build.js` collects them into `insights.json`, so any myth added to a religion page joins the rotation by itself.
+- **World map** on the Cultures page: `world-map.js` and `images/world-map.svg` (country shapes from Natural Earth, public domain). The panel text is read from the culture cards. To link a country to a culture, add it to the list at the top of `world-map.js`.

@@ -32,16 +32,31 @@
     <!-- SHARED MENU -->
 
     <!-- Header / Hero Section -->
-    <header id="home" class="hero photo-banner" style="--banner: url('images/photos/pexels-36681981-w1600.jpg'); --banner-pos: center 35%;">
+    <header id="home" class="hero photo-banner home-hero" style="--banner: url('images/photos/pexels-36681981-w1600.jpg'); --banner-pos: center 35%;">
         <div class="hero-content">
             <h1>Transcultural Forum</h1>
-            <p>A non-for-profit space dedicated to cross-cultural dialogue, shared stories, and community growth.</p>
+            <p class="hero-lead">We bring people of every culture, faith and worldview together to understand one another through open dialogue, shared stories and trusted knowledge.</p>
             <div class="hero-buttons">
                 <a href="#programs" class="btn btn-gold">Our Initiatives</a>
                 <a href="donate.html" class="btn btn-gold">Make a Donation</a>
             </div>
         </div>
     </header>
+
+    <!-- Insight of the Day: script.js picks a different one each day from insights.json,
+         which build.js makes from the Myths and Facts sections of the religion pages.
+         The text below shows only until it loads (or if it cannot load). -->
+    <section class="insight-band" aria-labelledby="insight-heading">
+        <article class="insight-card" id="insight-of-the-day">
+            <div class="insight-top">
+                <h2 id="insight-heading" class="insight-label">Insight of the Day</h2>
+                <span class="insight-meta"><span data-insight="faith">Islam</span> <span aria-hidden="true">&middot;</span> <span data-insight="date"></span></span>
+            </div>
+            <p class="insight-fact" data-insight="fact">Islam is a global religion. Most Muslims are not Arab. Asia contains the largest Muslim population.</p>
+            <p class="insight-belief"><span class="insight-belief-label">Often assumed:</span> <span data-insight="belief">Islam is an Arab religion.</span></p>
+            <a class="insight-link" data-insight="link" href="islam.html#sec-myths">Learn more about <span>Islam</span> <span aria-hidden="true">&rarr;</span></a>
+        </article>
+    </section>
 
     <section id="about" class="section">
         <span class="subtitle">Our Foundation</span>

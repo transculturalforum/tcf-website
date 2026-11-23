@@ -756,6 +756,147 @@ button:focus-visible {
 
 
 
+/* ===== Site search (added Nov 2026) ===== */
+/* The magnifying glass in the menu and the search box it opens (see script.js). */
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 1rem;
+}
+.search-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(254, 250, 224, 0.35);
+    background: transparent;
+    color: #FEFAE0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+.search-toggle:hover { background-color: #3C6B5F; }
+.site-search {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(31, 42, 29, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 9vh 1rem 1rem;
+}
+.site-search[hidden] { display: none; }
+body.search-open { overflow: hidden; }
+.site-search-box {
+    width: 100%;
+    max-width: 680px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background: #FFFDF9;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.site-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #E4E1DA;
+    color: #3C6B5F;
+}
+.site-search-bar input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    font-size: 1.15rem;
+    color: #2F3E2B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.3rem 0;
+}
+.site-search-bar input:focus { outline: none; }
+.site-search-bar input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.site-search-close {
+    border: 0;
+    background: #F4F1EA;
+    color: #2F3E2B;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+.site-search-status {
+    margin: 0;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
+    color: #5b6658;
+}
+.site-search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0 0.5rem 0.75rem;
+    overflow-y: auto;
+}
+.site-search-results a {
+    display: block;
+    padding: 0.7rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2F3E2B;
+}
+.site-search-results a:hover,
+.site-search-results a:focus-visible {
+    background: #F4F1EA;
+    outline: none;
+}
+.site-search-where {
+    display: block;
+    font-weight: 700;
+    color: #3C6B5F;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+}
+.site-search-snippet {
+    display: block;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #4a5547;
+}
+.site-search-snippet mark {
+    background: #F3E3C3;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+@media (max-width: 600px) {
+    .site-search { padding: 0; }
+    .site-search-box { max-width: none; max-height: none; height: 100%; border-radius: 0; }
+}
+
+/* Leave room for the menu bar when a link jumps to a section. */
+.template-section, .history-sub-section, .culture-card { scroll-margin-top: 100px; }
+
+/* A soft glow on the section a link or search result just opened. */
+.just-found {
+    animation: just-found 2.2s ease-out;
+    scroll-margin-top: 90px;
+}
+@keyframes just-found {
+    0%, 30% { box-shadow: 0 0 0 4px rgba(194, 146, 98, 0.55); }
+    100% { box-shadow: 0 0 0 4px rgba(194, 146, 98, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .just-found { animation: none; }
+}
+
 /* =====================================================================
    PAGE-BY-PAGE DESIGN RULES (moved here from each page in Nov 2026)
    Each section below applies only to the pages named in its heading.
@@ -2763,6 +2904,161 @@ button:focus-visible {
     }
 }
 
+/* World map: click a country to read about its culture (see world-map.js). */
+:where(.page-cultures) .world-map-section {
+    max-width: 1300px;
+    margin: 2.5rem auto 0;
+    padding: 0 1.5rem;
+}
+:where(.page-cultures) .world-map-intro {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+:where(.page-cultures) .world-map-intro h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #2F3E2B;
+    margin-bottom: 0.3rem;
+}
+:where(.page-cultures) .world-map-intro p { color: #4a5547; margin: 0; }
+:where(.page-cultures) .world-map-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 1.5rem;
+    align-items: stretch;
+}
+:where(.page-cultures) .world-map-frame {
+    position: relative;
+    background: linear-gradient(180deg, #EEF3F0 0%, #E3ECE8 100%);
+    border: 1px solid #DCE5E0;
+    border-radius: 14px;
+    padding: 1rem;
+    overflow: hidden;
+}
+:where(.page-cultures) .world-map-frame svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+:where(.page-cultures) .world-map-frame path {
+    fill: #D6D3C8;
+    stroke: #FFFDF9;
+    stroke-width: 0.6;
+    transition: fill 0.15s ease;
+}
+:where(.page-cultures) .world-map-frame path.has-culture {
+    fill: #7FA79B;
+    cursor: pointer;
+}
+:where(.page-cultures) .world-map-frame path.has-culture:hover,
+:where(.page-cultures) .world-map-frame path.has-culture:focus-visible {
+    fill: #3C6B5F;
+    outline: none;
+}
+:where(.page-cultures) .world-map-frame path:focus { outline: none; }
+:where(.page-cultures) .world-map-frame path:focus-visible { stroke: #2F3E2B; stroke-width: 1.5; }
+:where(.page-cultures) .world-map-frame path.is-selected { fill: #C29262 !important; }
+:where(.page-cultures) .world-map-tip {
+    position: absolute;
+    pointer-events: none;
+    background: #2F3E2B;
+    color: #FFFDF9;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transform: translate(-50%, -130%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-cultures) .world-map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #4a5547;
+}
+:where(.page-cultures) .world-map-legend span::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 0.4rem;
+    vertical-align: -1px;
+    background: var(--swatch);
+}
+:where(.page-cultures) .world-map-panel {
+    background: #FFFDF9;
+    border: 1px solid #E4E1DA;
+    border-top: 5px solid #C29262;
+    border-radius: 14px;
+    padding: 1.4rem 1.4rem 1.5rem;
+    box-shadow: 0 10px 24px rgba(47, 62, 43, 0.08);
+    overflow-y: auto;
+    max-height: 560px;
+}
+:where(.page-cultures) .world-map-panel h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.4rem;
+    color: #2F3E2B;
+    margin: 0 0 0.6rem;
+}
+:where(.page-cultures) .world-map-panel .map-hint { color: #4a5547; margin: 0 0 1rem; font-size: 0.95rem; }
+:where(.page-cultures) .map-culture {
+    border-top: 1px solid #E4E1DA;
+    padding-top: 0.9rem;
+    margin-top: 0.9rem;
+}
+:where(.page-cultures) .map-culture h4 {
+    font-size: 1.05rem;
+    color: #3C6B5F;
+    margin: 0 0 0.15rem;
+}
+:where(.page-cultures) .map-culture .map-region { font-size: 0.82rem; color: #6b7468; display: block; margin-bottom: 0.5rem; }
+:where(.page-cultures) .map-culture dl { margin: 0 0 0.75rem; font-size: 0.9rem; }
+:where(.page-cultures) .map-culture dt { font-weight: 700; color: #2F3E2B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+:where(.page-cultures) .map-culture dd { margin: 0 0 0.35rem; color: #4a5547; }
+:where(.page-cultures) .map-read-more {
+    display: inline-block;
+    background: #3C6B5F;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 0.5rem 0.95rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+:where(.page-cultures) .map-read-more:hover { background: #2D5148; }
+:where(.page-cultures) .map-quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+}
+:where(.page-cultures) .map-quick button {
+    border: 1px solid #DCE5E0;
+    background: #F4F1EA;
+    color: #2F3E2B;
+    border-radius: 999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+:where(.page-cultures) .map-quick button:hover { background: #3C6B5F; color: #fff; border-color: #3C6B5F; }
+@media (max-width: 960px) {
+    :where(.page-cultures) .world-map-layout { grid-template-columns: 1fr; }
+    :where(.page-cultures) .world-map-panel { max-height: none; }
+}
+@media (max-width: 600px) {
+    :where(.page-cultures) .world-map-section { padding: 0 0.75rem; margin-top: 1.5rem; }
+    :where(.page-cultures) .world-map-frame { padding: 0.4rem; }
+    :where(.page-cultures) .world-map-intro h2 { font-size: 1.6rem; }
+}
+
 /* --- Free Dialogue --- */
 /* Header styling */
 :where(.page-dialogue) .dialogue-header {
@@ -3608,6 +3904,110 @@ button:focus-visible {
     :where(.page-index) .contact-info {
         text-align: center;
     }
+}
+
+/* Home page welcome photo: taller, and the photo shows through more clearly. */
+:where(.page-index) .home-hero {
+    min-height: calc(100vh - 70px);
+    min-height: calc(100svh - 70px);
+    height: auto;
+    padding: 6rem 1.5rem;
+    background-image:
+        linear-gradient(180deg, rgba(31, 42, 29, 0.35) 0%, rgba(31, 42, 29, 0.55) 55%, rgba(31, 42, 29, 0.8) 100%),
+        var(--banner);
+}
+:where(.page-index) .home-hero::before { opacity: 0.12; }
+:where(.page-index) .home-hero::after { opacity: 0.22; }
+:where(.page-index) .home-hero .hero-content { max-width: 860px; }
+:where(.page-index) .home-hero h1 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.4rem;
+}
+:where(.page-index) .home-hero .hero-lead {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 760px;
+    margin: 0 auto 2.5rem;
+}
+@media (max-width: 600px) {
+    :where(.page-index) .home-hero .hero-buttons { flex-direction: column; align-items: center; }
+}
+
+/* Insight of the Day: a card that sits just under the welcome photo. */
+:where(.page-index) .insight-band {
+    padding: 0 1.5rem;
+    margin-top: -4.5rem;
+    position: relative;
+    z-index: 5;
+}
+:where(.page-index) .insight-card {
+    max-width: 860px;
+    margin: 0 auto;
+    background: #FFFDF9;
+    border-radius: 14px;
+    border-top: 5px solid #C29262;
+    box-shadow: 0 18px 40px rgba(47, 62, 43, 0.16);
+    padding: 2rem 2.4rem 2.1rem;
+}
+:where(.page-index) .insight-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    margin-bottom: 1rem;
+}
+:where(.page-index) .insight-label {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9C5A33;
+    margin: 0;
+}
+:where(.page-index) .insight-meta {
+    font-size: 0.9rem;
+    color: #5b6658;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-index) .insight-meta [data-insight="faith"] { font-weight: 700; color: #3C6B5F; }
+:where(.page-index) .insight-card:not(.is-ready) .insight-meta [data-insight="date"],
+:where(.page-index) .insight-card:not(.is-ready) .insight-meta [aria-hidden] { display: none; }
+:where(.page-index) .insight-fact {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.2rem, 2.3vw, 1.5rem);
+    line-height: 1.5;
+    color: #2F3E2B;
+    margin: 0 0 1rem;
+}
+:where(.page-index) .insight-belief {
+    font-size: 0.98rem;
+    color: #4a5547;
+    margin: 0 0 1.3rem;
+    padding-left: 0.9rem;
+    border-left: 3px solid #E4E1DA;
+}
+:where(.page-index) .insight-belief-label {
+    font-weight: 700;
+    color: #2F3E2B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-index) .insight-link {
+    display: inline-block;
+    font-weight: 700;
+    color: #3C6B5F;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid rgba(60, 107, 95, 0.3);
+}
+:where(.page-index) .insight-link:hover { border-bottom-color: #3C6B5F; }
+@media (max-width: 600px) {
+    :where(.page-index) .insight-band { margin-top: -2.5rem; padding: 0 1rem; }
+    :where(.page-index) .insight-card { padding: 1.5rem 1.3rem 1.6rem; }
 }
 
 /* --- Podcast --- */
