@@ -38,54 +38,6 @@
         <p>Explore the historical foundations, vibrant culinary practices, and enduring traditions that shape our world. Compare cultures side-by-side and share your personal heritage.</p>
     </header>
 
-    <!-- World map: click any country to read about it (world-map.js, data/countries.json) -->
-    <section class="world-map-section" data-mode="cultures" aria-labelledby="world-map-heading">
-        <div class="world-map-intro">
-            <span class="subtitle">Interactive Map</span>
-            <h2 id="world-map-heading">Explore the World</h2>
-            <p>Click any country to learn about its people, languages and faiths. Green countries also have a full TCF culture profile.</p>
-        </div>
-        <div class="world-map-toolbar">
-            <div class="map-mode" role="group" aria-label="Colour the map by">
-                <button type="button" data-mode="cultures" aria-pressed="true">Culture profiles</button>
-                <button type="button" data-mode="faith" aria-pressed="false">Largest religion</button>
-            </div>
-            <div class="map-find">
-                <label for="map-country-search" class="visually-hidden">Find a country</label>
-                <input type="search" id="map-country-search" list="map-country-list" placeholder="Find a country..." autocomplete="off">
-                <datalist id="map-country-list"></datalist>
-            </div>
-        </div>
-        <div class="world-map-layout">
-            <div>
-                <div class="world-map-frame" id="world-map">
-                    <div class="map-zoom" role="group" aria-label="Zoom">
-                        <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
-                        <button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button>
-                        <button type="button" data-zoom="reset" aria-label="Show the whole world" class="map-zoom-reset">&#8634;</button>
-                    </div>
-                </div>
-                <div class="world-map-legend" id="world-map-legend"></div>
-                <p class="world-map-help">Tip: double-click or pinch to zoom, then drag to move around.</p>
-            </div>
-            <aside class="world-map-panel" id="world-map-panel" aria-live="polite">
-                <h3>Pick a country</h3>
-                <p class="map-intro">Choose any country on the map, type a name above, or start with one of these:</p>
-                <div class="map-quick">
-                    <button type="button" data-country="Nigeria">Nigeria</button>
-                    <button type="button" data-country="Mexico">Mexico</button>
-                    <button type="button" data-country="India">India</button>
-                    <button type="button" data-country="Japan">Japan</button>
-                    <button type="button" data-country="Iran">Iran</button>
-                    <button type="button" data-country="Italy">Italy</button>
-                    <button type="button" data-country="Brazil">Brazil</button>
-                    <button type="button" data-country="Egypt">Egypt</button>
-                    <button type="button" data-country="New Zealand">New Zealand</button>
-                </div>
-            </aside>
-        </div>
-    </section>
-
     <!-- Main Layout Container -->
     <div class="cultures-layout-container">
         
@@ -2003,7 +1955,6 @@
 
     <!-- Essential Scripts -->
     <script src="script.js"></script>
-    <script src="world-map.js" defer></script>
     <script>
         // --- Combined Live Search, Filters, Sorting & Empty State ---
         const cultureList = document.querySelector('.cultures-list');
