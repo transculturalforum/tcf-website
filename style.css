@@ -532,9 +532,9 @@ footer {
 }
 
 /* --- Phone-style menu (the ☰ button) for phones and iPads ---
-   Phones and tablets up to 1024px wide, plus any touch screen up to 1366px
+   Phones, tablets and small laptops up to 1240px wide, plus any touch screen up to 1366px
    (iPads held sideways, including the 12.9" iPad Pro). Laptops keep the full row of links. */
-@media (max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
+@media (max-width: 1240px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
     /* Keep navbar horizontal and show hamburger */
     .navbar { 
         flex-direction: row; 
@@ -755,6 +755,164 @@ button:focus-visible {
 }
 
 
+
+/* ===== Site search (added Nov 2026) ===== */
+/* The magnifying glass in the menu and the search box it opens (see script.js). */
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 1rem;
+}
+.search-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(254, 250, 224, 0.35);
+    background: transparent;
+    color: #FEFAE0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+.search-toggle:hover { background-color: #3C6B5F; }
+
+/* Keep every menu item on one line, so the bar stays one tidy row with the search button.
+   On narrower laptop screens the spacing tightens; below that the ☰ menu takes over. */
+.nav-links li a { white-space: nowrap; }
+@media (min-width: 1241px) {
+    .navbar { gap: 1rem; }
+    .logo-container { flex-shrink: 0; }
+    .nav-links { gap: 0.2rem; flex-wrap: nowrap; }
+    .nav-tools { margin-left: 0; }
+}
+@media (min-width: 1241px) and (max-width: 1500px) {
+    .navbar { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .navbar .logo-text { max-width: 9.5em; line-height: 1.25; }
+    .navbar .nav-links a { padding: 0.45rem 0.55rem !important; font-size: 0.86rem !important; }
+    .navbar .logo-text { font-size: 1.1rem; }
+    .nav-logo-img { width: 44px; height: 44px; margin-right: 10px; }
+}
+.site-search {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(31, 42, 29, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 9vh 1rem 1rem;
+}
+.site-search[hidden] { display: none; }
+body.search-open { overflow: hidden; }
+.site-search-box {
+    width: 100%;
+    max-width: 680px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background: #FFFDF9;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+.site-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #E4E1DA;
+    color: #3C6B5F;
+}
+.site-search-bar input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    font-size: 1.15rem;
+    color: #2F3E2B;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0.3rem 0;
+}
+.site-search-bar input:focus { outline: none; }
+.site-search-bar input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+.site-search-close {
+    border: 0;
+    background: #F4F1EA;
+    color: #2F3E2B;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+.site-search-status {
+    margin: 0;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.85rem;
+    color: #5b6658;
+}
+.site-search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0 0.5rem 0.75rem;
+    overflow-y: auto;
+}
+.site-search-results a {
+    display: block;
+    padding: 0.7rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2F3E2B;
+}
+.site-search-results a:hover,
+.site-search-results a:focus-visible {
+    background: #F4F1EA;
+    outline: none;
+}
+.site-search-where {
+    display: block;
+    font-weight: 700;
+    color: #3C6B5F;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.95rem;
+}
+.site-search-snippet {
+    display: block;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #4a5547;
+}
+.site-search-snippet mark {
+    background: #F3E3C3;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+@media (max-width: 600px) {
+    .site-search { padding: 0; }
+    .site-search-box { max-width: none; max-height: none; height: 100%; border-radius: 0; }
+}
+
+/* Leave room for the menu bar when a link jumps to a section. */
+.template-section, .history-sub-section, .culture-card { scroll-margin-top: 100px; }
+
+/* A soft glow on the section a link or search result just opened. */
+.just-found {
+    animation: just-found 2.2s ease-out;
+    scroll-margin-top: 90px;
+}
+@keyframes just-found {
+    0%, 30% { box-shadow: 0 0 0 4px rgba(194, 146, 98, 0.55); }
+    100% { box-shadow: 0 0 0 4px rgba(194, 146, 98, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .just-found { animation: none; }
+}
 
 /* =====================================================================
    PAGE-BY-PAGE DESIGN RULES (moved here from each page in Nov 2026)
@@ -3608,6 +3766,164 @@ button:focus-visible {
     :where(.page-index) .contact-info {
         text-align: center;
     }
+}
+
+/* Insight of the Day: sits after Articles & Research. */
+:where(.page-index) .insight-section {
+    text-align: center;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(194, 146, 98, 0.12) 0, rgba(194, 146, 98, 0) 40%),
+        radial-gradient(circle at 88% 80%, rgba(60, 107, 95, 0.12) 0, rgba(60, 107, 95, 0) 45%),
+        #FFFDF9;
+}
+:where(.page-index) .insight-card {
+    max-width: 960px;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    text-align: left;
+    background: #FFFFFF;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(47, 62, 43, 0.14);
+    border: 1px solid #EDE8DD;
+}
+:where(.page-index) .insight-side {
+    background: linear-gradient(160deg, #3C6B5F 0%, #2F3E2B 100%);
+    color: #FFFDF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    position: relative;
+}
+:where(.page-index) .insight-side::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 6px;
+    background: linear-gradient(90deg, #C29262, #D4AF37);
+}
+:where(.page-index) .insight-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 253, 249, 0.12);
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    font-size: 2.3rem;
+    color: #E9C98F;
+    margin-bottom: 0.4rem;
+}
+:where(.page-index) .insight-icon i { display: none; }
+:where(.page-index) .insight-card[data-faith="Christianity"] [data-icon="Christianity"],
+:where(.page-index) .insight-card[data-faith="Islam"] [data-icon="Islam"],
+:where(.page-index) .insight-card[data-faith="Judaism"] [data-icon="Judaism"],
+:where(.page-index) .insight-card[data-faith="Hinduism"] [data-icon="Hinduism"],
+:where(.page-index) .insight-card[data-faith="Buddhism"] [data-icon="Buddhism"],
+:where(.page-index) .insight-card[data-faith="Sikhism"] [data-icon="Sikhism"],
+:where(.page-index) .insight-card[data-faith="Bahá'í Faith"] [data-icon="Bahá'í Faith"],
+:where(.page-index) .insight-card[data-faith="Jainism"] [data-icon="Jainism"],
+:where(.page-index) .insight-card[data-faith="Indigenous Traditions"] [data-icon="Indigenous Traditions"],
+:where(.page-index) .insight-card[data-faith="Zoroastrianism"] [data-icon="Zoroastrianism"],
+:where(.page-index) .insight-card[data-faith="Secular Worldviews"] [data-icon="Secular Worldviews"] { display: inline-block; }
+:where(.page-index) .insight-faith {
+    font-family: 'Georgia', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+:where(.page-index) .insight-date {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #D8C3A5;
+}
+:where(.page-index) .insight-main { padding: 2.1rem 2.4rem 2rem; }
+:where(.page-index) .insight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-index) .insight-tag-myth { background: #F7EAE0; color: #9C5A33; }
+:where(.page-index) .insight-tag-fact { background: #E3EFEA; color: #2D5148; }
+:where(.page-index) .insight-belief p {
+    font-size: 1.05rem;
+    color: #6b7468;
+    margin: 0.5rem 0 1.3rem;
+    text-decoration: line-through;
+    text-decoration-color: rgba(156, 90, 51, 0.45);
+    text-decoration-thickness: 1.5px;
+}
+:where(.page-index) .insight-fact p {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.15rem, 2.1vw, 1.4rem);
+    line-height: 1.55;
+    color: #2F3E2B;
+    margin: 0.6rem 0 1.5rem;
+}
+:where(.page-index) .insight-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #EDE8DD;
+}
+:where(.page-index) .insight-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #3C6B5F;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.2s ease;
+}
+:where(.page-index) .insight-link:hover { background: #2D5148; }
+:where(.page-index) .insight-link span { font-family: inherit; }
+:where(.page-index) .insight-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: transparent;
+    border: 0;
+    color: #9C5A33;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.4rem 0;
+}
+:where(.page-index) .insight-next:hover { text-decoration: underline; }
+:where(.page-index) .insight-card:not(.is-ready) .insight-next { display: none; }
+:where(.page-index) .insight-card.is-changing .insight-main,
+:where(.page-index) .insight-card.is-changing .insight-side > span { animation: insight-in 0.45s ease; }
+@keyframes insight-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+    :where(.page-index) .insight-card.is-changing .insight-main,
+    :where(.page-index) .insight-card.is-changing .insight-side > span { animation: none; }
+}
+@media (max-width: 700px) {
+    :where(.page-index) .insight-card { grid-template-columns: 1fr; }
+    :where(.page-index) .insight-side { flex-direction: row; justify-content: flex-start; padding: 1.1rem 1.25rem 1.3rem; gap: 0.9rem; flex-wrap: wrap; text-align: left; }
+    :where(.page-index) .insight-icon { width: 56px; height: 56px; font-size: 1.5rem; margin: 0; }
+    :where(.page-index) .insight-side .insight-date { flex-basis: 100%; margin-top: -0.4rem; padding-left: calc(56px + 0.9rem); }
+    :where(.page-index) .insight-main { padding: 1.5rem 1.3rem 1.5rem; }
 }
 
 /* --- Podcast --- */

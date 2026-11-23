@@ -8,6 +8,8 @@
 //  4. Makes icons.css with just the icons the pages use (see makeIcons below).
 //  5. Adds the "official address" (canonical link) to each page and writes sitemap.xml,
 //     the list of pages that Google and other search engines read.
+//  6. Writes search-index.json (for the search box) and insights.json (for the
+//     home page's "Insight of the Day").
 // It needs nothing installed besides Node, which Netlify already has.
 
 const fs = require("fs");
@@ -146,6 +148,86 @@ for (const page of fs.readdirSync(ROOT).filter((f) => f.endsWith(".html")).sort(
 
 const sourcePages = fs.readdirSync(ROOT).filter((f) => f.endsWith(".html")).map((f) => fs.readFileSync(path.join(ROOT, f), "utf8"));
 fs.writeFileSync(path.join(OUT, "icons.css"), makeIcons(sourcePages));
+
+// SEARCH AND "INSIGHT OF THE DAY": read the pages and write two small data files.
+//  - search-index.json: the text of every page, split into sections, for the search box
+//    in the menu. It is only downloaded when a visitor opens the search.
+//  - insights.json: every "Myth: ... Fact: ..." pair on the religion pages. The home page
+//    shows one each day, so new myths added to a religion page join the rotation by themselves.
+const ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", rsquo: "’", lsquo: "‘", ldquo: "“", rdquo: "”", mdash: "—", ndash: "–", hellip: "…", middot: "·" };
+function plainText(html) {
+  return html
+    .replace(/<(script|style|nav|footer|form|select|button|template)\b[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<!--[\s\S]*?-->/g, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e) => e[0] === "#" ? String.fromCodePoint(e[1] === "x" || e[1] === "X" ? parseInt(e.slice(2), 16) : +e.slice(1)) : (ENTITIES[e.toLowerCase()] ?? m))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+const NOT_IN_SEARCH = new Set(["404.html"]);
+function pageName(html) {
+  const h1 = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/);
+  const title = html.match(/<title>([^<]*)<\/title>/)[1].split(/ [|-] /)[0];
+  return h1 ? plainText(h1[1]) : plainText(title);
+}
+function searchEntries(page, html) {
+  const name = pageName(html);
+  const body = html.slice(html.indexOf("<body"));
+  const entries = [];
+  const add = (section, hash, part) => {
+    const text = plainText(part);
+    if (text.length > 30) entries.push({ p: name, s: section, u: page + (hash ? "#" + hash : ""), x: text });
+  };
+  const label = (id) => { const b = body.match(new RegExp(`<button[^>]*'${id}'[^>]*>([\\s\\S]*?)</button>`)); return b ? plainText(b[1]) : ""; };
+  // Religion pages: one entry per tab, or per small tab inside it.
+  const tabs = [...body.matchAll(/<div id="([^"]+)" class="template-section[^"]*">/g)];
+  // Cultures page: one entry per culture.
+  const cards = [...body.matchAll(/<div class="culture-card" id="([^"]+)"/g)];
+  if (tabs.length) {
+    add("", "", body.slice(0, tabs[0].index));
+    tabs.forEach((t, i) => {
+      const part = body.slice(t.index, i + 1 < tabs.length ? tabs[i + 1].index : body.indexOf("<script", t.index) + 1 || undefined);
+      const h2 = part.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
+      const title = h2 ? plainText(h2[1]) : label(t[1]);
+      const subs = [...part.matchAll(/<div id="([^"]+)" class="history-sub-section[^"]*">/g)];
+      if (!subs.length) return add(title, t[1], part);
+      add(title, t[1], part.slice(0, subs[0].index));
+      subs.forEach((s, j) => add(`${title} › ${label(s[1]) || s[1]}`, s[1], part.slice(s.index, j + 1 < subs.length ? subs[j + 1].index : undefined)));
+    });
+  } else if (cards.length) {
+    add("", "", body.slice(0, cards[0].index));
+    cards.forEach((c, i) => {
+      const part = body.slice(c.index, i + 1 < cards.length ? cards[i + 1].index : body.indexOf("</main>", c.index));
+      const h2 = part.match(/<h2[^>]*>([\s\S]*?)<\/h2>/);
+      add(h2 ? plainText(h2[1]) : c[1], c[1], part);
+    });
+    add("", "", body.slice(body.indexOf("</main>")));
+  } else {
+    add("", "", body);
+  }
+  return entries;
+}
+function insightsFrom(page, html) {
+  const name = pageName(html);
+  const section = (html.match(/<div id="([^"]+)" class="template-section[^"]*">\s*<h2>Myths/) || [])[1];
+  return [...html.matchAll(/<p><strong>Myth:\s*([\s\S]*?)<\/strong><br>\s*(?:Fact:\s*)?([\s\S]*?)<\/p>/g)].map(([, myth, fact]) => ({
+    r: name, u: page + (section ? "#" + section : ""), m: plainText(myth), f: plainText(fact).replace(/^Fact:\s*/, ""),
+  }));
+}
+const index = [], insights = [];
+for (const page of fs.readdirSync(ROOT).filter((f) => f.endsWith(".html")).sort()) {
+  const html = fs.readFileSync(path.join(ROOT, page), "utf8");
+  if (!NOT_IN_SEARCH.has(page)) index.push(...searchEntries(page, html));
+  insights.push(...insightsFrom(page, html));
+}
+// Mix the insights so the same religion does not come up several days in a row
+// (the same order every time the site is published, so "today's" insight does not jump).
+let seed = 7;
+const random = () => ((seed = (seed * 16807) % 2147483647) - 1) / 2147483646;
+for (let i = insights.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [insights[i], insights[j]] = [insights[j], insights[i]]; }
+fs.writeFileSync(path.join(OUT, "search-index.json"), JSON.stringify(index));
+fs.writeFileSync(path.join(OUT, "insights.json"), JSON.stringify(insights));
+console.log(`Search covers ${index.length} sections; ${insights.length} insights rotate on the home page.`);
 
 fs.writeFileSync(path.join(OUT, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
