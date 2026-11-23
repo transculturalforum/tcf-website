@@ -20,9 +20,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: bash .github/photos/save-photos.sh
+      # Make any new photo lighter so pages stay fast (each photo is only done once).
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pillow && python .github/photos/shrink-photos.py
       - name: Commit any changes
         run: |
-          git add -A images/photos ./*.html
+          git add -A images/photos ./*.html .github/photos/shrunk-list.txt
           if git diff --cached --quiet; then echo "Nothing to change."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
