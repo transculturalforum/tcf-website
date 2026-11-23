@@ -10,13 +10,13 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Transcultural Podcast | Transcultural Forum Inc.">
     <meta property="og:description" content="Listen to The Transcultural Podcast. Join us as we unpack cultural misconceptions, share global traditions, and host community dialogues on your favorite apps.">
-    <meta property="og:image" content="https://images.pexels.com/photos/31236088/pexels-photo-31236088.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta property="og:image" content="https://transculturalforum.org/images/share/podcast.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Transcultural Podcast | Transcultural Forum Inc.">
     <meta name="twitter:description" content="Listen to The Transcultural Podcast. Join us as we unpack cultural misconceptions, share global traditions, and host community dialogues on your favorite apps.">
-    <meta name="twitter:image" content="https://images.pexels.com/photos/31236088/pexels-photo-31236088.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=630&w=1200">
+    <meta name="twitter:image" content="https://transculturalforum.org/images/share/podcast.jpg">
 
     <!-- Browser tab and home-screen icons -->
     <link rel="icon" href="favicon.ico" sizes="any">
@@ -269,58 +269,50 @@
                 font-size: 2rem;
             }
         }
+
+        /* Stay Tuned Graphic Container (same look as Topics, Events and Comparisons) */
+        .stay-tuned-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            border: 2px dashed #D6DBD2;
+            border-radius: 12px;
+            padding: 4rem 2rem;
+            text-align: center;
+            background-color: #FFFDF9;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .stay-tuned-icon {
+            font-size: 3rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-title {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            color: #2F3E2B;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .stay-tuned-text {
+            color: #555555;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .stay-tuned-container { margin: 2rem 1rem; padding: 3rem 1.25rem; }
+        }
     </style>
 </head>
 <body>
 
     <!-- Synchronized Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <img src="images/copper-logo.png" alt="Transcultural Forum Inc. Logo" class="nav-logo-img">
-            <span class="logo-text">Transcultural Forum Inc.</span>
-        </div>
-        
-        <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">Our Mission</a></li>
-            
-            <li class="dropdown-tab">
-                <a href="#" class="dropdown-trigger active-page">What We Do</a>
-                <ul class="dropdown-menu">
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="social-media.html">Social Media</a></li>
-                    <li><a href="podcast.html" class="active-page">Podcast</a></li>
-                    <li><a href="articles-archive.html">Articles & Research</a></li>
-                </ul>
-            </li>
-
-            <li class="dropdown-tab">
-                <a href="religions.html" class="dropdown-trigger">Religions</a>
-                <ul class="dropdown-menu">
-                    <li><a href="christianity.html">Christianity</a></li>
-                    <li><a href="islam.html">Islam</a></li>
-                    <li><a href="judaism.html">Judaism</a></li>
-                    <li><a href="hinduism.html">Hinduism</a></li>
-                    <li><a href="buddhism.html">Buddhism</a></li>
-                    <li><a href="sikhism.html">Sikhism</a></li>
-                    <li><a href="bahai.html">Bahá'í Faith</a></li>
-                    <li><a href="jainism.html">Jainism</a></li>
-                    <li><a href="indigenous.html">Indigenous Traditions</a></li>
-                    <li><a href="zoroastrianism.html">Zoroastrianism</a></li>
-                    <li><a href="secular.html">Secular Worldviews</a></li>
-                </ul>
-            </li>
-
-            <li><a href="cultures.html">Cultures</a></li>
-            <li><a href="topics.html">Topics</a></li>
-            <li><a href="comparisons.html">Comparisons</a></li>
-            <li><a href="dialogue.html">Free Dialogue</a></li>
-            <li><a href="donate.html">Support Us</a></li>
-            <li><a href="index.html#contact">Contact Us</a></li>
-        </ul>
-
-        <div class="hamburger" id="hamburger">&#9776;</div>
-    </nav>
+    <!-- SHARED MENU -->
 
     <!-- Header Section -->
     <header class="podcast-hero photo-banner" style="--banner: url('images/photos/pexels-31236088-w1600.jpg');">
@@ -341,109 +333,17 @@
         </div>
     </header>
 
-    <!-- Featured Episode Section -->
-    <section class="featured-episode">
-        <span class="featured-tag">Latest Release</span>
-        <h2>Episode 12: Preserving Oral Histories in the Digital Age</h2>
-        <div class="episode-meta">
-            <span><i class="fa-regular fa-calendar"></i> July 10, 2026</span>
-            <span><i class="fa-regular fa-clock"></i> 42 mins</span>
+    <main>
+        <!-- Episodes are on their way; the earlier sample episode layout is saved in project backups -->
+        <div class="stay-tuned-container">
+            <i class="fa-solid fa-microphone-lines stay-tuned-icon"></i>
+            <h2 class="stay-tuned-title">Stay Tuned!</h2>
+            <p class="stay-tuned-text">Our first episodes are in the works. Follow us on Spotify and YouTube using the buttons above, and you will hear about them as soon as they are released.</p>
         </div>
-        <p>In this episode, we sit down with Dr. Elena Rostova to discuss how modern technology helps diaspora communities capture, archive, and preserve oral histories that run the risk of fading away over generations. She offers actionable advice for capturing family stories using only your smartphone.</p>
-        
-        <!-- App redirect triggers -->
-        <div class="listen-actions-label">Listen to Episode 12 on:</div>
-        <div class="listen-actions">
-            <a href="https://spotify.com" class="listen-btn badge-spotify" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-spotify"></i> Spotify App
-            </a>
-            <a href="https://www.youtube.com/@TransculturalForum" class="listen-btn badge-youtube" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube"></i> YouTube
-            </a>
-        </div>
-    </section>
-
-    <!-- Past Episodes List -->
-    <h2 class="episode-section-title">Past Episodes</h2>
-    <main class="episode-grid">
-        
-        <!-- Episode 11 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 11</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>June 28, 2026</span> • <span>38 mins</span>
-                </div>
-                <h3>Language, Accent, and the Architecture of Identity</h3>
-                <p>We explore how speaking multiple languages and carrying accents shapes how we view ourselves and how the world responds to us. Guests share stories of navigating diverse linguistic landscapes.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Episode 10 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 10</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>June 14, 2026</span> • <span>51 mins</span>
-                </div>
-                <h3>The Global Kitchen: How Recipes Migrate</h3>
-                <p>How do family heritage dishes change when they are prepared across oceans with completely different ingredients? A deep dive into the evolution of global immigrant cuisine.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Episode 09 -->
-        <div class="episode-card">
-            <div class="episode-number">Ep. 09</div>
-            <div class="episode-content">
-                <div class="episode-meta" style="margin-bottom: 0.3rem;">
-                    <span>May 31, 2026</span> • <span>45 mins</span>
-                </div>
-                <h3>Art as a Universal Bridge</h3>
-                <p>Featuring visual artist Mateo Alvarez on how street murals and community art workshops create spaces for dialogue between deeply divided historical neighborhood populations.</p>
-                
-                <!-- App redirect links -->
-                <div class="episode-links">
-                    <span>Listen on:</span>
-                    <a href="https://spotify.com" class="app-link link-spotify" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-spotify"></i> Spotify
-                    </a>
-                    <a href="https://www.youtube.com/@TransculturalForum" class="app-link link-youtube" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                </div>
-            </div>
-        </div>
-
     </main>
 
     <!-- Footer -->
-    <footer>
-        <img src="images/copper-logo.png" alt="Footer Logo" class="footer-logo-img">
-        <p>&copy; 2026 Transcultural Forum Inc. All rights reserved. Registered Non-Profit Organization.</p>
-        <p class="footer-links"><a href="privacy.html">Privacy Policy</a></p>
-    </footer>
+    <!-- SHARED FOOTER -->
 
     <script src="script.js"></script>
 </body>

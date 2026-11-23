@@ -77,11 +77,11 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
             
             // Optional: Changes the icon to an "X" when open, and back to "☰" when closed
-            if (navLinks.classList.contains('active')) {
-                hamburger.innerHTML = '&#10005;'; // The "X" symbol
-            } else {
-                hamburger.innerHTML = '&#9776;'; // The "☰" symbol
-            }
+            const open = navLinks.classList.contains('active');
+            hamburger.innerHTML = open ? '&#10005;' : '&#9776;'; // "X" when open, "☰" when closed
+            // Tell screen readers whether the menu is open
+            hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
         });
     }
 });
