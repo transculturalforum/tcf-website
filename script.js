@@ -257,16 +257,30 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch('insights.json').then((r) => r.json()).then((items) => {
             if (!items.length) return;
             const now = new Date();
-            const day = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
-            const item = items[day % items.length];
-            insightBox.querySelector('[data-insight="faith"]').textContent = item.r;
-            insightBox.querySelector('[data-insight="fact"]').textContent = item.f;
-            insightBox.querySelector('[data-insight="belief"]').textContent = item.m;
-            const link = insightBox.querySelector('[data-insight="link"]');
-            link.href = item.u;
-            link.querySelector('span').textContent = item.r;
-            insightBox.querySelector('[data-insight="date"]').textContent = now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+            const today = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+            let at = today % items.length;
+            const set = (name, value) => { insightBox.querySelector(`[data-insight="${name}"]`).textContent = value; };
+            const show = () => {
+                const item = items[at];
+                insightBox.dataset.faith = item.r;
+                set('faith', item.r);
+                set('fact', item.f);
+                set('belief', item.m);
+                const link = insightBox.querySelector('[data-insight="link"]');
+                link.href = item.u;
+                link.querySelector('span span').textContent = item.r;
+                set('date', at === today % items.length ? now.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' }) : 'Another insight');
+            };
+            show();
             insightBox.classList.add('is-ready');
+            // "Show another insight" steps through the rest, then comes back to today's
+            insightBox.querySelector('[data-insight="next"]').addEventListener('click', () => {
+                at = (at + 1) % items.length;
+                insightBox.classList.remove('is-changing');
+                void insightBox.offsetWidth;
+                insightBox.classList.add('is-changing');
+                show();
+            });
         }).catch(() => {});
     }
 });

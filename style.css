@@ -532,9 +532,9 @@ footer {
 }
 
 /* --- Phone-style menu (the ☰ button) for phones and iPads ---
-   Phones and tablets up to 1024px wide, plus any touch screen up to 1366px
+   Phones, tablets and small laptops up to 1240px wide, plus any touch screen up to 1366px
    (iPads held sideways, including the 12.9" iPad Pro). Laptops keep the full row of links. */
-@media (max-width: 1024px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
+@media (max-width: 1240px), (hover: none) and (pointer: coarse) and (max-width: 1366px) {
     /* Keep navbar horizontal and show hamburger */
     .navbar { 
         flex-direction: row; 
@@ -779,6 +779,23 @@ button:focus-visible {
     flex-shrink: 0;
 }
 .search-toggle:hover { background-color: #3C6B5F; }
+
+/* Keep every menu item on one line, so the bar stays one tidy row with the search button.
+   On narrower laptop screens the spacing tightens; below that the ☰ menu takes over. */
+.nav-links li a { white-space: nowrap; }
+@media (min-width: 1241px) {
+    .navbar { gap: 1rem; }
+    .logo-container { flex-shrink: 0; }
+    .nav-links { gap: 0.2rem; flex-wrap: nowrap; }
+    .nav-tools { margin-left: 0; }
+}
+@media (min-width: 1241px) and (max-width: 1500px) {
+    .navbar { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .navbar .logo-text { max-width: 9.5em; line-height: 1.25; }
+    .navbar .nav-links a { padding: 0.45rem 0.55rem !important; font-size: 0.86rem !important; }
+    .navbar .logo-text { font-size: 1.1rem; }
+    .nav-logo-img { width: 44px; height: 44px; margin-right: 10px; }
+}
 .site-search {
     position: fixed;
     inset: 0;
@@ -2904,159 +2921,138 @@ body.search-open { overflow: hidden; }
     }
 }
 
-/* World map: click a country to read about its culture (see world-map.js). */
+/* World map: click any country to read about it (see world-map.js). */
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
 :where(.page-cultures) .world-map-section {
     max-width: 1300px;
     margin: 2.5rem auto 0;
     padding: 0 1.5rem;
 }
-:where(.page-cultures) .world-map-intro {
-    text-align: center;
-    margin-bottom: 1.25rem;
+:where(.page-cultures) .world-map-intro { text-align: center; margin-bottom: 1.25rem; }
+:where(.page-cultures) .world-map-intro .subtitle {
+    display: block; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+    color: #9C5A33; font-weight: 700; margin-bottom: 0.3rem;
 }
-:where(.page-cultures) .world-map-intro h2 {
-    font-family: 'Georgia', serif;
-    font-size: 2rem;
-    color: #2F3E2B;
-    margin-bottom: 0.3rem;
+:where(.page-cultures) .world-map-intro h2 { font-family: 'Georgia', serif; font-size: 2.1rem; color: #2F3E2B; margin-bottom: 0.3rem; }
+:where(.page-cultures) .world-map-intro p { color: #4a5547; margin: 0 auto; max-width: 680px; }
+:where(.page-cultures) .world-map-toolbar {
+    display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: space-between; align-items: center;
+    margin-bottom: 0.9rem;
 }
-:where(.page-cultures) .world-map-intro p { color: #4a5547; margin: 0; }
+:where(.page-cultures) .map-mode {
+    display: inline-flex; background: #F4F1EA; border: 1px solid #E4E1DA; border-radius: 999px; padding: 4px;
+}
+:where(.page-cultures) .map-mode button {
+    border: 0; background: transparent; color: #2F3E2B; font-weight: 600; font-size: 0.9rem;
+    padding: 0.45rem 1rem; border-radius: 999px; cursor: pointer;
+}
+:where(.page-cultures) .map-mode button[aria-pressed="true"] { background: #3C6B5F; color: #fff; box-shadow: 0 2px 6px rgba(47,62,43,0.2); }
+:where(.page-cultures) .map-find input {
+    width: 260px; max-width: 100%; padding: 0.55rem 0.9rem; border: 1px solid #DCE5E0; border-radius: 999px;
+    font-size: 0.95rem; background: #fff; color: #2F3E2B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-cultures) .map-find input:focus { outline: 2px solid #C29262; outline-offset: 1px; }
 :where(.page-cultures) .world-map-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
-    gap: 1.5rem;
-    align-items: stretch;
+    display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 1.5rem; align-items: start;
 }
 :where(.page-cultures) .world-map-frame {
     position: relative;
-    background: linear-gradient(180deg, #EEF3F0 0%, #E3ECE8 100%);
-    border: 1px solid #DCE5E0;
-    border-radius: 14px;
-    padding: 1rem;
-    overflow: hidden;
+    background: radial-gradient(ellipse at 50% 40%, #F3F7F5 0%, #E1EBE7 100%);
+    border: 1px solid #DCE5E0; border-radius: 14px; padding: 0.75rem; overflow: hidden;
+    touch-action: pan-y; user-select: none; -webkit-user-select: none;
 }
-:where(.page-cultures) .world-map-frame svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+:where(.page-cultures) .world-map-section.is-zoomed .world-map-frame { touch-action: none; cursor: grab; }
+:where(.page-cultures) .world-map-frame svg { display: block; width: 100%; height: auto; }
 :where(.page-cultures) .world-map-frame path {
-    fill: #D6D3C8;
-    stroke: #FFFDF9;
-    stroke-width: 0.6;
-    transition: fill 0.15s ease;
+    fill: #D6D3C8; stroke: #FFFDF9; stroke-width: 0.5; vector-effect: non-scaling-stroke;
+    cursor: pointer; transition: fill 0.25s ease, opacity 0.25s ease;
 }
-:where(.page-cultures) .world-map-frame path.has-culture {
-    fill: #7FA79B;
-    cursor: pointer;
-}
-:where(.page-cultures) .world-map-frame path.has-culture:hover,
-:where(.page-cultures) .world-map-frame path.has-culture:focus-visible {
-    fill: #3C6B5F;
-    outline: none;
-}
+:where(.page-cultures) .world-map-frame path.has-culture { fill: #7FA79B; }
+:where(.page-cultures) .world-map-frame path:hover { fill: #3C6B5F; }
+:where(.page-cultures) [data-mode="faith"] .world-map-frame path:hover { opacity: 0.75; }
 :where(.page-cultures) .world-map-frame path:focus { outline: none; }
-:where(.page-cultures) .world-map-frame path:focus-visible { stroke: #2F3E2B; stroke-width: 1.5; }
-:where(.page-cultures) .world-map-frame path.is-selected { fill: #C29262 !important; }
+:where(.page-cultures) .world-map-frame path:focus-visible { stroke: #2F3E2B; stroke-width: 2; }
+:where(.page-cultures) .world-map-frame path.is-selected { fill: #C29262 !important; stroke: #6B3E22; stroke-width: 1.2; }
+:where(.page-cultures) .world-map-frame path.is-dimmed { opacity: 0.18; }
+:where(.page-cultures) .world-map-frame .map-pin {
+    fill: rgba(194, 146, 98, 0.35); stroke: #9C5A33; stroke-width: 2; vector-effect: non-scaling-stroke; pointer-events: none;
+}
+:where(.page-cultures) .map-zoom {
+    position: absolute; right: 12px; top: 12px; display: flex; flex-direction: column; gap: 6px; z-index: 2;
+}
+:where(.page-cultures) .map-zoom button {
+    width: 36px; height: 36px; border-radius: 8px; border: 1px solid #DCE5E0; background: #FFFDF9;
+    color: #2F3E2B; font-size: 1.25rem; line-height: 1; cursor: pointer; box-shadow: 0 2px 6px rgba(47,62,43,0.12);
+}
+:where(.page-cultures) .map-zoom button:hover { background: #3C6B5F; color: #fff; }
+:where(.page-cultures) .map-zoom .map-zoom-reset { font-size: 1.05rem; }
 :where(.page-cultures) .world-map-tip {
-    position: absolute;
-    pointer-events: none;
-    background: #2F3E2B;
-    color: #FFFDF9;
-    font-size: 0.82rem;
-    font-weight: 600;
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    transform: translate(-50%, -130%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute; pointer-events: none; background: #2F3E2B; color: #FFFDF9; font-size: 0.82rem; font-weight: 600;
+    padding: 0.3rem 0.6rem; border-radius: 4px; white-space: nowrap; transform: translate(-50%, -140%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; z-index: 3;
 }
 :where(.page-cultures) .world-map-legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 0.75rem;
-    font-size: 0.85rem;
-    color: #4a5547;
+    display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin-top: 0.75rem; font-size: 0.85rem; color: #4a5547;
 }
-:where(.page-cultures) .world-map-legend span::before {
-    content: "";
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    margin-right: 0.4rem;
-    vertical-align: -1px;
-    background: var(--swatch);
+:where(.page-cultures) .world-map-legend span::before,
+:where(.page-cultures) .world-map-legend button::before {
+    content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 0.4rem;
+    vertical-align: -1px; background: var(--swatch);
 }
+:where(.page-cultures) .world-map-legend button {
+    border: 1px solid #E4E1DA; background: #FFFDF9; color: #2F3E2B; border-radius: 999px;
+    padding: 0.25rem 0.7rem; font-size: 0.82rem; cursor: pointer;
+}
+:where(.page-cultures) .world-map-legend button.is-on { border-color: #2F3E2B; background: #F4F1EA; font-weight: 700; }
+:where(.page-cultures) .world-map-help { font-size: 0.8rem; color: #6b7468; margin: 0.4rem 0 0; }
 :where(.page-cultures) .world-map-panel {
-    background: #FFFDF9;
-    border: 1px solid #E4E1DA;
-    border-top: 5px solid #C29262;
-    border-radius: 14px;
-    padding: 1.4rem 1.4rem 1.5rem;
-    box-shadow: 0 10px 24px rgba(47, 62, 43, 0.08);
-    overflow-y: auto;
-    max-height: 560px;
+    background: #FFFDF9; border: 1px solid #E4E1DA; border-top: 5px solid #C29262; border-radius: 14px;
+    padding: 1.4rem 1.4rem 1.5rem; box-shadow: 0 10px 24px rgba(47, 62, 43, 0.08);
+    overflow-y: auto; max-height: 600px;
 }
-:where(.page-cultures) .world-map-panel h3 {
-    font-family: 'Georgia', serif;
-    font-size: 1.4rem;
-    color: #2F3E2B;
-    margin: 0 0 0.6rem;
+:where(.page-cultures) .world-map-panel h3 { font-family: 'Georgia', serif; font-size: 1.5rem; color: #2F3E2B; margin: 0 0 0.5rem; }
+:where(.page-cultures) .map-intro { color: #4a5547; margin: 0 0 1rem; font-size: 0.93rem; line-height: 1.6; }
+:where(.page-cultures) .map-note { font-size: 0.82rem; color: #6b4a2f; background: #F7EEE4; border-radius: 6px; padding: 0.5rem 0.7rem; margin: 0 0 0.8rem; }
+:where(.page-cultures) .map-facts { margin: 0 0 0.5rem; font-size: 0.9rem; display: grid; grid-template-columns: auto 1fr; gap: 0.35rem 0.8rem; }
+:where(.page-cultures) .map-facts dt { font-weight: 700; color: #2F3E2B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+:where(.page-cultures) .map-facts dd { margin: 0; color: #4a5547; }
+:where(.page-cultures) .map-sub {
+    font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; color: #9C5A33;
+    margin: 1.2rem 0 0.5rem; padding-top: 0.9rem; border-top: 1px solid #E4E1DA;
 }
-:where(.page-cultures) .world-map-panel .map-hint { color: #4a5547; margin: 0 0 1rem; font-size: 0.95rem; }
-:where(.page-cultures) .map-culture {
-    border-top: 1px solid #E4E1DA;
-    padding-top: 0.9rem;
-    margin-top: 0.9rem;
-}
-:where(.page-cultures) .map-culture h4 {
-    font-size: 1.05rem;
-    color: #3C6B5F;
-    margin: 0 0 0.15rem;
-}
-:where(.page-cultures) .map-culture .map-region { font-size: 0.82rem; color: #6b7468; display: block; margin-bottom: 0.5rem; }
-:where(.page-cultures) .map-culture dl { margin: 0 0 0.75rem; font-size: 0.9rem; }
-:where(.page-cultures) .map-culture dt { font-weight: 700; color: #2F3E2B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-:where(.page-cultures) .map-culture dd { margin: 0 0 0.35rem; color: #4a5547; }
+:where(.page-cultures) .map-culture { background: #F1F6F3; border-radius: 10px; padding: 0.8rem 0.9rem; margin-bottom: 0.6rem; }
+:where(.page-cultures) .map-culture strong { color: #2F3E2B; font-size: 1rem; }
+:where(.page-cultures) .map-region { font-size: 0.8rem; color: #6b7468; display: block; margin-bottom: 0.35rem; }
+:where(.page-cultures) .map-line { display: block; font-size: 0.86rem; color: #4a5547; margin-bottom: 0.2rem; }
 :where(.page-cultures) .map-read-more {
-    display: inline-block;
-    background: #3C6B5F;
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    padding: 0.5rem 0.95rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: none;
+    margin-top: 0.5rem; display: inline-block; background: #3C6B5F; color: #fff; border: 0; border-radius: 4px;
+    padding: 0.45rem 0.9rem; font-weight: 600; font-size: 0.88rem; cursor: pointer;
 }
 :where(.page-cultures) .map-read-more:hover { background: #2D5148; }
-:where(.page-cultures) .map-quick {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-top: 0.5rem;
+:where(.page-cultures) .map-faiths { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+:where(.page-cultures) .map-faiths a, :where(.page-cultures) .map-quick button {
+    border: 1px solid #DCE5E0; background: #F4F1EA; color: #2F3E2B; border-radius: 999px;
+    padding: 0.3rem 0.75rem; font-size: 0.84rem; cursor: pointer; text-decoration: none; font-weight: 600;
 }
-:where(.page-cultures) .map-quick button {
-    border: 1px solid #DCE5E0;
-    background: #F4F1EA;
-    color: #2F3E2B;
-    border-radius: 999px;
-    padding: 0.3rem 0.75rem;
-    font-size: 0.82rem;
-    cursor: pointer;
-}
-:where(.page-cultures) .map-quick button:hover { background: #3C6B5F; color: #fff; border-color: #3C6B5F; }
+:where(.page-cultures) .map-faiths a:hover, :where(.page-cultures) .map-quick button:hover { background: #3C6B5F; color: #fff; border-color: #3C6B5F; }
+:where(.page-cultures) .map-quick { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+:where(.page-cultures) .map-source { font-size: 0.75rem; color: #7a8277; margin: 1rem 0 0; }
 @media (max-width: 960px) {
     :where(.page-cultures) .world-map-layout { grid-template-columns: 1fr; }
     :where(.page-cultures) .world-map-panel { max-height: none; }
 }
 @media (max-width: 600px) {
     :where(.page-cultures) .world-map-section { padding: 0 0.75rem; margin-top: 1.5rem; }
-    :where(.page-cultures) .world-map-frame { padding: 0.4rem; }
-    :where(.page-cultures) .world-map-intro h2 { font-size: 1.6rem; }
+    :where(.page-cultures) .world-map-frame { padding: 0.3rem; }
+    :where(.page-cultures) .world-map-intro h2 { font-size: 1.7rem; }
+    :where(.page-cultures) .world-map-toolbar { flex-direction: column; align-items: stretch; }
+    :where(.page-cultures) .map-mode { justify-content: center; }
+    :where(.page-cultures) .map-find input { width: 100%; }
+    :where(.page-cultures) .map-zoom { right: 6px; top: 6px; }
+    :where(.page-cultures) .map-zoom button { width: 32px; height: 32px; }
 }
 
 /* --- Free Dialogue --- */
@@ -3906,108 +3902,162 @@ body.search-open { overflow: hidden; }
     }
 }
 
-/* Home page welcome photo: taller, and the photo shows through more clearly. */
-:where(.page-index) .home-hero {
-    min-height: calc(100vh - 70px);
-    min-height: calc(100svh - 70px);
-    height: auto;
-    padding: 6rem 1.5rem;
-    background-image:
-        linear-gradient(180deg, rgba(31, 42, 29, 0.35) 0%, rgba(31, 42, 29, 0.55) 55%, rgba(31, 42, 29, 0.8) 100%),
-        var(--banner);
-}
-:where(.page-index) .home-hero::before { opacity: 0.12; }
-:where(.page-index) .home-hero::after { opacity: 0.22; }
-:where(.page-index) .home-hero .hero-content { max-width: 860px; }
-:where(.page-index) .home-hero h1 {
-    font-family: 'Georgia', serif;
-    font-size: clamp(2.6rem, 6vw, 4.6rem);
-    line-height: 1.1;
-    letter-spacing: 0.5px;
-    margin-bottom: 1.4rem;
-}
-:where(.page-index) .home-hero .hero-lead {
-    font-family: 'Georgia', serif;
-    font-size: clamp(1.15rem, 2.2vw, 1.55rem);
-    line-height: 1.55;
-    font-weight: 400;
-    max-width: 760px;
-    margin: 0 auto 2.5rem;
-}
-@media (max-width: 600px) {
-    :where(.page-index) .home-hero .hero-buttons { flex-direction: column; align-items: center; }
-}
-
-/* Insight of the Day: a card that sits just under the welcome photo. */
-:where(.page-index) .insight-band {
-    padding: 0 1.5rem;
-    margin-top: -4.5rem;
-    position: relative;
-    z-index: 5;
+/* Insight of the Day: sits after Articles & Research. */
+:where(.page-index) .insight-section {
+    text-align: center;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(194, 146, 98, 0.12) 0, rgba(194, 146, 98, 0) 40%),
+        radial-gradient(circle at 88% 80%, rgba(60, 107, 95, 0.12) 0, rgba(60, 107, 95, 0) 45%),
+        #FFFDF9;
 }
 :where(.page-index) .insight-card {
-    max-width: 860px;
-    margin: 0 auto;
-    background: #FFFDF9;
-    border-radius: 14px;
-    border-top: 5px solid #C29262;
-    box-shadow: 0 18px 40px rgba(47, 62, 43, 0.16);
-    padding: 2rem 2.4rem 2.1rem;
+    max-width: 960px;
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    text-align: left;
+    background: #FFFFFF;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 22px 50px rgba(47, 62, 43, 0.14);
+    border: 1px solid #EDE8DD;
 }
-:where(.page-index) .insight-top {
+:where(.page-index) .insight-side {
+    background: linear-gradient(160deg, #3C6B5F 0%, #2F3E2B 100%);
+    color: #FFFDF9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    position: relative;
+}
+:where(.page-index) .insight-side::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 6px;
+    background: linear-gradient(90deg, #C29262, #D4AF37);
+}
+:where(.page-index) .insight-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 253, 249, 0.12);
+    border: 2px solid rgba(212, 175, 55, 0.6);
+    font-size: 2.3rem;
+    color: #E9C98F;
+    margin-bottom: 0.4rem;
+}
+:where(.page-index) .insight-icon i { display: none; }
+:where(.page-index) .insight-card[data-faith="Christianity"] [data-icon="Christianity"],
+:where(.page-index) .insight-card[data-faith="Islam"] [data-icon="Islam"],
+:where(.page-index) .insight-card[data-faith="Judaism"] [data-icon="Judaism"],
+:where(.page-index) .insight-card[data-faith="Hinduism"] [data-icon="Hinduism"],
+:where(.page-index) .insight-card[data-faith="Buddhism"] [data-icon="Buddhism"],
+:where(.page-index) .insight-card[data-faith="Sikhism"] [data-icon="Sikhism"],
+:where(.page-index) .insight-card[data-faith="Bahá'í Faith"] [data-icon="Bahá'í Faith"],
+:where(.page-index) .insight-card[data-faith="Jainism"] [data-icon="Jainism"],
+:where(.page-index) .insight-card[data-faith="Indigenous Traditions"] [data-icon="Indigenous Traditions"],
+:where(.page-index) .insight-card[data-faith="Zoroastrianism"] [data-icon="Zoroastrianism"],
+:where(.page-index) .insight-card[data-faith="Secular Worldviews"] [data-icon="Secular Worldviews"] { display: inline-block; }
+:where(.page-index) .insight-faith {
+    font-family: 'Georgia', serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.25;
+}
+:where(.page-index) .insight-date {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #D8C3A5;
+}
+:where(.page-index) .insight-main { padding: 2.1rem 2.4rem 2rem; }
+:where(.page-index) .insight-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:where(.page-index) .insight-tag-myth { background: #F7EAE0; color: #9C5A33; }
+:where(.page-index) .insight-tag-fact { background: #E3EFEA; color: #2D5148; }
+:where(.page-index) .insight-belief p {
+    font-size: 1.05rem;
+    color: #6b7468;
+    margin: 0.5rem 0 1.3rem;
+    text-decoration: line-through;
+    text-decoration-color: rgba(156, 90, 51, 0.45);
+    text-decoration-thickness: 1.5px;
+}
+:where(.page-index) .insight-fact p {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.15rem, 2.1vw, 1.4rem);
+    line-height: 1.55;
+    color: #2F3E2B;
+    margin: 0.6rem 0 1.5rem;
+}
+:where(.page-index) .insight-actions {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 0.4rem 1rem;
-    margin-bottom: 1rem;
-}
-:where(.page-index) .insight-label {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #9C5A33;
-    margin: 0;
-}
-:where(.page-index) .insight-meta {
-    font-size: 0.9rem;
-    color: #5b6658;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-:where(.page-index) .insight-meta [data-insight="faith"] { font-weight: 700; color: #3C6B5F; }
-:where(.page-index) .insight-card:not(.is-ready) .insight-meta [data-insight="date"],
-:where(.page-index) .insight-card:not(.is-ready) .insight-meta [aria-hidden] { display: none; }
-:where(.page-index) .insight-fact {
-    font-family: 'Georgia', serif;
-    font-size: clamp(1.2rem, 2.3vw, 1.5rem);
-    line-height: 1.5;
-    color: #2F3E2B;
-    margin: 0 0 1rem;
-}
-:where(.page-index) .insight-belief {
-    font-size: 0.98rem;
-    color: #4a5547;
-    margin: 0 0 1.3rem;
-    padding-left: 0.9rem;
-    border-left: 3px solid #E4E1DA;
-}
-:where(.page-index) .insight-belief-label {
-    font-weight: 700;
-    color: #2F3E2B;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid #EDE8DD;
 }
 :where(.page-index) .insight-link {
-    display: inline-block;
-    font-weight: 700;
-    color: #3C6B5F;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #3C6B5F;
+    color: #fff;
     text-decoration: none;
+    font-weight: 600;
+    padding: 0.65rem 1.2rem;
+    border-radius: 6px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-bottom: 2px solid rgba(60, 107, 95, 0.3);
+    transition: background-color 0.2s ease;
 }
-:where(.page-index) .insight-link:hover { border-bottom-color: #3C6B5F; }
-@media (max-width: 600px) {
-    :where(.page-index) .insight-band { margin-top: -2.5rem; padding: 0 1rem; }
-    :where(.page-index) .insight-card { padding: 1.5rem 1.3rem 1.6rem; }
+:where(.page-index) .insight-link:hover { background: #2D5148; }
+:where(.page-index) .insight-link span { font-family: inherit; }
+:where(.page-index) .insight-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: transparent;
+    border: 0;
+    color: #9C5A33;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 0.4rem 0;
+}
+:where(.page-index) .insight-next:hover { text-decoration: underline; }
+:where(.page-index) .insight-card:not(.is-ready) .insight-next { display: none; }
+:where(.page-index) .insight-card.is-changing .insight-main,
+:where(.page-index) .insight-card.is-changing .insight-side > span { animation: insight-in 0.45s ease; }
+@keyframes insight-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+    :where(.page-index) .insight-card.is-changing .insight-main,
+    :where(.page-index) .insight-card.is-changing .insight-side > span { animation: none; }
+}
+@media (max-width: 700px) {
+    :where(.page-index) .insight-card { grid-template-columns: 1fr; }
+    :where(.page-index) .insight-side { flex-direction: row; justify-content: flex-start; padding: 1.1rem 1.25rem 1.3rem; gap: 0.9rem; flex-wrap: wrap; text-align: left; }
+    :where(.page-index) .insight-icon { width: 56px; height: 56px; font-size: 1.5rem; margin: 0; }
+    :where(.page-index) .insight-side .insight-date { flex-basis: 100%; margin-top: -0.4rem; padding-left: calc(56px + 0.9rem); }
+    :where(.page-index) .insight-main { padding: 1.5rem 1.3rem 1.5rem; }
 }
 
 /* --- Podcast --- */

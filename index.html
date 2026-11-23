@@ -25,6 +25,7 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons.css">
 </head>
 <body class="page-index">
 
@@ -32,31 +33,16 @@
     <!-- SHARED MENU -->
 
     <!-- Header / Hero Section -->
-    <header id="home" class="hero photo-banner home-hero" style="--banner: url('images/photos/pexels-36681981-w1600.jpg'); --banner-pos: center 35%;">
+    <header id="home" class="hero photo-banner" style="--banner: url('images/photos/pexels-36681981-w1600.jpg'); --banner-pos: center 35%;">
         <div class="hero-content">
             <h1>Transcultural Forum</h1>
-            <p class="hero-lead">We bring people of every culture, faith and worldview together to understand one another through open dialogue, shared stories and trusted knowledge.</p>
+            <p>A non-for-profit space dedicated to cross-cultural dialogue, shared stories, and community growth.</p>
             <div class="hero-buttons">
                 <a href="#programs" class="btn btn-gold">Our Initiatives</a>
                 <a href="donate.html" class="btn btn-gold">Make a Donation</a>
             </div>
         </div>
     </header>
-
-    <!-- Insight of the Day: script.js picks a different one each day from insights.json,
-         which build.js makes from the Myths and Facts sections of the religion pages.
-         The text below shows only until it loads (or if it cannot load). -->
-    <section class="insight-band" aria-labelledby="insight-heading">
-        <article class="insight-card" id="insight-of-the-day">
-            <div class="insight-top">
-                <h2 id="insight-heading" class="insight-label">Insight of the Day</h2>
-                <span class="insight-meta"><span data-insight="faith">Islam</span> <span aria-hidden="true">&middot;</span> <span data-insight="date"></span></span>
-            </div>
-            <p class="insight-fact" data-insight="fact">Islam is a global religion. Most Muslims are not Arab. Asia contains the largest Muslim population.</p>
-            <p class="insight-belief"><span class="insight-belief-label">Often assumed:</span> <span data-insight="belief">Islam is an Arab religion.</span></p>
-            <a class="insight-link" data-insight="link" href="islam.html#sec-myths">Learn more about <span>Islam</span> <span aria-hidden="true">&rarr;</span></a>
-        </article>
-    </section>
 
     <section id="about" class="section">
         <span class="subtitle">Our Foundation</span>
@@ -110,6 +96,47 @@
                 <p>Peer review Articles and research based on expert opinions and guidance and community data.</p>
             </div>
         </div>
+    </section>
+
+    <!-- Insight of the Day: script.js shows a different one each day from insights.json,
+         which build.js makes from the Myths and Facts sections of the religion pages.
+         The text below shows only until it loads (or if it cannot load). -->
+    <section class="section insight-section" aria-labelledby="insight-heading">
+        <span class="subtitle">Did You Know?</span>
+        <h2 id="insight-heading">Insight of the Day</h2>
+        <article class="insight-card" id="insight-of-the-day" data-faith="Islam">
+            <div class="insight-side">
+                <span class="insight-icon" aria-hidden="true">
+                    <i class="fa-solid fa-cross" data-icon="Christianity"></i>
+                    <i class="fa-solid fa-star-and-crescent" data-icon="Islam"></i>
+                    <i class="fa-solid fa-star-of-david" data-icon="Judaism"></i>
+                    <i class="fa-solid fa-om" data-icon="Hinduism"></i>
+                    <i class="fa-solid fa-dharmachakra" data-icon="Buddhism"></i>
+                    <i class="fa-solid fa-khanda" data-icon="Sikhism"></i>
+                    <i class="fa-solid fa-star" data-icon="Bahá'í Faith"></i>
+                    <i class="fa-solid fa-hand" data-icon="Jainism"></i>
+                    <i class="fa-solid fa-feather" data-icon="Indigenous Traditions"></i>
+                    <i class="fa-solid fa-fire-flame-simple" data-icon="Zoroastrianism"></i>
+                    <i class="fa-solid fa-lightbulb" data-icon="Secular Worldviews"></i>
+                </span>
+                <span class="insight-faith" data-insight="faith">Islam</span>
+                <span class="insight-date" data-insight="date"></span>
+            </div>
+            <div class="insight-main">
+                <div class="insight-belief">
+                    <span class="insight-tag insight-tag-myth"><i class="fa-solid fa-xmark" aria-hidden="true"></i> Common belief</span>
+                    <p data-insight="belief">Islam is an Arab religion.</p>
+                </div>
+                <div class="insight-fact">
+                    <span class="insight-tag insight-tag-fact"><i class="fa-solid fa-check" aria-hidden="true"></i> The fact</span>
+                    <p data-insight="fact">Islam is a global religion. Most Muslims are not Arab. Asia contains the largest Muslim population.</p>
+                </div>
+                <div class="insight-actions">
+                    <a class="insight-link" data-insight="link" href="islam.html#sec-myths"><span>Learn more about <span>Islam</span></span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <button type="button" class="insight-next" data-insight="next"><i class="fa-solid fa-shuffle" aria-hidden="true"></i> Show another insight</button>
+                </div>
+            </div>
+        </article>
     </section>
 
     <section id="donate" class="section bg-earth" style="text-align: center;">
