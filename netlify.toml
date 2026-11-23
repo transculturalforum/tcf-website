@@ -1,7 +1,8 @@
-# Netlify publishes the files in this folder as they are. There is no build step.
+# Netlify runs build.js, which puts the shared menu and footer (in the partials folder)
+# into every page and writes the sitemap. The finished site goes into _site and is published.
 [build]
-  publish = "."
-  command = ""
+  publish = "_site"
+  command = "node build.js"
 
 # Security settings sent with every page. They don't change how the site looks.
 [[headers]]
@@ -18,3 +19,10 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     # The site never needs the camera, microphone or location.
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Photos and icons rarely change, so browsers may keep a copy for a week instead of
+# downloading them again on every page. (A new photo should get a new file name.)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

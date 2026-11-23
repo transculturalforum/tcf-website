@@ -710,3 +710,46 @@ footer .footer-links a:hover { color: #FFFDF9; text-decoration: underline; }
     aspect-ratio: 16 / 10;
     object-fit: cover;
 }
+
+/* ===== Accessibility (added Nov 2026) ===== */
+/* "Skip to content" link: hidden until someone presses Tab, then shown at the top left. */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 2000;
+    background: #FFFDF9;
+    color: #2F3E2B;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.skip-link:focus { top: 1rem; }
+
+/* The phone menu button is a real button now, so keyboards and screen readers can use it.
+   These lines keep it looking exactly like before. */
+button.hamburger {
+    background: none;
+    border: 0;
+    padding: 0;
+    line-height: inherit;
+    font-size: 2rem;
+    color: #FEFAE0;
+    font-family: inherit;
+}
+
+/* Open the dropdowns for people using the keyboard, not just the mouse. */
+.dropdown-tab:has(:focus-visible) .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+/* A clear outline around whatever the keyboard is on. Mouse and touch users don't see it. */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #C29262;
+    outline-offset: 2px;
+}
