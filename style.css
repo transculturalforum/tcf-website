@@ -3595,6 +3595,62 @@ body.search-open { overflow: hidden; }
     letter-spacing: 1px;
     display: inline-block;
 }
+/* Year switch above the calendar filters */
+:where(.page-events) .year-switch {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+:where(.page-events) .year-btn {
+    background-color: #ffffff;
+    border: 2px solid #3c6b5f;
+    color: #3c6b5f;
+    padding: 0.5rem 1.4rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+:where(.page-events) .year-btn:hover,
+:where(.page-events) .year-btn.active-filter {
+    background-color: #3c6b5f;
+    color: #fffdf9;
+}
+:where(.page-events) .calendar-note {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    font-style: italic;
+    margin: -1rem 0 2rem 0;
+}
+:where(.page-events) .calendar-empty {
+    color: #555555;
+    text-align: center;
+    padding: 2rem;
+    background: #f4f1ea;
+    border-radius: 8px;
+}
+/* Dates that have already passed are shown faded */
+:where(.page-events) .culture-card.past-card {
+    opacity: 0.55;
+    border-left-color: #b8bdb3;
+}
+:where(.page-events) .culture-card.past-card:hover {
+    opacity: 0.85;
+}
+:where(.page-events) .past-badge {
+    display: block;
+    width: fit-content;
+    margin: 0.35rem 0 0 auto;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #e6e8e3;
+    color: #555555;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    vertical-align: middle;
+}
 /* Right Column: Sidebar */
 :where(.page-events) .events-sidebar {
     flex: 0.8; /* Takes up roughly 30% of the space */
