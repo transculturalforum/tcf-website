@@ -57,25 +57,39 @@
 
             <!-- TAB 2: CULTURES CALENDAR -->
             <div id="cultures-calendar-content" class="tab-content">
-                <h2 class="section-subtitle">Global Cultures Calendar (2026)</h2>
-                <p style="margin-bottom: 1.5rem; color: #555;">An in-depth guide to major interfaith observances, sacred holy days, and global heritage celebrations for the year 2026.</p>
+                <h2 class="section-subtitle">Global Cultures Calendar</h2>
+                <p style="margin-bottom: 1.5rem; color: #555;">An in-depth guide to major interfaith observances, sacred holy days, and global heritage celebrations. Choose a year, then a tradition. Dates that have already passed are shown faded.</p>
+
+                <!-- Year switch: the year we are in is chosen automatically -->
+                <div class="year-switch" role="group" aria-label="Choose a year">
+                    <button class="year-btn" data-year="2026" onclick="showYear(2026)">2026</button>
+                    <button class="year-btn" data-year="2027" onclick="showYear(2027)">2027</button>
+                </div>
 
                 <!-- Interactive Filter Row -->
                 <div class="filter-container">
-                    <button class="filter-btn active-filter" onclick="filterCulture('all')">Show All</button>
-                    <button class="filter-btn" onclick="filterCulture('islam')">Islam</button>
-                    <button class="filter-btn" onclick="filterCulture('judaism')">Judaism</button>
-                    <button class="filter-btn" onclick="filterCulture('christianity')">Christianity</button>
-                    <button class="filter-btn" onclick="filterCulture('hinduism')">Hinduism</button>
-                    <button class="filter-btn" onclick="filterCulture('buddhism')">Buddhism</button>
-                    <button class="filter-btn" onclick="filterCulture('sikhism')">Sikhism</button>
-                    <button class="filter-btn" onclick="filterCulture('east asian heritage')">East Asian</button>
+                    <button class="filter-btn active-filter" onclick="filterCulture('all', this)">Show All</button>
+                    <button class="filter-btn" onclick="filterCulture('islam', this)">Islam</button>
+                    <button class="filter-btn" onclick="filterCulture('judaism', this)">Judaism</button>
+                    <button class="filter-btn" onclick="filterCulture('christianity', this)">Christianity</button>
+                    <button class="filter-btn" onclick="filterCulture('hinduism', this)">Hinduism</button>
+                    <button class="filter-btn" onclick="filterCulture('buddhism', this)">Buddhism</button>
+                    <button class="filter-btn" onclick="filterCulture('sikhism', this)">Sikhism</button>
+                    <button class="filter-btn" onclick="filterCulture('bahai', this)">Bahá'í</button>
+                    <button class="filter-btn" onclick="filterCulture('jainism', this)">Jainism</button>
+                    <button class="filter-btn" onclick="filterCulture('zoroastrianism', this)">Zoroastrianism</button>
+                    <button class="filter-btn" onclick="filterCulture('indigenous', this)">Indigenous</button>
+                    <button class="filter-btn" onclick="filterCulture('secular', this)">Secular</button>
+                    <button class="filter-btn" onclick="filterCulture('east asian heritage', this)">East Asian</button>
                 </div>
 
+                <p class="calendar-note">Islamic holy days follow the sighting of the moon and may shift by a day. Jewish and Bahá'í holy days begin at sunset the evening before. Dates further ahead are estimates and may vary by community and country.</p>
+
                 <div class="cultures-list" id="cultures-list-container">
+
                     
                     <!-- LUNAR NEW YEAR -->
-                    <div class="culture-card" data-category="east asian heritage">
+                    <div class="culture-card" data-year="2026" data-ends="2026-02-17" data-category="east asian heritage">
                         <div class="culture-card-header">
                             <h3>Lunar New Year (Year of the Horse)</h3>
                             <span class="culture-date">February 17, 2026</span>
@@ -89,7 +103,7 @@
                     </div>
 
                     <!-- RAMADAN -->
-                    <div class="culture-card" data-category="islam">
+                    <div class="culture-card" data-year="2026" data-ends="2026-03-19" data-category="islam">
                         <div class="culture-card-header">
                             <h3>Ramadan (Holy Month of Fasting)</h3>
                             <span class="culture-date">Feb 18 - Mar 19, 2026</span>
@@ -103,7 +117,7 @@
                     </div>
 
                     <!-- HOLI -->
-                    <div class="culture-card" data-category="hinduism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-03-03" data-category="hinduism">
                         <div class="culture-card-header">
                             <h3>Holi (Festival of Colors)</h3>
                             <span class="culture-date">March 3, 2026</span>
@@ -117,7 +131,7 @@
                     </div>
 
                     <!-- EID AL-FITR -->
-                    <div class="culture-card" data-category="islam">
+                    <div class="culture-card" data-year="2026" data-ends="2026-03-20" data-category="islam">
                         <div class="culture-card-header">
                             <h3>Eid al-Fitr (Festival of Breaking the Fast)</h3>
                             <span class="culture-date">March 20, 2026</span>
@@ -131,7 +145,7 @@
                     </div>
 
                     <!-- PASSOVER -->
-                    <div class="culture-card" data-category="judaism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-04-10" data-category="judaism">
                         <div class="culture-card-header">
                             <h3>Passover (Pesach)</h3>
                             <span class="culture-date">April 2 - April 10, 2026</span>
@@ -145,7 +159,7 @@
                     </div>
 
                     <!-- EASTER -->
-                    <div class="culture-card" data-category="christianity">
+                    <div class="culture-card" data-year="2026" data-ends="2026-04-05" data-category="christianity">
                         <div class="culture-card-header">
                             <h3>Easter</h3>
                             <span class="culture-date">April 5, 2026</span>
@@ -159,7 +173,7 @@
                     </div>
 
                     <!-- VAISAKHI -->
-                    <div class="culture-card" data-category="sikhism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-04-14" data-category="sikhism">
                         <div class="culture-card-header">
                             <h3>Vaisakhi</h3>
                             <span class="culture-date">April 14, 2026</span>
@@ -173,7 +187,7 @@
                     </div>
 
                     <!-- VESAK -->
-                    <div class="culture-card" data-category="buddhism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-05-01" data-category="buddhism">
                         <div class="culture-card-header">
                             <h3>Vesak (Buddha Day)</h3>
                             <span class="culture-date">May 1, 2026</span>
@@ -187,7 +201,7 @@
                     </div>
 
                     <!-- EID AL-ADHA -->
-                    <div class="culture-card" data-category="islam">
+                    <div class="culture-card" data-year="2026" data-ends="2026-05-27" data-category="islam">
                         <div class="culture-card-header">
                             <h3>Eid al-Adha (Festival of Sacrifice & Culmination of Hajj)</h3>
                             <span class="culture-date">May 27, 2026</span>
@@ -201,7 +215,7 @@
                     </div>
 
                     <!-- AL-HIJRA (ISLAMIC NEW YEAR) -->
-                    <div class="culture-card" data-category="islam">
+                    <div class="culture-card" data-year="2026" data-ends="2026-06-17" data-category="islam">
                         <div class="culture-card-header">
                             <h3>Al-Hijra (The Islamic New Year - 1st Muharram)</h3>
                             <span class="culture-date">June 16 - June 17, 2026</span>
@@ -215,7 +229,7 @@
                     </div>
 
                     <!-- ROSH HASHANAH -->
-                    <div class="culture-card" data-category="judaism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-09-13" data-category="judaism">
                         <div class="culture-card-header">
                             <h3>Rosh Hashanah (The Jewish New Year)</h3>
                             <span class="culture-date">Sept 11 - Sept 13, 2026</span>
@@ -229,7 +243,7 @@
                     </div>
 
                     <!-- YOM KIPPUR -->
-                    <div class="culture-card" data-category="judaism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-09-21" data-category="judaism">
                         <div class="culture-card-header">
                             <h3>Yom Kippur (The Day of Atonement)</h3>
                             <span class="culture-date">Sept 20 - Sept 21, 2026</span>
@@ -243,7 +257,7 @@
                     </div>
 
                     <!-- MID-AUTUMN FESTIVAL -->
-                    <div class="culture-card" data-category="east asian heritage">
+                    <div class="culture-card" data-year="2026" data-ends="2026-09-25" data-category="east asian heritage">
                         <div class="culture-card-header">
                             <h3>Mid-Autumn Festival</h3>
                             <span class="culture-date">September 25, 2026</span>
@@ -251,13 +265,13 @@
                         <p>
                             Dating back over three thousand years to ancient emperors worshipping the autumn moon for prosperous harvests, the Mid-Autumn Festival is a celebration of family unity, thanksgiving, and abundance. Linked deeply to the mythological tale of Chang'e, the Moon Goddess who drank the elixir of immortality and took residence on the moon, the festival highlights the harmony of nature.
                             <strong class="sub-header">Mooncakes & Illuminated Lanterns:</strong>
-                            Families gather to gaze at the full moon, which, in its perfect roundness, represents completion and family reunion. The holiday's signature custom is the sharing of mooncakes—rich, intricately molded pastries filled with sweet lotus seed paste, sweet bean paste, and salted egg yolks representing the moon. Cities and parks are illuminated with thousands of glowing paper lanterns, and families write poetry and drink cassette-flavored wine to honor their heritage.
+                            Families gather to gaze at the full moon, which, in its perfect roundness, represents completion and family reunion. The holiday's signature custom is the sharing of mooncakes—rich, intricately molded pastries filled with sweet lotus seed paste, sweet bean paste, and salted egg yolks representing the moon. Cities and parks are illuminated with thousands of glowing paper lanterns, and families write poetry and drink cassia-flavored wine to honor their heritage.
                         </p>
                         <span class="culture-type">East Asian Heritage</span>
                     </div>
 
                     <!-- DIWALI -->
-                    <div class="culture-card" data-category="hinduism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-11-08" data-category="hinduism">
                         <div class="culture-card-header">
                             <h3>Diwali (The Festival of Lights)</h3>
                             <span class="culture-date">November 8, 2026</span>
@@ -271,7 +285,7 @@
                     </div>
 
                     <!-- HANUKKAH -->
-                    <div class="culture-card" data-category="judaism">
+                    <div class="culture-card" data-year="2026" data-ends="2026-12-12" data-category="judaism">
                         <div class="culture-card-header">
                             <h3>Hanukkah (The Festival of Lights)</h3>
                             <span class="culture-date">Dec 4 - Dec 12, 2026</span>
@@ -285,7 +299,7 @@
                     </div>
 
                     <!-- CHRISTMAS -->
-                    <div class="culture-card" data-category="christianity">
+                    <div class="culture-card" data-year="2026" data-ends="2026-12-25" data-category="christianity">
                         <div class="culture-card-header">
                             <h3>Christmas</h3>
                             <span class="culture-date">December 25, 2026</span>
@@ -297,6 +311,386 @@
                         </p>
                         <span class="culture-type">Christianity</span>
                     </div>
+
+                    <!-- JASHN-E SADEH -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-01-30" data-category="zoroastrianism">
+                        <div class="culture-card-header">
+                            <h3>Jashn-e Sadeh (Festival of Fire)</h3>
+                            <span class="culture-date">January 30, 2027</span>
+                        </div>
+                        <p>
+                            Sadeh is an ancient Iranian midwinter festival held fifty days before Nowruz. It honors the discovery of fire and celebrates the victory of light and warmth over the cold and darkness of winter.
+                            <strong class="sub-header">Bonfires & Community:</strong>
+                            Communities gather at dusk around a large bonfire, sharing prayers, music, food, and good wishes. For Zoroastrians, fire is a sacred symbol of purity and of the divine light of Ahura Mazda, and the festival is a joyful reminder that the coming of spring is near.
+                        </p>
+                        <span class="culture-type">Zoroastrianism</span>
+                    </div>
+                    
+                    <!-- LUNAR NEW YEAR -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-02-06" data-category="east asian heritage">
+                        <div class="culture-card-header">
+                            <h3>Lunar New Year (Year of the Goat)</h3>
+                            <span class="culture-date">February 6, 2027</span>
+                        </div>
+                        <p>
+                            Signifying the end of the winter season and the renewal of life, the Lunar New Year is deeply rooted in ancient agricultural rhythms and astronomical calculations. In East Asian cosmology, the transition of the year relies on the lunisolar calendar, ensuring a dynamic shift in elemental alignments. 
+                            <strong class="sub-header">Traditions & Rituals:</strong>
+                            Families gather across geographic boundaries for the essential "reunion dinner" (Nian Ye Fan) to honor ancestors and sweep away the accumulated misfortune of the previous year. Celebrations are defined by the giving of red envelopes (Hongbao) filled with crisp money to symbolize prosperity and protection, the lighting of loud firecrackers to ward off the mythical, destructive beast Nian, and spectacular public dragon dances. In 2027, the transition welcomes the Year of the Goat (also called the Sheep), a zodiac sign associated with gentleness, creativity, compassion, and peaceful harmony.
+                        </p>
+                        <span class="culture-type">East Asian Heritage</span>
+                    </div>
+
+                    <!-- RAMADAN -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-08" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Ramadan (Holy Month of Fasting)</h3>
+                            <span class="culture-date">Feb 7 - Mar 8, 2027</span>
+                        </div>
+                        <p>
+                            Commemorating the historical month in which the Quran was first revealed to Prophet Muhammad on Laylat al-Qadr (the Night of Decree), Ramadan is the spiritual anchor of the Islamic year. It constitutes the fourth pillar of Islam, during which the gates of heaven are believed to be opened and spiritual rewards are exponentially multiplied.
+                            <strong class="sub-header">Spiritual Mechanics & Community:</strong>
+                            Observing Muslims practice strict fasting (Sawm)—abstaining entirely from food, liquids, smoking, and negative behaviors from dawn (Fajr) until dusk (Maghrib). The pre-dawn meal of Suhoor and the sunset breaking of the fast (Iftar), traditionally initiated with dates and water, serve as deeply communal points of gathering. Spiritually, the month emphasizes self-discipline, inner purification, intensive nightly prayers (Taraweeh), and obligatory charity (Zakat) to build empathy for the less fortunate, redirecting the human heart back to its divine creator.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- DARWIN DAY -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-02-12" data-category="secular">
+                        <div class="culture-card-header">
+                            <h3>Darwin Day</h3>
+                            <span class="culture-date">February 12, 2027</span>
+                        </div>
+                        <p>
+                            Held on the birthday of naturalist Charles Darwin (born 1809), Darwin Day is an international celebration of science, curiosity, and the human search for understanding the natural world.
+                            <strong class="sub-header">Science & Shared Learning:</strong>
+                            Many humanist, secular, and science groups, along with schools and museums, mark the day with public lectures, nature walks, debates, and family-friendly events. It invites people of every background to appreciate evidence, reason, and the shared story of life on Earth.
+                        </p>
+                        <span class="culture-type">Secular Worldviews</span>
+                    </div>
+
+                    <!-- NINETEEN DAY FAST -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-20" data-category="bahai">
+                        <div class="culture-card-header">
+                            <h3>The Nineteen Day Fast</h3>
+                            <span class="culture-date">Mar 2 - Mar 20, 2027</span>
+                        </div>
+                        <p>
+                            During the last month of the Bahá'í calendar, Bahá'ís between the ages of 15 and 70 who are in good health fast from sunrise to sunset for nineteen days. The fast is a time of prayer, reflection, and spiritual renewal before the new year.
+                            <strong class="sub-header">Detachment & Renewal:</strong>
+                            Fasting is understood not as a hardship but as a way to draw closer to God and to turn away from material distractions. Those who are ill, traveling, pregnant, nursing, or doing heavy physical work are exempt. Many families rise before dawn to share prayers and a meal together, and the fast ends with the joyful celebration of Naw-Rúz.
+                        </p>
+                        <span class="culture-type">Bahá'í Faith</span>
+                    </div>
+
+                    <!-- EID AL-FITR -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-09" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Eid al-Fitr (Festival of Breaking the Fast)</h3>
+                            <span class="culture-date">March 9, 2027</span>
+                        </div>
+                        <p>
+                            To celebrate the successful completion of the intensive spiritual training and physical endurance of Ramadan, Muslims around the globe observe Eid al-Fitr, which translates directly to the "Festival of Breaking the Fast." It begins on the first day of Shawwal, the tenth month of the lunar Islamic calendar.
+                            <strong class="sub-header">Gratitude & Festivities:</strong>
+                            The day commences with a special, highly attended congregational prayer in the early morning, preceded by the distribution of a specific, mandatory charity (Zakat al-Fitr) to ensure those in poverty can also participate in the holiday. Affectionately nicknamed the "Sweet Eid," it is marked by wearing new clothes, exchanging gifts, visiting extended family, forgiving past disputes, and consuming decadent traditional desserts. It serves as a moment of profound gratitude to God for giving believers the strength to observe the fast.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- NOWRUZ -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-21" data-category="zoroastrianism">
+                        <div class="culture-card-header">
+                            <h3>Nowruz (Persian New Year)</h3>
+                            <span class="culture-date">March 21, 2027</span>
+                        </div>
+                        <p>
+                            Nowruz, meaning "new day," marks the spring equinox and the start of the new year. With roots in ancient Zoroastrian tradition, it is celebrated today by more than 300 million people across Iran, Central Asia, the Caucasus, and diaspora communities worldwide.
+                            <strong class="sub-header">The Haft-Sin Table:</strong>
+                            Families set a table with seven symbolic items whose names begin with the Persian letter "S," such as sprouted greens (sabzeh) for rebirth and apples (sib) for health, alongside a mirror, candles, and colored eggs. The season is filled with spring cleaning, new clothes, visits to elders, and gatherings of family and friends.
+                        </p>
+                        <span class="culture-type">Zoroastrianism</span>
+                    </div>
+
+                    <!-- NAW-RUZ -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-21" data-category="bahai">
+                        <div class="culture-card-header">
+                            <h3>Naw-Rúz (Bahá'í New Year)</h3>
+                            <span class="culture-date">March 21, 2027</span>
+                        </div>
+                        <p>
+                            Naw-Rúz is the first day of the Bahá'í year and one of nine holy days on which Bahá'ís suspend work. Falling on the spring equinox, it follows the Nineteen Day Fast and symbolizes spiritual springtime and renewal.
+                            <strong class="sub-header">Joy & Hospitality:</strong>
+                            Bahá'í communities celebrate with prayers, readings from the Bahá'í writings, music, and festive meals. Gatherings are often open to friends and neighbors of every background, reflecting the Bahá'í teaching of the oneness of humanity.
+                        </p>
+                        <span class="culture-type">Bahá'í Faith</span>
+                    </div>
+
+                    <!-- HOLI -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-22" data-category="hinduism">
+                        <div class="culture-card-header">
+                            <h3>Holi (Festival of Colors)</h3>
+                            <span class="culture-date">March 22, 2027</span>
+                        </div>
+                        <p>
+                            This ancient Hindu spring festival is an exuberant celebration of rebirth, love, and the divine triumph of good over evil. Theologically, it is anchored in the scriptural legend of young Prahlad's miraculous survival over the demoness Holika due to his absolute devotion to Lord Vishnu, as well as the playful, divine love shared between Lord Krishna and Radha.
+                            <strong class="sub-header">The Ritual of Color & Unity:</strong>
+                            The festivities begin the night before with the lighting of the Holika bonfire, where communities gather to sing, dance, and perform rites symbolizing the burning away of past grievances, internal impurities, and negative ego. The following day, communities take to the streets to playfully throw vibrant colored powders (gulal) and water, effectively dissolving rigid social hierarchies of caste, age, and gender, reconciling broken relationships, and welcoming the arrival of spring with music, dancing, and traditional cardamom-infused sweets like gujiya.
+                        </p>
+                        <span class="culture-type">Hinduism</span>
+                    </div>
+
+                    <!-- EASTER -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-03-28" data-category="christianity">
+                        <div class="culture-card-header">
+                            <h3>Easter</h3>
+                            <span class="culture-date">March 28, 2027</span>
+                        </div>
+                        <p>
+                            Easter stands as the absolute cornerstone of Christian theology, celebrating the resurrection of Jesus Christ from the dead three days after his crucifixion on Good Friday. This miraculous event is understood by believers as the ultimate triumph over sin, physical mortality, and spiritual darkness, establishing a path to eternal salvation.
+                            <strong class="sub-header">Liturgical Liturgy & Symbolism:</strong>
+                            Marking the culmination of the forty-day penitential season of Lent and the intensity of Holy Week, Easter Sunday is a festival of profound hope and joy. Believers celebrate with festive liturgical church services, joyful hymns of resurrection, and sunrise services. Culturally, the holiday has also incorporated rich, ancient symbols of new life, such as decorative Easter lilies, newly hatched chicks, and painted eggs, which represent the tomb of Christ from which new, eternal life cracked open.
+                        </p>
+                        <span class="culture-type">Christianity</span>
+                    </div>
+
+                    <!-- VAISAKHI -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-04-14" data-category="sikhism">
+                        <div class="culture-card-header">
+                            <h3>Vaisakhi</h3>
+                            <span class="culture-date">April 14, 2027</span>
+                        </div>
+                        <p>
+                            While historically rooted in the agricultural rhythms of the Punjab region as a joyous harvest festival, Vaisakhi holds paramount spiritual and historical significance for Sikhs. It commemorates the creation of the Khalsa (the collective body of initiated Sikhs) by Guru Gobind Singh in 1699, which established a distinct community identity, a code of high moral discipline, and a commitment to fighting social injustice and defending the oppressed.
+                            <strong class="sub-header">Religious Observances:</strong>
+                            The day is celebrated by raising the Sikh flag (Nishan Sahib) outside Gurudwaras, performing intensive devotional singing (Kirtan), and holding massive, vibrant community processions (Nagar Kirtans) that fill the streets with martial arts displays (Gatka) and hymns. Free communal kitchens (Langar) are expanded, offering hot vegetarian meals to all visitors regardless of background, caste, or creed, reinforcing the radical equality at the core of Sikhism.
+                        </p>
+                        <span class="culture-type">Sikhism</span>
+                    </div>
+
+                    <!-- PASSOVER -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-04-29" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Passover (Pesach)</h3>
+                            <span class="culture-date">April 21 - April 29, 2027</span>
+                        </div>
+                        <p>
+                            Passover is a foundational Jewish holiday commemorating the biblical Exodus and the physical and spiritual liberation of the Israelites from Egyptian slavery under the leadership of Moses. It is a profound celebration of human dignity, liberty, and the enduring covenant between God and the Jewish people.
+                            <strong class="sub-header">The Seder & Unleavened Bread:</strong>
+                            Over the first two nights, families gather for the highly structured Seder meal, where they read the Haggadah to retell the story of freedom to the next generation. The Seder plate features deeply symbolic foods, including bitter herbs (maror) to recall the pain of bondage, and Matzo (unleavened flatbread) to remember the haste in which the Israelites fled. Throughout the eight-day holiday, all leavened grain products (chametz) are strictly avoided, turning the physical home and the human heart into spaces of deep cleansing and historical remembrance.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- RIDVAN -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-05-02" data-category="bahai">
+                        <div class="culture-card-header">
+                            <h3>Festival of Ridván</h3>
+                            <span class="culture-date">Apr 21 - May 2, 2027</span>
+                        </div>
+                        <p>
+                            Called the "King of Festivals," Ridván commemorates the twelve days in 1863 that Bahá'u'lláh, the founder of the Bahá'í Faith, spent in a garden outside Baghdad, where he declared his mission to his companions.
+                            <strong class="sub-header">Holy Days & Community Life:</strong>
+                            The first, ninth, and twelfth days of Ridván are holy days on which work is suspended. Ridván is also the time when Bahá'ís around the world elect their local and national governing councils, through prayerful elections with no candidates or campaigning.
+                        </p>
+                        <span class="culture-type">Bahá'í Faith</span>
+                    </div>
+
+                    <!-- EID AL-ADHA -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-05-16" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Eid al-Adha (Festival of Sacrifice & Culmination of Hajj)</h3>
+                            <span class="culture-date">May 16, 2027</span>
+                        </div>
+                        <p>
+                            Eid al-Adha is the second of the two major Islamic holidays, honoring the profound devotion of Prophet Ibrahim (Abraham), who was willing to sacrifice his son in obedience to God's command before a ram was miraculously substituted. This sacred festival marks the grand finale of the **annual Hajj pilgrimage** to Mecca—the mandatory, once-in-a-lifetime spiritual journey that constitutes the fifth pillar of Islam.
+                            <strong class="sub-header">The Ritual of Sacrifice & Hajj:</strong>
+                            Millions of pilgrims conclude their exhausting rites in Mina and Mount Arafat, shedding their worldly status in simple white garments (Ihram) to stand equal before God. In solidarity with the pilgrims, families worldwide who are financially able perform the ritual sacrifice of an animal (Qurbani). The meat is strictly divided into three equal portions: one-third for the immediate household, one-third for friends and neighbors, and one-third for those experiencing poverty and hunger, cementing social cohesion, global charity, and absolute devotion.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- VESAK -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-05-20" data-category="buddhism">
+                        <div class="culture-card-header">
+                            <h3>Vesak (Buddha Day)</h3>
+                            <span class="culture-date">May 20, 2027</span>
+                        </div>
+                        <p>
+                            Vesak is the most sacred day in the Buddhist calendar, commemorating three pivotal, interconnected milestones in the life of Gautama Buddha: his physical birth, his attainment of supreme enlightenment (Nirvana) under the Bodhi tree, and his passing into final liberation (Parinirvana). It is a day dedicated to the peaceful contemplation of the Dharma (the Buddha's teachings on suffering and liberation).
+                            <strong class="sub-header">Mindfulness & Compassion:</strong>
+                            Observers gather at temples before dawn to hoist Buddhist flags, sing spiritual hymns, meditate deeply, and make symbolic offerings of flowers, candles, and incense. These offerings serve to remind believers that all physical form is impermanent and fleeting. Devotees prioritize acts of compassion (Dana), giving charity to shelters, organizing blood drives, and releasing captive animals to reflect the Buddha's teachings of universal loving-kindness and non-harming (Ahimsā).
+                        </p>
+                        <span class="culture-type">Buddhism</span>
+                    </div>
+
+                    <!-- AL-HIJRA (ISLAMIC NEW YEAR) -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-06-06" data-category="islam">
+                        <div class="culture-card-header">
+                            <h3>Al-Hijra (The Islamic New Year - 1st Muharram)</h3>
+                            <span class="culture-date">June 5 - June 6, 2027</span>
+                        </div>
+                        <p>
+                            Al-Hijra, occurring on the first day of the sacred month of Muharram, marks the beginning of the Islamic lunar year (marking the transition to Hijri year 1449). Unlike solar-based celebrations, Al-Hijra is not observed with fireworks or boisterous parties; instead, it is a period of quiet spiritual reflection, historical remembrance, and deep communal solidarity.
+                            <strong class="sub-header">The Migration & Creation of the Calendar:</strong>
+                            The holiday commemorates the historic migration (Hijrah) of Prophet Muhammad and his early companions in 622 CE from the persecution of Mecca to the welcoming oasis of Yathrib (later renamed Medina, "The City of the Prophet"). This journey was not merely a flight from danger, but a pivotal transition that allowed the first Islamic community (Ummah) to establish a society built on justice, mutual defense, and religious freedom. Recognizing the transformative nature of this migration, the second Caliph, Umar ibn al-Khattab, officially established the Hijri calendar in 639 CE, designating the year of the Hijrah as Year 1. Muslims use this day to reflect on the sacrifices of the early pioneers and to set spiritual intentions for the upcoming year.
+                        </p>
+                        <span class="culture-type">Islam</span>
+                    </div>
+
+                    <!-- WORLD HUMANIST DAY -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-06-21" data-category="secular">
+                        <div class="culture-card-header">
+                            <h3>World Humanist Day</h3>
+                            <span class="culture-date">June 21, 2027</span>
+                        </div>
+                        <p>
+                            Celebrated on the June solstice, World Humanist Day highlights humanist values: reason, compassion, human dignity, and the belief that people can live ethical and meaningful lives without religious belief.
+                            <strong class="sub-header">Values in Action:</strong>
+                            Humanist groups mark the day with community service projects, talks, picnics, and celebrations of science and the arts. The day is an invitation to dialogue, showing the shared values that people of faith and of no faith often hold in common.
+                        </p>
+                        <span class="culture-type">Secular Worldviews</span>
+                    </div>
+
+                    <!-- INTERNATIONAL DAY OF THE WORLD'S INDIGENOUS PEOPLES -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-08-09" data-category="indigenous">
+                        <div class="culture-card-header">
+                            <h3>International Day of the World's Indigenous Peoples</h3>
+                            <span class="culture-date">August 9, 2027</span>
+                        </div>
+                        <p>
+                            Established by the United Nations, this day recognizes the more than 476 million Indigenous people living in some 90 countries, and the thousands of distinct languages, cultures, and spiritual traditions they carry.
+                            <strong class="sub-header">Rights & Recognition:</strong>
+                            Events around the world raise awareness of Indigenous rights, land, and languages, and celebrate the contributions Indigenous peoples make to caring for the environment. It is a day to listen to Indigenous voices and learn about the specific nations whose lands we live on.
+                        </p>
+                        <span class="culture-type">Indigenous Traditions</span>
+                    </div>
+
+                    <!-- MID-AUTUMN FESTIVAL -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-09-15" data-category="east asian heritage">
+                        <div class="culture-card-header">
+                            <h3>Mid-Autumn Festival</h3>
+                            <span class="culture-date">September 15, 2027</span>
+                        </div>
+                        <p>
+                            Dating back over three thousand years to ancient emperors worshipping the autumn moon for prosperous harvests, the Mid-Autumn Festival is a celebration of family unity, thanksgiving, and abundance. Linked deeply to the mythological tale of Chang'e, the Moon Goddess who drank the elixir of immortality and took residence on the moon, the festival highlights the harmony of nature.
+                            <strong class="sub-header">Mooncakes & Illuminated Lanterns:</strong>
+                            Families gather to gaze at the full moon, which, in its perfect roundness, represents completion and family reunion. The holiday's signature custom is the sharing of mooncakes—rich, intricately molded pastries filled with sweet lotus seed paste, sweet bean paste, and salted egg yolks representing the moon. Cities and parks are illuminated with thousands of glowing paper lanterns, and families write poetry and drink cassia-flavored wine to honor their heritage.
+                        </p>
+                        <span class="culture-type">East Asian Heritage</span>
+                    </div>
+
+                    <!-- ROSH HASHANAH -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-10-03" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Rosh Hashanah (The Jewish New Year)</h3>
+                            <span class="culture-date">Oct 1 - Oct 3, 2027</span>
+                        </div>
+                        <p>
+                            Translating literally to "Head of the Year," Rosh Hashanah is the Jewish New Year and the solemn gateway to the Ten Days of Repentance (Yamim Noraim). It is understood in Jewish theology as the anniversary of the creation of the world, serving as a period of deep self-assessment, reflection, and prayer before the Divine.
+                            <strong class="sub-header">The Call of the Shofar:</strong>
+                            A central commandment of the holiday is the sounding of the Shofar (a ram's horn) in the synagogue, a raw, piercing sound that serves as a spiritual wake-up call to shake off moral slumber, return to righteous paths, and seek forgiveness. Festivities are highlighted by eating round challah bread (symbolizing the cyclical, crown-like flow of life) and dipping fresh apples in honey, expressing a collective, hopeful prayer for a sweet, fruitful year ahead.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- YOM KIPPUR -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-10-11" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Yom Kippur (The Day of Atonement)</h3>
+                            <span class="culture-date">Oct 10 - Oct 11, 2027</span>
+                        </div>
+                        <p>
+                            Yom Kippur is the absolute holiest, most solemn day of the Jewish year, concluding the Ten Days of Repentance that began on Rosh Hashanah. It is a day of radical purification, where humanity stands bare before God, seeking atonement for transgressions committed over the past year.
+                            <strong class="sub-header">Self-Denial & Rebirth:</strong>
+                            The holiday is defined by a strict, twenty-five-hour fast from all food and water, during which physical comforts—including bathing, perfumes, and leather shoes—are set aside to focus entirely on the soul's relationship with the Divine. The day is spent in almost continuous prayer inside the synagogue, culminating in the five services of atonement where the community confesses collective sins. It is a profound, meditative space for seeking forgiveness from both God and fellow human beings, ending with a single, long blast of the Shofar (the Tekiah Gedolah) to signal the sealing of the Book of Life.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- INDIGENOUS PEOPLES' DAY -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-10-11" data-category="indigenous">
+                        <div class="culture-card-header">
+                            <h3>Indigenous Peoples' Day (United States)</h3>
+                            <span class="culture-date">October 11, 2027</span>
+                        </div>
+                        <p>
+                            Observed on the second Monday of October, Indigenous Peoples' Day honors the histories, cultures, and resilience of Native American, Alaska Native, and Native Hawaiian peoples.
+                            <strong class="sub-header">Honoring Living Traditions:</strong>
+                            Communities hold powwows, ceremonies, storytelling, art shows, and educational events. Many Indigenous leaders encourage non-Native people to use the day to learn about local tribal nations, support Native-led organizations, and recognize that Indigenous traditions are living and growing today.
+                        </p>
+                        <span class="culture-type">Indigenous Traditions</span>
+                    </div>
+
+                    <!-- DIWALI -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-10-29" data-category="hinduism">
+                        <div class="culture-card-header">
+                            <h3>Diwali (The Festival of Lights)</h3>
+                            <span class="culture-date">October 29, 2027</span>
+                        </div>
+                        <p>
+                            Diwali is India’s biggest and most celebrated five-day festival, symbolizing the spiritual victory of light over darkness, good over evil, and knowledge over ignorance. For many, it celebrates the epic return of Lord Rama, along with his wife Sita and brother Lakshmana, to his kingdom of Ayodhya after defeating the demon king Ravana and completing 14 years of exile.
+                            <strong class="sub-header">Lamps, Rangoli, & Wealth:</strong>
+                            Families prepare by thoroughly cleaning and decorating their homes, painting beautiful geometric floor patterns (rangoli) made of colored powder, sand, or flower petals at entryways. The night of Diwali is marked by lighting hundreds of tiny clay oil lamps (diyas) and setting off fireworks to guide Lakshmi, the goddess of wealth, fortune, and prosperity, into the home. It is a time for sharing rich sweets, wearing new clothing, and forgiving past conflicts to begin the year anew.
+                        </p>
+                        <span class="culture-type">Hinduism</span>
+                    </div>
+
+                    <!-- MAHAVIRA NIRVANA (JAIN DIWALI) -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-10-29" data-category="jainism">
+                        <div class="culture-card-header">
+                            <h3>Diwali (Mahavira's Nirvana)</h3>
+                            <span class="culture-date">October 29, 2027</span>
+                        </div>
+                        <p>
+                            For Jains, Diwali marks the anniversary of the liberation (moksha) of Lord Mahavira, the 24th and last Tirthankara of this age, in 527 BCE. The following day begins the Jain new year.
+                            <strong class="sub-header">Lamps of Knowledge:</strong>
+                            Jains light lamps to symbolize the light of knowledge that Mahavira left behind when his own light passed from the world. Many fast, recite the Uttaradhyayana Sutra (believed to be his final teachings), visit temples, and focus on prayer and reflection rather than fireworks.
+                        </p>
+                        <span class="culture-type">Jainism</span>
+                    </div>
+
+                    <!-- GURU NANAK GURPURAB -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-11-14" data-category="sikhism">
+                        <div class="culture-card-header">
+                            <h3>Guru Nanak Gurpurab</h3>
+                            <span class="culture-date">November 14, 2027</span>
+                        </div>
+                        <p>
+                            Gurpurab celebrates the birth of Guru Nanak Dev Ji (1469), the founder of Sikhism and the first of the ten Sikh Gurus. It is one of the most important days in the Sikh calendar.
+                            <strong class="sub-header">Prayer, Processions & Langar:</strong>
+                            Celebrations include a continuous, 48-hour reading of the Guru Granth Sahib (Akhand Path), early-morning hymns, and colorful processions (Nagar Kirtan). Gurdwaras serve free community meals (langar) to everyone, reflecting Guru Nanak's teachings of equality, service, and devotion to one God.
+                        </p>
+                        <span class="culture-type">Sikhism</span>
+                    </div>
+
+                    <!-- HANUKKAH -->
+                    <div class="culture-card" data-year="2027" data-ends="2028-01-01" data-category="judaism">
+                        <div class="culture-card-header">
+                            <h3>Hanukkah (The Festival of Lights)</h3>
+                            <span class="culture-date">Dec 24, 2027 - Jan 1, 2028</span>
+                        </div>
+                        <p>
+                            Hanukkah is an eight-day Jewish festival commemorating the heroic reclamation of Jerusalem and the rededication of the Second Temple in the 2nd century BCE after a successful revolt against the Seleucid Empire. It is a powerful celebration of religious freedom, cultural preservation, and resilience against forced assimilation.
+                            <strong class="sub-header">The Miracle of the Oil:</strong>
+                            According to historical tradition, when the Maccabees went to light the Temple's menorah, they found only a single cruse of sacred olive oil—enough to last one day. Miraculously, the oil burned bright for eight full days. Families celebrate by lighting one additional candle on the nine-branched menorah (Hanukkiah) each night, eating traditional foods fried in oil (like latkes and jelly donuts) to honor the miracle, playing the game of dreidel, and celebrating the triumph of the few over the many.
+                        </p>
+                        <span class="culture-type">Judaism</span>
+                    </div>
+
+                    <!-- CHRISTMAS -->
+                    <div class="culture-card" data-year="2027" data-ends="2027-12-25" data-category="christianity">
+                        <div class="culture-card-header">
+                            <h3>Christmas</h3>
+                            <span class="culture-date">December 25, 2027</span>
+                        </div>
+                        <p>
+                            Christmas is the major Christian celebration commemorating the Nativity and birth of Jesus Christ in Bethlehem. Theologically, the day represents the Incarnation—God entering the human world to offer salvation, reconciliation, and hope to humanity.
+                            <strong class="sub-header">Liturgical Rites & Secular Customs:</strong>
+                            Communities celebrate with candlelight Christmas Eve services, Midnight Masses, and nativity scene displays (creches). Globally, the holiday has inspired extensive cultural traditions of generosity, including decorating evergreen trees, hanging wreaths, singing carols, and exchanging gifts to mirror the offerings of the Biblical Magi. It is a season defined by charity, reaching out to those experiencing isolation, and celebrating the warmth of family and community.
+                        </p>
+                        <span class="culture-type">Christianity</span>
+                    </div>
+
+                    <p class="calendar-empty" id="calendar-empty" hidden>No dates for this tradition in this year. Try the other year above.</p>
 
                 </div>
             </div>
@@ -346,29 +740,66 @@
             }
         }
 
-        // Calendar Category Filtering Logic
-        function filterCulture(category) {
-            // Update Active Filter Button Style
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(btn => {
-                btn.classList.remove('active-filter');
-            });
-            
-            // Add active styling to clicked button
-            event.target.classList.add('active-filter');
+        // Calendar: one year at a time, filtered by tradition, past dates faded.
+        var calendarYear = null;
+        var calendarCategory = 'all';
 
-            // Toggle Cards Visibility based on selected category attribute
-            const cards = document.querySelectorAll('.culture-card');
-            cards.forEach(card => {
-                const cardCategory = card.getAttribute('data-category');
-                
-                if (category === 'all' || cardCategory === category) {
-                    card.classList.remove('hidden-card');
-                } else {
-                    card.classList.add('hidden-card');
+        function todayISO() {
+            var d = new Date();
+            return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+        }
+
+        function updateCalendar() {
+            var today = todayISO();
+            var shown = 0;
+            document.querySelectorAll('.culture-card').forEach(function (card) {
+                var show = card.getAttribute('data-year') === String(calendarYear) &&
+                    (calendarCategory === 'all' || card.getAttribute('data-category') === calendarCategory);
+                card.classList.toggle('hidden-card', !show);
+                var past = card.getAttribute('data-ends') < today;
+                card.classList.toggle('past-card', past);
+                var header = card.querySelector('.culture-card-header');
+                var badge = card.querySelector('.past-badge');
+                if (past && !badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'past-badge';
+                    badge.textContent = 'Passed';
+                    header.querySelector('.culture-date').appendChild(badge);
+                } else if (!past && badge) {
+                    badge.remove();
                 }
+                if (show) shown++;
+            });
+            document.getElementById('calendar-empty').hidden = shown > 0;
+            document.querySelectorAll('.year-btn').forEach(function (btn) {
+                var on = btn.getAttribute('data-year') === String(calendarYear);
+                btn.classList.toggle('active-filter', on);
+                btn.setAttribute('aria-pressed', on ? 'true' : 'false');
             });
         }
+
+        function showYear(year) {
+            calendarYear = year;
+            updateCalendar();
+        }
+
+        function filterCulture(category, button) {
+            calendarCategory = category;
+            document.querySelectorAll('.filter-btn').forEach(function (btn) {
+                btn.classList.remove('active-filter');
+            });
+            button.classList.add('active-filter');
+            updateCalendar();
+        }
+
+        // Start on the year we are in (or the nearest year the calendar covers).
+        (function () {
+            var years = Array.prototype.map.call(document.querySelectorAll('.year-btn'), function (b) {
+                return Number(b.getAttribute('data-year'));
+            });
+            var now = new Date().getFullYear();
+            showYear(Math.min(Math.max(now, years[0]), years[years.length - 1]));
+        })();
     </script>
     <!-- SHARED FOOTER -->
 
